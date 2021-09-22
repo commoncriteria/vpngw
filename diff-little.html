@@ -151,9 +151,9 @@
 </tr>
 </table>
 <h2 class="indexable" data-level="2" id="Compliant_Targets_of_Evaluation">1.3 Compliant Targets of Evaluation</h2> This PP-Module specifically addresses network gateway devices that terminate IPsec VPN tunnels. A compliant VPN gateway is a device composed of hardware and software that is connected to two or more distinct networks and has an infrastructure role in the overall enterprise network. In particular, a VPN gateway establishes a secure tunnel that provides an authenticated and encrypted path to another site(s) and thereby decreases the risk of exposure of information transiting an untrusted network. <p></p> The baseline requirements of this PP-Module are those determined necessary for a multi-site VPN gateway device. A compliant TOE may also contain the ability to act as a headend for remote clients. Because this capability is optional, the remote client based requirements have been included within Appendix A. <h3 class="indexable" data-level="3" id="TOE_Boundary">1.3.1 TOE Boundary</h3> The physical boundary for a TOE that conforms to this PP-Module is a hardware appliance that also provides generalized network device functionality, such as auditing, I&amp;A, and cryptographic services for network communications. The TOE&rsquo;s logical boundary includes all functionality required by the claimed Base-PP as well as the VPN functionality and related capabilities that are defined in this PP-Module. Any functionality that is provided by the network device that is not relevant to the security requirements defined by this PP-Module or the Base-PP is considered to be outside the scope of the TOE. <h2 class="indexable" data-level="2" id="Use_Cases">1.4 Use Cases</h2> This PP-Module defines two potential use cases for the VPN gateway TOE, defined below. The first use case will always be applicable for a TOE that conforms to this PP-Module. The second use case defines an optional deployment/usage model for the TOE that accompanies the first use case. <dl>
-<dt> [USE CASE 1] Network Device</dt>
+<dt id="usecase1"> [USE CASE 1] Network Device</dt>
 <dd> The VPN gateway is part of functionality that is provided by a general network device appliance, such as a router or switch, or a device that is dedicated solely to providing multi-site VPN gateway functionality. </dd>
-<dt> [USE CASE 2] Remote Client Headend</dt>
+<dt id="usecase2"> [USE CASE 2] Remote Client Headend</dt>
 <dd> The VPN gateway provides the ability to act as a headend for remote clients. </dd>
 </dl> 
 <h1 class="indexable" data-level="1" id="ConformanceClaims">2 Conformance Claims</h1> 
@@ -914,7 +914,7 @@
 </div>
 </div>
 <h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix A - Implicitly Satisfied Requirements</h1>
-<p>This appendix lists requirements that should be considered satisfied by products successfully evaluated against this PP. These requirements are not featured explicitly as SFRs and should not be included in the ST. They are not included as standalone SFRs because it would increase the time, cost, and complexity of evaluation. This approach is permitted by <a href="#bibCC">[CC]</a> Part 1, 8.2 Dependencies between components.</p>
+<p>This appendix lists requirements that should be considered satisfied by products successfully evaluated against this Module. These requirements are not featured explicitly as SFRs and should not be included in the ST. They are not included as standalone SFRs because it would increase the time, cost, and complexity of evaluation. This approach is permitted by <a href="#bibCC">[CC]</a> Part 1, 8.2 Dependencies between components.</p>
 <p>This information benefits systems engineering activities which call for inclusion of particular security controls. Evaluation against the PP provides evidence that these controls are present and have been evaluated.</p>. <b><span class="ctr" data-myid="imp-sat-reqs-table" data-counter-type="ct-Table" id="imp-sat-reqs-table">Table <span class="counter">3</span>: Implicitly Satisfied Requirements</span></b> 
 <table>
 <tr class="header">

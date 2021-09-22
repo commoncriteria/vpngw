@@ -403,6 +403,9 @@ function showTarget(id){
           *.toc2{
               background:#FFFFFF;
           }
+	  .choicelabel{
+	    font-weight: bold;
+	  }
           div.comp{
               margin-left:8%;
               margin-top:1em;
@@ -678,10 +681,10 @@ The following sections list Common Criteria and technology terms used in this do
       This PP-Module defines two potential use cases for the VPN gateway TOE, defined below<a id="period_37" href="#period_37">. </a>The first use
       case will always be applicable for a TOE that conforms to this PP-Module<a id="period_38" href="#period_38">. </a>The second use case defines an
       optional deployment/usage model for the TOE that accompanies the first use case<a id="period_39" href="#period_39">. </a>      
-      <dl><dt> [USE CASE 1] Network Device</dt><dd>
+      <dl><dt id="usecase1"> [USE CASE 1] Network Device</dt><dd>
             The VPN gateway is part of functionality that is provided by a general network device appliance, such
             as a router or switch, or a device that is dedicated solely to providing multi-site VPN gateway
-            functionality<a id="period_40" href="#period_40">. </a>			</dd><dt> [USE CASE 2] Remote Client Headend</dt><dd>
+            functionality<a id="period_40" href="#period_40">. </a>			</dd><dt id="usecase2"> [USE CASE 2] Remote Client Headend</dt><dd>
             The VPN gateway provides the ability to act as a headend for remote clients<a id="period_41" href="#period_41">. </a>          </dd></dl>
 
 
@@ -1695,7 +1698,7 @@ The Operational Environment of the TOE implements technical and procedural measu
 	
 
 <h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix A -  Implicitly Satisfied Requirements</h1><p>This appendix lists requirements that should be considered satisfied by products
-	successfully evaluated against this PP<a id="period_317" href="#period_317">. </a>These requirements are not featured
+	successfully evaluated against this Module<a id="period_317" href="#period_317">. </a>These requirements are not featured
 	explicitly as SFRs and should not be included in the ST<a id="period_318" href="#period_318">. </a>They are not included as 
 	standalone SFRs because it would increase the time, cost, and complexity of evaluation<a id="period_319" href="#period_319">. </a>	This approach is permitted by <a href="#bibCC">[CC]</a> Part 1, 8.2 Dependencies between components<a id="period_320" href="#period_320">. </a></p><p>This information benefits systems engineering activities which call for inclusion of particular
 	security controls<a id="period_321" href="#period_321">. </a>Evaluation against the PP provides evidence that these controls are present 

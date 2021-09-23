@@ -779,7 +779,7 @@ expected to enforce.<h:p/>
     <base-pp id="bpp-nd">
 
 <!-- Note: How do we handle it when the Base-PP (in this case NDcPP) isn't on Github? -->
-		<raw-url>https://github.com/commoncriteria/operatingsystem/raw/master/input/operatingsystem.xml</raw-url>
+		<raw-url>https://github.com/commoncriteria/ndcpp/raw/master/input/ndcpp.xml</raw-url>
 		<url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=442&amp;id=442</url>
 
 		<sec-func-req-dir> 
@@ -1372,7 +1372,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
       <con-op-en></con-op-en>
 	    
 	    <!-- 6.1.2 Consistency Rationale table for ND -->
-      <!-- Note: A.CONNECTIONS was missing from this; it has been added. -->
+      
       <con-mod ref="T.DATA_INTEGRITY">The threat of data integrity compromise is a specific example of the
         T.WEAK_CRYPTOGRAPHY threat defined in the Base-PP.
       </con-mod>
@@ -1646,7 +1646,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
             “network device management” and “VPN gateway management” to be
             implemented in separate interfaces. 
           </note>
-          <!-- Note: new EAs because SFR wasn't previously iterated -->
+
           <aactivity>
             <TSS>The evaluator shall examine the TSS to confirm that all management functions specified in
               FMT_SMF.1/VPN are provided by the TOE. As with FMT_SMF.1 in the Base-PP, the evaluator shall ensure
@@ -2826,9 +2826,11 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	been evaluated.
 -->
 	
-	<!-- Note: come back to when we know whether there are any of these (believe all dependencies were met in 1.0 but that could change) -->
+	>
 	<h:b><ctr ctr-type="Table" pre="Table " id="imp-sat-reqs-table">: Implicitly Satisfied Requirements</ctr></h:b>
-    <h:table>	
+    All SFR dependencies in this PP-Module are addressed by appropriate SFRs, either from elsewhere in the PP-Module or inherited from the Base-PP. 
+  <!-- 
+  <h:table>	
 		<h:tr class="header"><h:td>Requirement</h:td><h:td>Rationale for Satisfaction</h:td></h:tr>
 	<h:tr>
 	<h:td><h:b>Placeholder</h:b></h:td>
@@ -2836,7 +2838,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	  	Placeholder
 	</h:td>
 	</h:tr>
-    </h:table>
+    </h:table>  -->
   </appendix>	
 	
 <!-- Appendix E: Entropy Documentation and Assessment -->

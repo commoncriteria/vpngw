@@ -167,6 +167,7 @@
 
           The following PPs and PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module: <h:ul>
             <h:li>collaborative Protection Profile Module for Stateful Traffic Filter Firewalls v1.4 + Errata 20200625</h:li>
+            <h:li>PP-Module for Intrusion Protection Systems, v1.0</h:li>
           </h:ul> 
            
         </description>
@@ -2610,7 +2611,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </fam-behavior>
         </ext-comp-def>
         
-        <f-component name="VPN Client Management" cc-id="fta_vpn_ext.1" id="fta-vcm-ext-1">
+        <f-component name="VPN Client Management" cc-id="fta_vcm_ext.1" id="fta-vcm-ext-1">
           <consistency-rationale>This SFR refers to network addressing, which is outside the scope of the
             Base-PP and therefore not prohibited by it.</consistency-rationale>
           <comp-lev> requires the TSF to assign private (internal) IP addresses

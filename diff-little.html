@@ -204,7 +204,7 @@
 <dt class="SO,defined" id="O.ADDRESS_FILTERING">O.ADDRESS_FILTERING</dt>
 <dd>To address the issues associated with unauthorized disclosure of information, inappropriate access to services, misuse of services, disruption or denial of services, and network-based reconnaissance, compliant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s will implement Packet Filtering capability. That capability will restrict the flow of network traffic between protected networks and other attached networks based on network addresses of the network nodes originating (source) and/or receiving (destination) applicable network traffic as well as on established connection information. <p></p> Addressed by: <a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a>, FTA_VCM_EXT.1 (optional) </dd>
 <dt class="SO,defined" id="O.AUTHENTICATION">O.AUTHENTICATION</dt>
-<dd> To further address the issues associated with unauthorized disclosure of information, a compliant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s authentication ability (IPSec) will allow a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> peer to establish <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connectivity with another <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> peer and ensure that any such connection attempt is both authenticated and authorized. <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> endpoints authenticate each other to ensure they are communicating with an authorized external IT entity. <p></p> Addressed by: <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FIA_X509_EXT.1/Rev">FIA_X509_EXT.1/Rev</a> (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FIA_X509_EXT.2">FIA_X509_EXT.2</a> (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FIA_X509_EXT.3">FIA_X509_EXT.3</a> (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FTP_ITC.1/VPN">FTP_ITC.1/VPN</a>, FTA_SSL.3/<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> (optional), FTA_TSE.1 (optional), <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> (selection-based) </dd>
+<dd> To further address the issues associated with unauthorized disclosure of information, a compliant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s authentication ability (IPSec) will allow a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> peer to establish <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connectivity with another <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> peer and ensure that any such connection attempt is both authenticated and authorized. <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> endpoints authenticate each other to ensure they are communicating with an authorized external IT entity. <p></p> Addressed by: <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FIA_X509_EXT.1/Rev">FIA_X509_EXT.1/Rev</a> (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FIA_X509_EXT.2">FIA_X509_EXT.2</a> (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FIA_X509_EXT.3">FIA_X509_EXT.3</a> (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FTP_ITC.1/VPN">FTP_ITC.1/VPN</a>, <a href="#FTA_SSL.3/VPN">FTA_SSL.3/VPN</a> (optional), <a href="#FTA_TSE.1">FTA_TSE.1</a> (optional), <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> (selection-based) </dd>
 <dt class="SO,defined" id="O.CRYPTOGRAPHIC_FUNCTIONS">O.CRYPTOGRAPHIC_FUNCTIONS</dt>
 <dd> To address the issues associated with unauthorized disclosure of information, inappropriate access to services, misuse of services, disruption of services, and network-based reconnaissance, compliant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s will implement a cryptographic capabilities. These capabilities are intended to maintain confidentiality and allow for detection and modification of data that is transmitted outside of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. <p></p> Addressed by: <a href="#FCS_COP.1/DataEncryption">FCS_COP.1/DataEncryption</a> (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FCS_CKM.1/IKE">FCS_CKM.1/IKE</a>, <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> (selection-based) </dd>
 <dt class="SO,defined" id="O.FAIL_SECURE">O.FAIL_SECURE</dt>
@@ -506,7 +506,7 @@
 </div>
 <h4 id="nd-m-fia" class="indexable" data-level="4">5.1.1.2 Identification and Authentication (FIA)</h4>
 <div class="comp" id="FIA_X509_EXT.1/Rev">
-<h4>FIA_X509_EXT.1/Rev TLS Server Protocol Without Mutual Authentication</h4>
+<h4>FIA_X509_EXT.1/Rev X.509 Certificate Validation</h4>
 <div class="element">
 <div class="reqid" id="FIA_X509_EXT.1.1/Rev">
 <a href="#FIA_X509_EXT.1.1/Rev" class="abbr">FIA_X509_EXT.1.1/Rev</a>
@@ -536,7 +536,7 @@
 </div>
 </div>
 <div class="comp" id="FIA_X509_EXT.3">
-<h4>FIA_X509_EXT.3 TLS Server Protocol Without Mutual Authentication</h4>
+<h4>FIA_X509_EXT.3 X.509 Certificate Requests</h4>
 <div class="element">
 <div class="reqid" id="FIA_X509_EXT.3.1">
 <a href="#FIA_X509_EXT.3.1" class="abbr">FIA_X509_EXT.3.1</a>
@@ -608,7 +608,7 @@
 <th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th>
 </tr>
 <tr>
-<td><a href="#FAU_GEN.1/VPNGW">FAU_GEN.1/VPNGW</a></td><td>No events specified</td><td></td>
+<td><a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a></td><td>No events specified</td><td></td>
 </tr>
 <tr>
 <td><a href="#FCS_CKM.1/IKE">FCS_CKM.1/IKE</a></td><td>No events specified</td><td></td>
@@ -631,16 +631,16 @@
 </tr>
 </table>
 <h3 id="m-fau" class="indexable" data-level="3">5.2.2 Security Audit (FAU)</h3>
-<div class="comp" id="FAU_GEN.1/VPNGW">
-<h4>FAU_GEN.1/VPNGW Audit Data Generation (VPN Gateway)</h4>
+<div class="comp" id="FAU_GEN.1/VPN">
+<h4>FAU_GEN.1/VPN Audit Data Generation (VPN Gateway)</h4>
 <div class="element">
-<div class="reqid" id="FAU_GEN.1.1/VPNGW">
-<a href="#FAU_GEN.1.1/VPNGW" class="abbr">FAU_GEN.1.1/VPNGW</a>
+<div class="reqid" id="FAU_GEN.1.1/VPN">
+<a href="#FAU_GEN.1.1/VPN" class="abbr">FAU_GEN.1.1/VPN</a>
 </div>
 <div class="reqdesc"> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to generate an audit record of the following auditable events: <ol type="a">
 <li>Start-up and shutdown of the audit functions</li>
 <li>All auditable events for the [<i>not specified</i>] level of audit; and</li>
-<li>[<i>auditable events defined in Auditable Events table</i>].</li>
+<li>[<i>auditable events defined in Auditable Events for Mandatory Requirements table</i>].</li>
 </ol>
 <div class="appnote">
 <span class="note-header">Application Note: </span><span class="note"> The "Start-up and shtudown of the audit functions" event is identical to the event defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s iteration of FAU_GEN.1. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is not required to have two separate events for this behavior if there is only a single audit stream that which all audit events use. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> does maintain a separate logging facility for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway-related behavior, then this event must be addressed for it. Note that if the audit functions cannot be started and stopped separately from the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself, then auditing the start-up and shutdown of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is sufficient to address this. </span>
@@ -648,12 +648,12 @@
 </div>
 </div>
 <div class="element">
-<div class="reqid" id="FAU_GEN.1.2/VPNGW">
-<a href="#FAU_GEN.1.2/VPNGW" class="abbr">FAU_GEN.1.2/VPNGW</a>
+<div class="reqid" id="FAU_GEN.1.2/VPN">
+<a href="#FAU_GEN.1.2/VPN" class="abbr">FAU_GEN.1.2/VPN</a>
 </div>
 <div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall record within each audit record at least the following information: <ol type="a">
 <li>Date and time of the event, type of event, subject identity (if applicable), and the outcome (success or failure) of the event; and </li>
-<li>For each audit event type, based on the auditable event definitions of the functional components included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<i>additional information defined in Auditable Events table for each auditable event, where applicable</i>].</li>
+<li>For each audit event type, based on the auditable event definitions of the functional components included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<i>additional information defined in Auditable Events for Mandatory Requirements table for each auditable event, where applicable</i>].</li>
 </ol>
 <div class="appnote">
 <span class="note-header">Application Note: </span><span class="note">The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author only needs to include the auditable events that correspond to the SFRs claimed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is not required to generate auditable events for selection-based or optional SFRs that it does not claim.</span>
@@ -708,7 +708,7 @@
 <li style="">
 <i id="_s_121">No other capabilities</i>
 </li>
-</ul>] </i>]. <div class="appnote">
+</ul>]</i>]. <div class="appnote">
 <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines additional management functions for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> beyond what is defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> as FMT_SMF.1. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may have all management functionality implemented in the same logical interface; it is not necessary for &ldquo;network device management&rdquo; and &ldquo;<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway management&rdquo; to be implemented in separate interfaces. </span>
 </div>
 </div>
@@ -886,10 +886,10 @@
 <td><a href="#FTP_ITC.1/VPN">FTP_ITC.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use an IPsec trusted channel to communicate with external entities so that these entities may be authenticated. </td>
 </tr>
 <tr>
-<td>FTA_SSL.3/<abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally allowing the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to terminate inactive <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> sessions so that an unattended session cannot be used to bypass authentication mechanisms.</td>
+<td><a href="#FTA_SSL.3/VPN">FTA_SSL.3/VPN</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally allowing the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to terminate inactive <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> sessions so that an unattended session cannot be used to bypass authentication mechanisms.</td>
 </tr>
 <tr>
-<td>FTA_TSE.1 (optional) </td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally defining alternative mechanisms to determine the validity of a subject to reject unauthorized or impersonated authentication attempts</td>
+<td><a href="#FTA_TSE.1">FTA_TSE.1</a> (optional) </td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally defining alternative mechanisms to determine the validity of a subject to reject unauthorized or impersonated authentication attempts</td>
 </tr>
 <tr>
 <td><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by defining requirements for the use of pre-shared keys for IPsec authentication when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports this authentication method.</td>
@@ -1048,7 +1048,7 @@
 <th colspan="2"> Mandatory SFRs</th>
 </tr>
 <tr>
-<td><a href="#FAU_GEN.1/VPNGW">FAU_GEN.1/VPNGW</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> adds new auditable events for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that relate to the functionality that is introduced by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</td>
+<td><a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> adds new auditable events for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that relate to the functionality that is introduced by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</td>
 </tr>
 <tr>
 <td><a href="#FCS_CKM.1/IKE">FCS_CKM.1/IKE</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> specifies a method of key generation that is not defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. This is used for functionality defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> (<abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>) that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> chooses to represent in greater detail. </td>
@@ -1072,13 +1072,13 @@
 <th colspan="2"> Optional SFRs</th>
 </tr>
 <tr>
-<td><a href="#FTA_SSL.3/vpn">FTA_SSL.3/vpn</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> refers to a specific condition under which a trusted channel is terminated by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> supports termination of trusted channels and does not mandate this be done in any particular method.</td>
+<td><a href="#FTA_SSL.3/VPN">FTA_SSL.3/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> refers to a specific condition under which a trusted channel is terminated by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> supports termination of trusted channels and does not mandate this be done in any particular method.</td>
 </tr>
 <tr>
-<td><a href="#FTA_SSL.3/vpn">FTA_SSL.3/vpn</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> refers to a specific condition under which a trusted channel is terminated by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> supports termination of trusted channels and does not mandate this be done in any particular method.</td>
+<td><a href="#FTA_TSE.1">FTA_TSE.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> refers to a specific condition under which a trusted channel is terminated by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> supports termination of trusted channels and does not mandate this be done in any particular method.</td>
 </tr>
 <tr>
-<td><a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> refers to network addressing, which is outside the scope of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and therefore not prohibited by it.</td>
+<td><a href="#FTA_VPN_EXT.1">FTA_VPN_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> refers to network addressing, which is outside the scope of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and therefore not prohibited by it.</td>
 </tr>
 <tr>
 <th colspan="2"> Selection-based SFRs</th>
@@ -1101,11 +1101,11 @@
 </table>
 <h2 id="mod-sars" class="indexable" data-level="2">6.2 TOE Security Assurance Requirements</h2> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Security Assurance requirements. The SARs from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> must be satisfied. <h1 id="opt-sfrs" class="indexable" data-level="A">Appendix A - Optional SFRs</h1>
 <h2 id="opt-sfrs" class="indexable" data-level="2">A.1 Strictly Optional Requirements </h2>
-<h3 id="opt-headend" class="indexable" data-level="3">A.1.1 Optional Requirements for VPN Headend Functionality</h3> This section contains requirements that may be optionally selected by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author for a &ldquo;headend&rdquo; <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway device. The requirements in the main body of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are those determined necessary for a multi-site <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway appliance. Another application of a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> appliance is in an architecture that is intended to serve mobile users, by providing a secure means in which a remote client may access a trusted network. These devices provide the capability to manage remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients (e.g., assigning IP addresses, managing client sessions) that are not necessarily found in <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways that are limited to providing a secure communication path between trusted networks. Rather than mandate all <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways provide this mobility aspect, the requirements below are specified as an option. What this means is that multi-site <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways do not have to provide these capabilities, but those devices wishing to serve the mobility community should implement the optional requirements from this Appendix in addition to all mandatory and selection-based requirements that apply to them. <div class="comp" id="FTA_SSL.3/vpn">
-<h4>FTA_SSL.3/vpn TSF-Initiated Termination (VPN Headend)</h4>
+<h3 id="opt-headend" class="indexable" data-level="3">A.1.1 Optional Requirements for VPN Headend Functionality</h3> This section contains requirements that may be optionally selected by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author for a &ldquo;headend&rdquo; <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway device. The requirements in the main body of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are those determined necessary for a multi-site <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway appliance. Another application of a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> appliance is in an architecture that is intended to serve mobile users, by providing a secure means in which a remote client may access a trusted network. These devices provide the capability to manage remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients (e.g., assigning IP addresses, managing client sessions) that are not necessarily found in <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways that are limited to providing a secure communication path between trusted networks. Rather than mandate all <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways provide this mobility aspect, the requirements below are specified as an option. What this means is that multi-site <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways do not have to provide these capabilities, but those devices wishing to serve the mobility community should implement the optional requirements from this Appendix in addition to all mandatory and selection-based requirements that apply to them. <div class="comp" id="FTA_SSL.3/VPN">
+<h4>FTA_SSL.3/VPN TSF-Initiated Termination (VPN Headend)</h4>
 <div class="element">
-<div class="reqid" id="FTA_SSL.3.1/vpn">
-<a href="#FTA_SSL.3.1/vpn" class="abbr">FTA_SSL.3.1/vpn</a>
+<div class="reqid" id="FTA_SSL.3.1/VPN">
+<a href="#FTA_SSL.3.1/VPN" class="abbr">FTA_SSL.3.1/VPN</a>
 </div>
 <div class="reqdesc"> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall terminate <b>a remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</b> session after [<i>an Administrator-configurable time interval of session inactivity</i>]. <div class="appnote">
 <span class="note-header">Application Note: </span><span class="note"> This requirement exists in the NDcPP; however, it is intended to address a remote administrative interactive session. Here, the requirement applies to a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client that has established a <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr>. After some configurable time period without any activity, the connection between the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> headend and client is terminated. </span>
@@ -1113,11 +1113,11 @@
 </div>
 </div>
 </div>
-<div class="comp" id="FTA_SSL.3/vpn">
-<h4>FTA_SSL.3/vpn TSF-Initiated Termination (VPN Headend)</h4>
+<div class="comp" id="FTA_TSE.1">
+<h4>FTA_TSE.1 TOE Session Establishment</h4>
 <div class="element">
-<div class="reqid" id="FTA_SSL.3.1/vpn">
-<a href="#FTA_SSL.3.1/vpn" class="abbr">FTA_SSL.3.1/vpn</a>
+<div class="reqid" id="FTA_TSE.1.1">
+<a href="#FTA_TSE.1.1" class="abbr">FTA_TSE.1.1</a>
 </div>
 <div class="reqdesc"> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall terminate <b>a remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</b> session after [<i>an Administrator-configurable time interval of session inactivity</i>]. <div class="appnote">
 <span class="note-header">Application Note: </span><span class="note"> This requirement exists in the NDcPP; however, it is intended to address a remote administrative interactive session. Here, the requirement applies to a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client that has established a <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr>. After some configurable time period without any activity, the connection between the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> headend and client is terminated. </span>
@@ -1125,11 +1125,11 @@
 </div>
 </div>
 </div>
-<div class="comp" id="FPT_TST_EXT.3">
-<h4>FPT_TST_EXT.3 Self-Test with Defined Methods</h4>
+<div class="comp" id="FTA_VPN_EXT.1">
+<h4>FTA_VPN_EXT.1 VPN Client Management</h4>
 <div class="element">
-<div class="reqid" id="FPT_TST_EXT.3.1">
-<a href="#FPT_TST_EXT.3.1" class="abbr">FPT_TST_EXT.3.1</a>
+<div class="reqid" id="FTA_VPN_EXT.1.1">
+<a href="#FTA_VPN_EXT.1.1" class="abbr">FTA_VPN_EXT.1.1</a>
 </div>
 <div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall assign a private IP address to a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client upon successful establishment of a security session.<div class="appnote">
 <span class="note-header">Application Note: </span><span class="note">For this requirement, the private IP address is one that is internal to the trusted network for which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is the headend.</span>
@@ -1239,20 +1239,15 @@
 <h4>Family Behavior</h4>
 <div>This family is defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> augments the extended family by adding one additional component, <a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a>. This new component and its impact on the extended family&rsquo;s component leveling are shown below; reference the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> for all other definitions for this family. </div>
 <h4>Component Leveling</h4>
-<svg style="max-height: 50px;">
-<text x="4" fill="black" font-size="15" y="44">FPT_TST_EXT</text>
-<rect x="2" y="31" width="150" height="16" fill="none" stroke="black"></rect>
+<svg style="max-height: 30px;">
+<text x="4" fill="black" font-size="15" y="24">FPT_TST_EXT</text>
+<rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect>
 <text x="234" fill="black" font-size="15" y="24">3</text>
 <rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect>
-<line x1="152" y1="37" x2="231" y2="17" stroke="black"></line>
-<text x="234" fill="black" font-size="15" y="44">3</text>
-<rect x="232" y="31" width="12" height="16" fill="none" stroke="black"></rect>
-<line x1="152" y1="37" x2="231" y2="37" stroke="black"></line>
+<line x1="152" y1="17" x2="231" y2="17" stroke="black"></line>
 </svg>
 <p>
 <a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a>, Self-Test with Defined Methods, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to specify the method(s) by which self-testing is performed in addition to identifying the self-tests that are executed and the circumstances in which this execution occurs. </p>
-<p>
-<a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a>, Self-Test with Defined Methods, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to assign private (internal) IP addresses to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients that successfully establish IPsec connections with it. </p>
 <h4>Management: FPT_TST_EXT.3</h4>
 <p>No specific management functions are identified.</p>
 <h4>Audit: FPT_TST_EXT.3</h4>
@@ -1266,16 +1261,6 @@
 <p>Hierarchical to: No other components.</p>
 <p>Dependencies to: No dependencies.</p>
 <h4 id="ext-comp-FPT_TST_EXT.3.1">FPT_TST_EXT.3.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall run a suite of the following self-tests [<i>[when loaded for execution]</i>] to demonstrate the correct operation of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>: [<i>integrity verification of stored executable code</i>].<h4 id="ext-comp-FPT_TST_EXT.3.2">FPT_TST_EXT.3.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall execute the self-testing through [<i>a <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>-provided cryptographic service specified in FCS_COP.1/SigGen</i>].</div>
-<h4>Management: FPT_TST_EXT.3</h4>
-<p>No specific management functions are identified.</p>
-<h4>Audit: FPT_TST_EXT.3</h4>
-<p>There are no auditable events foreseen. </p>
-<h4>FPT_TST_EXT.3 Self-Test with Defined Methods</h4>
-<div style="margin-left: 1em;">
-<p>Hierarchical to: No other components.</p>
-<p>Dependencies to: <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec Protocol </p>
-<p></p> [FTP_ITC.1 Inter-TSF Trusted Channel, or<p></p> FTP_TRP.1 Trusted Path]<p></p>
-<h4 id="ext-comp-FPT_TST_EXT.3.1">FPT_TST_EXT.3.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall assign a private IP address to a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client upon successful establishment of a security session.</div>
 </div>
 <h3 id="ext-comp-FTA_VCM_EXT" class="indexable" data-level="3">C.2.3 FTA_VCM_EXT VPN Client Management</h3>
 <div style="margin-left: 1em;">

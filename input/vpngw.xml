@@ -698,15 +698,16 @@ expected to enforce.<h:p/>
             TOEs will provide the functions necessary for an administrator to configure the packet filtering rules,
             as well as the cryptographic aspects of the IPsec protocol that are enforced by the TOE.
             <h:p/>
-            Addressed by: FMT_MTD.1/CryptoKeys (refined from Base-PP), FMT_SMF.1 (refined from Base-PP)
+            Addressed by: FMT_MTD.1/CryptoKeys (refined from Base-PP), 
             FMT_SMF.1/VPN
           </description>
           
-          <addressed-by>FMT_SMF.1 (refined from
+          
+          <addressed-by>FMT_MTD.1/CryptoKeys (refined from
             Base-PP)</addressed-by>
-          <rationale>This SFR supports the objective by refining the BasePP requirement to mandate the inclusion of certain
-            optional management functions that are needed to
-            support VPN gateway functionality.</rationale>
+          <rationale>This SFR supports the objective by requiring the TOE
+            to implement a key management function and
+            ensure that only authorized users can use it.</rationale>
           
           <addressed-by>FMT_SMF.1/VPN</addressed-by>
           <rationale>This SFR supports the objective by specifying the
@@ -914,7 +915,7 @@ expected to enforce.<h:p/>
                 be chosen. If only an AES-GCM algorithm is selected, then a SHA-based HMAC is
                 not required since AES-GCM satisfies both confidentiality and integrity functions.
                 IPsec may utilize a truncated version of the SHA-based HMAC functions contained
-                in the selections. Where a truncated output is utilized, this is described in the TSS
+                in the selections. Where a truncated output is utilized, this is described in the TSS.
               </note>
             </f-element>
             <f-element id="nd-fcs-ipsec-ext-1e5">
@@ -1667,7 +1668,10 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
             </Tests>
           </aactivity>
         </f-element>
-        <audit-event/>
+        <!-- Added this event for coverage since we don't have this connected to the Base-PP un-itereated version -->
+        <audit-event>
+          <audit-event-descr>All administrative actions</audit-event-descr>
+        </audit-event>
       </f-component>
       </section>  <!-- FMT -->
 
@@ -2470,7 +2474,18 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 FCS_IPSEC_EXT.1.</Tests>
             </aactivity>
           </f-element>
-          <audit-event/>
+          <audit-event>
+            <audit-event-descr>Initiation of the
+              trusted channel</audit-event-descr>
+          </audit-event>
+          <audit-event>
+          <audit-event-descr>Termination of the
+            trusted channel</audit-event-descr>
+          </audit-event>
+          <audit-event>
+          <audit-event-descr>Failure of the trusted channel functions</audit-event-descr>
+          <audit-event-info>Identification of the initiator and target of failed trusted channel establishment attempt</audit-event-info>
+          </audit-event>
         </f-component>
   
       </section> 
@@ -2498,152 +2513,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	  <!-- A.1: Strictly Optional Requirements -->
     
     <opt-sfrs>
-      <section title="Optional Requirements for VPN Headend Functionality" id="opt-headend">
-        This section contains requirements that may be optionally selected by the ST author for a “headend” VPN
-        gateway device. The requirements in the main body of this PP-Module are those determined necessary
-        for a multi-site VPN gateway appliance. Another application of a VPN appliance is in an architecture that
-        is intended to serve mobile users, by providing a secure means in which a remote client may access a
-        trusted network. These devices provide the capability to manage remote VPN clients (e.g., assigning IP
-        addresses, managing client sessions) that are not necessarily found in VPN gateways that are limited to
-        providing a secure communication path between trusted networks. Rather than mandate all VPN
-        gateways provide this mobility aspect, the requirements below are specified as an option. What this
-        means is that multi-site VPN gateways do not have to provide these capabilities, but those devices wishing
-        to serve the mobility community should implement the optional requirements from this Appendix in
-        addition to all mandatory and selection-based requirements that apply to them.
-        
-        <f-component name="TSF-Initiated Termination (VPN Headend)" cc-id="fta_ssl.3" iteration="VPN" id="fta-ssl-3-vpn">
-          <consistency-rationale>This SFR refers to a specific condition under which a trusted channel is
-            terminated by the TSF. The Base-PP supports termination of trusted
-            channels and does not mandate this be done in any particular method.</consistency-rationale>
-          <f-element id="fta-ssl-3e1-vpn">
-            <title>
-              The TSF shall terminate <h:b>a remote VPN client</h:b> session after [<h:i>an Administrator-configurable time interval of session inactivity</h:i>].
-            </title>
-          <note role="application">
-            This requirement exists in the NDcPP; however, it is intended to address a remote
-            administrative interactive session. Here, the requirement applies to a VPN client
-            that has established a SA. After some configurable time period without any
-            activity, the connection between the VPN headend and client is terminated.
-          </note>
-            <aactivity>
-              <TSS>The evaluator shall examine the TSS to verify that it describes the ability of the TSF to terminate an inactive
-                VPN client session.<h:p/></TSS>
-              <Guidance>The evaluator shall examine the operational guidance to verify that it provides instructions to the
-                administrator on how to configure the time limit for termination of an active VPN client session.<h:p/>
-              </Guidance>
-              <Tests>
-                The evaluator shall perform the following tests:
-                <testlist>
-                  <test>The evaluator shall follow the steps provided in the operational guidance to set the inactivity timer
-                    for five minutes. The evaluator shall then connect a VPN client to the TOE, let it sit idle for four minutes
-                    and fifty seconds, and observe that the VPN client is still connected at this time by performing an action
-                    that would require VPN access. The evaluator shall then disconnect the client, reconnect it, wait five
-                    minutes and ten seconds, attempt the same action, and observe that it does not succeed. The evaluator
-                    shall then verify using audit log data that the VPN client session lasted for exactly five minutes.
-                  </test>
-                  <test>The evaluator shall configure the inactivity timer to ten minutes and repeat Test 1, adjusting the
-                    waiting periods and expected audit log data accordingly.
-                  </test>
-                </testlist>
-              </Tests>
-            </aactivity>
-          </f-element>
-          <audit-event/>
-        </f-component>
-        
-        <f-component name="TOE Session Establishment" cc-id="fta_tse.1" id="fta-tse-1">
-          <consistency-rationale>This SFR refers to a specific condition under which a trusted channel is
-            terminated by the TSF. The Base-PP supports termination of trusted
-            channels and does not mandate this be done in any particular method.</consistency-rationale>
-          <f-element id="fta-tse-1e1">
-            <title>
-              The TSF shall terminate <h:b>a remote VPN client</h:b> session after [<h:i>an Administrator-configurable time interval of session inactivity</h:i>].
-            </title>
-            <note role="application">
-              This requirement exists in the NDcPP; however, it is intended to address a remote
-              administrative interactive session. Here, the requirement applies to a VPN client
-              that has established a SA. After some configurable time period without any
-              activity, the connection between the VPN headend and client is terminated.
-            </note>
-            <aactivity>
-              <TSS>The evaluator shall examine the TSS to verify that it describes the methods by which the TSF can deny the
-                establishment of an otherwise valid remote VPN client session (e.g., client credential is valid, not expired,
-                not revoked, etc.), including day, time, and IP address at a minimum.<h:p/></TSS>
-              <Guidance>The evaluator shall review the operational guidance to determine that it provides instructions for how to
-                enable an access restriction that will deny VPN client session establishment for each attribute described
-                in the TSS.<h:p/>
-              </Guidance>
-              <Tests>
-                The evaluator shall perform the following tests:
-                <testlist>
-                  <test>The evaluator shall successfully connect a remote VPN client to the TOE and then disconnect it,
-                    noting the IP address from which the client connected. The evaluator shall follow the steps described in
-                    the operational guidance to prohibit that IP address from connecting, attempt to reconnect using the
-                    same VPN client, and observe that it is not successful.
-                  </test>
-                  <test>The evaluator shall successfully connect a remote VPN client to the TOE and then disconnect it.
-                    The evaluator shall follow the steps described in the operational guidance to prohibit the VPN client from
-                    connecting on a certain day (whether this is a day of the week or specific calendar date), attempt to
-                    reconnect using the same VPN client, and observe that it is not successful.
-                  </test>
-                  <test>The evaluator shall successfully connect a remote VPN client to the TOE and then disconnect it.
-                    The evaluator shall follow the steps described in the operational guidance to prohibit the VPN client during
-                    a range of times that includes the time period during which the test occurs, attempt to reconnect using
-                    the same VPN client, and observe that it is not successful.
-                  </test>
-                  <!-- Note minor wording change to standardize formatting for conditional testing -->
-                  <test>(conditional, the "other attributes" assignment has been selected and completed with one or more additional attributes) For any other attributes that are identified in FTA_TSE.1, the evaluator shall conduct a test
-                    similar to tests 1 through 3 to demonstrate the enforcement of each of these attributes. The evaluator
-                    shall demonstrate a successful remote client VPN connection, configure the TSF to deny that connection
-                    based on the attribute, and demonstrate that a subsequent connection attempt is unsuccessful.
-                  </test>
-                </testlist>
-              </Tests>
-            </aactivity>
-          </f-element>
-          <audit-event/>
-        </f-component>
-        
-        
-        <ext-comp-def fam-id="FTA_VCM_EXT" title="VPN Client Management">
-          <fam-behavior>This family defines requirements for how the TSF interacts with VPN clients in its operational
-            environment.
-          </fam-behavior>
-        </ext-comp-def>
-        
-        <f-component name="VPN Client Management" cc-id="fta_vcm_ext.1" id="fta-vcm-ext-1">
-          <consistency-rationale>This SFR refers to network addressing, which is outside the scope of the
-            Base-PP and therefore not prohibited by it.</consistency-rationale>
-          <comp-lev> requires the TSF to assign private (internal) IP addresses
-            to VPN clients that successfully establish IPsec connections with it.
-          </comp-lev>
-          <management>No specific management functions are identified.</management>
-          <audit>There are no auditable events foreseen.
-          </audit>
-          <dependencies>FCS_IPSEC_EXT.1 IPsec Protocol <h:p/>
-          [FTP_ITC.1 Inter-TSF Trusted Channel, or<h:p/>
-          FTP_TRP.1 Trusted Path]</dependencies>
-          <f-element id="fta-vcm-ext-1e1">
-            <title>The TSF shall assign a private IP address to a VPN client upon successful establishment of a security session.</title>
-            <note role="application">For this requirement, the private IP address is one that is internal to the trusted
-              network for which the TOE is the headend.</note>
-            <aactivity>
-              <TSS>The evaluator shall check the TSS to verify that it asserts the ability of the TSF to assign a private IP address
-                to a connected VPN client.
-                <h:p/></TSS>
-              <Guidance>There are no guidance EAs for this component.<h:p/></Guidance>
-              <Tests>The evaluator shall connect a remote VPN client to the TOE and record its IP address as well as the internal
-                IP address of the TOE. The evaluator shall verify that the two IP addresses belong to the same network.
-                The evaluator shall disconnect the remote VPN client and verify that the IP address of its underlying
-                platform is no longer part of the private network identified in the previous step.</Tests>
-            </aactivity>
-          </f-element>
-          <audit-event/>
-        </f-component>
-        
-        
-        
-      </section>
+ 
     </opt-sfrs>
 
 	<!-- Appendix B: Selection-Based Requirements -->
@@ -2809,7 +2679,154 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	    </section> -->
     
 	
-	<impl-dep-sfrs/>
+	<impl-dep-sfrs>
+	  <section title="Optional Requirements for VPN Headend Functionality" id="opt-headend">
+	    This section contains requirements that may be optionally selected by the ST author for a “headend” VPN
+	    gateway device. The requirements in the main body of this PP-Module are those determined necessary
+	    for a multi-site VPN gateway appliance. Another application of a VPN appliance is in an architecture that
+	    is intended to serve mobile users, by providing a secure means in which a remote client may access a
+	    trusted network. These devices provide the capability to manage remote VPN clients (e.g., assigning IP
+	    addresses, managing client sessions) that are not necessarily found in VPN gateways that are limited to
+	    providing a secure communication path between trusted networks. Rather than mandate all VPN
+	    gateways provide this mobility aspect, the requirements below are specified as an option. What this
+	    means is that multi-site VPN gateways do not have to provide these capabilities, but those devices wishing
+	    to serve the mobility community should implement the optional requirements from this Appendix in
+	    addition to all mandatory and selection-based requirements that apply to them.
+	    
+	    <f-component name="TSF-Initiated Termination (VPN Headend)" cc-id="fta_ssl.3" iteration="VPN" id="fta-ssl-3-vpn">
+	      <consistency-rationale>This SFR refers to a specific condition under which a trusted channel is
+	        terminated by the TSF. The Base-PP supports termination of trusted
+	        channels and does not mandate this be done in any particular method.</consistency-rationale>
+	      <f-element id="fta-ssl-3e1-vpn">
+	        <title>
+	          The TSF shall terminate <h:b>a remote VPN client</h:b> session after [<h:i>an Administrator-configurable time interval of session inactivity</h:i>].
+	        </title>
+	        <note role="application">
+	          This requirement exists in the NDcPP; however, it is intended to address a remote
+	          administrative interactive session. Here, the requirement applies to a VPN client
+	          that has established a SA. After some configurable time period without any
+	          activity, the connection between the VPN headend and client is terminated.
+	        </note>
+	        <aactivity>
+	          <TSS>The evaluator shall examine the TSS to verify that it describes the ability of the TSF to terminate an inactive
+	            VPN client session.<h:p/></TSS>
+	          <Guidance>The evaluator shall examine the operational guidance to verify that it provides instructions to the
+	            administrator on how to configure the time limit for termination of an active VPN client session.<h:p/>
+	          </Guidance>
+	          <Tests>
+	            The evaluator shall perform the following tests:
+	            <testlist>
+	              <test>The evaluator shall follow the steps provided in the operational guidance to set the inactivity timer
+	                for five minutes. The evaluator shall then connect a VPN client to the TOE, let it sit idle for four minutes
+	                and fifty seconds, and observe that the VPN client is still connected at this time by performing an action
+	                that would require VPN access. The evaluator shall then disconnect the client, reconnect it, wait five
+	                minutes and ten seconds, attempt the same action, and observe that it does not succeed. The evaluator
+	                shall then verify using audit log data that the VPN client session lasted for exactly five minutes.
+	              </test>
+	              <test>The evaluator shall configure the inactivity timer to ten minutes and repeat Test 1, adjusting the
+	                waiting periods and expected audit log data accordingly.
+	              </test>
+	            </testlist>
+	          </Tests>
+	        </aactivity>
+	      </f-element>
+	      <audit-event/>
+	    </f-component>
+	    
+	    <f-component name="TOE Session Establishment" cc-id="fta_tse.1" id="fta-tse-1">
+	      <consistency-rationale>This SFR refers to a specific condition under which a trusted channel is
+	        terminated by the TSF. The Base-PP supports termination of trusted
+	        channels and does not mandate this be done in any particular method.</consistency-rationale>
+	      <f-element id="fta-tse-1e1">
+	        <title>
+	          The TSF shall be able to deny establishment of a <h:b>remote VPN client</h:b> session based
+	          on [<h:i>location, time, day, <selectables>
+	            <selectable>no other attributes</selectable>
+	            <selectable><assignable>other attributes</assignable></selectable></selectables></h:i>].
+	        </title>
+	        <note role="application">
+	          For this PP-Module, “location” is defined as the client’s IP address.
+	        </note>
+	        <aactivity>
+	          <TSS>The evaluator shall examine the TSS to verify that it describes the methods by which the TSF can deny the
+	            establishment of an otherwise valid remote VPN client session (e.g., client credential is valid, not expired,
+	            not revoked, etc.), including day, time, and IP address at a minimum.<h:p/></TSS>
+	          <Guidance>The evaluator shall review the operational guidance to determine that it provides instructions for how to
+	            enable an access restriction that will deny VPN client session establishment for each attribute described
+	            in the TSS.<h:p/>
+	          </Guidance>
+	          <Tests>
+	            The evaluator shall perform the following tests:
+	            <testlist>
+	              <test>The evaluator shall successfully connect a remote VPN client to the TOE and then disconnect it,
+	                noting the IP address from which the client connected. The evaluator shall follow the steps described in
+	                the operational guidance to prohibit that IP address from connecting, attempt to reconnect using the
+	                same VPN client, and observe that it is not successful.
+	              </test>
+	              <test>The evaluator shall successfully connect a remote VPN client to the TOE and then disconnect it.
+	                The evaluator shall follow the steps described in the operational guidance to prohibit the VPN client from
+	                connecting on a certain day (whether this is a day of the week or specific calendar date), attempt to
+	                reconnect using the same VPN client, and observe that it is not successful.
+	              </test>
+	              <test>The evaluator shall successfully connect a remote VPN client to the TOE and then disconnect it.
+	                The evaluator shall follow the steps described in the operational guidance to prohibit the VPN client during
+	                a range of times that includes the time period during which the test occurs, attempt to reconnect using
+	                the same VPN client, and observe that it is not successful.
+	              </test>
+	              <!-- Note minor wording change to standardize formatting for conditional testing -->
+	              <test>(conditional, the "other attributes" assignment has been selected and completed with one or more additional attributes) For any other attributes that are identified in FTA_TSE.1, the evaluator shall conduct a test
+	                similar to tests 1 through 3 to demonstrate the enforcement of each of these attributes. The evaluator
+	                shall demonstrate a successful remote client VPN connection, configure the TSF to deny that connection
+	                based on the attribute, and demonstrate that a subsequent connection attempt is unsuccessful.
+	              </test>
+	            </testlist>
+	          </Tests>
+	        </aactivity>
+	      </f-element>
+	      <audit-event/>
+	    </f-component>
+	    
+	    
+	    <ext-comp-def fam-id="FTA_VCM_EXT" title="VPN Client Management">
+	      <fam-behavior>This family defines requirements for how the TSF interacts with VPN clients in its operational
+	        environment.
+	      </fam-behavior>
+	    </ext-comp-def>
+	    
+	    <f-component name="VPN Client Management" cc-id="fta_vcm_ext.1" id="fta-vcm-ext-1">
+	      <consistency-rationale>This SFR refers to network addressing, which is outside the scope of the
+	        Base-PP and therefore not prohibited by it.</consistency-rationale>
+	      <comp-lev> requires the TSF to assign private (internal) IP addresses
+	        to VPN clients that successfully establish IPsec connections with it.
+	      </comp-lev>
+	      <management>No specific management functions are identified.</management>
+	      <audit>There are no auditable events foreseen.
+	      </audit>
+	      <dependencies>FCS_IPSEC_EXT.1 IPsec Protocol <h:p/>
+	        [FTP_ITC.1 Inter-TSF Trusted Channel, or<h:p/>
+	        FTP_TRP.1 Trusted Path]</dependencies>
+	      <f-element id="fta-vcm-ext-1e1">
+	        <title>The TSF shall assign a private IP address to a VPN client upon successful establishment of a security session.</title>
+	        <note role="application">For this requirement, the private IP address is one that is internal to the trusted
+	          network for which the TOE is the headend.</note>
+	        <aactivity>
+	          <TSS>The evaluator shall check the TSS to verify that it asserts the ability of the TSF to assign a private IP address
+	            to a connected VPN client.
+	            <h:p/></TSS>
+	          <Guidance>There are no guidance EAs for this component.<h:p/></Guidance>
+	          <Tests>The evaluator shall connect a remote VPN client to the TOE and record its IP address as well as the internal
+	            IP address of the TOE. The evaluator shall verify that the two IP addresses belong to the same network.
+	            The evaluator shall disconnect the remote VPN client and verify that the IP address of its underlying
+	            platform is no longer part of the private network identified in the previous step.</Tests>
+	        </aactivity>
+	      </f-element>
+	      <audit-event/>
+	    </f-component>
+	    
+	    
+	    
+	  </section>
+	</impl-dep-sfrs>
 	
   </sec:Security_Requirements>
   
@@ -2827,8 +2844,8 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	been evaluated.
 -->
 	
-	>
-	<h:b><ctr ctr-type="Table" pre="Table " id="imp-sat-reqs-table">: Implicitly Satisfied Requirements</ctr></h:b>
+	<!-- 
+	<h:b><ctr ctr-type="Table" pre="Table " id="imp-sat-reqs-table">: Implicitly Satisfied Requirements</ctr></h:b> -->
     All SFR dependencies in this PP-Module are addressed by appropriate SFRs, either from elsewhere in the PP-Module or inherited from the Base-PP. 
   <!-- 
   <h:table>	

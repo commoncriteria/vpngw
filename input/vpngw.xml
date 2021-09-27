@@ -1690,7 +1690,7 @@ TSF based on attributes associated with the traffic. As this class is defined so
 component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 
         -->
-        <ext-comp-def fam-id="FPF_RUL_EXT" title="Key Storage">
+        <ext-comp-def fam-id="FPF_RUL_EXT" title="Packet Filtering Rules">
           <fam-behavior>This family defines the requirements for the rules that are used to perform packet filtering of network
             traffic.
           </fam-behavior>
@@ -2549,7 +2549,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
         operational environment.
         
         
-        <ext-comp-def fam-id="FIA_PSK_EXT" title="Certificate Revocation List">
+        <ext-comp-def fam-id="FIA_PSK_EXT" title="Pre-Shared Key Composition">
           <fam-behavior>This family defines requirements for what the TSF defines or generates as an acceptably strong pre-shared key for authentication.
           </fam-behavior>
         </ext-comp-def>
@@ -2680,7 +2680,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
     
 	
 	<impl-dep-sfrs>
-	  <section title="Optional Requirements for VPN Headend Functionality" id="opt-headend">
+	  <section title="TOE Access (FTA)" id="opt-headend">
 	    This section contains requirements that may be optionally selected by the ST author for a “headend” VPN
 	    gateway device. The requirements in the main body of this PP-Module are those determined necessary
 	    for a multi-site VPN gateway appliance. Another application of a VPN appliance is in an architecture that

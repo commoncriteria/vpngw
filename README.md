@@ -58,7 +58,7 @@ Protection Profile or Extended Package for QQQQ
 ![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
 This repository hosts the draft version of the Protection Profile for QQQQ based on the 
-[Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/QQQQ/QQQQ-esr.html) for this technology class of 
+[Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/vpngw/cpngw-esr.html) for this technology class of 
 products. This repository is used to facilitate collaboration and development on the draft document. 
 See the [release](#Release-Version) section if you are looking for the officially released version for evaluations. 
 A list of products that have passed evaluation against this Protection Profile can be found [here](QQQQ).

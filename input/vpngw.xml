@@ -1677,6 +1677,13 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
 
       <!-- 5.2.3 Packet Filtering (FPF) -->
       <section title="Packet Filtering (FPF)" id="m-fpf">
+        <class-description>
+          This class contains families that describe packet filtering behavior. Packet filtering refers to the notion that
+          network traffic that is transmitted “through” the TOE (i.e. the source and destination of the traffic is not
+          the TOE but the TOE is on the routing path between these two entities) can be treated differently by the
+          TSF based on attributes associated with the traffic. As this class is defined solely to contain an extended
+          component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
+        </class-description>
         
         <!-- Note: I'm not aware of any schema mechanism to define an extended class in the ECD (only extended families within existing classes). The ability to define an extended class is needed for
         ACE_ECD requirements. Specifically, the following text in Module v1.1 is needed for Class FPF to precede the sub-header for FPF_RUL_EXT because CC Part 2 does not define Class FPF.

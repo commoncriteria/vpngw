@@ -1,26 +1,26 @@
 
-PP-Module for Virtual Private Network (VPN) Clients
+PP-Module for Virtual Private Network (VPN) Gateways
 ===============
-![Build](https://github.com/commoncriteria/vpnclient/workflows/Build/badge.svg)
-![Validate](https://github.com/commoncriteria/vpnclient/workflows/Validate/badge.svg)
-[![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/vpnclient.svg?maxAge=2592000)](https://github.com/commoncriteria/vpnclient/issues) 
+![Build](https://github.com/commoncriteria/vpngw/workflows/Build/badge.svg)
+![Validate](https://github.com/commoncriteria/vpngw/workflows/Validate/badge.svg)
+[![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/vpngw.svg?maxAge=2592000)](https://github.com/commoncriteria/vpngw/issues) 
 ![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
-This repository hosts the draft version of the PP-Module for Virtual Private Network (VPN) Clients based on the 
-[Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/vpnclient/vpnclient-esr.html) for this technology class of 
+This repository hosts the draft version of the PP-Module for Virtual Private Network (VPN) Gateways based on the 
+[Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/vpngw/vpngw-esr.html) for this technology class of 
 products. This repository is used to facilitate collaboration and development on the draft document. 
 See the [release](#Release-Version) section if you are looking for the officially released version for evaluations. 
 A list of products that have passed evaluation against this Protection Profile can be found [here](https://www.niap-ccevs.org/Product/PCL.cfm?ID624=34).
 
 ## Draft Version
 
-* [PP-Module for Virtual Private Network (VPN) Gateways](https://commoncriteria.github.io/pp/vpnclient/vpngw-release.html) (html)
-* [PP-Module for Virtual Private Network (VPN) Gateways](https://commoncriteria.github.io/pp/vpnclient/vpngw-release.pdf) (pdf)
-* [Supporting Documents for Virtual Private Network (VPN) Gateways](https://commoncriteria.github.io/pp/vpngw/vpnclient-sd.html) (html)
-* [Supporting Documents for Virtual Private Network (VPN) Gateways](https://commoncriteria.github.io/pp/vpngw/vpnclient-sd.pdf) (pdf)
+* [PP-Module for Virtual Private Network (VPN) Gateways](https://commoncriteria.github.io/pp/vpngw/vpngw-release.html) (html)
+* [PP-Module for Virtual Private Network (VPN) Gateways](https://commoncriteria.github.io/pp/vpngw/vpngw-release.pdf) (pdf)
+* [Supporting Documents for Virtual Private Network (VPN) Gateways](https://commoncriteria.github.io/pp/vpngw/vpngw-sd.html) (html)
+* [Supporting Documents for Virtual Private Network (VPN) Gateways](https://commoncriteria.github.io/pp/vpngw/vpngw-sd.pdf) (pdf)
 
 ## Combined Module/SD Version
-* [PP-Module for Virtual Private Network (VPN) Gateways](https://commoncriteria.github.io/pp/vpnclient/vpngw.html) (html)
+* [PP-Module for Virtual Private Network (VPN) Gateways](https://commoncriteria.github.io/pp/vpngw/vpngw.html) (html)
 
 ## Release Version
 * [PP-Module for Virtual Private Network (VPN) Gateways](VPN Module)

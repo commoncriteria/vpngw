@@ -3,8 +3,10 @@ PP-Module for Virtual Private Network (VPN) Gateways
 ===============
 ![Build](https://github.com/commoncriteria/vpngw/workflows/Build/badge.svg)
 ![Validate](https://github.com/commoncriteria/vpngw/workflows/Validate/badge.svg)
+[![SanityChecks](https://raw.githubusercontent.com/commoncriteria/vpngw/gh-pages/master/warnings-badge.svg)](https://github.com/commoncriteria/vpngw/blob/gh-pages/SanityChecksOutput.md)
+[![SpellCheck](https://raw.githubusercontent.com/commoncriteria/vpngw/gh-pages/master/spell-badge.svg)](https://github.com/commoncriteria/vpngw/blob/gh-pages/SpellCheckReport.txt)
+[![QuickBuild](https://github.com/commoncriteria/vpngw/actions/workflows/quick_build.yml/badge.svg)](https://commoncriteria.github.io/vpngw/vpngw-release.html)
 [![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/vpngw.svg?maxAge=2592000)](https://github.com/commoncriteria/vpngw/issues) 
-![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
 This repository hosts the draft version of the PP-Module for Virtual Private Network (VPN) Gateways based on the 
 [Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/vpngw/vpngw-esr.html) for this technology class of 

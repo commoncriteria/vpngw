@@ -1062,8 +1062,8 @@ expected to enforce.<h:p/>
                 that use X.509v3 certificates that conform to RFC 4945 and 
                 <selectables>
                   <selectable id="sel-ipsec-e13-psk">Pre-shared keys</selectable>
-                  <selectable id="sel-ipsec-e13-psk">Pre-shared Keys transmitted via EAP-TLS</selectable>
-                  <selectable id="sel-ipsec-e13-psk">Pre-shared Keys transmitted via EAP-TTLS with mutual authentication</selectable>
+                  <selectable id="sel-ipsec-e13-pskeap">Pre-shared Keys transmitted via EAP-TLS</selectable>
+                  <selectable id="sel-ipsec-e13-pskeapma">Pre-shared Keys transmitted via EAP-TTLS with mutual authentication</selectable>
                   <selectable>no other method</selectable>
                 </selectables>.
               </title>
@@ -2860,7 +2860,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <f-element id="fia-psk-ext-4e2">
             <title>
               The TSF shall <selectables>
-                <selectable id="sel-psk4-ext-e2-verify">verify the HOTP</selectable>
+                <selectable id="sel-verify-hotp">verify the HOTP</selectable>
                 <selectable>verify the HOTP via an external authentication server</selectable>
               </selectables> before establishing an incoming connection.
             </title>
@@ -2943,8 +2943,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
         </f-component>
         
         <f-component cc-id="fia_hotp_ext.1" id="fia-hotp-ext-1" name="HMAC-Based One-Time Password Pre-Shared Keys">
-          <depends on-sel="sel-psk4-ext-e2-verify"/>
-          <depends on-sel="blockhotp"/>
+          <depends on-sel="sel-verify-hotp"/>
           <consistency-rationale/>
           <comp-lev>defines the implementation of hotp</comp-lev>
           <management>No specific management functions are identified.</management>
@@ -3039,7 +3038,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </f-element>
           <f-element id="fia-hotp-ext-1e8">
             <title>
-              The TSF must shall increment the counter after each successful authentation.
+              The TSF shall increment the counter after each successful authentation.
             </title>
           
             
@@ -3238,7 +3237,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
         </ext-comp-def>
         
         <!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
-        <f-component cc-id="fcs_eap_ext.1" id="fia-psk-ext-1" name="EAP-TLS" status="sel-based">
+        <f-component cc-id="fcs_eap_ext.1" id="fia-eap-ext-1" name="EAP-TLS" status="sel-based">
           <depends on-sel="sel-ipsec-e11-psk"/>
           <consistency-rationale/>
           <comp-lev>defines the use of EAP-TLS.</comp-lev>

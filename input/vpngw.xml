@@ -1054,14 +1054,16 @@ expected to enforce.<h:p/>
               </note>
             </f-element>
             <f-element id="nd-fcs-ipsec-ext-1e13">
-              <title>
-                The TSF shall ensure that all IKE protocols perform peer
-                authentication using <selectables>
+              <title>The TSF shall ensure that all IKE protocols perform peer authentication using  
+                <selectables>
                   <selectable>RSA</selectable>
                   <selectable>ECDSA</selectable>
-                </selectables> that use X.509v3 certificates that conform to
-                RFC 4945 and <selectables>
-                  <selectable id="PSKs">Pre-shared Keys</selectable>
+                </selectables> 
+                that use X.509v3 certificates that conform to RFC 4945 and 
+                <selectables>
+                  <selectable id="sel-ipsec-e13-psk">Pre-shared keys</selectable>
+                  <selectable id="sel-ipsec-e13-psk">Pre-shared Keys transmitted via EAP-TLS</selectable>
+                  <selectable id="sel-ipsec-e13-psk">Pre-shared Keys transmitted via EAP-TTLS with mutual authentication</selectable>
                   <selectable>no other method</selectable>
                 </selectables>.
               </title>
@@ -1090,12 +1092,15 @@ expected to enforce.<h:p/>
                 minimum. Other selections may be made by the ST author but they are not
                 required for conformance to this PP-Module.
               </note>
-            <aactivity>
-                <no-tests>There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module modifies this SFR to require the ST author to make certain selections, but these selections
-                  are all part of the original definition of the SFR so no new behavior is defined by the PP-Module.
-                </no-tests>
-              </aactivity>
+            <aactivity>In addition to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document the following activities apply:
+                  <h:b/>
+                  <TSS>All existing activites regarding "Pre-shared keys" apply to all selections including pre-shared keys.
+                  <h:b/>If any selection with "Pre-shared keys" is included, the evaluator shall check to ensure that the TSS 
+                    describes how the selection works in conjunction with the authentication of IPsec connections.</TSS>
+              <Guidance>If any selection with “Pre-shared Keys” is selected, the evaluator shall check that the operational 
+                guidance describes any configuration necessary to enable any selected authentication mechanisms.</Guidance>
+              <Tests>There are no additional testing activities.</Tests>
+            </aactivity>
             </f-element>
             <audit-event>
               <audit-event-descr>Session establishment with peer</audit-event-descr>
@@ -1318,7 +1323,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 partially) conform to FIA_X509_EXT.1/REV are not allowed as a means to
                 authenticate firmware/software updates.
                 <h:p/>
-                NDcPP states the ST author may use X.509 certificates that does not meet
+                NDcPP states the ST author may use X.509 certificates that do not meet
                 FIA_X509_EXT.1/Rev. This applies to trust anchors as they can be encoded as
                 certificates. Even when they are encoded as certificates, the trust anchor must be
                 protected by another mechanism that ensures its integrity and binds it to the
@@ -2021,7 +2026,6 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                     specific source address and wildcard destination address, wildcard source address and specific destination address, 
                     and wildcard source address and wildcard destination address. The evaluator shall generate packets matching each defined IPv4 Transport Layer Protocol 
                     and within the configured source and destination addresses in order to ensure that the supported protocols are denied 
-                    (i.e., by capturing no applicable packets passing through the TOE) and logged. Any protocols not supported by the TOE must also be denied but are not required to be logged.
                   </test>
                   <test>The evaluator shall configure the TOE to permit and log each supported IPv4 Transport Layer Protocol 
                     (see RFC Values for IPv4 and IPv6 table for full possible list) in conjunction with a specific source address and specific destination address, 
@@ -2520,7 +2524,47 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	  <!-- A.1: Strictly Optional Requirements -->
     
     <opt-sfrs>
- 
+      <section title="Packet Filtering (FPF)" id="s-fpf">
+        The TOE may multifactor authentication by blocking all other traffic after connection is established until secondary authentication is validated.
+        
+        <ext-comp-def title="Multifactor Authentication Filtering" fam-id="FPF_MFA_EXT">
+          <fam-behavior>Components in this family describes the requirements for multifactor authentication filtering when utilizing the VPN client.</fam-behavior>
+        </ext-comp-def>
+        <f-component cc-id="fpf_mfa_ext.1" id="fpf-mfa-ext-1" name="Multifactor Authentication Filtering">
+          
+          <consistency-rationale/>
+          <comp-lev>defines the use and composition of multifactor authentication filtering</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>No specific audit functions are identified.
+          </audit>
+          <f-element id="fpf-mfa-ext-1e1">
+            <title>
+              The TSF shall not forward packets to the internal network until the IKE/IPsec tunnel has been established 
+              except those necessary to authenticate the client is authenticated according to FIA_PSK_EXT.1.</title>
+            
+            <note role="application">
+              If FPF_MFA_EXT.1 is included FIA_PSK_EXT.1 shall be included.
+              
+              
+            </note>
+            <aactivity>
+              <TSS>The evaluator shall examine the TSS to verify that it describes how authentication packets are identified and how all other traffic is blocked until secondary authentication is successful.  </TSS>
+              
+              <Guidance>The evaluator shall examine the operational guidance to verify that it provides instructions to the administrator on how to configure the secondary HOTP or TOTP factors and any additional details necessary for filtering all other traffic. 
+              </Guidance>
+              
+              <Tests>
+                <testlist>
+                  <test>For each included selection the evaluator shall configure the TOE per the operational guidance.  The evaluator shall attempt to connect and verify other traffic is rejected per the filtering rules.  The evaluator shall then provide the selected factor and confirm it is accepted and traffic is no longer blocked.</test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+          
+          
+          <audit-event/>
+        </f-component>
+      </section>
     </opt-sfrs>
 
 	<!-- Appendix B: Selection-Based Requirements -->
@@ -2539,21 +2583,8 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
       
       <section title="Identification and Authentication (FIA)" id="sel-fia">
         The TOE may support pre-shared keys for use in the IPsec protocol, and may use pre-shared keys in other
-        protocols as well. There are two types of pre-shared keys that must be supported by the TOE, as specified
-        in the requirements below. The first type is referred to as “text-based pre-shared keys”, which refer to
-        pre-shared keys that are entered by users as a string of characters from a standard character set, similar
-        to a password. Such pre-shared keys must be conditioned so that the string of characters is transformed
-        into a string of bits, which is then used as the key.
-        <h:p/>
-        The second type is referred to as “bit-based pre-shared keys” (for lack of a standard term); this refers to
-        keys that are either generated by the TSF on a command from the administrator, or input in "direct form"
-        by an administrator. "Direct form" means that the input is used directly as the key, with no conditioning
-        as was the case for text-based pre-shared keys. An example would be a string of hex digits that represent
-        the bits that comprise the key.
-        <h:p/>
-        The requirements below mandate that the TOE must support both text-based and bit-based pre-shared
-        keys, although generation of the bit-based pre-shared keys may be done either by the TOE or in the
-        operational environment.
+        protocols as well. PSK in the context of this document refers to generated values, memorized values subject 
+        to conditioning, one time passwords, and combinations of the above as described in FIA_PSK_EXT.1.2.
         
         
         <ext-comp-def fam-id="FIA_PSK_EXT" title="Pre-Shared Key Composition">
@@ -2561,118 +2592,720 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </fam-behavior>
         </ext-comp-def>
         
-        <f-component name="Pre-Shared Key Composition" cc-id="fia_psk_ext.1" id="fia-psk-ext-1">
-          <depends on-sel="PSKs"/>
-          <!-- Note: this was missing from the v1.1 consistency rationale -->
-          <consistency-rationale>The Base-PP already supports pre-shared keys for IPsec; this PP-Module enhances the security of that function by 
-          defining metrics for the creation of sufficiently strong pre-shared keys.</consistency-rationale>
-          <comp-lev> requires the TSF to use only pre-shared keys that meet
-            certain strength requirements.</comp-lev>
-          <management>The following actions could be considered for the management functions in FMT: <h:ul>
-            <h:li>Generation of bit-based pre-shared key.</h:li>
-          </h:ul>
-          </management>
-          <audit>There are no auditable events foreseen.
+        
+        <!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
+        <f-component cc-id="fia_psk_ext.1" id="fia-psk-ext-1" name="Pre-Shared Key Composition" status="sel-based">
+          <depends on-sel="sel-ipsec-e13-psk"/>
+          <consistency-rationale/>
+          <comp-lev>defines the use and composition of pre-shared keys used for IPsec</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>No specific audit functions are identified.
           </audit>
-          <dependencies>
-            FCS_COP.1 Cryptographic Operation<h:p/>
-            FCS_RBG_EXT.1 Random Bit Generation
-          </dependencies>
-          <!-- Note: Refactored SFR to have ECD version be more generic (not tied to IPsec specifically) -->
+          <dependencies>FCS_IPSEC_EXT.1.13 IPsec</dependencies>
           <f-element id="fia-psk-ext-1e1">
             <title>
-              The TSF shall be able to use pre-shared keys for [<h:i>IPsec and <selectables>
-                <selectable>no other protocols</selectable>
+              The TSF shall be able to use pre-shared keys for IPsec and 
+              <selectables>
                 <selectable><assignable>other protocols that use pre-shared keys</assignable></selectable>
-              </selectables></h:i>].
-            </title>
-            <ext-comp-def-title>
-              <title>
-                The TSF shall be able to use pre-shared keys for <assignable>supported protocols that use pre-shared keys</assignable>.
-              </title>
-            </ext-comp-def-title>
-          </f-element>
-          <f-element id="fia-psk-ext-1e2">
-            <title>
-              The TSF shall be able to accept text-based pre-shared keys that: <h:ul>
-              <h:li>Are 22 characters and <selectables>
-                <selectable><assignable>other supported lengths</assignable></selectable>
-                <selectable>no other lengths</selectable>
-              </selectables></h:li>
-              <h:li>composed of any combination of upper and lower case letters, numbers, and
-              special characters (that include: “!”, “@”, “#”, “$”, “%”, “^”, “&amp;”, “*”, “(“, and
-              “)”).</h:li>
-              </h:ul>
-            </title>
-          </f-element>
-          <f-element id="fia-psk-ext-1e3">
-            <title>
-              The TSF shall condition the text-based pre-shared keys by using <selectables>
-                <selectable>SHA-1</selectable>
-                <selectable>SHA-256</selectable>
-                <selectable>SHA-512</selectable>
-                <selectable><assignable>method of conditioning text string</assignable></selectable>
+                <selectable>no other protocols</selectable>
               </selectables>.
             </title>
           </f-element>
-          <f-element id="fia-psk-ext-1e4">
+          <f-element id="fia-psk-ext-1e2">
             <title>
-              The TSF shall be able to <selectables>
-                <selectable>accept</selectable>
-                <selectable>generate (using the random bit generator specified in FCS_RBG_EXT.1)</selectable>
-              </selectables> bit-based pre-shared keys.
+              The TSF shall be able to accept the following as pre-shared keys: 
+              <selectables>
+                <selectable id="pskgen">Generated bit-based</selectable>
+                <selectable id="pskpw">Password based</selectable>
+                <selectable id="pskhotp">HMAC based one time password</selectable>
+                <selectable id="psktotp">Time based one time password</selectable>
+                <selectable id="pskgenhotp">Combination of a generated bit-based and HMAC based one time password</selectable>
+                <selectable id="pskgentotp">Combination of a generated bit-based and time based one time password</selectable>
+                <selectable id="pskpwhotp">Combination of a password based and HMAC based one time password</selectable>
+                <selectable id="pskpwtotp">Combination of a password based and time based one time password</selectable>
+              </selectables> keys.
             </title>
-            <note role="application">Pre-shared keys are an optional method of peer authentication used in IKE. This
-              SFR is applicable to the TOE if “Pre-shared Keys” is selected in FCS_IPSEC_EXT.1.13
-              in the Base-PP.
-              <h:p/>
-              The random bit generator functionality is defined by the Base-PP.</note>
+            <note role="application">
+              If any selection including Generated bit-based keys is selected then FIA_PSK_EXT.2 shall be included. 
+              
+              <h:p/>If any selection including Password based keys is selected then FIA_PSK_EXT.3 shall be included. 
+              
+              <h:p/>If any selection including HMAC based one time password keys is selected then FIA_PSK_EXT.4 shall be included. 
+              
+              <h:p/>If any selection including time based one time password is selected then FIA_PSK_EXT.5 shall be included. 
+              
+              <h:p/>This requirement is selection dependent on FCS_IPSEC_EXT.1.13.<h:p/>
+            </note>
             <aactivity>
-              <TSS>The evaluator shall examine the TSS to ensure that it identifies all protocols that allow both text-based
-                and bit-based pre-shared keys, and states that text-based pre-shared keys of 22 characters are supported.
-                For each protocol identified by the requirement, the evaluator shall confirm that the TSS states the
-                conditioning that takes place to transform the text-based pre-shared key from the key sequence entered
-                by the user (e.g. ASCII representation) to the bit string used by the protocol, and that this conditioning is
-                consistent with the last selection in FIA_PSK_EXT.1.3.
-                <h:p/></TSS>
-              <Guidance>The evaluator shall examine the operational guidance to determine that it provides guidance to
-                administrators on the composition of strong text-based pre-shared keys, and (if the selection indicates
-                keys of various lengths can be entered) that it provides information on the merits of shorter or longer preshared keys. The guidance must specify the allowable characters for pre- shared keys, and that list must
-                be a super-set of the list contained in FIA_PSK_EXT.1.2.
-                <h:p/>
-                The evaluator shall confirm the operational guidance contains instructions for either entering bit-based
-                pre-shared keys for each protocol identified in the requirement, or generating a bit-based pre-shared key
-                (or both). The evaluator shall also examine the TSS to ensure it describes the process by which the bitbased pre-shared keys are generated (if the TOE supports this functionality), and confirm that this process
-                uses the RBG specified in FCS_RBG_EXT.1 in the Base-PP.
-              <h:p/></Guidance>
-              <Tests>The evaluator shall also perform the following tests for each protocol (or instantiation of a protocol, if
-                performed by a different implementation on the TOE). Note that one or more of these tests can be
-                performed with a single test case.
-              <testlist>
-                <test>The evaluator shall compose a pre-shared key of 22 characters that contains a combination of the
-                  allowed characters in accordance with the operational guidance, and demonstrates that a successful
-                  protocol negotiation can be performed with the key.
-                </test>
-                <test>(conditional, the TOE supports pre-shared keys of multiple lengths) The evaluator shall repeat
-                  Test 1 using the minimum length; the maximum length; and an invalid length. The minimum and maximum
-                  length tests should be successful, and the invalid length must be rejected by the TOE</test>
-                <test>(conditional, the TOE does not generate bit-based pre-shared keys) the evaluator shall obtain a
-                  bit-based pre-shared key of the appropriate length and enter it according to the instructions in the
-                  operational guidance. The evaluator shall then demonstrate that a successful protocol negotiation can be
-                  performed with the key.
-                </test>
-                <test>(conditional, the TOE generates bit-based pre-shared keys) the evaluator shall generate a
-                  bit-based pre-shared key of the appropriate length and use it according to the instructions in the
-                  operational guidance. The evaluator shall then demonstrate that a successful protocol negotiation can be
-                  performed with the key.</test>
-              </testlist>
+              <TSS>The evaluator shall examine the TSS to ensure that it identifies all protocols that allow  pre-shared keys. 
+                For each protocol identified by the requirement, the evaluator shall confirm that the TSS states which pre-shared key 
+                selections are supported. </TSS>
+              
+              <Guidance>The evaluator shall examine the operational guidance to determine that it provides guidance to 
+                administrators on how to configure all selected pre-shared key options if any configuration is required.
+              </Guidance>
+              
+              <Tests>
+                The evaluator shall also perform the following tests for each protocol (or instantiation of a protocol, 
+                if performed by a different implementation on the TOE). 
+                <testlist>
+                  <test>For each mechanism selected in FIA_PSK_EXT.1.2 the evaluator shall attempt to establish a connection 
+                    and confirm that the connection requires the selected factors in the PSK to establish the connection. </test>
+                </testlist>
               </Tests>
             </aactivity>
           </f-element>
+          
+          
+          <audit-event/>
         </f-component>
         
+        <f-component cc-id="fia_psk_ext.2" id="fia-psk-ext-2" name="Generated Pre-Shared Keys">
+          <depends on-sel="pskgen"/>
+          <depends on-sel="pskgenhotp"/>
+          <depends on-sel="pskgentotp"/>
+          <consistency-rationale/>
+          <comp-lev>defines the use and composition of generated pre-shared keys used for IPsec</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the
+            PP/ST:<h:ul>
+              <h:li>Failure of the randomization process</h:li>
+            </h:ul>
+          </audit>
+          <dependencies>FCS_PSK_EXT.1</dependencies>
+          <f-element id="fia-psk-ext-2e1">
+            <title>
+              The TSF shall be able to 
+              <selectables>
+                <selectable>accept externally generated</selectable>
+              <selectable>
+              generate 
+              <selectables>
+                <selectable>128</selectable>
+                <selectable>256</selectable>
+              </selectables> bit-based pre-shared keys via FCS_RBG_EXT.1. 
+                
+              </selectable>
+              </selectables>
+            </title>
+            <note role="application">
+              Generated PSKs are expected to be shared between components via an out of band mechanism. 
+              
+              <h:p/>This requirement is selection dependent on FIA_PSK_EXT.1.<h:p/>
+            </note>
+            <aactivity>
+              <TSS>If generated is selected the evaluator shall confirm that this process uses the RBG specified in FCS_RBG_EXT.1 
+                and the output matches the size selected in FIA_PSK_EXT.2.1. 
+              </TSS>
+              <Guidance>The evaluator shall confirm the operational guidance contains instructions for entering generated pre-shared keys 
+                for each protocol identified in the FIA_PSK_EXT.1.1. 
+              </Guidance>
+              <Tests>
+                <testlist>
+                  <test>[conditional] If generate was selected the evaluator shall generate a pre-shared key and confirm the output matches the size selected in FIA_PSK_EXT.2.1.
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+          <audit-event/>
+        </f-component>
+        
+        <f-component cc-id="fia_psk_ext.3" id="fia-psk-ext-3" name="Password Based Pre-Shared Keys">
+          <depends on-sel="pskpw"/>
+          <depends on-sel="pskpwhotp"/>
+          <depends on-sel="pskpwtotp"/>
+          <consistency-rationale/>
+          <comp-lev>defines the use and composition of password based pre-shared keys used for IPsec</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the
+            PP/ST:<h:ul>
+              <h:li>Failure of the randomization process</h:li>
+            </h:ul>
+          </audit>
+          <dependencies>FCS_PSK_EXT.1</dependencies>
+          <f-element id="fia-psk-ext-3e1">
+            <title>
+              The TSF shall support a PSK of up to <assignable>positive integer of 64 or more</assignable> characters. 
+            </title>
+          </f-element>
+          <f-element id="fia-psk-ext-3e2">
+            <title>The TSF shall allow PSKs to be composed of any combination of upper case characters, 
+              lower case characters, numbers, and the following special characters: "!", "@", "#", "$", "%", "^", "&amp;", "*", "(", and ")", and 
+              <selectables>
+                <selectable><assignable>other supported special characters</assignable></selectable>
+                <selectable>no other characters</selectable>
+              </selectables>
+            </title>
+          </f-element>
+          <f-element id="fia-psk-ext-3e3">
+            <title>
+              The TSF shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm HMAC-
+              <selectables>
+                <selectable>SHA-256</selectable>
+                <selectable>SHA-384</selectable>
+                <selectable>SHA-512</selectable>
+              </selectables>, with 
+              <assignable>positive integer of 4096 or more</assignable> iterations], and output cryptographic key sizes 
+              <selectables>
+                <selectable>128</selectable>
+                <selectable>256</selectable>
+              </selectables> that meet the following: [NIST SP 800-132].
+            </title>
+          </f-element>
+          <f-element id="fia-psk-ext-3e4">
+            <title>
+              The TSF shall not accept PSKs less than 
+              <selectables>
+                <selectable>a value settable by the administrator</selectable>
+                <selectable><assignable>minimum PSK length accepted by the TOE, must be >= 6</assignable></selectable>
+              </selectables> and greater than the maximum PSK length defined in FIA_PSK_EXT.3.1.
+            </title>
+          </f-element>
+          <f-element id="fia-psk-ext-3e5">
+            <title>
+              The TSF shall generate all salts using an RBG that meets FCS_RBG_EXT.1 and with entropy corresponding 
+              to the key size selected for PBKDF in FIA_PSK_EXT.3.3.
+            </title>
+          </f-element>
+          <f-element id="fia-psk-ext-3e6">
+            <title>
+              The TSF shall require the PSK to be entered before every initiated connection.
+            </title>
+          </f-element>
+          
+            <f-element id="fia-psk-ext-3e7">
+              <title>
+                The TSF shall 
+                <selectables>
+                  <selectable>provide a password strength meter</selectable>
+                  <selectable>check the password against a blacklist</selectable>
+                  <selectable>perform no action to assist the user in choosing a strong password</selectable>
+                </selectables>. 
+              </title>
+            
+            
+            <note role="application">
+              For FIA_PSK_EXT.3.1, the ST author assigns the maximum size of the PSK it supports; it must support at least 64 characters or a length defined by the platform. 
+              
+              <h:p/>For FIA_PSK_EXT.3.2, the ST author assigns any other supported characters; if there are no other supported characters, they should select "no other characters". 
+              
+              <h:p/>For FIA_PSK_EXT.3.3, the ST author selects the parameters based on the PBKDF used by the TSF. 
+              
+              <h:p/>For FIA_PSK_EXT.3.4 If the minimum length is settable, then ST author chooses "a value settable by the administrator". If the minimum length is not settable, 
+              the ST author fills in the assignment with the minimum length the PSK must be. This requirement is to ensure bounds work properly.
+              
+              <h:p/>For FIA_PSK_EXT.3.7, the ST author may select one, both, or neither of the functions in alignment with NIST SP800-63b.
+              
+              <h:p/>This requirement is selection dependent on FIA_PSK_EXT.1. 
+              </note>
+            <aactivity>
+              <TSS>The evaluator shall also examine the TSS to ensure it describes the process by which the bit-based pre-shared keys used. If generated is selected the evaluator shall confirm that this process uses the RBG specified in FCS_RBG_EXT.1. 
+                
+                <h:p/>Support for length: The evaluators shall check to ensure that the TSS describes the allowable ranges for PSK lengths, and that at least 64 characters or a length defined by the platform may be specified by the user.
+                
+                <h:p/>Support for character set: The evaluator shall check to ensure that the TSS describes the allowable character set and that it contains the characters listed in the SFR.
+                
+                <h:p/>Support for PBKDF: The evaluator shall examine the TSS to ensure that the use of PBKDF2 is described and that the key sizes match that described by the ST author.
+                
+                <h:p/>The evaluator shall check that the TSS describes the method by which the PSK is first encoded and then fed to the hash algorithm. The settings for the algorithm (padding, blocking, etc.) shall be described, and the evaluator shall verify that these are supported by the selections in this component as well as the selections concerning the hash function itself. 
+                
+                <h:p/>For the NIST SP 800-132-based conditioning of the PSK, the required evaluation activities will be performed when doing the evaluation activities for the appropriate requirements (FCS_COP.1/KeyedHash). 
+                
+                <h:p/>The evaluator shall confirm that the minimum length is described.
+                
+                <h:p/>The ST author shall provide a description in the TSS regarding the salt generation. The evaluator shall confirm that the salt is generated using an RBG described in FCS_RBG_EXT.1.
+                
+                <h:p/>[conditional]If password stregnth meter or password blacklist is selected, the evaluator shall examine the TSS to ensure any password checking functionality provided by the TSF is described and contains details on how the function operates.
+              </TSS>
+              <Guidance>The evaluator shall confirm the operational guidance contains instructions for entering bit-based pre-shared keys for each 
+                protocol identified in the requirement, or generating a bit-based pre-shared key (or both). The evaluator shall confirm that any 
+                management functions related to pre-shared keys that are performed by the TOE are specified in the operational guidance.  
+                
+                <h:p/>The guidance must specify the allowable characters for pre-shared keys, and that list must include, at minimum, the same 
+                items contained in FIA_PSK_EXT.3.2. 
+                
+                <h:p/>The evaluator shall confirm the operational guidance contains any necessary instructions for enabling and configurating password checking functality. 
+              </Guidance>
+              <Tests>
+                Support for Password/Passphrase characteristics: In addition to the analysis above, the evaluator shall also perform the following tests on a TOE configured according to the Operational Guidance:
+                <testlist>
+                  <test>The evaluator shall compose a pre-shared key of at least 64 characters that contains a combination of the allowed characters in accordance with the FIA_PSK_EXT.1.3 and verify that a successful protocol negotiation can be performed with the key. </test>
+                  <test>[conditional]: If the TOE supports pre-shared keys of multiple lengths, the evaluator shall repeat Test 1 using the minimum length and invalid lengths that are below the minimum length, above the maximum length, null length, empty length, or zero length. The minimum test should be successful, and the invalid lengths must be rejected by the TOE. </test>
+                  <test>[conditional]: If the TOE initiates connections, initiate and establish a remote connection, disconnect from the connection, verify that the PSK is required when initiating the connection a second time.</test>
+                  <test>[conditional]: If the TOE supports a password meter, the evaluator shall enter a password and verify the password checker responds per the description in the TSS.</test>
+                  <test>[conditional]: If the TOE supports a password blacklist, the evaluator shall enter a blacklisted password and verify that the password is rejected or flagged as such.</test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+          <audit-event/>
+        </f-component>
+        
+        <f-component cc-id="fia_psk_ext.4" id="fia-psk-ext-4" name="HMAC Based One Time Password Pre-shared Keys Support">
+          <depends on-sel="pskhotp"/>
+	  <depends on-sel="pskgenhotp"/>
+	  <depends on-sel="pskpwhotp"/>
+          <consistency-rationale/>
+          <comp-lev>defines the use and composition of HOTP pre-shared keys used for IPsec</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>No specific audit functions are identified.
+          </audit>
+          <dependencies>FCS_PSK_EXT.1</dependencies>
+          <f-element id="fia-psk-ext-4e1">
+            <title>
+              The TSF shall accept and send a HOTP while initiating a VPN connection.
+            </title>
+          </f-element>
+          <f-element id="fia-psk-ext-4e2">
+            <title>
+              The TSF shall <selectables>
+                <selectable id="sel-psk4-ext-e2-verify">verify the HOTP</selectable>
+                <selectable>verify the HOTP via an external authentication server</selectable>
+              </selectables> before establishing an incoming connection.
+            </title>
+          
+            
+            <note role="application">
+              If verify the HOTP is selected then FIA_HOTP_EXT.1 must be included.
+              
+              <h:p/>This requirement is selection dependent on FIA_PSK_EXT.1
+            </note>
+            <aactivity>
+              <TSS>The evaluator shall verify the TSS describes how the HOTP is input into the client and how that value is sent to the server.
+                <h:p/>The evaluator shall verify the TSS describes how the HOTP is accepted from an incoming connection and how that value is verified, either by the TOE or by an external authentication server.
+              </TSS>
+              <Guidance>
+                The evaluator shall verify the operational guidance contains any configuration necessary to enable HOTP.
+              </Guidance>
+              <Tests>
+                <testlist>
+                  <test>
+                    The evaluator shall configure the TOE to use a supported HOTP factor, then attempt to establish a connection using that factor.  
+                    The evaluator shall verify the client prompts the user for the HOTP before initiating the connection.  
+                    The evaluator shall verify the server validates the HOTP or receives confirmation from an authentication server before establishing the channel.
+                  </test>
+                  
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+          <audit-event/>
+        </f-component>
+        <f-component cc-id="fia_psk_ext.5" id="fia-psk-ext-5" name="Time Based One Time Password Pre-shared Keys Support">
+          <depends on-sel="psktotp"/>
+	  <depends on-sel="pskgentotp"/>
+	  <depends on-sel="pskpwtotp"/>
+          <consistency-rationale/>
+          <comp-lev>defines the use and composition of TOTP pre-shared keys used for IPsec</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>No specific audit functions are identified.
+          </audit>
+          <dependencies>FCS_PSK_EXT.1</dependencies>
+          <f-element id="fia-psk-ext-5e1">
+            <title>
+              The TSF shall accept and send a TOTP while initiating a VPN connection.
+            </title>
+          </f-element>
+          <f-element id="fia-psk-ext-5e2">
+            <title>
+              The TSF shall 
+              <selectables>
+                <selectable id="sel-psk5-ext-e2-verify">verify the TOTP</selectable>
+                <selectable>verify the TOTP via an external authentication server</selectable>
+              </selectables> before establishing an incoming connection.
+            </title>
+            
+            
+            <note role="application">
+              If verify the TOTP is selected then FIA_TOTP_EXT.1 must be included.
+              
+              <h:p/>This requirement is dependent on FIA_PSK_EXT.1.
+            </note>
+            <aactivity>
+              <TSS>The evaluator shall verify the TSS describes how the TOTP is input into the client and how that value is sent to the server.
+                <h:p/>The evaluator shall verify the TSS describes how the TOTP is accepted from an incoming connection and how that value is verified, either by the TOE or by an external authentication server.</TSS>
+              <Guidance>
+                The evaluator shall verify the operational guidance contains any configuration necessary to enable TOTP.
+              </Guidance>
+              <Tests>
+                <testlist>
+                  <test>
+                    The evaluator shall configure the TOE to use a supported TOTP factor, then attempt to establish a connection using that factor.  
+                    The evaluator shall verify the client prompts the user for the TOTP before initiating the connection.  
+                    The evaluator shall verify the server validates the TOTP or receives confirmation from an authentication server before establishing the channel.</test>
+                  
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+          <audit-event/>
+        </f-component>
+        
+        <f-component cc-id="fia_hotp_ext.1" id="fia-hotp-ext-1" name="HMAC-Based One-Time Password Pre-Shared Keys">
+          <depends on-sel="sel-psk4-ext-e2-verify"/>
+          <depends on-sel="blockhotp"/>
+          <consistency-rationale/>
+          <comp-lev>defines the implementation of hotp</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>No specific audit funcations are identified.
+          </audit>
+          <dependencies>FCS_PSK_EXT.4 HOTP Support</dependencies>
+          <f-element id="fia-hotp-ext-1e1">
+            <title>
+              The TSF shall support HMAC-Based One-Time Password authentication in accordance with RFC4226 
+              to authenticate the user before establishing VPN connection. 
+            </title>
+          </f-element>
+          <f-element id="fia-hotp-ext-1e2">
+            <title>
+              The TSF shall generate a HOTP seed according to FCS_RBG_EXT.1 of 
+              <selectables>
+                <selectable>128</selectable>
+                <selectable>256</selectable>
+              </selectables> bits.
+            </title>
+          </f-element>
+          <f-element id="fia-hotp-ext-1e3">
+            <title>The TSF shall generate a new HOTP seed value for each client.
+            </title>
+          </f-element>
+          <f-element id="fia-hotp-ext-1e4">
+            <title>
+              The TSF shall utilize 
+              <selectables>
+                <selectable>SHA-1</selectable>
+                <selectable>SHA-256</selectable>
+                <selectable>SHA-384</selectable>
+                <selectable>SHA-512</selectable>
+              </selectables> with key sizes 
+              <assignable>key size (in bits) used in HMAC</assignable> and message digest sizes 
+              <selectables>
+                <selectable>160</selectable>
+                <selectable>256</selectable>
+                <selectable>384</selectable>
+                <selectable>512</selectable>
+              </selectables> to derive a HOTP hash from the HOTP seed and counter.
+            </title>
+          </f-element>
+          <f-element id="fia-hotp-ext-1e5">
+            <title>
+              The TSF shall truncate the HOTP hash per FIA_HOTP_EXT.1.4 to create a HOTP of  
+              <selectables>
+                <selectable>administrator configurable chracter length of at least 6</selectable>
+                <selectable>preset character length of
+                  <selectables>
+                    <selectable>6</selectable>
+                    <selectable>7</selectable>
+                    <selectable>8</selectable>
+                    <selectable>9</selectable>
+                    <selectable>10</selectable>
+                  </selectables>
+                </selectable>
+              </selectables>.
+            </title>
+          </f-element>
+          <f-element id="fia-hotp-ext-1e6">
+            <title>
+              The TSF shall 
+              <selectables>
+                <selectable>throttle invalid requests to 
+                  <selectables>
+                    <selectable>administrator configurable value</selectable>
+                    <selectable><assignable>value less than 10</assignable></selectable>
+                  </selectables> per minute
+                </selectable>
+                <selectable>lock the associated account after 
+                  <selectables>
+                    <selectable>administrator configurable value</selectable>
+                    <selectable><assignable>value less than 10</assignable></selectable>
+                  </selectables>failed attempts until 
+                  <selectables>
+                    <selectable>an administrator unlocks the account</selectable>
+                    <selectable>a configurable time period</selectable>
+                  </selectables>
+                </selectable>
+              </selectables>.
+            </title>
+          </f-element>
+          <f-element id="fia-hotp-ext-1e7">
+            <title>
+              The TSF shall not verify HOTP attempts outside of the counter look ahead window of 
+              <selectables>
+                <selectable>a configurable value</selectable>
+                <selectable><assignable>a value less than or equal to 3</assignable></selectable>
+              </selectables> for resynchronization.
+            </title>
+          </f-element>
+          <f-element id="fia-hotp-ext-1e8">
+            <title>
+              The TSF must shall increment the counter after each successful authentation.
+            </title>
+          
+            
+            <note role="application">
+              The selection FIA_HOTP_EXT.1.4 must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication.
+              <h:p/>In FIA_HOTP_EXT.1.5 the ST author may either provide a configurable character length of at least 6 or a preset size between 6 and 10.
+              <h:p/>In FIA_HOTP_EXT.1.6 the ST may select throttle requests, account lockout, or both.
+              <h:p/>The HOTP seed and all derived values are considered secret keys for purposes of protection.
+              <h:p/>This requirement is selection dependent on FCS_PSK_EXT.4 or FPF_MFA_EXT.1<h:p/>
+            </note>
+            <aactivity>
+              <TSS>
+                <h:p/>The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
+                <h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1
+                <h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is protected and ensure it aligns with the storage requirements of the base PP. 
+                <h:p/>The evaluator shall confirm the TSS describes how a new HOTP seed is assigned for each client and how each client is uniquely identified.
+                <h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is conditioned into a HOTP hash and verify it matches the selection in FIA_HOTP_EXT.1.4.
+                <h:p/>The evaluator shall confirm the TSS describes how the HOTP hash is truncated and verify it matches the selection in FIA_HOTP_EXT.1.5.
+                <h:p/>The evaluator shall confirm the TSS describes how the TOE handles multiple incoming invalid requests and verify it provides anti-hammer mechanism that matches the selections FIA_HOTP_EXT.1.6.
+                <h:p/>The evaluator shall confirm the TSS describes how the TOE handles resynchronization and how it rejects attempts outside of the look-ahead window selected in FIA_TOTP_EXT.1.7
+                <h:p/>The evaluator shall confirm the TSS describes how the TOE how the counter is incremented after each successful authentication.
+                </TSS>
+              <Guidance>The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the 
+                FIA_HOTP_EXT.1 requirements.
+              </Guidance>
+              <Tests>
+                The evaluator shall configure the TOE to use a supported HOTP factor then:
+                <testlist>
+                <test>Attempt to establish a connection using a factor from a different client, the test passes if the client fails to connect.
+                </test><test>Attempt multiple connections outside the limits set in FIA_HOTP_EXT.1.6 and verify the remediation is triggered.  The test passes if remediation is triggered as defined in the selections and assignments.
+                </test><test>Attempt to use a HOTP that is outside of the value allowed with for resynchronization. The test passes if the client fails to connect.
+                </test><test>Attempt to connect with a valid HOTP, disconnect and attempt to authenticate again with the same HOTP value.  The test passes if the client connects the first time and fails to connect the second time. If the HOTP generated is duplicated the test may be repeated.
+                </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+          <audit-event/>
+        </f-component>
+        <f-component cc-id="fia_totp_ext.1" id="fia-totp-ext-1" name="Time-Based One-Time Password Pre-Shared Keys">
+          <depends on-sel="sel-totp-ext-e2-verify"/>
+          <depends on-sel="blocktotp"/>
+          <consistency-rationale/>
+          <comp-lev>defines the implementation of totp</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>No specific audit funcations are identified.
+          </audit>
+          <dependencies>FCS_TOTP_EXT.1 TOTP Support</dependencies>
+          <f-element id="fia-totp-ext-1e1">
+            <title>
+              The TSF shall support Time-Based One-Time Password authentication in accordance with RFC6238 
+              to authenticate the user before establishing VPN connection. 
+            </title>
+          </f-element>
+          <f-element id="fia-totp-ext-1e2">
+            <title>
+              The TSF shall generate a TOTP seed according to FCS_RBG_EXT.1 of 
+              <selectables>
+                <selectable>128</selectable>
+                <selectable>256</selectable>
+              </selectables> bits.
+            </title>
+          </f-element>
+          <f-element id="fia-totp-ext-1e3">
+            <title>The TSF shall generate a new TOTP seed for each client.
+            </title>
+          </f-element>
+          <f-element id="fia-totp-ext-1e4">
+            <title>
+              The TSF shall utilize 
+              <selectables>
+                <selectable>SHA-1</selectable>
+                <selectable>SHA-256</selectable>
+                <selectable>SHA-384</selectable>
+                <selectable>SHA-512</selectable>
+              </selectables> with key sizes 
+              <assignable>key size (in bits) used in HMAC</assignable> and message digest sizes 
+              <selectables>
+                <selectable>160</selectable>
+                <selectable>256</selectable>
+                <selectable>384</selectable>
+                <selectable>512</selectable>
+              </selectables> to derive a TOTP hash from the TOTP seed and current time provided by NTP.
+            </title>
+          </f-element>
+          <f-element id="fia-totp-ext-1e5">
+            <title>
+              The TSF shall truncate the TOTP hash per FIA_TOTP_EXT.1.4 to create a TOTP of  
+              <selectables>
+                <selectable>administrator configurable character length of at least 6</selectable>
+                <selectable>preset character length of
+                  <selectables> 
+                    <selectable>6</selectable>
+                    <selectable>7</selectable>
+                    <selectable>8</selectable>
+                    <selectable>9</selectable>
+                    <selectable>10</selectable>
+                  </selectables>
+                </selectable>
+              </selectables>
+            </title>
+          </f-element>
+          <f-element id="fia-totp-ext-1e6">
+            <title>
+              The TSF shall 
+              <selectables>
+                <selectable>throttle invalid requests to 
+                  <selectables>
+                    <selectable>administrator configurable value</selectable>
+                    <selectable><assignable>value less than 10</assignable></selectable>
+                  </selectables> per minute
+                </selectable>
+                <selectable>lock the associated account after 
+                  <selectables>
+                    <selectable>administrator configurable value</selectable>
+                    <selectable><assignable>value less than 10</assignable></selectable>
+                  </selectables>failed attempts until 
+                  <selectables>
+                    <selectable>an administrator unlocks the account</selectable>
+                    <selectable>a configurable time period</selectable>
+                  </selectables>
+                </selectable>
+              </selectables>.
+            </title>
+          </f-element>
+          <f-element id="fia-totp-ext-1e7">
+            <title>
+              The TSF shall set a time-step size of 
+              <selectables>
+                <selectable>a configurable value</selectable>
+                <selectable><assignable>a value less than or equal to 30</assignable></selectable>
+              </selectables> seconds.
+            </title>
+          </f-element>
+          <f-element id="fia-totp-ext-1e8">
+            <title>
+              The TSF shall not validate a drift of more than 
+              <selectables>
+                <selectable>a configurable value</selectable>
+                <selectable><assignable>a value less than or equal to 3</assignable></selectable>
+              </selectables> time-steps.            
+            </title>
+          </f-element>
+          <f-element id="fia-totp-ext-1e9">
+            <title>
+              The TSF shall 
+              <selectables>
+                <selectable>allow resynchronization by recording time drift within the limit of FIA_TOTP_EXT.2.8</selectable>
+                <selectable>not permit resynchronization</selectable>
+              </selectables>.           
+            </title>
+         
+            
+            <note role="application">
+              The selection FIA_TOTP_EXT.1.4 must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication.
+              <h:p/>In FIA_TOTP_EXT.1.5 the ST author may either provide a configurable character length of at least 6 or a preset size between 6 and 10.
+              <h:p/>In FIA_TOTP_EXT.1.6 the ST may select throttle requests, account lockout, or both.
+              <h:p/>The TOTP seed and all derived values are considered secret keys for purposes of protection.
+              <h:p/>This requirement is selection dependent on FCS_PSK_EXT.5 or FPF_MFA_EXT.1.<h:p/>
+              </note>
+            <aactivity>
+              <TSS>
+                The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
+                <h:p/>The evaluator shall confirm the TSS describes how the TOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1
+                <h:p/>The evaluator shall confirm the TSS describes how the TOTP seed is protected and ensure it aligns with the storage requirements of the base PP. 
+                <h:p/>The evaluator shall confirm the TSS describes how a new TOTP seed is assigned for each client and how each client is uniquely identified.
+                <h:p/> The evaluator shall confirm the TSS describes how the TOTP seed is conditioned into a TOTP hash and verify it matches the selection in FIA_TOTP_EXT.1.4.
+                <h:p/>The evaluator shall confirm the TSS describes how the TOTP hash is truncated and verify it matches the selection in FIA_TOTP_EXT.1.5.
+                <h:p/>The evaluator shall confirm the TSS describes how the TOE handles multiple incoming requests and verify it provides anti-hammer mechanism that match the selections FIA_TOTP_EXT.2.6.
+                <h:p/>The evaluator shall confirm the TSS describes how the TOE sets a time-step value and verify it matches the selections in the ST.
+                <h:p/>The evaluator shall confirm the TSS describes how the TOE handles drift and resynchronization and verify it matches the selections.  The evaluator shall ensure the TSS describes how time is kept and drift is calculated.  If drift is recorded the evaluator shall ensure the TSS how this is done.
+                </TSS>
+              <Guidance>The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the FIA_TOTP_EXT.1 requirements.</Guidance>
+              <Tests>
+                The evaluator shall configure the TOE to use a supported TOTP factor then:
+                <testlist>
+                  <test>Attempt to establish a connection using a factor from a different client, the test passes if the client fails to connect.
+                  </test><test>Attempt multiple connections outside the limits set in FIA_TOTP_EXT.1.6 and verify the remediation is triggered.  The test passes if remediation is triggered as defined in the selections and assignments.
+                  </test><test>Attempt to use a TOTP that is outside of the value allowed with for resynchronization. The test passes if the client fails to connect.
+                  </test>Attempt to connect with a valid TOTP, disconnect and attempt to authenticate again with the same TOTP.  The test passes if the client connects the first time and fails to connect the second time. If the TOTP generated is duplicated the test may be repeated.
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+          <audit-event/>
+        </f-component>
+        
+        
+        
       </section>
-	
+      <section title="Cryptographic Support (FCS)" id="s-fcs">
+        
+        
+        <ext-comp-def title="EAP-TLS" fam-id="FCS_EAP_EXT">
+          <fam-behavior>Components in this family describes the requirements for EAP-TLS.</fam-behavior>
+        </ext-comp-def>
+        
+        <!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
+        <f-component cc-id="fcs_eap_ext.1" id="fia-psk-ext-1" name="EAP-TLS" status="sel-based">
+          <depends on-sel="sel-ipsec-e11-psk"/>
+          <consistency-rationale/>
+          <comp-lev>defines the use of EAP-TLS.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>No specific audit functions are identified.
+          </audit>
+          <dependencies>FCS_IPSEC_EXT.1.11 IPsec</dependencies>
+          <f-element id="fcs-eap-ext-1e1">
+            <title>
+              The TSF shall implement
+              <selectables>
+                <selectable>EAP-TLS protocol as specified in RFC 5216</selectable>
+                <selectable>EAP-TTLS as specified in RFC 5881</selectable>
+              </selectables>
+              as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with the TLS functional package.
+            </title>
+          </f-element>
+          <f-element id="fcs-eap-ext-1e2">
+            <title>
+              The TSF shall generate random values used in the
+              <selectables>
+                <selectable>EAP-TLS</selectable>
+                <selectable>EAP-TTLS</selectable>
+              </selectables>
+              exchange using the RBGspecified in FCS_RBG_EXT.1.
+            </title>
+          </f-element>
+          <f-element id="fcs-eap-ext-1e3">
+            <title>
+              The TSF shall support peer authentication using certificates and
+              <selectables>
+                <selectable>PSK</selectable>
+                <selectable>HOTP</selectable>
+                <selectable>TOTP</selectable>
+                <selectable><assignable>other Authentication-verification protocols</assignable></selectable>
+                <selectable>no other authentication></selectable>
+              </selectables>
+              as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with the TLS functional package.
+            </title>
+            
+          </f-element>
+          <f-element id="fcs-eap-ext-1e4">
+            <title>
+              The TSF shall not forward a EAP-success response if the client certificate is not valid according to FIA_X509_EXT.1.
+            </title>
+            <aactivity>
+              <TSS>TSS TBD after public review of SRFs.</TSS>
+              <Guidance>Guidance TBD after public review of SRFs.</Guidance>
+              <Tests>Tests TBD after public review of SRFs.</Tests>
+            </aactivity>
+          </f-element>
+          
+          
+          <audit-event/>
+        </f-component>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </section>
     </sel-sfrs>
 
 

@@ -33,9 +33,7 @@ PSKs
 Pluggable
 Proteciton
 RBGspecified
-RFC4226
 RFC4301
-RFC6238
 RFC792
 RUL
 SAs

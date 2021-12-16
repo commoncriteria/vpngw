@@ -1676,6 +1676,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
         <!-- Added this event for coverage since we don't have this connected to the Base-PP un-itereated version -->
         <audit-event>
           <audit-event-descr>All administrative actions</audit-event-descr>
+          <audit-event-info>No additional information.</audit-event-info>
         </audit-event>
       </f-component>
       </section>  <!-- FMT -->
@@ -2488,10 +2489,12 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <audit-event>
             <audit-event-descr>Initiation of the
               trusted channel</audit-event-descr>
+            <audit-event-info>No additional information.</audit-event-info>
           </audit-event>
           <audit-event>
           <audit-event-descr>Termination of the
             trusted channel</audit-event-descr>
+            <audit-event-info>No additional information.</audit-event-info>
           </audit-event>
           <audit-event>
           <audit-event-descr>Failure of the trusted channel functions</audit-event-descr>
@@ -2524,6 +2527,12 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	  <!-- A.1: Strictly Optional Requirements -->
     
     <opt-sfrs>
+      <section id="sop-audit-table" title="Auditable Events for Strictly Optional SFRs">
+        <audit-table table="optional">
+          <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-optional">: Auditable Events for Strictly Optional SFRs</ctr></h:b>
+        </audit-table>
+      </section>
+      
       <section title="Packet Filtering (FPF)" id="s-fpf">
         The TOE may support multifactor authentication by blocking all other traffic after connection is established until secondary authentication is validated.
         
@@ -2580,6 +2589,12 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
   	     		<h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-sel-based">: Auditable Events for Selection-based SFRs</ctr></h:b>
 	  	</audit-table>
 	    </section> -->
+      
+      <section id="sb-audit-table" title="Auditable Events for Selection-based SFRs">
+        <audit-table table="sel-based">
+          <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-sel-based">: Auditable Events for Selection-based SFRs</ctr></h:b>
+        </audit-table>
+      </section>
       
       <section title="Identification and Authentication (FIA)" id="sel-fia">
         The TOE may support pre-shared keys for use in the IPsec protocol, and may use pre-shared keys in other
@@ -3055,7 +3070,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               <TSS>
                 <h:p/>The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
                 <h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1
-                <h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is protected and ensure it aligns with the storage requirements of the base PP. 
+                <h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is protected and ensure it aligns with the storage requirements of the Base-PP. 
                 <h:p/>The evaluator shall confirm the TSS describes how a new HOTP seed is assigned for each client and how each client is uniquely identified.
                 <h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is conditioned into a HOTP hash and verify it matches the selection in FIA_HOTP_EXT.1.4.
                 <h:p/>The evaluator shall confirm the TSS describes how the HOTP hash is truncated and verify it matches the selection in FIA_HOTP_EXT.1.5.
@@ -3207,7 +3222,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               <TSS>
                 The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
                 <h:p/>The evaluator shall confirm the TSS describes how the TOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1
-                <h:p/>The evaluator shall confirm the TSS describes how the TOTP seed is protected and ensure it aligns with the storage requirements of the base PP. 
+                <h:p/>The evaluator shall confirm the TSS describes how the TOTP seed is protected and ensure it aligns with the storage requirements of the Base-PP. 
                 <h:p/>The evaluator shall confirm the TSS describes how a new TOTP seed is assigned for each client and how each client is uniquely identified.
                 <h:p/> The evaluator shall confirm the TSS describes how the TOTP seed is conditioned into a TOTP hash and verify it matches the selection in FIA_TOTP_EXT.1.4.
                 <h:p/>The evaluator shall confirm the TSS describes how the TOTP hash is truncated and verify it matches the selection in FIA_TOTP_EXT.1.5.
@@ -3248,7 +3263,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <management>No specific management functions are identified.</management>
           <audit>No specific audit functions are identified.
           </audit>
-          <dependencies>FCS_IPSEC_EXT.1.11 IPsec</dependencies>
+          <dependencies>FCS_IPSEC_EXT.1 IPsec</dependencies>
           <f-element id="fcs-eap-ext-1e1">
             <title>
               The TSF shall implement
@@ -3266,7 +3281,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 <selectable>EAP-TLS</selectable>
                 <selectable>EAP-TTLS</selectable>
               </selectables>
-              exchange using the RBGspecified in FCS_RBG_EXT.1.
+              exchange using the RBG specified in FCS_RBG_EXT.1.
             </title>
           </f-element>
           <f-element id="fcs-eap-ext-1e3">
@@ -3323,6 +3338,12 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
     
 	
 	<impl-dep-sfrs>
+	  <section id="sib-audit-table" title="Auditable Events for Implementation-Based SFRs">
+	    <audit-table table="impl-dep">
+	      <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-optional">: Auditable Events for Strictly Optional SFRs</ctr></h:b>
+	    </audit-table>
+	  </section>
+	  
 	  <section title="TOE Access (FTA)" id="opt-headend">
 	    This section contains requirements that may be optionally selected by the ST author for a “headend” VPN
 	    gateway device. The requirements in the main body of this PP-Module are those determined necessary

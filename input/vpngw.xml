@@ -13,14 +13,19 @@
 	
   <PPReference>
     <ReferenceTable>
-      <PPVersion>1.2-Draft</PPVersion>
+      <PPVersion>1.3-Draft</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2021-12-03</PPPubDate>
+      <PPPubDate>2021-12-16</PPPubDate>
       <Keywords>VPN, VPN Gateway, VPN GW, IPsec</Keywords>
     </ReferenceTable>
   </PPReference>
   
   <RevisionHistory>
+    <entry>
+      <version>1.3-Draft</version>
+      <date>2021-12-16</date>
+      <subject>Incorporation of TC feedback</subject>
+    </entry>
     <entry>
       <version>1.2</version>
       <date>2021-09-27</date>
@@ -519,7 +524,7 @@ expected to enforce.<h:p/>
             <h:p/>
             Addressed by: FCS_IPSEC_EXT.1 (refined from Base-PP), FIA_X509_EXT.1/Rev (from Base-PP),
             FIA_X509_EXT.2 (refined from Base-PP), FIA_X509_EXT.3 (from Base-PP), FTP_ITC.1/VPN,
-            FPF_MFA_EXT.1 (optional), FTA_SSL.3/VPN (optional), FTA_TSE.1 (optional), FCS_EAP_EXT.1, FIA_HOTP_EXT.1 (selection-based), FIA_PSK_EXT.1 (selection-based),
+            FPF_MFA_EXT.1 (optional), FTA_SSL.3/VPN (optional), FTA_TSE.1 (optional), FCS_EAP_EXT.1 (selection-based), FIA_HOTP_EXT.1 (selection-based), FIA_PSK_EXT.1 (selection-based),
             FIA_PSK_EXT.2 (selection-based), FIA_PSK_EXT.3 (selection-based), FIA_PSK_EXT.4 (selection-based), FIA_PSK_EXT.5 (selection-based),
             FIA_TOTP_EXT.1 (selection-based)
 		  </description>

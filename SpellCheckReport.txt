@@ -18,6 +18,7 @@ Headend
 IEC
 IKEv1
 IKEv2
+Impl
 MTD
 Multifactor
 NDcPP
@@ -32,7 +33,6 @@ PSK
 PSKs
 Pluggable
 Proteciton
-RBGspecified
 RFC4301
 RFC792
 RUL
@@ -53,6 +53,7 @@ VCM
 authentation
 chracter
 cleartext
+dep
 exfiltration
 funcations
 headend

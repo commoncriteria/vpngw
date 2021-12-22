@@ -19,6 +19,7 @@ IEC
 IKEv1
 IKEv2
 Impl
+MSK
 MTD
 Multifactor
 NDcPP

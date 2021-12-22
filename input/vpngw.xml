@@ -1094,7 +1094,13 @@ expected to enforce.<h:p/>
                 </selectables>.
               </title>
               <note role="application">
-                This element has been modified from its definition in the NDcPP by defining specific additional methods of pre-shared key authentication as selectable options.
+                This element has been modified from its definition in the NDcPP by defining specific additional methods of pre-shared 
+                key authentication as selectable options.<h:p/>
+                If any selection with “pre-shared keys” is selected, the selection-based requirement FIA_PSK_EXT.1
+                must be claimed. FIA_PSK_EXT.1 includes the options for MFA solutions, it may be brought in via this selection or via the 
+                optional FPF_MFA_EXT.1 requirement.<h:p/>
+                It is acceptable for different use cases to leverage different selections, if this is the case it shall be identified.
+                
               </note>
             </f-element>
             <f-element id="nd-fcs-ipsec-ext-1e14">
@@ -2622,18 +2628,17 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
         </audit-table>
       </section>
       
-      
       <section title="Cryptographic Support (FCS)" id="s-fcs">
         
         
         <ext-comp-def title="EAP-TLS" fam-id="FCS_EAP_EXT">
-          <fam-behavior>Components in this family describes the requirements for EAP-TLS.</fam-behavior>
+          <fam-behavior>Components in this family describe the requirements for EAP-TLS.</fam-behavior>
         </ext-comp-def>
         
         <!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
-        <f-component cc-id="fcs_eap_ext.1" id="fia-eap-ext-1" name="EAP-TLS">
-          <depends on-sel="sel-ipsec-e13-pskeap"/>
-          <consistency-rationale>This SFR defines an additional cryptographic protocol that is beyond the scope of those defined in the Base-PP but does not prevent any Base-PP functionality from being implemented.</consistency-rationale>
+        <f-component cc-id="fcs_eap_ext.1" id="fcs-eap-ext-1" name="EAP-TLS">
+          <depends on-sel="sel-ipsec-e11-psk"/>
+          <consistency-rationale/>
           <comp-lev>defines the use of EAP-TLS.</comp-lev>
           <management>No specific management functions are identified.</management>
           <audit>No specific audit functions are identified.
@@ -2667,30 +2672,68 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 <selectable>HOTP</selectable>
                 <selectable>TOTP</selectable>
                 <selectable><assignable>other Authentication-verification protocols</assignable></selectable>
-                <selectable>no other authentication></selectable>
+                <selectable>no other authentication</selectable>
               </selectables>
               as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with the TLS functional package.
             </title>
             
           </f-element>
+          
           <f-element id="fcs-eap-ext-1e4">
             <title>
               The TSF shall not forward a EAP-success response if the client certificate is not valid according to FIA_X509_EXT.1.
             </title>
-            <aactivity>
-              <TSS>TSS TBD after public review of SRFs.</TSS>
-              <Guidance>Guidance TBD after public review of SRFs.</Guidance>
-              <Tests>Tests TBD after public review of SRFs.</Tests>
-            </aactivity>
           </f-element>
           
+          
+          <f-element id="fcs-eap-ext-1e5">
+            <title>
+              The TSF shall use the MSK from the 
+              <selectables>
+                <selectable>EAP-TLS</selectable>
+                <selectable>EAP-TTLS</selectable>
+              </selectables> response as the IKEv2 shared secret in the authentication payload.
+            </title>
+            <aactivity>
+              <TSS>The evaluator shall verify that the TS describes the use of EAP options for each of the selected peer authentication 
+                mechanisms, that TLS with mutual authentication is used, that the random values are from an appropriate source, 
+                and that the EAP MSK is derived from the TLS master key and is used as the IKEv2 shared key..</TSS>
+              <Guidance>The evaluator shall verify that the guidance documents describe any configurable features of the EAP or TLS 
+                functionality, including instructions for configuration of the authenticator(s) and registration processes for clients.</Guidance>
+              <Tests>Testing for TLS functionality is in accordance with the TLS package.
+                <h:b/>For each supported EAP method claimed in FCS_EAP_TLS_EXT.1.1 and for each authentication method  claimed in 
+                FCS_EAP_TLS_EXT.1.3, the evaluator shall perform the following tests:
+                <testlist>
+                  <test>The evaluator shall follow AGD guidance to configure the TSF to use the EAP method claimed. 
+                    The evaluator shall follow AGD guidance to configure the TSF to use the authentication method claimed and, 
+                    for EAP-TTLS, register a client with appropriate key material required for the authentication method. 
+                    The evaluator shall establish an VPN session using a test client with a valid certificate and, for EAP-TTLS, 
+                    configured to provide a correct value for the configured authenticator. The evaluator shall  observe the the 
+                    VPN session is successful.</test>
+                  <test>(conditional for EAP-TTLS support): The evaluator shall cause the test client with a valid certificate to send 
+                    an invalid authenticator for the claimed authentication method:
+                    <h:b/>For HOTP, replay the HOTP value sent previously, 
+                    <h:b/>For TOTP or PSK, modify a byte of the properly constructed value,and observe that the TSF aborts the session</test>
+                  <test>The evaluator shall establish a new, valid certificate for a test client using an identifier not 
+                    corresponding to a registered user. For EAP-TTLS, the evaluator shall cause the test client using this 
+                    certificate to send a correct authenticator value for the registered user. The evaluator shall initiate a 
+                    VPN session from the test client to the TSF and observe that the TSF aborts the session.</test>
+                  <test>The evaluator shall follow AGD guidance to configure the TSF to use a supported EAP method and register the 
+                    user with key material for required for a supported authentication method. The evaluator shall configure a test 
+                    client to respond to an IKE v2 exchange with EAP-request, providing valid phase 1 handshake and valid TLS 
+                    handshake, but computing the phase 2 shared key using standard (non-EAP) methods. The evaluator shall initiate 
+                    a VPN session between the test client and the TSF, and observe that the TSF aborts the session.
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
           
           <audit-event/>
         </f-component>
         
-       
-        
       </section>
+      
       
       <section title="Identification and Authentication (FIA)" id="sel-fia">
         The TOE may support pre-shared keys for use in the IPsec protocol, and may use pre-shared keys in other

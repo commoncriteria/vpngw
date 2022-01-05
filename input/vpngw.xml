@@ -840,20 +840,20 @@ expected to enforce.<h:p/>
                   <selectable>GCM</selectable>
                 </selectables> and <selectables>
                   <selectable>CTR</selectable>
-                  <selectable>no other</selectable>
+                  <selectable exclusive="yes">no other</selectable>
                 </selectables> 
                 </h:b> mode and cryptographic key sizes <h:b><selectables>
                   <selectable>128 bits</selectable>
                   <selectable>256 bits</selectable>
                 </selectables> and <selectables>
                   <selectable>192 bits</selectable>
-                  <selectable>no other cryptographic key sizes</selectable>
+                  <selectable exclusive="yes">no other cryptographic key sizes</selectable>
                 </selectables></h:b> that meet the following: AES as specified in ISO 18033-3, <h:b><selectables>
                   <selectable>CBC as specified in ISO 10116</selectable>
                   <selectable>GCM as specified in ISO 19772</selectable>
                 </selectables> and <selectables>
                   <selectable>CTR as specified in ISO 10116</selectable>
-                  <selectable>no other standards</selectable>
+                  <selectable exclusive="yes">no other standards</selectable>
                 </selectables></h:b>. 
               </title>
               <note role="application">
@@ -923,13 +923,13 @@ expected to enforce.<h:p/>
                 </selectables> and <selectables>
                   <selectable>AES-CBC-192 (RFC 3602)</selectable>
                   <selectable>AES-GCM-192 (RFC 4106)</selectable>
-                  <selectable>no other algorithm</selectable>
+                  <selectable exclusive="yes">no other algorithm</selectable>
                 </selectables></h:b> together with a Secure Hash Algorithm (SHA)-based HMAC <selectables>
                   <selectable>HMAC-SHA-1</selectable>
                   <selectable>HMAC-SHA-256</selectable>
                   <selectable>HMAC-SHA-384</selectable>
                   <selectable>HMAC-SHA-512</selectable>
-                  <selectable>no HMAC algorithm</selectable>
+                  <selectable exclusive="yes">no HMAC algorithm</selectable>
                 </selectables>.
               </title>
               <note role="application">
@@ -947,15 +947,15 @@ expected to enforce.<h:p/>
             <f-element id="nd-fcs-ipsec-ext-1e5">
               <title>The TSF shall implement the protocol: <selectables linebreak="yes">
                 <selectable>IKEv1, using Main Mode for Phase 1 exchanges, as defined in RFCs 2407, 2408, 2409, RFC 4109, <selectables>
-                  <selectable>no other RFCs for extended sequence numbers</selectable>
+                  <selectable exclusive="yes">no other RFCs for extended sequence numbers</selectable>
                   <selectable>RFC 4304 for extended sequence numbers</selectable>
                 </selectables> and <selectables>
-                  <selectable>no other RFCs for hash functions</selectable>
+                  <selectable exclusive="yes">no other RFCs for hash functions</selectable>
                   <selectable>RFC 4868 for hash functions</selectable></selectables></selectable>
-                <selectable>IKEv2 as defined in RFC 5996 and <selectables>
+                <selectable>IKEv2 as defined in RFC 5996 and <selectables onlyone="yes">
                   <selectable>with no support for NAT traversal</selectable>
                   <selectable>with mandatory support for NAT traversal as specified in RFC 5996, section 2.23</selectable></selectables> and <selectables>
-                    <selectable>no other RFCs for hash functions</selectable>
+                    <selectable exclusive="yes">no other RFCs for hash functions</selectable>
                     <selectable>RFC 4868 for hash functions</selectable></selectables></selectable>
               </selectables>.
               </title>
@@ -1052,7 +1052,7 @@ expected to enforce.<h:p/>
                     <selectable><selectables>
                       <selectable>21 (521-bit Random ECP)</selectable>
                       <selectable>24 (2048-bit MODP with 256-bit POS</selectable>
-                      <selectable><h:b>no other DH Groups</h:b></selectable>
+                      <selectable exclusive="yes"><h:b>no other DH Groups</h:b></selectable>
                     </selectables> according to RFC 5114</selectable>
                   </selectables>.
               </title>
@@ -1090,7 +1090,7 @@ expected to enforce.<h:p/>
                   <selectable id="sel-ipsec-e13-psk">Pre-shared keys</selectable>
                   <selectable id="sel-ipsec-e13-pskeap">Pre-shared Keys transmitted via EAP-TLS</selectable>
                   <selectable id="sel-ipsec-e13-pskeapma">Pre-shared Keys transmitted via EAP-TTLS with mutual authentication</selectable>
-                  <selectable>no other method</selectable>
+                  <selectable exclusive="yes">no other method</selectable>
                 </selectables>.
               </title>
               <note role="application">
@@ -1115,7 +1115,7 @@ expected to enforce.<h:p/>
                   <selectable>CN: IP address</selectable>
                   <selectable>CN: Fully Qualified Domain Name (FQDN)</selectable>
                   <selectable>CN: user FQDN</selectable> 
-                  <selectable><h:b>no other reference identifier types</h:b></selectable>
+                  <selectable exclusive="yes"><h:b>no other reference identifier types</h:b></selectable>
                   <selectable><h:b><assignable>other supported reference identifier types</assignable></h:b></selectable>
                 </selectables>.
               </title>
@@ -1177,11 +1177,11 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                     <selectable>HTTPS</selectable>
                     <selectable>SSH</selectable>
                     <selectable>TLS</selectable>
-                    <selectable>no other protocols</selectable>
+                    <selectable exclusive="yes">no other protocols</selectable>
                   </selectables></h:b>, and <selectables>
                     <selectable>code signing for system software updates</selectable>
                     <selectable><assignable>other uses</assignable></selectable>
-                    <selectable>no additional uses</selectable>
+                    <selectable exclusive="yes">no additional uses</selectable>
                   </selectables>.
               </title>
               <note role="application">
@@ -1194,7 +1194,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
             <f-element id="nd-fcs-ipsec-ext-2e2">
               <title>
                 When the TSF cannot establish a connection to determine the validity of
-                a certificate, the TSF shall <selectables>
+                a certificate, the TSF shall <selectables onlyone="yes">
                   <selectable>allow the Administrator to choose whether to accept the
                     certificate in these cases</selectable>
                   <selectable>accept the certificate</selectable>
@@ -1312,7 +1312,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 The TSF shall provide Security Administrators the ability to query the
                 currently executing version of the TOE firmware/software and <selectables>
                   <selectable>the most recently installed version of the TOE firmware/software</selectable>
-                  <selectable>no other TOE firmware/software version</selectable>
+                  <selectable exclusive="yes">no other TOE firmware/software version</selectable>
                 </selectables>.
               </title>
               <note role="application">
@@ -1325,7 +1325,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 initiate updates to TOE firmware/software and <selectables>
                   <selectable>support automatic checking for updates</selectable>
                   <selectable>support automatic updates</selectable>
-                  <selectable>no other update mechanism</selectable>
+                  <selectable exclusive="yes">no other update mechanism</selectable>
                 </selectables>. 
               </title>
               <note role="application">
@@ -1339,7 +1339,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 <selectables>
                   <selectable>X.509 certificate</selectable>
                   <selectable>published hash</selectable>
-                  <selectable><h:b>no other mechanisms</h:b></selectable>
+                  <selectable exclusive="yes"><h:b>no other mechanisms</h:b></selectable>
                 </selectables> prior to installing those updates.
               </title>
               <note role="application">
@@ -1487,7 +1487,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                                     <selectable id="sel-at4">Auditable events defined in <xref g="t-audit-sel-based"/> for Selection-Based SFRs</selectable>
 									<selectable id="sel-attls">Auditable events for the <xref to="tls"/> listed in <xref to="atref-pkgs"/></selectable>
 									<selectable id="sel-atssh">Auditable events defined in the audit table for the <xref to="ssh"/></selectable>
-                                    <selectable>no other auditable events</selectable>
+                                    <selectable exclusive="yes">no other auditable events</selectable>
 								</selectables></refinement></h:li>
                             </h:ol>
                         </title>
@@ -1506,7 +1506,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                                     <selectable>Additional information defined in <xref g="t-audit-sel-based"/> for Selection-Based SFRs</selectable>
 									<selectable>Additional information for the <xref to="tls"/> listed in <xref to="atref-pkgs"/></selectable>
 									<selectable>Additional information defined in the audit table for the <xref to="ssh"/></selectable>
-                                    <selectable>no other information</selectable>
+                                    <selectable exclusive="yes">no other information</selectable>
 								</selectables></refinement></h:li>
                             </h:ol>
                         </title>
@@ -1587,7 +1587,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 <selectable>FIPS PUB 186-4, “Digital Signature Standard (DSS)”, Appendix B.4 for ECDSA
                   schemes and implementing “NIST curves” P-256, P-384 and <selectables>
                     <selectable>P-521</selectable>
-                    <selectable>no other curves</selectable></selectables></selectable>
+                    <selectable exclusive="yes">no other curves</selectable></selectables></selectable>
               </selectables> and <selectables linebreak="yes">
                 <selectable>FFC Schemes using “safe-prime” groups that meet the following: ‘NIST
                   Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
@@ -1595,7 +1595,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                     <selectable>RFC 3526</selectable>
                     <selectable>RFC 7919</selectable>
                   </selectables></selectable>
-                <selectable>no other key generation algorithm</selectable>
+                <selectable exclusive="yes">no other key generation algorithm</selectable>
               </selectables>
               </h:b> and specified cryptographic key sizes [<h:i>equivalent to, or greater than, a symmetric
                 key strength of 112 bits</h:i>].
@@ -1676,7 +1676,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
               <selectable>Configuration of remote VPN client session timeout</selectable>
               <selectable>Configuration of attributes used to deny establishment of remote VPN client sessions</selectable>
               <selectable>Generation of bit-based pre-shared key</selectable>
-              <selectable>No other capabilities</selectable></selectables></h:i>].
+              <selectable exclusive="yes">No other capabilities</selectable></selectables></h:i>].
           </title>
           <note role="application">
             This SFR defines additional management functions for the TOE beyond what is
@@ -2497,7 +2497,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </f-element>
           <f-element id="ftp-itc-1e3-vpn">
             <title>
-              The TSF shall initiate communication via the trusted channel for <selectables>
+              The TSF shall initiate communication via the trusted channel for <selectables onlyone="yes">
                 <selectable>remote VPN gateways/peers</selectable>
                 <selectable>no functions</selectable>
               </selectables>.
@@ -2672,7 +2672,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 <selectable>HOTP</selectable>
                 <selectable>TOTP</selectable>
                 <selectable><assignable>other Authentication-verification protocols</assignable></selectable>
-                <selectable>no other authentication</selectable>
+                <selectable exclusive="yes">no other authentication</selectable>
               </selectables>
               as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with the TLS functional package.
             </title>
@@ -2900,7 +2900,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               The TSF shall be able to use pre-shared keys for IPsec and 
               <selectables>
                 <selectable><assignable>other protocols that use pre-shared keys</assignable></selectable>
-                <selectable>no other protocols</selectable>
+                <selectable exclusive="yes">no other protocols</selectable>
               </selectables>.
             </title>
           </f-element>
@@ -3027,7 +3027,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               lower case characters, numbers, and the following special characters: "!", "@", "#", "$", "%", "^", "&amp;", "*", "(", and ")", and 
               <selectables>
                 <selectable><assignable>other supported special characters</assignable></selectable>
-                <selectable>no other characters</selectable>
+                <selectable exclusive="yes">no other characters</selectable>
               </selectables>
             </title>
           </f-element>
@@ -3073,7 +3073,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 <selectables>
                   <selectable>provide a password strength meter</selectable>
                   <selectable>check the password against a blacklist</selectable>
-                  <selectable>perform no action to assist the user in choosing a strong password</selectable>
+                  <selectable exclusive="yes">perform no action to assist the user in choosing a strong password</selectable>
                 </selectables>. 
               </title>
             
@@ -3152,7 +3152,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </f-element>
           <f-element id="fia-psk-ext-4e2">
             <title>
-              The TSF shall <selectables>
+              The TSF shall <selectables onlyone="yes">
                 <selectable id="sel-verify-hotp">verify the HOTP</selectable>
                 <selectable>verify the HOTP via an external authentication server</selectable>
               </selectables> before establishing an incoming connection.
@@ -3203,7 +3203,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <f-element id="fia-psk-ext-5e2">
             <title>
               The TSF shall 
-              <selectables>
+              <selectables onlyone="yes">
                 <selectable id="sel-psk5-ext-e2-verify">verify the TOTP</selectable>
                 <selectable>verify the TOTP via an external authentication server</selectable>
               </selectables> before establishing an incoming connection.
@@ -3287,7 +3287,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <f-element id="fia-totp-ext-1e5">
             <title>
               The TSF shall truncate the TOTP hash per FIA_TOTP_EXT.1.4 to create a TOTP of  
-              <selectables>
+              <selectables onlyone="yes">
                 <selectable>administrator configurable character length of at least 6</selectable>
                 <selectable>preset character length of
                   <selectables> 
@@ -3346,7 +3346,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               The TSF shall 
               <selectables>
                 <selectable>allow resynchronization by recording time drift within the limit of FIA_TOTP_EXT.2.8</selectable>
-                <selectable>not permit resynchronization</selectable>
+                <selectable exclusive="yes">not permit resynchronization</selectable>
               </selectables>.           
             </title>
          
@@ -3469,7 +3469,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	        <title>
 	          The TSF shall be able to deny establishment of a <h:b>remote VPN client</h:b> session based
 	          on [<h:i>location, time, day, <selectables>
-	            <selectable>no other attributes</selectable>
+	            <selectable exclusive="yes">no other attributes</selectable>
 	            <selectable><assignable>other attributes</assignable></selectable></selectables></h:i>].
 	        </title>
 	        <note role="application">

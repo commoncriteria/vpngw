@@ -1099,7 +1099,7 @@ expected to enforce.<h:p/>
                 If any selection with “pre-shared keys” is selected, the selection-based requirement FIA_PSK_EXT.1
                 must be claimed. FIA_PSK_EXT.1 includes the options for MFA solutions, it may be brought in via this selection or via the 
                 optional FPF_MFA_EXT.1 requirement.<h:p/>
-                It is acceptable for different use cases to leverage different selections, if this is the case it shall be identified.
+                It is acceptable for different use cases to leverage different selections; if this is the case, it must be identified.
                 
               </note>
             </f-element>

@@ -242,6 +242,10 @@ expected to enforce.<h:p/>
               confidentiality and integrity of the data.
             </rationale>
           </objective-refer>
+          <objective-refer ref="O.FAIL_SECURE">
+            <rationale>The TOE's ability to protect against unauthorized modifications to itself
+              helps ensure that its functionality cannot be altered in such a way that it fails to maintain integrity of its communications.</rationale>
+          </objective-refer>
           <objective-refer ref="O.PORT_FILTERING">
             <rationale>The TOE’s ability to provide port
               filtering helps mitigate the threat of
@@ -303,6 +307,10 @@ expected to enforce.<h:p/>
               accessing a protected resource.
             </rationale>
           </objective-refer>
+          <objective-refer ref="O.FAIL_SECURE">
+            <rationale>The TOE's ability to protect against unauthorized modifications to itself
+              helps ensure that its functionality cannot be altered in such a way that it permits network access that it would ordinarily disallow.</rationale>
+          </objective-refer>
           <objective-refer ref="O.PORT_FILTERING">
             <rationale>
               The TOE’s port filtering capability helps
@@ -349,6 +357,10 @@ expected to enforce.<h:p/>
               performed outside the protected
               network. 
             </rationale>
+          </objective-refer>
+          <objective-refer ref="O.FAIL_SECURE">
+            <rationale>The TOE's ability to protect against unauthorized modifications to itself
+              helps ensure that its functionality cannot be altered to allow unauthorized disclosure of protected network traffic.</rationale>
           </objective-refer>
           <objective-refer ref="O.PORT_FILTERING">
             <rationale>The TOE’s port filtering capability helps
@@ -400,6 +412,10 @@ expected to enforce.<h:p/>
               network.
             </rationale>
           </objective-refer>
+          <objective-refer ref="O.FAIL_SECURE">
+            <rationale>The TOE's ability to protect against unauthorized modifications to itself
+              helps ensure that its functionality to detect potential misuse of network resources is not compromised.</rationale>
+          </objective-refer>
           <objective-refer ref="O.PORT_FILTERING">
             <rationale>
               The TOE’s ability to provide port
@@ -417,6 +433,10 @@ expected to enforce.<h:p/>
               misuse by providing a method to detect
               when potential misuse is occurring.
             </rationale>
+          </objective-refer>
+          <objective-refer ref="O.TOE_ADMINISTRATION">
+            <rationale>The TOE implements a management interface that allows for authorized usage of the TOE so that unprivileged users
+              do not have the ability to misuse its functions.</rationale>
           </objective-refer>
         </threat>
         
@@ -449,6 +469,10 @@ expected to enforce.<h:p/>
               data that is modified and retransmitted
               will not be parsed as valid traffic.
             </rationale>
+          </objective-refer>
+          <objective-refer ref="O.FAIL_SECURE">
+            <rationale>The TOE's ability to protect against unauthorized modifications to itself
+              helps ensure that it always enforces requirements for confidentiality and integrity of network traffic in the intended manner.</rationale>
           </objective-refer>
         </threat>
    
@@ -1088,8 +1112,8 @@ expected to enforce.<h:p/>
                 that use X.509v3 certificates that conform to RFC 4945 and 
                 <selectables>
                   <selectable id="sel-ipsec-e13-psk">Pre-shared keys</selectable>
-                  <selectable id="sel-ipsec-e13-pskeap">Pre-shared Keys transmitted via EAP-TLS</selectable>
-                  <selectable id="sel-ipsec-e13-pskeapma">Pre-shared Keys transmitted via EAP-TTLS with mutual authentication</selectable>
+                  <selectable id="sel-ipsec-e13-pskeap"><h:b>Pre-shared Keys transmitted via EAP-TLS</h:b></selectable>
+                  <selectable id="sel-ipsec-e13-pskeapma"><h:b>Pre-shared Keys transmitted via EAP-TTLS with mutual authentication</h:b></selectable>
                   <selectable exclusive="yes">no other method</selectable>
                 </selectables>.
               </title>
@@ -3467,7 +3491,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	        channels and does not mandate this be done in any particular method.</consistency-rationale>
 	      <f-element id="fta-tse-1e1">
 	        <title>
-	          The TSF shall be able to deny establishment of a <h:b>remote VPN client</h:b> session based
+	          The TSF shall be able to deny session establishment <h:b>of a remote VPN client session</h:b> based
 	          on [<h:i>location, time, day, <selectables>
 	            <selectable exclusive="yes">no other attributes</selectable>
 	            <selectable><assignable>other attributes</assignable></selectable></selectables></h:i>].

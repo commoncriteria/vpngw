@@ -78,6 +78,7 @@
     <tech-terms>
       <term abbr="CA" full="Certificate Authority"/>
       <term abbr="CN" full="Common Name"/>
+      <term abbr="DH" full="Diffie-Hellman"/>
       <term abbr="DN" full="Distinguished Name"/>
       <term abbr="FQDN" full="Fully Qualified Domain Name"/>
       <term full="Headend">
@@ -185,7 +186,7 @@
         </description>
       </cclaim>
       <cclaim name="PP Claim">
-        <description>This PP-Module does not claim conformance to any Protection Profile.</description>
+        <description>This PP-Module does not claim conformance to any PP.</description>
       </cclaim>
       <cclaim name="Package Claim">
         <description>This PP-Module does not claim conformance to any packages.</description>
@@ -965,8 +966,8 @@ expected to enforce.<h:p/>
                 When an AES-CBC algorithm is selected, at least one SHA-based HMAC must also
                 be chosen. If only an AES-GCM algorithm is selected, then a SHA-based HMAC is
                 not required since AES-GCM satisfies both confidentiality and integrity functions.
-                IPsec may utilize a truncated version of the SHA-based HMAC functions contained
-                in the selections. Where a truncated output is utilized, this is described in the TSS.
+                IPsec may use a truncated version of the SHA-based HMAC functions contained
+                in the selections. Where a truncated output is used, this is described in the TSS.
               </note>
             </f-element>
             <f-element id="nd-fcs-ipsec-ext-1e5">
@@ -996,10 +997,10 @@ expected to enforce.<h:p/>
                 </selectables> protocol uses the cryptographic algorithms <selectables>
                   <selectable>AES-CBC-128</selectable>
                   <selectable>AES-CBC-192</selectable>
-                  <selectable>AES-CBC-256</selectable>
+                  <selectable>AES-CBC-256 (specified in RFC 3602)</selectable>
                   <selectable>AES-GCM-128</selectable>
                   <selectable>AES-CBC-192</selectable>
-                  <selectable>AES-CBC-256</selectable>
+                  <selectable>AES-CBC-256 (specified in RFC 5282)</selectable>
                 </selectables>.
               </title>
               <!-- Note: the RFCs referenced in the app note below are normally referenced but only in the third and sixth selections above, which cretes an awkward situation if those specific selections aren't made. Is it ok
@@ -1040,7 +1041,7 @@ expected to enforce.<h:p/>
             </f-element>
             <f-element id="nd-fcs-ipsec-ext-1e9">
               <title>
-                The TSF shall generate the secret value x used in the IKE Diffie-Hellman (DH) key exchange (“x” in g^x mod p) using the random bit generator specified in
+                The TSF shall generate the secret value x used in the IKE Diffie-Hellman key exchange (“x” in g^x mod p) using the random bit generator specified in
                 FCS_RBG_EXT.1, and having a length of at least <assignable>(one or more) numbers of bits that is at least twice the security strength 
                 of the negotiated DH group</assignable> bits.
               </title>
@@ -1147,11 +1148,11 @@ expected to enforce.<h:p/>
                 received certificate matches the configured reference identifier, where the
                 presented and reference identifiers are of the following fields and types:
                 <h:b>Distinguished Name (DN),</h:b> <selectables>
-                  <selectable>Subject Alternative Name (SAN): IP address</selectable>
+                  <selectable>SAN: IP address</selectable>
                   <selectable>SAN: Fully Qualified Domain Name (FQDN)</selectable>
                   <selectable>SAN: user FQDN</selectable>
-                  <selectable>Common Name (CN): IP address</selectable>
-                  <selectable>CN: FQDN</selectable>
+                  <selectable>CN: IP address</selectable>
+                  <selectable>CN: Fully Qualified Domain Name (FQDN)</selectable>
                   <selectable>CN: user FQDN</selectable> 
                   <selectable exclusive="yes"><h:b>no other reference identifier types</h:b></selectable>
                   <selectable><h:b><assignable>other supported reference identifier types</assignable></h:b></selectable>
@@ -1575,7 +1576,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                   applicable), and the outcome (success or failure) of the event; and </h:li>
                 <h:li>For each audit event type, based on the auditable event
                   definitions of the functional components included in the PP/ST,
-                [<h:i>additional information defined in Auditable Events for Mandatory Requirements table for each auditable event, where applicable</h:i>].</h:li>
+                [<h:i>additional information defined in the Auditable Events for Mandatory Requirements table for each auditable event, where applicable</h:i>].</h:li>
               </h:ol>
             </title>
             <note role="application">The ST author only needs to include the auditable events that correspond to the SFRs claimed in the ST.
@@ -1842,22 +1843,22 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               The TSF shall allow the definition of packet filtering rules using the following
               network protocols and protocol fields: [<h:i><h:ul>
                 <h:li>IPv4 (RFC 791)</h:li><h:ul>
-                  <h:li>Source address</h:li>
-                  <h:li>Destination Address</h:li>
-                  <h:li>Protocol</h:li>
+                  <h:li>source address</h:li>
+                  <h:li>destination address</h:li>
+                  <h:li>protocol</h:li>
                 </h:ul>
                 <h:li>IPv6 (RFC 2460)</h:li><h:ul>
-                <h:li>Source address</h:li>
-                <h:li>Destination address</h:li>
-                <h:li>Next Header (Protocol)</h:li>
+                <h:li>source address</h:li>
+                <h:li>destination address</h:li>
+                <h:li>next header (protocol)</h:li>
                 </h:ul>
                 <h:li>TCP (RFC 793)</h:li><h:ul>
-                <h:li>Source Port</h:li>
-                <h:li>Destination Port</h:li>
+                <h:li>source port</h:li>
+                <h:li>destination port</h:li>
                 </h:ul>
                 <h:li>UDP (RFC 768)</h:li><h:ul>
-                <h:li>Source Port</h:li>
-                <h:li>Destination Port</h:li>
+                <h:li>source port</h:li>
+                <h:li>destination port</h:li>
                 </h:ul>
               </h:ul></h:i>].
             </title>
@@ -1932,22 +1933,22 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               <TSS>The evaluator shall verify that the TSS describes a packet filtering policy that can use the following fields
                 for each identified protocol, and that the RFCs identified for each protocol are supported: <h:ul>
                   <h:li>IPv4 (RFC 791)</h:li><h:ul>
-                    <h:li>Source address</h:li>
-                    <h:li>Destination address</h:li>
-                    <h:li>Protocol</h:li>
+                    <h:li>source address</h:li>
+                    <h:li>destination address</h:li>
+                    <h:li>protocol</h:li>
                   </h:ul>
                   <h:li>IPv6 (RFC 2460)</h:li><h:ul>
-                    <h:li>Source address</h:li>
-                    <h:li>Destination address</h:li>
-                    <h:li>Next Header (Protocol)</h:li>
+                    <h:li>source address</h:li>
+                    <h:li>destination address</h:li>
+                    <h:li>next header (protocol)</h:li>
                   </h:ul>
                   <h:li>TCP (RFC 793)</h:li><h:ul>
-                    <h:li>Source Port</h:li>
-                    <h:li>Destination Port</h:li>
+                    <h:li>source port</h:li>
+                    <h:li>destination port</h:li>
                   </h:ul>
                   <h:li>UDP (RFC 768)</h:li><h:ul>
-                    <h:li>Source Port</h:li>
-                    <h:li>Destination Port</h:li>
+                    <h:li>source port</h:li>
+                    <h:li>destination port</h:li>
                   </h:ul>
                 </h:ul>
                 The evaluator shall verify that the TSS describes how conformance with the identified RFCs has been
@@ -1965,21 +1966,21 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 supported and the following attributes as being configurable within packet filtering rules for the
                 associated protocols: <h:ul>
                   <h:li>IPv4 (RFC 791)</h:li><h:ul>
-                  <h:li>Destination Address</h:li>
-                  <h:li>Protocol</h:li>
+                  <h:li>destination address</h:li>
+                  <h:li>protocol</h:li>
                 </h:ul>
                 <h:li>IPv6 (RFC 2460)</h:li><h:ul>
-                  <h:li>Source address</h:li>
-                  <h:li>Destination Address</h:li>
-                  <h:li>Next Header (Protocol)</h:li>
+                  <h:li>source address</h:li>
+                  <h:li>destination address</h:li>
+                  <h:li>next header (protocol)</h:li>
                 </h:ul>
                 <h:li>TCP (RFC 793)</h:li><h:ul>
-                  <h:li>Source Port</h:li>
-                  <h:li>Destination Port</h:li>
+                  <h:li>source port</h:li>
+                  <h:li>destination port</h:li>
                 </h:ul>
                 <h:li>UDP (RFC 768)</h:li><h:ul>
-                  <h:li>Source Port</h:li>
-                  <h:li>Destination Port</h:li>
+                  <h:li>source port</h:li>
+                  <h:li>destination port</h:li>
                 </h:ul>
                 </h:ul>
                 The evaluator shall verify that the operational guidance indicates that each rule can identify the following
@@ -2756,7 +2757,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                     The evaluator shall follow AGD guidance to configure the TSF to use the authentication method claimed and, 
                     for EAP-TTLS, register a client with appropriate key material required for the authentication method. 
                     The evaluator shall establish a VPN session using a test client with a valid certificate and, for EAP-TTLS, 
-                    configured to provide a correct value for the configured authenticator. The evaluator shall  observe the the 
+                    configured to provide a correct value for the configured authenticator. The evaluator shall observe that the 
                     VPN session is successful.</test>
                   <test>(conditional for EAP-TTLS support): The evaluator shall cause the test client with a valid certificate to send 
                     an invalid authenticator for the claimed authentication method:
@@ -2821,7 +2822,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </f-element>
           <f-element id="fia-hotp-ext-1e4">
             <title>
-              The TSF shall utilize 
+              The TSF shall use 
               <selectables>
                 <selectable>SHA-1</selectable>
                 <selectable>SHA-256</selectable>
@@ -2906,7 +2907,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 <h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is conditioned into an HOTP hash and verify it matches the selection in FIA_HOTP_EXT.1.4.
                 <h:p/>The evaluator shall confirm the TSS describes how the HOTP hash is truncated and verify it matches the selection in FIA_HOTP_EXT.1.5.
                 <h:p/>The evaluator shall confirm the TSS describes how the TOE handles multiple incoming invalid requests and verify it provides an anti-hammer mechanism that matches the selections made in FIA_HOTP_EXT.1.6.
-                <h:p/>The evaluator shall confirm the TSS describes how the TOE handles resynchronization and how it rejects attempts outside of the look-ahead window selected in FIA_TOTP_EXT.1.7
+                <h:p/>The evaluator shall confirm the TSS describes how the TOE handles resynchronization and how it rejects attempts outside of the look-ahead window selected in FIA_TOTP_EXT.1.7.
                 <h:p/>The evaluator shall confirm the TSS describes how the TOE counter is incremented after each successful authentication.<h:p/>
               </TSS>
               <Guidance>The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the 
@@ -2966,13 +2967,13 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               </selectables> keys.
             </title>
             <note role="application">
-              If any selection including "Generated bit-based" is selected, then FIA_PSK_EXT.2 must be included. 
+              If any selection including "generated bit-based" is chosen, then FIA_PSK_EXT.2 must be included. 
               
-              <h:p/>If any selection including Password-based keys is selected, then FIA_PSK_EXT.3 must be included. 
+              <h:p/>If any selection including Password-based keys is chosen, then FIA_PSK_EXT.3 must be included. 
               
-              <h:p/>If any selection including HMAC-based one-time password keys is selected, then FIA_PSK_EXT.4 must be included. 
+              <h:p/>If any selection including HMAC-based one-time password keys is chosen, then FIA_PSK_EXT.4 must be included. 
               
-              <h:p/>If any selection including time-based one-time password is selected, then FIA_PSK_EXT.5 must be included. 
+              <h:p/>If any selection including time-based one-time password is chosen, then FIA_PSK_EXT.5 must be included. 
               
               <h:p/>This requirement is selection dependent on FCS_IPSEC_EXT.1.13.<h:p/>
             </note>
@@ -3086,7 +3087,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 <selectable>SHA-384</selectable>
                 <selectable>SHA-512</selectable>
               </selectables>, with 
-              <assignable>positive integer of 4096 or more</assignable> iterations], and output cryptographic key sizes 
+              <assignable>positive integer of 4096 or more</assignable> iterations, and output cryptographic key sizes 
               <selectables>
                 <selectable>128</selectable>
                 <selectable>256</selectable>
@@ -3142,7 +3143,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             <aactivity>
               <TSS>The evaluator shall examine the TSS to ensure it describes the process by which the bit-based pre-shared keys are used.  
                 
-                <h:p/>Support for length: The evaluators shall check to ensure that the TSS describes the allowable ranges for PSK lengths, and that at least 64 characters or a length defined by the platform may be specified by the user.
+                <h:p/>Support for length: The evaluator shall check to ensure that the TSS describes the allowable ranges for PSK lengths, and that at least 64 characters or a length defined by the platform may be specified by the user.
                 
                 <h:p/>Support for character set: The evaluator shall check to ensure that the TSS describes the allowable character set and that it contains the characters listed in the SFR.
                 
@@ -3315,7 +3316,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </f-element>
           <f-element id="fia-totp-ext-1e4">
             <title>
-              The TSF shall utilize 
+              The TSF shall use 
               <selectables>
                 <selectable>SHA-1</selectable>
                 <selectable>SHA-256</selectable>
@@ -3401,7 +3402,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             <note role="application">
               The selection FIA_TOTP_EXT.1.4 must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication.
               <h:p/>In FIA_TOTP_EXT.1.5 the ST author may either provide a configurable character length of at least 6 or a preset size between 6 and 10.
-              <h:p/>In FIA_TOTP_EXT.1.6 the ST may select throttle requests, account lockout, or both.
+              <h:p/>In FIA_TOTP_EXT.1.6 the ST author may select throttle requests, account lockout, or both.
               <h:p/>The TOTP seed and all derived values are considered secret keys for purposes of protection.
               </note>
             <aactivity>
@@ -3564,8 +3565,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	    
 	    
 	    <ext-comp-def fam-id="FTA_VCM_EXT" title="VPN Client Management">
-	      <fam-behavior>This family defines requirements for how the TSF interacts with VPN clients in its operational
-	        environment.
+	      <fam-behavior>This family defines requirements for how the TSF interacts with VPN clients in its OE.
 	      </fam-behavior>
 	    </ext-comp-def>
 	    

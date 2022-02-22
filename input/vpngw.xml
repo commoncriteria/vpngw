@@ -932,10 +932,6 @@ expected to enforce.<h:p/>
               <note role="application">
                 The selection of supported modes is expected to be performed according to
                 RFC 4301.
-                <h:p/>
-                This element is unchanged from the Base-PP. However, it has been included here to
-                note that future versions of this PP-Module will require that the TSF implement
-                both tunnel mode and transport mode.
               </note>
             </f-element>
             <f-element id="nd-fcs-ipsec-ext-1e4">

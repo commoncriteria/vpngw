@@ -1557,6 +1557,8 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
               The TSF shall be able to generate an audit record of the following
               auditable events: <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions</h:li>
+                <h:li>Indication that TSF self-test was completed</h:li>
+                <h:li>Failure of self-test</h:li>
                 <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit; and</h:li>
                 <!-- -->
                 <h:li>[<h:i>auditable events defined in the Auditable Events for Mandatory Requirements table</h:i>].</h:li>

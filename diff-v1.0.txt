@@ -53,16 +53,14 @@
 										      >	](#contoe-bpp-nd)[6.1.2 Consistency of Security Problem Definition
 										      >	](#consecprob-bpp-nd)[6.1.3 Consistency of Objectives
 										      >	](#conobj-bpp-nd)[6.1.4 Consistency of Requirements
-										      >	](#conreq-bpp-nd)[6.2TOE Security Assurance
-										      >	Requirements](#mod-sars)[Appendix A - Optional
-										      >	SFRs](#opt-sfrs)[A.1Strictly Optional Requirements
-										      >	](#opt-sfrs)[A.1.1Auditable Events for Strictly Optional
-										      >	SFRs](#sop-audit-table)[A.1.2Packet Filtering
+										      >	](#conreq-bpp-nd)[Appendix A - Optional SFRs](#opt-sfrs)[A.1Strictly
+										      >	Optional Requirements ](#opt-sfrs)[A.1.1Auditable Events for Strictly
+										      >	Optional SFRs](#sop-audit-table)[A.1.2Packet Filtering
 										      >	(FPF)](#s-fpf)[A.2Objective Requirements
-										      >	](#obj-sfrs)[A.3Implementation-Based Requirements
+										      >	](#obj-sfrs)[A.3Implementation-based Requirements
 										      >	](#impl-dep-sfrs)[A.3.1Auditable Events for Implementation-Based
 										      >	SFRs](#sib-audit-table)[A.3.2TOE Access (FTA)](#opt-headend)[Appendix B
-										      >	- Selection-Based Requirements ](#sel-sfrs)[B.1Auditable Events for
+										      >	- Selection-based Requirements ](#sel-sfrs)[B.1Auditable Events for
 										      >	Selection-based SFRs](#sb-audit-table)[B.2Cryptographic Support
 										      >	(FCS)](#s-fcs)[B.3Identification and Authentication
 										      >	(FIA)](#sel-fia)[Appendix C - Extended Component
@@ -476,14 +474,14 @@
 										      >	3.2 Assumptions {#Assumptions .indexable data-level="2"}
 										      >	---------------
 										      >
-										      >	These assumptions are made on the Operational Environment in order to be
-										      >	able to ensure that the security functionality specified in the
-										      >	[PP-Module](#abbr_PP-Module) can be provided by the [TOE](#abbr_TOE). If
-										      >	the [TOE](#abbr_TOE) is placed in an Operational Environment that does
-										      >	not meet these assumptions, the [TOE](#abbr_TOE) may no longer be able
-										      >	to provide all of its security functionality. This
-										      >	[PP-Module](#abbr_PP-Module) defines assumptions that extend those
-										      >	defined in the supported [Base-PP](#abbr_Base-PP).
+										      >	These assumptions are made on the Operational Environment
+										      >	([OE](#abbr_OE)) in order to be able to ensure that the security
+										      >	functionality specified in the [PP-Module](#abbr_PP-Module) can be
+										      >	provided by the [TOE](#abbr_TOE). If the [TOE](#abbr_TOE) is placed in
+										      >	an [OE](#abbr_OE) that does not meet these assumptions, the
+										      >	[TOE](#abbr_TOE) may no longer be able to provide all of its security
+										      >	functionality. This [PP-Module](#abbr_PP-Module) defines assumptions
+										      >	that extend those defined in the supported [Base-PP](#abbr_Base-PP).
 										      >
 										      >	All assumptions for the [OE](#abbr_OE) of the [Base-PP](#abbr_Base-PP)
 										      >	also apply to this [PP-Module](#abbr_PP-Module).
@@ -502,8 +500,8 @@
 										      >
 										      >	An organization deploying the [TOE](#abbr_TOE) is expected to satisfy
 										      >	the organizational security policy listed below in addition to all
-										      >	organizational security policies defined by the claimed base
-										      >	[PP](#abbr_PP).
+										      >	organizational security policies defined by the claimed
+										      >	[Base-PP](#abbr_Base-PP).
 										      >
 										      >	This document does not define any additional OSPs.
 										      >
@@ -620,18 +618,17 @@
 										      >	4.2 Security Objectives for the Operational Environment {#SecurityObjectivesTOEorEnvi
 										      >	-------------------------------------------------------
 										      >
-										      >	The Operational Environment of the [TOE](#abbr_TOE) implements technical
-										      >	and procedural measures to assist the [TOE](#abbr_TOE) in correctly
+										      >	The [OE](#abbr_OE) of the [TOE](#abbr_TOE) implements technical and
+										      >	procedural measures to assist the [TOE](#abbr_TOE) in correctly
 										      >	providing its security functionality (which is defined by the security
 										      >	objectives for the [TOE](#abbr_TOE)). The security objectives for the
-										      >	Operational Environment consist of a set of statements describing the
-										      >	goals that the Operational Environment should achieve. This section
-										      >	defines the security objectives that are to be addressed by the IT
-										      >	domain or by non-technical or procedural means. The assumptions
-										      >	identified in Section 3 are incorporated as security objectives for the
-										      >	environment. This [PP-Module](#abbr_PP-Module) defines environmental
-										      >	security objectives that extend those defined in the supported
-										      >	[Base-PP](#abbr_Base-PP).
+										      >	[OE](#abbr_OE) consist of a set of statements describing the goals that
+										      >	the [OE](#abbr_OE) should achieve. This section defines the security
+										      >	objectives that are to be addressed by the IT domain or by non-technical
+										      >	or procedural means. The assumptions identified in Section 3 are
+										      >	incorporated as security objectives for the environment. This
+										      >	[PP-Module](#abbr_PP-Module) defines environmental security objectives
+										      >	that extend those defined in the supported [Base-PP](#abbr_Base-PP).
 										      >
 										      >	All objectives for the [OE](#abbr_OE) of the [Base-PP](#abbr_Base-PP)
 										      >	also apply to this [PP-Module](#abbr_PP-Module).
@@ -2278,12 +2275,12 @@
 										      >	  [O.SYSTEM\_MONITORING](#O.SYSTEM_MONITORING)               The [Base-PP](#abbr_Base
 										      >	  [O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION)             The [Base-PP](#abbr_Base
 										      >
-										      >	The objectives for the [TOE](#abbr_TOE)\'s Operational Environment are
-										      >	consistent with the NDcPP based on the following rationale:
+										      >	The objectives for the [TOE](#abbr_TOE)\'s [OE](#abbr_OE) are consistent
+										      >	with the NDcPP based on the following rationale:
 										      >
-										      >	  [PP-Module](#abbr_PP-Module) Operational Environment Objective   Consistency Ration
-										      >	  ---------------------------------------------------------------- ------------------
-										      >	  [OE.CONNECTIONS](#OE.CONNECTIONS)                                This objective int
+										      >	  [PP-Module](#abbr_PP-Module) [OE](#abbr_OE) Objective   Consistency Rationale
+										      >	  ------------------------------------------------------- ---------------------------
+										      >	  [OE.CONNECTIONS](#OE.CONNECTIONS)                       This objective intends for 
 										      >
 										      >	### 6.1.4 Consistency of Requirements {#conreq-bpp-nd .indexable data-level="3"}
 										      >
@@ -2474,7 +2471,7 @@
 										      >	This [PP-Module](#abbr_PP-Module) does not define any Objective
 										      >	requirements.
 										      >
-										      >	Implementation-Dependent SFRs
+										      >	Implementation-based SFRs
 										      >
 										      >	[FTA\_SSL.3/VPN](#FTA_SSL.3/VPN)
 										      >
@@ -2496,13 +2493,6 @@
 										      >	scope of the [Base-PP](#abbr_Base-PP) and therefore not prohibited by
 										      >	it.
 										      >
-										      >	6.2 TOE Security Assurance Requirements {#mod-sars .indexable data-level="2"}
-										      >	---------------------------------------
-										      >
-										      >	This [PP-Module](#abbr_PP-Module) does not define any Security Assurance
-										      >	requirements. The SARs from the [Base-PP](#abbr_Base-PP) must be
-										      >	satisfied.
-										      >
 										      >	Appendix A - Optional SFRs {#opt-sfrs .indexable data-level="A"}
 										      >	==========================
 										      >
@@ -2517,7 +2507,7 @@
 										      >
 										      >	  : [Table [4]{.counter}]{#t-audit-optional .ctr
 										      >	  data-myid="t-audit-optional" data-counter-type="ct-Table"}: Auditable
-										      >	  Events for Optional Requirements
+										      >	  Events for Strictly Optional Requirements
 										      >
 										      >	### A.1.2 Packet Filtering (FPF) {#s-fpf .indexable data-level="3"}
 										      >
@@ -2553,7 +2543,7 @@
 										      >
 										      >	This [PP-Module](#abbr_PP-Module) does not define any Objective SFRs.
 										      >
-										      >	A.3 Implementation-Based Requirements {#impl-dep-sfrs .indexable data-level="2"}
+										      >	A.3 Implementation-based Requirements {#impl-dep-sfrs .indexable data-level="2"}
 										      >	-------------------------------------
 										      >
 										      >	### A.3.1 Auditable Events for Implementation-Based SFRs {#sib-audit-table .indexable
@@ -2566,7 +2556,7 @@
 										      >
 										      >	  : [Table [5]{.counter}]{#t-audit-feat-based .ctr
 										      >	  data-myid="t-audit-feat-based" data-counter-type="ct-Table"}:
-										      >	  Auditable Events for Feat-based Requirements
+										      >	  Auditable Events for Implementation-based Requirements
 										      >
 										      >	### A.3.2 TOE Access (FTA) {#opt-headend .indexable data-level="3"}
 										      >
@@ -2660,7 +2650,7 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	Appendix B - Selection-Based Requirements {#sel-sfrs .indexable data-level="1"}
+										      >	Appendix B - Selection-based Requirements {#sel-sfrs .indexable data-level="1"}
 										      >	=========================================
 										      >
 										      >	B.1 Auditable Events for Selection-based SFRs {#sb-audit-table .indexable data-level=
@@ -4165,7 +4155,7 @@
 										      >	[PP](#abbr_PP) provides evidence that these controls are present and
 										      >	have been evaluated.
 										      >
-										      >	. All [SFR](#abbr_SFR) dependencies in this [PP-Module](#abbr_PP-Module)
+										      >	All [SFR](#abbr_SFR) dependencies in this [PP-Module](#abbr_PP-Module)
 										      >	are addressed by appropriate SFRs, either from elsewhere in the
 										      >	[PP-Module](#abbr_PP-Module) or inherited from the
 										      >	[Base-PP](#abbr_Base-PP).

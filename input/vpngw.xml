@@ -2583,7 +2583,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
       </section> 
     </man-sfrs>
 
-    <mod-sars>
+    <!-- <mod-sars> -->
      <!-- 5.3 TOE Security Assurance Requirements -->
 <!--	Note: what is included here is a hybrid of what was in the Module (section 5.4) and SD (section 6) in Module v1.1  -->
       <!-- 
@@ -2597,8 +2597,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
       defined in section A.1.4 of the NDcPP SD is applied to the TOE’s VPN interfaces in addition to any other
       security-relevant network device interfaces that the TOE may have.
 			-->
-		
-    </mod-sars> 
+    <!-- </mod-sars>  -->
 	  
 	<!-- Appendix A: Optional Requirements -->
 

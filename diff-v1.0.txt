@@ -2514,7 +2514,7 @@
 										      >
 										      >	  : [Table [4]{.counter}]{#t-audit-optional .ctr
 										      >	  data-myid="t-audit-optional" data-counter-type="ct-Table"}: Auditable
-										      >	  Events for Optional Requirements
+										      >	  Events for Strictly Optional Requirements
 										      >
 										      >	### A.1.2 Packet Filtering (FPF) {#s-fpf .indexable data-level="3"}
 										      >
@@ -2563,7 +2563,7 @@
 										      >
 										      >	  : [Table [5]{.counter}]{#t-audit-feat-based .ctr
 										      >	  data-myid="t-audit-feat-based" data-counter-type="ct-Table"}:
-										      >	  Auditable Events for Feat-based Requirements
+										      >	  Auditable Events for Implementation-based Requirements
 										      >
 										      >	### A.3.2 TOE Access (FTA) {#opt-headend .indexable data-level="3"}
 										      >

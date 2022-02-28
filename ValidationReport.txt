@@ -1,0 +1,1 @@
+/home/runner/work/vpngw/vpngw/input/vpngw.xml:26:29: error: character content of element "date" invalid; must be an ISO date

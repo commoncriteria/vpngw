@@ -3,20 +3,20 @@
 										      >
 										      >	::: {.center}
 										      >	![NIAP Logo](images/niaplogo.png)\
-										      >	Version: 1.3-Draft\
-										      >	2022-02-22\
+										      >	Version: 1.3\
+										      >	2022-02-28\
 										      >	**National Information Assurance Partnership**\
 										      >	:::
 										      >
 										      >	Revision History {#revision-history style="page-break-before:always;"}
 										      >	----------------
 										      >
-										      >	  Version     Date         Comment
-										      >	  ----------- ------------ ----------------------------------------------------------
-										      >	  1.3-Draft   2021-12-16   Incorporation of TC feedback
-										      >	  1.2         2021-09-27   Format conversion, incorporation of NIAP Technical Decisio
-										      >	  1.1         2020-06-18   Compatibility with CPP\_ND\_V2.2E, incorporation of NIAP T
-										      >	  1.0         2019-09-17   Initial publication
+										      >	  Version   Date         Comment
+										      >	  --------- ------------ ------------------------------------------------------------
+										      >	  1.3       2021-2-28    Incorporation of TC feedback
+										      >	  1.2       2021-09-27   Format conversion, incorporation of NIAP Technical Decisions
+										      >	  1.1       2020-06-18   Compatibility with CPP\_ND\_V2.2E, incorporation of NIAP Tec
+										      >	  1.0       2019-09-17   Initial publication
 										      >
 										      >	Contents
 										      >	--------

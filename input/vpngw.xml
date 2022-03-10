@@ -2965,7 +2965,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             <note role="application">
               <h:p/>FIA_PSK_EXT.1 includes the options for MFA solutions.
 		    
-              <h:p/If any selection including "generated bit-based" is chosen, then FIA_PSK_EXT.2 must be included. 
+              <h:p/>If any selection including "generated bit-based" is chosen, then FIA_PSK_EXT.2 must be included. 
               
               <h:p/>If any selection including Password-based keys is chosen, then FIA_PSK_EXT.3 must be included. 
               

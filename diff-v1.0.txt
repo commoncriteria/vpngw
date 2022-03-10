@@ -57,10 +57,10 @@
 										      >	Optional Requirements ](#opt-sfrs)[A.1.1Auditable Events for Strictly
 										      >	Optional SFRs](#sop-audit-table)[A.1.2Packet Filtering
 										      >	(FPF)](#s-fpf)[A.2Objective Requirements
-										      >	](#obj-sfrs)[A.3Implementation-Based Requirements
+										      >	](#obj-sfrs)[A.3Implementation-dependent Requirements
 										      >	](#impl-dep-sfrs)[A.3.1Auditable Events for Implementation-Dependent
 										      >	SFRs](#sib-audit-table)[A.3.2TOE Access (FTA)](#opt-headend)[Appendix B
-										      >	- Selection-Based Requirements ](#sel-sfrs)[B.1Auditable Events for
+										      >	- Selection-based Requirements ](#sel-sfrs)[B.1Auditable Events for
 										      >	Selection-based SFRs](#sb-audit-table)[B.2Cryptographic Support
 										      >	(FCS)](#s-fcs)[B.3Identification and Authentication
 										      >	(FIA)](#sel-fia)[Appendix C - Extended Component
@@ -96,7 +96,7 @@
 										      >	of a virtual private network ([VPN](#abbr_VPN)) gateway in terms of
 										      >	[\[CC\]](#bibCC) and to define functional and assurance requirements for
 										      >	such products. This [PP-Module](#abbr_PP-Module) is intended for use
-										      >	with the following Base-PPs:
+										      >	with the following [Base-PPs](#abbr_Base-PP):
 										      >
 										      >	-   collaborative Protection Profile for Network Devices, Version 2.2E
 										      >	    (NDcPP or CPP\_ND\_V2.2E)
@@ -120,6 +120,7 @@
 										      >	intrusion prevention) with a number of distributed nodes that help in
 										      >	the enforcement of the secondary functionality.
 										      >
+										      >	::: {.no-link}
 										      >	1.2 Terms {#glossary .indexable data-level="2"}
 										      >	---------
 										      >
@@ -129,30 +130,29 @@
 										      >	### 1.2.1 Common Criteria Terms {#cc-terms .indexable data-level="3"}
 										      >
 										      >	+-----------------------------------+-----------------------------------+
-										      >	| ::: {#Assurance}                  | Grounds for confidence that a     |
-										      >	| Assurance                         | [TOE](#abbr_TOE) meets the SFRs   |
-										      >	| :::                               | [\[CC\]](#bibCC).                 |
+										      >	| ::: {#Assurance}                  | Grounds for confidence that a TOE |
+										      >	| Assurance                         | meets the SFRs [\[CC\]](#bibCC).  |
+										      >	| :::                               |                                   |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Base_Protection_Profile}    | Protection Profile used as a      |
-										      >	| Base Protection Profile           | basis to build a                  |
-										      >	| ([Base-PP](#abbr_Base-PP))        | [PP-Configuration](#abbr_PP-Confi |
-										      >	| :::                               | guration).                        |
+										      >	| Base Protection Profile (Base-PP) | basis to build a                  |
+										      >	| :::                               | PP-Configuration.                 |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Collaborative_Protection_Pr | A Protection Profile developed by |
 										      >	| ofile}                            | international technical           |
 										      >	| Collaborative Protection Profile  | communities and approved by       |
-										      >	| ([cPP](#abbr_cPP))                | multiple schemes                  |
+										      >	| (cPP)                             | multiple schemes.                 |
 										      >	| :::                               |                                   |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Common_Criteria}            | Common Criteria for Information   |
-										      >	| Common Criteria ([CC](#abbr_CC))  | Technology Security Evaluation    |
+										      >	| Common Criteria (CC)              | Technology Security Evaluation    |
 										      >	| :::                               | (International Standard ISO/IEC   |
 										      >	|                                   | 15408).                           |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Common_Criteria_Testing_Lab | Within the context of the Common  |
 										      >	| oratory}                          | Criteria Evaluation and           |
 										      >	| Common Criteria Testing           | Validation Scheme (CCEVS), an IT  |
-										      >	| Laboratory                        | security evaluation facility,     |
+										      >	| Laboratory                        | security evaluation facility      |
 										      >	| :::                               | accredited by the National        |
 										      >	|                                   | Voluntary Laboratory              |
 										      >	|                                   | Accreditation Program (NVLAP) and |
@@ -163,90 +163,81 @@
 										      >	| ::: {#Common_Evaluation_Methodolo | Common Evaluation Methodology for |
 										      >	| gy}                               | Information Technology Security   |
 										      >	| Common Evaluation Methodology     | Evaluation.                       |
-										      >	| ([CEM](#abbr_CEM))                |                                   |
+										      >	| (CEM)                             |                                   |
 										      >	| :::                               |                                   |
 										      >	+-----------------------------------+-----------------------------------+
-										      >	| ::: {#Distributed_TOE}            | A [TOE](#abbr_TOE) composed of    |
-										      >	| Distributed [TOE](#abbr_TOE)      | multiple components operating as  |
-										      >	| :::                               | a logical whole.                  |
+										      >	| ::: {#Distributed_TOE}            | A TOE composed of multiple        |
+										      >	| Distributed TOE                   | components operating as a logical |
+										      >	| :::                               | whole.                            |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Extended_Package}           | A deprecated document form for    |
-										      >	| Extended Package ([EP](#abbr_EP)) | collecting SFRs that implement a  |
+										      >	| Extended Package (EP)             | collecting SFRs that implement a  |
 										      >	| :::                               | particular protocol, technology,  |
 										      >	|                                   | or functionality. See Functional  |
 										      >	|                                   | Packages.                         |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Functional_Package}         | A document that collects SFRs for |
-										      >	| Functional Package                | a particular protocol,            |
-										      >	| ([FP](#abbr_FP))                  | technology, or functionality.     |
-										      >	| :::                               |                                   |
+										      >	| Functional Package (FP)           | a particular protocol,            |
+										      >	| :::                               | technology, or functionality.     |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Operational_Environment}    | Hardware and software that are    |
-										      >	| Operational Environment           | outside the [TOE](#abbr_TOE)      |
-										      >	| ([OE](#abbr_OE))                  | boundary that support the         |
-										      >	| :::                               | [TOE](#abbr_TOE) functionality    |
-										      >	|                                   | and security policy.              |
+										      >	| Operational Environment (OE)      | outside the TOE boundary that     |
+										      >	| :::                               | support the TOE functionality and |
+										      >	|                                   | security policy.                  |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Protection_Profile}         | An implementation-independent set |
-										      >	| Protection Profile                | of security requirements for a    |
-										      >	| ([PP](#abbr_PP))                  | category of products.             |
-										      >	| :::                               |                                   |
+										      >	| Protection Profile (PP)           | of security requirements for a    |
+										      >	| :::                               | category of products.             |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Protection_Profile_Configur | A comprehensive set of security   |
 										      >	| ation}                            | requirements for a product type   |
 										      >	| Protection Profile Configuration  | that consists of at least one     |
-										      >	| ([PP-Configuration](#abbr_PP-Conf | [Base-PP](#abbr_Base-PP) and at   |
-										      >	| iguration))                       | least one                         |
-										      >	| :::                               | [PP-Module](#abbr_PP-Module).     |
+										      >	| (PP-Configuration)                | Base-PP and at least one          |
+										      >	| :::                               | PP-Module.                        |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Protection_Profile_Module}  | An implementation-independent     |
 										      >	| Protection Profile Module         | statement of security needs for a |
-										      >	| ([PP-Module](#abbr_PP-Module))    | [TOE](#abbr_TOE) type             |
-										      >	| :::                               | complementary to one or more Base |
-										      >	|                                   | Protection Profiles.              |
+										      >	| (PP-Module)                       | TOE type complementary to one or  |
+										      >	| :::                               | more Base-PPs.                    |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Security_Assurance_Requirem | A requirement to assure the       |
-										      >	| ent}                              | security of the [TOE](#abbr_TOE). |
+										      >	| ent}                              | security of the TOE.              |
 										      >	| Security Assurance Requirement    |                                   |
-										      >	| ([SAR](#abbr_SAR))                |                                   |
+										      >	| (SAR)                             |                                   |
 										      >	| :::                               |                                   |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Security_Functional_Require | A requirement for security        |
-										      >	| ment}                             | enforcement by the                |
-										      >	| Security Functional Requirement   | [TOE](#abbr_TOE).                 |
-										      >	| ([SFR](#abbr_SFR))                |                                   |
+										      >	| ment}                             | enforcement by the TOE.           |
+										      >	| Security Functional Requirement   |                                   |
+										      >	| (SFR)                             |                                   |
 										      >	| :::                               |                                   |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Security_Target}            | A set of implementation-dependent |
-										      >	| Security Target ([ST](#abbr_ST))  | security requirements for a       |
+										      >	| Security Target (ST)              | security requirements for a       |
 										      >	| :::                               | specific product.                 |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Target_of_Evaluation}       | The product under evaluation.     |
-										      >	| Target of Evaluation              |                                   |
-										      >	| ([TOE](#abbr_TOE))                |                                   |
+										      >	| Target of Evaluation (TOE)        |                                   |
 										      >	| :::                               |                                   |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#TOE_Security_Functionality} | The security functionality of the |
-										      >	| [TOE](#abbr_TOE) Security         | product under evaluation.         |
-										      >	| Functionality ([TSF](#abbr_TSF))  |                                   |
+										      >	| TOE Security Functionality (TSF)  | product under evaluation.         |
 										      >	| :::                               |                                   |
 										      >	+-----------------------------------+-----------------------------------+
-										      >	| ::: {#TOE_Summary_Specification}  | A description of how a            |
-										      >	| [TOE](#abbr_TOE) Summary          | [TOE](#abbr_TOE) satisfies the    |
-										      >	| Specification ([TSS](#abbr_TSS))  | SFRs in an [ST](#abbr_ST).        |
+										      >	| ::: {#TOE_Summary_Specification}  | A description of how a TOE        |
+										      >	| TOE Summary Specification (TSS)   | satisfies the SFRs in an ST.      |
 										      >	| :::                               |                                   |
 										      >	+-----------------------------------+-----------------------------------+
 										      >
 										      >	### 1.2.2 Technical Terms {#tech-terms .indexable data-level="3"}
 										      >
 										      >	+-----------------------------------+-----------------------------------+
-										      >	| ::: {#Headend}                    | A [VPN](#abbr_VPN) use case where |
-										      >	| Headend                           | the [VPN](#abbr_VPN) gateway is   |
-										      >	| :::                               | establishing [VPN](#abbr_VPN)     |
-										      >	|                                   | connectivity with endpoint        |
-										      >	|                                   | [VPN](#abbr_VPN) clients as       |
-										      >	|                                   | opposed to other infrastructure   |
-										      >	|                                   | devices (e.g. site-to-site).      |
+										      >	| ::: {#Headend}                    | A VPN use case where the VPN      |
+										      >	| Headend                           | gateway is establishing VPN       |
+										      >	| :::                               | connectivity with endpoint VPN    |
+										      >	|                                   | clients as opposed to other       |
+										      >	|                                   | infrastructure devices (e.g.      |
+										      >	|                                   | site-to-site).                    |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Packet_Filtering}           | The process by which an edge      |
 										      >	| Packet Filtering                  | network device determines if      |
@@ -255,17 +246,18 @@
 										      >	|                                   | destination or dropped.           |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#VPN_Gateway}                | A type of network device that     |
-										      >	| [VPN](#abbr_VPN) Gateway          | resides at the edge of a private  |
+										      >	| VPN Gateway                       | resides at the edge of a private  |
 										      >	| :::                               | network and permits the           |
-										      >	|                                   | establishment of [VPN](#abbr_VPN) |
-										      >	|                                   | connectivity from computers       |
-										      >	|                                   | residing in an external network.  |
+										      >	|                                   | establishment of VPN connectivity |
+										      >	|                                   | from computers residing in an     |
+										      >	|                                   | external network.                 |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Virtual_Private_Network}    | A mechanism for overlaying a      |
-										      >	| Virtual Private Network           | cryptographically secured network |
-										      >	| ([VPN](#abbr_VPN))                | over distributed wide-area        |
-										      >	| :::                               | networks.                         |
+										      >	| Virtual Private Network (VPN)     | cryptographically secured network |
+										      >	| :::                               | over distributed wide-area        |
+										      >	|                                   | networks.                         |
 										      >	+-----------------------------------+-----------------------------------+
+										      >	:::
 										      >
 										      >	1.3 Compliant Targets of Evaluation {#Compliant_Targets_of_Evaluation .indexable data
 										      >	-----------------------------------
@@ -326,13 +318,14 @@
 										      >
 										      >	Conformance Statement
 										      >	:   This [PP-Module](#abbr_PP-Module) inherits exact conformance as
-										      >	    required from the specified Base-PPs and as defined in the
-										      >	    [CC](#abbr_CC) and [CEM](#abbr_CEM) addenda for Exact Conformance,
-										      >	    Selection-Based SFRs, and Optional SFRs (dated May 2017).\
+										      >	    required from the specified [Base-PPs](#abbr_Base-PP) and as defined
+										      >	    in the [CC](#abbr_CC) and [CEM](#abbr_CEM) addenda for Exact
+										      >	    Conformance, Selection-Based [SFRs](#abbr_SFR), and Optional
+										      >	    [SFRs](#abbr_SFR) (dated May 2017).\
 										      >	    \
-										      >	    The following PPs and [PP](#abbr_PP)-Modules are allowed to be
-										      >	    specified in a [PP-Configuration](#abbr_PP-Configuration) with this
-										      >	    [PP-Module](#abbr_PP-Module):
+										      >	    The following [PPs](#abbr_PP) and [PP](#abbr_PP)-Modules are allowed
+										      >	    to be specified in a [PP-Configuration](#abbr_PP-Configuration) with
+										      >	    this [PP-Module](#abbr_PP-Module):
 										      >	    -   collaborative Protection Profile Module for Stateful Traffic
 										      >	        Filter Firewalls v1.4 + Errata 20200625
 										      >	    -   [PP-Module](#abbr_PP-Module) for Intrusion Protection Systems,
@@ -474,14 +467,14 @@
 										      >	3.2 Assumptions {#Assumptions .indexable data-level="2"}
 										      >	---------------
 										      >
-										      >	These assumptions are made on the Operational Environment in order to be
-										      >	able to ensure that the security functionality specified in the
-										      >	[PP-Module](#abbr_PP-Module) can be provided by the [TOE](#abbr_TOE). If
-										      >	the [TOE](#abbr_TOE) is placed in an Operational Environment that does
-										      >	not meet these assumptions, the [TOE](#abbr_TOE) may no longer be able
-										      >	to provide all of its security functionality. This
-										      >	[PP-Module](#abbr_PP-Module) defines assumptions that extend those
-										      >	defined in the supported [Base-PP](#abbr_Base-PP).
+										      >	These assumptions are made on the Operational Environment
+										      >	([OE](#abbr_OE)) in order to be able to ensure that the security
+										      >	functionality specified in the [PP-Module](#abbr_PP-Module) can be
+										      >	provided by the [TOE](#abbr_TOE). If the [TOE](#abbr_TOE) is placed in
+										      >	an [OE](#abbr_OE) that does not meet these assumptions, the
+										      >	[TOE](#abbr_TOE) may no longer be able to provide all of its security
+										      >	functionality. This [PP-Module](#abbr_PP-Module) defines assumptions
+										      >	that extend those defined in the supported [Base-PP](#abbr_Base-PP).
 										      >
 										      >	All assumptions for the [OE](#abbr_OE) of the [Base-PP](#abbr_Base-PP)
 										      >	also apply to this [PP-Module](#abbr_PP-Module).
@@ -500,8 +493,8 @@
 										      >
 										      >	An organization deploying the [TOE](#abbr_TOE) is expected to satisfy
 										      >	the organizational security policy listed below in addition to all
-										      >	organizational security policies defined by the claimed base
-										      >	[PP](#abbr_PP).
+										      >	organizational security policies defined by the claimed
+										      >	[Base-PP](#abbr_Base-PP).
 										      >
 										      >	This document does not define any additional OSPs.
 										      >
@@ -593,24 +586,24 @@
 										      >	O.SYSTEM\_MONITORING
 										      >	:   To address the issues of administrators being able to monitor the
 										      >	    operations of the [VPN](#abbr_VPN) gateway, it is necessary to
-										      >	    provide a capability to monitor system activity. Compliant TOEs will
-										      >	    implement the ability to log the flow of network traffic.
-										      >	    Specifically, the [TOE](#abbr_TOE) will provide the means for
-										      >	    administrators to configure packet filtering rules to 'log' when
-										      >	    network traffic is found to match the configured rule. As a result,
-										      >	    matching a rule configured to 'log' will result in informative event
-										      >	    logs whenever a match occurs. In addition, the establishment of
-										      >	    security associations (SAs) is auditable, not only between peer
-										      >	    [VPN](#abbr_VPN) gateways, but also with certification authorities
-										      >	    (CAs).
+										      >	    provide a capability to monitor system activity. Compliant
+										      >	    [TOEs](#abbr_TOE) will implement the ability to log the flow of
+										      >	    network traffic. Specifically, the [TOE](#abbr_TOE) will provide the
+										      >	    means for administrators to configure packet filtering rules to
+										      >	    'log' when network traffic is found to match the configured rule. As
+										      >	    a result, matching a rule configured to 'log' will result in
+										      >	    informative event logs whenever a match occurs. In addition, the
+										      >	    establishment of security associations (SAs) is auditable, not only
+										      >	    between peer [VPN](#abbr_VPN) gateways, but also with certification
+										      >	    authorities (CAs).
 										      >	    Addressed by: [FAU\_GEN.1/VPN](#FAU_GEN.1/VPN),
 										      >	    [FPF\_RUL\_EXT.1](#FPF_RUL_EXT.1)
 										      >
 										      >	O.TOE\_ADMINISTRATION
-										      >	:   TOEs will provide the functions necessary for an administrator to
-										      >	    configure the packet filtering rules, as well as the cryptographic
-										      >	    aspects of the IPsec protocol that are enforced by the
-										      >	    [TOE](#abbr_TOE).
+										      >	:   [TOEs](#abbr_TOE) will provide the functions necessary for an
+										      >	    administrator to configure the packet filtering rules, as well as
+										      >	    the cryptographic aspects of the IPsec protocol that are enforced by
+										      >	    the [TOE](#abbr_TOE).
 										      >	    Addressed by: [FMT\_MTD.1/CryptoKeys](#FMT_MTD.1/CryptoKeys)
 										      >	    (refined from [Base-PP](#abbr_Base-PP)),
 										      >	    [FMT\_SMF.1/VPN](#FMT_SMF.1/VPN)
@@ -618,18 +611,17 @@
 										      >	4.2 Security Objectives for the Operational Environment {#SecurityObjectivesTOEorEnvi
 										      >	-------------------------------------------------------
 										      >
-										      >	The Operational Environment of the [TOE](#abbr_TOE) implements technical
-										      >	and procedural measures to assist the [TOE](#abbr_TOE) in correctly
+										      >	The [OE](#abbr_OE) of the [TOE](#abbr_TOE) implements technical and
+										      >	procedural measures to assist the [TOE](#abbr_TOE) in correctly
 										      >	providing its security functionality (which is defined by the security
 										      >	objectives for the [TOE](#abbr_TOE)). The security objectives for the
-										      >	Operational Environment consist of a set of statements describing the
-										      >	goals that the Operational Environment should achieve. This section
-										      >	defines the security objectives that are to be addressed by the IT
-										      >	domain or by non-technical or procedural means. The assumptions
-										      >	identified in Section 3 are incorporated as security objectives for the
-										      >	environment. This [PP-Module](#abbr_PP-Module) defines environmental
-										      >	security objectives that extend those defined in the supported
-										      >	[Base-PP](#abbr_Base-PP).
+										      >	[OE](#abbr_OE) consist of a set of statements describing the goals that
+										      >	the [OE](#abbr_OE) should achieve. This section defines the security
+										      >	objectives that are to be addressed by the IT domain or by non-technical
+										      >	or procedural means. The assumptions identified in Section 3 are
+										      >	incorporated as security objectives for the environment. This
+										      >	[PP-Module](#abbr_PP-Module) defines environmental security objectives
+										      >	that extend those defined in the supported [Base-PP](#abbr_Base-PP).
 										      >
 										      >	All objectives for the [OE](#abbr_OE) of the [Base-PP](#abbr_Base-PP)
 										      >	also apply to this [PP-Module](#abbr_PP-Module).
@@ -847,13 +839,13 @@
 										      >	functions implemented by the network device as a whole and evaluated
 										      >	against the [Base-PP](#abbr_Base-PP). In this case, the following
 										      >	sections describe any modifications that the [ST](#abbr_ST) author must
-										      >	make to the SFRs defined in the [Base-PP](#abbr_Base-PP) in addition to
-										      >	what is mandated by section 5.2.
+										      >	make to the [SFRs](#abbr_SFR) defined in the [Base-PP](#abbr_Base-PP) in
+										      >	addition to what is mandated by section 5.2.
 										      >
 										      >	### 5.1.1 Modified SFRs {#modsfr-bpp-nd .indexable data-level="3"}
 										      >
-										      >	The SFRs listed in this section are defined in the NDcPP and relevant to
-										      >	the secure operation of the [TOE](#abbr_TOE).
+										      >	The [SFRs](#abbr_SFR) listed in this section are defined in the NDcPP
+										      >	and relevant to the secure operation of the [TOE](#abbr_TOE).
 										      >
 										      >	#### 5.1.1.1 Cryptographic Support (FCS) {#nd-m-fcs .indexable data-level="4"}
 										      >
@@ -1215,9 +1207,6 @@
 										      >
 										      >	If any selection with "pre-shared keys" is selected, the selection-based
 										      >	requirement [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) must be claimed.
-										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) includes the options for MFA
-										      >	solutions, it may be brought in via this selection or via the optional
-										      >	[FPF\_MFA\_EXT.1](#FPF_MFA_EXT.1) requirement.
 										      >
 										      >	When pre-shared keys are supported for IKEv2, at least one of
 										      >	'Pre-shared Keys transmitted via EAP-TLS' or 'Pre-shared Keys
@@ -1493,7 +1482,7 @@
 										      >	checking of certificates designated as trust store elements. The
 										      >	integrity of trust store elements depends on administrative controls for
 										      >	loading and managing trust stores and functional integrity checks that
-										      >	are described in other SFRs.
+										      >	are described in other [SFRs](#abbr_SFR).
 										      >
 										      >	So, if the certificate used to verify the update is a trust store
 										      >	element (self-signed and specifically trusted for verifying updates,
@@ -1515,11 +1504,11 @@
 										      >	5.2 TOE Security Functional Requirements {#man-sfrs .indexable data-level="2"}
 										      >	----------------------------------------
 										      >
-										      >	The following section describes the SFRs that must be satisfied by any
-										      >	[TOE](#abbr_TOE) that claims conformance to this
-										      >	[PP-Module](#abbr_PP-Module). These SFRs must be claimed regardless of
-										      >	which [PP-Configuration](#abbr_PP-Configuration) is used to define the
-										      >	[TOE](#abbr_TOE).
+										      >	The following section describes the [SFRs](#abbr_SFR) that must be
+										      >	satisfied by any [TOE](#abbr_TOE) that claims conformance to this
+										      >	[PP-Module](#abbr_PP-Module). These [SFRs](#abbr_SFR) must be claimed
+										      >	regardless of which [PP-Configuration](#abbr_PP-Configuration) is used
+										      >	to define the [TOE](#abbr_TOE).
 										      >
 										      >	### 5.2.1 Auditable Events for Mandatory SFRs {#ss-audit-table .indexable data-level=
 										      >
@@ -1607,10 +1596,10 @@
 										      >
 										      >	::: {.appnote}
 										      >	[Application Note: ]{.note-header}[The [ST](#abbr_ST) author only needs
-										      >	to include the auditable events that correspond to the SFRs claimed in
-										      >	the [ST](#abbr_ST). The [TOE](#abbr_TOE) is not required to generate
-										      >	auditable events for selection-based or optional SFRs that it does not
-										      >	claim.]{.note}
+										      >	to include the auditable events that correspond to the [SFRs](#abbr_SFR)
+										      >	claimed in the [ST](#abbr_ST). The [TOE](#abbr_TOE) is not required to
+										      >	generate auditable events for selection-based or optional
+										      >	[SFRs](#abbr_SFR) that it does not claim.]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
@@ -1654,9 +1643,9 @@
 										      >	to be used for the authentication of the [VPN](#abbr_VPN) peers during
 										      >	the [IKE](#abbr_IKE) (either v1 or v2) key exchange. FCS\_CKM.1 in the
 										      >	[Base-PP](#abbr_Base-PP) is intended to be used for mechanisms required
-										      >	by the SFRs in the [Base-PP](#abbr_Base-PP). While it is required that
-										      >	the public key be associated with an identity in an X509v3 certificate,
-										      >	this association is not required to be performed by the
+										      >	by the [SFRs](#abbr_SFR) in the [Base-PP](#abbr_Base-PP). While it is
+										      >	required that the public key be associated with an identity in an X509v3
+										      >	certificate, this association is not required to be performed by the
 										      >	[TOE](#abbr_TOE), and instead is expected to be performed by a
 										      >	[CA](#abbr_CA) in the [OE](#abbr_OE). ]{.note}
 										      >
@@ -1995,8 +1984,8 @@
 										      >	--------------------------------------------------
 										      >
 										      >	The following rationale provides justification for each security
-										      >	objective for the [TOE](#abbr_TOE), showing that the SFRs are suitable
-										      >	to meet and achieve the security objectives:\
+										      >	objective for the [TOE](#abbr_TOE), showing that the [SFRs](#abbr_SFR)
+										      >	are suitable to meet and achieve the security objectives:\
 										      >
 										      >	[Table [3]{.counter}]{#t-obj_map .ctr data-myid="t-obj_map"
 										      >	data-counter-type="ct-Table"}: [SFR](#abbr_SFR) Rationale
@@ -2214,18 +2203,19 @@
 										      >	5.4 TOE Security Assurance Requirements {#mod-sars .indexable data-level="2"}
 										      >	---------------------------------------
 										      >
-										      >	This [PP-Module](#abbr_PP-Module) does not define any SARs beyond those
-										      >	defined within the Base-PPs to which it can claim conformance. It is
-										      >	important to note that a [TOE](#abbr_TOE) that is evaluated against this
-										      >	[PP-Module](#abbr_PP-Module) is inherently evaluated against the NDcPP
-										      >	as well. This [PP](#abbr_PP) includes a number of EAs associated with
-										      >	both Security Functional Requirements (SFRs) and SARs. Additionally,
-										      >	this [PP-Module](#abbr_PP-Module) includes a number of
-										      >	[SFR](#abbr_SFR)-based EAs that similarly refine the SARs of the
-										      >	Base-PPs. The evaluation laboratory will evaluate the [TOE](#abbr_TOE)
-										      >	against the chosen [Base-PP](#abbr_Base-PP) and supplement that
-										      >	evaluation with the necessary SFRs that are taken from this
-										      >	[PP-Module](#abbr_PP-Module).
+										      >	This [PP-Module](#abbr_PP-Module) does not define any [SARs](#abbr_SAR)
+										      >	beyond those defined within the [Base-PP](#abbr_Base-PP) to which it can
+										      >	claim conformance. It is important to note that a [TOE](#abbr_TOE) that
+										      >	is evaluated against this [PP-Module](#abbr_PP-Module) is inherently
+										      >	evaluated against the NDcPP as well. This [PP](#abbr_PP) includes a
+										      >	number of EAs associated with both Security Functional Requirements
+										      >	([SFRs](#abbr_SFR)) and [SARs](#abbr_SAR). Additionally, this
+										      >	[PP-Module](#abbr_PP-Module) includes a number of [SFR](#abbr_SFR)-based
+										      >	EAs that similarly refine the [SARs](#abbr_SAR) of the
+										      >	[Base-PP](#abbr_Base-PP). The evaluation laboratory will evaluate the
+										      >	[TOE](#abbr_TOE) against the chosen [Base-PP](#abbr_Base-PP) and
+										      >	supplement that evaluation with the necessary [SFRs](#abbr_SFR) that are
+										      >	taken from this [PP-Module](#abbr_PP-Module).
 										      >
 										      >	6 Consistency Rationale {#mod-conrat .indexable data-level="1"}
 										      >	=======================
@@ -2258,8 +2248,8 @@
 										      >
 										      >	### 6.1.3 Consistency of Objectives {#conobj-bpp-nd .indexable data-level="3"}
 										      >
-										      >	The objectives for the TOEs are consistent with the NDcPP based on the
-										      >	following rationale:
+										      >	The objectives for the [TOEs](#abbr_TOE) are consistent with the NDcPP
+										      >	based on the following rationale:
 										      >
 										      >	  [PP-Module](#abbr_PP-Module) [TOE](#abbr_TOE) Objective    Consistency Rationale
 										      >	  ---------------------------------------------------------- ------------------------
@@ -2271,29 +2261,30 @@
 										      >	  [O.SYSTEM\_MONITORING](#O.SYSTEM_MONITORING)               The [Base-PP](#abbr_Base
 										      >	  [O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION)             The [Base-PP](#abbr_Base
 										      >
-										      >	The objectives for the [TOE](#abbr_TOE)\'s Operational Environment are
-										      >	consistent with the NDcPP based on the following rationale:
+										      >	The objectives for the [TOE](#abbr_TOE)\'s [OE](#abbr_OE) are consistent
+										      >	with the NDcPP based on the following rationale:
 										      >
-										      >	  [PP-Module](#abbr_PP-Module) Operational Environment Objective   Consistency Ration
-										      >	  ---------------------------------------------------------------- ------------------
-										      >	  [OE.CONNECTIONS](#OE.CONNECTIONS)                                This objective int
+										      >	  [PP-Module](#abbr_PP-Module) [OE](#abbr_OE) Objective   Consistency Rationale
+										      >	  ------------------------------------------------------- ---------------------------
+										      >	  [OE.CONNECTIONS](#OE.CONNECTIONS)                       This objective intends for 
 										      >
 										      >	### 6.1.4 Consistency of Requirements {#conreq-bpp-nd .indexable data-level="3"}
 										      >
-										      >	This [PP-Module](#abbr_PP-Module) identifies several SFRs from the NDcPP
-										      >	that are needed to support [VPN](#abbr_VPN) Gateways functionality. This
-										      >	is considered to be consistent because the functionality provided by the
-										      >	NDcPP is being used for its intended purpose. The
-										      >	[PP-Module](#abbr_PP-Module) also identifies a number of modified SFRs
-										      >	from the NDcPP that are used entirely to provide functionality for
-										      >	[VPN](#abbr_VPN) Gateways. The rationale for why this does not conflict
-										      >	with the claims defined by the NDcPP are as follows:
+										      >	This [PP-Module](#abbr_PP-Module) identifies several [SFRs](#abbr_SFR)
+										      >	from the NDcPP that are needed to support [VPN](#abbr_VPN) Gateways
+										      >	functionality. This is considered to be consistent because the
+										      >	functionality provided by the NDcPP is being used for its intended
+										      >	purpose. The [PP-Module](#abbr_PP-Module) also identifies a number of
+										      >	modified [SFRs](#abbr_SFR) from the NDcPP that are used entirely to
+										      >	provide functionality for [VPN](#abbr_VPN) Gateways. The rationale for
+										      >	why this does not conflict with the claims defined by the NDcPP are as
+										      >	follows:
 										      >
 										      >	[PP-Module](#abbr_PP-Module) Requirement
 										      >
 										      >	Consistency Rationale
 										      >
-										      >	Modified SFRs
+										      >	Modified [SFRs](#abbr_SFR)
 										      >
 										      >	[FCS\_COP.1/DataEncryption](#FCS_COP.1/DataEncryption)
 										      >
@@ -2349,12 +2340,12 @@
 										      >	[SFR](#abbr_SFR) to a subset of existing permissible functionality and
 										      >	does not introduce any new behavior.
 										      >
-										      >	Additional SFRs
+										      >	Additional [SFRs](#abbr_SFR)
 										      >
 										      >	This [PP-Module](#abbr_PP-Module) does not add any requirements when the
 										      >	NDcPP is the base.
 										      >
-										      >	Mandatory SFRs
+										      >	Mandatory [SFRs](#abbr_SFR)
 										      >
 										      >	[FAU\_GEN.1/VPN](#FAU_GEN.1/VPN)
 										      >
@@ -2411,14 +2402,14 @@
 										      >	[Base-PP](#abbr_Base-PP) iteration of the [SFR](#abbr_SFR) to be
 										      >	satisfied.
 										      >
-										      >	Optional SFRs
+										      >	Optional [SFRs](#abbr_SFR)
 										      >
 										      >	[FPF\_MFA\_EXT.1](#FPF_MFA_EXT.1)
 										      >
 										      >	This [SFR](#abbr_SFR) relates specifically to the handling of traffic
 										      >	that is used for the establishment of IPsec connections.
 										      >
-										      >	Selection-based SFRs
+										      >	Selection-based [SFRs](#abbr_SFR)
 										      >
 										      >	[FCS\_EAP\_EXT.1](#FCS_EAP_EXT.1)
 										      >
@@ -2462,12 +2453,12 @@
 										      >	This [SFR](#abbr_SFR) relates to use of pre-shared keys, which is
 										      >	behavior that only applies to the establishment of IPsec connections.
 										      >
-										      >	Objective SFRs
+										      >	Objective [SFRs](#abbr_SFR)
 										      >
 										      >	This [PP-Module](#abbr_PP-Module) does not define any Objective
 										      >	requirements.
 										      >
-										      >	Implementation-Dependent SFRs
+										      >	Implementation-based [SFRs](#abbr_SFR)
 										      >
 										      >	[FTA\_SSL.3/VPN](#FTA_SSL.3/VPN)
 										      >
@@ -2503,7 +2494,7 @@
 										      >
 										      >	  : [Table [4]{.counter}]{#t-audit-optional .ctr
 										      >	  data-myid="t-audit-optional" data-counter-type="ct-Table"}: Auditable
-										      >	  Events for Optional Requirements
+										      >	  Events for Strictly Optional Requirements
 										      >
 										      >	### A.1.2 Packet Filtering (FPF) {#s-fpf .indexable data-level="3"}
 										      >
@@ -2537,10 +2528,11 @@
 										      >	A.2 Objective Requirements {#obj-sfrs .indexable data-level="2"}
 										      >	--------------------------
 										      >
-										      >	This [PP-Module](#abbr_PP-Module) does not define any Objective SFRs.
+										      >	This [PP-Module](#abbr_PP-Module) does not define any Objective
+										      >	[SFRs](#abbr_SFR).
 										      >
-										      >	A.3 Implementation-Based Requirements {#impl-dep-sfrs .indexable data-level="2"}
-										      >	-------------------------------------
+										      >	A.3 Implementation-dependent Requirements {#impl-dep-sfrs .indexable data-level="2"}
+										      >	-----------------------------------------
 										      >
 										      >	### A.3.1 Auditable Events for Implementation-Dependent SFRs {#sib-audit-table .index
 										      >
@@ -2552,7 +2544,7 @@
 										      >
 										      >	  : [Table [5]{.counter}]{#t-audit-feat-based .ctr
 										      >	  data-myid="t-audit-feat-based" data-counter-type="ct-Table"}:
-										      >	  Auditable Events for Feat-based Requirements
+										      >	  Auditable Events for Implementation-dependent Requirements
 										      >
 										      >	### A.3.2 TOE Access (FTA) {#opt-headend .indexable data-level="3"}
 										      >
@@ -2646,7 +2638,7 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	Appendix B - Selection-Based Requirements {#sel-sfrs .indexable data-level="1"}
+										      >	Appendix B - Selection-based Requirements {#sel-sfrs .indexable data-level="1"}
 										      >	=========================================
 										      >
 										      >	B.1 Auditable Events for Selection-based SFRs {#sb-audit-table .indexable data-level=
@@ -2924,9 +2916,13 @@
 										      >	keys.
 										      >
 										      >	::: {.appnote}
-										      >	[Application Note: ]{.note-header}[ If any selection including
-										      >	\"generated bit-based\" is chosen, then
-										      >	[FIA\_PSK\_EXT.2](#FIA_PSK_EXT.2) must be included. ]{.note}
+										      >	[Application Note: ]{.note-header}[ ]{.note}
+										      >
+										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) includes the options for MFA
+										      >	solutions.
+										      >
+										      >	If any selection including \"generated bit-based\" is chosen, then
+										      >	[FIA\_PSK\_EXT.2](#FIA_PSK_EXT.2) must be included.
 										      >
 										      >	If any selection including Password-based keys is chosen, then
 										      >	[FIA\_PSK\_EXT.3](#FIA_PSK_EXT.3) must be included.
@@ -2938,7 +2934,8 @@
 										      >	[FIA\_PSK\_EXT.5](#FIA_PSK_EXT.5) must be included.
 										      >
 										      >	This requirement is selection dependent on
-										      >	[FCS\_IPSEC\_EXT.1.13](#FCS_IPSEC_EXT.1.13).
+										      >	[FCS\_IPSEC\_EXT.1.13](#FCS_IPSEC_EXT.1.13) or inclusion of
+										      >	[FPF\_MFA\_EXT.1](#FPF_MFA_EXT.1).
 										      >	:::
 										      >	:::
 										      >	:::
@@ -4138,20 +4135,20 @@
 										      >
 										      >	This appendix lists requirements that should be considered satisfied by
 										      >	products successfully evaluated against this Module. These requirements
-										      >	are not featured explicitly as SFRs and should not be included in the
-										      >	[ST](#abbr_ST). They are not included as standalone SFRs because it
-										      >	would increase the time, cost, and complexity of evaluation. This
-										      >	approach is permitted by [\[CC\]](#bibCC) Part 1, 8.2 Dependencies
-										      >	between components.
+										      >	are not featured explicitly as [SFRs](#abbr_SFR) and should not be
+										      >	included in the [ST](#abbr_ST). They are not included as standalone
+										      >	[SFRs](#abbr_SFR) because it would increase the time, cost, and
+										      >	complexity of evaluation. This approach is permitted by [\[CC\]](#bibCC)
+										      >	Part 1, 8.2 Dependencies between components.
 										      >
 										      >	This information benefits systems engineering activities which call for
 										      >	inclusion of particular security controls. Evaluation against the
 										      >	[PP](#abbr_PP) provides evidence that these controls are present and
 										      >	have been evaluated.
 										      >
-										      >	. All [SFR](#abbr_SFR) dependencies in this [PP-Module](#abbr_PP-Module)
-										      >	are addressed by appropriate SFRs, either from elsewhere in the
-										      >	[PP-Module](#abbr_PP-Module) or inherited from the
+										      >	All [SFR](#abbr_SFR) dependencies in this [PP-Module](#abbr_PP-Module)
+										      >	are addressed by appropriate [SFRs](#abbr_SFR), either from elsewhere in
+										      >	the [PP-Module](#abbr_PP-Module) or inherited from the
 										      >	[Base-PP](#abbr_Base-PP).
 										      >
 										      >	Appendix E - Entropy Documentation and Assessment {#app-ent .indexable data-level="A"
@@ -4171,7 +4168,7 @@
 										      >
 										      >	  Acronym                                                                      Meanin
 										      >	  ---------------------------------------------------------------------------- ------
-										      >	  [[Base-PP](#abbr_Base-PP)]{#abbr_Base-PP .term}                              [Base 
+										      >	  [[Base-PP](#abbr_Base-PP)]{#abbr_Base-PP .term data-plural="Base-PPs"}       [Base 
 										      >	  [[CA](#abbr_CA)]{#abbr_CA .term}                                             [Certi
 										      >	  [[CC](#abbr_CC)]{#abbr_CC .term}                                             [Commo
 										      >	  [[CEM](#abbr_CEM)]{#abbr_CEM .term}                                          [Commo
@@ -4185,16 +4182,16 @@
 										      >	  [[IKE](#abbr_IKE)]{#abbr_IKE .term}                                          [Inter
 										      >	  [[OE](#abbr_OE)]{#abbr_OE .term}                                             [Opera
 										      >	  [[PBKDF](#abbr_PBKDF)]{#abbr_PBKDF .term}                                    [Passw
-										      >	  [[PP](#abbr_PP)]{#abbr_PP .term}                                             [Prote
+										      >	  [[PP](#abbr_PP)]{#abbr_PP .term data-plural="PPs"}                           [Prote
 										      >	  [[PP-Configuration](#abbr_PP-Configuration)]{#abbr_PP-Configuration .term}   [Prote
 										      >	  [[PP-Module](#abbr_PP-Module)]{#abbr_PP-Module .term}                        [Prote
 										      >	  [[SA](#abbr_SA)]{#abbr_SA .term}                                             [Secur
 										      >	  [[SAN](#abbr_SAN)]{#abbr_SAN .term}                                          [Subje
-										      >	  [[SAR](#abbr_SAR)]{#abbr_SAR .term}                                          [Secur
+										      >	  [[SAR](#abbr_SAR)]{#abbr_SAR .term data-plural="SARs"}                       [Secur
 										      >	  [[SFP](#abbr_SFP)]{#abbr_SFP .term}                                          [Small
-										      >	  [[SFR](#abbr_SFR)]{#abbr_SFR .term}                                          [Secur
-										      >	  [[ST](#abbr_ST)]{#abbr_ST .term}                                             [Secur
-										      >	  [[TOE](#abbr_TOE)]{#abbr_TOE .term}                                          [Targe
+										      >	  [[SFR](#abbr_SFR)]{#abbr_SFR .term data-plural="SFRs"}                       [Secur
+										      >	  [[ST](#abbr_ST)]{#abbr_ST .term data-plural="STs"}                           [Secur
+										      >	  [[TOE](#abbr_TOE)]{#abbr_TOE .term data-plural="TOEs"}                       [Targe
 										      >	  [[TSF](#abbr_TSF)]{#abbr_TSF .term}                                          [[TOE]
 										      >	  [[TSFI](#abbr_TSFI)]{#abbr_TSFI .term data-plural="TSFIs"}                   [[TSF]
 										      >	  [[TSS](#abbr_TSS)]{#abbr_TSS .term}                                          [[TOE]

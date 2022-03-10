@@ -1125,8 +1125,7 @@ expected to enforce.<h:p/>
                 (for example, 2409 specifies three authentication methods using public keys;
                 each one supported will be described in the TSS).<h:p/>
                 If any selection with “pre-shared keys” is selected, the selection-based requirement FIA_PSK_EXT.1
-                must be claimed. FIA_PSK_EXT.1 includes the options for MFA solutions, it may be brought in via this selection or via the 
-                optional FPF_MFA_EXT.1 requirement.<h:p/> 
+                must be claimed. <h:p/> 
                 When pre-shared keys are supported for IKEv2, at least one of ‘Pre-shared Keys transmitted via EAP-TLS’ or  
                 ‘Pre-shared Keys transmitted via EAP-TTLS’ is selected to indicate client verification using certificates 
                 in a mutually authenticated TLS handshake, and verification of provided PSK protected under the TLS channel. The selection-based SFR FCS_EAP_EXT.1
@@ -2964,15 +2963,17 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               </selectables> keys.
             </title>
             <note role="application">
-              If any selection including "generated bit-based" is chosen, then FIA_PSK_EXT.2 must be included. 
+              <h:p/>FIA_PSK_EXT.1 includes the options for MFA solutions.
+		    
+              <h:p/If any selection including "generated bit-based" is chosen, then FIA_PSK_EXT.2 must be included. 
               
               <h:p/>If any selection including Password-based keys is chosen, then FIA_PSK_EXT.3 must be included. 
               
               <h:p/>If any selection including HMAC-based one-time password keys is chosen, then FIA_PSK_EXT.4 must be included. 
               
               <h:p/>If any selection including time-based one-time password is chosen, then FIA_PSK_EXT.5 must be included. 
-              
-              <h:p/>This requirement is selection dependent on FCS_IPSEC_EXT.1.13.<h:p/>
+   
+		<h:p/>This requirement is selection dependent on FCS_IPSEC_EXT.1.13 or inclusion of FPF_MFA_EXT.1.
             </note>
             <aactivity>
               <TSS>The evaluator shall examine the TSS to ensure that it identifies all protocols that allow  pre-shared keys. 

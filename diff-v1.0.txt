@@ -58,7 +58,7 @@
 										      >	Optional SFRs](#sop-audit-table)[A.1.2Packet Filtering
 										      >	(FPF)](#s-fpf)[A.2Objective Requirements
 										      >	](#obj-sfrs)[A.3Implementation-Based Requirements
-										      >	](#impl-dep-sfrs)[A.3.1Auditable Events for Implementation-Based
+										      >	](#impl-dep-sfrs)[A.3.1Auditable Events for Implementation-Dependent
 										      >	SFRs](#sib-audit-table)[A.3.2TOE Access (FTA)](#opt-headend)[Appendix B
 										      >	- Selection-Based Requirements ](#sel-sfrs)[B.1Auditable Events for
 										      >	Selection-based SFRs](#sb-audit-table)[B.2Cryptographic Support
@@ -2542,7 +2542,7 @@
 										      >	A.3 Implementation-Based Requirements {#impl-dep-sfrs .indexable data-level="2"}
 										      >	-------------------------------------
 										      >
-										      >	### A.3.1 Auditable Events for Implementation-Based SFRs {#sib-audit-table .indexable
+										      >	### A.3.1 Auditable Events for Implementation-Dependent SFRs {#sib-audit-table .index
 										      >
 										      >	  Requirement                         Auditable Events       Additional Audit Record 
 										      >	  ----------------------------------- ---------------------- ------------------------

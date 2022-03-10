@@ -3447,9 +3447,9 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
     
 	
 	<impl-dep-sfrs>
-	    <section id="sib-audit-table" title="Auditable Events for Implementation-Based SFRs">
+	    <section id="sib-audit-table" title="Auditable Events for Implementation-Dependent SFRs">
 	      <audit-table table="feat-based">
-	        <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-implbased">: Auditable Events for Implementation-Based SFRs</ctr></h:b>
+	        <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-implbased">: Auditable Events for Implementation-Dependent SFRs</ctr></h:b>
 	      </audit-table>
 	  </section>
 	  

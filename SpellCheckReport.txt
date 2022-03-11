@@ -43,7 +43,6 @@ output/vpngw-release-linkable.html: RCC
 output/vpngw-release-linkable.html: SATNET
 output/vpngw-release-linkable.html: SCPS
 output/vpngw-release-linkable.html: SIPP
-output/vpngw-release-linkable.html: SP800
 output/vpngw-release-linkable.html: SPD
 output/vpngw-release-linkable.html: SSCOPMCE
 output/vpngw-release-linkable.html: STG
@@ -76,7 +75,6 @@ output/vpngw-release.html: FFC
 output/vpngw-release.html: Headend
 output/vpngw-release.html: PRF
 output/vpngw-release.html: Pluggable
-output/vpngw-release.html: SP800
 output/vpngw-release.html: SPD
 output/vpngw-release.html: Stateful
 output/vpngw-release.html: authentation
@@ -192,7 +190,6 @@ output/vpngw.html: RCC
 output/vpngw.html: SATNET
 output/vpngw.html: SCPS
 output/vpngw.html: SIPP
-output/vpngw.html: SP800
 output/vpngw.html: SPD
 output/vpngw.html: SSCOPMCE
 output/vpngw.html: STG

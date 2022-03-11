@@ -3063,8 +3063,8 @@
 										      >	[ST](#abbr_ST) author fills in the assignment with the minimum length
 										      >	the PSK must be. This requirement is to ensure bounds work properly.\
 										      >	For [FIA\_PSK\_EXT.3.7](#FIA_PSK_EXT.3.7), the [ST](#abbr_ST) author may
-										      >	select one, both, or neither of the functions in alignment with NIST
-										      >	SP800-63b.\
+										      >	select one, both, or neither of the functions in alignment with NIST SP
+										      >	800-63b.\
 										      >	This requirement is selection dependent on
 										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1). ]{.note}
 										      >	:::

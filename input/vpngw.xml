@@ -2962,6 +2962,19 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 <selectable id="pskpwtotp">Combination of a password-based and time-based one-time password</selectable>
               </selectables> keys.
             </title>
+		  <ext-comp-def-title><title>
+              The TSF shall be able to accept the following as pre-shared keys: 
+              <selectables>
+                <selectable>generated bit-based</selectable>
+                <selectable>password-based</selectable>
+                <selectable>HMAC-based one-time password</selectable>
+                <selectable>time-based one-time password</selectable>
+                <selectable>combination of a generated bit-based and HMAC-based one-time password</selectable>
+                <selectable>combination of a generated bit-based and time-based one-time password</selectable>
+                <selectable>combination of a password-based and HMAC-based one-time password</selectable>
+                <selectable>combination of a password-based and time-based one-time password</selectable>
+              </selectables> keys.
+            </title></ext-comp-def-title>
             <note role="application">
               <h:br/>FIA_PSK_EXT.1 includes the options for MFA solutions.
 		    
@@ -3202,7 +3215,12 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 <selectable>verify the HOTP via an external authentication server</selectable>
               </selectables> before establishing an incoming connection.
             </title>
-          
+          <ext-comp-def-title><title>
+              The TSF shall <selectables onlyone="yes">
+                <selectable>verify the HOTP</selectable>
+                <selectable>verify the HOTP via an external authentication server</selectable>
+              </selectables> before establishing an incoming connection.
+            </title></ext-comp-def-title>
             
             <note role="application">
               If "verify the HOTP..." is selected, then FIA_HOTP_EXT.1 must be included.
@@ -3253,7 +3271,13 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 <selectable>verify the TOTP via an external authentication server</selectable>
               </selectables> before establishing an incoming connection.
             </title>
-            
+            <ext-comp-def-title><title>
+              The TSF shall 
+              <selectables onlyone="yes">
+                <selectable>verify the TOTP</selectable>
+                <selectable>verify the TOTP via an external authentication server</selectable>
+              </selectables> before establishing an incoming connection.
+            </title></ext-comp-def-title>
             
             <note role="application">
               If verify the TOTP is selected then FIA_TOTP_EXT.1 must be included.

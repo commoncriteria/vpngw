@@ -39,7 +39,7 @@
 										      >	](#modsfr-bpp-nd)[5.1.1.1Cryptographic Support
 										      >	(FCS)](#nd-m-fcs)[5.1.1.2Identification and Authentication
 										      >	(FIA)](#nd-m-fia)[5.1.1.3Security Management
-										      >	(FMT)](#nd-m-fmt)[5.1.1.4Proteciton of the TSF (FPT)](#nd-m-fpt)[5.2TOE
+										      >	(FMT)](#nd-m-fmt)[5.1.1.4Protection of the TSF (FPT)](#nd-m-fpt)[5.2TOE
 										      >	Security Functional Requirements](#man-sfrs)[5.2.1Auditable Events for
 										      >	Mandatory SFRs](#ss-audit-table)[5.2.2Security Audit
 										      >	(FAU)](#m-fau)[5.2.3Cryptographic Support (FCS)](#m-fcs)[5.2.4Security
@@ -1361,7 +1361,7 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	#### 5.1.1.4 Proteciton of the TSF (FPT) {#nd-m-fpt .indexable data-level="4"}
+										      >	#### 5.1.1.4 Protection of the TSF (FPT) {#nd-m-fpt .indexable data-level="4"}
 										      >
 										      >	::: {#FPT_TST_EXT.1 .comp}
 										      >	#### FPT\_TST\_EXT.1 TSF Testing

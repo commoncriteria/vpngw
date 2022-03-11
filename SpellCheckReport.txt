@@ -37,7 +37,6 @@ output/vpngw-release-linkable.html: PNNI
 output/vpngw-release-linkable.html: PRF
 output/vpngw-release-linkable.html: Pluggable
 output/vpngw-release-linkable.html: Pluribus
-output/vpngw-release-linkable.html: Proteciton
 output/vpngw-release-linkable.html: Protoco
 output/vpngw-release-linkable.html: QNX
 output/vpngw-release-linkable.html: RCC
@@ -77,7 +76,6 @@ output/vpngw-release.html: FFC
 output/vpngw-release.html: Headend
 output/vpngw-release.html: PRF
 output/vpngw-release.html: Pluggable
-output/vpngw-release.html: Proteciton
 output/vpngw-release.html: SP800
 output/vpngw-release.html: SPD
 output/vpngw-release.html: Stateful
@@ -127,7 +125,6 @@ output/vpngw-sd.html: OSPFIGP
 output/vpngw-sd.html: PGM
 output/vpngw-sd.html: PNNI
 output/vpngw-sd.html: Pluribus
-output/vpngw-sd.html: Proteciton
 output/vpngw-sd.html: Protoco
 output/vpngw-sd.html: QNX
 output/vpngw-sd.html: RCC
@@ -189,7 +186,6 @@ output/vpngw.html: PNNI
 output/vpngw.html: PRF
 output/vpngw.html: Pluggable
 output/vpngw.html: Pluribus
-output/vpngw.html: Proteciton
 output/vpngw.html: Protoco
 output/vpngw.html: QNX
 output/vpngw.html: RCC

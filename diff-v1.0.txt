@@ -1551,7 +1551,7 @@
 										      >	    Requirements table*\].
 										      >
 										      >	::: {.appnote}
-										      >	[Application Note: ]{.note-header}[ The \"Start-up and shtudown of the
+										      >	[Application Note: ]{.note-header}[ The \"Start-up and shutdown of the
 										      >	audit functions\" event is identical to the event defined in the
 										      >	[Base-PP](#abbr_Base-PP)\'s iteration of FAU\_GEN.1. The
 										      >	[TOE](#abbr_TOE) is not required to have two separate events for this
@@ -2397,7 +2397,7 @@
 										      >
 										      >	[FCS\_EAP\_EXT.1](#FCS_EAP_EXT.1)
 										      >
-										      >	This [SFR](#abbr_SFR) deinfes the use of EAP-TLS; the
+										      >	This [SFR](#abbr_SFR) defines the use of EAP-TLS; the
 										      >	[Base-PP](#abbr_Base-PP) already defines requirements for TLS so
 										      >	potential support for EAP-TLS is consistent with functionality that the
 										      >	[Base-PP](#abbr_Base-PP) already expects the [TOE](#abbr_TOE) may have.
@@ -2793,7 +2793,7 @@
 										      >	[FIA\_HOTP\_EXT.1.4](#FIA_HOTP_EXT.1.4) to create an HOTP of
 										      >	\[**selection**:
 										      >
-										      >	-   *administrator configurable chracter length of at least 6*,
+										      >	-   *administrator configurable character length of at least 6*,
 										      >	-   *preset character length of \[**selection**: *6*, *7*, *8*, *9*,
 										      >	    *10*\]*
 										      >
@@ -2842,7 +2842,7 @@
 										      >
 										      >	::: {.reqdesc}
 										      >	The [TSF](#abbr_TSF) shall increment the counter after each successful
-										      >	authentation.
+										      >	authentication.
 										      >
 										      >	::: {.appnote}
 										      >	[Application Note: ]{.note-header}[ The selection
@@ -3677,7 +3677,7 @@
 										      >	[FIA\_HOTP\_EXT.1.4](#FIA_HOTP_EXT.1.4) to create an HOTP of
 										      >	\[**selection**:
 										      >
-										      >	-   *administrator configurable chracter length of at least 6*,
+										      >	-   *administrator configurable character length of at least 6*,
 										      >	-   *preset character length of \[**selection**: *6*, *7*, *8*, *9*,
 										      >	    *10*\]*
 										      >
@@ -3708,7 +3708,7 @@
 										      >	#### FIA\_HOTP\_EXT.1.8 {#ext-comp-FIA_HOTP_EXT.1.8}
 										      >
 										      >	The [TSF](#abbr_TSF) shall increment the counter after each successful
-										      >	authentation.
+										      >	authentication.
 										      >	:::
 										      >	:::
 										      >

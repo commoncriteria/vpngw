@@ -3223,7 +3223,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             </title></ext-comp-def-title>
             
             <note role="application">
-              If "verify the HOTP..." is selected, then FIA_HOTP_EXT.1 must be included.
+              If "verify the HOTP" is selected, then FIA_HOTP_EXT.1 must be included.
               
               <h:br/>This requirement is selection dependent on FIA_PSK_EXT.1
             </note>

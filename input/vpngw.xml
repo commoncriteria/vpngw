@@ -15,7 +15,7 @@
     <ReferenceTable>
       <PPVersion>1.3</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2022-03-10</PPPubDate>
+      <PPPubDate>2022-03-11</PPPubDate>
       <Keywords>VPN, VPN Gateway, VPN GW, IPsec</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -23,7 +23,7 @@
   <RevisionHistory>
     <entry>
       <version>1.3</version>
-      <date>2022-03-10</date>
+      <date>2022-03-11</date>
       <subject>Incorporation of TC feedback</subject>
     </entry>
     <entry>
@@ -62,7 +62,7 @@
       an IPsec tunnel, which provides device authentication, confidentiality, and integrity of information
       traversing a public or untrusted network. This is functionality that typically will be implemented by a
       network device.
-      <h:p/>
+      <h:br/>
       A Target of Evaluation (TOE) that conforms to a PP-Configuration containing this PP-Module may be a ‘Distributed TOE’ as
       defined in the NDcPP; however, the VPN gateway functionality described in this PP-Module should be in
       a single TOE component. This PP-Module does not prohibit the TOE from implementing other security
@@ -116,7 +116,7 @@
       distinct networks and has an infrastructure role in the overall enterprise network. In particular, a VPN
       gateway establishes a secure tunnel that provides an authenticated and encrypted path to one or more other sites
       and thereby decreases the risk of exposure of information transiting an untrusted network.
-      <h:p/>
+      <h:br/>
       The baseline requirements of this PP-Module are those determined necessary for a multi-site VPN
       gateway device. A compliant TOE may also contain the ability to act as a headend for remote clients.
       Because this capability is optional, the remote client-based requirements have been included within
@@ -198,7 +198,7 @@
   <sec:Security_Problem_Description>
     The security problem is described in terms of the threats that the TOE is expected to address,
 assumptions about its operational environment (OE), and any organizational security policies that the TOE is
-expected to enforce.<h:p/>
+expected to enforce.<h:br/>
     
     <!-- Note: Module 1.1 mapped threats to objectives (objective is primary key of the table) whereas the more typical format is to map it the other way around. Mappings here have been updated to reflect this.
     As a side effect of this, there is no way the current schema can capture what was done for 1.1 where a TOE objective further mitigates a threat that exists only in the Base-PP, specifically:
@@ -266,14 +266,14 @@ expected to enforce.<h:p/>
             entities using an authenticated path into the protected network. Devices located outside the
             protected network may, likewise, offer services that are inappropriate for access from within the
             protected network.
-            <h:p/>
+            <h:br/>
             From an ingress perspective, VPN gateways can be configured so that only those network servers
             intended for external consumption by entities operating on a trusted network (e.g., machines
             operating on a network where the peer VPN gateways are supporting the connection) are accessible
             and only via the intended ports. This serves to mitigate the potential for network entities outside a
             protected network to access network servers or services intended only for consumption or access
             inside a protected network.
-            <h:p/>
+            <h:br/>
             From an egress perspective, VPN gateways can be configured so that only specific external services
             (e.g., based on destination port) can be accessed from within a protected network, or moreover are
             accessed via an encrypted channel. For example, access to external mail services can be blocked to
@@ -333,7 +333,7 @@ expected to enforce.<h:p/>
             protected network can establish communications with those external devices (e.g., as a result of a
             phishing episode or by inadvertent responses to email messages), then those internal devices may be
             susceptible to the unauthorized disclosure of information.
-            <h:p/>
+            <h:br/>
             From an infiltration perspective, VPN gateways serve not only to limit access to only specific
             destination network addresses and ports within a protected network, but whether network traffic will
             be encrypted or transmitted in plaintext. With these limits, general network port scanning can be
@@ -342,7 +342,7 @@ expected to enforce.<h:p/>
             nodes (e.g., web pages from a designated corporate web server). Additionally, access can be limited
             to only specific source addresses and ports so that specific networks or network nodes can be blocked
             from accessing a protected network thereby further limiting the potential disclosure of information.
-            <h:p/>
+            <h:br/>
             From an exfiltration perspective, VPN gateways serve to limit how network nodes operating on a
             protected network can connect to and communicate with other networks limiting how and where
             they can disseminate information. Specific external networks can be blocked altogether or egress
@@ -381,12 +381,12 @@ expected to enforce.<h:p/>
             offered inside the protected network, may attempt to conduct inappropriate activities while
             communicating with those allowed public services. Certain services offered from within a protected
             network may also represent a risk when accessed from outside the protected network.
-            <h:p/>
+            <h:br/>
             From an ingress perspective, it is generally assumed that entities operating on external networks are
             not bound by the use policies for a given protected network. Nonetheless, VPN gateways can log
             policy violations that might indicate violation of publicized usage statements for publicly available
             services.
-            <h:p/>
+            <h:br/>
             From an egress perspective, VPN gateways can be configured to help enforce and monitor protected
             network use policies. As explained in the other threats, a VPN gateway can serve to limit dissemination
             of data, access to external servers, and even disruption of services – all of these could be related to
@@ -485,7 +485,7 @@ expected to enforce.<h:p/>
     <!-- 3.2 Assumptions -->
     <sec:Assumptions>
       This PP-Module defines assumptions that extend those defined in the supported Base-PP.
-      <h:p/>
+      <h:br/>
       All assumptions for the OE of the Base-PP also apply to this PP-Module.
       A.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the TOE that are
       defined by the Base-PP and not the PP-Module.
@@ -529,7 +529,7 @@ expected to enforce.<h:p/>
             network traffic between protected networks and other attached networks based on network
             addresses of the network nodes originating (source) or receiving (destination) applicable network
             traffic as well as on established connection information.
-            <h:p/>
+            <h:br/>
             Addressed by: FPF_RUL_EXT.1, FTA_VCM_EXT.1 (optional)
           </description>
     
@@ -547,7 +547,7 @@ expected to enforce.<h:p/>
             VPN peer and ensure that any such connection attempt is both authenticated and authorized. VPN
             endpoints authenticate each other to ensure they are communicating with an authorized external IT
             entity.
-            <h:p/>
+            <h:br/>
             Addressed by: FCS_IPSEC_EXT.1 (refined from Base-PP), FIA_X509_EXT.1/Rev (from Base-PP),
             FIA_X509_EXT.2 (refined from Base-PP), FIA_X509_EXT.3 (from Base-PP), FTP_ITC.1/VPN,
             FPF_MFA_EXT.1 (optional), FTA_SSL.3/VPN (optional), FTA_TSE.1 (optional), FCS_EAP_EXT.1 (selection-based), FIA_HOTP_EXT.1 (selection-based), FIA_PSK_EXT.1 (selection-based),
@@ -635,7 +635,7 @@ expected to enforce.<h:p/>
             services, misuse of services, disruption of services, and network-based reconnaissance, compliant
             TOE’s will implement cryptographic capabilities. These capabilities are intended to maintain
             confidentiality and allow for detection and modification of data that is transmitted outside of the TOE.
-            <h:p/>
+            <h:br/>
             Addressed by: FCS_COP.1/DataEncryption (refined from Base-PP), FCS_IPSEC_EXT.1 (refined from
             Base-PP), FCS_CKM.1/IKE, FCS_EAP_EXT.1 (selection-based)
           </description>
@@ -671,7 +671,7 @@ expected to enforce.<h:p/>
             the TOE operating outside of its hardware or software specification, the TOE will shut down upon
             discovery of a problem reported via the self-test mechanism and provide signature-based validation
             of updates to the TSF.
-            <h:p/>
+            <h:br/>
             Addressed by: FPT_TST_EXT.1 (refined from Base-PP), FPT_TUD_EXT.1 (refined from Base-PP),
             FPT_FLS.1/SelfTest, FPT_TST_EXT.3
           </description>
@@ -709,7 +709,7 @@ expected to enforce.<h:p/>
             TOE’s port filtering capability will restrict the flow of network traffic between protected networks and
             other attached networks based on the originating (source) or receiving (destination) port (or
             service) identified in the network traffic as well as on established connection information.
-            <h:p/>
+            <h:br/>
             Addressed by: FPF_RUL_EXT.1
           </description>
           
@@ -729,7 +729,7 @@ expected to enforce.<h:p/>
             As a result, matching a rule configured to ‘log’ will result in informative event logs whenever a match
             occurs. In addition, the establishment of security associations (SAs) is auditable, not only between
             peer VPN gateways, but also with certification authorities (CAs).
-            <h:p/>
+            <h:br/>
             Addressed by: FAU_GEN.1/VPN, FPF_RUL_EXT.1
           </description>
 
@@ -749,7 +749,7 @@ expected to enforce.<h:p/>
           <description>
             TOEs will provide the functions necessary for an administrator to configure the packet filtering rules,
             as well as the cryptographic aspects of the IPsec protocol that are enforced by the TOE.
-            <h:p/>
+            <h:br/>
             Addressed by: FMT_MTD.1/CryptoKeys (refined from Base-PP), 
             FMT_SMF.1/VPN
           </description>
@@ -774,7 +774,7 @@ expected to enforce.<h:p/>
     <section title="Security Objectives for the Operational Environment" id="SecurityObjectivesTOEorEnvironment">
       This PP-Module defines environmental security objectives that extend those defined in
       the supported Base-PP.
-      <h:p/>
+      <h:br/>
       All objectives for the OE of the Base-PP also apply to this PP-Module.
       OE.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the TOE that are
       defined by the Base-PP and not the PP-Module.
@@ -802,10 +802,10 @@ expected to enforce.<h:p/>
     
     The Security Functional Requirements (SFRs) included in this section are derived from Part 2 of the
     Common Criteria for Information Technology Security Evaluation, Version 3.1, Revision 5, with
-    additional extended functional components.<h:p/>
+    additional extended functional components.<h:br/>
     The CC defines operations on Security Functional Requirements: assignments, selections, assignments
     within selections and refinements. This document uses the following font conventions to identify the
-    operations defined by the CC:<h:p/>
+    operations defined by the CC:<h:br/>
     <h:ul>
       <h:li>Assignments are indicated with <h:i>italicized</h:i> text.</h:li>
       <h:li>Refinements made by the PP-Module author are indicated with <h:b>bold text</h:b> for added or substituted
@@ -813,7 +813,7 @@ expected to enforce.<h:p/>
         changes to existing SFRs; minor presentation changes with no technical impact (such as British vs
         American spelling differences) are not marked as refinements. Refinements are also indicated when
         an operation is added or substituted for an existing operation (e.g. the PP-Module completes an
-        assignment in such a way that it introduces a selection into the assignment).<h:p/>
+        assignment in such a way that it introduces a selection into the assignment).<h:br/>
         Note that for SFRs that are defined either in CC Part 2 or in this PP-Module’s Extended Components
         Definition, the refinement operation is used to indicate deviations from the defined component. For
         Base-PP SFRs that are modified by this PP-Module, the refinement operation is used to indicate
@@ -958,7 +958,7 @@ expected to enforce.<h:p/>
                 This element has been modified from its definition in the NDcPP by mandating
                 either 128 or 256 bit key sizes for AES-CBC or AES-GCM, thereby disallowing for
                 the sole selection of 192 bit key sizes.
-                <h:p/>
+                <h:br/>
                 When an AES-CBC algorithm is selected, at least one SHA-based HMAC must also
                 be chosen. If only an AES-GCM algorithm is selected, then a SHA-based HMAC is
                 not required since AES-GCM satisfies both confidentiality and integrity functions.
@@ -1123,14 +1123,14 @@ expected to enforce.<h:p/>
                 generation capabilities, if provided) are listed to support those methods. Note
                 that the TSS will elaborate on the way in which these algorithms are to be used 
                 (for example, 2409 specifies three authentication methods using public keys;
-                each one supported will be described in the TSS).<h:p/>
+                each one supported will be described in the TSS).<h:br/>
                 If any selection with “pre-shared keys” is selected, the selection-based requirement FIA_PSK_EXT.1
-                must be claimed. <h:p/> 
+                must be claimed. <h:br/> 
                 When pre-shared keys are supported for IKEv2, at least one of ‘Pre-shared Keys transmitted via EAP-TLS’ or  
                 ‘Pre-shared Keys transmitted via EAP-TTLS’ is selected to indicate client verification using certificates 
                 in a mutually authenticated TLS handshake, and verification of provided PSK protected under the TLS channel. The selection-based SFR FCS_EAP_EXT.1
                 must also be claimed in this situation.
-                <h:p/>
+                <h:br/>
                 When Pre-shared Keys are supported for IKEv1, the first selection is claimed to indicate one of the mechanisms 
                 for using PSK described in the RFC. 
                 <h:b/> It is acceptable for different use cases to leverage different selections, if this is the case it must be identified.
@@ -1162,9 +1162,9 @@ expected to enforce.<h:p/>
                   <h:b/>
                   <TSS>All existing activites regarding "Pre-shared keys" apply to all selections including pre-shared keys.
                   <h:b/>If any selection with "Pre-shared keys" is included, the evaluator shall check to ensure that the TSS 
-                    describes how the selection works in conjunction with the authentication of IPsec connections.<h:p/></TSS>
+                    describes how the selection works in conjunction with the authentication of IPsec connections.<h:br/></TSS>
               <Guidance>If any selection with “Pre-shared Keys” is selected, the evaluator shall check that the operational 
-                guidance describes any configuration necessary to enable any selected authentication mechanisms.<h:p/></Guidance>
+                guidance describes any configuration necessary to enable any selected authentication mechanisms.<h:br/></Guidance>
               <Tests>There are no additional testing activities.</Tests>
             </aactivity>
             </f-element>
@@ -1383,12 +1383,12 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 are permitted so it is possible for the TSF to use code signing certificates to
                 validate updates, in which case FPT_TUD_EXT.2 from the Base-PP is also included
                 in the ST.
-                <h:p/>
+                <h:br/>
                 If X.509 certificates are used to verify the integrity of an update, the certificates
                 must conform to FIA_X509_EXT.1/Rev. Therefore, certificates that do not (or only
                 partially) conform to FIA_X509_EXT.1/REV are not allowed as a means to
                 authenticate firmware/software updates.
-                <h:p/>
+                <h:br/>
                 NDcPP states the ST author may use X.509 certificates that do not meet
                 FIA_X509_EXT.1/Rev. This applies to trust anchors as they can be encoded as
                 certificates. Even when they are encoded as certificates, the trust anchor must be
@@ -1399,12 +1399,12 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 checking of certificates designated as trust store elements. The integrity of trust
                 store elements depends on administrative controls for loading and managing
                 trust stores and functional integrity checks that are described in other SFRs.
-                <h:p/>
+                <h:br/>
                 So, if the certificate used to verify the update is a trust store element (self-signed
                 and specifically trusted for verifying updates, with the integrity of this special
                 purpose certificate protected by administrative controls and TOE integrity
                 protections), then revocation checking is not required.
-                <h:p/>
+                <h:br/>
                 However, if the certificate is issued by a trusted root CA, or by a certificate
                 authority which chains to a trusted root CA, then revocation checking is required
                 for all elements of the certificate chain except the trusted root CA, and the TOE
@@ -1583,16 +1583,16 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
               <TSS>
                 The evaluator shall examine the TSS to verify that it describes the audit mechanisms that the TOE uses to generate audit records for VPN gateway behavior. If any audit mechanisms the TSF uses for this
                 are not used to generate audit records for events defined by FAU_GEN.1 in the Base-PP, the evaluator shall ensure that any VPN gateway-specific audit mechanisms also meet the relevant functional claims from the Base-PP.
-                <h:p/>
+                <h:br/>
                 For example, FAU_STG_EXT.1 requires all audit records to be transmitted to the OE over a trusted channel. This includes the audit records that are required by FAU_GEN.1/VPN. Therefore, if the TOE has an audit mechanism
                 that is only used for VPN gateway functionality, the evaluator shall ensure that the VPN gateway related audit records meet this requirement, even if the mechanism used to generate these audit records does not apply to any of the auditable
                 events defined in the Base-PP.
-              <h:p/></TSS>
+              <h:br/></TSS>
               <Guidance>
                 The evaluator shall examine the operational guidance to verify that it identifies all security-relevant auditable events claimed in the ST and includes sample records of each event type. If the TOE uses multiple
                 audit mechanisms to generate different sets of records, the evaluator shall verify that the operational guidance identifies the audit records that are associated with each of the mechanisms such that the source of each audit record type
                 is clear.
-              <h:p/></Guidance>
+              <h:br/></Guidance>
               <Tests>
                 The evaluator shall test the audit functionality by performing actions that trigger each of the claimed audit events and verifying that the audit records are accurate and that their format is consistent with what is specified 
                 in the operational guidance. The evaluator may generate these audit events as a consequence of performing other tests that would cause these events to be generated.
@@ -1645,10 +1645,10 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
               public key be associated with an identity in an X509v3 certificate, this association
               is not required to be performed by the TOE, and instead is expected to be
               performed by a CA in the OE.
-              <h:p/>
+              <h:br/>
               As indicated in FCS_IPSEC_EXT.1, the TOE is required to implement RSA or ECDSA
               (or both) for peer authentication.
-              <h:p/>
+              <h:br/>
               The generated key strength of 2048-bit RSA keys need to be equivalent to, or
               greater than, a symmetric key strength of 112 bits. See NIST Special Publication
               800-57, “Recommendation for Key Management” for information about
@@ -1672,17 +1672,17 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 Any TOE-specific extensions, processing that is not included in the Appendices, or alternative
                 implementations allowed by the Appendices that may impact the security requirements the TOE is to
                 enforce shall be described.
-              <h:p/></TSS>
+              <h:br/></TSS>
               <Guidance>
                 The evaluator shall check that the operational guidance describes how the key generation functionality is
                 invoked, and describes the inputs and outputs associated with the process for each signature scheme
                 supported. The evaluator shall also check that guidance is provided regarding the format and location of
                 the output of the key generation process.
-              <h:p/></Guidance>
+              <h:br/></Guidance>
               <Tests>
-                <h:b>For FFC Schemes using “safe-prime” groups:</h:b><h:p/>
-                Testing for FFC Schemes using safe-prime groups is done as part of testing in FCS_CKM.2.<h:p/>
-                <h:b>For all other selections:</h:b><h:p/>
+                <h:b>For FFC Schemes using “safe-prime” groups:</h:b><h:br/>
+                Testing for FFC Schemes using safe-prime groups is done as part of testing in FCS_CKM.2.<h:br/>
+                <h:b>For all other selections:</h:b><h:br/>
                 The evaluator shall perform the corresponding tests for FCS_CKM.1 specified in the NDcPP SD, based on
                 the selections chosen for this SFR. If IKE key generation is implemented by a different algorithm than the
                 NDcPP key generation function, the evaluator shall ensure this testing is performed using the correct
@@ -1727,13 +1727,13 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
               FMT_SMF.1/VPN are provided by the TOE. As with FMT_SMF.1 in the Base-PP, the evaluator shall ensure
               that the TSS identifies what logical interfaces are used to perform these functions and that this includes a
               description of the local administrative interface.
-              <h:p/></TSS>
+              <h:br/></TSS>
             <Guidance>
               The evaluator shall examine the operational guidance to confirm that all management functions specified
               in FMT_SMF.1/VPN are provided by the TOE. As with FMT_SMF.1 in the Base-PP, the evaluator shall
               ensure that the operational guidance identifies what logical interfaces are used to perform these functions
               and that this includes a description of the local administrative interface.
-            <h:p/></Guidance>
+            <h:br/></Guidance>
             <Tests>
               The evaluator tests management functions as part of performing other test EAs.
               No separate testing for FMT_SMF.1/VPN is required unless one of the management functions in
@@ -1808,15 +1808,15 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 The evaluator shall verify that the TSS provide a description of the TOE’s initialization and startup process,
                 which clearly indicates where processing of network packets begins to take place, and provides a
                 discussion that supports the assertion that packets cannot flow during this process.
-                <h:p/>
+                <h:br/>
                 The evaluator shall verify that the TSS also includes a narrative that identifies the components (e.g., active
                 entity such as a process or task) involved in processing the network packets and describes the safeguards
                 that would prevent packets flowing through the TOE without applying the ruleset in the event of a
                 component failure. This could include the failure of a component, such as a process being terminated, or
                 a failure within a component, such as memory buffers full and cannot process packets.
-              <h:p/></TSS>
+              <h:br/></TSS>
               <Guidance>The operational guidance associated with this requirement is assessed in the subsequent test EAs.
-                <h:p/></Guidance>
+                <h:br/></Guidance>
               <Tests>
                 The evaluator shall perform the following tests:
                 <testlist>
@@ -1832,7 +1832,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 </testlist>
                 Note: The remaining testing associated with application of the ruleset is addressed in the subsequent test
                 EAs.
-                <h:p/></Tests>
+                <h:br/></Tests>
             </aactivity>
           </f-element>
           <f-element id="fpf-rul-ext-1e2">
@@ -1868,13 +1868,13 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               serve to define to what extent the network traffic can be interpreted by the TOE
               when importing (receiving network traffic or ingress) and exporting (sending–or
               forming to be sent–network traffic or egress).
-              <h:p/>
+              <h:br/>
               While the protocol formatting specified in the RFCs is still used, many RFCs define
               behaviors which are no longer considered safe to follow. For example, RFC 792
               defined the “Redirect” Internet Control Message Protocol (ICMP) type, which is not considered safe to honor when it
               might come from an adversary; the “source quench” message, which is insecure
               because its source cannot be validated.
-              <h:p/>
+              <h:br/>
               It also identifies the various attributes that are applicable when constructing rules
               to be enforced by this requirement – the applicable interface is a property of the
               TOE and the rest of the identified attributes are defined in the associated RFCs.
@@ -1886,7 +1886,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             <aactivity level="element">
               <no-tests>There are no EAs specified for this element. Definition of packet filtering policy,
               association of operations with packet filtering rules, and association of these rules to network interfaces
-              is described collectively under FPF_RUL_EXT.1.4.<h:p/><h:p/>
+              is described collectively under FPF_RUL_EXT.1.4.<h:br/><h:br/>
               </no-tests>
             </aactivity>
           </f-element>
@@ -1902,7 +1902,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             <no-tests>
               There are no EAs specified for this element. Definition of packet filtering policy,
               association of operations with packet filtering rules, and association of these rules to network interfaces
-              is described collectively under FPF_RUL_EXT.1.4.<h:p/><h:p/>
+              is described collectively under FPF_RUL_EXT.1.4.<h:br/><h:br/>
               </no-tests>
             </aactivity>
           </f-element>
@@ -1922,7 +1922,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               pluggable (SFP) port supporting SFP modules that expose a number of physical
               network ports, but since a common driver is used for all external ports they can
               be treated as a single distinct network interface.
-              <h:p/>
+              <h:br/>
               Note that there could be a separate ruleset for each interface or alternately a
               shared ruleset that somehow associates rules with specific interfaces.
             </note>
@@ -1950,14 +1950,14 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 </h:ul>
                 The evaluator shall verify that the TSS describes how conformance with the identified RFCs has been
                 determined by the TOE developer (e.g., third party interoperability testing, protocol compliance testing).
-                <h:p/>
+                <h:br/>
                 The evaluator shall verify that each rule can identify the following actions: permit, discard, and log.
-                <h:p/>
+                <h:br/>
                 The evaluator shall verify that the TSS identifies all interface types subject to the packet filtering policy
                 and explains how rules are associated with distinct network interfaces. Where interfaces can be grouped
                 into a common interface type (e.g., where the same internal logical path is used, perhaps where a
                 common device driver is used), they can be treated collectively as a distinct network interface.
-                <h:p/></TSS>
+                <h:br/></TSS>
               <Guidance>
                 The evaluator shall verify that the operational guidance identifies the following protocols as being
                 supported and the following attributes as being configurable within packet filtering rules for the
@@ -1982,14 +1982,14 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 </h:ul>
                 The evaluator shall verify that the operational guidance indicates that each rule can identify the following
                 actions: permit, discard, and log.
-                <h:p/>
+                <h:br/>
                 The evaluator shall verify that the operational guidance explains how rules are associated with distinct
                 network interfaces.
-                <h:p/>
+                <h:br/>
                 The guidance may describe the other protocols contained within the ST (e.g., IPsec, IKE, potentially HTTPS,
                 SSH, and TLS) that are processed by the TOE. The evaluator shall ensure that it is made clear what
                 protocols were not considered as part of the TOE evaluation.
-                <h:p/></Guidance>
+                <h:br/></Guidance>
               <Tests>
                 The evaluator shall perform the following tests:
                 <testlist>
@@ -2025,7 +2025,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 combinations are configured manually, that will fulfill the objective of these test activities, but if those
                 combinations are configured otherwise (e.g., using automation), these test activities may be necessary in
                 order to ensure the guidance is correct and the full range of configurations can be achieved by a TOE
-                administrator.<h:p/>
+                administrator.<h:br/>
               </Tests>
             </aactivity>
           </f-element>
@@ -2045,11 +2045,11 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             <aactivity level="element">
               <TSS>The evaluator shall verify that the TSS describes the algorithm applied to incoming packets, including the
                 processing of default rules, determination of whether a packet is part of an established session, and
-                application of administrator defined and ordered ruleset.<h:p/>
+                application of administrator defined and ordered ruleset.<h:br/>
               </TSS>
               <Guidance>The evaluator shall verify that the operational guidance describes how the order of packet filtering rules
                 is determined and provides the necessary instructions so that an administrator can configure the order of
-                rule processing.<h:p/></Guidance>
+                rule processing.<h:br/></Guidance>
               <Tests>
                 The evaluator shall perform the following tests:
                 <testlist>
@@ -2061,7 +2061,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                     one is a subset of the other (e.g. a specific address vs. a network segment). Again, the evaluator should
                     test both orders to ensure that the first is enforced regardless of the specificity of the rule.
                   </test>
-                </testlist><h:p/>
+                </testlist><h:br/>
               </Tests>
             </aactivity>
           </f-element>
@@ -2075,11 +2075,11 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             <aactivity level="element">
               <TSS>The evaluator shall verify that the TSS describes the process for applying packet filtering rules and also
                 that the behavior (either by default, or as configured by the administrator) is to discard packets when
-                there is no rule match. The evaluator shall verify the TSS describes when the IPv4 and IPv6 protocols supported by the TOE differ from the full list provided in the RFC Values for IPv4 and IPv6 table. <h:p/></TSS>
+                there is no rule match. The evaluator shall verify the TSS describes when the IPv4 and IPv6 protocols supported by the TOE differ from the full list provided in the RFC Values for IPv4 and IPv6 table. <h:br/></TSS>
               <Guidance>The evaluator shall verify that the operational guidance describes the behavior if no rules or special
                 conditions apply to the network traffic. If the behavior is configurable, the evaluator shall verify that the
                 operational guidance provides the appropriate instructions to configure the behavior to discard packets
-                with no matching rules. The evaluator shall verify that the operational guidance describes the range of IPv4 and IPv6 protocols supported by the TOE.<h:p/>
+                with no matching rules. The evaluator shall verify that the operational guidance describes the range of IPv4 and IPv6 protocols supported by the TOE.<h:br/>
               </Guidance>
               <Tests>
                 The evaluator shall perform the following tests:
@@ -2159,7 +2159,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 </testlist>
                 The following table identifies the RFC defined values for the protocol fields for IPv4 and IPv6 to be used in
                 configuring and otherwise testing packet filtering rule definition and enforcement:
-                <h:p/>
+                <h:br/>
                 <h:table>
                   <h:tr class="header"><h:td>Protocol</h:td><h:td>Defined Attributes</h:td></h:tr>
                   <h:tr><h:td>IPv4</h:td><h:td>
@@ -2445,10 +2445,10 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 evaluator shall ensure that those cases are identified and a rationale is provided that supports the
                 classification and justifies why the TOE’s ability to enforce its security policies is not affected in any such
                 instance.
-                <h:p/></TSS>
+                <h:br/></TSS>
               <Guidance>The evaluator shall verify that the operational guidance provides information on the self-test failures that
                 can cause the TOE to shut down and how to diagnose the specific failure that has occurred, including
-                possible remediation steps if available.<h:p/></Guidance>
+                possible remediation steps if available.<h:br/></Guidance>
               <Tests>There are no test EAs for this component.
               </Tests>
             </aactivity>
@@ -2510,8 +2510,8 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             <aactivity>
               <TSS>The evaluator shall verify that the TSS describes the method used to perform self-testing on the TSF
                 executable code, and that this method is consistent with what is described in the SFR.
-                <h:p/></TSS>
-              <Guidance>There are no guidance EAs for this component.<h:p/></Guidance>
+                <h:br/></TSS>
+              <Guidance>There are no guidance EAs for this component.<h:br/></Guidance>
               <Tests>There are no test EAs for this component.</Tests>
             </aactivity>
           </f-element>
@@ -2553,10 +2553,10 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             </note>
             <aactivity>
               <TSS>The EAs specified for FTP_ITC.1 in the Supporting Document for the Base-PP shall be
-                applied for IPsec VPN communications.<h:p/>
+                applied for IPsec VPN communications.<h:br/>
               </TSS>
               <Guidance>The EAs specified for FTP_ITC.1 in the Supporting Document for the Base-PP shall be
-                applied for IPsec VPN communications.<h:p/>
+                applied for IPsec VPN communications.<h:br/>
               </Guidance>
               <Tests>The EAs specified for FTP_ITC.1 in the Supporting Document for the Base-PP shall be
                 applied for IPsec VPN communications. Additional testing for IPsec is covered in
@@ -2589,7 +2589,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
       This PP-Module does not define any SARs beyond those defined by the Base-PP. It is important to note
       that these SARs are applied to the entire TOE and not just to the portion of the TOE defined by the PP or
       PP-Module in which the SARs are located.
-      <h:p/>
+      <h:br/>
       To evaluate the SARs specified by NDcPP and this PP-Module, the evaluator shall perform the SAR
       Evaluation Activities defined in the NDcPP SD against the entire TOE (i.e., both the network device portion
       and the VPN gateway portion). In particular, the evaluator shall ensure that the vulnerability testing
@@ -2633,9 +2633,9 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               
             </note>
             <aactivity>
-              <TSS>The evaluator shall examine the TSS to verify that it describes how authentication packets are identified and how all other traffic is blocked until secondary authentication is successful.<h:p/></TSS>
+              <TSS>The evaluator shall examine the TSS to verify that it describes how authentication packets are identified and how all other traffic is blocked until secondary authentication is successful.<h:br/></TSS>
               
-              <Guidance>The evaluator shall examine the operational guidance to verify that it provides instructions to the administrator on how to configure the secondary HOTP or TOTP factors and any additional details necessary for filtering all other traffic.<h:p/> 
+              <Guidance>The evaluator shall examine the operational guidance to verify that it provides instructions to the administrator on how to configure the secondary HOTP or TOTP factors and any additional details necessary for filtering all other traffic.<h:br/> 
               </Guidance>
               
               <Tests>
@@ -2742,9 +2742,9 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             <aactivity>
               <TSS>The evaluator shall verify that the TSS describes the use of EAP options for each of the selected peer authentication 
                 mechanisms, that TLS with mutual authentication is used, that the random values are from an appropriate source, 
-                and that the EAP MSK is derived from the TLS master key and is used as the IKEv2 shared key.<h:p/></TSS>
+                and that the EAP MSK is derived from the TLS master key and is used as the IKEv2 shared key.<h:br/></TSS>
               <Guidance>The evaluator shall verify that the guidance documents describe any configurable features of the EAP or TLS 
-                functionality, including instructions for configuration of the authenticators and registration processes for clients.<h:p/></Guidance>
+                functionality, including instructions for configuration of the authenticators and registration processes for clients.<h:br/></Guidance>
               <Tests>Testing for TLS functionality is in accordance with the TLS package.
                 <h:b/>For each supported EAP method claimed in FCS_EAP_EXT.1.1 and for each authentication method claimed in 
                 FCS_EAP_EXT.1.3, the evaluator shall perform the following tests:
@@ -2890,24 +2890,24 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             
             <note role="application">
               The selection FIA_HOTP_EXT.1.4 must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication.
-              <h:p/>In FIA_HOTP_EXT.1.5 the ST author may either provide a configurable character length of at least 6 or a preset size between 6 and 10.
-              <h:p/>In FIA_HOTP_EXT.1.6 the ST author may select throttle requests, account lockout, or both.
-              <h:p/>The HOTP seed and all derived values are considered secret keys for purposes of protection.
+              <h:br/>In FIA_HOTP_EXT.1.5 the ST author may either provide a configurable character length of at least 6 or a preset size between 6 and 10.
+              <h:br/>In FIA_HOTP_EXT.1.6 the ST author may select throttle requests, account lockout, or both.
+              <h:br/>The HOTP seed and all derived values are considered secret keys for purposes of protection.
             </note>
             <aactivity>
               <TSS>
-                <h:p/>The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
-                <h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1.
-                <h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is protected and ensure it aligns with the storage requirements of the Base-PP. 
-                <h:p/>The evaluator shall confirm the TSS describes how a new HOTP seed is assigned for each client and how each client is uniquely identified.
-                <h:p/>The evaluator shall confirm the TSS describes how the HOTP seed is conditioned into an HOTP hash and verify it matches the selection in FIA_HOTP_EXT.1.4.
-                <h:p/>The evaluator shall confirm the TSS describes how the HOTP hash is truncated and verify it matches the selection in FIA_HOTP_EXT.1.5.
-                <h:p/>The evaluator shall confirm the TSS describes how the TOE handles multiple incoming invalid requests and verify it provides an anti-hammer mechanism that matches the selections made in FIA_HOTP_EXT.1.6.
-                <h:p/>The evaluator shall confirm the TSS describes how the TOE handles resynchronization and how it rejects attempts outside of the look-ahead window selected in FIA_TOTP_EXT.1.7.
-                <h:p/>The evaluator shall confirm the TSS describes how the TOE counter is incremented after each successful authentication.<h:p/>
+                <h:br/>The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
+                <h:br/>The evaluator shall confirm the TSS describes how the HOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1.
+                <h:br/>The evaluator shall confirm the TSS describes how the HOTP seed is protected and ensure it aligns with the storage requirements of the Base-PP. 
+                <h:br/>The evaluator shall confirm the TSS describes how a new HOTP seed is assigned for each client and how each client is uniquely identified.
+                <h:br/>The evaluator shall confirm the TSS describes how the HOTP seed is conditioned into an HOTP hash and verify it matches the selection in FIA_HOTP_EXT.1.4.
+                <h:br/>The evaluator shall confirm the TSS describes how the HOTP hash is truncated and verify it matches the selection in FIA_HOTP_EXT.1.5.
+                <h:br/>The evaluator shall confirm the TSS describes how the TOE handles multiple incoming invalid requests and verify it provides an anti-hammer mechanism that matches the selections made in FIA_HOTP_EXT.1.6.
+                <h:br/>The evaluator shall confirm the TSS describes how the TOE handles resynchronization and how it rejects attempts outside of the look-ahead window selected in FIA_TOTP_EXT.1.7.
+                <h:br/>The evaluator shall confirm the TSS describes how the TOE counter is incremented after each successful authentication.<h:br/>
               </TSS>
               <Guidance>The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the 
-                FIA_HOTP_EXT.1 requirements.<h:p/>
+                FIA_HOTP_EXT.1 requirements.<h:br/>
               </Guidance>
               <Tests>
                 The evaluator shall configure the TOE to use a supported HOTP factor then:
@@ -2963,25 +2963,25 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               </selectables> keys.
             </title>
             <note role="application">
-              <h:p/>FIA_PSK_EXT.1 includes the options for MFA solutions.
+              <h:br/>FIA_PSK_EXT.1 includes the options for MFA solutions.
 		    
-              <h:p/>If any selection including "generated bit-based" is chosen, then FIA_PSK_EXT.2 must be included. 
+              <h:br/>If any selection including "generated bit-based" is chosen, then FIA_PSK_EXT.2 must be included. 
               
-              <h:p/>If any selection including Password-based keys is chosen, then FIA_PSK_EXT.3 must be included. 
+              <h:br/>If any selection including Password-based keys is chosen, then FIA_PSK_EXT.3 must be included. 
               
-              <h:p/>If any selection including HMAC-based one-time password keys is chosen, then FIA_PSK_EXT.4 must be included. 
+              <h:br/>If any selection including HMAC-based one-time password keys is chosen, then FIA_PSK_EXT.4 must be included. 
               
-              <h:p/>If any selection including time-based one-time password is chosen, then FIA_PSK_EXT.5 must be included. 
+              <h:br/>If any selection including time-based one-time password is chosen, then FIA_PSK_EXT.5 must be included. 
    
-		<h:p/>This requirement is selection dependent on FCS_IPSEC_EXT.1.13 or inclusion of FPF_MFA_EXT.1.
+		<h:br/>This requirement is selection dependent on FCS_IPSEC_EXT.1.13 or inclusion of FPF_MFA_EXT.1.
             </note>
             <aactivity>
               <TSS>The evaluator shall examine the TSS to ensure that it identifies all protocols that allow  pre-shared keys. 
                 For each protocol identified by the requirement, the evaluator shall confirm that the TSS states which pre-shared key 
-                selections are supported. <h:p/></TSS>
+                selections are supported. <h:br/></TSS>
               
               <Guidance>The evaluator shall examine the operational guidance to determine that it provides guidance to 
-                administrators on how to configure all selected pre-shared key options if any configuration is required.<h:p/>
+                administrators on how to configure all selected pre-shared key options if any configuration is required.<h:br/>
               </Guidance>
               
               <Tests>
@@ -3030,14 +3030,14 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             <note role="application">
               Generated PSKs are expected to be shared between components via an out of band mechanism. 
               
-              <h:p/>This requirement is selection dependent on FIA_PSK_EXT.1.<h:p/>
+              <h:br/>This requirement is selection dependent on FIA_PSK_EXT.1.<h:br/>
             </note>
             <aactivity>
               <TSS>If "generate" is selected, the evaluator shall confirm that this process uses the RBG specified in FCS_RBG_EXT.1 
-                and the output matches the size selected in FIA_PSK_EXT.2.1.<h:p/> 
+                and the output matches the size selected in FIA_PSK_EXT.2.1.<h:br/> 
               </TSS>
               <Guidance>The evaluator shall confirm the operational guidance contains instructions for entering generated pre-shared keys 
-                for each protocol identified in the FIA_PSK_EXT.1.1. <h:p/>
+                for each protocol identified in the FIA_PSK_EXT.1.1. <h:br/>
               </Guidance>
               <Tests>
                 <testlist>
@@ -3126,44 +3126,44 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             <note role="application">
               For FIA_PSK_EXT.3.1, the ST author assigns the maximum size of the PSK it supports; it must support at least 64 characters or a length defined by the platform. 
               
-              <h:p/>For FIA_PSK_EXT.3.2, the ST author assigns any other supported characters; if there are no other supported characters, they should select "no other characters." 
+              <h:br/>For FIA_PSK_EXT.3.2, the ST author assigns any other supported characters; if there are no other supported characters, they should select "no other characters." 
               
-              <h:p/>For FIA_PSK_EXT.3.3, the ST author selects the parameters based on the PBKDF used by the TSF. 
+              <h:br/>For FIA_PSK_EXT.3.3, the ST author selects the parameters based on the PBKDF used by the TSF. 
               
-              <h:p/>For FIA_PSK_EXT.3.4 If the minimum length is settable, then the ST author chooses "a value settable by the administrator." If the minimum length is not settable, 
+              <h:br/>For FIA_PSK_EXT.3.4 If the minimum length is settable, then the ST author chooses "a value settable by the administrator." If the minimum length is not settable, 
               the ST author fills in the assignment with the minimum length the PSK must be. This requirement is to ensure bounds work properly.
               
-              <h:p/>For FIA_PSK_EXT.3.7, the ST author may select one, both, or neither of the functions in alignment with NIST SP800-63b.
+              <h:br/>For FIA_PSK_EXT.3.7, the ST author may select one, both, or neither of the functions in alignment with NIST SP800-63b.
               
-              <h:p/>This requirement is selection dependent on FIA_PSK_EXT.1. 
+              <h:br/>This requirement is selection dependent on FIA_PSK_EXT.1. 
               </note>
             <aactivity>
               <TSS>The evaluator shall examine the TSS to ensure it describes the process by which the bit-based pre-shared keys are used.  
                 
-                <h:p/>Support for length: The evaluator shall check to ensure that the TSS describes the allowable ranges for PSK lengths, and that at least 64 characters or a length defined by the platform may be specified by the user.
+                <h:br/>Support for length: The evaluator shall check to ensure that the TSS describes the allowable ranges for PSK lengths, and that at least 64 characters or a length defined by the platform may be specified by the user.
                 
-                <h:p/>Support for character set: The evaluator shall check to ensure that the TSS describes the allowable character set and that it contains the characters listed in the SFR.
+                <h:br/>Support for character set: The evaluator shall check to ensure that the TSS describes the allowable character set and that it contains the characters listed in the SFR.
                 
-                <h:p/>Support for PBKDF: The evaluator shall examine the TSS to ensure that the use of PBKDF2 is described and that the key sizes match that described by the ST author.
+                <h:br/>Support for PBKDF: The evaluator shall examine the TSS to ensure that the use of PBKDF2 is described and that the key sizes match that described by the ST author.
                 
-                <h:p/>The evaluator shall check that the TSS describes the method by which the PSK is first encoded and then fed to the hash algorithm. The settings for the algorithm (padding, blocking, etc.) shall be described, and the evaluator shall verify that these are supported by the selections in this component as well as the selections concerning the hash function itself. 
+                <h:br/>The evaluator shall check that the TSS describes the method by which the PSK is first encoded and then fed to the hash algorithm. The settings for the algorithm (padding, blocking, etc.) shall be described, and the evaluator shall verify that these are supported by the selections in this component as well as the selections concerning the hash function itself. 
                 
-                <h:p/>For the NIST SP 800-132-based conditioning of the PSK, the required evaluation activities will be performed when doing the evaluation activities for the appropriate requirements (FCS_COP.1/KeyedHash). 
+                <h:br/>For the NIST SP 800-132-based conditioning of the PSK, the required evaluation activities will be performed when doing the evaluation activities for the appropriate requirements (FCS_COP.1/KeyedHash). 
                 
-                <h:p/>The evaluator shall confirm that the minimum length is described.
+                <h:br/>The evaluator shall confirm that the minimum length is described.
                 
-                <h:p/>The ST author shall provide a description in the TSS regarding the salt generation. The evaluator shall confirm that the salt is generated using an RBG described in FCS_RBG_EXT.1.
+                <h:br/>The ST author shall provide a description in the TSS regarding the salt generation. The evaluator shall confirm that the salt is generated using an RBG described in FCS_RBG_EXT.1.
                 
-                <h:p/>[conditional] If password strength meter or password denylist is selected, the evaluator shall examine the TSS to ensure any password checking functionality provided by the TSF is described and contains details on how the function operates.
-                <h:p/></TSS>
+                <h:br/>[conditional] If password strength meter or password denylist is selected, the evaluator shall examine the TSS to ensure any password checking functionality provided by the TSF is described and contains details on how the function operates.
+                <h:br/></TSS>
               <Guidance>The evaluator shall confirm the operational guidance contains instructions for entering bit-based pre-shared keys for each 
                 protocol identified in the requirement, or generating a bit-based pre-shared key (or both). The evaluator shall confirm that any 
                 management functions related to pre-shared keys that are performed by the TOE are specified in the operational guidance.  
                 
-                <h:p/>The guidance must specify the allowable characters for pre-shared keys, and that list must include, at minimum, the same 
+                <h:br/>The guidance must specify the allowable characters for pre-shared keys, and that list must include, at minimum, the same 
                 items contained in FIA_PSK_EXT.3.2. 
                 
-                <h:p/>The evaluator shall confirm the operational guidance contains any necessary instructions for enabling and configuring password checking functionality. <h:p/>
+                <h:br/>The evaluator shall confirm the operational guidance contains any necessary instructions for enabling and configuring password checking functionality. <h:br/>
               </Guidance>
               <Tests>
                 Support for Password/Passphrase characteristics: In addition to the analysis above, the evaluator shall also perform the following tests on a TOE configured according to the Operational Guidance:
@@ -3207,14 +3207,14 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             <note role="application">
               If "verify the HOTP..." is selected, then FIA_HOTP_EXT.1 must be included.
               
-              <h:p/>This requirement is selection dependent on FIA_PSK_EXT.1
+              <h:br/>This requirement is selection dependent on FIA_PSK_EXT.1
             </note>
             <aactivity>
               <TSS>The evaluator shall verify the TSS describes how the HOTP is input into the client and how that value is sent to the server.
-                <h:p/>The evaluator shall verify the TSS describes how the HOTP is accepted from an incoming connection and how that value is verified, either by the TOE or by an external authentication server.<h:p/>
+                <h:br/>The evaluator shall verify the TSS describes how the HOTP is accepted from an incoming connection and how that value is verified, either by the TOE or by an external authentication server.<h:br/>
               </TSS>
               <Guidance>
-                The evaluator shall verify the operational guidance contains any configuration necessary to enable HOTP.<h:p/>
+                The evaluator shall verify the operational guidance contains any configuration necessary to enable HOTP.<h:br/>
               </Guidance>
               <Tests>
                 <testlist>
@@ -3258,13 +3258,13 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             <note role="application">
               If verify the TOTP is selected then FIA_TOTP_EXT.1 must be included.
               
-              <h:p/>This requirement is dependent on FIA_PSK_EXT.1.
+              <h:br/>This requirement is dependent on FIA_PSK_EXT.1.
             </note>
             <aactivity>
               <TSS>The evaluator shall verify the TSS describes how the TOTP is input into the client and how that value is sent to the server.
-                <h:p/>The evaluator shall verify the TSS describes how the TOTP is accepted from an incoming connection and how that value is verified, either by the TOE or by an external authentication server.<h:p/></TSS>
+                <h:br/>The evaluator shall verify the TSS describes how the TOTP is accepted from an incoming connection and how that value is verified, either by the TOE or by an external authentication server.<h:br/></TSS>
               <Guidance>
-                The evaluator shall verify the operational guidance contains any configuration necessary to enable TOTP.<h:p/>
+                The evaluator shall verify the operational guidance contains any configuration necessary to enable TOTP.<h:br/>
               </Guidance>
               <Tests>
                 <testlist>
@@ -3398,24 +3398,24 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             
             <note role="application">
               The selection FIA_TOTP_EXT.1.4 must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication.
-              <h:p/>In FIA_TOTP_EXT.1.5 the ST author may either provide a configurable character length of at least 6 or a preset size between 6 and 10.
-              <h:p/>In FIA_TOTP_EXT.1.6 the ST author may select throttle requests, account lockout, or both.
-              <h:p/>The TOTP seed and all derived values are considered secret keys for purposes of protection.
+              <h:br/>In FIA_TOTP_EXT.1.5 the ST author may either provide a configurable character length of at least 6 or a preset size between 6 and 10.
+              <h:br/>In FIA_TOTP_EXT.1.6 the ST author may select throttle requests, account lockout, or both.
+              <h:br/>The TOTP seed and all derived values are considered secret keys for purposes of protection.
               </note>
             <aactivity>
               <TSS>
                 The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
-                <h:p/>The evaluator shall confirm the TSS describes how the TOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1.
-                <h:p/>The evaluator shall confirm the TSS describes how the TOTP seed is protected and ensure it aligns with the storage requirements of the Base-PP. 
-                <h:p/>The evaluator shall confirm the TSS describes how a new TOTP seed is assigned for each client and how each client is uniquely identified.
-                <h:p/> The evaluator shall confirm the TSS describes how the TOTP seed is conditioned into a TOTP hash and verify it matches the selection in FIA_TOTP_EXT.1.4.
-                <h:p/>The evaluator shall confirm the TSS describes how the TOTP hash is truncated and verify it matches the selection in FIA_TOTP_EXT.1.5.
-                <h:p/>The evaluator shall confirm the TSS describes how the TOE handles multiple incoming requests and verify it provides an anti-hammer mechanism that matches the selections made in FIA_TOTP_EXT.1.6.
-                <h:p/>The evaluator shall confirm the TSS describes how the TOE sets a time-step value and verify it matches the selections in the ST.
-                <h:p/>The evaluator shall confirm the TSS describes how the TOE handles drift and resynchronization and verify it matches the selections.  The evaluator shall ensure the TSS describes how time is kept and whether drift is calculated and recorded.  
-                If drift is recorded, the evaluator shall ensure that the TSS describes how this is done.<h:p/>
+                <h:br/>The evaluator shall confirm the TSS describes how the TOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1.
+                <h:br/>The evaluator shall confirm the TSS describes how the TOTP seed is protected and ensure it aligns with the storage requirements of the Base-PP. 
+                <h:br/>The evaluator shall confirm the TSS describes how a new TOTP seed is assigned for each client and how each client is uniquely identified.
+                <h:br/> The evaluator shall confirm the TSS describes how the TOTP seed is conditioned into a TOTP hash and verify it matches the selection in FIA_TOTP_EXT.1.4.
+                <h:br/>The evaluator shall confirm the TSS describes how the TOTP hash is truncated and verify it matches the selection in FIA_TOTP_EXT.1.5.
+                <h:br/>The evaluator shall confirm the TSS describes how the TOE handles multiple incoming requests and verify it provides an anti-hammer mechanism that matches the selections made in FIA_TOTP_EXT.1.6.
+                <h:br/>The evaluator shall confirm the TSS describes how the TOE sets a time-step value and verify it matches the selections in the ST.
+                <h:br/>The evaluator shall confirm the TSS describes how the TOE handles drift and resynchronization and verify it matches the selections.  The evaluator shall ensure the TSS describes how time is kept and whether drift is calculated and recorded.  
+                If drift is recorded, the evaluator shall ensure that the TSS describes how this is done.<h:br/>
               </TSS>
-              <Guidance>The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the FIA_TOTP_EXT.1 requirements.<h:p/> 
+              <Guidance>The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the FIA_TOTP_EXT.1 requirements.<h:br/> 
               </Guidance>
               <Tests>
                 The evaluator shall configure the TOE to use a supported TOTP factor then:
@@ -3483,9 +3483,9 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	        </note>
 	        <aactivity>
 	          <TSS>The evaluator shall examine the TSS to verify that it describes the ability of the TSF to terminate an inactive
-	            VPN client session.<h:p/></TSS>
+	            VPN client session.<h:br/></TSS>
 	          <Guidance>The evaluator shall examine the operational guidance to verify that it provides instructions to the
-	            administrator on how to configure the time limit for termination of an active VPN client session.<h:p/>
+	            administrator on how to configure the time limit for termination of an active VPN client session.<h:br/>
 	          </Guidance>
 	          <Tests>
 	            The evaluator shall perform the following tests:
@@ -3524,10 +3524,10 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	        <aactivity>
 	          <TSS>The evaluator shall examine the TSS to verify that it describes the methods by which the TSF can deny the
 	            establishment of an otherwise valid remote VPN client session (e.g., client credential is valid, not expired,
-	            not revoked, etc.), including day, time, and IP address at a minimum.<h:p/></TSS>
+	            not revoked, etc.), including day, time, and IP address at a minimum.<h:br/></TSS>
 	          <Guidance>The evaluator shall review the operational guidance to determine that it provides instructions for how to
 	            enable an access restriction that will deny VPN client session establishment for each attribute described
-	            in the TSS.<h:p/>
+	            in the TSS.<h:br/>
 	          </Guidance>
 	          <Tests>
 	            The evaluator shall perform the following tests:
@@ -3575,8 +3575,8 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	      <management>No specific management functions are identified.</management>
 	      <audit>There are no auditable events foreseen.
 	      </audit>
-	      <dependencies>FCS_IPSEC_EXT.1 IPsec Protocol<h:p/>
-	        [FTP_ITC.1 Inter-TSF Trusted Channel, or<h:p/>
+	      <dependencies>FCS_IPSEC_EXT.1 IPsec Protocol<h:br/>
+	        [FTP_ITC.1 Inter-TSF Trusted Channel, or<h:br/>
 	        FTP_TRP.1 Trusted Path]</dependencies>
 	      <f-element id="fta-vcm-ext-1e1">
 	        <title>The TSF shall assign a private IP address to a VPN client upon successful establishment of a security session.</title>
@@ -3585,8 +3585,8 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	        <aactivity>
 	          <TSS>The evaluator shall check the TSS to verify that it asserts the ability of the TSF to assign a private IP address
 	            to a connected VPN client.
-	            <h:p/></TSS>
-	          <Guidance>There are no guidance EAs for this component.<h:p/></Guidance>
+	            <h:br/></TSS>
+	          <Guidance>There are no guidance EAs for this component.<h:br/></Guidance>
 	          <Tests>The evaluator shall connect a remote VPN client to the TOE and record its IP address as well as the internal
 	            IP address of the TOE. The evaluator shall verify that the two IP addresses belong to the same network.
 	            The evaluator shall disconnect the remote VPN client and verify that the IP address of its underlying
@@ -3611,7 +3611,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	against this PP. However, these requirements are not featured explicitly as SFRs and should not be
 	included in the ST. They are not included as standalone SFRs because it would increase the time, cost,
 	and complexity of evaluation. This approach is permitted by [CC] Part 1, 8.2 Dependencies between
-	components.<h:p/>
+	components.<h:br/>
 	This information benefits systems engineering activities which call for inclusion of particular security
 	controls. Evaluation against the PP-Module provides evidence that these controls are present and have
 	been evaluated.

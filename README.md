@@ -3,8 +3,8 @@ PP-Module for Virtual Private Network (VPN) Gateways
 ===============
 ![Build](https://github.com/commoncriteria/vpngw/workflows/Build/badge.svg)
 ![Validate](https://github.com/commoncriteria/vpngw/workflows/Validate/badge.svg)
-[![SanityChecks](https://raw.githubusercontent.com/commoncriteria/vpngw/gh-pages/master/warnings-badge.svg)](https://github.com/commoncriteria/vpngw/blob/gh-pages/SanityChecksOutput.md)
-[![SpellCheck](https://raw.githubusercontent.com/commoncriteria/vpngw/gh-pages/master/spell-badge.svg)](https://github.com/commoncriteria/vpngw/blob/gh-pages/SpellCheckReport.txt)
+[![SanityChecks](https://github.com/commoncriteria/vpngw/blob/gh-pages/warnings.svg)](https://github.com/commoncriteria/vpngw/blob/gh-pages/SanityChecksOutput.md)
+[![SpellCheck](https://github.com/commoncriteria/vpngw/blob/gh-pages/spell-badge.svg)](https://github.com/commoncriteria/vpngw/blob/gh-pages/SpellCheckReport.txt)
 [![QuickBuild](https://github.com/commoncriteria/vpngw/actions/workflows/quick_build.yml/badge.svg)](https://commoncriteria.github.io/vpngw/vpngw-release.html)
 [![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/vpngw.svg?maxAge=2592000)](https://github.com/commoncriteria/vpngw/issues) 
 

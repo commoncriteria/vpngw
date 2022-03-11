@@ -3775,7 +3775,7 @@
 										      >	*combination of a generated bit-based and HMAC-based one-time password*,
 										      >	*combination of a generated bit-based and time-based one-time password*,
 										      >	*combination of a password-based and HMAC-based one-time password*,
-										      >	*Combination of a password-based and time-based one-time password*\]
+										      >	*combination of a password-based and time-based one-time password*\]
 										      >	keys.
 										      >	:::
 										      >

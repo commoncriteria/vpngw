@@ -4,7 +4,7 @@
 										      >	::: {.center}
 										      >	![NIAP Logo](images/niaplogo.png)\
 										      >	Version: 1.3\
-										      >	2022-03-10\
+										      >	2022-03-11\
 										      >	**National Information Assurance Partnership**\
 										      >	:::
 										      >
@@ -13,7 +13,7 @@
 										      >
 										      >	  Version   Date         Comment
 										      >	  --------- ------------ ------------------------------------------------------------
-										      >	  1.3       2022-03-10   Incorporation of TC feedback
+										      >	  1.3       2022-03-11   Incorporation of TC feedback
 										      >	  1.2       2021-09-27   Format conversion, incorporation of NIAP Technical Decisions
 										      >	  1.1       2020-06-18   Compatibility with CPP\_ND\_V2.2E, incorporation of NIAP Tec
 										      >	  1.0       2019-09-17   Initial publication
@@ -105,8 +105,8 @@
 										      >	gateway is a device at the edge of a private network that terminates an
 										      >	IPsec tunnel, which provides device authentication, confidentiality, and
 										      >	integrity of information traversing a public or untrusted network. This
-										      >	is functionality that typically will be implemented by a network device.
-										      >
+										      >	is functionality that typically will be implemented by a network
+										      >	device.\
 										      >	A Target of Evaluation ([TOE](#abbr_TOE)) that conforms to a
 										      >	[PP-Configuration](#abbr_PP-Configuration) containing this
 										      >	[PP-Module](#abbr_PP-Module) may be a 'Distributed [TOE](#abbr_TOE)' as
@@ -270,8 +270,7 @@
 										      >	[VPN](#abbr_VPN) gateway establishes a secure tunnel that provides an
 										      >	authenticated and encrypted path to one or more other sites and thereby
 										      >	decreases the risk of exposure of information transiting an untrusted
-										      >	network.
-										      >
+										      >	network.\
 										      >	The baseline requirements of this [PP-Module](#abbr_PP-Module) are those
 										      >	determined necessary for a multi-site [VPN](#abbr_VPN) gateway device. A
 										      >	compliant [TOE](#abbr_TOE) may also contain the ability to act as a
@@ -350,7 +349,7 @@
 										      >	The security problem is described in terms of the threats that the
 										      >	[TOE](#abbr_TOE) is expected to address, assumptions about its
 										      >	operational environment ([OE](#abbr_OE)), and any organizational
-										      >	security policies that the [TOE](#abbr_TOE) is expected to enforce.
+										      >	security policies that the [TOE](#abbr_TOE) is expected to enforce.\
 										      >
 										      >	3.1 Threats {#threats .indexable data-level="2"}
 										      >	-----------
@@ -374,7 +373,7 @@
 										      >	    entities using an authenticated path into the protected network.
 										      >	    Devices located outside the protected network may, likewise, offer
 										      >	    services that are inappropriate for access from within the protected
-										      >	    network.
+										      >	    network.\
 										      >	    From an ingress perspective, [VPN](#abbr_VPN) gateways can be
 										      >	    configured so that only those network servers intended for external
 										      >	    consumption by entities operating on a trusted network (e.g.,
@@ -383,7 +382,7 @@
 										      >	    the intended ports. This serves to mitigate the potential for
 										      >	    network entities outside a protected network to access network
 										      >	    servers or services intended only for consumption or access inside a
-										      >	    protected network.
+										      >	    protected network.\
 										      >	    From an egress perspective, [VPN](#abbr_VPN) gateways can be
 										      >	    configured so that only specific external services (e.g., based on
 										      >	    destination port) can be accessed from within a protected network,
@@ -401,7 +400,7 @@
 										      >	    communications with those external devices (e.g., as a result of a
 										      >	    phishing episode or by inadvertent responses to email messages),
 										      >	    then those internal devices may be susceptible to the unauthorized
-										      >	    disclosure of information.
+										      >	    disclosure of information.\
 										      >	    From an infiltration perspective, [VPN](#abbr_VPN) gateways serve
 										      >	    not only to limit access to only specific destination network
 										      >	    addresses and ports within a protected network, but whether network
@@ -414,7 +413,7 @@
 										      >	    can be limited to only specific source addresses and ports so that
 										      >	    specific networks or network nodes can be blocked from accessing a
 										      >	    protected network thereby further limiting the potential disclosure
-										      >	    of information.
+										      >	    of information.\
 										      >	    From an exfiltration perspective, [VPN](#abbr_VPN) gateways serve to
 										      >	    limit how network nodes operating on a protected network can connect
 										      >	    to and communicate with other networks limiting how and where they
@@ -431,12 +430,12 @@
 										      >	    network, may attempt to conduct inappropriate activities while
 										      >	    communicating with those allowed public services. Certain services
 										      >	    offered from within a protected network may also represent a risk
-										      >	    when accessed from outside the protected network.
+										      >	    when accessed from outside the protected network.\
 										      >	    From an ingress perspective, it is generally assumed that entities
 										      >	    operating on external networks are not bound by the use policies for
 										      >	    a given protected network. Nonetheless, [VPN](#abbr_VPN) gateways
 										      >	    can log policy violations that might indicate violation of
-										      >	    publicized usage statements for publicly available services.
+										      >	    publicized usage statements for publicly available services.\
 										      >	    From an egress perspective, [VPN](#abbr_VPN) gateways can be
 										      >	    configured to help enforce and monitor protected network use
 										      >	    policies. As explained in the other threats, a [VPN](#abbr_VPN)
@@ -474,8 +473,7 @@
 										      >	an [OE](#abbr_OE) that does not meet these assumptions, the
 										      >	[TOE](#abbr_TOE) may no longer be able to provide all of its security
 										      >	functionality. This [PP-Module](#abbr_PP-Module) defines assumptions
-										      >	that extend those defined in the supported [Base-PP](#abbr_Base-PP).
-										      >
+										      >	that extend those defined in the supported [Base-PP](#abbr_Base-PP).\
 										      >	All assumptions for the [OE](#abbr_OE) of the [Base-PP](#abbr_Base-PP)
 										      >	also apply to this [PP-Module](#abbr_PP-Module).
 										      >	A.NO\_THRU\_TRAFFIC\_PROTECTION is still operative, but only for the
@@ -513,7 +511,7 @@
 										      >	    traffic between protected networks and other attached networks based
 										      >	    on network addresses of the network nodes originating (source) or
 										      >	    receiving (destination) applicable network traffic as well as on
-										      >	    established connection information.
+										      >	    established connection information.\
 										      >	    Addressed by: [FPF\_RUL\_EXT.1](#FPF_RUL_EXT.1),
 										      >	    [FTA\_VCM\_EXT.1](#FTA_VCM_EXT.1) (optional)
 										      >
@@ -525,7 +523,7 @@
 										      >	    [VPN](#abbr_VPN) peer and ensure that any such connection attempt is
 										      >	    both authenticated and authorized. [VPN](#abbr_VPN) endpoints
 										      >	    authenticate each other to ensure they are communicating with an
-										      >	    authorized external IT entity.
+										      >	    authorized external IT entity.\
 										      >	    Addressed by: [FCS\_IPSEC\_EXT.1](#FCS_IPSEC_EXT.1) (refined from
 										      >	    [Base-PP](#abbr_Base-PP)),
 										      >	    [FIA\_X509\_EXT.1/Rev](#FIA_X509_EXT.1/Rev) (from
@@ -551,7 +549,7 @@
 										      >	    [TOE](#abbr_TOE)'s will implement cryptographic capabilities. These
 										      >	    capabilities are intended to maintain confidentiality and allow for
 										      >	    detection and modification of data that is transmitted outside of
-										      >	    the [TOE](#abbr_TOE).
+										      >	    the [TOE](#abbr_TOE).\
 										      >	    Addressed by: [FCS\_COP.1/DataEncryption](#FCS_COP.1/DataEncryption)
 										      >	    (refined from [Base-PP](#abbr_Base-PP)),
 										      >	    [FCS\_IPSEC\_EXT.1](#FCS_IPSEC_EXT.1) (refined from
@@ -566,7 +564,7 @@
 										      >	    outside of its hardware or software specification, the
 										      >	    [TOE](#abbr_TOE) will shut down upon discovery of a problem reported
 										      >	    via the self-test mechanism and provide signature-based validation
-										      >	    of updates to the [TSF](#abbr_TSF).
+										      >	    of updates to the [TSF](#abbr_TSF).\
 										      >	    Addressed by: [FPT\_TST\_EXT.1](#FPT_TST_EXT.1) (refined from
 										      >	    [Base-PP](#abbr_Base-PP)), [FPT\_TUD\_EXT.1](#FPT_TUD_EXT.1)
 										      >	    (refined from [Base-PP](#abbr_Base-PP)),
@@ -580,7 +578,7 @@
 										      >	    between protected networks and other attached networks based on the
 										      >	    originating (source) or receiving (destination) port (or service)
 										      >	    identified in the network traffic as well as on established
-										      >	    connection information.
+										      >	    connection information.\
 										      >	    Addressed by: [FPF\_RUL\_EXT.1](#FPF_RUL_EXT.1)
 										      >
 										      >	O.SYSTEM\_MONITORING
@@ -595,7 +593,7 @@
 										      >	    informative event logs whenever a match occurs. In addition, the
 										      >	    establishment of security associations (SAs) is auditable, not only
 										      >	    between peer [VPN](#abbr_VPN) gateways, but also with certification
-										      >	    authorities (CAs).
+										      >	    authorities (CAs).\
 										      >	    Addressed by: [FAU\_GEN.1/VPN](#FAU_GEN.1/VPN),
 										      >	    [FPF\_RUL\_EXT.1](#FPF_RUL_EXT.1)
 										      >
@@ -603,7 +601,7 @@
 										      >	:   [TOEs](#abbr_TOE) will provide the functions necessary for an
 										      >	    administrator to configure the packet filtering rules, as well as
 										      >	    the cryptographic aspects of the IPsec protocol that are enforced by
-										      >	    the [TOE](#abbr_TOE).
+										      >	    the [TOE](#abbr_TOE).\
 										      >	    Addressed by: [FMT\_MTD.1/CryptoKeys](#FMT_MTD.1/CryptoKeys)
 										      >	    (refined from [Base-PP](#abbr_Base-PP)),
 										      >	    [FMT\_SMF.1/VPN](#FMT_SMF.1/VPN)
@@ -621,8 +619,7 @@
 										      >	or procedural means. The assumptions identified in Section 3 are
 										      >	incorporated as security objectives for the environment. This
 										      >	[PP-Module](#abbr_PP-Module) defines environmental security objectives
-										      >	that extend those defined in the supported [Base-PP](#abbr_Base-PP).
-										      >
+										      >	that extend those defined in the supported [Base-PP](#abbr_Base-PP).\
 										      >	All objectives for the [OE](#abbr_OE) of the [Base-PP](#abbr_Base-PP)
 										      >	also apply to this [PP-Module](#abbr_PP-Module).
 										      >	[OE](#abbr_OE).NO\_THRU\_TRAFFIC\_PROTECTION is still operative, but
@@ -951,15 +948,14 @@
 										      >	[Application Note: ]{.note-header}[ This element has been modified from
 										      >	its definition in the NDcPP by mandating either 128 or 256 bit key sizes
 										      >	for AES-CBC or AES-GCM, thereby disallowing for the sole selection of
-										      >	192 bit key sizes. ]{.note}
-										      >
+										      >	192 bit key sizes.\
 										      >	When an AES-CBC algorithm is selected, at least one SHA-based HMAC must
 										      >	also be chosen. If only an AES-GCM algorithm is selected, then a
 										      >	SHA-based HMAC is not required since AES-GCM satisfies both
 										      >	confidentiality and integrity functions. IPsec may use a truncated
 										      >	version of the SHA-based HMAC functions contained in the selections.
 										      >	Where a truncated output is used, this is described in the
-										      >	[TSS](#abbr_TSS).
+										      >	[TSS](#abbr_TSS). ]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
@@ -1203,23 +1199,20 @@
 										      >	[TSS](#abbr_TSS) will elaborate on the way in which these algorithms are
 										      >	to be used (for example, 2409 specifies three authentication methods
 										      >	using public keys; each one supported will be described in the
-										      >	[TSS](#abbr_TSS)).]{.note}
-										      >
+										      >	[TSS](#abbr_TSS)).\
 										      >	If any selection with "pre-shared keys" is selected, the selection-based
-										      >	requirement [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) must be claimed.
-										      >
+										      >	requirement [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) must be claimed.\
 										      >	When pre-shared keys are supported for IKEv2, at least one of
 										      >	'Pre-shared Keys transmitted via EAP-TLS' or 'Pre-shared Keys
 										      >	transmitted via EAP-TTLS' is selected to indicate client verification
 										      >	using certificates in a mutually authenticated TLS handshake, and
 										      >	verification of provided PSK protected under the TLS channel. The
 										      >	selection-based [SFR](#abbr_SFR) [FCS\_EAP\_EXT.1](#FCS_EAP_EXT.1) must
-										      >	also be claimed in this situation.
-										      >
+										      >	also be claimed in this situation.\
 										      >	When Pre-shared Keys are supported for IKEv1, the first selection is
 										      >	claimed to indicate one of the mechanisms for using PSK described in the
 										      >	RFC. It is acceptable for different use cases to leverage different
-										      >	selections, if this is the case it must be identified.
+										      >	selections, if this is the case it must be identified. ]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
@@ -1462,14 +1455,12 @@
 										      >	for this component are permitted so it is possible for the
 										      >	[TSF](#abbr_TSF) to use code signing certificates to validate updates,
 										      >	in which case FPT\_TUD\_EXT.2 from the [Base-PP](#abbr_Base-PP) is also
-										      >	included in the [ST](#abbr_ST). ]{.note}
-										      >
+										      >	included in the [ST](#abbr_ST).\
 										      >	If X.509 certificates are used to verify the integrity of an update, the
 										      >	certificates must conform to
 										      >	[FIA\_X509\_EXT.1/Rev](#FIA_X509_EXT.1/Rev). Therefore, certificates
 										      >	that do not (or only partially) conform to FIA\_X509\_EXT.1/REV are not
-										      >	allowed as a means to authenticate firmware/software updates.
-										      >
+										      >	allowed as a means to authenticate firmware/software updates.\
 										      >	NDcPP states the [ST](#abbr_ST) author may use X.509 certificates that
 										      >	do not meet [FIA\_X509\_EXT.1/Rev](#FIA_X509_EXT.1/Rev). This applies to
 										      >	trust anchors as they can be encoded as certificates. Even when they are
@@ -1482,20 +1473,18 @@
 										      >	checking of certificates designated as trust store elements. The
 										      >	integrity of trust store elements depends on administrative controls for
 										      >	loading and managing trust stores and functional integrity checks that
-										      >	are described in other [SFRs](#abbr_SFR).
-										      >
+										      >	are described in other [SFRs](#abbr_SFR).\
 										      >	So, if the certificate used to verify the update is a trust store
 										      >	element (self-signed and specifically trusted for verifying updates,
 										      >	with the integrity of this special purpose certificate protected by
 										      >	administrative controls and [TOE](#abbr_TOE) integrity protections),
-										      >	then revocation checking is not required.
-										      >
+										      >	then revocation checking is not required.\
 										      >	However, if the certificate is issued by a trusted root [CA](#abbr_CA),
 										      >	or by a certificate authority which chains to a trusted root
 										      >	[CA](#abbr_CA), then revocation checking is required for all elements of
 										      >	the certificate chain except the trusted root [CA](#abbr_CA), and the
 										      >	[TOE](#abbr_TOE) must be able to obtain fresh revocation information
-										      >	from an external source.
+										      >	from an external source. ]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
@@ -1647,16 +1636,14 @@
 										      >	required that the public key be associated with an identity in an X509v3
 										      >	certificate, this association is not required to be performed by the
 										      >	[TOE](#abbr_TOE), and instead is expected to be performed by a
-										      >	[CA](#abbr_CA) in the [OE](#abbr_OE). ]{.note}
-										      >
+										      >	[CA](#abbr_CA) in the [OE](#abbr_OE).\
 										      >	As indicated in [FCS\_IPSEC\_EXT.1](#FCS_IPSEC_EXT.1), the
 										      >	[TOE](#abbr_TOE) is required to implement RSA or ECDSA (or both) for
-										      >	peer authentication.
-										      >
+										      >	peer authentication.\
 										      >	The generated key strength of 2048-bit RSA keys need to be equivalent
 										      >	to, or greater than, a symmetric key strength of 112 bits. See NIST
 										      >	Special Publication 800-57, "Recommendation for Key Management" for
-										      >	information about equivalent key strengths.
+										      >	information about equivalent key strengths. ]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
@@ -1758,15 +1745,13 @@
 										      >	to what extent the network traffic can be interpreted by the
 										      >	[TOE](#abbr_TOE) when importing (receiving network traffic or ingress)
 										      >	and exporting (sending--or forming to be sent--network traffic or
-										      >	egress). ]{.note}
-										      >
+										      >	egress).\
 										      >	While the protocol formatting specified in the RFCs is still used, many
 										      >	RFCs define behaviors which are no longer considered safe to follow. For
 										      >	example, RFC 792 defined the "Redirect" Internet Control Message
 										      >	Protocol ([ICMP](#abbr_ICMP)) type, which is not considered safe to
 										      >	honor when it might come from an adversary; the "source quench" message,
-										      >	which is insecure because its source cannot be validated.
-										      >
+										      >	which is insecure because its source cannot be validated.\
 										      >	It also identifies the various attributes that are applicable when
 										      >	constructing rules to be enforced by this requirement -- the applicable
 										      >	interface is a property of the [TOE](#abbr_TOE) and the rest of the
@@ -1775,7 +1760,7 @@
 										      >	header") that identifies the applicable protocol, such as TCP, UDP,
 										      >	[ICMP](#abbr_ICMP), etc. Also, 'Interface' identified above is the
 										      >	external port where the applicable network traffic was received or
-										      >	alternately will be sent.
+										      >	alternately will be sent. ]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
@@ -1822,11 +1807,10 @@
 										      >	([SFP](#abbr_SFP)) port supporting [SFP](#abbr_SFP) modules that expose
 										      >	a number of physical network ports, but since a common driver is used
 										      >	for all external ports they can be treated as a single distinct network
-										      >	interface. ]{.note}
-										      >
+										      >	interface.\
 										      >	Note that there could be a separate ruleset for each interface or
 										      >	alternately a shared ruleset that somehow associates rules with specific
-										      >	interfaces.
+										      >	interfaces. ]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
@@ -2864,17 +2848,14 @@
 										      >	[Application Note: ]{.note-header}[ The selection
 										      >	[FIA\_HOTP\_EXT.1.4](#FIA_HOTP_EXT.1.4) must be consistent with the key
 										      >	size specified for the size of the keys used in conjunction with the
-										      >	keyed-hash message authentication. ]{.note}
-										      >
+										      >	keyed-hash message authentication.\
 										      >	In [FIA\_HOTP\_EXT.1.5](#FIA_HOTP_EXT.1.5) the [ST](#abbr_ST) author may
 										      >	either provide a configurable character length of at least 6 or a preset
-										      >	size between 6 and 10.
-										      >
+										      >	size between 6 and 10.\
 										      >	In [FIA\_HOTP\_EXT.1.6](#FIA_HOTP_EXT.1.6) the [ST](#abbr_ST) author may
-										      >	select throttle requests, account lockout, or both.
-										      >
+										      >	select throttle requests, account lockout, or both.\
 										      >	The HOTP seed and all derived values are considered secret keys for
-										      >	purposes of protection.
+										      >	purposes of protection. ]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
@@ -2916,26 +2897,20 @@
 										      >	keys.
 										      >
 										      >	::: {.appnote}
-										      >	[Application Note: ]{.note-header}[ ]{.note}
-										      >
+										      >	[Application Note: ]{.note-header}[\
 										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) includes the options for MFA
-										      >	solutions.
-										      >
+										      >	solutions.\
 										      >	If any selection including \"generated bit-based\" is chosen, then
-										      >	[FIA\_PSK\_EXT.2](#FIA_PSK_EXT.2) must be included.
-										      >
+										      >	[FIA\_PSK\_EXT.2](#FIA_PSK_EXT.2) must be included.\
 										      >	If any selection including Password-based keys is chosen, then
-										      >	[FIA\_PSK\_EXT.3](#FIA_PSK_EXT.3) must be included.
-										      >
+										      >	[FIA\_PSK\_EXT.3](#FIA_PSK_EXT.3) must be included.\
 										      >	If any selection including HMAC-based one-time password keys is chosen,
-										      >	then [FIA\_PSK\_EXT.4](#FIA_PSK_EXT.4) must be included.
-										      >
+										      >	then [FIA\_PSK\_EXT.4](#FIA_PSK_EXT.4) must be included.\
 										      >	If any selection including time-based one-time password is chosen, then
-										      >	[FIA\_PSK\_EXT.5](#FIA_PSK_EXT.5) must be included.
-										      >
+										      >	[FIA\_PSK\_EXT.5](#FIA_PSK_EXT.5) must be included.\
 										      >	This requirement is selection dependent on
 										      >	[FCS\_IPSEC\_EXT.1.13](#FCS_IPSEC_EXT.1.13) or inclusion of
-										      >	[FPF\_MFA\_EXT.1](#FPF_MFA_EXT.1).
+										      >	[FPF\_MFA\_EXT.1](#FPF_MFA_EXT.1). ]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
@@ -2965,10 +2940,10 @@
 										      >
 										      >	::: {.appnote}
 										      >	[Application Note: ]{.note-header}[ Generated PSKs are expected to be
-										      >	shared between components via an out of band mechanism. ]{.note}
-										      >
+										      >	shared between components via an out of band mechanism.\
 										      >	This requirement is selection dependent on
-										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1).
+										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1).\
+										      >	]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
@@ -3075,28 +3050,23 @@
 										      >	[Application Note: ]{.note-header}[ For
 										      >	[FIA\_PSK\_EXT.3.1](#FIA_PSK_EXT.3.1), the [ST](#abbr_ST) author assigns
 										      >	the maximum size of the PSK it supports; it must support at least
-										      >	64 characters or a length defined by the platform. ]{.note}
-										      >
+										      >	64 characters or a length defined by the platform.\
 										      >	For [FIA\_PSK\_EXT.3.2](#FIA_PSK_EXT.3.2), the [ST](#abbr_ST) author
 										      >	assigns any other supported characters; if there are no other supported
-										      >	characters, they should select \"no other characters.\"
-										      >
+										      >	characters, they should select \"no other characters.\"\
 										      >	For [FIA\_PSK\_EXT.3.3](#FIA_PSK_EXT.3.3), the [ST](#abbr_ST) author
 										      >	selects the parameters based on the [PBKDF](#abbr_PBKDF) used by the
-										      >	[TSF](#abbr_TSF).
-										      >
+										      >	[TSF](#abbr_TSF).\
 										      >	For [FIA\_PSK\_EXT.3.4](#FIA_PSK_EXT.3.4) If the minimum length is
 										      >	settable, then the [ST](#abbr_ST) author chooses \"a value settable by
 										      >	the administrator.\" If the minimum length is not settable, the
 										      >	[ST](#abbr_ST) author fills in the assignment with the minimum length
-										      >	the PSK must be. This requirement is to ensure bounds work properly.
-										      >
+										      >	the PSK must be. This requirement is to ensure bounds work properly.\
 										      >	For [FIA\_PSK\_EXT.3.7](#FIA_PSK_EXT.3.7), the [ST](#abbr_ST) author may
 										      >	select one, both, or neither of the functions in alignment with NIST
-										      >	SP800-63b.
-										      >
+										      >	SP800-63b.\
 										      >	This requirement is selection dependent on
-										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1).
+										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1). ]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
@@ -3133,11 +3103,9 @@
 										      >
 										      >	::: {.appnote}
 										      >	[Application Note: ]{.note-header}[ If \"verify the HOTP\...\" is
-										      >	selected, then [FIA\_HOTP\_EXT.1](#FIA_HOTP_EXT.1) must be included.
-										      >	]{.note}
-										      >
+										      >	selected, then [FIA\_HOTP\_EXT.1](#FIA_HOTP_EXT.1) must be included.\
 										      >	This requirement is selection dependent on
-										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1)
+										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) ]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
@@ -3174,9 +3142,9 @@
 										      >
 										      >	::: {.appnote}
 										      >	[Application Note: ]{.note-header}[ If verify the TOTP is selected then
-										      >	[FIA\_TOTP\_EXT.1](#FIA_TOTP_EXT.1) must be included. ]{.note}
-										      >
+										      >	[FIA\_TOTP\_EXT.1](#FIA_TOTP_EXT.1) must be included.\
 										      >	This requirement is dependent on [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1).
+										      >	]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
@@ -3315,17 +3283,14 @@
 										      >	[Application Note: ]{.note-header}[ The selection
 										      >	[FIA\_TOTP\_EXT.1.4](#FIA_TOTP_EXT.1.4) must be consistent with the key
 										      >	size specified for the size of the keys used in conjunction with the
-										      >	keyed-hash message authentication. ]{.note}
-										      >
+										      >	keyed-hash message authentication.\
 										      >	In [FIA\_TOTP\_EXT.1.5](#FIA_TOTP_EXT.1.5) the [ST](#abbr_ST) author may
 										      >	either provide a configurable character length of at least 6 or a preset
-										      >	size between 6 and 10.
-										      >
+										      >	size between 6 and 10.\
 										      >	In [FIA\_TOTP\_EXT.1.6](#FIA_TOTP_EXT.1.6) the [ST](#abbr_ST) author may
-										      >	select throttle requests, account lockout, or both.
-										      >
+										      >	select throttle requests, account lockout, or both.\
 										      >	The TOTP seed and all derived values are considered secret keys for
-										      >	purposes of protection.
+										      >	purposes of protection. ]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
@@ -4116,10 +4081,8 @@
 										      >	::: {style="margin-left: 1em;"}
 										      >	Hierarchical to: No other components.
 										      >
-										      >	Dependencies to: [FCS\_IPSEC\_EXT.1](#FCS_IPSEC_EXT.1) IPsec Protocol
-										      >
-										      >	\[FTP\_ITC.1 Inter-TSF Trusted Channel, or
-										      >
+										      >	Dependencies to: [FCS\_IPSEC\_EXT.1](#FCS_IPSEC_EXT.1) IPsec Protocol\
+										      >	\[FTP\_ITC.1 Inter-TSF Trusted Channel, or\
 										      >	FTP\_TRP.1 Trusted Path\]
 										      >
 										      >	#### FTA\_VCM\_EXT.1.1 {#ext-comp-FTA_VCM_EXT.1.1}

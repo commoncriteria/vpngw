@@ -599,7 +599,7 @@ function showTarget(id){
 
           }
     </style></head><body onLoad="init()"><h1 class="title" style="page-break-before:auto;">PP-Module for VPN Gateways</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"><br>
-      Version: 1.3<br>2022-03-10<br><b>National Information Assurance Partnership</b><br></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.3</td><td>2022-03-10</td><td>Incorporation of TC feedback</td></tr>
+      Version: 1.3<br>2022-03-11<br><b>National Information Assurance Partnership</b><br></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.3</td><td>2022-03-11</td><td>Incorporation of TC feedback</td></tr>
 <tr><td>1.2</td><td>2021-09-27</td><td>Format conversion, incorporation of NIAP Technical Decisions</td></tr>
 <tr><td>1.1</td><td>2020-06-18</td><td>Compatibility with CPP_ND_V2.2E, incorporation of NIAP Technical Decisions</td></tr>
 <tr><td>1.0</td><td>2019-09-17</td><td>Initial publication</td></tr>
@@ -633,7 +633,7 @@ function showTarget(id){
       This <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> is valid because a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway is a device at the edge of a private network that terminates
       an IPsec tunnel, which provides device authentication, confidentiality, and integrity of information
       traversing a public or untrusted network<a id="period_1" href="#period_1">. </a>This is functionality that typically will be implemented by a
-      network device<a id="period_2" href="#period_2">. </a>      <p></p>
+      network device<a id="period_2" href="#period_2">. </a>      <br>
       A Target of Evaluation (<abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>) that conforms to a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> containing this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> may be a &#8216;Distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&#8217; as
       defined in the NDcPP; however, the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway functionality described in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> should be in
       a single <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> component<a id="period_3" href="#period_3">. </a>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not prohibit the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from implementing other security
@@ -691,7 +691,7 @@ The following sections list Common Criteria and technology terms used in this do
       compliant <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway is a device composed of hardware and software that is connected to two or more
       distinct networks and has an infrastructure role in the overall enterprise network<a id="period_33" href="#period_33">. </a>In particular, a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr>
       gateway establishes a secure tunnel that provides an authenticated and encrypted path to one or more other sites
-      and thereby decreases the risk of exposure of information transiting an untrusted network<a id="period_34" href="#period_34">. </a>      <p></p>
+      and thereby decreases the risk of exposure of information transiting an untrusted network<a id="period_34" href="#period_34">. </a>      <br>
       The baseline requirements of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are those determined necessary for a multi-site <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr>
       gateway device<a id="period_35" href="#period_35">. </a>A compliant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may also contain the ability to act as a headend for remote clients<a id="period_36" href="#period_36">. </a>      Because this capability is optional, the remote client-based requirements have been included within
       Appendix A<a id="period_37" href="#period_37">. </a>      
@@ -739,7 +739,7 @@ The following sections list Common Criteria and technology terms used in this do
   <h1 class="indexable" data-level="1" id="Security_Problem_Description">3 Security Problem Description</h1>
     The security problem is described in terms of the threats that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to address,
 assumptions about its operational environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>), and any organizational security policies that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is
-expected to enforce<a id="period_50" href="#period_50">. </a><p></p>
+expected to enforce<a id="period_50" href="#period_50">. </a><br>
     
     
 
@@ -754,13 +754,13 @@ expected to enforce<a id="period_50" href="#period_50">. </a><p></p>
             network that are intended to only be accessed from inside the protected network or only accessed by
             entities using an authenticated path into the protected network<a id="period_54" href="#period_54">. </a>Devices located outside the
             protected network may, likewise, offer services that are inappropriate for access from within the
-            protected network<a id="period_55" href="#period_55">. </a>            <p></p>
+            protected network<a id="period_55" href="#period_55">. </a>            <br>
             From an ingress perspective, <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways can be configured so that only those network servers
             intended for external consumption by entities operating on a trusted network (e.g., machines
             operating on a network where the peer <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways are supporting the connection) are accessible
             and only via the intended ports<a id="period_56" href="#period_56">. </a>This serves to mitigate the potential for network entities outside a
             protected network to access network servers or services intended only for consumption or access
-            inside a protected network<a id="period_57" href="#period_57">. </a>            <p></p>
+            inside a protected network<a id="period_57" href="#period_57">. </a>            <br>
             From an egress perspective, <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways can be configured so that only specific external services
             (e.g., based on destination port) can be accessed from within a protected network, or moreover are
             accessed via an encrypted channel<a id="period_58" href="#period_58">. </a>For example, access to external mail services can be blocked to
@@ -771,7 +771,7 @@ expected to enforce<a id="period_50" href="#period_50">. </a><p></p>
             external devices are able to communicate with devices on the protected network, or if devices on the
             protected network can establish communications with those external devices (e.g., as a result of a
             phishing episode or by inadvertent responses to email messages), then those internal devices may be
-            susceptible to the unauthorized disclosure of information<a id="period_61" href="#period_61">. </a>            <p></p>
+            susceptible to the unauthorized disclosure of information<a id="period_61" href="#period_61">. </a>            <br>
             From an infiltration perspective, <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways serve not only to limit access to only specific
             destination network addresses and ports within a protected network, but whether network traffic will
             be encrypted or transmitted in plaintext<a id="period_62" href="#period_62">. </a>With these limits, general network port scanning can be
@@ -779,7 +779,7 @@ expected to enforce<a id="period_50" href="#period_50">. </a><p></p>
             network can be limited to that obtainable from specifically configured ports on identified network
             nodes (e.g., web pages from a designated corporate web server)<a id="period_63" href="#period_63">. </a>Additionally, access can be limited
             to only specific source addresses and ports so that specific networks or network nodes can be blocked
-            from accessing a protected network thereby further limiting the potential disclosure of information<a id="period_64" href="#period_64">. </a>            <p></p>
+            from accessing a protected network thereby further limiting the potential disclosure of information<a id="period_64" href="#period_64">. </a>            <br>
             From an exfiltration perspective, <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways serve to limit how network nodes operating on a
             protected network can connect to and communicate with other networks limiting how and where
             they can disseminate information<a id="period_65" href="#period_65">. </a>Specific external networks can be blocked altogether or egress
@@ -790,11 +790,11 @@ expected to enforce<a id="period_50" href="#period_50">. </a><p></p>
             Devices located outside the protected network, while permitted to access particular public services
             offered inside the protected network, may attempt to conduct inappropriate activities while
             communicating with those allowed public services<a id="period_68" href="#period_68">. </a>Certain services offered from within a protected
-            network may also represent a risk when accessed from outside the protected network<a id="period_69" href="#period_69">. </a>            <p></p>
+            network may also represent a risk when accessed from outside the protected network<a id="period_69" href="#period_69">. </a>            <br>
             From an ingress perspective, it is generally assumed that entities operating on external networks are
             not bound by the use policies for a given protected network<a id="period_70" href="#period_70">. </a>Nonetheless, <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways can log
             policy violations that might indicate violation of publicized usage statements for publicly available
-            services<a id="period_71" href="#period_71">. </a>            <p></p>
+            services<a id="period_71" href="#period_71">. </a>            <br>
             From an egress perspective, <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways can be configured to help enforce and monitor protected
             network use policies<a id="period_72" href="#period_72">. </a>As explained in the other threats, a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway can serve to limit dissemination
             of data, access to external servers, and even disruption of services &#8211; all of these could be related to
@@ -819,7 +819,7 @@ expected to enforce<a id="period_50" href="#period_50">. </a><p></p>
 These assumptions are made on the Operational Environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>) in order to be able to ensure that the
 security functionality specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> can be provided by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_77" href="#period_77">. </a>If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is placed in an <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> that does not meet these assumptions, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may no longer be able to
 provide all of its security functionality<a id="period_78" href="#period_78">. </a>      
-      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines assumptions that extend those defined in the supported <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_79" href="#period_79">. </a>      <p></p>
+      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines assumptions that extend those defined in the supported <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_79" href="#period_79">. </a>      <br>
       All assumptions for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> also apply to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr><a id="period_80" href="#period_80">. </a>      A.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that are
       defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and not the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr><a id="period_81" href="#period_81">. </a>      
       <dl><dt class="assumption,defined" id="A.CONNECTIONS">A.CONNECTIONS</dt><dd> It is assumed that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is connected to distinct networks in a manner
@@ -844,14 +844,14 @@ provide all of its security functionality<a id="period_78" href="#period_78">. <
             compliant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&#8217;s will implement packet filtering capability<a id="period_85" href="#period_85">. </a>That capability will restrict the flow of
             network traffic between protected networks and other attached networks based on network
             addresses of the network nodes originating (source) or receiving (destination) applicable network
-            traffic as well as on established connection information<a id="period_86" href="#period_86">. </a>            <p></p>
+            traffic as well as on established connection information<a id="period_86" href="#period_86">. </a>            <br>
             Addressed by: <a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a>, <a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a> (optional)
           </dd><dt class="SO,defined" id="O.AUTHENTICATION">O.AUTHENTICATION</dt><dd>
             To further address the issues associated with unauthorized disclosure of information, a compliant
             <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&#8217;s authentication ability (IPSec) will allow a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> peer to establish <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connectivity with another
             <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> peer and ensure that any such connection attempt is both authenticated and authorized<a id="period_87" href="#period_87">. </a><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr>
             endpoints authenticate each other to ensure they are communicating with an authorized external IT
-            entity<a id="period_88" href="#period_88">. </a>            <p></p>
+            entity<a id="period_88" href="#period_88">. </a>            <br>
             Addressed by: <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FIA_X509_EXT.1/Rev">FIA_X509_EXT.1/Rev</a> (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>),
             <a href="#FIA_X509_EXT.2">FIA_X509_EXT.2</a> (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FIA_X509_EXT.3">FIA_X509_EXT.3</a> (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FTP_ITC.1/VPN">FTP_ITC.1/VPN</a>,
             <a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional), <a href="#FTA_SSL.3/VPN">FTA_SSL.3/VPN</a> (optional), <a href="#FTA_TSE.1">FTA_TSE.1</a> (optional), <a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a> (selection-based), <a href="#FIA_HOTP_EXT.1">FIA_HOTP_EXT.1</a> (selection-based), <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> (selection-based),
@@ -861,7 +861,7 @@ provide all of its security functionality<a id="period_78" href="#period_78">. <
             To address the issues associated with unauthorized disclosure of information, inappropriate access to
             services, misuse of services, disruption of services, and network-based reconnaissance, compliant
             <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&#8217;s will implement cryptographic capabilities<a id="period_89" href="#period_89">. </a>These capabilities are intended to maintain
-            confidentiality and allow for detection and modification of data that is transmitted outside of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_90" href="#period_90">. </a>            <p></p>
+            confidentiality and allow for detection and modification of data that is transmitted outside of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_90" href="#period_90">. </a>            <br>
             Addressed by: <a href="#FCS_COP.1/DataEncryption">FCS_COP.1/DataEncryption</a> (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> (refined from
             <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FCS_CKM.1/IKE">FCS_CKM.1/IKE</a>, <a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a> (selection-based)
           </dd><dt class="SO,defined" id="O.FAIL_SECURE">O.FAIL_SECURE</dt><dd>
@@ -869,14 +869,14 @@ provide all of its security functionality<a id="period_78" href="#period_78">. <
             is compromised, the latter being due to malicious or non-malicious intent<a id="period_91" href="#period_91">. </a>To address the concern of
             the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> operating outside of its hardware or software specification, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will shut down upon
             discovery of a problem reported via the self-test mechanism and provide signature-based validation
-            of updates to the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr><a id="period_92" href="#period_92">. </a>            <p></p>
+            of updates to the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr><a id="period_92" href="#period_92">. </a>            <br>
             Addressed by: <a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a> (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FPT_TUD_EXT.1">FPT_TUD_EXT.1</a> (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>),
             <a href="#FPT_FLS.1/SelfTest">FPT_FLS.1/SelfTest</a>, <a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a>
           </dd><dt class="SO,defined" id="O.PORT_FILTERING">O.PORT_FILTERING</dt><dd>
             To further address the issues associated with unauthorized disclosure of information, etc., a compliant
             <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&#8217;s port filtering capability will restrict the flow of network traffic between protected networks and
             other attached networks based on the originating (source) or receiving (destination) port (or
-            service) identified in the network traffic as well as on established connection information<a id="period_93" href="#period_93">. </a>            <p></p>
+            service) identified in the network traffic as well as on established connection information<a id="period_93" href="#period_93">. </a>            <br>
             Addressed by: <a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a>
           </dd><dt class="SO,defined" id="O.SYSTEM_MONITORING">O.SYSTEM_MONITORING</dt><dd>
             To address the issues of administrators being able to monitor the operations of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway, it
@@ -884,11 +884,11 @@ provide all of its security functionality<a id="period_78" href="#period_78">. <
             ability to log the flow of network traffic<a id="period_95" href="#period_95">. </a>Specifically, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will provide the means for administrators
             to configure packet filtering rules to &#8216;log&#8217; when network traffic is found to match the configured rule<a id="period_96" href="#period_96">. </a>            As a result, matching a rule configured to &#8216;log&#8217; will result in informative event logs whenever a match
             occurs<a id="period_97" href="#period_97">. </a>In addition, the establishment of security associations (SAs) is auditable, not only between
-            peer <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways, but also with certification authorities (CAs)<a id="period_98" href="#period_98">. </a>            <p></p>
+            peer <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways, but also with certification authorities (CAs)<a id="period_98" href="#period_98">. </a>            <br>
             Addressed by: <a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a>, <a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a>
           </dd><dt class="SO,defined" id="O.TOE_ADMINISTRATION">O.TOE_ADMINISTRATION</dt><dd>
             <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> will provide the functions necessary for an administrator to configure the packet filtering rules,
-            as well as the cryptographic aspects of the IPsec protocol that are enforced by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_99" href="#period_99">. </a>            <p></p>
+            as well as the cryptographic aspects of the IPsec protocol that are enforced by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_99" href="#period_99">. </a>            <br>
             Addressed by: <a href="#FMT_MTD.1/CryptoKeys">FMT_MTD.1/CryptoKeys</a> (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), 
             <a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a>
           </dd></dl>
@@ -898,7 +898,7 @@ provide all of its security functionality<a id="period_78" href="#period_78">. <
     <h2 class="indexable" data-level="2" id="SecurityObjectivesTOEorEnvironment">4.2 Security Objectives for the Operational Environment</h2>
 The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements technical and procedural measures to assist the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in correctly providing its security functionality (which is defined by the security objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>)<a id="period_100" href="#period_100">. </a>The security objectives for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> consist of a set of statements describing the goals that the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> should achieve<a id="period_101" href="#period_101">. </a>This section defines the security objectives that are to be addressed by the IT domain or by non-technical or procedural means<a id="period_102" href="#period_102">. </a>The assumptions identified in Section 3 are incorporated as security objectives for the environment<a id="period_103" href="#period_103">. </a>      
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines environmental security objectives that extend those defined in
-      the supported <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_104" href="#period_104">. </a>      <p></p>
+      the supported <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_104" href="#period_104">. </a>      <br>
       All objectives for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> also apply to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr><a id="period_105" href="#period_105">. </a>      <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that are
       defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and not the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr><a id="period_106" href="#period_106">. </a>      
       <dl><dt class="SOE,defined" id="OE.CONNECTIONS">OE.CONNECTIONS</dt><dd>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is connected to distinct networks in a manner that ensures that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> security policies will
@@ -1083,7 +1083,7 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
     </span><span class="note">
                 This element has been modified from its definition in the NDcPP by mandating
                 either 128 or 256 bit key sizes for AES-CBC or AES-GCM, thereby disallowing for
-                the sole selection of 192 bit key sizes<a id="period_154" href="#period_154">. </a>                <p></p>
+                the sole selection of 192 bit key sizes<a id="period_154" href="#period_154">. </a>                <br>
                 When an AES-CBC algorithm is selected, at least one SHA-based HMAC must also
                 be chosen<a id="period_155" href="#period_155">. </a>If only an AES-GCM algorithm is selected, then a SHA-based HMAC is
                 not required since AES-GCM satisfies both confidentiality and integrity functions<a id="period_156" href="#period_156">. </a>                IPsec may use a truncated version of the SHA-based HMAC functions contained
@@ -1156,13 +1156,13 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
                 generation capabilities, if provided) are listed to support those methods<a id="period_180" href="#period_180">. </a>Note
                 that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> will elaborate on the way in which these algorithms are to be used 
                 (for example, 2409 specifies three authentication methods using public keys;
-                each one supported will be described in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>)<a id="period_181" href="#period_181">. </a><p></p>
+                each one supported will be described in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>)<a id="period_181" href="#period_181">. </a><br>
                 If any selection with &#8220;pre-shared keys&#8221; is selected, the selection-based requirement <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>
-                must be claimed<a id="period_182" href="#period_182">. </a><p></p> 
+                must be claimed<a id="period_182" href="#period_182">. </a><br> 
                 When pre-shared keys are supported for IKEv2, at least one of &#8216;Pre-shared Keys transmitted via EAP-TLS&#8217; or  
                 &#8216;Pre-shared Keys transmitted via EAP-TTLS&#8217; is selected to indicate client verification using certificates 
                 in a mutually authenticated TLS handshake, and verification of provided PSK protected under the TLS channel<a id="period_183" href="#period_183">. </a>The selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> <a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a>
-                must also be claimed in this situation<a id="period_184" href="#period_184">. </a>                <p></p>
+                must also be claimed in this situation<a id="period_184" href="#period_184">. </a>                <br>
                 When Pre-shared Keys are supported for IKEv1, the first selection is claimed to indicate one of the mechanisms 
                 for using PSK described in the RFC<a id="period_185" href="#period_185">. </a>
                 <b></b> It is acceptable for different use cases to leverage different selections, if this is the case it must be identified<a id="period_186" href="#period_186">. </a>                
@@ -1185,8 +1185,8 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
               
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">All existing activites regarding "Pre-shared keys" apply to all selections including pre-shared keys<a id="period_190" href="#period_190">. </a>                  <b></b>If any selection with "Pre-shared keys" is included, the evaluator shall check to ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> 
-                    describes how the selection works in conjunction with the authentication of IPsec connections<a id="period_191" href="#period_191">. </a><p></p></div><div class="eacategory">Guidance</div><div class="ea">If any selection with &#8220;Pre-shared Keys&#8221; is selected, the evaluator shall check that the operational 
-                guidance describes any configuration necessary to enable any selected authentication mechanisms<a id="period_192" href="#period_192">. </a><p></p></div><div class="eacategory">Tests</div><div class="ea">There are no additional testing activities<a id="period_193" href="#period_193">. </a></div></div></div></div>
+                    describes how the selection works in conjunction with the authentication of IPsec connections<a id="period_191" href="#period_191">. </a><br></div><div class="eacategory">Guidance</div><div class="ea">If any selection with &#8220;Pre-shared Keys&#8221; is selected, the evaluator shall check that the operational 
+                guidance describes any configuration necessary to enable any selected authentication mechanisms<a id="period_192" href="#period_192">. </a><br></div><div class="eacategory">Tests</div><div class="ea">There are no additional testing activities<a id="period_193" href="#period_193">. </a></div></div></div></div>
           
         
         
@@ -1316,11 +1316,11 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
                 minimum<a id="period_227" href="#period_227">. </a>Note that all other options specified in the NDcPP for this component
                 are permitted so it is possible for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to use code signing certificates to
                 validate updates, in which case FPT_TUD_EXT.2 from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> is also included
-                in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_228" href="#period_228">. </a>                <p></p>
+                in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_228" href="#period_228">. </a>                <br>
                 If X.509 certificates are used to verify the integrity of an update, the certificates
                 must conform to <a href="#FIA_X509_EXT.1/Rev">FIA_X509_EXT.1/Rev</a><a id="period_229" href="#period_229">. </a>Therefore, certificates that do not (or only
                 partially) conform to FIA_X509_EXT.1/REV are not allowed as a means to
-                authenticate firmware/software updates<a id="period_230" href="#period_230">. </a>                <p></p>
+                authenticate firmware/software updates<a id="period_230" href="#period_230">. </a>                <br>
                 NDcPP states the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author may use X.509 certificates that do not meet
                 <a href="#FIA_X509_EXT.1/Rev">FIA_X509_EXT.1/Rev</a><a id="period_231" href="#period_231">. </a>This applies to trust anchors as they can be encoded as
                 certificates<a id="period_232" href="#period_232">. </a>Even when they are encoded as certificates, the trust anchor must be
@@ -1330,11 +1330,11 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
                 validated as trust anchors<a id="period_234" href="#period_234">. </a><a href="#FIA_X509_EXT.1/Rev">FIA_X509_EXT.1/Rev</a> does not require revocation
                 checking of certificates designated as trust store elements<a id="period_235" href="#period_235">. </a>The integrity of trust
                 store elements depends on administrative controls for loading and managing
-                trust stores and functional integrity checks that are described in other <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr><a id="period_236" href="#period_236">. </a>                <p></p>
+                trust stores and functional integrity checks that are described in other <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr><a id="period_236" href="#period_236">. </a>                <br>
                 So, if the certificate used to verify the update is a trust store element (self-signed
                 and specifically trusted for verifying updates, with the integrity of this special
                 purpose certificate protected by administrative controls and <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> integrity
-                protections), then revocation checking is not required<a id="period_237" href="#period_237">. </a>                <p></p>
+                protections), then revocation checking is not required<a id="period_237" href="#period_237">. </a>                <br>
                 However, if the certificate is issued by a trusted root <abbr class="dyn-abbr"><a href="#abbr_CA">CA</a></abbr>, or by a certificate
                 authority which chains to a trusted root <abbr class="dyn-abbr"><a href="#abbr_CA">CA</a></abbr>, then revocation checking is required
                 for all elements of the certificate chain except the trusted root <abbr class="dyn-abbr"><a href="#abbr_CA">CA</a></abbr>, and the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
@@ -1400,13 +1400,13 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">
                 The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it describes the audit mechanisms that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> uses to generate audit records for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway behavior<a id="period_258" href="#period_258">. </a>If any audit mechanisms the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> uses for this
-                are not used to generate audit records for events defined by FAU_GEN.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, the evaluator shall ensure that any <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway-specific audit mechanisms also meet the relevant functional claims from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_259" href="#period_259">. </a>                <p></p>
+                are not used to generate audit records for events defined by FAU_GEN.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, the evaluator shall ensure that any <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway-specific audit mechanisms also meet the relevant functional claims from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_259" href="#period_259">. </a>                <br>
                 For example, FAU_STG_EXT.1 requires all audit records to be transmitted to the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> over a trusted channel<a id="period_260" href="#period_260">. </a>This includes the audit records that are required by <a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a><a id="period_261" href="#period_261">. </a>Therefore, if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> has an audit mechanism
                 that is only used for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway functionality, the evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway related audit records meet this requirement, even if the mechanism used to generate these audit records does not apply to any of the auditable
-                events defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_262" href="#period_262">. </a>              <p></p></div><div class="eacategory">Guidance</div><div class="ea">
+                events defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_262" href="#period_262">. </a>              <br></div><div class="eacategory">Guidance</div><div class="ea">
                 The evaluator shall examine the operational guidance to verify that it identifies all security-relevant auditable events claimed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> and includes sample records of each event type<a id="period_263" href="#period_263">. </a>If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> uses multiple
                 audit mechanisms to generate different sets of records, the evaluator shall verify that the operational guidance identifies the audit records that are associated with each of the mechanisms such that the source of each audit record type
-                is clear<a id="period_264" href="#period_264">. </a>              <p></p></div><div class="eacategory">Tests</div><div class="ea">
+                is clear<a id="period_264" href="#period_264">. </a>              <br></div><div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall test the audit functionality by performing actions that trigger each of the claimed audit events and verifying that the audit records are accurate and that their format is consistent with what is specified 
                 in the operational guidance<a id="period_265" href="#period_265">. </a>The evaluator may generate these audit events as a consequence of performing other tests that would cause these events to be generated<a id="period_266" href="#period_266">. </a>              </div></div></div></div>
         
@@ -1437,9 +1437,9 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
               for mechanisms required by the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_269" href="#period_269">. </a>While it is required that the
               public key be associated with an identity in an X509v3 certificate, this association
               is not required to be performed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, and instead is expected to be
-              performed by a <abbr class="dyn-abbr"><a href="#abbr_CA">CA</a></abbr> in the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr><a id="period_270" href="#period_270">. </a>              <p></p>
+              performed by a <abbr class="dyn-abbr"><a href="#abbr_CA">CA</a></abbr> in the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr><a id="period_270" href="#period_270">. </a>              <br>
               As indicated in <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is required to implement RSA or ECDSA
-              (or both) for peer authentication<a id="period_271" href="#period_271">. </a>              <p></p>
+              (or both) for peer authentication<a id="period_271" href="#period_271">. </a>              <br>
               The generated key strength of 2048-bit RSA keys need to be equivalent to, or
               greater than, a symmetric key strength of 112 bits<a id="period_272" href="#period_272">. </a>See NIST Special Publication
               800-57, &#8220;Recommendation for Key Management&#8221; for information about
@@ -1465,14 +1465,14 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
                 </ul>
                 Any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>-specific extensions, processing that is not included in the Appendices, or alternative
                 implementations allowed by the Appendices that may impact the security requirements the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is to
-                enforce shall be described<a id="period_276" href="#period_276">. </a>              <p></p></div><div class="eacategory">Guidance</div><div class="ea">
+                enforce shall be described<a id="period_276" href="#period_276">. </a>              <br></div><div class="eacategory">Guidance</div><div class="ea">
                 The evaluator shall check that the operational guidance describes how the key generation functionality is
                 invoked, and describes the inputs and outputs associated with the process for each signature scheme
                 supported<a id="period_277" href="#period_277">. </a>The evaluator shall also check that guidance is provided regarding the format and location of
-                the output of the key generation process<a id="period_278" href="#period_278">. </a>              <p></p></div><div class="eacategory">Tests</div><div class="ea">
-                <b>For FFC Schemes using &#8220;safe-prime&#8221; groups:</b><p></p>
-                Testing for FFC Schemes using safe-prime groups is done as part of testing in FCS_CKM.2<a id="period_279" href="#period_279">. </a><p></p>
-                <b>For all other selections:</b><p></p>
+                the output of the key generation process<a id="period_278" href="#period_278">. </a>              <br></div><div class="eacategory">Tests</div><div class="ea">
+                <b>For FFC Schemes using &#8220;safe-prime&#8221; groups:</b><br>
+                Testing for FFC Schemes using safe-prime groups is done as part of testing in FCS_CKM.2<a id="period_279" href="#period_279">. </a><br>
+                <b>For all other selections:</b><br>
                 The evaluator shall perform the corresponding tests for FCS_CKM.1 specified in the NDcPP SD, based on
                 the selections chosen for this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr><a id="period_280" href="#period_280">. </a>If <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> key generation is implemented by a different algorithm than the
                 NDcPP key generation function, the evaluator shall ensure this testing is performed using the correct
@@ -1508,11 +1508,11 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
           <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to confirm that all management functions specified in
               <a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a> are provided by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_285" href="#period_285">. </a>As with FMT_SMF.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, the evaluator shall ensure
               that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> identifies what logical interfaces are used to perform these functions and that this includes a
-              description of the local administrative interface<a id="period_286" href="#period_286">. </a>              <p></p></div><div class="eacategory">Guidance</div><div class="ea">
+              description of the local administrative interface<a id="period_286" href="#period_286">. </a>              <br></div><div class="eacategory">Guidance</div><div class="ea">
               The evaluator shall examine the operational guidance to confirm that all management functions specified
               in <a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a> are provided by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_287" href="#period_287">. </a>As with FMT_SMF.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, the evaluator shall
               ensure that the operational guidance identifies what logical interfaces are used to perform these functions
-              and that this includes a description of the local administrative interface<a id="period_288" href="#period_288">. </a>            <p></p></div><div class="eacategory">Tests</div><div class="ea">
+              and that this includes a description of the local administrative interface<a id="period_288" href="#period_288">. </a>            <br></div><div class="eacategory">Tests</div><div class="ea">
               The evaluator tests management functions as part of performing other test EAs<a id="period_289" href="#period_289">. </a>              No separate testing for <a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a> is required unless one of the management functions in
               <a href="#FMT_SMF.1.1/VPN">FMT_SMF.1.1/VPN</a> has not already been exercised under any other <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr><a id="period_290" href="#period_290">. </a>            </div></div></div></div>
         
@@ -1560,12 +1560,12 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
               This element identifies the protocols and references the protocol definitions that
               serve to define to what extent the network traffic can be interpreted by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
               when importing (receiving network traffic or ingress) and exporting (sending&#8211;or
-              forming to be sent&#8211;network traffic or egress)<a id="period_293" href="#period_293">. </a>              <p></p>
+              forming to be sent&#8211;network traffic or egress)<a id="period_293" href="#period_293">. </a>              <br>
               While the protocol formatting specified in the RFCs is still used, many RFCs define
               behaviors which are no longer considered safe to follow<a id="period_294" href="#period_294">. </a>For example, RFC 792
               defined the &#8220;Redirect&#8221; Internet Control Message Protocol (<abbr class="dyn-abbr"><a href="#abbr_ICMP">ICMP</a></abbr>) type, which is not considered safe to honor when it
               might come from an adversary; the &#8220;source quench&#8221; message, which is insecure
-              because its source cannot be validated<a id="period_295" href="#period_295">. </a>              <p></p>
+              because its source cannot be validated<a id="period_295" href="#period_295">. </a>              <br>
               It also identifies the various attributes that are applicable when constructing rules
               to be enforced by this requirement &#8211; the applicable interface is a property of the
               <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and the rest of the identified attributes are defined in the associated RFCs<a id="period_296" href="#period_296">. </a>              Note that the Protocol is the IPv4 field (in IPv6 this field is called the &#8220;next header&#8221;)
@@ -1591,7 +1591,7 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
               logical path into the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_305" href="#period_305">. </a>For example, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> might have a small form-factor
               pluggable (<abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr>) port supporting <abbr class="dyn-abbr"><a href="#abbr_SFP">SFP</a></abbr> modules that expose a number of physical
               network ports, but since a common driver is used for all external ports they can
-              be treated as a single distinct network interface<a id="period_306" href="#period_306">. </a>              <p></p>
+              be treated as a single distinct network interface<a id="period_306" href="#period_306">. </a>              <br>
               Note that there could be a separate ruleset for each interface or alternately a
               shared ruleset that somehow associates rules with specific interfaces<a id="period_307" href="#period_307">. </a>            </span></div></div></div>
           <div class="element"><div class="reqid" id="FPF_RUL_EXT.1.5"><a href="#FPF_RUL_EXT.1.5" class="abbr">FPF_RUL_EXT.1.5</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall process the applicable packet filtering rules (as determined in
@@ -1609,13 +1609,13 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
               <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">
                 The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> provide a description of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&#8217;s initialization and startup process,
                 which clearly indicates where processing of network packets begins to take place, and provides a
-                discussion that supports the assertion that packets cannot flow during this process<a id="period_312" href="#period_312">. </a>                <p></p>
+                discussion that supports the assertion that packets cannot flow during this process<a id="period_312" href="#period_312">. </a>                <br>
                 The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> also includes a narrative that identifies the components (e.g., active
                 entity such as a process or task) involved in processing the network packets and describes the safeguards
                 that would prevent packets flowing through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> without applying the ruleset in the event of a
                 component failure<a id="period_313" href="#period_313">. </a>This could include the failure of a component, such as a process being terminated, or
-                a failure within a component, such as memory buffers full and cannot process packets<a id="period_314" href="#period_314">. </a>              <p></p></div>
-              <div class="eacategory">Guidance</div><div class="ea">The operational guidance associated with this requirement is assessed in the subsequent test EAs<a id="period_315" href="#period_315">. </a>                <p></p></div>
+                a failure within a component, such as memory buffers full and cannot process packets<a id="period_314" href="#period_314">. </a>              <br></div>
+              <div class="eacategory">Guidance</div><div class="ea">The operational guidance associated with this requirement is assessed in the subsequent test EAs<a id="period_315" href="#period_315">. </a>                <br></div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests:
                 <ul>
@@ -1630,7 +1630,7 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
                     complete<a id="period_321" href="#period_321">. </a></li>
                 </ul>
                 Note: The remaining testing associated with application of the ruleset is addressed in the subsequent test
-                EAs<a id="period_322" href="#period_322">. </a>                <p></p></div>
+                EAs<a id="period_322" href="#period_322">. </a>                <br></div>
             <div class="element-activity-header"><a href="#FPF_RUL_EXT.1.2">FPF_RUL_EXT.1.2</a></div>
               There are no EAs specified for this element<a id="period_323" href="#period_323">. </a>Definition of packet filtering policy,
               association of operations with packet filtering rules, and association of these rules to network interfaces
@@ -1663,12 +1663,12 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
                   </ul>
                 </ul>
                 The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how conformance with the identified RFCs has been
-                determined by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> developer (e.g., third party interoperability testing, protocol compliance testing)<a id="period_327" href="#period_327">. </a>                <p></p>
-                The evaluator shall verify that each rule can identify the following actions: permit, discard, and log<a id="period_328" href="#period_328">. </a>                <p></p>
+                determined by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> developer (e.g., third party interoperability testing, protocol compliance testing)<a id="period_327" href="#period_327">. </a>                <br>
+                The evaluator shall verify that each rule can identify the following actions: permit, discard, and log<a id="period_328" href="#period_328">. </a>                <br>
                 The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> identifies all interface types subject to the packet filtering policy
                 and explains how rules are associated with distinct network interfaces<a id="period_329" href="#period_329">. </a>Where interfaces can be grouped
                 into a common interface type (e.g., where the same internal logical path is used, perhaps where a
-                common device driver is used), they can be treated collectively as a distinct network interface<a id="period_330" href="#period_330">. </a>                <p></p></div>
+                common device driver is used), they can be treated collectively as a distinct network interface<a id="period_330" href="#period_330">. </a>                <br></div>
               <div class="eacategory">Guidance</div><div class="ea">
                 The evaluator shall verify that the operational guidance identifies the following protocols as being
                 supported and the following attributes as being configurable within packet filtering rules for the
@@ -1692,12 +1692,12 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
                 </ul>
                 </ul>
                 The evaluator shall verify that the operational guidance indicates that each rule can identify the following
-                actions: permit, discard, and log<a id="period_331" href="#period_331">. </a>                <p></p>
+                actions: permit, discard, and log<a id="period_331" href="#period_331">. </a>                <br>
                 The evaluator shall verify that the operational guidance explains how rules are associated with distinct
-                network interfaces<a id="period_332" href="#period_332">. </a>                <p></p>
+                network interfaces<a id="period_332" href="#period_332">. </a>                <br>
                 The guidance may describe the other protocols contained within the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> (e.g., IPsec, <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>, potentially HTTPS,
                 SSH, and TLS) that are processed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_333" href="#period_333">. </a>The evaluator shall ensure that it is made clear what
-                protocols were not considered as part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> evaluation<a id="period_334" href="#period_334">. </a>                <p></p></div>
+                protocols were not considered as part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> evaluation<a id="period_334" href="#period_334">. </a>                <br></div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests:
                 <ul>
@@ -1733,16 +1733,16 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
                 combinations are configured manually, that will fulfill the objective of these test activities, but if those
                 combinations are configured otherwise (e.g., using automation), these test activities may be necessary in
                 order to ensure the guidance is correct and the full range of configurations can be achieved by a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-                administrator<a id="period_338" href="#period_338">. </a><p></p>
+                administrator<a id="period_338" href="#period_338">. </a><br>
               </div>
             <div class="element-activity-header"><a href="#FPF_RUL_EXT.1.5">FPF_RUL_EXT.1.5</a></div>
               <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the algorithm applied to incoming packets, including the
                 processing of default rules, determination of whether a packet is part of an established session, and
-                application of administrator defined and ordered ruleset<a id="period_339" href="#period_339">. </a><p></p>
+                application of administrator defined and ordered ruleset<a id="period_339" href="#period_339">. </a><br>
               </div>
               <div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the operational guidance describes how the order of packet filtering rules
                 is determined and provides the necessary instructions so that an administrator can configure the order of
-                rule processing<a id="period_340" href="#period_340">. </a><p></p></div>
+                rule processing<a id="period_340" href="#period_340">. </a><br></div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests:
                 <ul>
@@ -1753,16 +1753,16 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
                   <li><b>Test 2: </b>The evaluator shall repeat the procedure above, except that the two rules should be devised where
                     one is a subset of the other (e.g<a id="period_343" href="#period_343">. </a>a specific address vs<a id="period_344" href="#period_344">. </a>a network segment)<a id="period_345" href="#period_345">. </a>Again, the evaluator should
                     test both orders to ensure that the first is enforced regardless of the specificity of the rule<a id="period_346" href="#period_346">. </a>                  </li>
-                </ul><p></p>
+                </ul><br>
               </div>
             <div class="element-activity-header"><a href="#FPF_RUL_EXT.1.6">FPF_RUL_EXT.1.6</a></div>
               <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the process for applying packet filtering rules and also
                 that the behavior (either by default, or as configured by the administrator) is to discard packets when
-                there is no rule match<a id="period_347" href="#period_347">. </a>The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes when the IPv4 and IPv6 protocols supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> differ from the full list provided in the RFC Values for IPv4 and IPv6 table<a id="period_348" href="#period_348">. </a><p></p></div>
+                there is no rule match<a id="period_347" href="#period_347">. </a>The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes when the IPv4 and IPv6 protocols supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> differ from the full list provided in the RFC Values for IPv4 and IPv6 table<a id="period_348" href="#period_348">. </a><br></div>
               <div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the operational guidance describes the behavior if no rules or special
                 conditions apply to the network traffic<a id="period_349" href="#period_349">. </a>If the behavior is configurable, the evaluator shall verify that the
                 operational guidance provides the appropriate instructions to configure the behavior to discard packets
-                with no matching rules<a id="period_350" href="#period_350">. </a>The evaluator shall verify that the operational guidance describes the range of IPv4 and IPv6 protocols supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_351" href="#period_351">. </a><p></p>
+                with no matching rules<a id="period_350" href="#period_350">. </a>The evaluator shall verify that the operational guidance describes the range of IPv4 and IPv6 protocols supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_351" href="#period_351">. </a><br>
               </div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests:
@@ -1835,7 +1835,7 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
                 </ul>
                 The following table identifies the RFC defined values for the protocol fields for IPv4 and IPv6 to be used in
                 configuring and otherwise testing packet filtering rule definition and enforcement:
-                <p></p>
+                <br>
                 <table>
                   <tr class="header"><td>Protocol</td><td>Defined Attributes</td></tr>
                   <tr><td>IPv4</td><td>
@@ -2113,9 +2113,9 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
                 instances when a shutdown does not occur, (e.g., a failure is deemed non- security relevant), the
                 evaluator shall ensure that those cases are identified and a rationale is provided that supports the
                 classification and justifies why the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&#8217;s ability to enforce its security policies is not affected in any such
-                instance<a id="period_388" href="#period_388">. </a>                <p></p></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the operational guidance provides information on the self-test failures that
+                instance<a id="period_388" href="#period_388">. </a>                <br></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the operational guidance provides information on the self-test failures that
                 can cause the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to shut down and how to diagnose the specific failure that has occurred, including
-                possible remediation steps if available<a id="period_389" href="#period_389">. </a><p></p></div><div class="eacategory">Tests</div><div class="ea">There are no test EAs for this component<a id="period_390" href="#period_390">. </a>              </div></div></div></div>
+                possible remediation steps if available<a id="period_389" href="#period_389">. </a><br></div><div class="eacategory">Tests</div><div class="ea">There are no test EAs for this component<a id="period_390" href="#period_390">. </a>              </div></div></div></div>
         
         
         
@@ -2144,7 +2144,7 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
               
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the method used to perform self-testing on the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>
-                executable code, and that this method is consistent with what is described in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr><a id="period_395" href="#period_395">. </a>                <p></p></div><div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this component<a id="period_396" href="#period_396">. </a><p></p></div><div class="eacategory">Tests</div><div class="ea">There are no test EAs for this component<a id="period_397" href="#period_397">. </a></div></div></div></div>
+                executable code, and that this method is consistent with what is described in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr><a id="period_395" href="#period_395">. </a>                <br></div><div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this component<a id="period_396" href="#period_396">. </a><br></div><div class="eacategory">Tests</div><div class="ea">There are no test EAs for this component<a id="period_397" href="#period_397">. </a></div></div></div></div>
         
          
                 
@@ -2176,9 +2176,9 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
               
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The EAs specified for FTP_ITC.1 in the Supporting Document for the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> shall be
-                applied for IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> communications<a id="period_403" href="#period_403">. </a><p></p>
+                applied for IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> communications<a id="period_403" href="#period_403">. </a><br>
               </div><div class="eacategory">Guidance</div><div class="ea">The EAs specified for FTP_ITC.1 in the Supporting Document for the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> shall be
-                applied for IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> communications<a id="period_404" href="#period_404">. </a><p></p>
+                applied for IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> communications<a id="period_404" href="#period_404">. </a><br>
               </div><div class="eacategory">Tests</div><div class="ea">The EAs specified for FTP_ITC.1 in the Supporting Document for the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> shall be
                 applied for IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> communications<a id="period_405" href="#period_405">. </a>Additional testing for IPsec is covered in
                 <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a><a id="period_406" href="#period_406">. </a></div></div></div></div>
@@ -2392,7 +2392,7 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
               
               
               
-            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it describes how authentication packets are identified and how all other traffic is blocked until secondary authentication is successful<a id="period_503" href="#period_503">. </a><p></p></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall examine the operational guidance to verify that it provides instructions to the administrator on how to configure the secondary HOTP or TOTP factors and any additional details necessary for filtering all other traffic<a id="period_504" href="#period_504">. </a><p></p> 
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it describes how authentication packets are identified and how all other traffic is blocked until secondary authentication is successful<a id="period_503" href="#period_503">. </a><br></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall examine the operational guidance to verify that it provides instructions to the administrator on how to configure the secondary HOTP or TOTP factors and any additional details necessary for filtering all other traffic<a id="period_504" href="#period_504">. </a><br> 
               </div><div class="eacategory">Tests</div><div class="ea">
                 <ul>
                   <li><b>Test 1: </b>For each included selection the evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> per the operational guidance<a id="period_505" href="#period_505">. </a> The evaluator shall attempt to connect and verify other traffic is rejected per the filtering rules<a id="period_506" href="#period_506">. </a> The evaluator shall then provide the selected factor and confirm it is accepted and traffic is no longer blocked<a id="period_507" href="#period_507">. </a></li>
@@ -2435,8 +2435,8 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
 	          
 	          
 	        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it describes the ability of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to terminate an inactive
-	            <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client session<a id="period_522" href="#period_522">. </a><p></p></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall examine the operational guidance to verify that it provides instructions to the
-	            administrator on how to configure the time limit for termination of an active <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client session<a id="period_523" href="#period_523">. </a><p></p>
+	            <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client session<a id="period_522" href="#period_522">. </a><br></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall examine the operational guidance to verify that it provides instructions to the
+	            administrator on how to configure the time limit for termination of an active <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client session<a id="period_523" href="#period_523">. </a><br>
 	          </div><div class="eacategory">Tests</div><div class="ea">
 	            The evaluator shall perform the following tests:
 	            <ul>
@@ -2467,9 +2467,9 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
 	          
 	        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it describes the methods by which the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> can deny the
 	            establishment of an otherwise valid remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client session (e.g., client credential is valid, not expired,
-	            not revoked, etc.), including day, time, and IP address at a minimum<a id="period_531" href="#period_531">. </a><p></p></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall review the operational guidance to determine that it provides instructions for how to
+	            not revoked, etc.), including day, time, and IP address at a minimum<a id="period_531" href="#period_531">. </a><br></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall review the operational guidance to determine that it provides instructions for how to
 	            enable an access restriction that will deny <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client session establishment for each attribute described
-	            in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr><a id="period_532" href="#period_532">. </a><p></p>
+	            in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr><a id="period_532" href="#period_532">. </a><br>
 	          </div><div class="eacategory">Tests</div><div class="ea">
 	            The evaluator shall perform the following tests:
 	            <ul>
@@ -2510,7 +2510,7 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
 	          
 	          
 	        <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall check the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it asserts the ability of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to assign a private IP address
-	            to a connected <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client<a id="period_543" href="#period_543">. </a>	            <p></p></div><div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this component<a id="period_544" href="#period_544">. </a><p></p></div><div class="eacategory">Tests</div><div class="ea">The evaluator shall connect a remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and record its IP address as well as the internal
+	            to a connected <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client<a id="period_543" href="#period_543">. </a>	            <br></div><div class="eacategory">Guidance</div><div class="ea">There are no guidance EAs for this component<a id="period_544" href="#period_544">. </a><br></div><div class="eacategory">Tests</div><div class="ea">The evaluator shall connect a remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and record its IP address as well as the internal
 	            IP address of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_545" href="#period_545">. </a>The evaluator shall verify that the two IP addresses belong to the same network<a id="period_546" href="#period_546">. </a>	            The evaluator shall disconnect the remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client and verify that the IP address of its underlying
 	            platform is no longer part of the private network identified in the previous step<a id="period_547" href="#period_547">. </a></div></div></div></div>
 	    
@@ -2569,8 +2569,8 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the use of EAP options for each of the selected peer authentication 
                 mechanisms, that TLS with mutual authentication is used, that the random values are from an appropriate source, 
-                and that the EAP MSK is derived from the TLS master key and is used as the IKEv2 shared key<a id="period_562" href="#period_562">. </a><p></p></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the guidance documents describe any configurable features of the EAP or TLS 
-                functionality, including instructions for configuration of the authenticators and registration processes for clients<a id="period_563" href="#period_563">. </a><p></p></div><div class="eacategory">Tests</div><div class="ea">Testing for TLS functionality is in accordance with the TLS package<a id="period_564" href="#period_564">. </a>                <b></b>For each supported EAP method claimed in <a href="#FCS_EAP_EXT.1.1">FCS_EAP_EXT.1.1</a> and for each authentication method claimed in 
+                and that the EAP MSK is derived from the TLS master key and is used as the IKEv2 shared key<a id="period_562" href="#period_562">. </a><br></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify that the guidance documents describe any configurable features of the EAP or TLS 
+                functionality, including instructions for configuration of the authenticators and registration processes for clients<a id="period_563" href="#period_563">. </a><br></div><div class="eacategory">Tests</div><div class="ea">Testing for TLS functionality is in accordance with the TLS package<a id="period_564" href="#period_564">. </a>                <b></b>For each supported EAP method claimed in <a href="#FCS_EAP_EXT.1.1">FCS_EAP_EXT.1.1</a> and for each authentication method claimed in 
                 <a href="#FCS_EAP_EXT.1.3">FCS_EAP_EXT.1.3</a>, the evaluator shall perform the following tests:
                 <ul>
                   <li><b>Test 1: </b>The evaluator shall follow AGD guidance to configure the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to use the EAP method claimed<a id="period_565" href="#period_565">. </a>
@@ -2648,17 +2648,17 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall increment the counter after each successful authentation<a id="period_586" href="#period_586">. </a>            <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-              The selection <a href="#FIA_HOTP_EXT.1.4">FIA_HOTP_EXT.1.4</a> must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication<a id="period_587" href="#period_587">. </a>              <p></p>In <a href="#FIA_HOTP_EXT.1.5">FIA_HOTP_EXT.1.5</a> the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author may either provide a configurable character length of at least 6 or a preset size between 6 and 10<a id="period_588" href="#period_588">. </a>              <p></p>In <a href="#FIA_HOTP_EXT.1.6">FIA_HOTP_EXT.1.6</a> the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author may select throttle requests, account lockout, or both<a id="period_589" href="#period_589">. </a>              <p></p>The HOTP seed and all derived values are considered secret keys for purposes of protection<a id="period_590" href="#period_590">. </a>            </span></div></div></div>
+              The selection <a href="#FIA_HOTP_EXT.1.4">FIA_HOTP_EXT.1.4</a> must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication<a id="period_587" href="#period_587">. </a>              <br>In <a href="#FIA_HOTP_EXT.1.5">FIA_HOTP_EXT.1.5</a> the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author may either provide a configurable character length of at least 6 or a preset size between 6 and 10<a id="period_588" href="#period_588">. </a>              <br>In <a href="#FIA_HOTP_EXT.1.6">FIA_HOTP_EXT.1.6</a> the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author may select throttle requests, account lockout, or both<a id="period_589" href="#period_589">. </a>              <br>The HOTP seed and all derived values are considered secret keys for purposes of protection<a id="period_590" href="#period_590">. </a>            </span></div></div></div>
           
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FIA_HOTP_EXT.1">FIA_HOTP_EXT.1</a></div>
               
               
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">
-                <p></p>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> complies with the RFC<a id="period_591" href="#period_591">. </a>                <p></p>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the HOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1<a id="period_592" href="#period_592">. </a>                <p></p>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the HOTP seed is protected and ensure it aligns with the storage requirements of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_593" href="#period_593">. </a>
-                <p></p>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how a new HOTP seed is assigned for each client and how each client is uniquely identified<a id="period_594" href="#period_594">. </a>                <p></p>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the HOTP seed is conditioned into an HOTP hash and verify it matches the selection in <a href="#FIA_HOTP_EXT.1.4">FIA_HOTP_EXT.1.4</a><a id="period_595" href="#period_595">. </a>                <p></p>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the HOTP hash is truncated and verify it matches the selection in <a href="#FIA_HOTP_EXT.1.5">FIA_HOTP_EXT.1.5</a><a id="period_596" href="#period_596">. </a>                <p></p>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> handles multiple incoming invalid requests and verify it provides an anti-hammer mechanism that matches the selections made in <a href="#FIA_HOTP_EXT.1.6">FIA_HOTP_EXT.1.6</a><a id="period_597" href="#period_597">. </a>                <p></p>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> handles resynchronization and how it rejects attempts outside of the look-ahead window selected in <a href="#FIA_TOTP_EXT.1.7">FIA_TOTP_EXT.1.7</a><a id="period_598" href="#period_598">. </a>                <p></p>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> counter is incremented after each successful authentication<a id="period_599" href="#period_599">. </a><p></p>
+                <br>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> complies with the RFC<a id="period_591" href="#period_591">. </a>                <br>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the HOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1<a id="period_592" href="#period_592">. </a>                <br>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the HOTP seed is protected and ensure it aligns with the storage requirements of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_593" href="#period_593">. </a>
+                <br>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how a new HOTP seed is assigned for each client and how each client is uniquely identified<a id="period_594" href="#period_594">. </a>                <br>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the HOTP seed is conditioned into an HOTP hash and verify it matches the selection in <a href="#FIA_HOTP_EXT.1.4">FIA_HOTP_EXT.1.4</a><a id="period_595" href="#period_595">. </a>                <br>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the HOTP hash is truncated and verify it matches the selection in <a href="#FIA_HOTP_EXT.1.5">FIA_HOTP_EXT.1.5</a><a id="period_596" href="#period_596">. </a>                <br>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> handles multiple incoming invalid requests and verify it provides an anti-hammer mechanism that matches the selections made in <a href="#FIA_HOTP_EXT.1.6">FIA_HOTP_EXT.1.6</a><a id="period_597" href="#period_597">. </a>                <br>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> handles resynchronization and how it rejects attempts outside of the look-ahead window selected in <a href="#FIA_TOTP_EXT.1.7">FIA_TOTP_EXT.1.7</a><a id="period_598" href="#period_598">. </a>                <br>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> counter is incremented after each successful authentication<a id="period_599" href="#period_599">. </a><br>
               </div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the 
-                <a href="#FIA_HOTP_EXT.1">FIA_HOTP_EXT.1</a> requirements<a id="period_600" href="#period_600">. </a><p></p>
+                <a href="#FIA_HOTP_EXT.1">FIA_HOTP_EXT.1</a> requirements<a id="period_600" href="#period_600">. </a><br>
               </div><div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use a supported HOTP factor then:
                 <ul>
@@ -2687,16 +2687,16 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
               [<b>selection</b>: <i id="pskgen">generated bit-based</i>, <i id="pskpw">password-based</i>, <i id="pskhotp">HMAC-based one-time password</i>, <i id="psktotp">time-based one-time password</i>, <i id="pskgenhotp">combination of a generated bit-based and HMAC-based one-time password</i>, <i id="pskgentotp">combination of a generated bit-based and time-based one-time password</i>, <i id="pskpwhotp">combination of a password-based and HMAC-based one-time password</i>, <i id="pskpwtotp">Combination of a password-based and time-based one-time password</i>] keys<a id="period_612" href="#period_612">. </a>            <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-              <p></p><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> includes the options for MFA solutions<a id="period_613" href="#period_613">. </a>		    
-              <p></p>If any selection including "generated bit-based" is chosen, then <a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a> must be included<a id="period_614" href="#period_614">. </a>
+              <br><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> includes the options for MFA solutions<a id="period_613" href="#period_613">. </a>		    
+              <br>If any selection including "generated bit-based" is chosen, then <a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a> must be included<a id="period_614" href="#period_614">. </a>
               
-              <p></p>If any selection including Password-based keys is chosen, then <a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a> must be included<a id="period_615" href="#period_615">. </a>
+              <br>If any selection including Password-based keys is chosen, then <a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a> must be included<a id="period_615" href="#period_615">. </a>
               
-              <p></p>If any selection including HMAC-based one-time password keys is chosen, then <a href="#FIA_PSK_EXT.4">FIA_PSK_EXT.4</a> must be included<a id="period_616" href="#period_616">. </a>
+              <br>If any selection including HMAC-based one-time password keys is chosen, then <a href="#FIA_PSK_EXT.4">FIA_PSK_EXT.4</a> must be included<a id="period_616" href="#period_616">. </a>
               
-              <p></p>If any selection including time-based one-time password is chosen, then <a href="#FIA_PSK_EXT.5">FIA_PSK_EXT.5</a> must be included<a id="period_617" href="#period_617">. </a>
+              <br>If any selection including time-based one-time password is chosen, then <a href="#FIA_PSK_EXT.5">FIA_PSK_EXT.5</a> must be included<a id="period_617" href="#period_617">. </a>
    
-		<p></p>This requirement is selection dependent on <a href="#FCS_IPSEC_EXT.1.13">FCS_IPSEC_EXT.1.13</a> or inclusion of <a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a><a id="period_618" href="#period_618">. </a>            </span></div></div></div>
+		<br>This requirement is selection dependent on <a href="#FCS_IPSEC_EXT.1.13">FCS_IPSEC_EXT.1.13</a> or inclusion of <a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a><a id="period_618" href="#period_618">. </a>            </span></div></div></div>
           
           
           
@@ -2708,8 +2708,8 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that it identifies all protocols that allow  pre-shared keys<a id="period_619" href="#period_619">. </a>
                 For each protocol identified by the requirement, the evaluator shall confirm that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> states which pre-shared key 
-                selections are supported<a id="period_620" href="#period_620">. </a><p></p></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall examine the operational guidance to determine that it provides guidance to 
-                administrators on how to configure all selected pre-shared key options if any configuration is required<a id="period_621" href="#period_621">. </a><p></p>
+                selections are supported<a id="period_620" href="#period_620">. </a><br></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall examine the operational guidance to determine that it provides guidance to 
+                administrators on how to configure all selected pre-shared key options if any configuration is required<a id="period_621" href="#period_621">. </a><br>
               </div><div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall also perform the following tests for each protocol (or instantiation of a protocol, 
                 if performed by a different implementation on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>)<a id="period_622" href="#period_622">. </a>
@@ -2741,7 +2741,7 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
     </span><span class="note">
               Generated PSKs are expected to be shared between components via an out of band mechanism<a id="period_626" href="#period_626">. </a>
               
-              <p></p>This requirement is selection dependent on <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a><a id="period_627" href="#period_627">. </a><p></p>
+              <br>This requirement is selection dependent on <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a><a id="period_627" href="#period_627">. </a><br>
             </span></div></div></div>
           
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a></div>
@@ -2749,9 +2749,9 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
               
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">If "generate" is selected, the evaluator shall confirm that this process uses the RBG specified in FCS_RBG_EXT.1 
-                and the output matches the size selected in <a href="#FIA_PSK_EXT.2.1">FIA_PSK_EXT.2.1</a><a id="period_628" href="#period_628">. </a><p></p> 
+                and the output matches the size selected in <a href="#FIA_PSK_EXT.2.1">FIA_PSK_EXT.2.1</a><a id="period_628" href="#period_628">. </a><br> 
               </div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall confirm the operational guidance contains instructions for entering generated pre-shared keys 
-                for each protocol identified in the&#8239;<a href="#FIA_PSK_EXT.1.1">FIA_PSK_EXT.1.1</a><a id="period_629" href="#period_629">. </a><p></p>
+                for each protocol identified in the&#8239;<a href="#FIA_PSK_EXT.1.1">FIA_PSK_EXT.1.1</a><a id="period_629" href="#period_629">. </a><br>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <ul>
                   <li><b>Test 1: </b>[conditional] If generate was selected the evaluator shall generate a pre-shared key and confirm the output matches the size selected in <a href="#FIA_PSK_EXT.2.1">FIA_PSK_EXT.2.1</a><a id="period_630" href="#period_630">. </a>                  </li>
@@ -2801,14 +2801,14 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
     </span><span class="note">
               For <a href="#FIA_PSK_EXT.3.1">FIA_PSK_EXT.3.1</a>, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author assigns the maximum size of the PSK it supports; it must support at least 64&#8239;characters&#8239;or a length defined by the platform<a id="period_638" href="#period_638">. </a>
               
-              <p></p>For <a href="#FIA_PSK_EXT.3.2">FIA_PSK_EXT.3.2</a>, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author assigns any other supported characters; if there are no other supported characters, they should select "no other characters." 
+              <br>For <a href="#FIA_PSK_EXT.3.2">FIA_PSK_EXT.3.2</a>, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author assigns any other supported characters; if there are no other supported characters, they should select "no other characters." 
               
-              <p></p>For <a href="#FIA_PSK_EXT.3.3">FIA_PSK_EXT.3.3</a>, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author selects the parameters based on the <abbr class="dyn-abbr"><a href="#abbr_PBKDF">PBKDF</a></abbr> used by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr><a id="period_639" href="#period_639">. </a>
+              <br>For <a href="#FIA_PSK_EXT.3.3">FIA_PSK_EXT.3.3</a>, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author selects the parameters based on the <abbr class="dyn-abbr"><a href="#abbr_PBKDF">PBKDF</a></abbr> used by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr><a id="period_639" href="#period_639">. </a>
               
-              <p></p>For <a href="#FIA_PSK_EXT.3.4">FIA_PSK_EXT.3.4</a> If the minimum length is settable, then the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author chooses "a value settable by the administrator." If the minimum length is not settable, 
+              <br>For <a href="#FIA_PSK_EXT.3.4">FIA_PSK_EXT.3.4</a> If the minimum length is settable, then the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author chooses "a value settable by the administrator." If the minimum length is not settable, 
               the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author fills in the assignment with the minimum length the PSK must be<a id="period_640" href="#period_640">. </a>This requirement is to ensure bounds work properly<a id="period_641" href="#period_641">. </a>              
-              <p></p>For <a href="#FIA_PSK_EXT.3.7">FIA_PSK_EXT.3.7</a>, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author may select one, both, or neither of the functions in alignment with NIST SP800-63b<a id="period_642" href="#period_642">. </a>              
-              <p></p>This requirement is selection dependent on <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a><a id="period_643" href="#period_643">. </a>
+              <br>For <a href="#FIA_PSK_EXT.3.7">FIA_PSK_EXT.3.7</a>, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author may select one, both, or neither of the functions in alignment with NIST SP800-63b<a id="period_642" href="#period_642">. </a>              
+              <br>This requirement is selection dependent on <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a><a id="period_643" href="#period_643">. </a>
               </span></div></div></div>
           
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a></div>
@@ -2817,23 +2817,23 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure it describes the process by which the bit-based pre-shared keys are used<a id="period_644" href="#period_644">. </a> 
                 
-                <p></p>Support for length: The evaluator shall check to ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the allowable ranges for PSK lengths, and that at least 64 characters or a length defined by the platform may be specified by the user<a id="period_645" href="#period_645">. </a>                
-                <p></p>Support for character set: The evaluator shall check to ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the allowable character set and that it contains the characters listed in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr><a id="period_646" href="#period_646">. </a>                
-                <p></p>Support for <abbr class="dyn-abbr"><a href="#abbr_PBKDF">PBKDF</a></abbr>: The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that the use of PBKDF2 is described and that the key sizes match that described by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author<a id="period_647" href="#period_647">. </a>                
-                <p></p>The evaluator shall check that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the method by which the PSK is first encoded and then fed to the hash algorithm<a id="period_648" href="#period_648">. </a>The settings for the algorithm (padding, blocking, etc.) shall be described, and the evaluator shall verify that these are supported by the selections in this component as well as the selections concerning the hash function itself<a id="period_649" href="#period_649">. </a>
+                <br>Support for length: The evaluator shall check to ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the allowable ranges for PSK lengths, and that at least 64 characters or a length defined by the platform may be specified by the user<a id="period_645" href="#period_645">. </a>                
+                <br>Support for character set: The evaluator shall check to ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the allowable character set and that it contains the characters listed in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr><a id="period_646" href="#period_646">. </a>                
+                <br>Support for <abbr class="dyn-abbr"><a href="#abbr_PBKDF">PBKDF</a></abbr>: The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that the use of PBKDF2 is described and that the key sizes match that described by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author<a id="period_647" href="#period_647">. </a>                
+                <br>The evaluator shall check that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the method by which the PSK is first encoded and then fed to the hash algorithm<a id="period_648" href="#period_648">. </a>The settings for the algorithm (padding, blocking, etc.) shall be described, and the evaluator shall verify that these are supported by the selections in this component as well as the selections concerning the hash function itself<a id="period_649" href="#period_649">. </a>
                 
-                <p></p>For the NIST SP 800-132-based conditioning of the PSK, the required evaluation activities will be performed when doing the evaluation activities for the appropriate requirements (FCS_COP.1/KeyedHash)<a id="period_650" href="#period_650">. </a>
+                <br>For the NIST SP 800-132-based conditioning of the PSK, the required evaluation activities will be performed when doing the evaluation activities for the appropriate requirements (FCS_COP.1/KeyedHash)<a id="period_650" href="#period_650">. </a>
                 
-                <p></p>The evaluator shall confirm that the minimum length is described<a id="period_651" href="#period_651">. </a>                
-                <p></p>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall provide a description in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> regarding the salt generation<a id="period_652" href="#period_652">. </a>The evaluator shall confirm that the salt is generated using an RBG described in FCS_RBG_EXT.1<a id="period_653" href="#period_653">. </a>                
-                <p></p>[conditional] If password strength meter or password denylist is selected, the evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure any password checking functionality provided by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is described and contains details on how the function operates<a id="period_654" href="#period_654">. </a>                <p></p></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall confirm the operational guidance contains instructions for entering bit-based pre-shared keys for each 
+                <br>The evaluator shall confirm that the minimum length is described<a id="period_651" href="#period_651">. </a>                
+                <br>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall provide a description in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> regarding the salt generation<a id="period_652" href="#period_652">. </a>The evaluator shall confirm that the salt is generated using an RBG described in FCS_RBG_EXT.1<a id="period_653" href="#period_653">. </a>                
+                <br>[conditional] If password strength meter or password denylist is selected, the evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure any password checking functionality provided by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is described and contains details on how the function operates<a id="period_654" href="#period_654">. </a>                <br></div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall confirm the operational guidance contains instructions for entering bit-based pre-shared keys for each 
                 protocol identified in the requirement, or generating a bit-based pre-shared key (or both)<a id="period_655" href="#period_655">. </a>The evaluator shall confirm that any 
                 management functions related to pre-shared keys that are performed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> are specified in the operational guidance<a id="period_656" href="#period_656">. </a> 
                 
-                <p></p>The guidance must specify the allowable characters for pre-shared keys, and that list must include, at minimum, the same 
+                <br>The guidance must specify the allowable characters for pre-shared keys, and that list must include, at minimum, the same 
                 items contained in <a href="#FIA_PSK_EXT.3.2">FIA_PSK_EXT.3.2</a><a id="period_657" href="#period_657">. </a>
                 
-                <p></p>The evaluator shall confirm the operational guidance contains any necessary instructions for enabling and configuring password checking functionality<a id="period_658" href="#period_658">. </a><p></p>
+                <br>The evaluator shall confirm the operational guidance contains any necessary instructions for enabling and configuring password checking functionality<a id="period_658" href="#period_658">. </a><br>
               </div><div class="eacategory">Tests</div><div class="ea">
                 Support for Password/Passphrase characteristics: In addition to the analysis above, the evaluator shall also perform the following tests on a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> configured according to the Operational Guidance:
                 <ul>
@@ -2862,16 +2862,16 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
       Note:
     </span><span class="note">
               If "verify the HOTP..." is selected, then <a href="#FIA_HOTP_EXT.1">FIA_HOTP_EXT.1</a> must be included<a id="period_668" href="#period_668">. </a>              
-              <p></p>This requirement is selection dependent on <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>
+              <br>This requirement is selection dependent on <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>
             </span></div></div></div>
           
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FIA_PSK_EXT.4">FIA_PSK_EXT.4</a></div>
               
               
               
-            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the HOTP is input into the client and how that value is sent to the server<a id="period_669" href="#period_669">. </a>                <p></p>The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the HOTP is accepted from an incoming connection and how that value is verified, either by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or by an external authentication server<a id="period_670" href="#period_670">. </a><p></p>
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the HOTP is input into the client and how that value is sent to the server<a id="period_669" href="#period_669">. </a>                <br>The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the HOTP is accepted from an incoming connection and how that value is verified, either by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or by an external authentication server<a id="period_670" href="#period_670">. </a><br>
               </div><div class="eacategory">Guidance</div><div class="ea">
-                The evaluator shall verify the operational guidance contains any configuration necessary to enable HOTP<a id="period_671" href="#period_671">. </a><p></p>
+                The evaluator shall verify the operational guidance contains any configuration necessary to enable HOTP<a id="period_671" href="#period_671">. </a><br>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <ul>
                   <li><b>Test 1: </b>
@@ -2899,14 +2899,14 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
       Note:
     </span><span class="note">
               If verify the TOTP is selected then <a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a> must be included<a id="period_678" href="#period_678">. </a>              
-              <p></p>This requirement is dependent on <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a><a id="period_679" href="#period_679">. </a>            </span></div></div></div>
+              <br>This requirement is dependent on <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a><a id="period_679" href="#period_679">. </a>            </span></div></div></div>
           
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FIA_PSK_EXT.5">FIA_PSK_EXT.5</a></div>
               
               
               
-            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the TOTP is input into the client and how that value is sent to the server<a id="period_680" href="#period_680">. </a>                <p></p>The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the TOTP is accepted from an incoming connection and how that value is verified, either by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or by an external authentication server<a id="period_681" href="#period_681">. </a><p></p></div><div class="eacategory">Guidance</div><div class="ea">
-                The evaluator shall verify the operational guidance contains any configuration necessary to enable TOTP<a id="period_682" href="#period_682">. </a><p></p>
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the TOTP is input into the client and how that value is sent to the server<a id="period_680" href="#period_680">. </a>                <br>The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the TOTP is accepted from an incoming connection and how that value is verified, either by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or by an external authentication server<a id="period_681" href="#period_681">. </a><br></div><div class="eacategory">Guidance</div><div class="ea">
+                The evaluator shall verify the operational guidance contains any configuration necessary to enable TOTP<a id="period_682" href="#period_682">. </a><br>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <ul>
                   <li><b>Test 1: </b>
@@ -2970,17 +2970,17 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-              The selection <a href="#FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</a> must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication<a id="period_696" href="#period_696">. </a>              <p></p>In <a href="#FIA_TOTP_EXT.1.5">FIA_TOTP_EXT.1.5</a> the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author may either provide a configurable character length of at least 6 or a preset size between 6 and 10<a id="period_697" href="#period_697">. </a>              <p></p>In <a href="#FIA_TOTP_EXT.1.6">FIA_TOTP_EXT.1.6</a> the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author may select throttle requests, account lockout, or both<a id="period_698" href="#period_698">. </a>              <p></p>The TOTP seed and all derived values are considered secret keys for purposes of protection<a id="period_699" href="#period_699">. </a>              </span></div></div></div>
+              The selection <a href="#FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</a> must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication<a id="period_696" href="#period_696">. </a>              <br>In <a href="#FIA_TOTP_EXT.1.5">FIA_TOTP_EXT.1.5</a> the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author may either provide a configurable character length of at least 6 or a preset size between 6 and 10<a id="period_697" href="#period_697">. </a>              <br>In <a href="#FIA_TOTP_EXT.1.6">FIA_TOTP_EXT.1.6</a> the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author may select throttle requests, account lockout, or both<a id="period_698" href="#period_698">. </a>              <br>The TOTP seed and all derived values are considered secret keys for purposes of protection<a id="period_699" href="#period_699">. </a>              </span></div></div></div>
           
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a></div>
               
               
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">
-                The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> complies with the RFC<a id="period_700" href="#period_700">. </a>                <p></p>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the TOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1<a id="period_701" href="#period_701">. </a>                <p></p>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the TOTP seed is protected and ensure it aligns with the storage requirements of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_702" href="#period_702">. </a>
-                <p></p>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how a new TOTP seed is assigned for each client and how each client is uniquely identified<a id="period_703" href="#period_703">. </a>                <p></p> The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the TOTP seed is conditioned into a TOTP hash and verify it matches the selection in <a href="#FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</a><a id="period_704" href="#period_704">. </a>                <p></p>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the TOTP hash is truncated and verify it matches the selection in <a href="#FIA_TOTP_EXT.1.5">FIA_TOTP_EXT.1.5</a><a id="period_705" href="#period_705">. </a>                <p></p>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> handles multiple incoming requests and verify it provides an anti-hammer mechanism that matches the selections made in <a href="#FIA_TOTP_EXT.1.6">FIA_TOTP_EXT.1.6</a><a id="period_706" href="#period_706">. </a>                <p></p>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> sets a time-step value and verify it matches the selections in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_707" href="#period_707">. </a>                <p></p>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> handles drift and resynchronization and verify it matches the selections<a id="period_708" href="#period_708">. </a> The evaluator shall ensure the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how time is kept and whether drift is calculated and recorded<a id="period_709" href="#period_709">. </a> 
-                If drift is recorded, the evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how this is done<a id="period_710" href="#period_710">. </a><p></p>
-              </div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the <a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a> requirements<a id="period_711" href="#period_711">. </a><p></p> 
+                The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> complies with the RFC<a id="period_700" href="#period_700">. </a>                <br>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the TOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1<a id="period_701" href="#period_701">. </a>                <br>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the TOTP seed is protected and ensure it aligns with the storage requirements of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_702" href="#period_702">. </a>
+                <br>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how a new TOTP seed is assigned for each client and how each client is uniquely identified<a id="period_703" href="#period_703">. </a>                <br> The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the TOTP seed is conditioned into a TOTP hash and verify it matches the selection in <a href="#FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</a><a id="period_704" href="#period_704">. </a>                <br>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the TOTP hash is truncated and verify it matches the selection in <a href="#FIA_TOTP_EXT.1.5">FIA_TOTP_EXT.1.5</a><a id="period_705" href="#period_705">. </a>                <br>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> handles multiple incoming requests and verify it provides an anti-hammer mechanism that matches the selections made in <a href="#FIA_TOTP_EXT.1.6">FIA_TOTP_EXT.1.6</a><a id="period_706" href="#period_706">. </a>                <br>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> sets a time-step value and verify it matches the selections in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_707" href="#period_707">. </a>                <br>The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> handles drift and resynchronization and verify it matches the selections<a id="period_708" href="#period_708">. </a> The evaluator shall ensure the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how time is kept and whether drift is calculated and recorded<a id="period_709" href="#period_709">. </a> 
+                If drift is recorded, the evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how this is done<a id="period_710" href="#period_710">. </a><br>
+              </div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the <a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a> requirements<a id="period_711" href="#period_711">. </a><br> 
               </div><div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use a supported TOTP factor then:
                 <ul>
@@ -3185,8 +3185,8 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
 	<h3 id="ext-comp-FTA_VCM_EXT" class="indexable" data-level="4">C.2.5.1 FTA_VCM_EXT VPN Client Management</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for how the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> interacts with <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients in its <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr><a id="period_824" href="#period_824">. </a>	      </div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FTA_VCM_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a>,
              <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client Management,
               requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to assign private (internal) IP addresses
-	        to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients that successfully establish IPsec connections with it<a id="period_825" href="#period_825">. </a>	      </p><h4>Management: FTA_VCM_EXT.1</h4><p>No specific management functions are identified<a id="period_826" href="#period_826">. </a></p><h4>Audit: FTA_VCM_EXT.1</h4><p>There are no auditable events foreseen<a id="period_827" href="#period_827">. </a>	      </p><h4>FTA_VCM_EXT.1 VPN Client Management</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components<a id="period_828" href="#period_828">. </a></p><p>Dependencies to: <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec Protocol<p></p>
-	        [FTP_ITC.1 Inter-TSF Trusted Channel, or<p></p>
+	        to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients that successfully establish IPsec connections with it<a id="period_825" href="#period_825">. </a>	      </p><h4>Management: FTA_VCM_EXT.1</h4><p>No specific management functions are identified<a id="period_826" href="#period_826">. </a></p><h4>Audit: FTA_VCM_EXT.1</h4><p>There are no auditable events foreseen<a id="period_827" href="#period_827">. </a>	      </p><h4>FTA_VCM_EXT.1 VPN Client Management</h4><div style="margin-left: 1em;"><p>Hierarchical to: No other components<a id="period_828" href="#period_828">. </a></p><p>Dependencies to: <a href="#FCS_IPSEC_EXT.1">FCS_IPSEC_EXT.1</a> IPsec Protocol<br>
+	        [FTP_ITC.1 Inter-TSF Trusted Channel, or<br>
 	        FTP_TRP.1 Trusted Path]</p><h4 id="ext-comp-FTA_VCM_EXT.1.1">FTA_VCM_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall assign a private IP address to a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client upon successful establishment of a security session<a id="period_829" href="#period_829">. </a></div></div><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D -  Implicitly Satisfied Requirements</h1><p>This appendix lists requirements that should be considered satisfied by products
 	successfully evaluated against this Module<a id="period_830" href="#period_830">. </a>These requirements are not featured
 	explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_831" href="#period_831">. </a>They are not included as 

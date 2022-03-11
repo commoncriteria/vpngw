@@ -2332,7 +2332,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                       <h:li>Transport Layer Protocol 67 - Internet Pluribus Packet Core</h:li>
                       <h:li>Transport Layer Protocol 68 - Any distributed file system</h:li>
                       <h:li>Transport Layer Protocol 69 - SATNET Monitoring</h:li>
-                      <h:li>Transport Layer Protocol 70 - VISA Protoco</h:li>
+                      <h:li>Transport Layer Protocol 70 - VISA Protocol</h:li>
                       <h:li>Transport Layer Protocol 71 - Internet Packet Core Utility</h:li>
                       <h:li>Transport Layer Protocol 72 - Computer Protocol Network Executive</h:li>
                       <h:li>Transport Layer Protocol 73 - Computer Protocol Heart Beat</h:li>

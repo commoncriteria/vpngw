@@ -1,3 +1,0 @@
-output/vpngw-release-linkable.html: Protoco
-output/vpngw-sd.html: Protoco
-output/vpngw.html: Protoco

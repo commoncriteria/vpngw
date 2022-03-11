@@ -3102,8 +3102,8 @@
 										      >	establishing an incoming connection.
 										      >
 										      >	::: {.appnote}
-										      >	[Application Note: ]{.note-header}[ If \"verify the HOTP\...\" is
-										      >	selected, then [FIA\_HOTP\_EXT.1](#FIA_HOTP_EXT.1) must be included.\
+										      >	[Application Note: ]{.note-header}[ If \"verify the HOTP\" is selected,
+										      >	then [FIA\_HOTP\_EXT.1](#FIA_HOTP_EXT.1) must be included.\
 										      >	This requirement is selection dependent on
 										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) ]{.note}
 										      >	:::

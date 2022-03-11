@@ -3146,7 +3146,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               <h:br/>For FIA_PSK_EXT.3.4 If the minimum length is settable, then the ST author chooses "a value settable by the administrator." If the minimum length is not settable, 
               the ST author fills in the assignment with the minimum length the PSK must be. This requirement is to ensure bounds work properly.
               
-              <h:br/>For FIA_PSK_EXT.3.7, the ST author may select one, both, or neither of the functions in alignment with NIST SP800-63b.
+              <h:br/>For FIA_PSK_EXT.3.7, the ST author may select one, both, or neither of the functions in alignment with NIST SP 800-63b.
               
               <h:br/>This requirement is selection dependent on FIA_PSK_EXT.1. 
               </note>

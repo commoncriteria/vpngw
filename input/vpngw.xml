@@ -1160,7 +1160,7 @@ expected to enforce.<h:br/>
               </note>
             <aactivity>In addition to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document the following activities apply:
                   <h:b/>
-                  <TSS>All existing activites regarding "Pre-shared keys" apply to all selections including pre-shared keys.
+                  <TSS>All existing activities regarding "Pre-shared keys" apply to all selections including pre-shared keys.
                   <h:b/>If any selection with "Pre-shared keys" is included, the evaluator shall check to ensure that the TSS 
                     describes how the selection works in conjunction with the authentication of IPsec connections.<h:br/></TSS>
               <Guidance>If any selection with “Pre-shared Keys” is selected, the evaluator shall check that the operational 
@@ -1560,7 +1560,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
               </h:ol>
             </title>
             <note role="application">
-              The "Start-up and shtudown of the audit functions" event is identical to the event defined in the Base-PP's iteration of FAU_GEN.1.
+              The "Start-up and shutdown of the audit functions" event is identical to the event defined in the Base-PP's iteration of FAU_GEN.1.
               The TOE is not required to have two separate events for this behavior if there is only a single audit stream that which all audit events use.
               If the TOE does maintain a separate logging facility for VPN gateway-related behavior, then this event must be addressed for it. Note that if 
               the audit functions cannot be started and stopped separately from the TOE itself, then auditing the start-up and shutdown of the TOE is sufficient to address this.
@@ -2683,7 +2683,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
         <f-component cc-id="fcs_eap_ext.1" id="fcs-eap-ext-1" name="EAP-TLS">
           <depends on-sel="sel-ipsec-e13-pskeap"/>
           <depends on-sel="sel-ipsec-e13-pskeapma"/>
-          <consistency-rationale>This SFR deinfes the use of EAP-TLS; the Base-PP already defines requirements for TLS so potential support for EAP-TLS is consistent with functionality that the Base-PP already expects the TOE may have.</consistency-rationale>
+          <consistency-rationale>This SFR defines the use of EAP-TLS; the Base-PP already defines requirements for TLS so potential support for EAP-TLS is consistent with functionality that the Base-PP already expects the TOE may have.</consistency-rationale>
           <comp-lev>defines the use of EAP-TLS.</comp-lev>
           <management>No specific management functions are identified.</management>
           <audit>No specific audit functions are identified.
@@ -2838,7 +2838,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             <title>
               The TSF shall truncate the HOTP hash per FIA_HOTP_EXT.1.4 to create an HOTP of  
               <selectables>
-                <selectable>administrator configurable chracter length of at least 6</selectable>
+                <selectable>administrator configurable character length of at least 6</selectable>
                 <selectable>preset character length of
                   <selectables>
                     <selectable>6</selectable>
@@ -2884,7 +2884,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </f-element>
           <f-element id="fia-hotp-ext-1e8">
             <title>
-              The TSF shall increment the counter after each successful authentation.
+              The TSF shall increment the counter after each successful authentication.
             </title>
             
             

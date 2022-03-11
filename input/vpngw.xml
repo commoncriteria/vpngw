@@ -1301,7 +1301,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
         
         
         <!-- 5.1.1.4  -->
-        <section title="Proteciton of the TSF (FPT)" id="nd-m-fpt">
+        <section title="Protection of the TSF (FPT)" id="nd-m-fpt">
   
           <f-component cc-id="fpt_tst_ext.1" id="nd-fpt-tst-ext-1" name="TSF Testing">
             <consistency-rationale>

@@ -1,0 +1,3 @@
+output/vpngw-release-linkable.html: DLSS
+output/vpngw-release.html: DLSS
+output/vpngw.html: DLSS

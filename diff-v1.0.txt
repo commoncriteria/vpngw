@@ -2662,7 +2662,8 @@
 										      >	The [TSF](#abbr_TSF) shall implement \[**selection**: *EAP-TLS protocol
 										      >	as specified in RFC 5216*, *EAP-TTLS as specified in RFC 5881*\] as
 										      >	updated by RFC 8996 with TLS implemented using mutual authentication in
-										      >	accordance with the TLS functional package.
+										      >	accordance with \[**selection**: *FCS\_TLSS\_EXT.2*,
+										      >	*FCS\_TLSS\_EXT.2*\] from the base-PP.
 										      >	:::
 										      >	:::
 										      >
@@ -2673,7 +2674,7 @@
 										      >
 										      >	::: {.reqdesc}
 										      >	The [TSF](#abbr_TSF) shall generate random values used in the
-										      >	\[**selection**: *EAP-TLS*, *EAP-TTLS*\] exchange using the RBG
+										      >	\[**selection**: *EAP-TLS*, *EAP-DTLS*\] exchange using the RBG
 										      >	specified in FCS\_RBG\_EXT.1.
 										      >	:::
 										      >	:::
@@ -2689,7 +2690,8 @@
 										      >	*\[**assignment**: [other Authentication-verification
 										      >	protocols]{.assignable-content}\]*, *no other authentication*\] as
 										      >	updated by RFC 8996 with TLS implemented using mutual authentication in
-										      >	accordance with the TLS functional package.
+										      >	accordance with \[**selection**: *FCS\_TLSS\_EXT.2*,
+										      >	*FCS\_DLSS\_EXT.2*\] from the base-PP.
 										      >	:::
 										      >	:::
 										      >
@@ -3575,12 +3577,13 @@
 										      >	The [TSF](#abbr_TSF) shall implement \[**selection**: *EAP-TLS protocol
 										      >	as specified in RFC 5216*, *EAP-TTLS as specified in RFC 5881*\] as
 										      >	updated by RFC 8996 with TLS implemented using mutual authentication in
-										      >	accordance with the TLS functional package.
+										      >	accordance with \[**selection**: *FCS\_TLSS\_EXT.2*,
+										      >	*FCS\_TLSS\_EXT.2*\] from the base-PP.
 										      >
 										      >	#### FCS\_EAP\_EXT.1.2 {#ext-comp-FCS_EAP_EXT.1.2}
 										      >
 										      >	The [TSF](#abbr_TSF) shall generate random values used in the
-										      >	\[**selection**: *EAP-TLS*, *EAP-TTLS*\] exchange using the RBG
+										      >	\[**selection**: *EAP-TLS*, *EAP-DTLS*\] exchange using the RBG
 										      >	specified in FCS\_RBG\_EXT.1.
 										      >
 										      >	#### FCS\_EAP\_EXT.1.3 {#ext-comp-FCS_EAP_EXT.1.3}
@@ -3590,7 +3593,8 @@
 										      >	*\[**assignment**: [other Authentication-verification
 										      >	protocols]{.assignable-content}\]*, *no other authentication*\] as
 										      >	updated by RFC 8996 with TLS implemented using mutual authentication in
-										      >	accordance with the TLS functional package.
+										      >	accordance with \[**selection**: *FCS\_TLSS\_EXT.2*,
+										      >	*FCS\_DLSS\_EXT.2*\] from the base-PP.
 										      >
 										      >	#### FCS\_EAP\_EXT.1.4 {#ext-comp-FCS_EAP_EXT.1.4}
 										      >

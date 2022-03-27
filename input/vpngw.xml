@@ -2691,7 +2691,12 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 <selectable>EAP-TLS protocol as specified in RFC 5216</selectable>
                 <selectable>EAP-TTLS as specified in RFC 5881</selectable>
               </selectables>
-              as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with the TLS functional package.
+              as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with  
+		    <selectables>
+                	<selectable>FCS_TLSS_EXT.2</selectable>
+			<selectable>FCS_TLSS_EXT.2</selectable>
+		</selectables>
+		     from the base-PP.
             </title>
           </f-element>
           <f-element id="fcs-eap-ext-1e2">
@@ -2699,7 +2704,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               The TSF shall generate random values used in the
               <selectables>
                 <selectable>EAP-TLS</selectable>
-                <selectable>EAP-TTLS</selectable>
+                <selectable>EAP-DTLS</selectable>
               </selectables>
               exchange using the RBG specified in FCS_RBG_EXT.1.
             </title>
@@ -2714,7 +2719,12 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 <selectable><assignable>other Authentication-verification protocols</assignable></selectable>
                 <selectable exclusive="yes">no other authentication</selectable>
               </selectables>
-              as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with the TLS functional package.
+              as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with 
+		    <selectables>
+                	<selectable>FCS_TLSS_EXT.2</selectable>
+			<selectable>FCS_DLSS_EXT.2</selectable>
+		</selectables>
+		     from the base-PP.
             </title>
             
           </f-element>

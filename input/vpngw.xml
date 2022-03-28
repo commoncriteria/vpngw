@@ -2696,7 +2696,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 	<selectable>FCS_TLSS_EXT.2</selectable>
 			<selectable>FCS_DTLSS_EXT.2</selectable>
 		</selectables>
-		     from the base-PP.
+		     from the Base-PP.
             </title>
           </f-element>
           <f-element id="fcs-eap-ext-1e2">
@@ -2724,7 +2724,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 	<selectable>FCS_TLSS_EXT.2</selectable>
 			<selectable>FCS_DTLSS_EXT.2</selectable>
 		</selectables>
-		     from the base-PP.
+		     from the Base-PP.
             </title>
             
           </f-element>

@@ -15,7 +15,7 @@
     <ReferenceTable>
       <PPVersion>1.2</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2022-03-11</PPPubDate>
+      <PPPubDate>2022-03-27</PPPubDate>
       <Keywords>VPN, VPN Gateway, VPN GW, IPsec</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -23,7 +23,7 @@
   <RevisionHistory>
     <entry>
       <version>1.2</version>
-      <date>2022-03-11</date>
+      <date>2022-03-27</date>
       <subject>Format conversion, incorporation of NIAP Technical Decisions, TC feedback</subject>
     </entry>
     <entry>
@@ -2694,7 +2694,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with  
 		    <selectables>
                 	<selectable>FCS_TLSS_EXT.2</selectable>
-			<selectable>FCS_TLSS_EXT.2</selectable>
+			<selectable>FCS_DTLSS_EXT.2</selectable>
 		</selectables>
 		     from the base-PP.
             </title>
@@ -2722,7 +2722,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with 
 		    <selectables>
                 	<selectable>FCS_TLSS_EXT.2</selectable>
-			<selectable>FCS_DLSS_EXT.2</selectable>
+			<selectable>FCS_DTLSS_EXT.2</selectable>
 		</selectables>
 		     from the base-PP.
             </title>

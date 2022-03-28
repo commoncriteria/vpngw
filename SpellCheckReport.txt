@@ -1,3 +1,0 @@
-output/vpngw-release-linkable.html: DTLSS
-output/vpngw-release.html: DTLSS
-output/vpngw.html: DTLSS

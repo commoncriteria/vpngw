@@ -2915,7 +2915,11 @@
 										      >	[FIA\_PSK\_EXT.5](#FIA_PSK_EXT.5) must be included.\
 										      >	This requirement is selection dependent on
 										      >	[FCS\_IPSEC\_EXT.1.13](#FCS_IPSEC_EXT.1.13) or inclusion of
-										      >	[FPF\_MFA\_EXT.1](#FPF_MFA_EXT.1). ]{.note}
+										      >	[FPF\_MFA\_EXT.1](#FPF_MFA_EXT.1).\
+										      >	\
+										      >	The first four selections are for single factor authentication options,
+										      >	the last four selections are for multifactor authentication options.
+										      >	]{.note}
 										      >	:::
 										      >	:::
 										      >	:::

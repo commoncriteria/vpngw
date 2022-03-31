@@ -2674,11 +2674,11 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <fam-behavior>Components in this family describe the requirements for EAP-TLS.</fam-behavior>
         </ext-comp-def>
         
-        <!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
+        <!-- FCS_EAP_EXT.1 EAP -->
         <f-component cc-id="fcs_eap_ext.1" id="fcs-eap-ext-1" name="EAP-TLS">
-          <depends on-sel="sel-ipsec-e13-pskeap"/>
-          <depends on-sel="sel-ipsec-e13-pskeapma"/>
-          <consistency-rationale>This SFR defines the use of EAP-TLS; the Base-PP already defines requirements for TLS so potential support for EAP-TLS is consistent with functionality that the Base-PP already expects the TOE may have.</consistency-rationale>
+          <depends on-sel="sel-ipsec-e13-psk" also="sel-ipsec-e13-pskeap" and="sel-ipsec-e13-pskeapma"/>
+	  <!-- QQQQ: See note in vpnclient -->          
+	  <consistency-rationale>This SFR defines the use of EAP-TLS; the Base-PP already defines requirements for TLS so potential support for EAP-TLS is consistent with functionality that the Base-PP already expects the TOE may have.</consistency-rationale>
           <comp-lev>defines the use of EAP-TLS.</comp-lev>
           <management>No specific management functions are identified.</management>
           <audit>No specific audit functions are identified.
@@ -2843,9 +2843,9 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             <title>
               The TSF shall truncate the HOTP hash per FIA_HOTP_EXT.1.4 to create an HOTP of  
               <selectables>
-                <selectable>administrator configurable character length of at least 6</selectable>
+                <selectable exclusive="yes">administrator configurable character length of at least 6</selectable>
                 <selectable>preset character length of
-                  <selectables>
+                  <selectables onlyone="yes">
                     <selectable>6</selectable>
                     <selectable>7</selectable>
                     <selectable>8</selectable>
@@ -2863,16 +2863,16 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 <selectable>throttle invalid requests to 
                   <selectables>
                     <selectable>administrator configurable value</selectable>
-                    <selectable><assignable>value less than 10</assignable></selectable>
+                    <selectable exclusive="yes"><assignable>value less than 10</assignable></selectable>
                   </selectables> per minute</selectable>
                 <selectable>lock the associated account after 
                   <selectables>
                     <selectable>administrator configurable value</selectable>
-                    <selectable><assignable>value less than 10</assignable></selectable>
+                    <selectable exclusive="yes"><assignable>value less than 10</assignable></selectable>
                   </selectables> failed attempts until 
                   <selectables>
                     <selectable>an administrator unlocks the account</selectable>
-                    <selectable>a configurable time period</selectable>
+                    <selectable exclusive="yes">a configurable time period</selectable>
                   </selectables>
                 </selectable>
               </selectables>.
@@ -2883,7 +2883,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               The TSF shall not verify HOTP attempts outside of the counter look ahead window of 
               <selectables>
                 <selectable>a configurable value</selectable>
-                <selectable><assignable>a value less than or equal to 3</assignable></selectable>
+                <selectable exclusive="yes"><assignable>a value less than or equal to 3</assignable></selectable>
               </selectables> for resynchronization.
             </title>
           </f-element>
@@ -2937,7 +2937,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
         
         <!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
         <f-component cc-id="fia_psk_ext.1" id="fia-psk-ext-1" name="Pre-Shared Key Composition">
-          <depends on-sel="sel-ipsec-e13-psk"/>
+          <depends on-sel="sel-ipsec-e13-psk" also="sel-ipsec-e13-pskeap" and="sel-ipsec-e13-pskeapma"/>
           <consistency-rationale>This SFR defines the use of pre-shared keys, which is behavior that only relates to the establishment of IPsec connections.</consistency-rationale>
           <comp-lev>defines the use and composition of pre-shared keys used for IPsec.</comp-lev>
           <management>No specific management functions are identified.</management>
@@ -3363,10 +3363,10 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <f-element id="fia-totp-ext-1e5">
             <title>
               The TSF shall truncate the TOTP hash per FIA_TOTP_EXT.1.4 to create a TOTP of  
-              <selectables onlyone="yes">
-                <selectable>administrator configurable character length of at least 6</selectable>
+              <selectables>
+                <selectable exclusive="yes">administrator configurable character length of at least 6</selectable>
                 <selectable>preset character length of
-                  <selectables> 
+                  <selectables onlyone="yes"> 
                     <selectable>6</selectable>
                     <selectable>7</selectable>
                     <selectable>8</selectable>
@@ -3384,16 +3384,16 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 <selectable>throttle invalid requests to 
                   <selectables>
                     <selectable>administrator configurable value</selectable>
-                    <selectable><assignable>value less than 10</assignable></selectable>
+                    <selectable exclusive="yes"><assignable>value less than 10</assignable></selectable>
                   </selectables> per minute</selectable>
                 <selectable>lock the associated account after 
                   <selectables>
                     <selectable>administrator configurable value</selectable>
-                    <selectable><assignable>value less than 10</assignable></selectable>
+                    <selectable exclusive="yes"><assignable>value less than 10</assignable></selectable>
                   </selectables> failed attempts until 
                   <selectables>
                     <selectable>an administrator unlocks the account</selectable>
-                    <selectable>a configurable time period</selectable>
+                    <selectable exclusive="yes">a configurable time period</selectable>
                   </selectables>
                 </selectable>
               </selectables>.
@@ -3404,7 +3404,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               The TSF shall set a time-step size of 
               <selectables>
                 <selectable>a configurable value</selectable>
-                <selectable><assignable>a value less than or equal to 30</assignable></selectable>
+                <selectable exclusive="yes"><assignable>a value less than or equal to 30</assignable></selectable>
               </selectables> seconds.
             </title>
           </f-element>

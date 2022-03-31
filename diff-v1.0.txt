@@ -2799,8 +2799,8 @@
 										      >	\[**selection**:
 										      >
 										      >	-   *administrator configurable character length of at least 6*,
-										      >	-   *preset character length of \[**selection**: *6*, *7*, *8*, *9*,
-										      >	    *10*\]*
+										      >	-   *preset character length of \[**selection, choose one of**: *6*,
+										      >	    *7*, *8*, *9*, *10*\]*
 										      >
 										      >	\].
 										      >	:::
@@ -3222,11 +3222,11 @@
 										      >	::: {.reqdesc}
 										      >	The [TSF](#abbr_TSF) shall truncate the TOTP hash per
 										      >	[FIA\_TOTP\_EXT.1.4](#FIA_TOTP_EXT.1.4) to create a TOTP of
-										      >	\[**selection, choose one of**:
+										      >	\[**selection**:
 										      >
 										      >	-   *administrator configurable character length of at least 6*,
-										      >	-   *preset character length of \[**selection**: *6*, *7*, *8*, *9*,
-										      >	    *10*\]*
+										      >	-   *preset character length of \[**selection, choose one of**: *6*,
+										      >	    *7*, *8*, *9*, *10*\]*
 										      >
 										      >	\].
 										      >	:::
@@ -3689,8 +3689,8 @@
 										      >	\[**selection**:
 										      >
 										      >	-   *administrator configurable character length of at least 6*,
-										      >	-   *preset character length of \[**selection**: *6*, *7*, *8*, *9*,
-										      >	    *10*\]*
+										      >	-   *preset character length of \[**selection, choose one of**: *6*,
+										      >	    *7*, *8*, *9*, *10*\]*
 										      >
 										      >	\].
 										      >
@@ -4009,11 +4009,11 @@
 										      >
 										      >	The [TSF](#abbr_TSF) shall truncate the TOTP hash per
 										      >	[FIA\_TOTP\_EXT.1.4](#FIA_TOTP_EXT.1.4) to create a TOTP of
-										      >	\[**selection, choose one of**:
+										      >	\[**selection**:
 										      >
 										      >	-   *administrator configurable character length of at least 6*,
-										      >	-   *preset character length of \[**selection**: *6*, *7*, *8*, *9*,
-										      >	    *10*\]*
+										      >	-   *preset character length of \[**selection, choose one of**: *6*,
+										      >	    *7*, *8*, *9*, *10*\]*
 										      >
 										      >	\].
 										      >

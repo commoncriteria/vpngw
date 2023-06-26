@@ -4,7 +4,7 @@
 										      >	::: {.center}
 										      >	![NIAP Logo](images/niaplogo.png)\
 										      >	Version: 1.2\
-										      >	2022-03-31\
+										      >	2023-06-30\
 										      >	**National Information Assurance Partnership**\
 										      >	:::
 										      >
@@ -13,6 +13,7 @@
 										      >
 										      >	  Version   Date         Comment
 										      >	  --------- ------------ ------------------------------------------------------------
+										      >	  1.3       2023-06-30   Incorporation of NIAP Technical Decisions, TC feedback
 										      >	  1.2       2022-03-31   Format conversion, incorporation of NIAP Technical Decisions
 										      >	  1.1       2020-06-18   Compatibility with CPP\_ND\_V2.2E, incorporation of NIAP Tec
 										      >	  1.0       2019-09-17   Initial publication
@@ -34,8 +35,8 @@
 										      >	Operational
 										      >	Environment](#SecurityObjectivesTOEorEnvironment)[4.3Security Objectives
 										      >	Rationale](#SOR)[5Security Requirements](#)[5.1NDcPP Security Functional
-										      >	Requirements Direction ](#secreq-bpp-nd)[5.1.1 Modified SFRs
-										      >	](#modsfr-bpp-nd)[5.1.1.1Cryptographic Support
+										      >	Requirements Direction ](#secreq-ND)[5.1.1 Modified SFRs
+										      >	](#modsfr-ND)[5.1.1.1Cryptographic Support
 										      >	(FCS)](#nd-m-fcs)[5.1.1.2Identification and Authentication
 										      >	(FIA)](#nd-m-fia)[5.1.1.3Security Management
 										      >	(FMT)](#nd-m-fmt)[5.1.1.4Protection of the TSF (FPT)](#nd-m-fpt)[5.2TOE
@@ -47,14 +48,14 @@
 										      >	Path/Channels (FTP)](#m-ftp)[5.3TOE Security Functional Requirements
 										      >	Rationale](#obj-req-map)[5.4TOE Security Assurance
 										      >	Requirements](#mod-sars)[6Consistency
-										      >	Rationale](#mod-conrat)[6.1Collaborative Protection Profile for Network
-										      >	Devices](#conrat-bpp-nd)[6.1.1 Consistency of TOE Type
-										      >	](#contoe-bpp-nd)[6.1.2 Consistency of Security Problem Definition
-										      >	](#consecprob-bpp-nd)[6.1.3 Consistency of Objectives
-										      >	](#conobj-bpp-nd)[6.1.4 Consistency of Requirements
-										      >	](#conreq-bpp-nd)[Appendix A - Optional SFRs](#opt-sfrs)[A.1Strictly
-										      >	Optional Requirements ](#opt-sfrs)[A.1.1Auditable Events for Strictly
-										      >	Optional SFRs](#sop-audit-table)[A.1.2Packet Filtering
+										      >	Rationale](#mod-conrat)[6.1collaborative Protection Profile for Network
+										      >	Devices](#conrat-ND)[6.1.1 Consistency of TOE Type ](#contoe-ND)[6.1.2
+										      >	Consistency of Security Problem Definition ](#consecprob-ND)[6.1.3
+										      >	Consistency of Objectives ](#conobj-ND)[6.1.4 Consistency of
+										      >	Requirements ](#conreq-ND)[Appendix A - Optional
+										      >	SFRs](#opt-sfrs)[A.1Strictly Optional Requirements
+										      >	](#opt-sfrs)[A.1.1Auditable Events for Strictly Optional
+										      >	SFRs](#sop-audit-table)[A.1.2Packet Filtering
 										      >	(FPF)](#s-fpf)[A.2Objective Requirements
 										      >	](#obj-sfrs)[A.3Implementation-based Requirements
 										      >	](#impl-dep-sfrs)[A.3.1Auditable Events for Implementation-Dependent
@@ -84,10 +85,10 @@
 										      >	Bibliography](#appendix-bibliography)
 										      >	:::
 										      >
-										      >	1 Introduction {#Introduction .indexable data-level="1"}
+										      >	1 Introduction {#Introduction .indexable level="1"}
 										      >	==============
 										      >
-										      >	1.1 Overview {#Overview .indexable data-level="2"}
+										      >	1.1 Overview {#Overview .indexable level="2"}
 										      >	------------
 										      >
 										      >	The scope of this Protection Profile Module
@@ -119,13 +120,13 @@
 										      >	intrusion prevention) with a number of distributed nodes that help in
 										      >	the enforcement of the secondary functionality.
 										      >
-										      >	1.2 Terms {#glossary .indexable data-level="2"}
+										      >	1.2 Terms {#glossary .indexable level="2"}
 										      >	---------
 										      >
 										      >	The following sections list Common Criteria and technology terms used in
 										      >	this document.
 										      >
-										      >	### 1.2.1 Common Criteria Terms {#cc-terms .indexable data-level="3"}
+										      >	### 1.2.1 Common Criteria Terms {#cc-terms .indexable level="3"}
 										      >
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Assurance}                  | Grounds for confidence that a     |
@@ -134,11 +135,11 @@
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Base_Protection_Profile}    | Protection Profile used as a      |
 										      >	| Base Protection Profile           | basis to build a                  |
-										      >	| ([Base-PP](#abbr_Base-PP))        | [PP-Configuration](#abbr_PP-Confi |
-										      >	| :::                               | guration).                        |
+										      >	| ([Base-PP](#abbr_Base-PP))        | [PP-Config                        |
+										      >	| :::                               | uration](#abbr_PP-Configuration). |
 										      >	+-----------------------------------+-----------------------------------+
-										      >	| ::: {#Collaborative_Protection_Pr | A Protection Profile developed by |
-										      >	| ofile}                            | international technical           |
+										      >	| ::: {#                            | A Protection Profile developed by |
+										      >	| Collaborative_Protection_Profile} | international technical           |
 										      >	| Collaborative Protection Profile  | communities and approved by       |
 										      >	| ([cPP](#abbr_cPP))                | multiple schemes                  |
 										      >	| :::                               |                                   |
@@ -148,8 +149,8 @@
 										      >	| :::                               | (International Standard ISO/IEC   |
 										      >	|                                   | 15408).                           |
 										      >	+-----------------------------------+-----------------------------------+
-										      >	| ::: {#Common_Criteria_Testing_Lab | Within the context of the Common  |
-										      >	| oratory}                          | Criteria Evaluation and           |
+										      >	| ::: {#Co                          | Within the context of the Common  |
+										      >	| mmon_Criteria_Testing_Laboratory} | Criteria Evaluation and           |
 										      >	| Common Criteria Testing           | Validation Scheme (CCEVS), an IT  |
 										      >	| Laboratory                        | security evaluation facility,     |
 										      >	| :::                               | accredited by the National        |
@@ -159,8 +160,8 @@
 										      >	|                                   | Body to conduct Common            |
 										      >	|                                   | Criteria-based evaluations.       |
 										      >	+-----------------------------------+-----------------------------------+
-										      >	| ::: {#Common_Evaluation_Methodolo | Common Evaluation Methodology for |
-										      >	| gy}                               | Information Technology Security   |
+										      >	| :::                               | Common Evaluation Methodology for |
+										      >	|  {#Common_Evaluation_Methodology} | Information Technology Security   |
 										      >	| Common Evaluation Methodology     | Evaluation.                       |
 										      >	| ([CEM](#abbr_CEM))                |                                   |
 										      >	| :::                               |                                   |
@@ -191,11 +192,11 @@
 										      >	| ([PP](#abbr_PP))                  | category of products.             |
 										      >	| :::                               |                                   |
 										      >	+-----------------------------------+-----------------------------------+
-										      >	| ::: {#Protection_Profile_Configur | A comprehensive set of security   |
-										      >	| ation}                            | requirements for a product type   |
+										      >	| ::: {#                            | A comprehensive set of security   |
+										      >	| Protection_Profile_Configuration} | requirements for a product type   |
 										      >	| Protection Profile Configuration  | that consists of at least one     |
-										      >	| ([PP-Configuration](#abbr_PP-Conf | [Base-PP](#abbr_Base-PP) and at   |
-										      >	| iguration))                       | least one                         |
+										      >	| ([PP-Config                       | [Base-PP](#abbr_Base-PP) and at   |
+										      >	| uration](#abbr_PP-Configuration)) | least one                         |
 										      >	| :::                               | [PP-Module](#abbr_PP-Module).     |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Protection_Profile_Module}  | An implementation-independent     |
@@ -204,14 +205,14 @@
 										      >	| :::                               | complementary to one or more Base |
 										      >	|                                   | Protection Profiles.              |
 										      >	+-----------------------------------+-----------------------------------+
-										      >	| ::: {#Security_Assurance_Requirem | A requirement to assure the       |
-										      >	| ent}                              | security of the [TOE](#abbr_TOE). |
+										      >	| :::                               | A requirement to assure the       |
+										      >	| {#Security_Assurance_Requirement} | security of the [TOE](#abbr_TOE). |
 										      >	| Security Assurance Requirement    |                                   |
 										      >	| ([SAR](#abbr_SAR))                |                                   |
 										      >	| :::                               |                                   |
 										      >	+-----------------------------------+-----------------------------------+
-										      >	| ::: {#Security_Functional_Require | A requirement for security        |
-										      >	| ment}                             | enforcement by the                |
+										      >	| ::: {                             | A requirement for security        |
+										      >	| #Security_Functional_Requirement} | enforcement by the                |
 										      >	| Security Functional Requirement   | [TOE](#abbr_TOE).                 |
 										      >	| ([SFR](#abbr_SFR))                |                                   |
 										      >	| :::                               |                                   |
@@ -236,7 +237,7 @@
 										      >	| :::                               |                                   |
 										      >	+-----------------------------------+-----------------------------------+
 										      >
-										      >	### 1.2.2 Technical Terms {#tech-terms .indexable data-level="3"}
+										      >	### 1.2.2 Technical Terms {#tech-terms .indexable level="3"}
 										      >
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Headend}                    | A [VPN](#abbr_VPN) use case where |
@@ -266,7 +267,7 @@
 										      >	| :::                               | networks.                         |
 										      >	+-----------------------------------+-----------------------------------+
 										      >
-										      >	1.3 Compliant Targets of Evaluation {#Compliant_Targets_of_Evaluation .indexable data
+										      >	1.3 Compliant Targets of Evaluation {#Compliant_Targets_of_Evaluation .indexable leve
 										      >	-----------------------------------
 										      >
 										      >	This [PP-Module](#abbr_PP-Module) specifically addresses network gateway
@@ -284,7 +285,7 @@
 										      >	headend for remote clients. Because this capability is optional, the
 										      >	remote client-based requirements have been included within Appendix A.
 										      >
-										      >	### 1.3.1 TOE Boundary {#TOE_Boundary .indexable data-level="3"}
+										      >	### 1.3.1 TOE Boundary {#TOE_Boundary .indexable level="3"}
 										      >
 										      >	The physical boundary for a [TOE](#abbr_TOE) that conforms to this
 										      >	[PP-Module](#abbr_PP-Module) is a hardware appliance that also provides
@@ -299,7 +300,7 @@
 										      >	[Base-PP](#abbr_Base-PP) is considered to be outside the scope of the
 										      >	[TOE](#abbr_TOE).
 										      >
-										      >	1.4 Use Cases {#Use_Cases .indexable data-level="2"}
+										      >	1.4 Use Cases {#Use_Cases .indexable level="2"}
 										      >	-------------
 										      >
 										      >	This [PP-Module](#abbr_PP-Module) defines two potential use cases for
@@ -309,17 +310,17 @@
 										      >	optional deployment for the [TOE](#abbr_TOE) that accompanies the first
 										      >	use case.
 										      >
-										      >	 \[USE CASE 1\] Network Device
+										      >	\[USE CASE 1\] Network Device
 										      >	:   The [VPN](#abbr_VPN) gateway is part of the functionality that is
 										      >	    provided by a general network device appliance, such as a router or
 										      >	    switch, or a device that is dedicated solely to providing multi-site
 										      >	    [VPN](#abbr_VPN) gateway functionality.
 										      >
-										      >	 \[USE CASE 2\] Remote Client Headend
+										      >	\[USE CASE 2\] Remote Client Headend
 										      >	:   The [VPN](#abbr_VPN) gateway provides the ability to act as a
 										      >	    headend for remote clients.
 										      >
-										      >	2 Conformance Claims {#ConformanceClaims .indexable data-level="1"}
+										      >	2 Conformance Claims {#ConformanceClaims .indexable level="1"}
 										      >	====================
 										      >
 										      >	Conformance Statement
@@ -349,7 +350,7 @@
 										      >	:   This [PP-Module](#abbr_PP-Module) does not claim conformance to any
 										      >	    packages.
 										      >
-										      >	3 Security Problem Description {#Security_Problem_Description .indexable data-level="
+										      >	3 Security Problem Description {#Security_Problem_Description .indexable level="1"}
 										      >	==============================
 										      >
 										      >	The security problem is described in terms of the threats that the
@@ -357,7 +358,7 @@
 										      >	operational environment ([OE](#abbr_OE)), and any organizational
 										      >	security policies that the [TOE](#abbr_TOE) is expected to enforce.\
 										      >
-										      >	3.1 Threats {#threats .indexable data-level="2"}
+										      >	3.1 Threats {#threats .indexable level="2"}
 										      >	-----------
 										      >
 										      >	The following threats defined in this [PP-Module](#abbr_PP-Module)
@@ -469,7 +470,7 @@
 										      >	        cause the desired outcome if the recipient has no means to
 										      >	        detect these
 										      >
-										      >	3.2 Assumptions {#Assumptions .indexable data-level="2"}
+										      >	3.2 Assumptions {#Assumptions .indexable level="2"}
 										      >	---------------
 										      >
 										      >	These assumptions are made on the Operational Environment
@@ -492,7 +493,7 @@
 										      >	    security policies will be enforced on all applicable network traffic
 										      >	    flowing among the attached networks.
 										      >
-										      >	3.3 Organizational Security Policies {#Organizational_Security_Policies .indexable da
+										      >	3.3 Organizational Security Policies {#Organizational_Security_Policies .indexable le
 										      >	------------------------------------
 										      >
 										      >	An organization deploying the [TOE](#abbr_TOE) is expected to satisfy
@@ -502,10 +503,10 @@
 										      >
 										      >	This document does not define any additional OSPs.
 										      >
-										      >	4 Security Objectives {#Security_Objectives .indexable data-level="1"}
+										      >	4 Security Objectives {#Security_Objectives .indexable level="1"}
 										      >	=====================
 										      >
-										      >	4.1 Security Objectives for the TOE {#Security_Objectives_for_the_TOE .indexable data
+										      >	4.1 Security Objectives for the TOE {#Security_Objectives_for_the_TOE .indexable leve
 										      >	-----------------------------------
 										      >
 										      >	O.ADDRESS\_FILTERING
@@ -544,8 +545,6 @@
 										      >	    [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) (selection-based),
 										      >	    [FIA\_PSK\_EXT.2](#FIA_PSK_EXT.2) (selection-based),
 										      >	    [FIA\_PSK\_EXT.3](#FIA_PSK_EXT.3) (selection-based),
-										      >	    [FIA\_PSK\_EXT.4](#FIA_PSK_EXT.4) (selection-based),
-										      >	    [FIA\_PSK\_EXT.5](#FIA_PSK_EXT.5) (selection-based),
 										      >	    [FIA\_TOTP\_EXT.1](#FIA_TOTP_EXT.1) (selection-based)
 										      >
 										      >	O.CRYPTOGRAPHIC\_FUNCTIONS
@@ -560,7 +559,9 @@
 										      >	    (refined from [Base-PP](#abbr_Base-PP)),
 										      >	    [FCS\_IPSEC\_EXT.1](#FCS_IPSEC_EXT.1) (refined from
 										      >	    [Base-PP](#abbr_Base-PP)), [FCS\_CKM.1/IKE](#FCS_CKM.1/IKE),
-										      >	    [FCS\_EAP\_EXT.1](#FCS_EAP_EXT.1) (selection-based)
+										      >	    [FCS\_EAP\_EXT.1](#FCS_EAP_EXT.1) (selection-based),
+										      >	    [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) (selection-based),
+										      >	    [FIA\_PSK\_EXT.2](#FIA_PSK_EXT.2) (selection-based)
 										      >
 										      >	O.FAIL\_SECURE
 										      >	:   There may be instances where the [TOE](#abbr_TOE)'s hardware
@@ -638,14 +639,14 @@
 										      >	    enforced on all applicable network traffic flowing among the
 										      >	    attached networks.
 										      >
-										      >	4.3 Security Objectives Rationale {#SOR .indexable,h2 data-level="2"}
+										      >	4.3 Security Objectives Rationale {#SOR .indexable,h2 level="2"}
 										      >	---------------------------------
 										      >
 										      >	This section describes how the assumptions, threats, and organizational
 										      >	security policies map to the security objectives.
 										      >
-										      >	[Table [1]{.counter}]{#t-sec-obj-rat .ctr data-myid="t-sec-obj-rat"
-										      >	data-counter-type="ct-Table"}: Security Objectives Rationale
+										      >	[Table [1]{.counter}]{#t-sec-obj-rat .ctr myid="t-sec-obj-rat"
+										      >	counter-type="ct-Table"}: Security Objectives Rationale
 										      >
 										      >	Threat, Assumption, or OSP
 										      >
@@ -808,7 +809,7 @@
 										      >	The [OE](#abbr_OE) objective [OE.CONNECTIONS](#OE.CONNECTIONS) is
 										      >	realized through [A.CONNECTIONS](#A.CONNECTIONS).
 										      >
-										      >	5 Security Requirements {#security-requirements .indexable data-level="1"}
+										      >	5 Security Requirements {#security-requirements .indexable level="1"}
 										      >	=======================
 										      >
 										      >	This chapter describes the security requirements which have to be
@@ -834,7 +835,7 @@
 										      >	    [SFR](#abbr_SFR) name with a slash and unique identifier suggesting
 										      >	    the purpose of the operation, e.g. \"/EXAMPLE1.\"
 										      >
-										      >	5.1 NDcPP Security Functional Requirements Direction {#secreq-bpp-nd .indexable data-
+										      >	5.1 NDcPP Security Functional Requirements Direction {#secreq-ND .indexable level="2"
 										      >	----------------------------------------------------
 										      >
 										      >	In a [PP-Configuration](#abbr_PP-Configuration) that includes the NDcPP,
@@ -845,12 +846,12 @@
 										      >	make to the SFRs defined in the [Base-PP](#abbr_Base-PP) in addition to
 										      >	what is mandated by section 5.2.
 										      >
-										      >	### 5.1.1 Modified SFRs {#modsfr-bpp-nd .indexable data-level="3"}
+										      >	### 5.1.1 Modified SFRs {#modsfr-ND .indexable level="3"}
 										      >
 										      >	The SFRs listed in this section are defined in the NDcPP and relevant to
 										      >	the secure operation of the [TOE](#abbr_TOE).
 										      >
-										      >	#### 5.1.1.1 Cryptographic Support (FCS) {#nd-m-fcs .indexable data-level="4"}
+										      >	#### 5.1.1.1 Cryptographic Support (FCS) {#nd-m-fcs .indexable level="4"}
 										      >
 										      >	::: {#FCS_COP.1/DataEncryption .comp}
 										      >	#### FCS\_COP.1/DataEncryption Cryptographic Operation (AES Data Encryption/Decryptio
@@ -1002,15 +1003,15 @@
 										      >	::: {.reqdesc}
 										      >	The [TSF](#abbr_TSF) shall ensure the encrypted payload in the
 										      >	\[**selection**: *IKEv1*, *IKEv2*\] protocol uses the cryptographic
-										      >	algorithms \[**selection**: *AES-CBC-128*, *AES-CBC-192*, *AES-CBC-256
-										      >	(specified in RFC 3602)*, *AES-GCM-128*, *AES-CBC-192*, *AES-CBC-256
-										      >	(specified in RFC 5282)*\].
+										      >	algorithms \[**selection**: *AES-CBC-128*, *AES-CBC-256 (specified in
+										      >	RFC 3602)*, *AES-GCM-128*, *AES-CBC-256 (specified in RFC 5282)*\].
 										      >
 										      >	::: {.appnote}
-										      >	[Application Note: ]{.note-header}[ This element is unchanged from its
-										      >	definition in the [Base-PP](#abbr_Base-PP). AES-CBC implementation for
-										      >	IPsec is specified in RFC 3602. AES-GCM implementation for IPsec is
-										      >	specified in RFC 5282. ]{.note}
+										      >	[Application Note: ]{.note-header}[ This element is changed from its
+										      >	definition in the [Base-PP](#abbr_Base-PP) to remove AES-192, which is
+										      >	not recommended. AES-CBC implementation for IPsec is specified in RFC
+										      >	3602. AES-GCM implementation for IPsec is specified in RFC 5282.
+										      >	]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
@@ -1187,12 +1188,12 @@
 										      >	:::
 										      >
 										      >	::: {.reqdesc}
-										      >	The [TSF](#abbr_TSF) shall ensure that all [IKE](#abbr_IKE) protocols
-										      >	perform peer authentication using \[**selection**: *RSA*, *ECDSA*\] that
-										      >	use X.509v3 certificates that conform to RFC 4945 and \[**selection**:
-										      >	*Pre-shared keys*, ***Pre-shared Keys transmitted via EAP-TLS***,
-										      >	***Pre-shared Keys transmitted via EAP-TTLS with mutual
-										      >	authentication***, *no other method*\].
+										      >	The [TSF](#abbr_TSF) shall ensure that \[**selection**: *IKEv1*,
+										      >	*IKEv2*\] protocols perform peer authentication using \[**selection**:
+										      >	*RSA*, *ECDSA*\] that use X.509v3 certificates that conform to RFC 4945
+										      >	and \[**selection**: *Pre-shared keys that conform to RFC 8784*,
+										      >	***Pre-shared Keys transmitted via EAP-TTLS***, ***EAP-TLS***, *no other
+										      >	method*\].
 										      >
 										      >	::: {.appnote}
 										      >	[Application Note: ]{.note-header}[ At least one public-key-based Peer
@@ -1203,22 +1204,26 @@
 										      >	reflecting the algorithms used (and key generation capabilities, if
 										      >	provided) are listed to support those methods. Note that the
 										      >	[TSS](#abbr_TSS) will elaborate on the way in which these algorithms are
-										      >	to be used (for example, 2409 specifies three authentication methods
-										      >	using public keys; each one supported will be described in the
-										      >	[TSS](#abbr_TSS)).\
-										      >	If any selection with "pre-shared keys" is selected, the selection-based
-										      >	requirement [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) must be claimed.\
-										      >	When pre-shared keys are supported for IKEv2, at least one of
-										      >	'Pre-shared Keys transmitted via EAP-TLS' or 'Pre-shared Keys
-										      >	transmitted via EAP-TTLS' is selected to indicate client verification
-										      >	using certificates in a mutually authenticated TLS handshake, and
-										      >	verification of provided PSK protected under the TLS channel. The
-										      >	selection-based [SFR](#abbr_SFR) [FCS\_EAP\_EXT.1](#FCS_EAP_EXT.1) must
-										      >	also be claimed in this situation.\
-										      >	When Pre-shared Keys are supported for IKEv1, the first selection is
-										      >	claimed to indicate one of the mechanisms for using PSK described in the
-										      >	RFC. It is acceptable for different use cases to leverage different
-										      >	selections, if this is the case it must be identified. ]{.note}
+										      >	to be used.\
+										      >	If "IKEv1" is selected, "no other method" must be chosen in the third
+										      >	selection.\
+										      >	If a selection with "EAP-TLS" or "EAP-TTLS" is chosen, the
+										      >	selection-based requirement [FCS\_EAP\_EXT.1](#FCS_EAP_EXT.1) must be
+										      >	claimed. When an EAP method is used, verification occurs via an external
+										      >	authentication server. Though EAP-TTLS involves PSKs,
+										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) is not claimed because PSK
+										      >	requirements for EAP-TTLS are addressed instead via the Authentication
+										      >	Server [PP](#abbr_PP). EAP-based authentication is not supported for
+										      >	IKEv1.\
+										      >	If "pre-shared keys that conform to RFC 8784" is chosen, the
+										      >	selection-based requirement [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) must be
+										      >	claimed. Since certificates are required for authentication, IKEv1 does
+										      >	not support PSKs, as PSK-based authentication and certificate-based
+										      >	authentication are mutually exclusive in IKEv1. Note that IKEv1 will be
+										      >	removed in a future version of this document.\
+										      >	Multifactor support can be achieved via traffic filtering in accordance
+										      >	with [FPF\_MFA\_EXT.1](#FPF_MFA_EXT.1).\
+										      >	]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
@@ -1252,7 +1257,7 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	#### 5.1.1.2 Identification and Authentication (FIA) {#nd-m-fia .indexable data-level
+										      >	#### 5.1.1.2 Identification and Authentication (FIA) {#nd-m-fia .indexable level="4"}
 										      >
 										      >	::: {#FIA_X509_EXT.1/Rev .comp}
 										      >	#### FIA\_X509\_EXT.1/Rev X.509 Certificate Validation
@@ -1340,7 +1345,7 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	#### 5.1.1.3 Security Management (FMT) {#nd-m-fmt .indexable data-level="4"}
+										      >	#### 5.1.1.3 Security Management (FMT) {#nd-m-fmt .indexable level="4"}
 										      >
 										      >	::: {#FMT_MTD.1/CryptoKeys .comp}
 										      >	#### FMT\_MTD.1/CryptoKeys Management of TSF Data
@@ -1367,7 +1372,7 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	#### 5.1.1.4 Protection of the TSF (FPT) {#nd-m-fpt .indexable data-level="4"}
+										      >	#### 5.1.1.4 Protection of the TSF (FPT) {#nd-m-fpt .indexable level="4"}
 										      >
 										      >	::: {#FPT_TST_EXT.1 .comp}
 										      >	#### FPT\_TST\_EXT.1 TSF Testing
@@ -1496,7 +1501,7 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	5.2 TOE Security Functional Requirements {#man-sfrs .indexable data-level="2"}
+										      >	5.2 TOE Security Functional Requirements {#man-sfrs .indexable level="2"}
 										      >	----------------------------------------
 										      >
 										      >	The following section describes the SFRs that must be satisfied by any
@@ -1505,37 +1510,47 @@
 										      >	which [PP-Configuration](#abbr_PP-Configuration) is used to define the
 										      >	[TOE](#abbr_TOE).
 										      >
-										      >	### 5.2.1 Auditable Events for Mandatory SFRs {#ss-audit-table .indexable data-level=
+										      >	### 5.2.1 Auditable Events for Mandatory SFRs {#ss-audit-table .indexable level="3"}
 										      >
 										      >	  -----------------------------------------------------------------------------------
-										      >	  Requirement                                  Auditable Events                      
-										      >	  -------------------------------------------- --------------------------------------
-										      >	  [FAU\_GEN.1/VPN](#FAU_GEN.1/VPN)             No events specified.                  
+										      >	  Requirement                                  Auditable Events        Additional Aud
+										      >	                                                                       Contents
+										      >	  -------------------------------------------- ----------------------- --------------
+										      >	  [FAU\_GEN.1/VPN](#FAU_GEN.1/VPN)             No events specified.    N/A
 										      >
-										      >	  [FCS\_CKM.1/IKE](#FCS_CKM.1/IKE)             No events specified.                  
+										      >	  [FCS\_CKM.1/IKE](#FCS_CKM.1/IKE)             No events specified.    N/A
 										      >
-										      >	  [FMT\_SMF.1/VPN](#FMT_SMF.1/VPN)             All administrative actions            
+										      >	  [FMT\_SMF.1/VPN](#FMT_SMF.1/VPN)             All administrative      No additional
+										      >	                                               actions                 information.\
 										      >
-										      >	  [FPF\_RUL\_EXT.1](#FPF_RUL_EXT.1)            Application of rules configured with t
-										      >	                                                                                     
-										      >	                                                                                     
+										      >	  [FPF\_RUL\_EXT.1](#FPF_RUL_EXT.1)            Application of rules    Source and des
+										      >	                                               configured with the     addresses\
+										      >	                                               \'log\' operation       Source and des
+										      >	                                                                       ports\
+										      >	                                                                       Transport laye
+										      >	                                                                       protocol\
 										      >
-										      >	  [FPT\_FLS.1/SelfTest](#FPT_FLS.1/SelfTest)   No events specified.                  
+										      >	  [FPT\_FLS.1/SelfTest](#FPT_FLS.1/SelfTest)   No events specified.    N/A
 										      >
-										      >	  [FPT\_TST\_EXT.3](#FPT_TST_EXT.3)            No events specified.                  
+										      >	  [FPT\_TST\_EXT.3](#FPT_TST_EXT.3)            No events specified.    N/A
 										      >
-										      >	  [FTP\_ITC.1/VPN](#FTP_ITC.1/VPN)             Initiation of the trusted channel     
+										      >	  [FTP\_ITC.1/VPN](#FTP_ITC.1/VPN)             Initiation of the       No additional
+										      >	                                               trusted channel         information.\
 										      >
-										      >	  [FTP\_ITC.1/VPN](#FTP_ITC.1/VPN)             Termination of the trusted channel    
+										      >	  [FTP\_ITC.1/VPN](#FTP_ITC.1/VPN)             Termination of the      No additional
+										      >	                                               trusted channel         information.\
 										      >
-										      >	  [FTP\_ITC.1/VPN](#FTP_ITC.1/VPN)             Failure of the trusted channel functio
+										      >	  [FTP\_ITC.1/VPN](#FTP_ITC.1/VPN)             Failure of the trusted  Identification
+										      >	                                               channel functions       initiator and 
+										      >	                                                                       failed trusted
+										      >	                                                                       establishment 
 										      >	  -----------------------------------------------------------------------------------
 										      >
 										      >	  : [Table [2]{.counter}]{#t-audit-mandatory .ctr
-										      >	  data-myid="t-audit-mandatory" data-counter-type="ct-Table"}: Auditable
-										      >	  Events for Mandatory Requirements
+										      >	  myid="t-audit-mandatory" counter-type="ct-Table"}: Auditable Events
+										      >	  for Mandatory Requirements
 										      >
-										      >	### 5.2.2 Security Audit (FAU) {#m-fau .indexable data-level="3"}
+										      >	### 5.2.2 Security Audit (FAU) {#m-fau .indexable level="3"}
 										      >
 										      >	::: {#FAU_GEN.1/VPN .comp}
 										      >	#### FAU\_GEN.1/VPN Audit Data Generation (VPN Gateway)
@@ -1600,7 +1615,7 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	### 5.2.3 Cryptographic Support (FCS) {#m-fcs .indexable data-level="3"}
+										      >	### 5.2.3 Cryptographic Support (FCS) {#m-fcs .indexable level="3"}
 										      >
 										      >	::: {#FCS_CKM.1/IKE .comp}
 										      >	#### FCS\_CKM.1/IKE Cryptographic Key Generation (for IKE Peer Authentication)
@@ -1618,8 +1633,8 @@
 										      >	-   *FIPS PUB 186-4, "Digital Signature Standard (DSS)", Appendix B.3
 										      >	    for RSA schemes*,
 										      >	-   *FIPS PUB 186-4, "Digital Signature Standard (DSS)", Appendix B.4
-										      >	    for ECDSA schemes and implementing "NIST curves" P-256, P-384 and
-										      >	    \[**selection**: *P-521*, *no other curves*\]*
+										      >	    for ECDSA schemes and implementing "NIST curves" P-384 and
+										      >	    \[**selection**: *P-256*, *P-521*, *no other curves*\]*
 										      >
 										      >	\] and \[**selection**:
 										      >
@@ -1655,7 +1670,7 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	### 5.2.4 Security Management (FMT) {#m-fmt .indexable data-level="3"}
+										      >	### 5.2.4 Security Management (FMT) {#m-fmt .indexable level="3"}
 										      >
 										      >	::: {#FMT_SMF.1/VPN .comp}
 										      >	#### FMT\_SMF.1/VPN Specification of Management Functions
@@ -1696,7 +1711,7 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	### 5.2.5 Packet Filtering (FPF) {#m-fpf .indexable data-level="3"}
+										      >	### 5.2.5 Packet Filtering (FPF) {#m-fpf .indexable level="3"}
 										      >
 										      >	::: {#FPF_RUL_EXT.1 .comp}
 										      >	#### FPF\_RUL\_EXT.1 Packet Filtering Rules
@@ -1727,7 +1742,7 @@
 										      >	-   destination address
 										      >	-   protocol
 										      >
-										      >	IPv6 (RFC 2460)
+										      >	IPv6 (RFC 8200)
 										      >
 										      >	-   source address
 										      >	-   destination address
@@ -1856,7 +1871,7 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	### 5.2.6 Protection of the TSF (FPT) {#m-fpt .indexable data-level="3"}
+										      >	### 5.2.6 Protection of the TSF (FPT) {#m-fpt .indexable level="3"}
 										      >
 										      >	::: {#FPT_FLS.1/SelfTest .comp}
 										      >	#### FPT\_FLS.1/SelfTest Failure with Preservation of Secure State (Self-Test Failure
@@ -1919,7 +1934,7 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	### 5.2.7 Trusted Path/Channels (FTP) {#m-ftp .indexable data-level="3"}
+										      >	### 5.2.7 Trusted Path/Channels (FTP) {#m-ftp .indexable level="3"}
 										      >
 										      >	::: {#FTP_ITC.1/VPN .comp}
 										      >	#### FTP\_ITC.1/VPN Inter-TSF Trusted Channel (VPN Communications)
@@ -1970,15 +1985,15 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	5.3 TOE Security Functional Requirements Rationale {#obj-req-map .indexable data-leve
+										      >	5.3 TOE Security Functional Requirements Rationale {#obj-req-map .indexable level="2"
 										      >	--------------------------------------------------
 										      >
 										      >	The following rationale provides justification for each security
 										      >	objective for the [TOE](#abbr_TOE), showing that the SFRs are suitable
 										      >	to meet and achieve the security objectives:\
 										      >
-										      >	[Table [3]{.counter}]{#t-obj_map .ctr data-myid="t-obj_map"
-										      >	data-counter-type="ct-Table"}: [SFR](#abbr_SFR) Rationale
+										      >	[Table [3]{.counter}]{#t-obj_map .ctr myid="t-obj_map"
+										      >	counter-type="ct-Table"}: [SFR](#abbr_SFR) Rationale
 										      >
 										      >	Objective
 										      >
@@ -2007,8 +2022,8 @@
 										      >	[Base-PP](#abbr_Base-PP))
 										      >
 										      >	This [SFR](#abbr_SFR) supports the objective by requiring the
-										      >	[TOE](#abbr_TOE) to implement the IPsec protocol as a method of
-										      >	authenticating external entities.
+										      >	[TOE](#abbr_TOE)\'s implementation of IPsec to include requirements for
+										      >	how the [VPN](#abbr_VPN) client is authenticated.
 										      >
 										      >	[FIA\_X509\_EXT.1/Rev](#FIA_X509_EXT.1/Rev) (from
 										      >	[Base-PP](#abbr_Base-PP))
@@ -2060,8 +2075,8 @@
 										      >
 										      >	[FCS\_EAP\_EXT.1](#FCS_EAP_EXT.1) (selection-based)
 										      >
-										      >	This [SFR](#abbr_SFR) supports the objective by optionally implementing
-										      >	EAP-TLS or EAP-TTLS as a mechanism for authentication.
+										      >	This [SFR](#abbr_SFR) supports the objective by optionally using an
+										      >	exteral authentication server to facilitate EAP-TLS or EAP-TTLS.
 										      >
 										      >	[FIA\_HOTP\_EXT.1](#FIA_HOTP_EXT.1) (selection-based)
 										      >
@@ -2070,31 +2085,20 @@
 										      >
 										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) (selection-based)
 										      >
-										      >	This [SFR](#abbr_SFR) supports the objective by optionally requiring
-										      >	support for pre-shared keys as an alternate authentication method for
-										      >	IPsec.
+										      >	This [SFR](#abbr_SFR) supports the objective by optionally supporting
+										      >	the use of pre-shared keys.
 										      >
 										      >	[FIA\_PSK\_EXT.2](#FIA_PSK_EXT.2) (selection-based)
 										      >
 										      >	This [SFR](#abbr_SFR) supports the objective by optionally specifying
-										      >	whether the [TOE](#abbr_TOE) generates its own pre-shared keys used for
-										      >	authentication or accepts them from an external source.
+										      >	whether the [TOE](#abbr_TOE) generates its own pre-shared keys or
+										      >	accepts them from an external source.
 										      >
 										      >	[FIA\_PSK\_EXT.3](#FIA_PSK_EXT.3) (selection-based)
 										      >
 										      >	This [SFR](#abbr_SFR) supports the objective by optionally defining the
 										      >	composition and use of password-based pre-shared keys used for
 										      >	authentication.
-										      >
-										      >	[FIA\_PSK\_EXT.4](#FIA_PSK_EXT.4) (selection-based)
-										      >
-										      >	This [SFR](#abbr_SFR) supports the objective by optionally defining HOTP
-										      >	as an authentication mechanism.
-										      >
-										      >	[FIA\_PSK\_EXT.5](#FIA_PSK_EXT.5) (selection-based)
-										      >
-										      >	This [SFR](#abbr_SFR) supports the objective by optionally defining TOTP
-										      >	as an authentication mechanism.
 										      >
 										      >	[FIA\_TOTP\_EXT.1](#FIA_TOTP_EXT.1) (selection-based)
 										      >
@@ -2123,8 +2127,20 @@
 										      >
 										      >	[FCS\_EAP\_EXT.1](#FCS_EAP_EXT.1) (selection-based)
 										      >
-										      >	This [SFR](#abbr_SFR) supports the objective by optionally defining the
-										      >	[TOE](#abbr_TOE)\'s implementation of EAP-TLS or EAP-TTLS.
+										      >	This [SFR](#abbr_SFR) supports the objective by optionally using an MSK
+										      >	computed by an external authentication server via the EAP-TLS or
+										      >	EAP-TTLS method.
+										      >
+										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) (selection-based)
+										      >
+										      >	This [SFR](#abbr_SFR) supports the objective by supporting a mechanism
+										      >	by which PSKs can be used to fortify encryption.
+										      >
+										      >	[FIA\_PSK\_EXT.2](#FIA_PSK_EXT.2) (selection-based)
+										      >
+										      >	This [SFR](#abbr_SFR) supports the objective by optionally specifying
+										      >	whether the [TOE](#abbr_TOE) generates its own pre-shared keys or
+										      >	accepts them from an external source..
 										      >
 										      >	[O.FAIL\_​SECURE](#O.FAIL_SECURE)\
 										      >
@@ -2190,7 +2206,7 @@
 										      >	management functions required specifically for [VPN](#abbr_VPN) gateway
 										      >	functionality.
 										      >
-										      >	5.4 TOE Security Assurance Requirements {#mod-sars .indexable data-level="2"}
+										      >	5.4 TOE Security Assurance Requirements {#mod-sars .indexable level="2"}
 										      >	---------------------------------------
 										      >
 										      >	This [PP-Module](#abbr_PP-Module) does not define any SARs beyond those
@@ -2206,13 +2222,13 @@
 										      >	evaluation with the necessary SFRs that are taken from this
 										      >	[PP-Module](#abbr_PP-Module).
 										      >
-										      >	6 Consistency Rationale {#mod-conrat .indexable data-level="1"}
+										      >	6 Consistency Rationale {#mod-conrat .indexable level="1"}
 										      >	=======================
 										      >
-										      >	6.1 Collaborative Protection Profile for Network Devices {#conrat-bpp-nd .indexable d
+										      >	6.1 collaborative Protection Profile for Network Devices {#conrat-ND .indexable level
 										      >	--------------------------------------------------------
 										      >
-										      >	### 6.1.1 Consistency of TOE Type {#contoe-bpp-nd .indexable data-level="3"}
+										      >	### 6.1.1 Consistency of TOE Type {#contoe-ND .indexable level="3"}
 										      >
 										      >	When this [PP-Module](#abbr_PP-Module) is used to extend the NDcPP, the
 										      >	[TOE](#abbr_TOE) type for the overall [TOE](#abbr_TOE) is still a
@@ -2220,7 +2236,7 @@
 										      >	include [VPN](#abbr_VPN) gateway functionality that is provided by the
 										      >	network device.
 										      >
-										      >	### 6.1.2 Consistency of Security Problem Definition {#consecprob-bpp-nd .indexable d
+										      >	### 6.1.2 Consistency of Security Problem Definition {#consecprob-ND .indexable level
 										      >
 										      >	The threats, assumptions, and organizational security policies (OSPs)
 										      >	defined by this [PP-Module](#abbr_PP-Module) (see sections 3.1 through
@@ -2235,7 +2251,7 @@
 										      >	  [T.REPLAY\_ATTACK](#T.REPLAY_ATTACK)                   A replay attack is mentioned
 										      >	  [A.CONNECTIONS](#A.CONNECTIONS)                        This assumption defines the 
 										      >
-										      >	### 6.1.3 Consistency of Objectives {#conobj-bpp-nd .indexable data-level="3"}
+										      >	### 6.1.3 Consistency of Objectives {#conobj-ND .indexable level="3"}
 										      >
 										      >	The objectives for the TOEs are consistent with the NDcPP based on the
 										      >	following rationale:
@@ -2257,16 +2273,15 @@
 										      >	  ------------------------------------------------------- ---------------------------
 										      >	  [OE.CONNECTIONS](#OE.CONNECTIONS)                       This objective intends for 
 										      >
-										      >	### 6.1.4 Consistency of Requirements {#conreq-bpp-nd .indexable data-level="3"}
+										      >	### 6.1.4 Consistency of Requirements {#conreq-ND .indexable level="3"}
 										      >
 										      >	This [PP-Module](#abbr_PP-Module) identifies several SFRs from the NDcPP
-										      >	that are needed to support [VPN](#abbr_VPN) Gateways functionality. This
-										      >	is considered to be consistent because the functionality provided by the
-										      >	NDcPP is being used for its intended purpose. The
-										      >	[PP-Module](#abbr_PP-Module) also identifies a number of modified SFRs
-										      >	from the NDcPP that are used entirely to provide functionality for
-										      >	[VPN](#abbr_VPN) Gateways. The rationale for why this does not conflict
-										      >	with the claims defined by the NDcPP are as follows:
+										      >	that are needed to support functionality. This is considered to be
+										      >	consistent because the functionality provided by the NDcPP is being used
+										      >	for its intended purpose. The [PP-Module](#abbr_PP-Module) also
+										      >	identifies a number of modified SFRs from the NDcPP that are used
+										      >	entirely to provide functionality for . The rationale for why this does
+										      >	not conflict with the claims defined by the NDcPP are as follows:
 										      >
 										      >	[PP-Module](#abbr_PP-Module) Requirement
 										      >
@@ -2426,16 +2441,6 @@
 										      >	This [SFR](#abbr_SFR) relates to use of pre-shared keys, which is
 										      >	behavior that only applies to the establishment of IPsec connections.
 										      >
-										      >	[FIA\_PSK\_EXT.4](#FIA_PSK_EXT.4)
-										      >
-										      >	This [SFR](#abbr_SFR) relates to use of pre-shared keys, which is
-										      >	behavior that only applies to the establishment of IPsec connections.
-										      >
-										      >	[FIA\_PSK\_EXT.5](#FIA_PSK_EXT.5)
-										      >
-										      >	This [SFR](#abbr_SFR) relates to use of pre-shared keys, which is
-										      >	behavior that only applies to the establishment of IPsec connections.
-										      >
 										      >	[FIA\_TOTP\_EXT.1](#FIA_TOTP_EXT.1)
 										      >
 										      >	This [SFR](#abbr_SFR) relates to use of pre-shared keys, which is
@@ -2468,23 +2473,22 @@
 										      >	scope of the [Base-PP](#abbr_Base-PP) and therefore not prohibited by
 										      >	it.
 										      >
-										      >	Appendix A - Optional SFRs {#opt-sfrs .indexable data-level="A"}
+										      >	Appendix A - Optional SFRs {#opt-sfrs .indexable level="A"}
 										      >	==========================
 										      >
-										      >	A.1 Strictly Optional Requirements {#opt-sfrs .indexable data-level="2"}
+										      >	A.1 Strictly Optional Requirements {#opt-sfrs .indexable level="2"}
 										      >	----------------------------------
 										      >
-										      >	### A.1.1 Auditable Events for Strictly Optional SFRs {#sop-audit-table .indexable da
+										      >	### A.1.1 Auditable Events for Strictly Optional SFRs {#sop-audit-table .indexable le
 										      >
 										      >	  Requirement                         Auditable Events       Additional Audit Record 
 										      >	  ----------------------------------- ---------------------- ------------------------
 										      >	  [FPF\_MFA\_EXT.1](#FPF_MFA_EXT.1)   No events specified.   N/A
 										      >
-										      >	  : [Table [4]{.counter}]{#t-audit-optional .ctr
-										      >	  data-myid="t-audit-optional" data-counter-type="ct-Table"}: Auditable
-										      >	  Events for Optional Requirements
+										      >	  : [Table [4]{.counter}]{#t-audit-optional .ctr myid="t-audit-optional"
+										      >	  counter-type="ct-Table"}: Auditable Events for Optional Requirements
 										      >
-										      >	### A.1.2 Packet Filtering (FPF) {#s-fpf .indexable data-level="3"}
+										      >	### A.1.2 Packet Filtering (FPF) {#s-fpf .indexable level="3"}
 										      >
 										      >	The [TOE](#abbr_TOE) may support multifactor authentication by blocking
 										      >	all other traffic after connection is established until secondary
@@ -2500,25 +2504,35 @@
 										      >
 										      >	::: {.reqdesc}
 										      >	The [TSF](#abbr_TSF) shall not forward packets to the internal network
-										      >	until the [IKE](#abbr_IKE)/IPsec tunnel has been established, except
-										      >	those necessary to ensure that the client is authenticated according to
-										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1).
+										      >	until the [IKE](#abbr_IKE) tunnel has been established, except those
+										      >	necessary to verify additional authentication factors of the client.
+										      >	:::
+										      >	:::
+										      >
+										      >	::: {.element}
+										      >	::: {#FPF_MFA_EXT.1.2 .reqid}
+										      >	[FPF\_MFA\_EXT.1.2](#FPF_MFA_EXT.1.2){.abbr}
+										      >	:::
+										      >
+										      >	::: {.reqdesc}
+										      >	The [TSF](#abbr_TSF) shall \[**selection**: *verify*, *verify via an
+										      >	external authentication server*\] additional authentication factors of
+										      >	the client.
 										      >
 										      >	::: {.appnote}
-										      >	[Application Note: ]{.note-header}[ If [FPF\_MFA\_EXT.1](#FPF_MFA_EXT.1)
-										      >	is included [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) must also be included.
-										      >	]{.note}
+										      >	[Application Note: ]{.note-header}[ If \"verify\" is selected,
+										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) must be claimed. ]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
 										      >	:::
 										      >
-										      >	A.2 Objective Requirements {#obj-sfrs .indexable data-level="2"}
+										      >	A.2 Objective Requirements {#obj-sfrs .indexable level="2"}
 										      >	--------------------------
 										      >
 										      >	This [PP-Module](#abbr_PP-Module) does not define any Objective SFRs.
 										      >
-										      >	A.3 Implementation-based Requirements {#impl-dep-sfrs .indexable data-level="2"}
+										      >	A.3 Implementation-based Requirements {#impl-dep-sfrs .indexable level="2"}
 										      >	-------------------------------------
 										      >
 										      >	### A.3.1 Auditable Events for Implementation-Dependent SFRs {#sib-audit-table .index
@@ -2530,10 +2544,10 @@
 										      >	  [FTA\_VCM\_EXT.1](#FTA_VCM_EXT.1)   No events specified.   N/A
 										      >
 										      >	  : [Table [5]{.counter}]{#t-audit-feat-based .ctr
-										      >	  data-myid="t-audit-feat-based" data-counter-type="ct-Table"}:
-										      >	  Auditable Events for Feat-based Requirements
+										      >	  myid="t-audit-feat-based" counter-type="ct-Table"}: Auditable Events
+										      >	  for Feat-based Requirements
 										      >
-										      >	### A.3.2 TOE Access (FTA) {#opt-headend .indexable data-level="3"}
+										      >	### A.3.2 TOE Access (FTA) {#opt-headend .indexable level="3"}
 										      >
 										      >	This section contains requirements that may be optionally selected by
 										      >	the [ST](#abbr_ST) author for a "headend" [VPN](#abbr_VPN) gateway
@@ -2625,10 +2639,10 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	Appendix B - Selection-based Requirements {#sel-sfrs .indexable data-level="1"}
+										      >	Appendix B - Selection-based Requirements {#sel-sfrs .indexable level="1"}
 										      >	=========================================
 										      >
-										      >	B.1 Auditable Events for Selection-based SFRs {#sb-audit-table .indexable data-level=
+										      >	B.1 Auditable Events for Selection-based SFRs {#sb-audit-table .indexable level="2"}
 										      >	---------------------------------------------
 										      >
 										      >	  Requirement                           Auditable Events       Additional Audit Recor
@@ -2638,15 +2652,13 @@
 										      >	  [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1)     No events specified.   N/A
 										      >	  [FIA\_PSK\_EXT.2](#FIA_PSK_EXT.2)     No events specified.   N/A
 										      >	  [FIA\_PSK\_EXT.3](#FIA_PSK_EXT.3)     No events specified.   N/A
-										      >	  [FIA\_PSK\_EXT.4](#FIA_PSK_EXT.4)     No events specified.   N/A
-										      >	  [FIA\_PSK\_EXT.5](#FIA_PSK_EXT.5)     No events specified.   N/A
 										      >	  [FIA\_TOTP\_EXT.1](#FIA_TOTP_EXT.1)   No events specified.   N/A
 										      >
 										      >	  : [Table [6]{.counter}]{#t-audit-sel-based .ctr
-										      >	  data-myid="t-audit-sel-based" data-counter-type="ct-Table"}: Auditable
-										      >	  Events for Selection-based Requirements
+										      >	  myid="t-audit-sel-based" counter-type="ct-Table"}: Auditable Events
+										      >	  for Selection-based Requirements
 										      >
-										      >	B.2 Cryptographic Support (FCS) {#s-fcs .indexable data-level="2"}
+										      >	B.2 Cryptographic Support (FCS) {#s-fcs .indexable level="2"}
 										      >	-------------------------------
 										      >
 										      >	::: {#FCS_EAP_EXT.1 .comp}
@@ -2664,10 +2676,9 @@
 										      >
 										      >	::: {.reqdesc}
 										      >	The [TSF](#abbr_TSF) shall implement \[**selection**: *EAP-TLS protocol
-										      >	as specified in RFC 5216*, *EAP-TTLS as specified in RFC 5881*\] as
-										      >	updated by RFC 8996 with TLS implemented using mutual authentication in
-										      >	accordance with \[**selection**: *FCS\_TLSS\_EXT.2*,
-										      >	*FCS\_DTLSS\_EXT.2*\] from the [Base-PP](#abbr_Base-PP).
+										      >	as specified in RFC 5216 and updated by RFC 8996*, *EAP-TTLS as
+										      >	specified in RFC 5281*\] over a protected channel per FTP\_ITC.1 **from
+										      >	the [Base-PP](#abbr_Base-PP)** with an authentication server.
 										      >	:::
 										      >	:::
 										      >
@@ -2677,9 +2688,9 @@
 										      >	:::
 										      >
 										      >	::: {.reqdesc}
-										      >	The [TSF](#abbr_TSF) shall generate random values used in the
-										      >	\[**selection**: *EAP-TLS*, *EAP-DTLS*\] exchange using the RBG
-										      >	specified in FCS\_RBG\_EXT.1.
+										      >	The [TSF](#abbr_TSF) shall implement EAP-TLS or EAP-TTLS with the
+										      >	[TSF](#abbr_TSF) as the EAP client, an authentication server as the EAP
+										      >	server, and the [VPN](#abbr_VPN) peer as the supplicant.
 										      >	:::
 										      >	:::
 										      >
@@ -2689,55 +2700,37 @@
 										      >	:::
 										      >
 										      >	::: {.reqdesc}
-										      >	The [TSF](#abbr_TSF) shall support peer authentication using
-										      >	certificates and \[**selection**: *PSK*, *HOTP*, *TOTP*,
-										      >	*\[**assignment**: [other Authentication-verification
-										      >	protocols]{.assignable-content}\]*, *no other authentication*\] as
-										      >	updated by RFC 8996 with TLS implemented using mutual authentication in
-										      >	accordance with \[**selection**: *FCS\_TLSS\_EXT.2*,
-										      >	*FCS\_DTLSS\_EXT.2*\] from the [Base-PP](#abbr_Base-PP).
-										      >	:::
-										      >	:::
-										      >
-										      >	::: {.element}
-										      >	::: {#FCS_EAP_EXT.1.4 .reqid}
-										      >	[FCS\_EAP\_EXT.1.4](#FCS_EAP_EXT.1.4){.abbr}
-										      >	:::
-										      >
-										      >	::: {.reqdesc}
-										      >	The [TSF](#abbr_TSF) shall not forward an EAP-success response if the
-										      >	client certificate is not valid according to FIA\_X509\_EXT.1.
-										      >	:::
-										      >	:::
-										      >
-										      >	::: {.element}
-										      >	::: {#FCS_EAP_EXT.1.5 .reqid}
-										      >	[FCS\_EAP\_EXT.1.5](#FCS_EAP_EXT.1.5){.abbr}
-										      >	:::
-										      >
-										      >	::: {.reqdesc}
 										      >	The [TSF](#abbr_TSF) shall use the MSK from the \[**selection**:
 										      >	*EAP-TLS*, *EAP-TTLS*\] response as the IKEv2 shared secret in the
 										      >	authentication payload.
+										      >
+										      >	::: {.appnote}
+										      >	[Application Note: ]{.note-header}[ This [SFR](#abbr_SFR) covers the EAP
+										      >	requirements for a client connection to an authentication server. In
+										      >	particular, authentication server functionality implemented in the same
+										      >	device, rather than in an external device, is covered under the
+										      >	Authentication Server [PP-Module](#abbr_PP-Module), and is out of scope
+										      >	for this [PP-Module](#abbr_PP-Module). The MSK derived from EAP is
+										      >	distinct from the PSK. The MSK is substituted in for the IKEv2 shared
+										      >	secret in the AUTH computations. ]{.note}
+										      >	:::
 										      >	:::
 										      >	:::
 										      >	:::
 										      >
-										      >	B.3 Identification and Authentication (FIA) {#sel-fia .indexable data-level="2"}
+										      >	B.3 Identification and Authentication (FIA) {#sel-fia .indexable level="2"}
 										      >	-------------------------------------------
 										      >
 										      >	The [TOE](#abbr_TOE) may support pre-shared keys for use in the IPsec
 										      >	protocol, and may use pre-shared keys in other protocols as well. PSK in
 										      >	the context of this document refers to generated values, memorized
-										      >	values subject to conditioning, one-time passwords, and combinations of
-										      >	the above as described in [FIA\_PSK\_EXT.1.2](#FIA_PSK_EXT.1.2).
+										      >	values subject to conditioning, one-time passwords, and combinations as
+										      >	described in [FIA\_PSK\_EXT.1.2](#FIA_PSK_EXT.1.2).
 										      >
 										      >	::: {#FIA_HOTP_EXT.1 .comp}
 										      >	#### FIA\_HOTP\_EXT.1 HMAC-Based One-Time Password Pre-Shared Keys
 										      >
 										      >	::: {.statustag}
-										      >	***The inclusion of this selection-based component depends upon
-										      >	selection in [FIA\_PSK\_EXT.4.2](#FIA_PSK_EXT.4.2).***
 										      >	:::
 										      >
 										      >	::: {.element}
@@ -2871,7 +2864,8 @@
 										      >
 										      >	::: {.statustag}
 										      >	***The inclusion of this selection-based component depends upon
-										      >	selection in [FCS\_IPSEC\_EXT.1.13](#FCS_IPSEC_EXT.1.13).***
+										      >	selection in [FCS\_IPSEC\_EXT.1.13](#FCS_IPSEC_EXT.1.13),
+										      >	[FPF\_MFA\_EXT.1.2](#FPF_MFA_EXT.1.2).***
 										      >	:::
 										      >
 										      >	::: {.element}
@@ -2881,8 +2875,15 @@
 										      >
 										      >	::: {.reqdesc}
 										      >	The [TSF](#abbr_TSF) shall be able to use pre-shared keys for IPsec and
-										      >	\[**selection**: *\[**assignment**: [other protocols that use pre-shared
-										      >	keys]{.assignable-content}\]*, *no other protocols*\].
+										      >	\[**selection**: *IKEv2*, *multifactor authentication filtering*\].
+										      >
+										      >	::: {.appnote}
+										      >	[Application Note: ]{.note-header}[ If "IKEv2" is selected, then the
+										      >	corresponding IKEv2 selection must be made in
+										      >	[FCS\_IPSEC\_EXT.1.13](#FCS_IPSEC_EXT.1.13). If "multifactor
+										      >	authentication filtering" is selected, then "verify" should be selected
+										      >	in [FPF\_MFA\_EXT.1.2](#FPF_MFA_EXT.1.2). ]{.note}
+										      >	:::
 										      >	:::
 										      >	:::
 										      >
@@ -2902,20 +2903,24 @@
 										      >	keys.
 										      >
 										      >	::: {.appnote}
-										      >	[Application Note: ]{.note-header}[\
-										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) includes the options for MFA
-										      >	solutions.\
+										      >	[Application Note: ]{.note-header}[ This requirement is included if
+										      >	"pre-shared keys that conform to RFC 8784" is selected in
+										      >	[FCS\_IPSEC\_EXT.1.13](#FCS_IPSEC_EXT.1.13), or if "verify" is selected
+										      >	in [FPF\_MFA\_EXT.1.2](#FPF_MFA_EXT.1.2). If these selections are made
+										      >	in both [FCS\_IPSEC\_EXT.1.13](#FCS_IPSEC_EXT.1.13) and
+										      >	[FPF\_MFA\_EXT.1.2](#FPF_MFA_EXT.1.2), the [TSF](#abbr_TSF) must satisfy
+										      >	the appropriate [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) selections for each.\
 										      >	If any selection including \"generated bit-based\" is chosen, then
-										      >	[FIA\_PSK\_EXT.2](#FIA_PSK_EXT.2) must be included.\
+										      >	[FIA\_PSK\_EXT.2](#FIA_PSK_EXT.2) must be included. If "pre-shared keys
+										      >	that conform to RFC 8784" is selected in
+										      >	[FCS\_IPSEC\_EXT.1.13](#FCS_IPSEC_EXT.1.13), a generated, bit-based PSK
+										      >	must be used.\
 										      >	If any selection including Password-based keys is chosen, then
 										      >	[FIA\_PSK\_EXT.3](#FIA_PSK_EXT.3) must be included.\
 										      >	If any selection including HMAC-based one-time password keys is chosen,
-										      >	then [FIA\_PSK\_EXT.4](#FIA_PSK_EXT.4) must be included.\
+										      >	then [FIA\_HOTP\_EXT.1](#FIA_HOTP_EXT.1) must be included.\
 										      >	If any selection including time-based one-time password is chosen, then
-										      >	[FIA\_PSK\_EXT.5](#FIA_PSK_EXT.5) must be included.\
-										      >	This requirement is selection dependent on
-										      >	[FCS\_IPSEC\_EXT.1.13](#FCS_IPSEC_EXT.1.13) or inclusion of
-										      >	[FPF\_MFA\_EXT.1](#FPF_MFA_EXT.1).\
+										      >	[FIA\_TOTP\_EXT.1](#FIA_TOTP_EXT.1) must be included.\
 										      >	\
 										      >	The first four selections are for single factor authentication options,
 										      >	the last four selections are for multifactor authentication options.
@@ -3081,90 +3086,10 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	::: {#FIA_PSK_EXT.4 .comp}
-										      >	#### FIA\_PSK\_EXT.4 HMAC-Based One-Time Password Pre-shared Keys Support
-										      >
-										      >	::: {.statustag}
-										      >	***The inclusion of this selection-based component depends upon
-										      >	selection in [FIA\_PSK\_EXT.1.2](#FIA_PSK_EXT.1.2).***
-										      >	:::
-										      >
-										      >	::: {.element}
-										      >	::: {#FIA_PSK_EXT.4.1 .reqid}
-										      >	[FIA\_PSK\_EXT.4.1](#FIA_PSK_EXT.4.1){.abbr}
-										      >	:::
-										      >
-										      >	::: {.reqdesc}
-										      >	The [TSF](#abbr_TSF) shall accept and send an HOTP while initiating a
-										      >	[VPN](#abbr_VPN) connection.
-										      >	:::
-										      >	:::
-										      >
-										      >	::: {.element}
-										      >	::: {#FIA_PSK_EXT.4.2 .reqid}
-										      >	[FIA\_PSK\_EXT.4.2](#FIA_PSK_EXT.4.2){.abbr}
-										      >	:::
-										      >
-										      >	::: {.reqdesc}
-										      >	The [TSF](#abbr_TSF) shall \[**selection, choose one of**: *verify the
-										      >	HOTP*, *verify the HOTP via an external authentication server*\] before
-										      >	establishing an incoming connection.
-										      >
-										      >	::: {.appnote}
-										      >	[Application Note: ]{.note-header}[ If \"verify the HOTP\" is selected,
-										      >	then [FIA\_HOTP\_EXT.1](#FIA_HOTP_EXT.1) must be included.\
-										      >	This requirement is selection dependent on
-										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) ]{.note}
-										      >	:::
-										      >	:::
-										      >	:::
-										      >	:::
-										      >
-										      >	::: {#FIA_PSK_EXT.5 .comp}
-										      >	#### FIA\_PSK\_EXT.5 Time-Based One-Time Password Pre-shared Keys Support
-										      >
-										      >	::: {.statustag}
-										      >	***The inclusion of this selection-based component depends upon
-										      >	selection in [FIA\_PSK\_EXT.1.2](#FIA_PSK_EXT.1.2).***
-										      >	:::
-										      >
-										      >	::: {.element}
-										      >	::: {#FIA_PSK_EXT.5.1 .reqid}
-										      >	[FIA\_PSK\_EXT.5.1](#FIA_PSK_EXT.5.1){.abbr}
-										      >	:::
-										      >
-										      >	::: {.reqdesc}
-										      >	The [TSF](#abbr_TSF) shall accept and send a TOTP while initiating a
-										      >	[VPN](#abbr_VPN) connection.
-										      >	:::
-										      >	:::
-										      >
-										      >	::: {.element}
-										      >	::: {#FIA_PSK_EXT.5.2 .reqid}
-										      >	[FIA\_PSK\_EXT.5.2](#FIA_PSK_EXT.5.2){.abbr}
-										      >	:::
-										      >
-										      >	::: {.reqdesc}
-										      >	The [TSF](#abbr_TSF) shall \[**selection, choose one of**: *verify the
-										      >	TOTP*, *verify the TOTP via an external authentication server*\] before
-										      >	establishing an incoming connection.
-										      >
-										      >	::: {.appnote}
-										      >	[Application Note: ]{.note-header}[ If verify the TOTP is selected then
-										      >	[FIA\_TOTP\_EXT.1](#FIA_TOTP_EXT.1) must be included.\
-										      >	This requirement is dependent on [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1).
-										      >	]{.note}
-										      >	:::
-										      >	:::
-										      >	:::
-										      >	:::
-										      >
 										      >	::: {#FIA_TOTP_EXT.1 .comp}
 										      >	#### FIA\_TOTP\_EXT.1 Time-Based One-Time Password Pre-Shared Keys
 										      >
 										      >	::: {.statustag}
-										      >	***The inclusion of this selection-based component depends upon
-										      >	selection in [FIA\_PSK\_EXT.5.2](#FIA_PSK_EXT.5.2).***
 										      >	:::
 										      >
 										      >	::: {.element}
@@ -3305,42 +3230,49 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	Appendix C - Extended Component Definitions {#ext-comp-defs .indexable data-level="A"
+										      >	Appendix C - Extended Component Definitions {#ext-comp-defs .indexable level="A"}
 										      >	===========================================
 										      >
 										      >	This appendix contains the definitions for all extended requirements
 										      >	specified in the Module.
 										      >
-										      >	C.1 Extended Components Table {#ext-comp-defs-bg .indexable data-level="2"}
+										      >	C.1 Extended Components Table {#ext-comp-defs-bg .indexable level="2"}
 										      >	-----------------------------
 										      >
 										      >	All extended components specified in the Module are listed in this
 										      >	table:
 										      >
-										      >	  -----------------------------------------------------------------------------------
-										      >	  Functional Class                           Functional Components
-										      >	  ------------------------------------------ ----------------------------------------
-										      >	  Packet Filtering (FPF)                     FPF\_MFA\_EXT Multifactor Authentication
-										      >	                                             FPF\_RUL\_EXT Packet Filtering Rules\
+										      >	  -----------------------------------------------------------------------
+										      >	  Functional Class                    Functional Components
+										      >	  ----------------------------------- -----------------------------------
+										      >	  Packet Filtering (FPF)              FPF\_MFA\_EXT Multifactor
+										      >	                                      Authentication Filtering\
+										      >	                                      FPF\_RUL\_EXT Packet Filtering
+										      >	                                      Rules\
 										      >
-										      >	  Protection of the [TSF](#abbr_TSF) (FPT)   FPT\_TST\_EXT [TSF](#abbr_TSF) Self-Test
+										      >	  Protection of the [TSF](#abbr_TSF)  FPT\_TST\_EXT [TSF](#abbr_TSF)
+										      >	  (FPT)                               Self-Test\
 										      >
-										      >	  Cryptographic Support (FCS)                FCS\_EAP\_EXT EAP-TLS\
+										      >	  Cryptographic Support (FCS)         FCS\_EAP\_EXT EAP-TLS\
 										      >
-										      >	  Identification and Authentication (FIA)    FIA\_HOTP\_EXT HMAC-Based One-Time Passw
-										      >	                                             FIA\_PSK\_EXT Pre-Shared Key Composition
-										      >	                                             FIA\_TOTP\_EXT Time-Based One-Time Passw
+										      >	  Identification and Authentication   FIA\_HOTP\_EXT HMAC-Based One-Time
+										      >	  (FIA)                               Password Pre-Shared Keys\
+										      >	                                      FIA\_PSK\_EXT Pre-Shared Key
+										      >	                                      Composition\
+										      >	                                      FIA\_TOTP\_EXT Time-Based One-Time
+										      >	                                      Password Pre-Shared Keys\
 										      >
-										      >	  [TOE](#abbr_TOE) Access (FTA)              FTA\_VCM\_EXT [VPN](#abbr_VPN) Client Ma
-										      >	  -----------------------------------------------------------------------------------
+										      >	  [TOE](#abbr_TOE) Access (FTA)       FTA\_VCM\_EXT [VPN](#abbr_VPN)
+										      >	                                      Client Management\
+										      >	  -----------------------------------------------------------------------
 										      >
-										      >	  : **[Table [7]{.counter}]{.ctr data-myid=""
-										      >	  data-counter-type="ct-Table"}: Extended Component Definitions**
+										      >	  : **[Table [7]{.counter}]{.ctr myid="" counter-type="ct-Table"}:
+										      >	  Extended Component Definitions**
 										      >
-										      >	C.2 Extended Component Definitions {#ext-comp-defs-bg .indexable data-level="2"}
+										      >	C.2 Extended Component Definitions {#ext-comp-defs-bg .indexable level="2"}
 										      >	----------------------------------
 										      >
-										      >	### C.2.1 Packet Filtering (FPF) {#ext-comp-FPF .indexable data-level="3"}
+										      >	### C.2.1 Packet Filtering (FPF) {#ext-comp-FPF .indexable level="3"}
 										      >
 										      >	This class contains families that describe packet filtering behavior.
 										      >	Packet filtering refers to the notion that network traffic that is
@@ -3352,7 +3284,7 @@
 										      >	an extended component defined for this [PP-Module](#abbr_PP-Module), it
 										      >	has two families, FPF\_MFA\_EXT and FPF\_RUL\_EXT.
 										      >
-										      >	### C.2.1.1 FPF\_RUL\_EXT Packet Filtering Rules {#ext-comp-FPF_RUL_EXT .indexable da
+										      >	### C.2.1.1 FPF\_RUL\_EXT Packet Filtering Rules {#ext-comp-FPF_RUL_EXT .indexable le
 										      >
 										      >	::: {style="margin-left: 1em;"}
 										      >	#### Family Behavior
@@ -3473,18 +3405,23 @@
 										      >	#### FPF\_MFA\_EXT.1.1 {#ext-comp-FPF_MFA_EXT.1.1}
 										      >
 										      >	The [TSF](#abbr_TSF) shall not forward packets to the internal network
-										      >	until the [IKE](#abbr_IKE)/IPsec tunnel has been established, except
-										      >	those necessary to ensure that the client is authenticated according to
-										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1).
+										      >	until the [IKE](#abbr_IKE) tunnel has been established, except those
+										      >	necessary to verify additional authentication factors of the client.
+										      >
+										      >	#### FPF\_MFA\_EXT.1.2 {#ext-comp-FPF_MFA_EXT.1.2}
+										      >
+										      >	The [TSF](#abbr_TSF) shall \[**selection**: *verify*, *verify via an
+										      >	external authentication server*\] additional authentication factors of
+										      >	the client.
 										      >	:::
 										      >	:::
 										      >
-										      >	### C.2.2 Protection of the TSF (FPT) {#ext-comp-FPT .indexable data-level="3"}
+										      >	### C.2.2 Protection of the TSF (FPT) {#ext-comp-FPT .indexable level="3"}
 										      >
 										      >	This Module defines the following extended components as part of the FPT
 										      >	class originally defined by [CC](#abbr_CC) Part 2:
 										      >
-										      >	### C.2.2.1 FPT\_TST\_EXT TSF Self-Test {#ext-comp-FPT_TST_EXT .indexable data-level=
+										      >	### C.2.2.1 FPT\_TST\_EXT TSF Self-Test {#ext-comp-FPT_TST_EXT .indexable level="4"}
 										      >
 										      >	::: {style="margin-left: 1em;"}
 										      >	#### Family Behavior
@@ -3543,12 +3480,12 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	### C.2.3 Cryptographic Support (FCS) {#ext-comp-FCS .indexable data-level="3"}
+										      >	### C.2.3 Cryptographic Support (FCS) {#ext-comp-FCS .indexable level="3"}
 										      >
 										      >	This Module defines the following extended components as part of the FCS
 										      >	class originally defined by [CC](#abbr_CC) Part 2:
 										      >
-										      >	### C.2.3.1 FCS\_EAP\_EXT EAP-TLS {#ext-comp-FCS_EAP_EXT .indexable data-level="4"}
+										      >	### C.2.3.1 FCS\_EAP\_EXT EAP-TLS {#ext-comp-FCS_EAP_EXT .indexable level="4"}
 										      >
 										      >	::: {style="margin-left: 1em;"}
 										      >	#### Family Behavior
@@ -3583,33 +3520,17 @@
 										      >	#### FCS\_EAP\_EXT.1.1 {#ext-comp-FCS_EAP_EXT.1.1}
 										      >
 										      >	The [TSF](#abbr_TSF) shall implement \[**selection**: *EAP-TLS protocol
-										      >	as specified in RFC 5216*, *EAP-TTLS as specified in RFC 5881*\] as
-										      >	updated by RFC 8996 with TLS implemented using mutual authentication in
-										      >	accordance with \[**selection**: *FCS\_TLSS\_EXT.2*,
-										      >	*FCS\_DTLSS\_EXT.2*\] from the [Base-PP](#abbr_Base-PP).
+										      >	as specified in RFC 5216 and updated by RFC 8996*, *EAP-TTLS as
+										      >	specified in RFC 5281*\] over a protected channel per FTP\_ITC.1 with an
+										      >	authentication server.
 										      >
 										      >	#### FCS\_EAP\_EXT.1.2 {#ext-comp-FCS_EAP_EXT.1.2}
 										      >
-										      >	The [TSF](#abbr_TSF) shall generate random values used in the
-										      >	\[**selection**: *EAP-TLS*, *EAP-DTLS*\] exchange using the RBG
-										      >	specified in FCS\_RBG\_EXT.1.
+										      >	The [TSF](#abbr_TSF) shall implement EAP-TLS or EAP-TTLS with the
+										      >	[TSF](#abbr_TSF) as the EAP client, an authentication server as the EAP
+										      >	server, and the [VPN](#abbr_VPN) peer as the supplicant.
 										      >
 										      >	#### FCS\_EAP\_EXT.1.3 {#ext-comp-FCS_EAP_EXT.1.3}
-										      >
-										      >	The [TSF](#abbr_TSF) shall support peer authentication using
-										      >	certificates and \[**selection**: *PSK*, *HOTP*, *TOTP*,
-										      >	*\[**assignment**: [other Authentication-verification
-										      >	protocols]{.assignable-content}\]*, *no other authentication*\] as
-										      >	updated by RFC 8996 with TLS implemented using mutual authentication in
-										      >	accordance with \[**selection**: *FCS\_TLSS\_EXT.2*,
-										      >	*FCS\_DTLSS\_EXT.2*\] from the [Base-PP](#abbr_Base-PP).
-										      >
-										      >	#### FCS\_EAP\_EXT.1.4 {#ext-comp-FCS_EAP_EXT.1.4}
-										      >
-										      >	The [TSF](#abbr_TSF) shall not forward an EAP-success response if the
-										      >	client certificate is not valid according to FIA\_X509\_EXT.1.
-										      >
-										      >	#### FCS\_EAP\_EXT.1.5 {#ext-comp-FCS_EAP_EXT.1.5}
 										      >
 										      >	The [TSF](#abbr_TSF) shall use the MSK from the \[**selection**:
 										      >	*EAP-TLS*, *EAP-TTLS*\] response as the IKEv2 shared secret in the
@@ -3617,7 +3538,7 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	### C.2.4 Identification and Authentication (FIA) {#ext-comp-FIA .indexable data-leve
+										      >	### C.2.4 Identification and Authentication (FIA) {#ext-comp-FIA .indexable level="3"
 										      >
 										      >	This Module defines the following extended components as part of the FIA
 										      >	class originally defined by [CC](#abbr_CC) Part 2:
@@ -3655,8 +3576,7 @@
 										      >	::: {style="margin-left: 1em;"}
 										      >	Hierarchical to: No other components.
 										      >
-										      >	Dependencies to: [FIA\_PSK\_EXT.4](#FIA_PSK_EXT.4) HMAC-Based One-Time
-										      >	Password Pre-shared Keys Support
+										      >	Dependencies to: FCS\_COP.1 Cryptographic Operation
 										      >
 										      >	#### FIA\_HOTP\_EXT.1.1 {#ext-comp-FIA_HOTP_EXT.1.1}
 										      >
@@ -3737,7 +3657,7 @@
 										      >
 										      >	#### Component Leveling
 										      >
-										      >	FIA\_PSK\_EXT12345
+										      >	FIA\_PSK\_EXT123
 										      >
 										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1), Pre-Shared Key Composition, defines
 										      >	the use and composition of pre-shared keys used for IPsec.
@@ -3748,14 +3668,6 @@
 										      >	[FIA\_PSK\_EXT.3](#FIA_PSK_EXT.3), Password-Based Pre-Shared Keys,
 										      >	defines the use and composition of password-based pre-shared keys used
 										      >	for IPsec.
-										      >
-										      >	[FIA\_PSK\_EXT.4](#FIA_PSK_EXT.4), HMAC-Based One-Time Password
-										      >	Pre-shared Keys Support, defines the use and composition of HOTP
-										      >	pre-shared keys used for IPsec.
-										      >
-										      >	[FIA\_PSK\_EXT.5](#FIA_PSK_EXT.5), Time-Based One-Time Password
-										      >	Pre-shared Keys Support, defines the use and composition of TOTP
-										      >	pre-shared keys used for IPsec.
 										      >
 										      >	#### Management: FIA\_PSK\_EXT.1
 										      >
@@ -3775,8 +3687,7 @@
 										      >	#### FIA\_PSK\_EXT.1.1 {#ext-comp-FIA_PSK_EXT.1.1}
 										      >
 										      >	The [TSF](#abbr_TSF) shall be able to use pre-shared keys for IPsec and
-										      >	\[**selection**: *\[**assignment**: [other protocols that use pre-shared
-										      >	keys]{.assignable-content}\]*, *no other protocols*\].
+										      >	\[**selection**: *IKEv2*, *multifactor authentication filtering*\].
 										      >
 										      >	#### FIA\_PSK\_EXT.1.2 {#ext-comp-FIA_PSK_EXT.1.2}
 										      >
@@ -3888,62 +3799,6 @@
 										      >	meter*, *check the password against a denylist*, *perform no action to
 										      >	assist the user in choosing a strong password*\].
 										      >	:::
-										      >
-										      >	#### Management: FIA\_PSK\_EXT.4
-										      >
-										      >	No specific management functions are identified.
-										      >
-										      >	#### Audit: FIA\_PSK\_EXT.4
-										      >
-										      >	No specific audit functions are identified.
-										      >
-										      >	#### FIA\_PSK\_EXT.4 HMAC-Based One-Time Password Pre-shared Keys Support
-										      >
-										      >	::: {style="margin-left: 1em;"}
-										      >	Hierarchical to: No other components.
-										      >
-										      >	Dependencies to: [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) Pre-Shared Key
-										      >	Composition
-										      >
-										      >	#### FIA\_PSK\_EXT.4.1 {#ext-comp-FIA_PSK_EXT.4.1}
-										      >
-										      >	The [TSF](#abbr_TSF) shall accept and send an HOTP while initiating a
-										      >	[VPN](#abbr_VPN) connection.
-										      >
-										      >	#### FIA\_PSK\_EXT.4.2 {#ext-comp-FIA_PSK_EXT.4.2}
-										      >
-										      >	The [TSF](#abbr_TSF) shall \[**selection, choose one of**: *verify the
-										      >	HOTP*, *verify the HOTP via an external authentication server*\] before
-										      >	establishing an incoming connection.
-										      >	:::
-										      >
-										      >	#### Management: FIA\_PSK\_EXT.5
-										      >
-										      >	No specific management functions are identified.
-										      >
-										      >	#### Audit: FIA\_PSK\_EXT.5
-										      >
-										      >	No specific audit functions are identified.
-										      >
-										      >	#### FIA\_PSK\_EXT.5 Time-Based One-Time Password Pre-shared Keys Support
-										      >
-										      >	::: {style="margin-left: 1em;"}
-										      >	Hierarchical to: No other components.
-										      >
-										      >	Dependencies to: [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) Pre-Shared Key
-										      >	Composition
-										      >
-										      >	#### FIA\_PSK\_EXT.5.1 {#ext-comp-FIA_PSK_EXT.5.1}
-										      >
-										      >	The [TSF](#abbr_TSF) shall accept and send a TOTP while initiating a
-										      >	[VPN](#abbr_VPN) connection.
-										      >
-										      >	#### FIA\_PSK\_EXT.5.2 {#ext-comp-FIA_PSK_EXT.5.2}
-										      >
-										      >	The [TSF](#abbr_TSF) shall \[**selection, choose one of**: *verify the
-										      >	TOTP*, *verify the TOTP via an external authentication server*\] before
-										      >	establishing an incoming connection.
-										      >	:::
 										      >	:::
 										      >
 										      >	### C.2.4.3 FIA\_TOTP\_EXT Time-Based One-Time Password Pre-Shared Keys {#ext-comp-FI
@@ -3979,8 +3834,7 @@
 										      >	::: {style="margin-left: 1em;"}
 										      >	Hierarchical to: No other components.
 										      >
-										      >	Dependencies to: [FIA\_PSK\_EXT.5](#FIA_PSK_EXT.5) Time-Based One-Time
-										      >	Password Pre-shared Keys Support
+										      >	Dependencies to: FPT\_STM.1 Reliable Time Stamps
 										      >
 										      >	#### FIA\_TOTP\_EXT.1.1 {#ext-comp-FIA_TOTP_EXT.1.1}
 										      >
@@ -4053,12 +3907,12 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	### C.2.5 TOE Access (FTA) {#ext-comp-FTA .indexable data-level="3"}
+										      >	### C.2.5 TOE Access (FTA) {#ext-comp-FTA .indexable level="3"}
 										      >
 										      >	This Module defines the following extended components as part of the FTA
 										      >	class originally defined by [CC](#abbr_CC) Part 2:
 										      >
-										      >	### C.2.5.1 FTA\_VCM\_EXT VPN Client Management {#ext-comp-FTA_VCM_EXT .indexable dat
+										      >	### C.2.5.1 FTA\_VCM\_EXT VPN Client Management {#ext-comp-FTA_VCM_EXT .indexable lev
 										      >
 										      >	::: {style="margin-left: 1em;"}
 										      >	#### Family Behavior
@@ -4104,7 +3958,7 @@
 										      >	:::
 										      >	:::
 										      >
-										      >	Appendix D - Implicitly Satisfied Requirements {#satisfiedreqs .indexable data-level=
+										      >	Appendix D - Implicitly Satisfied Requirements {#satisfiedreqs .indexable level="A"}
 										      >	==============================================
 										      >
 										      >	This appendix lists requirements that should be considered satisfied by
@@ -4125,7 +3979,7 @@
 										      >	[PP-Module](#abbr_PP-Module) or inherited from the
 										      >	[Base-PP](#abbr_Base-PP).
 										      >
-										      >	Appendix E - Entropy Documentation and Assessment {#app-ent .indexable data-level="A"
+										      >	Appendix E - Entropy Documentation and Assessment {#app-ent .indexable level="A"}
 										      >	=================================================
 										      >
 										      >	The [TOE](#abbr_TOE) does not require any additional supplementary
@@ -4137,7 +3991,7 @@
 										      >	addition to the functionality required by the claimed
 										      >	[Base-PP](#abbr_Base-PP).
 										      >
-										      >	Appendix F - Acronyms {#acronyms .indexable data-level="A"}
+										      >	Appendix F - Acronyms {#acronyms .indexable level="A"}
 										      >	=====================
 										      >
 										      >	  Acronym                                                                      Meanin
@@ -4167,12 +4021,12 @@
 										      >	  [[ST](#abbr_ST)]{#abbr_ST .term}                                             [Secur
 										      >	  [[TOE](#abbr_TOE)]{#abbr_TOE .term}                                          [Targe
 										      >	  [[TSF](#abbr_TSF)]{#abbr_TSF .term}                                          [[TOE]
-										      >	  [[TSFI](#abbr_TSFI)]{#abbr_TSFI .term data-plural="TSFIs"}                   [[TSF]
+										      >	  [[TSFI](#abbr_TSFI)]{#abbr_TSFI .term plural="TSFIs"}                        [[TSF]
 										      >	  [[TSS](#abbr_TSS)]{#abbr_TSS .term}                                          [[TOE]
 										      >	  [[VPN](#abbr_VPN)]{#abbr_VPN .term}                                          [Virtu
-										      >	  [[cPP](#abbr_cPP)]{#abbr_cPP .term data-plural="cPPs"}                       [Colla
+										      >	  [[cPP](#abbr_cPP)]{#abbr_cPP .term plural="cPPs"}                            [Colla
 										      >
-										      >	Appendix G - Bibliography {#appendix-bibliography .indexable data-level="A"}
+										      >	Appendix G - Bibliography {#appendix-bibliography .indexable level="A"}
 										      >	=========================
 										      >
 										      >	+-----------------------------------+-----------------------------------+
@@ -4183,36 +4037,36 @@
 										      >	|                                   |                                   |
 										      >	|                                   | -   [Part 1: Introduction and     |
 										      >	|                                   |     General                       |
-										      >	|                                   |     Model](http://www.commoncrite |
-										      >	|                                   | riaportal.org/files/ccfiles/CCPAR |
-										      >	|                                   | T1V3.1R5.pdf),                    |
+										      >	|                                   |     Model](htt                    |
+										      >	|                                   | p://www.commoncriteriaportal.org/ |
+										      >	|                                   | files/ccfiles/CCPART1V3.1R5.pdf), |
 										      >	|                                   |     CCMB-2017-04-001, Version 3.1 |
 										      >	|                                   |     Revision 5, April 2017.       |
 										      >	|                                   | -   [Part 2: Security Functional  |
-										      >	|                                   |     Components](http://www.common |
-										      >	|                                   | criteriaportal.org/files/ccfiles/ |
-										      >	|                                   | CCPART2V3.1R5.pdf),               |
+										      >	|                                   |     Components](htt               |
+										      >	|                                   | p://www.commoncriteriaportal.org/ |
+										      >	|                                   | files/ccfiles/CCPART2V3.1R5.pdf), |
 										      >	|                                   |     CCMB-2017-04-002, Version 3.1 |
 										      >	|                                   |     Revision 5, April 2017.       |
 										      >	|                                   | -   [Part 3: Security Assurance   |
-										      >	|                                   |     Components](http://www.common |
-										      >	|                                   | criteriaportal.org/files/ccfiles/ |
-										      >	|                                   | CCPART3V3.1R5.pdf),               |
+										      >	|                                   |     Components](htt               |
+										      >	|                                   | p://www.commoncriteriaportal.org/ |
+										      >	|                                   | files/ccfiles/CCPART3V3.1R5.pdf), |
 										      >	|                                   |     CCMB-2017-04-003, Version 3.1 |
 										      >	|                                   |     Revision 5, April 2017.       |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| [\[ND-SD\]]{#bibNDSD}             | [Supporting Document - Mandatory  |
 										      >	|                                   | Technical Document - Evaluation   |
 										      >	|                                   | Activities for Network Device     |
-										      >	|                                   | cPP](https://www.niap-ccevs.org/P |
-										      >	|                                   | rofile/Info.cfm?PPID=447&id=447/) |
-										      >	|                                   | ,                                 |
+										      >	|                                   | c                                 |
+										      >	|                                   | PP](https://www.niap-ccevs.org/Pr |
+										      >	|                                   | ofile/Info.cfm?PPID=447&id=447/), |
 										      >	|                                   | Version 2.2, December 2019        |
 										      >	+-----------------------------------+-----------------------------------+
 										      >	| [\[NDcPP\]]{#bibNDcPP}            | [collaborative Protection Profile |
 										      >	|                                   | for Network                       |
-										      >	|                                   | Devices](https://www.niap-ccevs.o |
-										      >	|                                   | rg/Profile/Info.cfm?PPID=447&id=4 |
-										      >	|                                   | 47/),                             |
+										      >	|                                   | Devic                             |
+										      >	|                                   | es](https://www.niap-ccevs.org/Pr |
+										      >	|                                   | ofile/Info.cfm?PPID=447&id=447/), |
 										      >	|                                   | Version 2.2E, March 2020          |
 										      >	+-----------------------------------+-----------------------------------+

@@ -1,0 +1,6 @@
+/home/runner/work/vpngw/vpngw/input/vpngw.xml:12:41: error: attribute "target-product" not allowed here; expected attribute "name" or "target-products"
+/home/runner/work/vpngw/vpngw/input/vpngw.xml:12:41: error: element "Module" missing required attribute "target-products"
+/home/runner/work/vpngw/vpngw/input/vpngw.xml:1503:68: error: attribute "id" not allowed here; expected attribute "sel-by-sfr"
+/home/runner/work/vpngw/vpngw/input/vpngw.xml:2615:61: error: attribute "id" not allowed here; expected attribute "sel-by-sfr"
+/home/runner/work/vpngw/vpngw/input/vpngw.xml:2685:62: error: attribute "id" not allowed here; expected attribute "sel-by-sfr"
+/home/runner/work/vpngw/vpngw/input/vpngw.xml:3401:63: error: attribute "id" not allowed here; expected attribute "sel-by-sfr"

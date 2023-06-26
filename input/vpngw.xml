@@ -5,7 +5,7 @@
 	type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 
 <Module boilerplate="yes" 
-	target-products="VPN Gateways" 
+	target-product="VPN Gateways" 
 	name="Virtual Private Network (VPN) Gateways" 
 	xmlns="https://niap-ccevs.org/cc/v1" 
 	xmlns:sec="https://niap-ccevs.org/cc/v1/section"
@@ -15,12 +15,20 @@
     <ReferenceTable>
       <PPVersion>1.2</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2022-03-31</PPPubDate>
+      <PPPubDate>2023-06-30</PPPubDate>
       <Keywords>VPN, VPN Gateway, VPN GW, IPsec</Keywords>
     </ReferenceTable>
   </PPReference>
   
   <RevisionHistory>
+    <entry>
+      <version>1.3</version>
+      <date>2023-06-30</date>
+      <subject>Incorporation of NIAP Technical Decisions, TC feedback</subject>
+      
+  <!-- TDs 0656, 0657, 0683, 0723 -->
+      
+    </entry>
     <entry>
       <version>1.2</version>
       <date>2022-03-31</date>
@@ -546,15 +554,14 @@ expected to enforce.<h:br/>
             Addressed by: FCS_IPSEC_EXT.1 (refined from Base-PP), FIA_X509_EXT.1/Rev (from Base-PP),
             FIA_X509_EXT.2 (refined from Base-PP), FIA_X509_EXT.3 (from Base-PP), FTP_ITC.1/VPN,
             FPF_MFA_EXT.1 (optional), FTA_SSL.3/VPN (optional), FTA_TSE.1 (optional), FCS_EAP_EXT.1 (selection-based), FIA_HOTP_EXT.1 (selection-based), FIA_PSK_EXT.1 (selection-based),
-            FIA_PSK_EXT.2 (selection-based), FIA_PSK_EXT.3 (selection-based), FIA_PSK_EXT.4 (selection-based), FIA_PSK_EXT.5 (selection-based),
-            FIA_TOTP_EXT.1 (selection-based)
+            FIA_PSK_EXT.2 (selection-based), FIA_PSK_EXT.3 (selection-based), FIA_TOTP_EXT.1 (selection-based)
 		  </description>
 		  
           <addressed-by>FCS_IPSEC_EXT.1 (refined from Base-PP)
           </addressed-by>
-          <rationale>This SFR supports the objective by requiring the TOE
-            to implement the IPsec protocol as a method of
-            authenticating external entities.</rationale>
+          <rationale>This SFR supports the objective by requiring the TOE's
+            implementation of IPsec to include requirements for how the VPN client is authenticated.
+            </rationale>
           <addressed-by>FIA_X509_EXT.1/Rev
             (from Base-PP)</addressed-by>
           <rationale>This SFR supports the objective by requiring the TOE
@@ -600,24 +607,19 @@ expected to enforce.<h:br/>
           <rationale>This SFR supports the objective by optionally enforcing a multifactor authentication requirement on an IPsec connection.</rationale>
           
           <addressed-by>FCS_EAP_EXT.1 (selection-based)</addressed-by>
-          <rationale>This SFR supports the objective by optionally implementing EAP-TLS or EAP-TTLS as a mechanism for authentication.</rationale>
+          <rationale>This SFR supports the objective by optionally using an exteral authentication server to facilitate EAP-TLS or EAP-TTLS.</rationale>
           
           <addressed-by>FIA_HOTP_EXT.1 (selection-based)</addressed-by>
           <rationale>This SFR supports the objective by optionally defining the implementation of HOTP as an authentication mechanism.</rationale>
           
           <addressed-by>FIA_PSK_EXT.1 (selection-based)</addressed-by>
           <rationale>This SFR supports the objective by optionally
-            requiring support for pre-shared keys as an alternate authentication method for IPsec.</rationale>
+            supporting the use of pre-shared keys.</rationale>
           <addressed-by>FIA_PSK_EXT.2 (selection-based)</addressed-by>
-          <rationale>This SFR supports the objective by optionally specifying whether the TOE generates its own pre-shared keys used for authentication or accepts them from an external source.</rationale>
+          <rationale>This SFR supports the objective by optionally specifying whether the TOE generates 
+            its own pre-shared keys or accepts them from an external source.</rationale>
           <addressed-by>FIA_PSK_EXT.3 (selection-based)</addressed-by>
           <rationale>This SFR supports the objective by optionally defining the composition and use of password-based pre-shared keys used for authentication.</rationale>
-          <addressed-by>FIA_PSK_EXT.4 (selection-based)</addressed-by>
-          <rationale>This SFR supports the objective by optionally
-            defining HOTP as an authentication mechanism.</rationale>
-          <addressed-by>FIA_PSK_EXT.5 (selection-based)</addressed-by>
-          <rationale>This SFR supports the objective by optionally
-            defining TOTP as an authentication mechanism.</rationale>
           
           <addressed-by>FIA_TOTP_EXT.1 (selection-based)</addressed-by>
           <rationale>This SFR supports the objective by optionally defining the implementation of TOTP as an authentication mechanism.</rationale>
@@ -632,7 +634,7 @@ expected to enforce.<h:br/>
             confidentiality and allow for detection and modification of data that is transmitted outside of the TOE.
             <h:br/>
             Addressed by: FCS_COP.1/DataEncryption (refined from Base-PP), FCS_IPSEC_EXT.1 (refined from
-            Base-PP), FCS_CKM.1/IKE, FCS_EAP_EXT.1 (selection-based)
+            Base-PP), FCS_CKM.1/IKE, FCS_EAP_EXT.1 (selection-based), FIA_PSK_EXT.1 (selection-based), FIA_PSK_EXT.2 (selection-based)
           </description>
           
           <addressed-by>FCS_COP.1/DataEncryption (refined from Base-PP)
@@ -655,7 +657,15 @@ expected to enforce.<h:br/>
           </rationale>
           
           <addressed-by>FCS_EAP_EXT.1 (selection-based)</addressed-by>
-          <rationale>This SFR supports the objective by optionally defining the TOE's implementation of EAP-TLS or EAP-TTLS.</rationale>
+          <rationale>This SFR supports the objective by optionally using an MSK computed by an external authentication server
+            via the EAP-TLS or EAP-TTLS method.</rationale>
+          
+          <addressed-by>FIA_PSK_EXT.1 (selection-based)</addressed-by>
+          <rationale>This SFR supports the objective by supporting a mechanism by which PSKs can be used to fortify encryption.</rationale>
+          
+          <addressed-by>FIA_PSK_EXT.2 (selection-based)</addressed-by>
+          <rationale>This SFR supports the objective by optionally specifying whether 
+            the TOE generates its own pre-shared keys or accepts them from an external source..</rationale>
         </SO>
         
         
@@ -825,11 +835,9 @@ expected to enforce.<h:br/>
     written. 
     
     <!-- 5.1 NDcPP Security Functional Requirements Direction -->
-    <base-pp id="bpp-nd">
-
-<!-- Note: How do we handle it when the Base-PP (in this case NDcPP) isn't on Github? -->
-		<raw-url>https://github.com/commoncriteria/ndcpp/raw/master/input/ndcpp.xml</raw-url>
-		<url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=442&amp;id=442</url>
+      <base-pp id="ND" version="2.2e" name="Network Device" product="Network Device" short="ND" plural="Network Devices">
+        <url><![CDATA[https://www.niap-ccevs.org/profile/Info.cfm?PPID=447&id=447]]></url>
+        <cPP/>
 
 		<sec-func-req-dir> 
 			In a PP-Configuration that includes the NDcPP, the VPN gateway is expected to rely on some of the
@@ -987,17 +995,16 @@ expected to enforce.<h:br/>
                   <selectable>IKEv2</selectable> 
                 </selectables> protocol uses the cryptographic algorithms <selectables>
                   <selectable>AES-CBC-128</selectable>
-                  <selectable>AES-CBC-192</selectable>
                   <selectable>AES-CBC-256 (specified in RFC 3602)</selectable>
                   <selectable>AES-GCM-128</selectable>
-                  <selectable>AES-CBC-192</selectable>
                   <selectable>AES-CBC-256 (specified in RFC 5282)</selectable>
                 </selectables>.
               </title>
               <!-- Note: the RFCs referenced in the app note below are normally referenced but only in the third and sixth selections above, which cretes an awkward situation if those specific selections aren't made. Is it ok
               just to reference the RFCs in the app note (the alternatives would be refactoring the selection entirely or refining the RFCs into each individual selection item, neither of which seem like a better option. -->
               <note role="application">
-                This element is unchanged from its definition in the Base-PP. AES-CBC implementation for IPsec is specified in RFC 3602. AES-GCM implementation for IPsec is specified in RFC 5282.
+                This element is changed from its definition in the Base-PP to remove AES-192, which is not recommended. 
+                AES-CBC implementation for IPsec is specified in RFC 3602. AES-GCM implementation for IPsec is specified in RFC 5282.
               </note>
             </f-element>
             <f-element id="nd-fcs-ipsec-ext-1e7">
@@ -1097,16 +1104,20 @@ expected to enforce.<h:br/>
               </note>
             </f-element>
             <f-element id="nd-fcs-ipsec-ext-1e13">
-              <title>The TSF shall ensure that all IKE protocols perform peer authentication using  
+              <title>The TSF shall ensure that 
+                <selectables>
+                  <selectable>IKEv1</selectable>
+                  <selectable>IKEv2</selectable></selectables>
+                protocols perform peer authentication using  
                 <selectables>
                   <selectable>RSA</selectable>
                   <selectable>ECDSA</selectable>
                 </selectables> 
                 that use X.509v3 certificates that conform to RFC 4945 and 
                 <selectables>
-                  <selectable id="sel-ipsec-e13-psk">Pre-shared keys</selectable>
-                  <selectable id="sel-ipsec-e13-pskeap"><h:b>Pre-shared Keys transmitted via EAP-TLS</h:b></selectable>
-                  <selectable id="sel-ipsec-e13-pskeapma"><h:b>Pre-shared Keys transmitted via EAP-TTLS with mutual authentication</h:b></selectable>
+                  <selectable id="sel-ipsec-e13-psk">Pre-shared keys that conform to RFC 8784</selectable>
+                  <selectable id="sel-ipsec-e13-eapttls"><h:b>Pre-shared Keys transmitted via EAP-TTLS</h:b></selectable>
+                  <selectable id="sel-ipsec-e13-eaptls"><h:b>EAP-TLS</h:b></selectable>
                   <selectable exclusive="yes">no other method</selectable>
                 </selectables>.
               </title>
@@ -1116,20 +1127,21 @@ expected to enforce.<h:br/>
                 the ST author to reflect what is implemented. The ST author also ensures that
                 appropriate FCS requirements reflecting the algorithms used (and key
                 generation capabilities, if provided) are listed to support those methods. Note
-                that the TSS will elaborate on the way in which these algorithms are to be used 
-                (for example, 2409 specifies three authentication methods using public keys;
-                each one supported will be described in the TSS).<h:br/>
-                If any selection with “pre-shared keys” is selected, the selection-based requirement FIA_PSK_EXT.1
-                must be claimed. <h:br/> 
-                When pre-shared keys are supported for IKEv2, at least one of ‘Pre-shared Keys transmitted via EAP-TLS’ or  
-                ‘Pre-shared Keys transmitted via EAP-TTLS’ is selected to indicate client verification using certificates 
-                in a mutually authenticated TLS handshake, and verification of provided PSK protected under the TLS channel. The selection-based SFR FCS_EAP_EXT.1
-                must also be claimed in this situation.
+                that the TSS will elaborate on the way in which these algorithms are to be used.<h:br/>
+                If “IKEv1” is selected, “no other method” must be chosen in the third selection.
                 <h:br/>
-                When Pre-shared Keys are supported for IKEv1, the first selection is claimed to indicate one of the mechanisms 
-                for using PSK described in the RFC. 
-                <h:b/> It is acceptable for different use cases to leverage different selections, if this is the case it must be identified.
-                
+                If a selection with “EAP-TLS” or “EAP-TTLS” is chosen, the selection-based requirement FCS_EAP_EXT.1 must be claimed. 
+                When an EAP method is used, verification occurs via an external authentication server. 
+                Though EAP-TTLS involves PSKs, FIA_PSK_EXT.1 is not claimed because PSK requirements for EAP-TTLS are addressed instead via 
+                the Authentication Server PP. EAP-based authentication is not supported for IKEv1. 
+                <h:br/>
+                If “pre-shared keys that conform to RFC 8784” is chosen, the selection-based requirement FIA_PSK_EXT.1 must be claimed. 
+                Since certificates are required for authentication, IKEv1 does not support PSKs, as 
+                PSK-based authentication and certificate-based authentication are mutually exclusive in IKEv1. 
+                Note that IKEv1 will be removed in a future version of this document. 
+                <h:br/>
+                Multifactor support can be achieved via traffic filtering in accordance with FPF_MFA_EXT.1. 
+                <h:br/>
               </note>
             </f-element>
             <f-element id="nd-fcs-ipsec-ext-1e14">
@@ -1488,7 +1500,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
 -->
 	    <!-- This section does not appear in the manually generated v2.3 doc for some reason -->
  	    <section id="ss-audit-table" title="Auditable Events for Mandatory SFRs">
-        	<audit-table table="mandatory">
+ 	      <audit-table table="mandatory" id="mandatory-audit-events">
   	     		<h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-mandatory">: Auditable Events for Mandatory SFRs</ctr></h:b>
 	  	</audit-table>
 	    </section>
@@ -1616,7 +1628,8 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 <selectable>FIPS PUB 186-4, “Digital Signature Standard (DSS)”, Appendix B.3 for RSA
                   schemes</selectable>
                 <selectable>FIPS PUB 186-4, “Digital Signature Standard (DSS)”, Appendix B.4 for ECDSA
-                  schemes and implementing “NIST curves” P-256, P-384 and <selectables>
+                  schemes and implementing “NIST curves” P-384 and <selectables>
+                    <selectable>P-256</selectable>
                     <selectable>P-521</selectable>
                     <selectable exclusive="yes">no other curves</selectable></selectables></selectable>
               </selectables> and <selectables linebreak="yes">
@@ -1839,7 +1852,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                   <h:li>destination address</h:li>
                   <h:li>protocol</h:li>
                 </h:ul>
-                <h:li>IPv6 (RFC 2460)</h:li><h:ul>
+                <h:li>IPv6 (RFC 8200)</h:li><h:ul>
                 <h:li>source address</h:li>
                 <h:li>destination address</h:li>
                 <h:li>next header (protocol)</h:li>
@@ -1929,7 +1942,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                     <h:li>destination address</h:li>
                     <h:li>protocol</h:li>
                   </h:ul>
-                  <h:li>IPv6 (RFC 2460)</h:li><h:ul>
+                  <h:li>IPv6 (RFC 8200)</h:li><h:ul>
                     <h:li>source address</h:li>
                     <h:li>destination address</h:li>
                     <h:li>next header (protocol)</h:li>
@@ -1961,7 +1974,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                   <h:li>destination address</h:li>
                   <h:li>protocol</h:li>
                 </h:ul>
-                <h:li>IPv6 (RFC 2460)</h:li><h:ul>
+                <h:li>IPv6 (RFC 8200)</h:li><h:ul>
                   <h:li>source address</h:li>
                   <h:li>destination address</h:li>
                   <h:li>next header (protocol)</h:li>
@@ -2599,7 +2612,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
     
     <opt-sfrs>
       <section id="sop-audit-table" title="Auditable Events for Strictly Optional SFRs">
-        <audit-table table="optional">
+        <audit-table table="optional" id="opt-audit-events">
           <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-optional">: Auditable Events for Strictly Optional SFRs</ctr></h:b>
         </audit-table>
       </section>
@@ -2619,11 +2632,18 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </audit>
           <f-element id="fpf-mfa-ext-1e1">
             <title>
-              The TSF shall not forward packets to the internal network until the IKE/IPsec tunnel has been established, 
-              except those necessary to ensure that the client is authenticated according to FIA_PSK_EXT.1.</title>
-            
+              The TSF shall not forward packets to the internal network until the IKE tunnel has been established, 
+              except those necessary to verify additional authentication factors of the client.
+            </title>
+          </f-element>
+          <f-element id="fpf-mfa-ext-1e2">
+              <title>
+                The TSF shall <selectables>
+                  <selectable id="sel-tsf-mfa">verify</selectable>
+                  <selectable>verify via an external authentication server</selectable></selectables> additional authentication factors of the client.
+              </title> 
             <note role="application">
-              If FPF_MFA_EXT.1 is included FIA_PSK_EXT.1 must also be included.
+              If "verify" is selected, FIA_PSK_EXT.1 must be claimed.
               
               
             </note>
@@ -2662,7 +2682,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	    </section> -->
       
       <section id="sb-audit-table" title="Auditable Events for Selection-based SFRs">
-        <audit-table table="sel-based">
+        <audit-table table="sel-based" id="sel-audit-events">
           <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-sel-based">: Auditable Events for Selection-based SFRs</ctr></h:b>
         </audit-table>
       </section>
@@ -2676,7 +2696,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
         
         <!-- FCS_EAP_EXT.1 EAP -->
         <f-component cc-id="fcs_eap_ext.1" id="fcs-eap-ext-1" name="EAP-TLS">
-          <depends on-sel="sel-ipsec-e13-psk" also="sel-ipsec-e13-pskeap" and="sel-ipsec-e13-pskeapma"/>
+          <depends on-sel="sel-ipsec-e13-psk" also="sel-ipsec-e13-eapttls" and="sel-ipsec-e13-eaptls"/>
 	  <!-- QQQQ: See note in vpnclient -->          
 	  <consistency-rationale>This SFR defines the use of EAP-TLS; the Base-PP already defines requirements for TLS so potential support for EAP-TLS is consistent with functionality that the Base-PP already expects the TOE may have.</consistency-rationale>
           <comp-lev>defines the use of EAP-TLS.</comp-lev>
@@ -2688,55 +2708,30 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             <title>
               The TSF shall implement
               <selectables>
-                <selectable>EAP-TLS protocol as specified in RFC 5216</selectable>
-                <selectable>EAP-TTLS as specified in RFC 5881</selectable>
+                <selectable>EAP-TLS protocol as specified in RFC 5216 and updated by RFC 8996</selectable>
+                <selectable>EAP-TTLS as specified in RFC 5281</selectable>
               </selectables>
-              as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with  
-		    <selectables>
-                	<selectable>FCS_TLSS_EXT.2</selectable>
-			<selectable>FCS_DTLSS_EXT.2</selectable>
-		</selectables>
-		     from the Base-PP.
+              over a protected channel per FTP_ITC.1 <h:b>from the Base-PP</h:b> with an authentication server.
             </title>
+            <ext-comp-def-title>
+              <title>
+                The TSF shall implement
+                <selectables>
+                  <selectable>EAP-TLS protocol as specified in RFC 5216 and updated by RFC 8996</selectable>
+                  <selectable>EAP-TTLS as specified in RFC 5281</selectable>
+                </selectables>
+                over a protected channel per FTP_ITC.1 with an authentication server.
+              </title>
+            </ext-comp-def-title>
           </f-element>
           <f-element id="fcs-eap-ext-1e2">
             <title>
-              The TSF shall generate random values used in the
-              <selectables>
-                <selectable>EAP-TLS</selectable>
-                <selectable>EAP-DTLS</selectable>
-              </selectables>
-              exchange using the RBG specified in FCS_RBG_EXT.1.
+              The TSF shall implement EAP-TLS or EAP-TTLS with the TSF as the EAP client, 
+              an authentication server as the EAP server, and the VPN peer as the supplicant. 
             </title>
           </f-element>
+        
           <f-element id="fcs-eap-ext-1e3">
-            <title>
-              The TSF shall support peer authentication using certificates and
-              <selectables>
-                <selectable>PSK</selectable>
-                <selectable>HOTP</selectable>
-                <selectable>TOTP</selectable>
-                <selectable><assignable>other Authentication-verification protocols</assignable></selectable>
-                <selectable exclusive="yes">no other authentication</selectable>
-              </selectables>
-              as updated by RFC 8996 with TLS implemented using mutual authentication in accordance with 
-		    <selectables>
-                	<selectable>FCS_TLSS_EXT.2</selectable>
-			<selectable>FCS_DTLSS_EXT.2</selectable>
-		</selectables>
-		     from the Base-PP.
-            </title>
-            
-          </f-element>
-          
-          <f-element id="fcs-eap-ext-1e4">
-            <title>
-              The TSF shall not forward an EAP-success response if the client certificate is not valid according to FIA_X509_EXT.1.
-            </title>
-          </f-element>
-          
-          
-          <f-element id="fcs-eap-ext-1e5">
             <title>
               The TSF shall use the MSK from the 
               <selectables>
@@ -2744,6 +2739,12 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 <selectable>EAP-TTLS</selectable>
               </selectables> response as the IKEv2 shared secret in the authentication payload.
             </title>
+            <note role="application">
+              This SFR covers the EAP requirements for a client connection to an authentication server. 
+              In particular, authentication server functionality implemented in the same device, 
+              rather than in an external device, is covered under the Authentication Server PP-Module, and is out of scope for this PP-Module. 
+              The MSK derived from EAP is distinct from the PSK. The MSK is substituted in for the IKEv2 shared secret in the AUTH computations. 
+            </note>
             <aactivity>
               <TSS>The evaluator shall verify that the TSS describes the use of EAP options for each of the selected peer authentication 
                 mechanisms, that TLS with mutual authentication is used, that the random values are from an appropriate source, 
@@ -2754,21 +2755,28 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 <h:b/>For each supported EAP method claimed in FCS_EAP_EXT.1.1 and for each authentication method claimed in 
                 FCS_EAP_EXT.1.3, the evaluator shall perform the following tests:
                 <testlist>
-                  <test>The evaluator shall follow AGD guidance to configure the TSF to use the EAP method claimed. 
-                    The evaluator shall follow AGD guidance to configure the TSF to use the authentication method claimed and, 
-                    for EAP-TTLS, register a client with appropriate key material required for the authentication method. 
-                    The evaluator shall establish a VPN session using a test client with a valid certificate and, for EAP-TTLS, 
-                    configured to provide a correct value for the configured authenticator. The evaluator shall observe that the 
-                    VPN session is successful.</test>
-                  <test>(conditional for EAP-TTLS support): The evaluator shall cause the test client with a valid certificate to send 
-                    an invalid authenticator for the claimed authentication method:
-                    <h:b/>For HOTP, replay the HOTP value sent previously, 
-                    <h:b/>For TOTP or PSK, modify a byte of the properly constructed value and observe that the TSF aborts the session.</test>
-                  <test>The evaluator shall establish a new, valid certificate for a test client using an identifier not 
-                    corresponding to a registered user. For EAP-TTLS, the evaluator shall cause the test client using this 
-                    certificate to send a correct authenticator value for the registered user. The evaluator shall initiate a 
-                    VPN session from the test client to the TSF and observe that the TSF aborts the session.</test>
-                  <test>The evaluator shall follow AGD guidance to configure the TSF to use a supported EAP method and register the 
+                  <test>The evaluator shall follow the operational guidance to configure the TSF to use the EAP method claimed. 
+                    The evaluator shall follow the operational guidance to configure the TSF to use the authentication method claimed and, 
+                    for EAP-TTLS, establish a trusted channel with an authentication server that requests the method, and register the peer as a TLS
+                    client with appropriate key material required for the authentication method.
+                    
+                    The evaluator shall establish a VPN session using a test peer with a valid certificate and, 
+                    for EAP-TTLS, configured to provide a correct value for the configured authenticator. 
+                    The evaluator shall observe that the TSF sends EAP messages to the peer and 
+                    authentication server to transfer the TLS handshake messages, and after the TSF receives the EAP-success message, 
+                    that the VPN session between the peer and TSF is successfully established.</test>
+                  <test>
+                    The evaluator shall follow the operational guidance to configure the TSF to use a supported EAP method, 
+                    establish a trusted channel with an authentication server that requests the method and register the 
+                    peer as a TLS client with key material required for a supported authentication method. 
+                    The evaluator shall cause the test client to respond to an IKEv2 exchange with EAP-request, 
+                    but to compute the shared secret after a successful EAP exchange using the non-EAP method. 
+                    The evaluator shall initiate a VPN session between the test client and the TSF 
+                    and observe that the TSF aborts the session. 
+                    
+                    
+                    
+                    The evaluator shall follow the operational guidance to configure the TSF to use a supported EAP method and register the 
                     user with key material required for a supported authentication method. The evaluator shall configure a test 
                     client to respond to an IKE v2 exchange with EAP-request, providing valid phase 1 handshake and valid TLS 
                     handshake, but computing the phase 2 shared key using standard (non-EAP) methods. The evaluator shall initiate 
@@ -2786,9 +2794,9 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
       
       
       <section title="Identification and Authentication (FIA)" id="sel-fia">
-        The TOE may support pre-shared keys for use in the IPsec protocol, and may use pre-shared keys in other
-        protocols as well. PSK in the context of this document refers to generated values, memorized values subject 
-        to conditioning, one-time passwords, and combinations of the above as described in FIA_PSK_EXT.1.2.
+        The TOE may support pre-shared keys for use in the IPsec protocol, and may use pre-shared keys in other protocols as well. 
+        PSK in the context of this document refers to generated values, 
+        memorized values subject to conditioning, one-time passwords, and combinations as described in FIA_PSK_EXT.1.2.
         
         
         <ext-comp-def title="HMAC-Based One-Time Password Pre-Shared Keys" fam-id="FIA_HOTP_EXT">
@@ -2801,7 +2809,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <management>No specific management functions are identified.</management>
           <audit>No specific audit functions are identified.
           </audit>
-          <dependencies>FIA_PSK_EXT.4 HMAC-Based One-Time Password Pre-shared Keys Support</dependencies>
+          <dependencies>FCS_COP.1 Cryptographic Operation</dependencies>
           <f-element id="fia-hotp-ext-1e1">
             <title>
               The TSF shall support HMAC-Based One-Time Password (HOTP) authentication in accordance with RFC 4226 
@@ -2901,6 +2909,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             </note>
             <aactivity>
               <TSS>
+                The evaluator shall verify the TSS describes how the HOTP is input into the client and how that value is sent to the server. 
                 <h:br/>The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
                 <h:br/>The evaluator shall confirm the TSS describes how the HOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1.
                 <h:br/>The evaluator shall confirm the TSS describes how the HOTP seed is protected and ensure it aligns with the storage requirements of the Base-PP. 
@@ -2911,12 +2920,19 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 <h:br/>The evaluator shall confirm the TSS describes how the TOE handles resynchronization and how it rejects attempts outside of the look-ahead window selected in FIA_TOTP_EXT.1.7.
                 <h:br/>The evaluator shall confirm the TSS describes how the TOE counter is incremented after each successful authentication.<h:br/>
               </TSS>
-              <Guidance>The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the 
+              <Guidance>
+                The evaluator shall verify the operational guidance contains any configuration necessary to enable HOTP.<h:br/> 
+                The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the 
                 FIA_HOTP_EXT.1 requirements.<h:br/>
               </Guidance>
               <Tests>
                 The evaluator shall configure the TOE to use a supported HOTP factor then:
                 <testlist>
+                  <test>Attempt to establish a connection using that factor. 
+                    The evaluator shall verify the client prompts the user for the HOTP before initiating the connection. 
+                    The evaluator shall verify the server validates the HOTP or receives confirmation from an authentication server 
+                    before establishing the channel. 
+                  </test>
                   <test>Attempt to establish a connection using a factor from a different client. The test passes if the client fails to connect.
                   </test><test>Attempt multiple connections outside the limits set in FIA_HOTP_EXT.1.6 and verify the remediation is triggered.  The test passes if remediation is triggered as defined in the selections and assignments.
                   </test><test>Attempt to use an HOTP that is outside of the value allowed for resynchronization. The test passes if the client fails to connect.
@@ -2937,7 +2953,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
         
         <!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
         <f-component cc-id="fia_psk_ext.1" id="fia-psk-ext-1" name="Pre-Shared Key Composition">
-          <depends on-sel="sel-ipsec-e13-psk" also="sel-ipsec-e13-pskeap" and="sel-ipsec-e13-pskeapma"/>
+          <depends on-sel="sel-ipsec-e13-psk" also="sel-tsf-mfa"/>
           <consistency-rationale>This SFR defines the use of pre-shared keys, which is behavior that only relates to the establishment of IPsec connections.</consistency-rationale>
           <comp-lev>defines the use and composition of pre-shared keys used for IPsec.</comp-lev>
           <management>No specific management functions are identified.</management>
@@ -2948,10 +2964,13 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             <title>
               The TSF shall be able to use pre-shared keys for IPsec and 
               <selectables>
-                <selectable><assignable>other protocols that use pre-shared keys</assignable></selectable>
-                <selectable exclusive="yes">no other protocols</selectable>
-              </selectables>.
+                <selectable>IKEv2</selectable>
+                <selectable>multifactor authentication filtering</selectable></selectables>.
             </title>
+            <note role="application">
+              If “IKEv2” is selected, then the corresponding IKEv2 selection must be made in FCS_IPSEC_EXT.1.13. 
+              If “multifactor authentication filtering” is selected, then “verify” should be selected in FPF_MFA_EXT.1.2. 
+            </note>
           </f-element>
           <f-element id="fia-psk-ext-1e2">
             <title>
@@ -2981,24 +3000,24 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               </selectables> keys.
             </title></ext-comp-def-title>
             <note role="application">
-              <h:br/>FIA_PSK_EXT.1 includes the options for MFA solutions.
+              This requirement is included if “pre-shared keys that conform to RFC 8784” is selected in FCS_IPSEC_EXT.1.13, 
+              or if “verify” is selected in FPF_MFA_EXT.1.2. If these selections are made in both FCS_IPSEC_EXT.1.13 and FPF_MFA_EXT.1.2, 
+              the TSF must satisfy the appropriate FIA_PSK_EXT.1 selections for each. 
 		    
               <h:br/>If any selection including "generated bit-based" is chosen, then FIA_PSK_EXT.2 must be included. 
+              If “pre-shared keys that conform to RFC 8784” is selected in FCS_IPSEC_EXT.1.13, a generated, bit-based PSK must be used. 
               
               <h:br/>If any selection including Password-based keys is chosen, then FIA_PSK_EXT.3 must be included. 
               
-              <h:br/>If any selection including HMAC-based one-time password keys is chosen, then FIA_PSK_EXT.4 must be included. 
+              <h:br/>If any selection including HMAC-based one-time password keys is chosen, then FIA_HOTP_EXT.1 must be included. 
               
-              <h:br/>If any selection including time-based one-time password is chosen, then FIA_PSK_EXT.5 must be included. 
-   
-		<h:br/>This requirement is selection dependent on FCS_IPSEC_EXT.1.13 or inclusion of FPF_MFA_EXT.1.
-		    
+              <h:br/>If any selection including time-based one-time password is chosen, then FIA_TOTP_EXT.1 must be included. 
+
 		    <h:br/><h:br/>The first four selections are for single factor authentication options, the last four selections are for multifactor authentication options.
             </note>
             <aactivity>
-              <TSS>The evaluator shall examine the TSS to ensure that it identifies all protocols that allow  pre-shared keys. 
-                For each protocol identified by the requirement, the evaluator shall confirm that the TSS states which pre-shared key 
-                selections are supported. <h:br/></TSS>
+              <TSS>The evaluator shall confirm that the TSS states which pre-shared key selections are supported for IKEv2 
+                per FCS_IPSEC_EXT.1.13 and FPF_MFA_EXT.1.1.  <h:br/></TSS>
               
               <Guidance>The evaluator shall examine the operational guidance to determine that it provides guidance to 
                 administrators on how to configure all selected pre-shared key options if any configuration is required.<h:br/>
@@ -3200,116 +3219,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <audit-event/>
         </f-component>
         
-        <f-component cc-id="fia_psk_ext.4" id="fia-psk-ext-4" name="HMAC-Based One-Time Password Pre-shared Keys Support">
-          <depends on-sel="pskhotp"/>
-	  <depends on-sel="pskgenhotp"/>
-	  <depends on-sel="pskpwhotp"/>
-          <consistency-rationale>This SFR relates to use of pre-shared keys, which is behavior that only applies to the establishment of IPsec connections.</consistency-rationale>
-          <comp-lev>defines the use and composition of HOTP pre-shared keys used for IPsec.</comp-lev>
-          <management>No specific management functions are identified.</management>
-          <audit>No specific audit functions are identified.
-          </audit>
-          <dependencies>FIA_PSK_EXT.1 Pre-Shared Key Composition</dependencies>
-          <f-element id="fia-psk-ext-4e1">
-            <title>
-              The TSF shall accept and send an HOTP while initiating a VPN connection.
-            </title>
-          </f-element>
-          <f-element id="fia-psk-ext-4e2">
-            <title>
-              The TSF shall <selectables onlyone="yes">
-                <selectable id="sel-verify-hotp">verify the HOTP</selectable>
-                <selectable>verify the HOTP via an external authentication server</selectable>
-              </selectables> before establishing an incoming connection.
-            </title>
-          <ext-comp-def-title><title>
-              The TSF shall <selectables onlyone="yes">
-                <selectable>verify the HOTP</selectable>
-                <selectable>verify the HOTP via an external authentication server</selectable>
-              </selectables> before establishing an incoming connection.
-            </title></ext-comp-def-title>
-            
-            <note role="application">
-              If "verify the HOTP" is selected, then FIA_HOTP_EXT.1 must be included.
-              
-              <h:br/>This requirement is selection dependent on FIA_PSK_EXT.1
-            </note>
-            <aactivity>
-              <TSS>The evaluator shall verify the TSS describes how the HOTP is input into the client and how that value is sent to the server.
-                <h:br/>The evaluator shall verify the TSS describes how the HOTP is accepted from an incoming connection and how that value is verified, either by the TOE or by an external authentication server.<h:br/>
-              </TSS>
-              <Guidance>
-                The evaluator shall verify the operational guidance contains any configuration necessary to enable HOTP.<h:br/>
-              </Guidance>
-              <Tests>
-                <testlist>
-                  <test>
-                    The evaluator shall configure the TOE to use a supported HOTP factor, then attempt to establish a connection using that factor.  
-                    The evaluator shall verify the client prompts the user for the HOTP before initiating the connection.  
-                    The evaluator shall verify the server validates the HOTP or receives confirmation from an authentication server before establishing the channel.
-                  </test>
-                  
-                </testlist>
-              </Tests>
-            </aactivity>
-          </f-element>
-          <audit-event/>
-        </f-component>
-        <f-component cc-id="fia_psk_ext.5" id="fia-psk-ext-5" name="Time-Based One-Time Password Pre-shared Keys Support">
-          <depends on-sel="psktotp"/>
-	  <depends on-sel="pskgentotp"/>
-	  <depends on-sel="pskpwtotp"/>
-          <consistency-rationale>This SFR relates to use of pre-shared keys, which is behavior that only applies to the establishment of IPsec connections.</consistency-rationale>
-          <comp-lev>defines the use and composition of TOTP pre-shared keys used for IPsec.</comp-lev>
-          <management>No specific management functions are identified.</management>
-          <audit>No specific audit functions are identified.
-          </audit>
-          <dependencies>FIA_PSK_EXT.1 Pre-Shared Key Composition</dependencies>
-          <f-element id="fia-psk-ext-5e1">
-            <title>
-              The TSF shall accept and send a TOTP while initiating a VPN connection.
-            </title>
-          </f-element>
-          <f-element id="fia-psk-ext-5e2">
-            <title>
-              The TSF shall 
-              <selectables onlyone="yes">
-                <selectable id="sel-psk5-ext-e2-verify">verify the TOTP</selectable>
-                <selectable>verify the TOTP via an external authentication server</selectable>
-              </selectables> before establishing an incoming connection.
-            </title>
-            <ext-comp-def-title><title>
-              The TSF shall 
-              <selectables onlyone="yes">
-                <selectable>verify the TOTP</selectable>
-                <selectable>verify the TOTP via an external authentication server</selectable>
-              </selectables> before establishing an incoming connection.
-            </title></ext-comp-def-title>
-            
-            <note role="application">
-              If verify the TOTP is selected then FIA_TOTP_EXT.1 must be included.
-              
-              <h:br/>This requirement is dependent on FIA_PSK_EXT.1.
-            </note>
-            <aactivity>
-              <TSS>The evaluator shall verify the TSS describes how the TOTP is input into the client and how that value is sent to the server.
-                <h:br/>The evaluator shall verify the TSS describes how the TOTP is accepted from an incoming connection and how that value is verified, either by the TOE or by an external authentication server.<h:br/></TSS>
-              <Guidance>
-                The evaluator shall verify the operational guidance contains any configuration necessary to enable TOTP.<h:br/>
-              </Guidance>
-              <Tests>
-                <testlist>
-                  <test>
-                    The evaluator shall configure the TOE to use a supported TOTP factor, then attempt to establish a connection using that factor.  
-                    The evaluator shall verify the client prompts the user for the TOTP before initiating the connection.  
-                    The evaluator shall verify the server validates the TOTP or receives confirmation from an authentication server before establishing the channel.</test>
-                  
-                </testlist>
-              </Tests>
-            </aactivity>
-          </f-element>
-          <audit-event/>
-        </f-component>
+       
      
         
         <ext-comp-def title="Time-Based One-Time Password Pre-Shared Keys" fam-id="FIA_TOTP_EXT">
@@ -3322,7 +3232,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <management>No specific management functions are identified.</management>
           <audit>No specific audit functions are identified.
           </audit>
-          <dependencies>FIA_PSK_EXT.5 Time-Based One-Time Password Pre-shared Keys Support</dependencies>
+          <dependencies>FPT_STM.1 Reliable Time Stamps</dependencies>
           <f-element id="fia-totp-ext-1e1">
             <title>
               The TSF shall support Time-Based One-Time Password (TOTP) authentication in accordance with RFC 6238 
@@ -3435,7 +3345,8 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               </note>
             <aactivity>
               <TSS>
-                The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
+                The evaluator shall verify the TSS describes how the HOTP is input into the client and how that value is sent to the server. 
+                <h:br/>The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
                 <h:br/>The evaluator shall confirm the TSS describes how the TOTP seed is generated and ensure it aligns with FCS_RBG_EXT.1.
                 <h:br/>The evaluator shall confirm the TSS describes how the TOTP seed is protected and ensure it aligns with the storage requirements of the Base-PP. 
                 <h:br/>The evaluator shall confirm the TSS describes how a new TOTP seed is assigned for each client and how each client is uniquely identified.
@@ -3446,11 +3357,18 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 <h:br/>The evaluator shall confirm the TSS describes how the TOE handles drift and resynchronization and verify it matches the selections.  The evaluator shall ensure the TSS describes how time is kept and whether drift is calculated and recorded.  
                 If drift is recorded, the evaluator shall ensure that the TSS describes how this is done.<h:br/>
               </TSS>
-              <Guidance>The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the FIA_TOTP_EXT.1 requirements.<h:br/> 
+              <Guidance>
+                The evaluator shall verify the operational guidance contains any configuration necessary to enable TOTP. 
+                <h:br/>The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the FIA_TOTP_EXT.1 requirements.<h:br/> 
               </Guidance>
               <Tests>
                 The evaluator shall configure the TOE to use a supported TOTP factor then:
                 <testlist>
+                  <test>Attempt to establish a connection using that factor. 
+                    The evaluator shall verify the client prompts the user for the TOTP before initiating the connection. 
+                    The evaluator shall verify the server validates the TOTP or receives confirmation from an authentication server 
+                    before establishing the channel. 
+                  </test>
                   <test>Attempt to establish a connection using a factor from a different client. The test passes if the client fails to connect.
                   </test><test>Attempt multiple connections outside the limits set in FIA_TOTP_EXT.1.6 and verify the remediation is triggered.  The test passes if remediation is triggered as defined in the selections and assignments.
                   </test><test>Attempt to use a TOTP that is outside of the value allowed for resynchronization. The test passes if the client fails to connect.
@@ -3480,7 +3398,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	
 	<impl-dep-sfrs>
 	    <section id="sib-audit-table" title="Auditable Events for Implementation-Dependent SFRs">
-	      <audit-table table="feat-based">
+	      <audit-table table="feat-based" id="impl-audit-events">
 	        <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-implbased">: Auditable Events for Implementation-Dependent SFRs</ctr></h:b>
 	      </audit-table>
 	  </section>
@@ -3579,8 +3497,9 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	                the same VPN client, and observe that it is not successful.
 	              </test>
 	              <!-- Note minor wording change to standardize formatting for conditional testing -->
-	              <test>(conditional, the "other attributes" assignment has been selected and completed with one or more additional attributes) For any other attributes that are identified in FTA_TSE.1, the evaluator shall conduct a test
-	                similar to tests 1 through 3 to demonstrate the enforcement of each of these attributes. The evaluator
+	              <test>(conditional, the "other attributes" assignment has been selected and completed with one or more additional attributes) 
+	                For any other attributes that are identified in FTA_TSE.1, the evaluator shall conduct a test
+	                similar to the previous three tests to demonstrate the enforcement of each of these attributes. The evaluator
 	                shall demonstrate a successful remote client VPN connection, configure the TSF to deny that connection
 	                based on the attribute, and demonstrate that a subsequent connection attempt is unsuccessful.
 	              </test>

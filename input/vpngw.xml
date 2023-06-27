@@ -994,15 +994,16 @@ expected to enforce.<h:br/>
                   <selectable>IKEv2</selectable> 
                 </selectables> protocol uses the cryptographic algorithms <selectables>
                   <selectable>AES-CBC-128</selectable>
+                  <selectable>AES-CBC-192</selectable>
                   <selectable>AES-CBC-256 (specified in RFC 3602)</selectable>
                   <selectable>AES-GCM-128</selectable>
-                  <selectable>AES-CBC-256 (specified in RFC 5282)</selectable>
+                  <selectable>AES-GCM-256 (specified in RFC 5282)</selectable>
                 </selectables>.
               </title>
               <!-- Note: the RFCs referenced in the app note below are normally referenced but only in the third and sixth selections above, which cretes an awkward situation if those specific selections aren't made. Is it ok
               just to reference the RFCs in the app note (the alternatives would be refactoring the selection entirely or refining the RFCs into each individual selection item, neither of which seem like a better option. -->
               <note role="application">
-                This element is changed from its definition in the Base-PP to remove AES-192, which is not recommended. 
+                This element is changed from its definition in the Base-PP to remove AES-GCM-192, which is not recommended. 
                 AES-CBC implementation for IPsec is specified in RFC 3602. AES-GCM implementation for IPsec is specified in RFC 5282.
               </note>
             </f-element>
@@ -1634,7 +1635,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                     <selectable>P-521</selectable>
                     <selectable exclusive="yes">no other curves</selectable></selectables></selectable>
               </selectables> and <selectables linebreak="yes">
-                <selectable>FFC Schemes using “safe-prime” groups that meet the following: ‘NIST
+                <selectable>FFC Schemes using “safe-prime” groups that meet the following: NIST
                   Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
                   Establishment Schemes Using Discrete Logarithm Cryptography” and <selectables>
                     <selectable>RFC 3526</selectable>
@@ -2067,7 +2068,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                     ensure that the first rule is enforced in both cases by generating applicable packets and using packet
                     capture and logs for confirmation.</test>
                   <test>The evaluator shall repeat the procedure above, except that the two rules should be devised where
-                    one is a subset of the other (e.g., a specific address vs. a network segment). Again, the evaluator should
+                    one is a subset of the other (e.g., a specific address vs. a network segment). Again, the evaluator shall
                     test both orders to ensure that the first is enforced regardless of the specificity of the rule.
                   </test>
                 </testlist><h:br/>
@@ -2158,13 +2159,13 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                     port, a selected destination port, and a selected source and destination port combination. The evaluator
                     shall generate packets matching the configured source and destination UDP ports in order to ensure that 
                     they are permitted (i.e., by capturing the packets after passing through the TOE) and logged. Here the
-                    evaluator ensures that the UDP port 500 (IKE) is included in the set of tests.
+                    evaluator shall ensure that the UDP port 500 (IKE) is included in the set of tests.
                   </test>
                   <test>The evaluator shall configure the TOE to discard and log protocol 17 (UDP) using a selected source
                     port, a selected destination port, and a selected source and destination port combination. The evaluator
                     shall generate packets matching the configured source and destination UDP ports in order to ensure that
                     they are denied (i.e., by capturing no applicable packets passing through the TOE) and logged. Again, the
-                    evaluator ensures that UDP port 500 is included in the set of tests.</test>
+                    evaluator shall ensure that UDP port 500 is included in the set of tests.</test>
                 </testlist>
                 The following table identifies the RFC defined values for the protocol fields for IPv4 and IPv6 to be used in
                 configuring and otherwise testing packet filtering rule definition and enforcement:
@@ -2486,11 +2487,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </comp-lev>
           <management>No specific management functions are identified.</management>
           <!-- Note: these currently aren't listed in the auditable events table, should they be? -->
-          <audit>The following actions should be auditable if FAU_GEN Security audit data generation is included in the
-            PP/ST:<h:ul>
-              <h:li>Indication that TSF self-test was completed</h:li>
-              <h:li>Failure of self-test</h:li>
-            </h:ul>
+          <audit>There are no auditable events foreseen.
           </audit>
           <!-- Technically FPT_TST_EXT.3 is hierarchical to FPT_TST_EXT.1 but I don't believe the schema has a way to support hierarchical SFR defintiions, or does it?
           We could make an ext-comp-def version of FPT_TST_EXT.3.2 that's all bolded to show it being hierarchical but the ECD only shows management/audit/dependencies and it may be confusing to the reader if we 
@@ -2629,7 +2626,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <consistency-rationale>This SFR relates specifically to the handling of traffic that is used for the establishment of IPsec connections.</consistency-rationale>
           <comp-lev>defines the use and composition of multifactor authentication filtering.</comp-lev>
           <management>No specific management functions are identified.</management>
-          <audit>No specific audit functions are identified.
+          <audit>There are no auditable events foreseen.
           </audit>
           <f-element id="fpf-mfa-ext-1e1">
             <title>
@@ -2718,7 +2715,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	  <consistency-rationale>This SFR defines the use of EAP-TLS; the Base-PP already defines requirements for TLS so potential support for EAP-TLS is consistent with functionality that the Base-PP already expects the TOE may have.</consistency-rationale>
           <comp-lev>defines the use of EAP-TLS.</comp-lev>
           <management>No specific management functions are identified.</management>
-          <audit>No specific audit functions are identified.
+          <audit>There are no auditable events foreseen.
           </audit>
           <dependencies>FCS_IPSEC_EXT.1 IPsec Protocol</dependencies>
           <f-element id="fcs-eap-ext-1e1">
@@ -2732,9 +2729,9 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             </title>
             <ext-comp-def-title>
               <title>
-                The TSF shall implement
+                The TSF shall support
                 <selectables>
-                  <selectable>EAP-TLS protocol as specified in RFC 5216 and updated by RFC 8996</selectable>
+                  <selectable>EAP-TLS as specified in RFC 5216 and updated by RFC 8996</selectable>
                   <selectable>EAP-TTLS as specified in RFC 5281</selectable>
                 </selectables>
                 over a protected channel per FTP_ITC.1 with an authentication server.
@@ -2816,7 +2813,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <consistency-rationale>This SFR relates to use of pre-shared keys, which is behavior that only applies to the establishment of IPsec connections.</consistency-rationale>
           <comp-lev> defines the implementation of HOTP.</comp-lev>
           <management>No specific management functions are identified.</management>
-          <audit>No specific audit functions are identified.
+          <audit>There are no auditable events foreseen.
           </audit>
           <dependencies>FCS_COP.1 Cryptographic Operation</dependencies>
           <f-element id="fia-hotp-ext-1e1">
@@ -2966,7 +2963,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <consistency-rationale>This SFR defines the use of pre-shared keys, which is behavior that only relates to the establishment of IPsec connections.</consistency-rationale>
           <comp-lev>defines the use and composition of pre-shared keys used for IPsec.</comp-lev>
           <management>No specific management functions are identified.</management>
-          <audit>No specific audit functions are identified.
+          <audit>There are no auditable events foreseen.
           </audit>
           <dependencies>FCS_IPSEC_EXT.1 IPsec Protocol</dependencies>
           <f-element id="fia-psk-ext-1e1">
@@ -3013,7 +3010,8 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               or if “verify” is selected in FPF_MFA_EXT.1.2. If these selections are made in both FCS_IPSEC_EXT.1.13 and FPF_MFA_EXT.1.2, 
               the TSF must satisfy the appropriate FIA_PSK_EXT.1 selections for each. 
               <h:br/><h:br/>
-              If any selection including "generated bit-based" is chosen, then FIA_PSK_EXT.2 must be included. 
+              If any selection including "generated bit-based" is chosen, then FIA_PSK_EXT.2 must be included.
+              <h:br/><h:br/>
               If “pre-shared keys that conform to RFC 8784” is selected in FCS_IPSEC_EXT.1.13, a generated, bit-based PSK must be used. 
               <h:br/><h:br/>
               If any selection including Password-based keys is chosen, then FIA_PSK_EXT.3 must be included. 
@@ -3021,8 +3019,6 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               If any selection including HMAC-based one-time password keys is chosen, then FIA_HOTP_EXT.1 must be included. 
               <h:br/><h:br/>
               If any selection including time-based one-time password is chosen, then FIA_TOTP_EXT.1 must be included. 
-              <h:br/><h:br/>
-		    The first four selections are for single factor authentication options, the last four selections are for multifactor authentication options.
             </note>
             <aactivity>
               <TSS>The evaluator shall confirm that the TSS states which pre-shared key selections are supported for IKEv2 
@@ -3239,7 +3235,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <consistency-rationale>This SFR relates to use of pre-shared keys, which is behavior that only applies to the establishment of IPsec connections.</consistency-rationale>
           <comp-lev>defines the implementation of TOTP.</comp-lev>
           <management>No specific management functions are identified.</management>
-          <audit>No specific audit functions are identified.
+          <audit>There are no auditable events foreseen.
           </audit>
           <dependencies>FPT_STM.1 Reliable Time Stamps</dependencies>
           <f-element id="fia-totp-ext-1e1">
@@ -3406,9 +3402,9 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
     
 	
 	<impl-dep-sfrs>
-	    <section id="sib-audit-table" title="Auditable Events for Implementation-Dependent SFRs">
+	    <section id="sib-audit-table" title="Auditable Events for Implementation-Based SFRs">
 	      <audit-table table="feat-based" id="impl-audit-events">
-	        <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-implbased">: Auditable Events for Implementation-Dependent SFRs</ctr></h:b>
+	        <h:br/><h:b><ctr ctr-type="Table" pre="Table " id="atref-implbased">: Auditable Events for Implementation-Based SFRs</ctr></h:b>
 	      </audit-table>
 	  </section>
 	  

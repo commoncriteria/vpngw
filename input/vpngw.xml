@@ -2705,15 +2705,15 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
         
         
         <ext-comp-def title="EAP-TLS/TTLS" fam-id="FCS_EAP_EXT">
-          <fam-behavior>Components in this family describe the requirements for EAP-TLS.</fam-behavior>
+          <fam-behavior>Components in this family describe the requirements for EAP-TLS/TTLS.</fam-behavior>
         </ext-comp-def>
         
         <!-- FCS_EAP_EXT.1 EAP -->
         <f-component cc-id="fcs_eap_ext.1" id="fcs-eap-ext-1" name="EAP-TLS/TTLS">
           <depends on-sel="sel-ipsec-e13-psk" also="sel-ipsec-e13-eapttls" and="sel-ipsec-e13-eaptls"/>
 	  <!-- QQQQ: See note in vpnclient -->          
-	  <consistency-rationale>This SFR defines the use of EAP-TLS; the Base-PP already defines requirements for TLS so potential support for EAP-TLS is consistent with functionality that the Base-PP already expects the TOE may have.</consistency-rationale>
-          <comp-lev>defines the use of EAP-TLS.</comp-lev>
+	  <consistency-rationale>This SFR defines the use of EAP-TLS/TTLS; the Base-PP already defines requirements for TLS so potential support for EAP-TLS is consistent with functionality that the Base-PP already expects the TOE may have.</consistency-rationale>
+          <comp-lev>defines the use of EAP-TLS/TTLS.</comp-lev>
           <management>No specific management functions are identified.</management>
           <audit>There are no auditable events foreseen.
           </audit>

@@ -1105,9 +1105,9 @@ expected to enforce.<h:br/>
             </f-element>
             <f-element id="nd-fcs-ipsec-ext-1e13">
               <title>The TSF shall ensure that 
-                <selectables>
+                <h:b><selectables>
                   <selectable>IKEv1</selectable>
-                  <selectable>IKEv2</selectable></selectables>
+                  <selectable>IKEv2</selectable></selectables></h:b>
                 protocols perform peer authentication using  
                 <selectables>
                   <selectable>RSA</selectable>
@@ -1115,7 +1115,7 @@ expected to enforce.<h:br/>
                 </selectables> 
                 that use X.509v3 certificates that conform to RFC 4945 and 
                 <selectables>
-                  <selectable id="sel-ipsec-e13-psk">Pre-shared keys that conform to RFC 8784</selectable>
+                  <selectable id="sel-ipsec-e13-psk">Pre-shared Keys that conform to RFC 8784</selectable>
                   <selectable id="sel-ipsec-e13-eapttls"><h:b>Pre-shared Keys transmitted via EAP-TTLS</h:b></selectable>
                   <selectable id="sel-ipsec-e13-eaptls"><h:b>EAP-TLS</h:b></selectable>
                   <selectable exclusive="yes">no other method</selectable>
@@ -1144,6 +1144,8 @@ expected to enforce.<h:br/>
                 Multifactor support can be achieved via traffic filtering in accordance with FPF_MFA_EXT.1. 
                 <h:br/><h:br/>
                 It is acceptable for different use cases to leverage different selections. If this is the case, it must be identified. 
+                <h:br/><h:br/>
+                This SFR is modified from its definition in the Base-PP by adding new selections for IKE versions and authentication methods.
               </note>
             </f-element>
             <f-element id="nd-fcs-ipsec-ext-1e14">
@@ -1156,7 +1158,7 @@ expected to enforce.<h:br/>
                   <selectable>SAN: Fully Qualified Domain Name (FQDN)</selectable>
                   <selectable>SAN: user FQDN</selectable>
                   <selectable>CN: IP address</selectable>
-                  <selectable>CN: Fully Qualified Domain Name (FQDN)</selectable>
+                  <selectable>CN: FQDN</selectable>
                   <selectable>CN: user FQDN</selectable> 
                   <selectable exclusive="yes"><h:b>no other reference identifier types</h:b></selectable>
                   <selectable><h:b><assignable>other supported reference identifier types</assignable></h:b></selectable>
@@ -3619,6 +3621,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	<!-- Appendix G: Acronyms -->
 <!--	<acronyms/>   -->
 </Module>
+
 
 
 

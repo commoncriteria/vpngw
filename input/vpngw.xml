@@ -607,7 +607,7 @@ expected to enforce.<h:br/>
           <rationale>This SFR supports the objective by optionally enforcing a multifactor authentication requirement on an IPsec connection.</rationale>
           
           <addressed-by>FCS_EAP_EXT.1 (selection-based)</addressed-by>
-          <rationale>This SFR supports the objective by optionally using an exteral authentication server to facilitate EAP-TLS or EAP-TTLS.</rationale>
+          <rationale>This SFR supports the objective by optionally using an external authentication server to facilitate EAP-TLS or EAP-TTLS.</rationale>
           
           <addressed-by>FIA_HOTP_EXT.1 (selection-based)</addressed-by>
           <rationale>This SFR supports the objective by optionally defining the implementation of HOTP as an authentication mechanism.</rationale>

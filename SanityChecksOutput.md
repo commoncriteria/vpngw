@@ -1,19 +1,10 @@
 * Error: Detected dangling id-reference to sel-verify-hotp from attribute
-        on-sel/Module[1]|
-	
-  |/sec:Security_Requirements[1]|
-|/sel-sfrs[1]|
-      |/section[3]|
-        |/f-component[1]|
-        |/depends[1]||/on-sel[1]||
+        on-sel/Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[3]"The TOE m"/f-component[1]""/depends[1]""/on-sel[1]""
 * Error: Detected dangling id-reference to sel-psk5-ext-e2-verify from attribute
-        on-sel/Module[1]|
-	
-  |/sec:Security_Requirements[1]|
-|/sel-sfrs[1]|
-      |/section[3]|
-        |/f-component[5]|
-        |/depends[1]||/on-sel[1]||
-
-                          WARNING: Since FPF_MFA_EXT.1.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
+        on-sel/Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[3]"The TOE m"/f-component[5]""/depends[1]""/on-sel[1]""
+* Warning: fta_ssl.3 in impl-dep-sfrs section is missing a _depends_ element. /Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/section[2]"This sect"/f-component[1]""
+* Warning: fta_tse.1 in impl-dep-sfrs section is missing a _depends_ element. /Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/section[2]"This sect"/f-component[2]""
+* Warning: fta_vcm_ext.1 in impl-dep-sfrs section is missing a _depends_ element. /Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/section[2]"This sect"/f-component[3]""
+* Warning: fpf_mfa_ext.1 in opt-sfrs section is missing a _depends_/_optional_ sub tree (We're transitioning to using depends and not sections). /Module[1]""/sec:Security_Requirements[1]""/opt-sfrs[1]""/section[2]"The TOE m"/f-component[1]""
+* Warning: Since FPF_MFA_EXT.1.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        

@@ -284,7 +284,7 @@
       The usage of the latter class is not only mandatory, but certificates
       issued as a result of their application are recognized under the CCRA.</p><p><b>Technical Editor:</b><br/>
       National Information Assurance Partnership (NIAP)
-      </p><p><b style="page-break-before:always;">Document history:</b><table><tr class="header"><th>Version</th><th>Date</th><th style="align:left;">Comment</th></tr><tr><td>1.3</td><td>2023-08-16</td><td>Incorporation of NIAP Technical Decisions, TC feedback</td></tr><tr><td>1.2</td><td>2022-03-31</td><td>Format conversion, incorporation of NIAP Technical Decisions, TC feedback</td></tr><tr><td>1.1</td><td>2020-06-18</td><td>Compatibility with CPP_ND_V2.2E, incorporation of NIAP Technical Decisions</td></tr><tr><td>1.0</td><td>2019-09-17</td><td>Initial publication</td></tr></table></p><p><b>General Purpose:</b><br/>
+      </p><p><b style="page-break-before:always;">Document history:</b><table><tr class="header"><th>Version</th><th>Date</th><th style="align:left;">Comment</th></tr><tr><td>1.4</td><td>2025-02-28</td><td>Incorporation of NIAP Technical Decisions, Update to CC:2022</td></tr><tr><td>1.3</td><td>2023-08-16</td><td>Incorporation of NIAP Technical Decisions, TC feedback</td></tr><tr><td>1.2</td><td>2022-03-31</td><td>Format conversion, incorporation of NIAP Technical Decisions, TC feedback</td></tr><tr><td>1.1</td><td>2020-06-18</td><td>Compatibility with CPP_ND_V2.2E, incorporation of NIAP Technical Decisions</td></tr><tr><td>1.0</td><td>2019-09-17</td><td>Initial publication</td></tr></table></p><p><b>General Purpose:</b><br/>
       The purpose of this SD is to define evaluation methods for the functional behavior of
       VPN Gateway      
       products.
@@ -473,7 +473,7 @@ The following sections list Common Criteria and technology terms used in this do
               
             <div class="eacategory">TSS</div><div class="ea"><div class="ea">
                 The evaluator shall check to ensure that the TSS describes how the key-pairs are generated. In order to
-                show that the TSF implementation complies with FIPS PUB 186-4, the evaluator shall ensure that the TSS
+                show that the TSF implementation complies with FIPS PUB 186-5, the evaluator shall ensure that the TSS
                 contains the following information:
                 <ul>
                   <li>The TSS shall list all sections of Appendix B to which the TOE complies</li>
@@ -1171,14 +1171,17 @@ The following sections list Common Criteria and technology terms used in this do
               
             <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall confirm that the TSS states which pre-shared key selections are supported for IKEv2 
                 per FCS_IPSEC_EXT.1.13 and FPF_MFA_EXT.1.1.  <br/></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to determine that it provides guidance to 
-                administrators on how to configure all selected pre-shared key options if any configuration is required.<br/>
+                administrators on how to configure all selected pre-shared key options if any configuration is required.
+                The evaluator shall examine the operational guidance to determine that it provides guidance to administrators 
+                on how to configure the mandatory_or_not flag per RFC 8784.<br/>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall also perform the following tests for each protocol (or instantiation of a protocol, 
                 if performed by a different implementation on the TOE). 
                 <span class="testlist-"><ul>
                   <li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FIA_PSK_EXT.1:1</a>:
       For each mechanism selected in FIA_PSK_EXT.1.2 the evaluator shall attempt to establish a connection 
-                    and confirm that the connection requires the selected factors in the PSK to establish the connection. </li>
+                    and confirm that the connection requires the selected factors in the PSK to establish the connection in 
+                    alignment with table 1 from RFC 8784. </li>
                 </ul></span>
               </div></div></span></div><div class="comp" id="FIA-PSK-EXT-2"><h4>FIA_PSK_EXT.2 Generated Pre-Shared Keys</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_PSK_EXT.2</div>
               
@@ -1198,7 +1201,7 @@ The following sections list Common Criteria and technology terms used in this do
               
               
               
-            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to ensure it describes the process by which the bit-based pre-shared keys are used.  
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to ensure it describes the process by which the password-based pre-shared keys are used.  
                 
                 <br/>Support for length: The evaluator shall check to ensure that the TSS describes the allowable ranges for PSK lengths, and that at least 64 characters or a length defined by the platform may be specified by the user.
                 
@@ -1215,8 +1218,8 @@ The following sections list Common Criteria and technology terms used in this do
                 <br/>The ST author shall provide a description in the TSS regarding the salt generation. The evaluator shall confirm that the salt is generated using an RBG described in FCS_RBG_EXT.1.
                 
                 <br/>[conditional] If password strength meter or password denylist is selected, the evaluator shall examine the TSS to ensure any password checking functionality provided by the TSF is described and contains details on how the function operates.
-                <br/></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm the operational guidance contains instructions for entering bit-based pre-shared keys for each 
-                protocol identified in the requirement, or generating a bit-based pre-shared key (or both). The evaluator shall confirm that any 
+                <br/></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm the operational guidance contains instructions for entering password-based pre-shared keys for each 
+                protocol identified in the requirement. The evaluator shall confirm that any 
                 management functions related to pre-shared keys that are performed by the TOE are specified in the operational guidance.  
                 
                 <br/>The guidance must specify the allowable characters for pre-shared keys, and that list must include, at minimum, the same 
@@ -1227,7 +1230,7 @@ The following sections list Common Criteria and technology terms used in this do
                 Support for Password/Passphrase characteristics: In addition to the analysis above, the evaluator shall also perform the following tests on a TOE configured according to the Operational Guidance:
                 <span class="testlist-"><ul>
                   <li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FIA_PSK_EXT.3:1</a>:
-      The evaluator shall compose a pre-shared key of at least 64 characters that contains a combination of the allowed characters in accordance with the FIA_PSK_EXT.1.3 and verify that a successful protocol negotiation can be performed with the key. </li>
+      The evaluator shall compose a pre-shared key of at least 64 characters that contains a combination of the allowed characters in accordance with the FIA_PSK_EXT.3.2 and verify that a successful protocol negotiation can be performed with the key. </li>
                   <li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FIA_PSK_EXT.3:2</a>:
       [conditional]: If the TOE supports pre-shared keys of multiple lengths, the evaluator shall repeat Test 1 using the minimum length and invalid lengths that are below the minimum length, above the maximum length, null length, empty length, or zero length. The minimum test should be successful, and the invalid lengths must be rejected by the TOE. </li>
                   <li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FIA_PSK_EXT.3:3</a>:

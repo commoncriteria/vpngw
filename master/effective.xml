@@ -11,6 +11,11 @@
   
   <RevisionHistory>
     <entry>
+    <version>1.4</version>
+    <date>2025-02-28</date>
+    <subject>Incorporation of NIAP Technical Decisions, Update to CC:2022</subject>
+    </entry>
+    <entry>
       <version>1.3</version>
       <date>2023-08-16</date>
       <subject>Incorporation of NIAP Technical Decisions, TC feedback</subject>
@@ -44,10 +49,10 @@
     <sec:Overview>
       The scope of this Protection Profile Module (PP-Module) is to describe the security functionality of a virtual private network (VPN)
       gateway in terms of  <xref g="CC"/> and to define functional and assurance requirements for such
-      products. This PP-Module is intended for use with the following Base-PPs:
+      products. This PP-Module is intended for use with the following Base-PP:
 
       <h:ul>
-        <h:li>collaborative Protection Profile for Network Devices, Version 2.2E (NDcPP or CPP_ND_V2.2E)</h:li>
+        <h:li>collaborative Protection Profile for Network Devices, Version 3.0E (NDcPP or CPP_ND_V3.0E)</h:li>
       </h:ul>
       
       This Base-PP is valid because a VPN gateway is a device at the edge of a private network that terminates
@@ -950,16 +955,16 @@ expected to enforce.<h:br/>
                 </selectables> and <selectables>
                   <selectable exclusive="yes">no other RFCs for hash functions</selectable>
                   <selectable>RFC 4868 for hash functions</selectable></selectables></selectable>
-                <selectable>IKEv2 as defined in RFC 5996 and <selectables onlyone="yes">
+                <selectable>IKEv2 as defined in RFC 7296 <selectables onlyone="yes">
                   <selectable>with no support for NAT traversal</selectable>
-                  <selectable>with mandatory support for NAT traversal as specified in RFC 5996, section 2.23</selectable></selectables> and <selectables>
+                  <selectable>with mandatory support for NAT traversal as specified in RFC 7296, section 2.23</selectable></selectables> and <selectables>
                     <selectable exclusive="yes">no other RFCs for hash functions</selectable>
                     <selectable>RFC 4868 for hash functions</selectable></selectables></selectable>
               </selectables>.
               </title>
-              <note role="application">
-                This element is unchanged from its definition in the Base-PP.
-              </note>
+              <!-- <note role="application">
+                This element is unchanged from its definition in the Base-PP when CPP_ND_V2.2E is used. When CPP_ND_V3.0E is the Base-PP, the element in section 5.1.2.1 should be used, instead.
+              </note> -->
             </f-element>
             <f-element id="nd-fcs-ipsec-ext-1e6">
               <title>
@@ -1089,7 +1094,7 @@ expected to enforce.<h:br/>
                 </selectables> 
                 that use X.509v3 certificates that conform to RFC 4945 and 
                 <selectables>
-                  <selectable id="sel-ipsec-e13-psk">Pre-shared Keys that conform to RFC 8784</selectable>
+                  <selectable id="sel-ipsec-e13-psk">Pre-shared Keys <h:b>that conform to RFC 8784</h:b></selectable>
                   <selectable id="sel-ipsec-e13-eapttls"><h:b>Pre-shared Keys transmitted via EAP-TTLS</h:b></selectable>
                   <selectable id="sel-ipsec-e13-eaptls"><h:b>EAP-TLS</h:b></selectable>
                   <selectable exclusive="yes">no other method</selectable>
@@ -1294,14 +1299,24 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
             </consistency-rationale>
             <f-element id="nd-fpt-tst-1e1">
               <title>
-                The TSF shall run a suite of the following self-tests <selectables>
-                  <selectable>during initial start-up (on power on)</selectable>
-                  <selectable>periodically during normal operation</selectable>
-                  <selectable>at the request of the authorized user</selectable>
-                  <selectable>at the conditions <assignable>conditions under which self-tests should occur</assignable></selectable>
-                </selectables>  
-                  to demonstrate the correct operation of the TSF: <h:b>noise source health tests,</h:b> 
-                <assignable>list of self-tests run by the TSF</assignable>.
+                The TSF shall run a suite of the following self-tests:<h:ul><h:br/>
+                <h:li>During initial start-up (on power on) to verify the integrity of the TOE firmware and software;</h:li>
+                <h:li>Prior to providing any cryptographic service and 
+                <selectables>
+                <selectable>at no other time</selectable>
+                <selectable>on-demand</selectable>
+                <selectable>continuously</selectable>
+                <selectable><assignable>conditions under which self-tests should occur</assignable></selectable></selectables>
+                to verify correct operation of cryptographic implementation necessary to fulfill the TSF;</h:li>
+                <h:li><selectables>
+                <selectable>no other</selectable>
+                <selectable>start-up</selectable>
+                <selectable>on-demand</selectable>
+                <selectable>continuous</selectable>
+                <selectable>at the conditions <assignable>conditions under which self-tests should occur</assignable></selectable>
+                </selectables> self tests <assignable>list an identifier for each self-test that is additional to those identified in the first two bullet points</assignable>
+                to demonstrate the correct operation of the TSF: <h:b>noise source health tests</h:b>.</h:li>
+                </h:ul>
               </title>
               <note role="application">
                 This SFR is modified from its definition in the NDcPP by requiring noise source
@@ -1357,8 +1372,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 TOE using a <h:b>digital signature mechanism and </h:b>
                 <selectables>
                   <selectable>X.509 certificate</selectable>
-                  <selectable>published hash</selectable>
-                  <selectable exclusive="yes"><h:b>no other mechanisms</h:b></selectable>
+                  <selectable exclusive="yes">no other mechanisms</selectable>
                 </selectables> prior to installing those updates.
               </title>
               <note role="application">
@@ -1603,9 +1617,9 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
               The TSF shall generate <h:b>asymmetric</h:b> cryptographic keys <h:b>used for IKE peer
               authentication</h:b> in accordance with a specified cryptographic key generation
               algorithm: <h:b><selectables linebreak="yes">
-                <selectable>FIPS PUB 186-4, “Digital Signature Standard (DSS),” Appendix B.3 for RSA
+                <selectable>FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix B.3 for RSA
                   schemes</selectable>
-                <selectable>FIPS PUB 186-4, “Digital Signature Standard (DSS),” Appendix B.4 for ECDSA
+                <selectable>FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix B.4 for ECDSA
                   schemes, and implementing “NIST curves” P-384 and <selectables>
                     <selectable>P-256</selectable>
                     <selectable>P-521</selectable>
@@ -1643,7 +1657,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
             <aactivity>
               <TSS>
                 The evaluator shall check to ensure that the TSS describes how the key-pairs are generated. In order to
-                show that the TSF implementation complies with FIPS PUB 186-4, the evaluator shall ensure that the TSS
+                show that the TSF implementation complies with FIPS PUB 186-5, the evaluator shall ensure that the TSS
                 contains the following information:
                 <h:ul>
                   <h:li>The TSS shall list all sections of Appendix B to which the TOE complies</h:li>
@@ -3001,7 +3015,9 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 per FCS_IPSEC_EXT.1.13 and FPF_MFA_EXT.1.1.  <h:br/></TSS>
               
               <Guidance>The evaluator shall examine the operational guidance to determine that it provides guidance to 
-                administrators on how to configure all selected pre-shared key options if any configuration is required.<h:br/>
+                administrators on how to configure all selected pre-shared key options if any configuration is required.
+                The evaluator shall examine the operational guidance to determine that it provides guidance to administrators 
+                on how to configure the mandatory_or_not flag per RFC 8784.<h:br/>
               </Guidance>
               
               <Tests>
@@ -3009,7 +3025,8 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 if performed by a different implementation on the TOE). 
                 <testlist>
                   <test>For each mechanism selected in FIA_PSK_EXT.1.2 the evaluator shall attempt to establish a connection 
-                    and confirm that the connection requires the selected factors in the PSK to establish the connection. </test>
+                    and confirm that the connection requires the selected factors in the PSK to establish the connection in 
+                    alignment with table 1 from RFC 8784. </test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -3158,7 +3175,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               <h:br/>This requirement is selection dependent on FIA_PSK_EXT.1. 
               </note>
             <aactivity>
-              <TSS>The evaluator shall examine the TSS to ensure it describes the process by which the bit-based pre-shared keys are used.  
+              <TSS>The evaluator shall examine the TSS to ensure it describes the process by which the password-based pre-shared keys are used.  
                 
                 <h:br/>Support for length: The evaluator shall check to ensure that the TSS describes the allowable ranges for PSK lengths, and that at least 64 characters or a length defined by the platform may be specified by the user.
                 
@@ -3176,8 +3193,8 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 
                 <h:br/>[conditional] If password strength meter or password denylist is selected, the evaluator shall examine the TSS to ensure any password checking functionality provided by the TSF is described and contains details on how the function operates.
                 <h:br/></TSS>
-              <Guidance>The evaluator shall confirm the operational guidance contains instructions for entering bit-based pre-shared keys for each 
-                protocol identified in the requirement, or generating a bit-based pre-shared key (or both). The evaluator shall confirm that any 
+              <Guidance>The evaluator shall confirm the operational guidance contains instructions for entering password-based pre-shared keys for each 
+                protocol identified in the requirement. The evaluator shall confirm that any 
                 management functions related to pre-shared keys that are performed by the TOE are specified in the operational guidance.  
                 
                 <h:br/>The guidance must specify the allowable characters for pre-shared keys, and that list must include, at minimum, the same 
@@ -3188,7 +3205,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               <Tests>
                 Support for Password/Passphrase characteristics: In addition to the analysis above, the evaluator shall also perform the following tests on a TOE configured according to the Operational Guidance:
                 <testlist>
-                  <test>The evaluator shall compose a pre-shared key of at least 64 characters that contains a combination of the allowed characters in accordance with the FIA_PSK_EXT.1.3 and verify that a successful protocol negotiation can be performed with the key. </test>
+                  <test>The evaluator shall compose a pre-shared key of at least 64 characters that contains a combination of the allowed characters in accordance with the FIA_PSK_EXT.3.2 and verify that a successful protocol negotiation can be performed with the key. </test>
                   <test>[conditional]: If the TOE supports pre-shared keys of multiple lengths, the evaluator shall repeat Test 1 using the minimum length and invalid lengths that are below the minimum length, above the maximum length, null length, empty length, or zero length. The minimum test should be successful, and the invalid lengths must be rejected by the TOE. </test>
                   <test>[conditional]: If the TOE initiates connections, initiate and establish a remote connection, disconnect from the connection, verify that the PSK is required when initiating the connection a second time.</test>
                   <test>[conditional]: If the TOE supports a password meter, the evaluator shall enter a password and verify the password checker responds per the description in the TSS.</test>

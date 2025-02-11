@@ -158,36 +158,21 @@
   <section title="Conformance Claims" id="ConformanceClaims">
     
     <!-- 2.1 CC Conformance -->
-    <cclaims>
-      <cclaim name="Conformance Statement">
-        <description> This PP-Module inherits exact conformance as required from the specified Base-PPs and as defined
-          in the CC and CEM addenda for Exact Conformance, Selection-Based SFRs, and Optional SFRs (dated
-          May 2017).<h:br/><h:br/> 
-
-          The following PPs and PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module: <h:ul>
-            <h:li>collaborative Protection Profile Module for Stateful Traffic Filter Firewalls v1.4 + Errata 20200625</h:li>
-            <h:li>PP-Module for Intrusion Protection Systems, v1.0</h:li>
-          </h:ul> 
-           
-        </description>
-      </cclaim>
-      <cclaim name="CC Conformance Claims">
-        <description>
-          This PP-Module is conformant to Parts 2 (extended) and 3 (conformant) of Common Criteria Version
-          3.1, Revision 5 [CC].
-        </description>
-      </cclaim>
-      <cclaim name="PP Claim">
-        <description>This PP-Module does not claim conformance to any PP.</description>
-      </cclaim>
-      <cclaim name="Package Claim">
-        <description>This PP-Module does not claim conformance to any packages.</description>
-      </cclaim>
-    </cclaims>
+    <CClaimsInfo cc-version="cc-31r5">
+      <cc-st-conf>exact</cc-st-conf>
+      <cc-pt2-conf>extended</cc-pt2-conf>
+      <cc-pt3-conf>conformant</cc-pt3-conf>
+      <cc-pp-conf/>
+      <cc-pp-config-with>
+        <Mod-cc-ref>collaborative Protection Profile Module for Stateful Traffic Filter Firewalls v1.4 + Errata 20200625</Mod-cc-ref>
+        <Mod-cc-ref>PP-Module for Intrusion Protection Systems, v1.0</Mod-cc-ref>
+      </cc-pp-config-with>
+      <cc-pkg-claim/>
+    </CClaimsInfo>
   </section>
     
   <!-- Security Problem Description -->
-  <sec:Security_Problem_Description>
+  <sec:Security_Problem_Definition>
     The security problem is described in terms of the threats that the TOE is expected to address,
 assumptions about its operational environment (OE), and any organizational security policies that the TOE is
 expected to enforce.<h:br/>
@@ -505,7 +490,7 @@ expected to enforce.<h:br/>
 	<sec:Organizational_Security_Policies>
 		<OSPs/>
     </sec:Organizational_Security_Policies>
-  </sec:Security_Problem_Description>
+  </sec:Security_Problem_Definition>
     
   <!-- 4. Security Objectives --> 
   <sec:Security_Objectives>  

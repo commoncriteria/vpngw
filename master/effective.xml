@@ -163,7 +163,7 @@
   <section title="Conformance Claims" id="ConformanceClaims">
     
     <!-- 2.1 CC Conformance -->
-    <CClaimsInfo cc-version="cc-31r5">
+    <CClaimsInfo cc-version="cc-2022r1" cc-approach="direct-rationale">
       <cc-st-conf>exact</cc-st-conf>
       <cc-pt2-conf>extended</cc-pt2-conf>
       <cc-pt3-conf>conformant</cc-pt3-conf>
@@ -1018,7 +1018,9 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
               This PP-Module refines the Base-PP SFR to mandate a specific type of self-test. This is consistent with the Base-PP because the execution of this self-test is already implied by the Base-PP through its entropy requirements.
             </consistency-rationale>
             <description>
-            <h:p>This SFR is modified from its definition in the Base-PP to require the testing of noise source health tests, regardless of what other testing is claimed.</h:p>
+            <h:p>An element of this SFR is modified from its definition in the Base-PP to require the testing of noise source health tests, regardless of what other testing is claimed.
+              All other elements of this requirement not mentioned in this section are unchanged from their definition in the NDcPP.</h:p>
+            <h:p><h:b>FPT_TST_EXT.1.1: </h:b>This element has been modified from its definition in the Base-PP to require noise source health tests.</h:p>
             <h:p>The text of the requirement is replaced with:</h:p>
             <h:p>The TSF shall run a suite of the following self-tests:<h:ul><h:br/>
                 <h:li><h:i>During initial start-up (on power on) to verify the integrity of the TOE firmware and software;</h:i></h:li>
@@ -1054,7 +1056,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 TOE using a <h:b>digital signature mechanism and </h:b>[<h:b>selection:</h:b> <h:i>X.509 certificate, no other mechanisms</h:i>]
                 prior to installing those updates.</h:p>
               <h:p><h:b>Application Note: </h:b>
-              The NDcPP provides an option for how firmware/software updates can be verified
+                The NDcPP provides an option for how firmware/software updates can be verified
                 but this PP-Module requires the digital signature method to be selected at
                 minimum. Note that all other options specified in the NDcPP for this component
                 are permitted so it is possible for the TSF to use code signing certificates to
@@ -2470,7 +2472,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <fam-behavior>Components in this family define requirements for the use of HMAC-Based One-Time password authentication, including generation methods and usage restrictions.</fam-behavior>
         </ext-comp-def>
         <f-component cc-id="fia_hotp_ext.1" id="fia-hotp-ext-1" name="HMAC-Based One-Time Password Pre-Shared Keys">
-          <depends on-sel="sel-verify-hotp"/>
+          <depends on-sel="pskhotp" or="pskgenhotp" or2="pskpwhotp"/>
           <consistency-rationale>This SFR relates to use of pre-shared keys, which is behavior that only applies to the establishment of IPsec connections.</consistency-rationale>
           <comp-lev> defines the implementation of HOTP.</comp-lev>
           <management>No specific management functions are identified.</management>
@@ -2787,18 +2789,15 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </f-element>
           <f-element id="fia-psk-ext-3e3">
             <title>
-              The TSF shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm HMAC-
-              <selectables>
-                <selectable>SHA-256</selectable>
-                <selectable>SHA-384</selectable>
-                <selectable>SHA-512</selectable>
-              </selectables>, with 
-              <assignable>positive integer of 4096 or more</assignable> iterations, and output cryptographic key sizes 
-              <selectables>
-                <selectable>128</selectable>
-                <selectable>256</selectable>
-              </selectables> that meet the following: [NIST SP 800-132].
+              The TSF shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm [<h:i>HMAC-SHA-384, with 
+              <assignable>positive integer of 4096 or more</assignable> iterations,</h:i>] and output cryptographic key sizes [<h:i>256</h:i>] that meet the following: [<h:i>NIST SP 800-132</h:i>].
             </title>
+            <ext-comp-def-title>
+              <title>
+              The TSF shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm <assignable>cryptographic algorithm</assignable>
+              and output cryptographic key sizes <assignable>output key sizes</assignable> that meet the following: <assignable>applicable standard</assignable>.
+            </title>
+            </ext-comp-def-title>
           </f-element>
           <f-element id="fia-psk-ext-3e4">
             <title>
@@ -2895,7 +2894,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <fam-behavior>Components in this family define requirements for the use of Time-Based One-Time password authentication, including generation methods and usage restrictions.</fam-behavior>
         </ext-comp-def>
         <f-component cc-id="fia_totp_ext.1" id="fia-totp-ext-1" name="Time-Based One-Time Password Pre-Shared Keys">
-          <depends on-sel="sel-psk5-ext-e2-verify"/>
+          <depends on-sel="psktotp" or="pskgentotp" or2="pskpwtotp"/>
           <consistency-rationale>This SFR relates to use of pre-shared keys, which is behavior that only applies to the establishment of IPsec connections.</consistency-rationale>
           <comp-lev>defines the implementation of TOTP.</comp-lev>
           <management>No specific management functions are identified.</management>

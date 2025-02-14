@@ -644,7 +644,7 @@ function showTarget(id){
       </span></a><a href="#consecprob-ND" style="text-indent:20px">6.1.2<span>
 	Consistency of Security Problem Definition
       </span></a><a href="#conobj-ND" style="text-indent:20px">6.1.3<span>
-			Consistency of Objectives
+			Consistency of OE Objectives
 		</span></a><a href="#conreq-ND" style="text-indent:20px">6.1.4<span>
 	Consistency of Requirements
       </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements
@@ -785,7 +785,7 @@ The following sections list Common Criteria and technology terms used in this do
 			
 			and Part 3 (conformant)
 			
-				of Common Criteria Version 3.1, Revision 5.
+				of Common Criteria <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1.
 			</dd><dt>PP Claim</dt><p></p><dd>
 					This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not claim conformance to 
 					any Protection Profile.
@@ -996,9 +996,9 @@ The assumptions identified in Section 3 are incorporated as security objectives 
     
     
     <h2 id="SOR" class="indexable,h2" data-level="2">4.3 Security Objectives Rationale</h2>   
-		This section describes how the assumptions, threats, and organizational 
-		security policies map to the security objectives.
-	<table><caption><span class="ctr" data-myid="t-sec-obj-rat" data-counter-type="ct-Table" id="t-sec-obj-rat">Table <span class="counter">1</span></span>: Security Objectives Rationale</caption><tr class="header"><td>Threat, Assumption, or OSP</td><td>Security Objectives</td><td>Rationale</td></tr><tr class="major-row"><td rowspan="5"><a href="#T.DATA_INTEGRITY">T.DATA_​INTEGRITY</a></td><td><a href="#O.ADDRESS_FILTERING">O.ADDRESS_​FILTERING</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s ability to provide address
+		This section describes how the assumptions and organizational 
+		security policies map to operational environment security objectives.
+	<table><caption><span class="ctr" data-myid="t-sec-obj-rat" data-counter-type="ct-Table" id="t-sec-obj-rat">Table <span class="counter">1</span></span>: Security Objectives Rationale</caption><tr class="header"><td>Assumption or OSP</td><td>Security Objectives</td><td>Rationale</td></tr><tr class="major-row"><td rowspan="5"><a href="#T.DATA_INTEGRITY">T.DATA_​INTEGRITY</a></td><td><a href="#O.ADDRESS_FILTERING">O.ADDRESS_​FILTERING</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s ability to provide address
               filtering helps mitigate the threat of
               data integrity violations by reducing the
               amount of potentially malicious
@@ -1262,7 +1262,9 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               certificates used for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> operation</b></i>] to [<i>Security Administrators</i>]. 
               </p>
             </span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.4 Protection of the TSF (FPT)</h4><div class="comp" id="@id"><h4>FPT_TST_EXT.1: TSF Testing</h4><span class="description">
-            <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to require the testing of noise source health tests, regardless of what other testing is claimed.</p>
+            <p>An element of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to require the testing of noise source health tests, regardless of what other testing is claimed.
+              All other elements of this requirement not mentioned in this section are unchanged from their definition in the NDcPP.</p>
+            <p><b>FPT_TST_EXT.1.1: </b>This element has been modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to require noise source health tests.</p>
             <p>The text of the requirement is replaced with:</p>
             <p>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall run a suite of the following self-tests:<ul><br/>
                 <li><i>During initial start-up (on power on) to verify the integrity of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> firmware and software;</i></li>
@@ -1290,7 +1292,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> using a <b>digital signature mechanism and </b>[<b>selection:</b> <i>X.509 certificate, no other mechanisms</i>]
                 prior to installing those updates.</p>
               <p><b>Application Note: </b>
-              The NDcPP provides an option for how firmware/software updates can be verified
+                The NDcPP provides an option for how firmware/software updates can be verified
                 but this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires the digital signature method to be selected at
                 minimum. Note that all other options specified in the NDcPP for this component
                 are permitted so it is possible for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to use code signing certificates to
@@ -1623,108 +1625,8 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         </div>
   
        
-    <h2 id="obj-req-map" class="indexable" data-level="2">5.3 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each security objective for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
-    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to meet and achieve the security objectives:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">3</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Objective</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="2"><a href="#O.ADDRESS_FILTERING">O.ADDRESS_​FILTERING</a><br/></td><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to filter network traffic based on network address information.</td></tr>
-<tr><td><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally allowing the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to assign a private IP address to a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client so that traffic bound for an alternative address can be flagged as invalid.</td></tr>
-<tr class="major-row"><td rowspan="14"><a href="#O.AUTHENTICATION">O.AUTHENTICATION</a><br/></td><td>FCS_IPSEC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)
-          </td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s
-            implementation of IPsec to include requirements for how the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is authenticated.
-            </td></tr>
-<tr><td>FIA_X509_EXT.1/Rev
-            (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to implement X.509 validation functions so that it
-            can authenticate remote entities that assert their
-            identity using X.509 certificates.
-          </td></tr>
-<tr><td>FIA_X509_EXT.2 (refined
-            from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)
-          </td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to implement X.509 authentication functions so that
-            it can authenticate remote entities that assert their
-            identity using X.509 certificates.</td></tr>
-<tr><td>FIA_X509_EXT.3 (from
-            <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)
-          </td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to have the ability to generate a certificate request
-            so that it can be issued an X.509 certificate that
-            allows the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to offer proof of its own authenticity
-            to external entities.
-          </td></tr>
-<tr><td><a href="#FTP_ITC.1/VPN">FTP_ITC.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to use an IPsec trusted channel to communicate with
-            external entities so that these entities may be
-            authenticated.
-          </td></tr>
-<tr><td><a href="#FTA_SSL.3/VPN">FTA_SSL.3/VPN</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally
-            allowing the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to terminate inactive <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> sessions
-            so that an unattended session cannot be used to
-            bypass authentication mechanisms.</td></tr>
-<tr><td><a href="#FTA_TSE.1">FTA_TSE.1</a> (optional) </td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally
-            defining alternative mechanisms to determine the
-            validity of a subject to reject unauthorized or
-            impersonated authentication attempts</td></tr>
-<tr><td><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally enforcing a multifactor authentication requirement on an IPsec connection.</td></tr>
-<tr><td><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally using an external authentication server to facilitate EAP-TLS or EAP-TTLS.</td></tr>
-<tr><td><a href="#FIA_HOTP_EXT.1">FIA_HOTP_EXT.1</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally defining the implementation of HOTP as an authentication mechanism.</td></tr>
-<tr><td><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally
-            supporting the use of pre-shared keys.</td></tr>
-<tr><td><a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally specifying whether the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> generates 
-            its own pre-shared keys or accepts them from an external source.</td></tr>
-<tr><td><a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally defining the composition and use of password-based pre-shared keys used for authentication.</td></tr>
-<tr><td><a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally defining the implementation of TOTP as an authentication mechanism.</td></tr>
-<tr class="major-row"><td rowspan="6"><a href="#O.CRYPTOGRAPHIC_FUNCTIONS">O.CRYPTOGRAPHIC_​FUNCTIONS</a><br/></td><td>FCS_COP.1/DataEncryption (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)
-          </td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to implement AES in a specified manner.
-          </td></tr>
-<tr><td>FCS_IPSEC_EXT.1 (refined
-            from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)
-          </td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to implement the IPsec protocol in a specified
-            manner</td></tr>
-<tr><td><a href="#FCS_CKM.1/IKE">FCS_CKM.1/IKE</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to generate cryptographic keys used for Internet Key Exchange (<abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>) in a
-            specified manner.
-          </td></tr>
-<tr><td><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally using an MSK computed by an external authentication server
-            via the EAP-TLS or EAP-TTLS method.</td></tr>
-<tr><td><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by supporting a mechanism by which PSKs can be used to fortify encryption.</td></tr>
-<tr><td><a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a> (selection-based)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by optionally specifying whether 
-            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> generates its own pre-shared keys or accepts them from an external source..</td></tr>
-<tr class="major-row"><td rowspan="4"><a href="#O.FAIL_SECURE">O.FAIL_​SECURE</a><br/></td><td>FPT_TST_EXT.1 (refined
-            from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to execute self-tests that allow the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to determine
-            if it is in a failed state.</td></tr>
-<tr><td>FPT_TUD_EXT.1 (refined
-            from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)
-          </td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to validate software updates before applying them
-            to reduce the risk of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> entering a failed state.
-          </td></tr>
-<tr><td><a href="#FPT_FLS.1/SelfTest">FPT_FLS.1/SelfTest</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to preserve a secure state if a self-test failure is
-            detected.</td></tr>
-<tr><td><a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a> </td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to verify the integrity of its executable code to
-            ensure that it will operate in a known state.
-          </td></tr>
-<tr class="major-row"><td rowspan="1"><a href="#O.PORT_FILTERING">O.PORT_​FILTERING</a><br/></td><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>
-            to filter network traffic based on port information.
-          </td></tr>
-<tr class="major-row"><td rowspan="2"><a href="#O.SYSTEM_MONITORING">O.SYSTEM_​MONITORING</a><br/></td><td><a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to generate security-relevant audit events related to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway functionality. 
-          </td></tr>
-<tr><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to have the ability to log network traffic that
-            matches certain characteristics.
-          </td></tr>
-<tr class="major-row"><td rowspan="2"><a href="#O.TOE_ADMINISTRATION">O.TOE_​ADMINISTRATION</a><br/></td><td>FMT_MTD.1/CryptoKeys (refined from
-            <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-            to implement a key management function and
-            ensure that only authorized users can use it.</td></tr>
-<tr><td><a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> supports the objective by specifying the
-            management functions required specifically for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr>
-            gateway functionality.</td></tr>
-</table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-ND" class="indexable" data-level="2">6.1 Collaborative 
+    <h2 id="obj-req-map" class="indexable" data-level="2">5.3 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
+    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">3</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr></table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-ND" class="indexable" data-level="2">6.1 Collaborative 
     Protection Profile for Network Devices</h2><h3 id="contoe-ND" class="indexable" data-level="3">6.1.1 
 	Consistency of TOE Type
       </h3>When this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the NDcPP, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a network
@@ -1745,9 +1647,8 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         T.UNTRUSTED_COMMUNICATION_CHANNELS or
         T.WEAK_AUTHENTICATION_ENDPOINTS threat defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><td><a href="#T.REPLAY_ATTACK">T.REPLAY_ATTACK</a></td><td>A replay attack is mentioned in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> as a specific type of attack based
         on the T.UNTRUSTED_COMMUNICATION_CHANNELS threat.</td></tr><tr><td><a href="#A.CONNECTIONS">A.CONNECTIONS</a></td><td>This assumption defines the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s placement in a network such that it is able to perform its required security functionality. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any assumptions about the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s architectural deployment so there is no conflict here.</td></tr></table><h3 id="conobj-ND" class="indexable" data-level="3">6.1.3 
-			Consistency of Objectives
-		</h3><p><table><caption><span class="ctr" data-myid="t-con-objs" data-counter-type="ct-Table" id="t-con-objs">Table <span class="counter">5</span></span>: Consistency of Objectives (NDcPP base)
-				</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Objective</th><th>Consistency Rationale</th></tr><tr><td><a href="#O.ADDRESS_FILTERING">O.ADDRESS_FILTERING</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> objectives so <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> objectives do not conflict with it.</td></tr><tr><td><a href="#O.AUTHENTICATION">O.AUTHENTICATION</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> objectives so <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> objectives do not conflict with it.</td></tr><tr><td><a href="#O.CRYPTOGRAPHIC_FUNCTIONS">O.CRYPTOGRAPHIC_FUNCTIONS</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> objectives so <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> objectives do not conflict with it.</td></tr><tr><td><a href="#O.FAIL_SECURE">O.FAIL_SECURE</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> objectives so <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> objectives do not conflict with it.</td></tr><tr><td><a href="#O.PORT_FILTERING">O.PORT_FILTERING</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> objectives so <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> objectives do not conflict with it.</td></tr><tr><td><a href="#O.SYSTEM_MONITORING">O.SYSTEM_MONITORING</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> objectives so <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> objectives do not conflict with it.</td></tr><tr><td><a href="#O.TOE_ADMINISTRATION">O.TOE_ADMINISTRATION</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> objectives so <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> objectives do not conflict with it.</td></tr></table></p><p><table><caption><span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">6</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (NDcPP base)
+			Consistency of OE Objectives
+		</h3><p><table><caption><span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">5</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (NDcPP base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objective</th><th>Consistency Rationale</th></tr><tr><td><a href="#OE.CONNECTIONS">OE.CONNECTIONS</a></td><td>This objective intends for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to be connected to environmental networks in such a way that its primary functionality can be appropriately enforced. There is no
         inconsistency here with respect to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any restrictions on how a network device is connected to its environment.</td></tr></table></p><h3 id="conreq-ND" class="indexable" data-level="3">6.1.4 
 	Consistency of Requirements
@@ -1761,7 +1662,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           The rationale for why this does not conflict with the claims
       defined by the
       NDcPP are as follows:
-      <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">7</span></span>: Consistency of Requirements (NDcPP base)
+      <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">6</span></span>: Consistency of Requirements (NDcPP base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_COP.1/DATAENCRYPTION</td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> restricts the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to a subset of existing permissible
               functionality and does not introduce any new behavior.</td></tr><tr><td>FCS_IPSEC_EXT.1</td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> restricts the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to a subset of existing permissible
               functionality and does not introduce any new behavior.</td></tr><tr><td>FIA_X509_EXT.1/REV</td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>; it only mandates the
@@ -1808,7 +1709,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 	        <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and therefore not prohibited by it.</td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the use of EAP-TLS/TTLS; the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> already defines requirements for TLS so potential support for EAP-TLS is consistent with functionality that the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> already expects the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may have.</td></tr><tr><td><a href="#FIA_HOTP_EXT.1">FIA_HOTP_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to use of pre-shared keys, which is behavior that only applies to the establishment of IPsec connections.</td></tr><tr><td><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the use of pre-shared keys, which is behavior that only relates to the establishment of IPsec connections.</td></tr><tr><td><a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to use of pre-shared keys, which is behavior that only applies to the establishment of IPsec connections.</td></tr><tr><td><a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to use of pre-shared keys, which is behavior that only applies to the establishment of IPsec connections.</td></tr><tr><td><a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> relates to use of pre-shared keys, which is behavior that only applies to the establishment of IPsec connections.</td></tr></tr></table><h1 id="opt-sfrs" class="indexable" data-level="A">Appendix A -  Optional SFRs</h1><h2 id="opt-sfrs" class="indexable" data-level="2">A.1 Strictly Optional Requirements
     </h2>
       <h3 class="indexable" data-level="3" id="sop-audit-table">A.1.1 Auditable Events for Strictly Optional SFRs</h3>
-        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="opt-audit-events" data-counter-type="ct-Table" id="opt-audit-events">Table <span class="counter">8</span></span>: Auditable Events for Strictly Optional Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FPF_MFA_EXT.1"><td rowspan="2"><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FPF_MFA_EXT.1#"><td></td></tr><tr data-sortkey="FPF_MFA_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table>
+        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="opt-audit-events" data-counter-type="ct-Table" id="opt-audit-events">Table <span class="counter">7</span></span>: Auditable Events for Strictly Optional Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FPF_MFA_EXT.1"><td rowspan="2"><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FPF_MFA_EXT.1#"><td></td></tr><tr data-sortkey="FPF_MFA_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table>
       
       
       <h3 id="s-fpf" class="indexable" data-level="3">A.1.2 Packet Filtering (FPF)</h3>
@@ -1844,7 +1745,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
        Objective       <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.</p><h2 id="impl-dep-sfrs" class="indexable" data-level="2">A.3 Implementation-dependent Requirements
     </h2>
 	    <h3 class="indexable" data-level="3" id="sib-audit-table">A.3.1 Auditable Events for Implementation-Based SFRs</h3>
-	      <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="impl-audit-events" data-counter-type="ct-Table" id="impl-audit-events">Table <span class="counter">9</span></span>: Auditable Events for Implementation-dependent Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FTA_SSL.3/VPN"><td rowspan="2"><a href="#FTA_SSL.3/VPN">FTA_SSL.3/VPN</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTA_SSL.3/VPN#"><td></td></tr><tr data-sortkey="FTA_SSL.3/VPN.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FTA_TSE.1"><td rowspan="2"><a href="#FTA_TSE.1">FTA_TSE.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTA_TSE.1#"><td></td></tr><tr data-sortkey="FTA_TSE.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FTA_VCM_EXT.1"><td rowspan="2"><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTA_VCM_EXT.1#"><td></td></tr><tr data-sortkey="FTA_VCM_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table>
+	      <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="impl-audit-events" data-counter-type="ct-Table" id="impl-audit-events">Table <span class="counter">8</span></span>: Auditable Events for Implementation-dependent Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FTA_SSL.3/VPN"><td rowspan="2"><a href="#FTA_SSL.3/VPN">FTA_SSL.3/VPN</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTA_SSL.3/VPN#"><td></td></tr><tr data-sortkey="FTA_SSL.3/VPN.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FTA_TSE.1"><td rowspan="2"><a href="#FTA_TSE.1">FTA_TSE.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTA_TSE.1#"><td></td></tr><tr data-sortkey="FTA_TSE.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FTA_VCM_EXT.1"><td rowspan="2"><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTA_VCM_EXT.1#"><td></td></tr><tr data-sortkey="FTA_VCM_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table>
 	  
 	  
 	  <h3 id="opt-headend" class="indexable" data-level="3">A.3.2 TOE Access (FTA)</h3>
@@ -1879,7 +1780,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 	      
 	      <div class="element"><div class="reqid" id="FTA_TSE.1.1"><a href="#FTA_TSE.1.1" class="abbr">FTA_TSE.1.1</a></div><div class="reqdesc">
 	          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to deny session establishment <b>of a remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client session</b> based
-	          on [<i>location, time, day, [<b>selection</b>: <span class="selectable-content" id="_s_116">no other attributes</span>, <span class="selectable-content" id="_s_117">[<b>assignment</b>: 
+	          on [<i>location, time, day, [<b>selection</b>: <span class="selectable-content" id="_s_111">no other attributes</span>, <span class="selectable-content" id="_s_112">[<b>assignment</b>: 
      <span class="assignable-content">other attributes</span>]</span>]</i>].
 	        <div class="appnote"><span class="note-header">Application
       Note:
@@ -1913,7 +1814,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
       
       
       <h2 class="indexable" data-level="2" id="sb-audit-table">B.1 Auditable Events for Selection-based SFRs</h2>
-        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="sel-audit-events" data-counter-type="ct-Table" id="sel-audit-events">Table <span class="counter">10</span></span>: Auditable Events for Selection-based Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FCS_EAP_EXT.1"><td rowspan="2"><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FCS_EAP_EXT.1#"><td></td></tr><tr data-sortkey="FCS_EAP_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_HOTP_EXT.1"><td rowspan="2"><a href="#FIA_HOTP_EXT.1">FIA_HOTP_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_HOTP_EXT.1#"><td></td></tr><tr data-sortkey="FIA_HOTP_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_PSK_EXT.1"><td rowspan="2"><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_PSK_EXT.1#"><td></td></tr><tr data-sortkey="FIA_PSK_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_PSK_EXT.2"><td rowspan="2"><a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_PSK_EXT.2#"><td></td></tr><tr data-sortkey="FIA_PSK_EXT.2.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_PSK_EXT.3"><td rowspan="2"><a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_PSK_EXT.3#"><td></td></tr><tr data-sortkey="FIA_PSK_EXT.3.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_TOTP_EXT.1"><td rowspan="2"><a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_TOTP_EXT.1#"><td></td></tr><tr data-sortkey="FIA_TOTP_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table>
+        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="sel-audit-events" data-counter-type="ct-Table" id="sel-audit-events">Table <span class="counter">9</span></span>: Auditable Events for Selection-based Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FCS_EAP_EXT.1"><td rowspan="2"><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FCS_EAP_EXT.1#"><td></td></tr><tr data-sortkey="FCS_EAP_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_HOTP_EXT.1"><td rowspan="2"><a href="#FIA_HOTP_EXT.1">FIA_HOTP_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_HOTP_EXT.1#"><td></td></tr><tr data-sortkey="FIA_HOTP_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_PSK_EXT.1"><td rowspan="2"><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_PSK_EXT.1#"><td></td></tr><tr data-sortkey="FIA_PSK_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_PSK_EXT.2"><td rowspan="2"><a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_PSK_EXT.2#"><td></td></tr><tr data-sortkey="FIA_PSK_EXT.2.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_PSK_EXT.3"><td rowspan="2"><a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_PSK_EXT.3#"><td></td></tr><tr data-sortkey="FIA_PSK_EXT.3.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_TOTP_EXT.1"><td rowspan="2"><a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_TOTP_EXT.1#"><td></td></tr><tr data-sortkey="FIA_TOTP_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table>
       
       
       <h2 id="s-fcs" class="indexable" data-level="2">B.2 Cryptographic Support (FCS)</h2>
@@ -1965,7 +1866,9 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         
         
         
-        <div class="comp" id="FIA_HOTP_EXT.1"><h4>FIA_HOTP_EXT.1 HMAC-Based One-Time Password Pre-Shared Keys</h4><div class="statustag"></div>
+        <div class="comp" id="FIA_HOTP_EXT.1"><h4>FIA_HOTP_EXT.1 HMAC-Based One-Time Password Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
+           <a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a>.
+           </i></b></div>
           
           
           
@@ -2119,15 +2022,13 @@ The assumptions identified in Section 3 are incorporated as security objectives 
      <span class="assignable-content">other supported special characters</span>]</span>, <span class="selectable-content" id="_s_74">no other characters</span>]
             </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.3"><a href="#FIA_PSK_EXT.3.3" class="abbr">FIA_PSK_EXT.3.3</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm HMAC-
-              [<b>selection</b>: <span class="selectable-content" id="_s_75">SHA-256</span>, <span class="selectable-content" id="_s_76">SHA-384</span>, <span class="selectable-content" id="_s_77">SHA-512</span>], with 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm [<i>HMAC-SHA-384, with 
               [<b>assignment</b>: 
-     <span class="assignable-content">positive integer of 4096 or more</span>] iterations, and output cryptographic key sizes 
-              [<b>selection</b>: <span class="selectable-content" id="_s_78">128</span>, <span class="selectable-content" id="_s_79">256</span>] that meet the following: [NIST SP 800-132].
+     <span class="assignable-content">positive integer of 4096 or more</span>] iterations,</i>] and output cryptographic key sizes [<i>256</i>] that meet the following: [<i>NIST SP 800-132</i>].
             </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.4"><a href="#FIA_PSK_EXT.3.4" class="abbr">FIA_PSK_EXT.3.4</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not accept PSKs less than 
-              [<b>selection</b>: <span class="selectable-content" id="_s_80">a value settable by the administrator</span>, <span class="selectable-content" id="_s_81">[<b>assignment</b>: 
+              [<b>selection</b>: <span class="selectable-content" id="_s_75">a value settable by the administrator</span>, <span class="selectable-content" id="_s_76">[<b>assignment</b>: 
      <span class="assignable-content">minimum PSK length accepted by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, must be &gt;= 6</span>]</span>] and greater than the maximum PSK length defined in <a href="#FIA_PSK_EXT.3.1">FIA_PSK_EXT.3.1</a>.
             </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.5"><a href="#FIA_PSK_EXT.3.5" class="abbr">FIA_PSK_EXT.3.5</a></div><div class="reqdesc">
@@ -2140,7 +2041,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           
             <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.7"><a href="#FIA_PSK_EXT.3.7" class="abbr">FIA_PSK_EXT.3.7</a></div><div class="reqdesc">
                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
-                [<b>selection</b>: <span class="selectable-content" id="_s_82">provide a password strength meter</span>, <span class="selectable-content" id="_s_83">check the password against a denylist</span>, <span class="selectable-content" id="_s_84">perform no action to assist the user in choosing a strong password</span>]. 
+                [<b>selection</b>: <span class="selectable-content" id="_s_77">provide a password strength meter</span>, <span class="selectable-content" id="_s_78">check the password against a denylist</span>, <span class="selectable-content" id="_s_79">perform no action to assist the user in choosing a strong password</span>]. 
               <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -2164,7 +2065,9 @@ The assumptions identified in Section 3 are incorporated as security objectives 
      
         
         
-        <div class="comp" id="FIA_TOTP_EXT.1"><h4>FIA_TOTP_EXT.1 Time-Based One-Time Password Pre-Shared Keys</h4><div class="statustag"></div>
+        <div class="comp" id="FIA_TOTP_EXT.1"><h4>FIA_TOTP_EXT.1 Time-Based One-Time Password Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
+           <a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a>.
+           </i></b></div>
           
           
           
@@ -2177,46 +2080,46 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             </div></div>
           <div class="element"><div class="reqid" id="FIA_TOTP_EXT.1.2"><a href="#FIA_TOTP_EXT.1.2" class="abbr">FIA_TOTP_EXT.1.2</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a TOTP seed according to FCS_RBG_EXT.1 of 
-              [<b>selection</b>: <span class="selectable-content" id="_s_85">128</span>, <span class="selectable-content" id="_s_86">256</span>] bits.
+              [<b>selection</b>: <span class="selectable-content" id="_s_80">128</span>, <span class="selectable-content" id="_s_81">256</span>] bits.
             </div></div>
           <div class="element"><div class="reqid" id="FIA_TOTP_EXT.1.3"><a href="#FIA_TOTP_EXT.1.3" class="abbr">FIA_TOTP_EXT.1.3</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a new TOTP seed for each client.
             </div></div>
           <div class="element"><div class="reqid" id="FIA_TOTP_EXT.1.4"><a href="#FIA_TOTP_EXT.1.4" class="abbr">FIA_TOTP_EXT.1.4</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use 
-              [<b>selection</b>: <span class="selectable-content" id="_s_87">SHA-1</span>, <span class="selectable-content" id="_s_88">SHA-256</span>, <span class="selectable-content" id="_s_89">SHA-384</span>, <span class="selectable-content" id="_s_90">SHA-512</span>] with key sizes 
+              [<b>selection</b>: <span class="selectable-content" id="_s_82">SHA-1</span>, <span class="selectable-content" id="_s_83">SHA-256</span>, <span class="selectable-content" id="_s_84">SHA-384</span>, <span class="selectable-content" id="_s_85">SHA-512</span>] with key sizes 
               [<b>assignment</b>: 
      <span class="assignable-content">key size (in bits) used in HMAC</span>] and message digest sizes 
-              [<b>selection</b>: <span class="selectable-content" id="_s_91">160</span>, <span class="selectable-content" id="_s_92">256</span>, <span class="selectable-content" id="_s_93">384</span>, <span class="selectable-content" id="_s_94">512</span>] to derive a TOTP hash from the TOTP seed and current time provided by NTP.
+              [<b>selection</b>: <span class="selectable-content" id="_s_86">160</span>, <span class="selectable-content" id="_s_87">256</span>, <span class="selectable-content" id="_s_88">384</span>, <span class="selectable-content" id="_s_89">512</span>] to derive a TOTP hash from the TOTP seed and current time provided by NTP.
             </div></div>
           <div class="element"><div class="reqid" id="FIA_TOTP_EXT.1.5"><a href="#FIA_TOTP_EXT.1.5" class="abbr">FIA_TOTP_EXT.1.5</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall truncate the TOTP hash per <a href="#FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</a> to create a TOTP of  
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_95">administrator configurable character length of at least 6</span></li><li style=""><span class="selectable-content" id="_s_96">preset character length of
-                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_97">6</span>, <span class="selectable-content" id="_s_98">7</span>, <span class="selectable-content" id="_s_99">8</span>, <span class="selectable-content" id="_s_100">9</span>, <span class="selectable-content" id="_s_101">10</span>]
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_90">administrator configurable character length of at least 6</span></li><li style=""><span class="selectable-content" id="_s_91">preset character length of
+                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_92">6</span>, <span class="selectable-content" id="_s_93">7</span>, <span class="selectable-content" id="_s_94">8</span>, <span class="selectable-content" id="_s_95">9</span>, <span class="selectable-content" id="_s_96">10</span>]
                 </span></li></ul>].
             </div></div>
           <div class="element"><div class="reqid" id="FIA_TOTP_EXT.1.6"><a href="#FIA_TOTP_EXT.1.6" class="abbr">FIA_TOTP_EXT.1.6</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_102">throttle invalid requests to 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_103">administrator configurable value</span>, <span class="selectable-content" id="_s_104">[<b>assignment</b>: 
-     <span class="assignable-content">value less than 10</span>]</span>] per minute</span></li><li style=""><span class="selectable-content" id="_s_105">lock the associated account after 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_106">administrator configurable value</span>, <span class="selectable-content" id="_s_107">[<b>assignment</b>: 
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_97">throttle invalid requests to 
+                  [<b>selection</b>: <span class="selectable-content" id="_s_98">administrator configurable value</span>, <span class="selectable-content" id="_s_99">[<b>assignment</b>: 
+     <span class="assignable-content">value less than 10</span>]</span>] per minute</span></li><li style=""><span class="selectable-content" id="_s_100">lock the associated account after 
+                  [<b>selection</b>: <span class="selectable-content" id="_s_101">administrator configurable value</span>, <span class="selectable-content" id="_s_102">[<b>assignment</b>: 
      <span class="assignable-content">value less than 10</span>]</span>] failed attempts until 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_108">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_109">a configurable time period</span>]
+                  [<b>selection</b>: <span class="selectable-content" id="_s_103">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_104">a configurable time period</span>]
                 </span></li></ul>].
             </div></div>
           <div class="element"><div class="reqid" id="FIA_TOTP_EXT.1.7"><a href="#FIA_TOTP_EXT.1.7" class="abbr">FIA_TOTP_EXT.1.7</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall set a time-step size of 
-              [<b>selection</b>: <span class="selectable-content" id="_s_110">a configurable value</span>, <span class="selectable-content" id="_s_111">[<b>assignment</b>: 
+              [<b>selection</b>: <span class="selectable-content" id="_s_105">a configurable value</span>, <span class="selectable-content" id="_s_106">[<b>assignment</b>: 
      <span class="assignable-content">a value less than or equal to 30</span>]</span>] seconds.
             </div></div>
           <div class="element"><div class="reqid" id="FIA_TOTP_EXT.1.8"><a href="#FIA_TOTP_EXT.1.8" class="abbr">FIA_TOTP_EXT.1.8</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not validate a drift of more than 
-              [<b>selection</b>: <span class="selectable-content" id="_s_112">a configurable value</span>, <span class="selectable-content" id="_s_113">[<b>assignment</b>: 
+              [<b>selection</b>: <span class="selectable-content" id="_s_107">a configurable value</span>, <span class="selectable-content" id="_s_108">[<b>assignment</b>: 
      <span class="assignable-content">a value less than or equal to 3</span>]</span>] time-steps.            
             </div></div>
           <div class="element"><div class="reqid" id="FIA_TOTP_EXT.1.9"><a href="#FIA_TOTP_EXT.1.9" class="abbr">FIA_TOTP_EXT.1.9</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
-              [<b>selection</b>: <span class="selectable-content" id="_s_114">allow resynchronization by recording time drift within the limit of <a href="#FIA_TOTP_EXT.1.8">FIA_TOTP_EXT.1.8</a></span>, <span class="selectable-content" id="_s_115">not permit resynchronization</span>].           
+              [<b>selection</b>: <span class="selectable-content" id="_s_109">allow resynchronization by recording time drift within the limit of <a href="#FIA_TOTP_EXT.1.8">FIA_TOTP_EXT.1.8</a></span>, <span class="selectable-content" id="_s_110">not permit resynchronization</span>].           
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -2238,7 +2141,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 
 	All extended components specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are listed in this table:
 
-<table class="sort_kids_"><caption data-sortkey="#0"><b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">11</span></span>: Extended Component Definitions</b></caption><tr data-sortkey="#1"><th>Functional Class</th><th>Functional Components</th></tr><tr data-sortkey="Cryptographic Support (FCS)"><td>Cryptographic Support (FCS)</td><td>FCS_EAP_EXT EAP-TLS/TTLS<br/></td></tr><tr data-sortkey="Identification and Authentication (FIA)"><td>Identification and Authentication (FIA)</td><td>FIA_HOTP_EXT HMAC-Based One-Time Password Pre-Shared Keys<br/>FIA_PSK_EXT Pre-Shared Key Composition<br/>FIA_TOTP_EXT Time-Based One-Time Password Pre-Shared Keys<br/></td></tr><tr data-sortkey="Packet Filtering (FPF)"><td>Packet Filtering (FPF)</td><td>FPF_MFA_EXT Multifactor Authentication Filtering<br/>FPF_RUL_EXT Packet Filtering Rules<br/></td></tr><tr data-sortkey="Protection of the TSF (FPT)"><td>Protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> (FPT)</td><td>FPT_TST_EXT <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Self-Test<br/></td></tr><tr data-sortkey="TOE Access (FTA)"><td><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Access (FTA)</td><td>FTA_VCM_EXT <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client Management<br/></td></tr></table><h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.2 Extended Component Definitions</h2><span class="sort_kids_"><span data-sortkey="Cryptographic Support (FCS)"><h3 id="ext-comp-FCS" class="indexable" data-level="3">C.2.1 Cryptographic Support (FCS)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
+<table class="sort_kids_"><caption data-sortkey="#0"><b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">10</span></span>: Extended Component Definitions</b></caption><tr data-sortkey="#1"><th>Functional Class</th><th>Functional Components</th></tr><tr data-sortkey="Cryptographic Support (FCS)"><td>Cryptographic Support (FCS)</td><td>FCS_EAP_EXT EAP-TLS/TTLS<br/></td></tr><tr data-sortkey="Identification and Authentication (FIA)"><td>Identification and Authentication (FIA)</td><td>FIA_HOTP_EXT HMAC-Based One-Time Password Pre-Shared Keys<br/>FIA_PSK_EXT Pre-Shared Key Composition<br/>FIA_TOTP_EXT Time-Based One-Time Password Pre-Shared Keys<br/></td></tr><tr data-sortkey="Packet Filtering (FPF)"><td>Packet Filtering (FPF)</td><td>FPF_MFA_EXT Multifactor Authentication Filtering<br/>FPF_RUL_EXT Packet Filtering Rules<br/></td></tr><tr data-sortkey="Protection of the TSF (FPT)"><td>Protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> (FPT)</td><td>FPT_TST_EXT <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Self-Test<br/></td></tr><tr data-sortkey="TOE Access (FTA)"><td><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Access (FTA)</td><td>FTA_VCM_EXT <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client Management<br/></td></tr></table><h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.2 Extended Component Definitions</h2><span class="sort_kids_"><span data-sortkey="Cryptographic Support (FCS)"><h3 id="ext-comp-FCS" class="indexable" data-level="3">C.2.1 Cryptographic Support (FCS)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FCS class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FCS_EAP_EXT" class="indexable" data-level="4">C.2.1.1 FCS_EAP_EXT EAP-TLS/TTLS</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family describe the requirements for EAP-TLS/TTLS.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FCS_EAP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a>,
              EAP-TLS/TTLS,
@@ -2328,14 +2231,14 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               [<b>selection</b>: <span class="selectable-content" id="_s_73">[<b>assignment</b>: 
      <span class="assignable-content">other supported special characters</span>]</span>, <span class="selectable-content" id="_s_74">no other characters</span>]
             <h4 id="ext-comp-FIA_PSK_EXT.3.3">FIA_PSK_EXT.3.3</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm HMAC-
-              [<b>selection</b>: <span class="selectable-content" id="_s_75">SHA-256</span>, <span class="selectable-content" id="_s_76">SHA-384</span>, <span class="selectable-content" id="_s_77">SHA-512</span>], with 
-              [<b>assignment</b>: 
-     <span class="assignable-content">positive integer of 4096 or more</span>] iterations, and output cryptographic key sizes 
-              [<b>selection</b>: <span class="selectable-content" id="_s_78">128</span>, <span class="selectable-content" id="_s_79">256</span>] that meet the following: [NIST SP 800-132].
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm [<b>assignment</b>: 
+     <span class="assignable-content">cryptographic algorithm</span>]
+              and output cryptographic key sizes [<b>assignment</b>: 
+     <span class="assignable-content">output key sizes</span>] that meet the following: [<b>assignment</b>: 
+     <span class="assignable-content">applicable standard</span>].
             <h4 id="ext-comp-FIA_PSK_EXT.3.4">FIA_PSK_EXT.3.4</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not accept PSKs less than 
-              [<b>selection</b>: <span class="selectable-content" id="_s_80">a value settable by the administrator</span>, <span class="selectable-content" id="_s_81">[<b>assignment</b>: 
+              [<b>selection</b>: <span class="selectable-content" id="_s_75">a value settable by the administrator</span>, <span class="selectable-content" id="_s_76">[<b>assignment</b>: 
      <span class="assignable-content">minimum PSK length accepted by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, must be &gt;= 6</span>]</span>] and greater than the maximum PSK length defined in <a href="#FIA_PSK_EXT.3.1">FIA_PSK_EXT.3.1</a>.
             <h4 id="ext-comp-FIA_PSK_EXT.3.5">FIA_PSK_EXT.3.5</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate all salts using an RBG that meets FCS_RBG_EXT.1 and with entropy of [<b>assignment</b>: 
@@ -2344,7 +2247,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require the PSK to be entered before every initiated connection.
             <h4 id="ext-comp-FIA_PSK_EXT.3.7">FIA_PSK_EXT.3.7</h4>
                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
-                [<b>selection</b>: <span class="selectable-content" id="_s_82">provide a password strength meter</span>, <span class="selectable-content" id="_s_83">check the password against a denylist</span>, <span class="selectable-content" id="_s_84">perform no action to assist the user in choosing a strong password</span>]. 
+                [<b>selection</b>: <span class="selectable-content" id="_s_77">provide a password strength meter</span>, <span class="selectable-content" id="_s_78">check the password against a denylist</span>, <span class="selectable-content" id="_s_79">perform no action to assist the user in choosing a strong password</span>]. 
               </div></div><h3 id="ext-comp-FIA_TOTP_EXT" class="indexable" data-level="4">C.2.2.3 FIA_TOTP_EXT Time-Based One-Time Password Pre-Shared Keys</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for the use of Time-Based One-Time password authentication, including generation methods and usage restrictions.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FIA_TOTP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a>,
              Time-Based One-Time Password Pre-Shared Keys,
              defines the implementation of TOTP.</p><h4>Management: FIA_TOTP_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_TOTP_EXT.1</h4><p>There are no auditable events foreseen.
@@ -2353,39 +2256,39 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               to authenticate the user before establishing <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection. 
             <h4 id="ext-comp-FIA_TOTP_EXT.1.2">FIA_TOTP_EXT.1.2</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a TOTP seed according to FCS_RBG_EXT.1 of 
-              [<b>selection</b>: <span class="selectable-content" id="_s_85">128</span>, <span class="selectable-content" id="_s_86">256</span>] bits.
+              [<b>selection</b>: <span class="selectable-content" id="_s_80">128</span>, <span class="selectable-content" id="_s_81">256</span>] bits.
             <h4 id="ext-comp-FIA_TOTP_EXT.1.3">FIA_TOTP_EXT.1.3</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a new TOTP seed for each client.
             <h4 id="ext-comp-FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use 
-              [<b>selection</b>: <span class="selectable-content" id="_s_87">SHA-1</span>, <span class="selectable-content" id="_s_88">SHA-256</span>, <span class="selectable-content" id="_s_89">SHA-384</span>, <span class="selectable-content" id="_s_90">SHA-512</span>] with key sizes 
+              [<b>selection</b>: <span class="selectable-content" id="_s_82">SHA-1</span>, <span class="selectable-content" id="_s_83">SHA-256</span>, <span class="selectable-content" id="_s_84">SHA-384</span>, <span class="selectable-content" id="_s_85">SHA-512</span>] with key sizes 
               [<b>assignment</b>: 
      <span class="assignable-content">key size (in bits) used in HMAC</span>] and message digest sizes 
-              [<b>selection</b>: <span class="selectable-content" id="_s_91">160</span>, <span class="selectable-content" id="_s_92">256</span>, <span class="selectable-content" id="_s_93">384</span>, <span class="selectable-content" id="_s_94">512</span>] to derive a TOTP hash from the TOTP seed and current time provided by NTP.
+              [<b>selection</b>: <span class="selectable-content" id="_s_86">160</span>, <span class="selectable-content" id="_s_87">256</span>, <span class="selectable-content" id="_s_88">384</span>, <span class="selectable-content" id="_s_89">512</span>] to derive a TOTP hash from the TOTP seed and current time provided by NTP.
             <h4 id="ext-comp-FIA_TOTP_EXT.1.5">FIA_TOTP_EXT.1.5</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall truncate the TOTP hash per <a href="#FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</a> to create a TOTP of  
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_95">administrator configurable character length of at least 6</span></li><li style=""><span class="selectable-content" id="_s_96">preset character length of
-                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_97">6</span>, <span class="selectable-content" id="_s_98">7</span>, <span class="selectable-content" id="_s_99">8</span>, <span class="selectable-content" id="_s_100">9</span>, <span class="selectable-content" id="_s_101">10</span>]
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_90">administrator configurable character length of at least 6</span></li><li style=""><span class="selectable-content" id="_s_91">preset character length of
+                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_92">6</span>, <span class="selectable-content" id="_s_93">7</span>, <span class="selectable-content" id="_s_94">8</span>, <span class="selectable-content" id="_s_95">9</span>, <span class="selectable-content" id="_s_96">10</span>]
                 </span></li></ul>].
             <h4 id="ext-comp-FIA_TOTP_EXT.1.6">FIA_TOTP_EXT.1.6</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_102">throttle invalid requests to 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_103">administrator configurable value</span>, <span class="selectable-content" id="_s_104">[<b>assignment</b>: 
-     <span class="assignable-content">value less than 10</span>]</span>] per minute</span></li><li style=""><span class="selectable-content" id="_s_105">lock the associated account after 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_106">administrator configurable value</span>, <span class="selectable-content" id="_s_107">[<b>assignment</b>: 
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_97">throttle invalid requests to 
+                  [<b>selection</b>: <span class="selectable-content" id="_s_98">administrator configurable value</span>, <span class="selectable-content" id="_s_99">[<b>assignment</b>: 
+     <span class="assignable-content">value less than 10</span>]</span>] per minute</span></li><li style=""><span class="selectable-content" id="_s_100">lock the associated account after 
+                  [<b>selection</b>: <span class="selectable-content" id="_s_101">administrator configurable value</span>, <span class="selectable-content" id="_s_102">[<b>assignment</b>: 
      <span class="assignable-content">value less than 10</span>]</span>] failed attempts until 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_108">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_109">a configurable time period</span>]
+                  [<b>selection</b>: <span class="selectable-content" id="_s_103">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_104">a configurable time period</span>]
                 </span></li></ul>].
             <h4 id="ext-comp-FIA_TOTP_EXT.1.7">FIA_TOTP_EXT.1.7</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall set a time-step size of 
-              [<b>selection</b>: <span class="selectable-content" id="_s_110">a configurable value</span>, <span class="selectable-content" id="_s_111">[<b>assignment</b>: 
+              [<b>selection</b>: <span class="selectable-content" id="_s_105">a configurable value</span>, <span class="selectable-content" id="_s_106">[<b>assignment</b>: 
      <span class="assignable-content">a value less than or equal to 30</span>]</span>] seconds.
             <h4 id="ext-comp-FIA_TOTP_EXT.1.8">FIA_TOTP_EXT.1.8</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not validate a drift of more than 
-              [<b>selection</b>: <span class="selectable-content" id="_s_112">a configurable value</span>, <span class="selectable-content" id="_s_113">[<b>assignment</b>: 
+              [<b>selection</b>: <span class="selectable-content" id="_s_107">a configurable value</span>, <span class="selectable-content" id="_s_108">[<b>assignment</b>: 
      <span class="assignable-content">a value less than or equal to 3</span>]</span>] time-steps.            
             <h4 id="ext-comp-FIA_TOTP_EXT.1.9">FIA_TOTP_EXT.1.9</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
-              [<b>selection</b>: <span class="selectable-content" id="_s_114">allow resynchronization by recording time drift within the limit of <a href="#FIA_TOTP_EXT.1.8">FIA_TOTP_EXT.1.8</a></span>, <span class="selectable-content" id="_s_115">not permit resynchronization</span>].           
+              [<b>selection</b>: <span class="selectable-content" id="_s_109">allow resynchronization by recording time drift within the limit of <a href="#FIA_TOTP_EXT.1.8">FIA_TOTP_EXT.1.8</a></span>, <span class="selectable-content" id="_s_110">not permit resynchronization</span>].           
             </div></div></span><span data-sortkey="Packet Filtering (FPF)"><h3 id="ext-comp-FPF" class="indexable" data-level="3">C.2.3 Packet Filtering (FPF)</h3>
           This class contains families that describe packet filtering behavior. Packet filtering refers to the notion that
           network traffic that is transmitted through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (i.e., the source and destination of the traffic is not
@@ -2458,7 +2361,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 			successfully evaluated against this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. These requirements are not featured
 			explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. They are not included as 
 			standalone <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> because it would increase the time, cost, and complexity of evaluation.
-			This approach is permitted by <a href="#bibCC">[CC]</a> Part 1, 8.2 Dependencies between components.</p><p>This information benefits systems engineering activities which call for inclusion of particular
+			This approach is permitted by <a href="#bibCC">[CC]</a> Part 1, 8.3 Dependencies between components.</p><p>This information benefits systems engineering activities which call for inclusion of particular
 			security controls. Evaluation against the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> provides evidence that these controls are present 
 			and have been evaluated.</p>
 	
@@ -2473,7 +2376,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 	beyond the requirements outlined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. As with other <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> requirements, the only
 	additional requirement is that the entropy documentation also applies to the specific <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway
 	capabilities of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in addition to the functionality required by the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.		 
- <h1 id="acronyms" class="indexable" data-level="A">Appendix F -  Acronyms</h1><table><caption><span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">12</span></span>: Acronyms
+ <h1 id="acronyms" class="indexable" data-level="A">Appendix F -  Acronyms</h1><table><caption><span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">11</span></span>: Acronyms
 		</caption><tr class="header"><th>Acronym</th><th>Meaning</th></tr><tr><td><span class="term" id="abbr_Base-PP" data-plural="Base-PPs"><abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></span></td><td><span id="long_abbr_Base-PP">Base Protection Profile</span></td></tr>
 <tr><td><span class="term" id="abbr_CA"><abbr class="dyn-abbr"><a href="#abbr_CA">CA</a></abbr></span></td><td><span id="long_abbr_CA">Certificate Authority</span></td></tr>
 <tr><td><span class="term" id="abbr_CC"><abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr></span></td><td><span id="long_abbr_CC">Common Criteria</span></td></tr>
@@ -2503,16 +2406,20 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 <tr><td><span class="term" id="abbr_TSFI" data-plural="TSFIs"><abbr class="dyn-abbr"><a href="#abbr_TSFI">TSFI</a></abbr></span></td><td><span id="long_abbr_TSFI"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Interface</span></td></tr>
 <tr><td><span class="term" id="abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></span></td><td><span id="long_abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Summary Specification</span></td></tr>
 <tr><td><span class="term" id="abbr_VPN"><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr></span></td><td><span id="long_abbr_VPN">Virtual Private Network</span></td></tr>
-</table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix G -  Bibliography</h1><table><caption><span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">13</span></span>: Bibliography</caption><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibCC">[<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
-            <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R5.pdf">Part
-                1: Introduction and General Model</a>, CCMB-2017-04-001, Version 3.1 Revision 5,
-              April 2017.</li>
-            <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R5.pdf">Part
-                2: Security Functional Components</a>, CCMB-2017-04-002, Version 3.1 Revision 5,
-              April 2017.</li>
-            <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R5.pdf">Part
-                3: Security Assurance Components</a>, CCMB-2017-04-003, Version 3.1 Revision 5,
-              April 2017.</li>
+</table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix G -  Bibliography</h1><table><caption><span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">12</span></span>: Bibliography</caption><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibCC">[<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
+            <li><a href="https://www.commoncriteriaportal.org/files/ccfiles/CC2022PART1R1.pdf">Part 1: 
+				Introduction and general model</a>, CCMB-2022-11-001, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
+            <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART2R1.pdf">Part 2: 
+				Security functional requirements</a>, CCMB-2022-11-002, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
+            <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART3R1.pdf">Part 3: 
+                Security assurance requirements</a>, CCMB-2022-11-003, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
+            <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART4R1.pdf">Part 4: 
+                Framework for the specification of evaluation methods and activities</a>, CCMB-2022-11-004, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
+            <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART5R1.pdf">Part 5: 
+                 Pre-defined packages of security requirements</a>, CCMB-2022-11-005, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
+          </ul></span></td></tr><tr><td><span id="bibCEM">[<abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr>]</span></td><td><span class="description">Common Methodology for Information Technology Security Evaluation - <ul>
+            <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CEM2022R1.pdf">
+                 Evaluation methodology</a>, CCMB-2022-11-006, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
           </ul></span></td></tr><tr><td><span id="bibNDSD">[ND-SD]</span></td><td><span class="description">
         <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=447&amp;id=447/">
           Supporting Document - Mandatory Technical Document - Evaluation Activities for Network Device cPP</a>, Version 2.2, December 2019

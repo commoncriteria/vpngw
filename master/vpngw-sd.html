@@ -294,7 +294,7 @@
       Technical Community members, with representatives from industry, government 
       agencies, Common Criteria Test Laboratories, and members of academia.
       </p></div><h1>Table of Contents</h1><div id="toc"><a href="#introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#scope" style="text-indent:10px">1.1<span>Technology Area and Scope of Supporting Document</span></a><a href="#structure" style="text-indent:10px">1.2<span>Structure of the Document</span></a><a href="#glossary" style="text-indent:10px">1.3<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.3.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.3.2<span>Technical Terms</span></a><a href="#sfr" style="text-indent:0px">2<span>Evaluation Activities for SFRs</span></a><a href="#aa-ND" style="text-indent:10px">2.1<span>Network Device</span></a><a href="#qq-sfrs-ND-Modified" style="text-indent:20px">2.1.1<span>Modified SFRs
-        </span></a><a href="#nd-m-fcs" style="text-indent:30px">2.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#nd-m-fia" style="text-indent:30px">2.1.1.2<span>Identification and Authentication (FIA)</span></a><a href="#nd-m-fmt" style="text-indent:30px">2.1.1.3<span>Security Management (FMT)</span></a><a href="#nd-m-fpt" style="text-indent:30px">2.1.1.4<span>Protection of the TSF (FPT)</span></a><a href="#man-sfrs" style="text-indent:10px">2.2<span>TOE SFR Evaluation Activities</span></a><a href="#m-fau" style="text-indent:20px">2.2.1<span>Security Audit (FAU)</span></a><a href="#m-fcs" style="text-indent:20px">2.2.2<span>Cryptographic Support (FCS)</span></a><a href="#m-fmt" style="text-indent:20px">2.2.3<span>Security Management (FMT)</span></a><a href="#m-fpf" style="text-indent:20px">2.2.4<span>Packet Filtering (FPF)</span></a><a href="#m-fpt" style="text-indent:20px">2.2.5<span>Protection of the TSF (FPT)</span></a><a href="#m-ftp" style="text-indent:20px">2.2.6<span>Trusted Path/Channels (FTP)</span></a><a href="#opt-sfrs" style="text-indent:10px">2.3<span>Evaluation Activities for Optional SFRs</span></a><a href="#s-fpf" style="text-indent:20px">2.3.1<span>Packet Filtering (FPF)</span></a><a href="#sel-sfrs" style="text-indent:10px">2.4<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#s-fcs" style="text-indent:20px">2.4.1<span>Cryptographic Support (FCS)</span></a><a href="#sel-fia" style="text-indent:20px">2.4.2<span>Identification and Authentication (FIA)</span></a><a href="#obj-sfrs" style="text-indent:10px">2.5<span>Evaluation Activities for Objective SFRs</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.6<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#opt-headend" style="text-indent:20px">2.6.1<span>TOE Access (FTA)</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
+        </span></a><a href="#man-sfrs" style="text-indent:10px">2.2<span>TOE SFR Evaluation Activities</span></a><a href="#m-fau" style="text-indent:20px">2.2.1<span>Security Audit (FAU)</span></a><a href="#m-fcs" style="text-indent:20px">2.2.2<span>Cryptographic Support (FCS)</span></a><a href="#m-fmt" style="text-indent:20px">2.2.3<span>Security Management (FMT)</span></a><a href="#m-fpf" style="text-indent:20px">2.2.4<span>Packet Filtering (FPF)</span></a><a href="#m-fpt" style="text-indent:20px">2.2.5<span>Protection of the TSF (FPT)</span></a><a href="#m-ftp" style="text-indent:20px">2.2.6<span>Trusted Path/Channels (FTP)</span></a><a href="#opt-sfrs" style="text-indent:10px">2.3<span>Evaluation Activities for Optional SFRs</span></a><a href="#s-fpf" style="text-indent:20px">2.3.1<span>Packet Filtering (FPF)</span></a><a href="#sel-sfrs" style="text-indent:10px">2.4<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#s-fcs" style="text-indent:20px">2.4.1<span>Cryptographic Support (FCS)</span></a><a href="#sel-fia" style="text-indent:20px">2.4.2<span>Identification and Authentication (FIA)</span></a><a href="#obj-sfrs" style="text-indent:10px">2.5<span>Evaluation Activities for Objective SFRs</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.6<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#opt-headend" style="text-indent:20px">2.6.1<span>TOE Access (FTA)</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
     PP-Module for VPN Gateways is
     to describe the security functionality of 
     VPN Gateways
@@ -401,54 +401,9 @@ The following sections list Common Criteria and technology terms used in this do
       to a PP-Configuration that includes the NDcPP.
      <h3 class="indexable" data-level="2" id="qq-sfrs-ND-Modified">2.1.1 Modified SFRs
         </h3>
-        
-        
-        <h3 class="indexable" data-level="3" id="nd-m-fcs">2.1.1.1 Cryptographic Support (FCS)</h3><div class="comp" id="ND-FCS-COP-1-DATAENCRYPTION"><h4>FCS_COP.1/DataEncryption Cryptographic Operation (AES Data Encryption/Decryption)</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_COP.1/DataEncryption</div>
-                There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module modifies this SFR to require the ST author to make certain selections, but these selections
-                  are all part of the original definition of the SFR so no new behavior is defined by the PP-Module.
-                <br/><br/>
-              </span></div><div class="comp" id="ND-FCS-IPSEC-EXT-1"><h4>FCS_IPSEC_EXT.1 IPsec Protocol</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_IPSEC_EXT.1</div>In addition to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document the following activities apply:
-                  <b></b>
-                  
-              
-              
-            <div class="eacategory">TSS</div><div class="ea"><div class="ea">All existing activities regarding "Pre-shared keys" apply to all selections including pre-shared keys.
-                  <b></b>If any selection with "Pre-shared keys" is included, the evaluator shall check to ensure that the TSS 
-                    describes how the selection works in conjunction with the authentication of IPsec connections.<br/></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">If any selection with “Pre-shared Keys” is selected, the evaluator shall check that the operational 
-                guidance describes any configuration necessary to enable any selected authentication mechanisms.<br/></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">There are no additional testing activities.</div></div></span></div>
-        
-        <h3 class="indexable" data-level="3" id="nd-m-fia">2.1.1.2 Identification and Authentication (FIA)</h3><div class="comp" id="ND-FIA-X509-EXT-1"><h4>FIA_X509_EXT.1/Rev X.509 Certificate Validation</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_X509_EXT.1/Rev</div>
-                There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module modifies this SFR to make it mandatory because of the TOE’s required support for IPsec.<br/><br/>
-              </span></div><div class="comp" id="ND-FIA-X509-EXT-2"><h4>FIA_X509_EXT.2 X.509 Certificate Authentication</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_X509_EXT.2</div>
-                There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module modifies this SFR to support its use for IPsec at a minimum. The evaluator shall ensure
-                  that all evaluation of this SFR is performed against its use in IPsec communications as well as any other
-                  supported usage.<br/><br/>
-              </span></div><div class="comp" id="ND-FIA-X509-EXT-3"><h4>FIA_X509_EXT.3 X.509 Certificate Requests</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_X509_EXT.3</div>
-                There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module modifies this SFR to make it mandatory because of the TOE’s required support for IPsec.<br/><br/>
-              </span></div>
-        
-        
-        <h3 class="indexable" data-level="3" id="nd-m-fmt">2.1.1.3 Security Management (FMT)</h3><div class="comp" id="ND-FMT-MTD-1-CRYPTOKEYS"><h4>FMT_MTD.1/CryptoKeys Management of TSF Data</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_MTD.1/CryptoKeys</div>
-                There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module modifies this SFR to make it mandatory because of the TOE’s required support for IPsec.<br/><br/>
-              </span></div>
-        
-        
-        
-        <h3 class="indexable" data-level="3" id="nd-m-fpt">2.1.1.4 Protection of the TSF (FPT)</h3><div class="comp" id="ND-FPT-TST-EXT-1"><h4>FPT_TST_EXT.1 TSF Testing</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_TST_EXT.1</div>
-                There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module requires a particular self-test to be performed, but this self-test is still evaluated using the
-                  same methods specified in the Supporting Document.<br/><br/>
-              </span></div><div class="comp" id="ND-FPT-TUD-EXT-1"><h4>FPT_TUD_EXT.1 Trusted Update</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_TUD_EXT.1</div>
-                There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module modifies this SFR to mandate that a particular selection be chosen, but this selection is
-                  part of the original definition of the SFR so no new behavior is defined by the PP-Module.<br/><br/>
-              </span></div>
-      <h2 class="indexable" data-level="1" id="man-sfrs">2.2 TOE SFR Evaluation Activities</h2><h2 class="indexable" data-level="2" id="m-fau">2.2.1 Security Audit (FAU)</h2><div class="comp" id="FAU-GEN-1-VPN"><h4>FAU_GEN.1/VPN Audit Data Generation (VPN Gateway)</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_GEN.1/VPN</div>
+	  The PP-Module does not modify any requirements when the 
+	  NDcPP is the base.
+	<h2 class="indexable" data-level="1" id="man-sfrs">2.2 TOE SFR Evaluation Activities</h2><h2 class="indexable" data-level="2" id="m-fau">2.2.1 Security Audit (FAU)</h2><div class="comp" id="FAU-GEN-1-VPN"><h4>FAU_GEN.1/VPN Audit Data Generation (VPN Gateway)</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_GEN.1/VPN</div>
               
               
               

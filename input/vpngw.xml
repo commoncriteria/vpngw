@@ -846,273 +846,65 @@ expected to enforce.<h:br/>
 -->        
         <!-- 5.1.1.1  -->
         <section title="Cryptographic Support (FCS)" id="nd-m-fcs">
-          <f-component cc-id="fcs_cop.1" iteration="DataEncryption" id="nd-fcs-cop-1-dataencryption" name="Cryptographic Operation (AES Data Encryption/Decryption)">
+          <base-sfr-spec cc-id="fcs_cop.1" iteration="DataEncryption" id="nd-fcs-cop-1-dataencryption" title="Cryptographic Operation (AES Data Encryption/Decryption)">
             <consistency-rationale>This PP-Module restricts the Base-PP SFR to a subset of existing permissible
               functionality and does not introduce any new behavior.</consistency-rationale>
-
-            <f-element id="nd-fcs-cop-1e1-dataencryption">
-              <title>
+            <description>
+                <h:p>This SFR has been modified from its definition in the NDcPP to support this
+                PP-Module’s IPsec requirements by mandating support for GCM mode and 256-bit key sizes.</h:p>
+                <h:p>The text of the requirement is replaced with:</h:p>
+                <h:p>
                 The TSF shall perform encryption/decryption in accordance with a
-                specified cryptographic algorithm AES used in 
-                <h:b><selectables>
-                  <selectable>CBC</selectable>
-                  <selectable>GCM</selectable>
-                </selectables> and <selectables>
-                  <selectable>CTR</selectable>
-                  <selectable exclusive="yes">no other</selectable>
-                </selectables> 
-                </h:b> mode and cryptographic key sizes <h:b><selectables>
-                  <selectable>128 bits</selectable>
-                  <selectable>256 bits</selectable>
-                </selectables> and <selectables>
-                  <selectable>192 bits</selectable>
-                  <selectable exclusive="yes">no other cryptographic key sizes</selectable>
-                </selectables></h:b> that meet the following: AES as specified in ISO 18033-3, <h:b><selectables>
-                  <selectable>CBC as specified in ISO 10116</selectable>
-                  <selectable>GCM as specified in ISO 19772</selectable></selectables>, and <selectables>
-                  <selectable>CTR as specified in ISO 10116</selectable>
-                  <selectable exclusive="yes">no other standards</selectable>
-                </selectables></h:b>. 
-              </title>
-              <note role="application">
-                This SFR has been modified from its definition in the NDcPP to support this
-                PP-Module’s IPsec requirements by mandating support for at least one of
-                CBC or GCM modes and at least one of 128-bit or 256-bit key sizes at
-                minimum. Other selections may be made by the ST author but they are
-                not required for conformance to this PP-Module.
-              </note>
-              <aactivity>
-                <no-tests>There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module modifies this SFR to require the ST author to make certain selections, but these selections
-                  are all part of the original definition of the SFR so no new behavior is defined by the PP-Module.
-                </no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
-        
-          <f-component cc-id="fcs_ipsec_ext.1" id="nd-fcs-ipsec-ext-1" name="IPsec Protocol">
-            <consistency-rationale>This PP-Module restricts the Base-PP SFR to a subset of existing permissible
+                specified cryptographic algorithm AES used in <h:i>GCM</h:i>
+                mode and cryptographic key sizes <h:i>256 bits</h:i> that meet the following:
+                AES as specified in ISO 18033-3, <h:i>GCM as specified in ISO 19772</h:i>
+                </h:p>
+            </description>
+            <no-change/>
+          </base-sfr-spec>
+          <base-sfr-spec cc-id="fcs_ipsec_ext.1" id="nd-mod-fcs-ipsec-ext-1" title="IPsec Protocol">
+              <consistency-rationale>This PP-Module restricts the Base-PP SFR to a subset of existing permissible
               functionality and does not introduce any new behavior.</consistency-rationale>
-            
-            <!-- Note: Module v1.1 only lists the elements that are modified from their Base-PP definition. Since the schema doesn't allow us to define arbitrary non-sequential elements we have just
-            included the entire component and kept the app notes on the ones that were changed. -->
-            <f-element id="nd-fcs-ipsec-ext-1e1">
-              <title>
-                The TSF shall implement the IPsec architecture as specified in RFC
-                4301.
-              </title>
-              <note role="application">
-                This element is unchanged from its definition in the Base-PP.
-              </note>
-            </f-element>
-            <f-element id="nd-fcs-ipsec-ext-1e2">
-              <title>The TSF shall have a nominal, final entry in the SPD that matches
-                anything that is otherwise unmatched and discards it.
-              </title>
-              <note role="application">
-                This element is unchanged from its definition in the Base-PP.
-              </note>
-            </f-element>
-            <!-- Note: any change to 1.3? -->
-            <f-element id="nd-fcs-ipsec-ext-1e3">
-              <title>The TSF shall implement <selectables>
-                <selectable>transport mode</selectable>
-                <selectable>tunnel mode</selectable>
-              </selectables>.
-              </title>
-              <note role="application">
-                The selection of supported modes is expected to be performed according to
-                RFC 4301.
-              </note>
-            </f-element>
-            <f-element id="nd-fcs-ipsec-ext-1e4">
-              <title>
+              <description>
+              <h:p>This SFR has been modified from its definition in the NDcPP to support
+              this module's IPsec requirements by mandating use of CNSA 1.0 parameters, where applicable.
+              Any requirement not mentioned in this section is unchanged from its definition in the Base-PP.
+              <h:br/><h:br/>
+              FCS_IPSEC_EXT.1.4: SHA-based HMAC is not required since AES-GCM satisfies both confidentiality and integrity functions.
+              IPsec may use a truncated version of the SHA-based HMAC functions contained in the selections. Where a truncated output is used, this is described in the TSS.</h:p>
+              <h:p>The text of FCS_IPSEC_EXT.1.4 is replaced with:</h:p>
+              <h:p>
                 The TSF shall implement the IPsec protocol ESP as defined by RFC 4303 using the
-                cryptographic algorithms <h:b><selectables>
-                  <selectable>AES-CBC-128</selectable>
-                  <selectable>AES-CBC-256 (specified in RFC 3602)</selectable>
-                  <selectable>AES-GCM-128</selectable>
-                  <selectable>AES-GCM-256 (specified in RFC 4106)</selectable>
-                </selectables> and <selectables>
-                  <selectable>AES-CBC-192 (specified in RFC 3602)</selectable>
-                  <selectable>AES-GCM-192 (specified in RFC 4106)</selectable>
-                  <selectable exclusive="yes">no other algorithm</selectable>
-                </selectables></h:b> together with a Secure Hash Algorithm (SHA)-based HMAC <selectables>
-                  <selectable>HMAC-SHA-1</selectable>
-                  <selectable>HMAC-SHA-256</selectable>
-                  <selectable>HMAC-SHA-384</selectable>
-                  <selectable>HMAC-SHA-512</selectable>
-                  <selectable exclusive="yes">no HMAC algorithm</selectable>
-                </selectables>.
-              </title>
-              <note role="application">
-                This element has been modified from its definition in the NDcPP by mandating
-                either 128 or 256 bit key sizes for AES-CBC or AES-GCM, thereby disallowing for
-                the sole selection of 192 bit key sizes.
-                <h:br/>
-                When an AES-CBC algorithm is selected, at least one SHA-based HMAC must also
-                be chosen. If only an AES-GCM algorithm is selected, then a SHA-based HMAC is
-                not required since AES-GCM satisfies both confidentiality and integrity functions.
-                IPsec may use a truncated version of the SHA-based HMAC functions contained
-                in the selections. Where a truncated output is used, this is described in the TSS.
-              </note>
-            </f-element>
-            <f-element id="nd-fcs-ipsec-ext-1e5">
-              <title>The TSF shall implement the protocol: <selectables linebreak="yes">
-                <selectable>IKEv1, using Main Mode for Phase 1 exchanges, as defined in RFCs 2407, 2408, 2409, RFC 4109, <selectables>
-                  <selectable exclusive="yes">no other RFCs for extended sequence numbers</selectable>
-                  <selectable>RFC 4304 for extended sequence numbers</selectable>
-                </selectables> and <selectables>
-                  <selectable exclusive="yes">no other RFCs for hash functions</selectable>
-                  <selectable>RFC 4868 for hash functions</selectable></selectables></selectable>
-                <selectable>IKEv2 as defined in RFC 7296 <selectables onlyone="yes">
-                  <selectable>with no support for NAT traversal</selectable>
-                  <selectable>with mandatory support for NAT traversal as specified in RFC 7296, section 2.23</selectable></selectables> and <selectables>
-                    <selectable exclusive="yes">no other RFCs for hash functions</selectable>
-                    <selectable>RFC 4868 for hash functions</selectable></selectables></selectable>
-              </selectables>.
-              </title>
-              <!-- <note role="application">
-                This element is unchanged from its definition in the Base-PP when CPP_ND_V2.2E is used. When CPP_ND_V3.0E is the Base-PP, the element in section 5.1.2.1 should be used, instead.
-              </note> -->
-            </f-element>
-            <f-element id="nd-fcs-ipsec-ext-1e6">
-              <title>
-                The TSF shall ensure the encrypted payload in the <selectables>
-                  <selectable>IKEv1</selectable>
-                  <selectable>IKEv2</selectable> 
-                </selectables> protocol uses the cryptographic algorithms <selectables>
-                  <selectable>AES-CBC-128</selectable>
-                  <selectable>AES-CBC-192</selectable>
-                  <selectable>AES-CBC-256 (specified in RFC 3602)</selectable>
-                  <selectable>AES-GCM-128</selectable>
-                  <selectable>AES-GCM-256 (specified in RFC 5282)</selectable>
-                </selectables>.
-              </title>
-              <!-- Note: the RFCs referenced in the app note below are normally referenced but only in the third and sixth selections above, which cretes an awkward situation if those specific selections aren't made. Is it ok
-              just to reference the RFCs in the app note (the alternatives would be refactoring the selection entirely or refining the RFCs into each individual selection item, neither of which seem like a better option. -->
-              <note role="application">
-                This element is changed from its definition in the Base-PP to remove AES-GCM-192, which is not recommended. 
-                AES-CBC implementation for IPsec is specified in RFC 3602. AES-GCM implementation for IPsec is specified in RFC 5282.
-              </note>
-            </f-element>
-            <f-element id="nd-fcs-ipsec-ext-1e7">
-              <title>
-                The TSF shall ensure that <selectables linebreak="yes">
-                  <selectable>IKEv1 Phase 1 SA lifetimes can be configured by a Security Administrator based on
-                  <selectables linebreak="yes">
-                    <selectable>number of bytes</selectable>
-                    <selectable>length of time, where the time values can be configured within <assignable>integer range including 24</assignable> hours</selectable></selectables></selectable>
-                  <selectable>IKEv2 SA lifetimes can be configured by a Security Administrator based on <selectables linebreak="yes">
-                    <selectable>number of bytes</selectable>
-                    <selectable>length of time, where the time values can be configured within <assignable>integer range including 24</assignable> hours</selectable></selectables></selectable></selectables>.
-              </title>
-              <note role="application">
-                This element is unchanged from its definition in the Base-PP.
-              </note>
-            </f-element>
-            <f-element id="nd-fcs-ipsec-ext-1e8">
-              <title>
-                The TSF shall ensure that <selectables linebreak="yes">
-                  <selectable>IKEv1 Phase 2 SA lifetimes can be configured by a Security Administrator based on
-                    <selectables linebreak="yes">
-                      <selectable>number of bytes</selectable>
-                      <selectable>length of time, where the time values can be configured within <assignable>integer range including 8</assignable> hours</selectable></selectables></selectable>
-                  <selectable>IKEv2 Child SA lifetimes can be configured by a Security Administrator based on <selectables linebreak="yes">
-                    <selectable>number of bytes</selectable>
-                    <selectable>length of time, where the time values can be configured within <assignable>integer range including 8</assignable> hours</selectable></selectables></selectable></selectables>.
-              </title>
-              <note role="application">
-                This element is unchanged from its definition in the Base-PP.
-              </note>
-            </f-element>
-            <f-element id="nd-fcs-ipsec-ext-1e9">
-              <title>
-                The TSF shall generate the secret value x used in the IKE Diffie-Hellman key exchange (“x” in g^x mod p) using the random bit generator specified in
-                FCS_RBG_EXT.1, and having a length of at least <assignable>(one or more) numbers of bits that is at least twice the security strength 
-                of the negotiated DH group</assignable> bits.
-              </title>
-              <note role="application">
-                This element is unchanged from its definition in the Base-PP.
-              </note>
-            </f-element>
-            <f-element id="nd-fcs-ipsec-ext-1e10">
-              <title>
-                The TSF shall generate nonces used in <selectables>
-                  <selectable>IKEv1</selectable>
-                  <selectable>IKEv2</selectable>
-                </selectables> exchanges of length <selectables linebreak="yes">
-                  <selectable>according to the security strength associated with the negotiated DH group</selectable>
-                  <selectable>at least 128 bits in size and at least half the output size of the negotiated pseudorandom function (PRF) hash</selectable>
-                </selectables>.
-              </title>
-              <note role="application">
-                This element is unchanged from its definition in the Base-PP.
-              </note>
-            </f-element>
-            <f-element id="nd-fcs-ipsec-ext-1e11">
-              <title>
-                The TSF shall ensure that IKE protocols implement DH Groups <h:ul>
-                  <h:li><h:b>19 (256-bit Random ECP), 20 (384-bit Random ECP) according to RFC 5114 and</h:b></h:li></h:ul> 
-                  <selectables linebreak="yes">
-                    <selectable><selectables>
-                      <selectable>14 (2048-bit MODP)</selectable>
-                      <selectable>15 (3072-bit MODP)</selectable>
-                      <selectable>16 (4096-bit MODP)</selectable>
-                      <selectable>17 (6144-bit MODP)</selectable>
-                      <selectable>18 (8192-bit MODP)</selectable>
-                    </selectables> according to RFC 3526</selectable>
-                    <selectable><selectables>
-                      <selectable>21 (521-bit Random ECP)</selectable>
-                      <selectable>24 (2048-bit MODP with 256-bit POS</selectable>
-                      <selectable exclusive="yes"><h:b>no other DH Groups</h:b></selectable>
-                    </selectables> according to RFC 5114</selectable>
-                  </selectables>.
-              </title>
-              <note role="application">
-                This element has been modified from its definition in the NDcPP by mandating
-                DH groups 19 and 20, both of which are selectable in the original definition of the
-                element. Any groups other than 19 and 20 may be selected by the ST author but
-                they are not required for conformance to this PP-Module.
-              </note>
-            </f-element>
-            <f-element id="nd-fcs-ipsec-ext-1e12">
-              <title>
-                The TSF shall be able to ensure by default that the strength of the
-                symmetric algorithm (in terms of the number of bits in the key) negotiated to protect the <selectables>
-                  <selectable>IKEv1 Phase 1</selectable>
-                  <selectable>IKEv2 IKE_SA</selectable>
-                </selectables> connection is greater than or equal to the strength
-                of the symmetric algorithm (in terms of the number of bits in the key) negotiated to protect the <selectables>
-                  <selectable>IKEv1 Phase 2</selectable>
-                  <selectable>IKEv2 CHILD_SA</selectable>
-                </selectables> connection.
-              </title>
-              <note role="application">
-                This element is unchanged from its definition in the Base-PP.
-              </note>
-            </f-element>
-            <f-element id="nd-fcs-ipsec-ext-1e13">
-              <title>The TSF shall ensure that 
-                <h:b><selectables>
-                  <selectable>IKEv1</selectable>
-                  <selectable>IKEv2</selectable></selectables></h:b>
-                protocols perform peer authentication using  
-                <selectables>
-                  <selectable>RSA</selectable>
-                  <selectable>ECDSA</selectable>
-                </selectables> 
-                that use X.509v3 certificates that conform to RFC 4945 and 
-                <selectables>
-                  <selectable id="sel-ipsec-e13-psk">Pre-shared Keys <h:b>that conform to RFC 8784</h:b></selectable>
-                  <selectable id="sel-ipsec-e13-eapttls"><h:b>Pre-shared Keys transmitted via EAP-TTLS</h:b></selectable>
-                  <selectable id="sel-ipsec-e13-eaptls"><h:b>EAP-TLS</h:b></selectable>
-                  <selectable exclusive="yes">no other method</selectable>
-                </selectables>.
-              </title>
-              <note role="application">
-                At least one public-key-based Peer Authentication method is required in order to
+                cryptographic algorithms <h:i>AES-GCM-256 (specified in RFC 4106)</h:i>
+                together with a Secure Hash Algorithm (SHA)-based HMAC [<h:b>selection:</h:b><h:i>HMAC-SHA-384, no HMAC algorithm</h:i>].
+              </h:p>
+              <h:br/><h:br/>
+              <h:p>FCS_IPSEC_EXT.1.6: This SFR is modified from its definition in the Base-PP to remove support for non-CNSA parameters and algorithms.</h:p>
+              <h:p>The text of FCS_IPSEC_EXT.1.6 is replaced with:</h:p>
+              <h:p>The TSF shall ensure the encrypted payload in the [<h:b>selection</h:b>: <h:i>IKEv1, IKEv2</h:i>] protocol uses the cryptographic algorithms
+              <h:i>AES-GCM-256 (specified in RFC 5282)</h:i>.
+              </h:p>
+              <h:p><h:b>Application Note: </h:b>This element is changed from its definition in the Base-PP to mandate support of 256-bit GCM.AES-GCM implementation for IPsec is specified in RFC 5282.</h:p>
+              <h:br/><h:br/>
+              <h:p>FCS_IPSEC_EXT.1.11: This element has been modified from its definition in the NDcPP by mandating DH group 20, which is selectable in the original definition of the element.
+              The selectable options have also been restricted to conform with CNSA 1.0 parameters.</h:p>
+              <h:p>The text of FCS_IPSEC_EXT.1.11 is replaced with:</h:p>
+              <h:p>The TSF shall ensure that IKE protocols implement DH groups
+              <h:b><h:ul><h:li>20 (384-bit Random ECP) according to RFC 5114 and</h:li></h:ul></h:b>
+              [<h:b>selection:</h:b>
+              <h:ul>
+              <h:li><h:i>15 (3072-bit MODP), 16 (4096-bit MODP)] according to RFC 3526</h:i></h:li>
+              <h:li><h:i><h:b>no other DH Groups</h:b> according to RFC 5114</h:i></h:li>
+              </h:ul>
+              </h:p>
+              <h:br/><h:br/>
+              <h:p>FCS_IPSEC_EXT.1.13: This SFR is modified from its definition in the Base-PP by adding new selections for IKE versions and authentication methods.</h:p>
+              <h:p>The text of FCS_IPSEC_EXT.1.13 is replaced with:</h:p>
+              <h:p>The TSF shall ensure that <h:b>[selection: <h:i>IKEv1, IKEv2</h:i>]</h:b> protocols perform peer authentication using [<h:b>selection: </h:b><h:i>RSA, ECDSA</h:i>]
+              that use X.509v3 certificates that conform to RFC 4945 and [<h:b>selection: </h:b><h:i>Pre-shared Keys <h:b>that conform to RFC 8784, Pre-shared Keys transmitted
+              via EAP-TTLS, EAP-TLS,</h:b> no other method</h:i>].
+              <h:br/>
+              <h:b>Application Note: </h:b> At least one public-key-based Peer Authentication method is required in order to
                 conform to this PP-Module; one or more of the public key schemes is chosen by
                 the ST author to reflect what is implemented. The ST author also ensures that
                 appropriate FCS requirements reflecting the algorithms used (and key
@@ -1134,260 +926,139 @@ expected to enforce.<h:br/>
                 Multifactor support can be achieved via traffic filtering in accordance with FPF_MFA_EXT.1. 
                 <h:br/><h:br/>
                 It is acceptable for different use cases to leverage different selections. If this is the case, it must be identified. 
-                <h:br/><h:br/>
-                This SFR is modified from its definition in the Base-PP by adding new selections for IKE versions and authentication methods.
-              </note>
-            </f-element>
-            <f-element id="nd-fcs-ipsec-ext-1e14">
-              <title>
-                The TSF shall only establish a trusted channel if the presented identifier in the
+              </h:p>
+              <h:br/><h:br/>
+              <h:p>FCS_IPSEC_EXT.1.14: This SFR is modified from its definition in the Base-PP to require DN to be supported for certificate reference identifiers.</h:p>
+              <h:p>The text of FCS_IPSEC_EXT.1.14 is replaced with:</h:p>
+              <h:p>The TSF shall only establish a trusted channel if the presented identifier in the
                 received certificate matches the configured reference identifier, where the
                 presented and reference identifiers are of the following fields and types:
-                <h:b>Distinguished Name (DN),</h:b> <selectables>
-                  <selectable>SAN: IP address</selectable>
-                  <selectable>SAN: Fully Qualified Domain Name (FQDN)</selectable>
-                  <selectable>SAN: user FQDN</selectable>
-                  <selectable>CN: IP address</selectable>
-                  <selectable>CN: FQDN</selectable>
-                  <selectable>CN: user FQDN</selectable> 
-                  <selectable exclusive="yes"><h:b>no other reference identifier types</h:b></selectable>
-                  <selectable><h:b><assignable>other supported reference identifier types</assignable></h:b></selectable>
-                </selectables>.
-              </title>
-              <note role="application">
-                This PP-Module requires DN to be supported for certificate reference identifiers at
-                minimum. Other selections may be made by the ST author but they are not
-                required for conformance to this PP-Module.
-              </note>
-            <aactivity>In addition to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document the following activities apply:
-                  <h:b/>
-                  <TSS>All existing activities regarding "Pre-shared keys" apply to all selections including pre-shared keys.
-                  <h:b/>If any selection with "Pre-shared keys" is included, the evaluator shall check to ensure that the TSS 
-                    describes how the selection works in conjunction with the authentication of IPsec connections.<h:br/></TSS>
-              <Guidance>If any selection with “Pre-shared Keys” is selected, the evaluator shall check that the operational 
-                guidance describes any configuration necessary to enable any selected authentication mechanisms.<h:br/></Guidance>
-              <Tests>There are no additional testing activities.</Tests>
-            </aactivity>
-            </f-element>
-            <audit-event>
-              <audit-event-descr>Session establishment with peer</audit-event-descr>
-              <audit-event-info>Entire packet contents of packets transmitted/received during session establishment</audit-event-info>
-            </audit-event>
-          </f-component>
-          
-        
+                <h:b>Distringuished Name (DN),</h:b> [<h:b>selection:</h:b> <h:i>SAN: IP address, SAN: Fully Qualified Domain Name (FQDN), SAN: user FQDN,
+                CN: IP address, CN: FQDN, CN: user FQDN, <h:b>no other reference identifier types, [assignment: other supported reference identifier types]</h:b></h:i>].
+                </h:p>
+                <h:p><h:b>Application Note:</h:b> This PP-Module requires DN to be supported for certificate reference identifiers at minimum. Other selections may be made 
+                by the ST author but they are not required for conformance to this PP-Module.</h:p>
+              </description>
+              <no-change/>
+          </base-sfr-spec>
         </section>
         <!-- 5.1.1.3 -->
         <section title="Identification and Authentication (FIA)" id="nd-m-fia">
           <!-- There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
 The PP-Module modifies this SFR to make it mandatory because of the TOE’s required support for IPsec. -->
-          <f-component cc-id="fia_x509_ext.1" iteration="Rev" id="nd-fia-x509-ext-1" name="X.509 Certificate Validation">
+          <base-sfr-spec cc-id="fia_x509_ext.1" iteration="Rev" id="nd-mod-fia-x509-ext-1" title="X.509 Certificate Validation">
             <consistency-rationale>This PP-Module does not modify the Base-PP SFR; it only mandates the
               inclusion of the SFR because a conformant TOE will always require this
               functionality that is only conditional in the Base-PP.</consistency-rationale>
-            <f-element id="nd-fia-x509-ext-1e1-rev">
-              <title>
+            <description>
                 This is specified as a selection-based SFR in the Base-PP but is mandatory for any TOE that claims
                 conformance to this PP-Module because a conformant TOE will always have the ability to receive an X.509
                 certificate from an external entity as part of IPsec communications. Therefore, a mechanism for the TSF
                 to validate an X.509 certificate presented to it is required.
-              </title>
-              <aactivity>
-                <no-tests>There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module modifies this SFR to make it mandatory because of the TOE’s required support for IPsec.</no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
-          
-          <f-component cc-id="fia_x509_ext.2" id="nd-fia-x509-ext-2" name="X.509 Certificate Authentication">
+            </description>
+            <no-change/>
+          </base-sfr-spec>
+          <base-sfr-spec cc-id="fia_x509_ext.2" id="nd-mod-fia-x509-ext-2" title="X.509 Certificate Authentication">
             <consistency-rationale>This PP-Module restricts the Base-PP SFR to a subset of existing permissible
               functionality and does not introduce any new behavior.</consistency-rationale>
-            <f-element id="nd-fia-x509-ext-2e1">
-              <title>
-                The TSF shall use X.509v3 certificates as defined by RFC 5280 to support
-                authentication for <h:b>IPsec and
-                  <selectables>
-                    <selectable>DTLS</selectable>
-                    <selectable>HTTPS</selectable>
-                    <selectable>SSH</selectable>
-                    <selectable>TLS</selectable>
-                    <selectable exclusive="yes">no other protocols</selectable>
-                  </selectables></h:b>, and <selectables>
-                    <selectable>code signing for system software updates</selectable>
-                    <selectable><assignable>other uses</assignable></selectable>
-                    <selectable exclusive="yes">no additional uses</selectable>
-                  </selectables>.
-              </title>
-              <note role="application">
-                The Base-PP allows the ST author to specify the TSF’s use of X.509 certificates.
+            <description>
+                <h:p>The Base-PP allows the ST author to specify the TSF’s use of X.509 certificates.
                 Because this PP-Module mandates IPsec functionality, the SFR has been refined to
                 force the inclusion of it. Other functions specified by the Base-PP may be chosen
-                without restriction.
-              </note>
-            </f-element>
-            <f-element id="nd-fcs-ipsec-ext-2e2">
-              <title>
-                When the TSF cannot establish a connection to determine the validity of
-                a certificate, the TSF shall <selectables onlyone="yes">
-                  <selectable>allow the Administrator to choose whether to accept the
-                    certificate in these cases</selectable>
-                  <selectable>accept the certificate</selectable>
-                  <selectable>not accept the certificate</selectable>
-                </selectables>. 
-              </title>
-              <note role="application">
-                This element is unchanged from its definition in the Base-PP.
-              </note>
-              <aactivity>
-                <no-tests>There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module modifies this SFR to support its use for IPsec at a minimum. The evaluator shall ensure
-                  that all evaluation of this SFR is performed against its use in IPsec communications as well as any other
-                  supported usage.</no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
-          
-          <f-component cc-id="fia_x509_ext.3" id="nd-fia-x509-ext-3" name="X.509 Certificate Requests">
-            <consistency-rationale>This PP-Module does not modify the Base-PP SFR; it only mandates the
-              inclusion of the SFR because a conformant TOE will always require this
-              functionality that is only conditional in the Base-PP.
-            </consistency-rationale>
-            <f-element id="nd-fia-x509-ext-3e1">
-              <title>
-                This is specified as a selection-based SFR in the Base-PP but is mandatory for any TOE that claims
-                conformance to this PP-Module because a conformant TOE will always have the ability to present an X.509
-                certificate to an external entity as part of IPsec communications. Therefore, a mechanism for the TSF to
-                obtain a certificate for its own use is required.
-              </title>
-              <aactivity>
-                <no-tests>There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module modifies this SFR to make it mandatory because of the TOE’s required support for IPsec.</no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
+                without restriction.</h:p>
+                <h:p>The text of the requirement is replaced with:</h:p>
+                <h:p>
+                The TSF shall use X.509v3 certificates as defined by RFC 5280 to support
+                authentication for <h:b>IPsec and [selection: <h:i>DTLS, HTTPS, SSH, TLS, no other protocols</h:i></h:b>],
+                and [<h:b>selection: </h:b><h:i> code signing for system software updates, [<h:b>assignment: </h:b> other uses], no additional uses</h:i>].
+                </h:p>
 
+            </description>
+            <no-change/>
+          </base-sfr-spec>
+          <base-sfr-spec cc-id="fia_x509_ext.3" id="nd-mod-fia-x509-ext-3" title="X.509 Certificate Requests">
+            <consistency-rationale>This PP-Module does not modify the Base-PP SFR; it only mandates the
+                inclusion of the SFR because a conformant TOE will always require this
+                functionality that is only conditional in the Base-PP.
+              </consistency-rationale>
+              <description>
+                  This is specified as a selection-based SFR in the Base-PP but is mandatory for any TOE that claims
+                  conformance to this PP-Module because a conformant TOE will always have the ability to present an X.509
+                  certificate to an external entity as part of IPsec communications. Therefore, a mechanism for the TSF to
+                  obtain a certificate for its own use is required.
+              </description>
+              <no-change/>
+          </base-sfr-spec>
         </section>
         
         <!-- 5.1.1.3  -->
         <section title="Security Management (FMT)" id="nd-m-fmt">
-
-          <f-component cc-id="fmt_mtd.1" id="nd-fmt-mtd-1-cryptokeys" iteration="CryptoKeys" name="Management of TSF Data">
+          <base-sfr-spec cc-id="fmt_mtd.1" iteration="CryptoKeys" id="nd-mod-fmt-mtd-1-cryptokeys" title="Management of TSF Data">
             <consistency-rationale>
               This PP-Module applies the key management functionality already defined in
               the Base-PP specifically to functionality related to VPN gateways.
             </consistency-rationale>
-            <f-element id="nd-fmt-mtd-1e1-cryptokeys">
-              <title>
-                The TSF shall restrict the ability to [[<h:i>manage</h:i>]] the [<h:i>cryptographic keys <h:b>and
-                  certificates used for VPN operation</h:b></h:i>] to [<h:i>Security Administrators</h:i>]. 
-              </title>
-              <note role="application">
-                This SFR, defined in the NDcPP as selection-based, is mandated for
+            <description>
+            <h:p>This SFR, defined in the NDcPP as selection-based, is mandated for
                 inclusion in this PP-Module because the refinements to FMT_SMF.1
                 mandate its inclusion. Note that it is also refined to refer specifically to
-                keys and certificates used for VPN operation.
-              </note>
-              <aactivity>
-                <no-tests>There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module modifies this SFR to make it mandatory because of the TOE’s required support for IPsec.</no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
+                keys and certificates used for VPN operation.</h:p>
+              <h:p>The text of the requirement is replaced with:</h:p>
+              <h:p>
+              The TSF shall restrict the ability to [[<h:i>manage</h:i>]] the [<h:i>cryptographic keys <h:b>and
+              certificates used for VPN operation</h:b></h:i>] to [<h:i>Security Administrators</h:i>]. 
+              </h:p>
+            </description>
+            <no-change/>
+          </base-sfr-spec>
           
         </section>
         
         
         <!-- 5.1.1.4  -->
         <section title="Protection of the TSF (FPT)" id="nd-m-fpt">
-  
-          <f-component cc-id="fpt_tst_ext.1" id="nd-fpt-tst-ext-1" name="TSF Testing">
+          <base-sfr-spec cc-id="fpt_tst_ext.1" id="nd-mod-fpt-tst-ext-1" title="TSF Testing">
             <consistency-rationale>
               This PP-Module refines the Base-PP SFR to mandate a specific type of self-test. This is consistent with the Base-PP because the execution of this self-test is already implied by the Base-PP through its entropy requirements.
             </consistency-rationale>
-            <f-element id="nd-fpt-tst-1e1">
-              <title>
-                The TSF shall run a suite of the following self-tests:<h:ul><h:br/>
-                <h:li>During initial start-up (on power on) to verify the integrity of the TOE firmware and software;</h:li>
-                <h:li>Prior to providing any cryptographic service and 
-                <selectables>
-                <selectable>at no other time</selectable>
-                <selectable>on-demand</selectable>
-                <selectable>continuously</selectable>
-                <selectable><assignable>conditions under which self-tests should occur</assignable></selectable></selectables>
-                to verify correct operation of cryptographic implementation necessary to fulfill the TSF;</h:li>
-                <h:li><selectables>
-                <selectable>no other</selectable>
-                <selectable>start-up</selectable>
-                <selectable>on-demand</selectable>
-                <selectable>continuous</selectable>
-                <selectable>at the conditions <assignable>conditions under which self-tests should occur</assignable></selectable>
-                </selectables> self tests <assignable>list an identifier for each self-test that is additional to those identified in the first two bullet points</assignable>
-                to demonstrate the correct operation of the TSF: <h:b>noise source health tests</h:b>.</h:li>
+            <description>
+            <h:p>This SFR is modified from its definition in the Base-PP to require the testing of noise source health tests, regardless of what other testing is claimed.</h:p>
+            <h:p>The text of the requirement is replaced with:</h:p>
+            <h:p>The TSF shall run a suite of the following self-tests:<h:ul><h:br/>
+                <h:li><h:i>During initial start-up (on power on) to verify the integrity of the TOE firmware and software;</h:i></h:li>
+                <h:li><h:i>During start-up (prior to providing any cryptographic services) and [<h:b>selection:</h:b> <h:i>at no other time, on-demand, continuously, [<h:b>assignment:</h:b> conditions under which self-tests should occur]</h:i>]
+                 to verify correct operation of cryptographic implementation necessary to fulfill the TSF;</h:i></h:li>
+                <h:li><h:i>[<h:b>selection:</h:b> <h:i>no other, start-up, on-demand, continuous, at the conditions [<h:b>assignment</h:b> conditions under which self-tests should occur]</h:i>]
+                self tests [<h:i>[<h:b>assignment: </h:b><h:i>list an identifier for each self-test that is additional to those identified in the two bullet points</h:i> to demonstrate
+                the correct operation of the TSF: noise source health tests.</h:i></h:i></h:li>
                 </h:ul>
-              </title>
-              <note role="application">
-                This SFR is modified from its definition in the NDcPP by requiring noise source
+                </h:p>
+                <h:p>
+                <h:b>Application Note: This SFR is modified from its definition in the NDcPP by requiring noise source
                 health tests to be performed regardless of what other testing is claimed. It is
                 expected that the behavior of this testing will be described in the entropy
                 documentation. Other self-tests may be defined at the ST author’s discretion; note
                 that the Application Note in the NDcPP regarding what other self-tests are
-                expected is still applicable here.
-              </note>
-              <aactivity>
-                <no-tests>There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module requires a particular self-test to be performed, but this self-test is still evaluated using the
-                  same methods specified in the Supporting Document.</no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
-          
-          
-          <f-component cc-id="fpt_tud_ext.1" id="nd-fpt-tud-ext-1" name="Trusted Update">
-            <consistency-rationale>
+                expected is still applicable here.</h:b>
+                </h:p>
+            </description>
+            <no-change/>
+          </base-sfr-spec>
+          <base-sfr-spec cc-id="fpt_tud_ext.1" id="nd-mod-fpt-tud-ext-1" title="Trusted Update">
+           <consistency-rationale>
               This PP-Module restricts the Base-PP SFR to a subset of existing permissible
               functionality and does not introduce any new behavior.
             </consistency-rationale>
-            <f-element id="nd-fpt-tud-ext-1e1">
-              <title>
-                The TSF shall provide Security Administrators the ability to query the
-                currently executing version of the TOE firmware/software and <selectables>
-                  <selectable>the most recently installed version of the TOE firmware/software</selectable>
-                  <selectable exclusive="yes">no other TOE firmware/software version</selectable>
-                </selectables>.
-              </title>
-              <note role="application">
-                This element is unchanged from its definition in the Base-PP.
-              </note>
-            </f-element>
-            <f-element id="nd-fpt-tud-ext-1e2">
-              <title>
-                The TSF shall provide Security Administrators the ability to manually
-                initiate updates to TOE firmware/software and <selectables>
-                  <selectable>support automatic checking for updates</selectable>
-                  <selectable>support automatic updates</selectable>
-                  <selectable exclusive="yes">no other update mechanism</selectable>
-                </selectables>. 
-              </title>
-              <note role="application">
-                This element is unchanged from its definition in the Base-PP.
-              </note>
-            </f-element>
-            <f-element id="nd-fpt-tud-ext-1e3">
-              <title>
-                The TSF shall provide means to authenticate firmware/software updates to the
-                TOE using a <h:b>digital signature mechanism and </h:b>
-                <selectables>
-                  <selectable>X.509 certificate</selectable>
-                  <selectable exclusive="yes">no other mechanisms</selectable>
-                </selectables> prior to installing those updates.
-              </title>
-              <note role="application">
-                The NDcPP provides an option for how firmware/software updates can be verified
+            <description>
+              <h:p> An element of FPT_TUD_EXT.1 is modified from its definition in the NDcPP to mandate use of the first selection
+              (use of a digital signature mechanism to verify updates).
+              All other elements of this requirement not mentioned in this section are unchanged from their definition in the NDcPP.</h:p>
+              <h:p>FPT_TUD_EXT.1.3: The text of the requirement is replaced with:</h:p>
+              <h:p>The TSF shall provide means to authenticate firmware/software updates to the
+                TOE using a <h:b>digital signature mechanism and</h:b>[<h:b>selection:</h:b> <h:i>X.509 certificate, no other mechanisms</h:i>]
+                prior to installing those updates.</h:p>
+              <h:p><h:b>Application Note: </h:b>
+              The NDcPP provides an option for how firmware/software updates can be verified
                 but this PP-Module requires the digital signature method to be selected at
                 minimum. Note that all other options specified in the NDcPP for this component
                 are permitted so it is possible for the TSF to use code signing certificates to
@@ -1419,17 +1090,10 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 authority which chains to a trusted root CA, then revocation checking is required
                 for all elements of the certificate chain except the trusted root CA, and the TOE
                 must be able to obtain fresh revocation information from an external source.
-              </note>
-              <aactivity>
-                <no-tests>There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module modifies this SFR to mandate that a particular selection be chosen, but this selection is
-                  part of the original definition of the SFR so no new behavior is defined by the PP-Module.</no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
-          
-          
+                </h:p>
+            </description>
+            <no-change/>
+          </base-sfr-spec>
         </section>
       </modified-sfrs>
         

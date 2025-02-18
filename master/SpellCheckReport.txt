@@ -1,4 +1,5 @@
 output/vpngw-release-linkable.html: 0E
+output/vpngw-release-linkable.html: 0e
 output/vpngw-release-linkable.html: CNSA
 output/vpngw-release-linkable.html: CRYPTOKEYS
 output/vpngw-release-linkable.html: CryptoKeys
@@ -6,6 +7,7 @@ output/vpngw-release-linkable.html: DATAENCRYPTION
 output/vpngw-release-linkable.html: DataEncryption
 output/vpngw-release-linkable.html: Distringuished
 output/vpngw-release.html: 0E
+output/vpngw-release.html: 0e
 output/vpngw-release.html: CNSA
 output/vpngw-release.html: CRYPTOKEYS
 output/vpngw-release.html: CryptoKeys
@@ -15,11 +17,13 @@ output/vpngw-release.html: Distringuished
 output/vpngw-release.html: Interface’
 output/vpngw-release.html: log’
 output/vpngw-release.html: ’
-output/vpngw-sd.html: 2e
+output/vpngw-sd.html: 0E
+output/vpngw-sd.html: 0e
 output/vpngw-sd.html: evaluator’s
 output/vpngw-sd.html: fail’
 output/vpngw-sd.html: pass’
 output/vpngw.html: 0E
+output/vpngw.html: 0e
 output/vpngw.html: CNSA
 output/vpngw.html: CRYPTOKEYS
 output/vpngw.html: CryptoKeys

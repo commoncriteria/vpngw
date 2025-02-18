@@ -17,6 +17,10 @@
                 </tr>
             </table>
         </div>
+        <div id="commmentbox-">
+            <a href="#Comment-1-">Comment: Comment-1-</a>
+            <br>
+        </div>
         <h1 class="title" style="page-break-before:auto;">PP-Module for VPN Gateways</h1>
         <h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1>
         <div class="center">
@@ -377,21 +381,6 @@
             </caption>
             <tr class="header">
                 <td>Assumption or OSP</td><td>Security Objectives</td><td>Rationale</td>
-            </tr>
-            <tr class="major-row">
-                <td rowspan="5"><a href="#T.DATA_INTEGRITY">T.DATA_​INTEGRITY</a></td><td><a href="#O.ADDRESS_FILTERING">O.ADDRESS_​FILTERING</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s ability to provide address filtering helps mitigate the threat of data integrity violations by reducing the amount of potentially malicious network traffic that could potentially exploit the threat. </td>
-            </tr>
-            <tr>
-                <td><a href="#O.AUTHENTICATION">O.AUTHENTICATION</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s ability to authenticate entities requesting network access helps mitigate the threat of integrity violations by establishing or exchanging keys that are used to maintain data integrity. </td>
-            </tr>
-            <tr>
-                <td><a href="#O.CRYPTOGRAPHIC_FUNCTIONS">O.CRYPTOGRAPHIC_​FUNCTIONS</a></td><td>The modification of data without authorization can be prevented by cryptography that ensures the confidentiality and integrity of the data. </td>
-            </tr>
-            <tr>
-                <td><a href="#O.FAIL_SECURE">O.FAIL_​SECURE</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s ability to protect against unauthorized modifications to itself helps ensure that its functionality cannot be altered in such a way that it fails to maintain integrity of its communications.</td>
-            </tr>
-            <tr>
-                <td><a href="#O.PORT_FILTERING">O.PORT_​FILTERING</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s ability to provide port filtering helps mitigate the threat of data integrity violations by reducing the amount of potentially malicious network traffic that could potentially exploit the threat. </td>
             </tr>
             <tr class="major-row">
                 <td rowspan="5"><a href="#T.NETWORK_ACCESS">T.NETWORK_​ACCESS</a></td><td><a href="#O.ADDRESS_FILTERING">O.ADDRESS_​FILTERING</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s address filtering capability helps mitigate the threat of network access by limiting unauthorized reconnaissance activities that can be performed outside the protected network. </td>
@@ -759,18 +748,20 @@
                     <a href="#FAU_GEN.1.1/VPN" class="abbr">FAU_GEN.1.1/VPN</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to generate an audit record of the following auditable events: 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to generate audit data of the following auditable events: 
                     <ol type="a">
                         <li>Start-up and shutdown of the audit functions</li>
                         <li>
-                            Indication that <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> self-test was completed
-                        </li>
-                        <li>Failure of self-test</li>
-                        <li>
-                            All auditable events for the [<i>not specified</i>] level of audit; and
+                            All auditable events for the [<i>not specified</i>] level of audit;
                         </li>
                         <li>
-                            [<i>auditable events defined in the Auditable Events for Mandatory Requirements table</i>].
+                            [<i>Indication that <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> self-test was completed</i>
+                        </li>
+                        <li>
+                            <i>Failure of self-test</i>
+                        </li>
+                        <li>
+                            <i>auditable events defined in the Auditable Events for Mandatory Requirements table</i>].
                         </li>
                     </ol>
                     <div class="appnote">
@@ -783,11 +774,11 @@
                     <a href="#FAU_GEN.1.2/VPN" class="abbr">FAU_GEN.1.2/VPN</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall record within each audit record at least the following information: 
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall record within the audit data at least the following information: 
                     <ol type="a">
-                        <li>Date and time of the event, type of event, subject identity (if applicable), and the outcome (success or failure) of the event; and </li>
+                        <li>Date and time of the event, type of event, subject identity (if applicable), and the outcome (success or failure) of the event;</li>
                         <li>
-                            For each audit event type, based on the auditable event definitions of the functional components included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<i>additional information defined in the Auditable Events for Mandatory Requirements table for each auditable event, where applicable</i>].
+                            For each audit event type, based on the auditable event definitions of the functional components included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, functional package or <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<i>additional information defined in the Auditable Events for Mandatory Requirements table for each auditable event, where applicable</i>].
                         </li>
                     </ol>
                     <div class="appnote">
@@ -804,7 +795,7 @@
                     <a href="#FCS_CKM.1.1/IKE" class="abbr">FCS_CKM.1.1/IKE</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate <b>asymmetric</b> cryptographic keys <b>used for <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> peer authentication</b> in accordance with a specified cryptographic key generation algorithm: <b>[<b>selection</b>: 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate <b>asymmetric</b> cryptographic keys <b>used for <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> peer authentication</b> in accordance with a specified cryptographic key generation algorithm: [<i>[<b>selection</b>: 
                         <ul>
                             <li style="">
                                 <span class="selectable-content" id="_s_1">FIPS PUB 186-5, &ldquo;Digital Signature Standard (DSS),&rdquo; Appendix B.3 for RSA schemes</span>
@@ -822,7 +813,7 @@
                                 <span class="selectable-content" id="_s_9">no other key generation algorithm</span>
                             </li>
                         </ul>
-                        ] </b> and specified cryptographic key sizes [<i>equivalent to, or greater than, a symmetric key strength of 112 bits</i>]. 
+                        ] </i>] and specified cryptographic key sizes [<i>equivalent to, or greater than, a symmetric key strength of 112 bits</i>] that meet the following: [<i>no standard</i>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> The keys that are required to be generated by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> through this requirement are intended to be used for the authentication of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> peers during the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> (either v1 or v2) key exchange. FCS_CKM.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> is intended to be used for mechanisms required by the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. While it is required that the public key be associated with an identity in an X509v3 certificate, this association is not required to be performed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, and instead is expected to be performed by a <abbr class="dyn-abbr"><a href="#abbr_CA">CA</a></abbr> in the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>. 
                             <br>
@@ -1014,7 +1005,7 @@
                     <a href="#FTP_ITC.1.1/VPN" class="abbr">FTP_ITC.1.1/VPN</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>be capable of using IPsec to</b> provide a communication channel between itself and <b>authorized IT entities supporting <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> communications</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from <b>disclosure and detection of modification of the channel data</b>.
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall protect all <b><abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr>-related</b> <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> data transmitted from the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> <b>over IPsec</b> to another <b>authorized IT entity supporting <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> communications</b> from unauthorized disclosure during transmission. 
                 </div>
             </div>
             <div class="element">
@@ -1047,6 +1038,41 @@
                 </caption>
                 <tr>
                     <th>Threat</th><th>Addressed by</th><th>Rationale</th>
+                </tr>
+                <tr class="major-row">
+                    <td rowspan="11"><a href="#T.DATA_INTEGRITY">T.DATA_​INTEGRITY</a>
+                        <br>
+                    </td><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>Mitigates the threat by filtering traffic from outside the protected network.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a> (optional)</td><td>Mitigates the threat by assigning a private, internal IP address to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients within the protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td>
+                </tr>
+                <tr>
+                    <td>FCS_IPSEC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing IPsec to verify message integrity.</td>
+                </tr>
+                <tr>
+                    <td>FIA_X509_EXT.1/Rev (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by preventing connection to servers or clients with malformed or invalid X.509 certificates.</td>
+                </tr>
+                <tr>
+                    <td>FIA_X509_EXT.2 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by authenticating a remote entity using X.509 certificates.</td>
+                </tr>
+                <tr>
+                    <td>FIA_X509_EXT.3 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing a secure certificate request method to obtain a signed certificate.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FTP_ITC.1/VPN">FTP_ITC.1/VPN</a></td><td>Mitigates the threat by transmitting data over a secure <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional)</td><td>Mitigates the threat by performing a secondary authentication process prior to allowing <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connections.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FTA_SSL.3/VPN">FTA_SSL.3/VPN</a> (optional)</td><td>Mitigates the threat by terminating inactive <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> sessions.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FTA_TSE.1">FTA_TSE.1</a> (optional)</td><td>Mitigates the threat by preventing connection of <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients that meet undesirable criteria.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a> (selection-based)</td><td>Mitigates the threat by securely authenticating <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients with a remote authentication server.</td>
                 </tr>
             </table>
         </p>
@@ -1304,7 +1330,7 @@
                 <div class="reqdesc">
                      The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall terminate <b>a remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client</b> session after [<i>an Administrator-configurable time interval of session inactivity</i>]. 
                     <div class="appnote">
-                        <span class="note-header">Application Note: </span><span class="note"> This requirement exists in the NDcPP; however, it is intended to address a remote administrative interactive session. Here, the requirement applies to a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client that has established an <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr>. After some configurable time period without any activity, the connection between the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> headend and client is terminated. </span>
+                        <span class="note-header">Application Note: </span><span class="note"> This requirement exists in the NDcPP; however, it is intended to address an interactive administrative session. Here, the requirement applies to a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client that has established an <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr>. After some configurable time period without any activity, the connection between the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> headend and client is terminated. </span>
                     </div>
                 </div>
             </div>
@@ -1410,7 +1436,7 @@
                     <a href="#FCS_EAP_EXT.1.1" class="abbr">FCS_EAP_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support [<b>selection</b>: <span class="selectable-content" id="_s_18">EAP-TLS as specified in RFC 5216 and updated by RFC 8996</span>, <span class="selectable-content" id="_s_19">EAP-TTLS as specified in RFC 5281 and updated by RFC 8996</span>] over a protected channel per FTP_ITC.1 <b>from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></b> with an authentication server. 
+                     <span style="" class="comment " id="Comment-1-">This selection-based component is dependent upon selections made in FCS_IPSEC_EXT.1.13. However, the new syntax for modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, lacking XML capability, means that the selections in FCS_IPSEC_EXT.1.13 no longer 'exist' as an ID, and thus the selection-based relationship cannot be made.</span> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support [<b>selection</b>: <span class="selectable-content" id="_s_18">EAP-TLS as specified in RFC 5216 and updated by RFC 8996</span>, <span class="selectable-content" id="_s_19">EAP-TTLS as specified in RFC 5281 and updated by RFC 8996</span>] over a protected channel per FTP_ITC.1 <b>from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></b> with an authentication server. 
                 </div>
             </div>
             <div class="element">
@@ -1453,7 +1479,7 @@
                     <a href="#FIA_HOTP_EXT.1.2" class="abbr">FIA_HOTP_EXT.1.2</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate an HOTP seed according to FCS_RBG_EXT.1 of [<b>selection</b>: <span class="selectable-content" id="_s_24">128</span>, <span class="selectable-content" id="_s_25">256</span>] bits. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate an HOTP seed according to FCS_RBG.1 of [<b>selection</b>: <span class="selectable-content" id="_s_24">128</span>, <span class="selectable-content" id="_s_25">256</span>] bits. 
                 </div>
             </div>
             <div class="element">
@@ -1591,7 +1617,7 @@
                             <span class="selectable-content" id="_s_69">accept externally generated pre-shared keys</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_70"> generate [<b>selection</b>: <span class="selectable-content" id="_s_71">128</span>, <span class="selectable-content" id="_s_72">256</span>] bit-based pre-shared keys via FCS_RBG_EXT.1. </span>
+                            <span class="selectable-content" id="_s_70"> generate [<b>selection</b>: <span class="selectable-content" id="_s_71">128</span>, <span class="selectable-content" id="_s_72">256</span>] bit-based pre-shared keys via FCS_RBG.1. </span>
                         </li>
                     </ul>
                     ] 
@@ -1647,7 +1673,7 @@
                     <a href="#FIA_PSK_EXT.3.5" class="abbr">FIA_PSK_EXT.3.5</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate all salts using an RBG that meets FCS_RBG_EXT.1 and with entropy of [<b>assignment</b>: <span class="assignable-content">value equal to or greater than 128</span>] bits. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate all salts using an RBG that meets FCS_RBG.1 and with entropy of [<b>assignment</b>: <span class="assignable-content">value equal to or greater than 128</span>] bits. 
                 </div>
             </div>
             <div class="element">
@@ -1698,7 +1724,7 @@
                     <a href="#FIA_TOTP_EXT.1.2" class="abbr">FIA_TOTP_EXT.1.2</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a TOTP seed according to FCS_RBG_EXT.1 of [<b>selection</b>: <span class="selectable-content" id="_s_80">128</span>, <span class="selectable-content" id="_s_81">256</span>] bits. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a TOTP seed according to FCS_RBG.1 of [<b>selection</b>: <span class="selectable-content" id="_s_80">128</span>, <span class="selectable-content" id="_s_81">256</span>] bits. 
                 </div>
             </div>
             <div class="element">
@@ -1904,7 +1930,7 @@
                         <h4 id="ext-comp-FIA_HOTP_EXT.1.1">FIA_HOTP_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support HMAC-Based One-Time Password (HOTP) authentication in accordance with RFC 4226 to authenticate the user before establishing <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection. 
                         <h4 id="ext-comp-FIA_HOTP_EXT.1.2">FIA_HOTP_EXT.1.2</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate an HOTP seed according to FCS_RBG_EXT.1 of [<b>selection</b>: <span class="selectable-content" id="_s_24">128</span>, <span class="selectable-content" id="_s_25">256</span>] bits. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate an HOTP seed according to FCS_RBG.1 of [<b>selection</b>: <span class="selectable-content" id="_s_24">128</span>, <span class="selectable-content" id="_s_25">256</span>] bits. 
                         <h4 id="ext-comp-FIA_HOTP_EXT.1.3">FIA_HOTP_EXT.1.3</h4>
                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a new HOTP seed value for each client. 
                         <h4 id="ext-comp-FIA_HOTP_EXT.1.4">FIA_HOTP_EXT.1.4</h4>
@@ -2011,7 +2037,7 @@
                                 <span class="selectable-content" id="_s_69">accept externally generated pre-shared keys</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_70"> generate [<b>selection</b>: <span class="selectable-content" id="_s_71">128</span>, <span class="selectable-content" id="_s_72">256</span>] bit-based pre-shared keys via FCS_RBG_EXT.1. </span>
+                                <span class="selectable-content" id="_s_70"> generate [<b>selection</b>: <span class="selectable-content" id="_s_71">128</span>, <span class="selectable-content" id="_s_72">256</span>] bit-based pre-shared keys via FCS_RBG.1. </span>
                             </li>
                         </ul>
                         ] 
@@ -2044,7 +2070,7 @@
                         <h4 id="ext-comp-FIA_PSK_EXT.3.4">FIA_PSK_EXT.3.4</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not accept PSKs less than [<b>selection</b>: <span class="selectable-content" id="_s_75">a value settable by the administrator</span>, <span class="selectable-content" id="_s_76">[<b>assignment</b>: <span class="assignable-content">minimum PSK length accepted by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, must be &gt;= 6</span>]</span>] and greater than the maximum PSK length defined in <a href="#FIA_PSK_EXT.3.1">FIA_PSK_EXT.3.1</a>. 
                         <h4 id="ext-comp-FIA_PSK_EXT.3.5">FIA_PSK_EXT.3.5</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate all salts using an RBG that meets FCS_RBG_EXT.1 and with entropy of [<b>assignment</b>: <span class="assignable-content">value equal to or greater than 128</span>] bits. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate all salts using an RBG that meets FCS_RBG.1 and with entropy of [<b>assignment</b>: <span class="assignable-content">value equal to or greater than 128</span>] bits. 
                         <h4 id="ext-comp-FIA_PSK_EXT.3.6">FIA_PSK_EXT.3.6</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require the PSK to be entered before every initiated connection. 
                         <h4 id="ext-comp-FIA_PSK_EXT.3.7">FIA_PSK_EXT.3.7</h4>
@@ -2083,7 +2109,7 @@
                         <h4 id="ext-comp-FIA_TOTP_EXT.1.1">FIA_TOTP_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support Time-Based One-Time Password (TOTP) authentication in accordance with RFC 6238 to authenticate the user before establishing <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection. 
                         <h4 id="ext-comp-FIA_TOTP_EXT.1.2">FIA_TOTP_EXT.1.2</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a TOTP seed according to FCS_RBG_EXT.1 of [<b>selection</b>: <span class="selectable-content" id="_s_80">128</span>, <span class="selectable-content" id="_s_81">256</span>] bits. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a TOTP seed according to FCS_RBG.1 of [<b>selection</b>: <span class="selectable-content" id="_s_80">128</span>, <span class="selectable-content" id="_s_81">256</span>] bits. 
                         <h4 id="ext-comp-FIA_TOTP_EXT.1.3">FIA_TOTP_EXT.1.3</h4>
                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a new TOTP seed for each client. 
                         <h4 id="ext-comp-FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</h4>
@@ -2441,10 +2467,10 @@
                     </span></td>
             </tr>
             <tr>
-                <td><span id="bibNDSD">[ND-SD]</span></td><td><span class="description"> <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=447&amp;id=447/"> Supporting Document - Mandatory Technical Document - Evaluation Activities for Network Device cPP</a>, Version 2.2, December 2019 </span></td>
+                <td><span id="bibNDSD">[ND-SD]</span></td><td><span class="description"> <a href="https://www.niap-ccevs.org/protectionprofiles/482"> Evaluation Activities for Network Device cPP</a>, Version 3.0e, December 2023 </span></td>
             </tr>
             <tr>
-                <td><span id="bibNDcPP">[NDcPP]</span></td><td><span class="description"> <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=447&amp;id=447/"> collaborative Protection Profile for Network Devices</a>, Version 2.2E, March 2020 </span></td>
+                <td><span id="bibNDcPP">[NDcPP]</span></td><td><span class="description"> <a href="https://www.niap-ccevs.org/protectionprofiles/482"> collaborative Protection Profile for Network Devices</a>, Version 3.0E, December 2023 </span></td>
             </tr>
         </table>
     </body>

@@ -7,6 +7,27 @@
         and/Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[2]""/f-component[1]""/depends[1]""/and[1]""
 * Error: Detected dangling id-reference to sel-ipsec-e13-psk from attribute
         on-sel/Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[3]"The TOE m"/f-component[2]""/depends[1]""/on-sel[1]""
+* Error: Detected dangling ref to 'O.ADDRESS_FILTERING'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-mod[7]"The Base-"/ref[1]""
+* Error: Detected dangling ref to 'O.AUTHENTICATION'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-mod[8]"The Base-"/ref[1]""
+* Error: Detected dangling ref to 'O.CRYPTOGRAPHIC_FUNCTIONS'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-mod[9]"The Base-"/ref[1]""
+* Error: Detected dangling ref to 'O.FAIL_SECURE'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-mod[10]"The Base-"/ref[1]""
+* Error: Detected dangling ref to 'O.PORT_FILTERING'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-mod[11]"The Base-"/ref[1]""
+* Error: Detected dangling ref to 'O.SYSTEM_MONITORING'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-mod[12]"The Base-"/ref[1]""
+* Error: Detected dangling ref to 'O.TOE_ADMINISTRATION'
+        for a ref.
+	/Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-mod[13]"The Base-"/ref[1]""
 * Warning: fta_ssl.3 in impl-dep-sfrs section is missing a _depends_ element. /Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/section[2]"This sect"/f-component[1]""
 * Warning: fta_tse.1 in impl-dep-sfrs section is missing a _depends_ element. /Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/section[2]"This sect"/f-component[2]""
 * Warning: fta_vcm_ext.1 in impl-dep-sfrs section is missing a _depends_ element. /Module[1]""/sec:Security_Requirements[1]""/impl-dep-sfrs[1]""/section[2]"This sect"/f-component[3]""

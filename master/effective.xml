@@ -197,22 +197,28 @@ expected to enforce.<h:br/>
       <threats>
         <threat name="T.DATA_INTEGRITY">
           <description>Devices on a protected network may be exposed to threats presented by devices located outside the
-            protected network that may attempt to modify the data without authorization. If known malicious
+            protected network that may attempt to modify the data without authorization or determine the contents of secure communication. If known malicious
             external devices are able to communicate with devices on the protected network or if devices on the
             protected network can communicate with those external devices then the data contained in the
-            communications may be susceptible to a loss of integrity. </description>
+            communications may be susceptible to a loss of integrity or confidentiality. </description>
+            <addressed-by>FCS_COP.1/DataEncryption (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by encrypting channel data using a specified algorithm.</rationale>
+            <addressed-by>FCS_IPSEC_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing IPsec to verify message confidentiality and integrity.</rationale>
             <addressed-by>FPF_RUL_EXT.1</addressed-by><rationale>Mitigates the threat by filtering traffic from outside the protected network.</rationale>
+            <addressed-by>FPT_FLS.1/SelfTest</addressed-by><rationale>Mitigates the threat by ceasing operations of the TSF if a test or security failure is detected, preventing a failure in secure functionality.</rationale>
+            <addressed-by>FPT_TST_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by testing the TSF for any unauthorized modifications or cryptographic failures.</rationale>
+            <addressed-by>FPT_TST_EXT.3</addressed-by><rationale>Mitigates the threat by executing self tests in a specified, repeatable manner.</rationale>
+            <addressed-by>FPT_TUD_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by providing a secure update mechanism for the TOE that validates its authenticity,
+            ensuring a faulty or malicious update cannot compromise the TSF's ability to protect data integrity.</rationale>
+            <addressed-by>FTP_ITC.1/VPN</addressed-by><rationale>Mitigates the threat by transmitting data over a secure VPN connection protected from unauthorized disclosure.</rationale>
             <addressed-by>FTA_VCM_EXT.1 (optional)</addressed-by><rationale>Mitigates the threat by assigning a private, internal IP address to VPN clients within the protection of the TSF.</rationale>
-            <addressed-by>FCS_IPSEC_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing IPsec to verify message integrity.</rationale>
-            <addressed-by>FIA_X509_EXT.1/Rev (from Base-PP)</addressed-by><rationale>Mitigates the threat by preventing connection to servers or clients with malformed or invalid X.509 certificates.</rationale>
-            <addressed-by>FIA_X509_EXT.2 (from Base-PP)</addressed-by><rationale>Mitigates the threat by authenticating a remote entity using X.509 certificates.</rationale>
-            <addressed-by>FIA_X509_EXT.3 (from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing a secure certificate request method to obtain a signed certificate.</rationale>
-            <addressed-by>FTP_ITC.1/VPN</addressed-by><rationale>Mitigates the threat by transmitting data over a secure VPN connection.</rationale>
-            <addressed-by>FPF_MFA_EXT.1 (optional)</addressed-by><rationale>Mitigates the threat by performing a secondary authentication process prior to allowing VPN connections.</rationale>
             <addressed-by>FTA_SSL.3/VPN (optional)</addressed-by><rationale>Mitigates the threat by terminating inactive VPN sessions.</rationale>
-            <addressed-by>FTA_TSE.1 (optional)</addressed-by><rationale>Mitigates the threat by preventing connection of VPN clients that meet undesirable criteria.</rationale>
-            <addressed-by>FCS_EAP_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by securely authenticating VPN clients with a remote authentication server.</rationale>
-
+            
+           
+            
+            
+            
+            
+            
           <!-- <objective-refer ref="O.ADDRESS_FILTERING">
             <rationale>The TOE’s ability to provide address
               filtering helps mitigate the threat of
@@ -274,7 +280,23 @@ expected to enforce.<h:br/>
             enforce corporate policies against accessing uncontrolled email servers, or, that access to the mail
             server must be done over an encrypted link.
           </description>
-          <objective-refer ref="O.ADDRESS_FILTERING">
+            <addressed-by>FCS_CKM.1/IKE</addressed-by><rationale>Mitigates the threat by generating secure keys utilized for IKE peer authentication.</rationale>
+            <addressed-by>FCS_IPSEC_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing IPsec to create VPN connections for authorized users to access the internal network.</rationale>
+            <addressed-by>FIA_X509_EXT.1/Rev (from Base-PP)</addressed-by><rationale>Mitigates the threat by preventing connection to servers or clients with malformed or invalid X.509 certificates.</rationale>
+            <addressed-by>FIA_X509_EXT.2 (from Base-PP)</addressed-by><rationale>Mitigates the threat by authenticating a remote entity using X.509 certificates.</rationale>
+            <addressed-by>FIA_X509_EXT.3 (from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing a secure certificate request method to obtain a signed certificate.</rationale>
+            <addressed-by>FPF_RUL_EXT.1</addressed-by><rationale>Mitigates the threat by filtering traffic to disallow unauthorized access.</rationale>
+            <addressed-by>FPF_MFA_EXT.1 (optional)</addressed-by><rationale>Mitigates the threat by providing for multi-factor authentication of VPN clients.</rationale>
+            <addressed-by>FTA_SSL.3/VPN (optional)</addressed-by><rationale>Mitigates the threat by terminating inactive VPN sessions to prevent potential unauthorized use.</rationale>
+            <addressed-by>FTA_TSE.1 (optional)</addressed-by><rationale>Mitigates the threat by preventing connection of VPN clients that meet undesirable criteria.</rationale>
+            <addressed-by>FTA_VCM_EXT.1 (optional)</addressed-by><rationale>Mitigates the threat by assigning a private, internal IP address to VPN clients within the protection of the TSF.</rationale>
+            <addressed-by>FCS_EAP_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by securely authenticating VPN clients with a remote authentication server.</rationale>
+            <addressed-by>FIA_HOTP_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by providing a second factor of authentication via hash-based one-time passwords.</rationale>
+            <addressed-by>FIA_PSK_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by providing a second factor of authentication via a pre-shared key.</rationale>
+            <addressed-by>FIA_PSK_EXT.2 (selection-based)</addressed-by><rationale>Mitigates the threat by securely and randomly generating a pre-shared key.</rationale>
+            <addressed-by>FIA_PSK_EXT.3 (selection-based)</addressed-by><rationale>Mitigates the threat by securely deriving a pre-shared key from a password.</rationale>
+            <addressed-by>FIA_TOTP_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by providing a second factor of authentication via time-based one-time passwords.</rationale>
+          <!-- <objective-refer ref="O.ADDRESS_FILTERING">
             <rationale>
               The TOE’s address filtering capability
               helps mitigate the threat of network
@@ -316,7 +338,7 @@ expected to enforce.<h:br/>
               performed outside the protected
               network.
             </rationale>
-          </objective-refer>
+          </objective-refer> -->
         </threat>
 
         <threat name="T.NETWORK_DISCLOSURE">
@@ -345,7 +367,14 @@ expected to enforce.<h:br/>
             outgoing connections are encrypted to further mitigate inappropriate disclosure of data through
             packet sniffing.
           </description>
-          <objective-refer ref="O.ADDRESS_FILTERING">
+          <addressed-by>FPF_RUL_EXT.1</addressed-by><rationale>Mitigates the threat by filtering traffic to disallow unauthorized traffic flows.</rationale>
+          <addressed-by>FPT_FLS.1/SelfTest</addressed-by><rationale>Mitigates the threat by ceasing operations of the TSF if a test or security failure is detected, preventing a failure in traffic filtering.</rationale>
+          <addressed-by>FPT_TST_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by verifying the TSF's correct operation.</rationale>
+          <addressed-by>FPT_TST_EXT.3</addressed-by><rationale>Mitigates the threat by executing self tests in a specified, repeatable manner.</rationale>
+          <addressed-by>FPT_TUD_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by providing a secure update mechanism for the TOE that validates its authenticity,
+            ensuring a faulty or malicious update cannot compromise the TSF's ability to enforce traffic rules.</rationale>
+          <addressed-by>FTA_VCM_EXT.1 (optional)</addressed-by><rationale>Mitigates the threat by assigning a private, internal IP address to VPN clients within the protection of the TSF.</rationale>
+          <!-- <objective-refer ref="O.ADDRESS_FILTERING">
             <rationale>The TOE’s address filtering capability
               helps mitigate the threat of network
               disclosure by limiting unauthorized
@@ -366,7 +395,7 @@ expected to enforce.<h:br/>
               performed outside the protected
               network. 
             </rationale>
-          </objective-refer>
+          </objective-refer> -->
         </threat>
 
         <threat name="T.NETWORK_MISUSE">
@@ -389,7 +418,23 @@ expected to enforce.<h:br/>
             and external networks and as a result can serve to identify potential usage policy violations.
             
           </description>
-          <objective-refer ref="O.ADDRESS_FILTERING">
+          <addressed-by>FAU_GEN.1/VPN</addressed-by><rationale>Mitigates the threat by logging potential violations of policy.</rationale>
+          <addressed-by>FCS_IPSEC_EXT.1</addressed-by><rationale>Mitigates the threat by securing traffic originating from or traveling to an authorized user that resides outside the protected network,
+          ensuring that an unauthorized attacker cannot inject their own actions into the protected network.</rationale>
+          <addressed-by>FMT_MTD.1/CryptoKeys</addressed-by><rationale>Mitigates the threat by implementing a management interface to manage the IPsec parameters 
+          so that unprivileged users do not have the ability to misuse its functions.</rationale>
+          <addressed-by>FMT_SMF.1/VPN</addressed-by><rationale>Mitigates the threat by implementing a management interface that allows for authorized usage of the TOE so that unprivileged users
+              do not have the ability to misuse its functions.</rationale>
+          <addressed-by>FPF_RUL_EXT.1</addressed-by><rationale>Mitigates the threat by filtering traffic to or from disallowed services.</rationale>
+          <addressed-by>FPT_FLS.1/SelfTest</addressed-by><rationale>Mitigates the threat by ceasing operations of the TSF if a test or security failure is detected, preventing a failure in
+          detection or prevention of network misuse.</rationale>
+          <addressed-by>FPT_TST_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by verifying the TSF's correct operation.</rationale>
+          <addressed-by>FPT_TST_EXT.3</addressed-by><rationale>Mitigates the threat by executing self tests in a specified, repeatable manner.</rationale>
+          <addressed-by>FPT_TUD_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by providing a secure update mechanism for the TOE that validates its authenticity,
+            ensuring a faulty or malicious update cannot compromise the TSF's ability to enforce traffic policy and log potential violations.</rationale>
+          <addressed-by>FTA_VCM_EXT.1 (optional)</addressed-by><rationale>Mitigates the threat by assigning a private, internal IP address to VPN clients within the protection of the TSF.</rationale>
+          
+          <!-- <objective-refer ref="O.ADDRESS_FILTERING">
             <rationale>
               The TOE’s ability to provide address
               filtering helps mitigate the threat of
@@ -433,7 +478,7 @@ expected to enforce.<h:br/>
           <objective-refer ref="O.TOE_ADMINISTRATION">
             <rationale>The TOE implements a management interface that allows for authorized usage of the TOE so that unprivileged users
               do not have the ability to misuse its functions.</rationale>
-          </objective-refer>
+          </objective-refer> -->
         </threat>
         
         <threat name="T.REPLAY_ATTACK">
@@ -449,7 +494,18 @@ expected to enforce.<h:br/>
             traffic and replay it to cause the desired outcome if the recipient has no means to detect these</h:li>
             </h:ul>
           </description>
-          <objective-refer ref="O.AUTHENTICATION">
+          <addressed-by>FCS_COP.1/DataEncryption (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing encryption algorithms to protect data from being sent in cleartext.</rationale>
+          <addressed-by>FCS_IPSEC_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing the IPsec protocol to encapsulate and encrypt channel data.</rationale>
+          <addressed-by>FPT_FLS.1/SelfTest</addressed-by><rationale>Mitigates the threat by ceasing operations of the TSF if a test or security failure is detected, preventing a failure in
+          detection of replay attacks.</rationale>
+          <addressed-by>FPT_TST_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by verifying the TSF's correct operation.</rationale>
+          <addressed-by>FPT_TST_EXT.3</addressed-by><rationale>Mitigates the threat by executing self tests in a specified, repeatable manner.</rationale>
+          <addressed-by>FPT_TUD_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by providing a secure update mechanism for the TOE that validates its authenticity,
+            ensuring a faulty or malicious update cannot compromise the TSF's ability to encrypt traffic and prevent it from being replayed without detection.</rationale>
+          <addressed-by>FTP_ITC.1/VPN</addressed-by><rationale>Mitigates the threat by ensuring the channel data (in this case, VPN data) is protected from unauthorized disclosure.</rationale>
+          <addressed-by>FTA_TSE.1 (optional)</addressed-by><rationale>Mitigates the threat by preventing connection from a VPN client that meets undesirable criteria.</rationale>
+
+          <!-- <objective-refer ref="O.AUTHENTICATION">
             <rationale>
               The TOE’s ability to enforce
               authentication helps mitigate replay
@@ -469,7 +525,7 @@ expected to enforce.<h:br/>
           <objective-refer ref="O.FAIL_SECURE">
             <rationale>The TOE's ability to protect against unauthorized modifications to itself
               helps ensure that it always enforces requirements for confidentiality and integrity of network traffic in the intended manner.</rationale>
-          </objective-refer>
+          </objective-refer> -->
         </threat>
    
         
@@ -514,8 +570,8 @@ expected to enforce.<h:br/>
 <!--  <section title="Security Objectives" id="obj"> -->
     
     <!-- 4.1 Security Objectives for the TOE -->
-    <sec:Security_Objectives_for_the_TOE>
-      <SOs>
+    <!-- <sec:Security_Objectives_for_the_TOE>
+       <SOs>
         <SO name="O.ADDRESS_FILTERING">
           <description>To address the issues associated with unauthorized disclosure of information, inappropriate access to
             services, misuse of services, disruption or denial of services, and network-based reconnaissance,
@@ -764,10 +820,10 @@ expected to enforce.<h:br/>
         </SO>
              
       </SOs>
-    </sec:Security_Objectives_for_the_TOE>
+    </sec:Security_Objectives_for_the_TOE> -->
     
     <!-- 4.2 Security Objectives for the Operational Environment -->
-    <section title="Security Objectives for the Operational Environment" id="SecurityObjectivesTOEorEnvironment">
+    <sec:Security_Objectives_for_the_Operational_Environment>
       This PP-Module defines environmental security objectives that extend those defined in
       the supported Base-PP.
       <h:br/>
@@ -783,7 +839,7 @@ expected to enforce.<h:br/>
           <consistency-rationale/>
         </SOE>
       </SOEs>
-    </section>
+    </sec:Security_Objectives_for_the_Operational_Environment>
     
     <!-- 4.3 Security Objectives Rationale -->
     <section title="Security Objectives Rationale" id="SOR">

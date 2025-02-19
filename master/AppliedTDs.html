@@ -635,7 +635,7 @@ function showTarget(id){
 <tr><td>1.2</td><td>2022-03-31</td><td>Format conversion, incorporation of NIAP Technical Decisions, TC feedback</td></tr>
 <tr><td>1.1</td><td>2020-06-18</td><td>Compatibility with CPP_ND_V2.2E, incorporation of NIAP Technical Decisions</td></tr>
 <tr><td>1.0</td><td>2019-09-17</td><td>Initial publication</td></tr>
-</table><h3>TDs Applied</h3><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#ConformanceClaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_TOE" style="text-indent:10px">4.1<span>Security Objectives for the TOE</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">4.2<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">4.3<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-ND" style="text-indent:10px">5.1<span>Collaborative 
+</table><h3>TDs Applied</h3><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#ConformanceClaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_Operational_Environment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">4.2<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-ND" style="text-indent:10px">5.1<span>Collaborative 
     Protection Profile for Network Devices
        Security Functional Requirements Direction
     </span></a><a href="#modsfr-ND" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#@id" style="text-indent:30px">5.1.1.2<span>Identification and Authentication (FIA)</span></a><a href="#@id" style="text-indent:30px">5.1.1.3<span>Security Management (FMT)</span></a><a href="#@id" style="text-indent:30px">5.1.1.4<span>Protection of the TSF (FPT)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#m-fau" style="text-indent:20px">5.2.2<span>Security Audit (FAU)</span></a><a href="#m-fcs" style="text-indent:20px">5.2.3<span>Cryptographic Support (FCS)</span></a><a href="#m-fmt" style="text-indent:20px">5.2.4<span>Security Management (FMT)</span></a><a href="#m-fpf" style="text-indent:20px">5.2.5<span>Packet Filtering (FPF)</span></a><a href="#m-fpt" style="text-indent:20px">5.2.6<span>Protection of the TSF (FPT)</span></a><a href="#m-ftp" style="text-indent:20px">5.2.7<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-ND" style="text-indent:10px">6.1<span>Collaborative 
@@ -804,10 +804,10 @@ expected to enforce.<br/>
     <h2 class="indexable" data-level="2" id="threats">3.1 Threats</h2>
       The following threats defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> extend the threats defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
       <dl><dt class="threat defined" id="T.DATA_INTEGRITY">T.DATA_INTEGRITY</dt><dd><span class="description">Devices on a protected network may be exposed to threats presented by devices located outside the
-            protected network that may attempt to modify the data without authorization. If known malicious
+            protected network that may attempt to modify the data without authorization or determine the contents of secure communication. If known malicious
             external devices are able to communicate with devices on the protected network or if devices on the
             protected network can communicate with those external devices then the data contained in the
-            communications may be susceptible to a loss of integrity. </span></dd><dt class="threat defined" id="T.NETWORK_ACCESS">T.NETWORK_ACCESS</dt><dd><span class="description"> 
+            communications may be susceptible to a loss of integrity or confidentiality. </span></dd><dt class="threat defined" id="T.NETWORK_ACCESS">T.NETWORK_ACCESS</dt><dd><span class="description"> 
             Devices located outside the protected network may seek to exercise services located on the protected
             network that are intended to only be accessed from inside the protected network or only accessed by
             entities using an authenticated path into the protected network. Devices located outside the
@@ -912,76 +912,10 @@ provide all of its security functionality.
 
     
     
-    <h2 class="indexable" data-level="2" id="Security_Objectives_for_the_TOE">4.1 Security Objectives for the TOE</h2>
-      <dl><dt class="SO defined" id="O.ADDRESS_FILTERING">O.ADDRESS_FILTERING</dt><dd><span class="description">To address the issues associated with unauthorized disclosure of information, inappropriate access to
-            services, misuse of services, disruption or denial of services, and network-based reconnaissance,
-            compliant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s will implement packet filtering capability. That capability will restrict the flow of
-            network traffic between protected networks and other attached networks based on network
-            addresses of the network nodes originating (source) or receiving (destination) applicable network
-            traffic as well as on established connection information.
-            <br/>
-            Addressed by: <a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a>, <a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a> (optional)
-          </span></dd><dt class="SO defined" id="O.AUTHENTICATION">O.AUTHENTICATION</dt><dd><span class="description">
-            To further address the issues associated with unauthorized disclosure of information, a compliant
-            <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s authentication ability (IPSec) will allow a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> peer to establish <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connectivity with another
-            <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> peer and ensure that any such connection attempt is both authenticated and authorized. <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr>
-            endpoints authenticate each other to ensure they are communicating with an authorized external IT
-            entity.
-            <br/>
-            Addressed by: FCS_IPSEC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), FIA_X509_EXT.1/Rev (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>),
-            FIA_X509_EXT.2 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), FIA_X509_EXT.3 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FTP_ITC.1/VPN">FTP_ITC.1/VPN</a>,
-            <a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional), <a href="#FTA_SSL.3/VPN">FTA_SSL.3/VPN</a> (optional), <a href="#FTA_TSE.1">FTA_TSE.1</a> (optional), <a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a> (selection-based), <a href="#FIA_HOTP_EXT.1">FIA_HOTP_EXT.1</a> (selection-based), <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> (selection-based),
-            <a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a> (selection-based), <a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a> (selection-based), <a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a> (selection-based)
-		  </span></dd><dt class="SO defined" id="O.CRYPTOGRAPHIC_FUNCTIONS">O.CRYPTOGRAPHIC_FUNCTIONS</dt><dd><span class="description">
-            To address the issues associated with unauthorized disclosure of information, inappropriate access to
-            services, misuse of services, disruption of services, and network-based reconnaissance, compliant
-            <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s will implement cryptographic capabilities. These capabilities are intended to maintain
-            confidentiality and allow for detection and modification of data that is transmitted outside of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
-            <br/>
-            Addressed by: FCS_COP.1/DataEncryption (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), FCS_IPSEC_EXT.1 (refined from
-            <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FCS_CKM.1/IKE">FCS_CKM.1/IKE</a>, <a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a> (selection-based), <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> (selection-based), <a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a> (selection-based)
-          </span></dd><dt class="SO defined" id="O.FAIL_SECURE">O.FAIL_SECURE</dt><dd><span class="description">
-            There may be instances where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s hardware malfunctions or the integrity of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s software
-            is compromised, the latter being due to malicious or non-malicious intent. To address the concern of
-            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> operating outside of its hardware or software specification, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will shut down upon
-            discovery of a problem reported via the self-test mechanism and provide signature-based validation
-            of updates to the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.
-            <br/>
-            Addressed by: FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), FPT_TUD_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>),
-            <a href="#FPT_FLS.1/SelfTest">FPT_FLS.1/SelfTest</a>, <a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a>
-          </span></dd><dt class="SO defined" id="O.PORT_FILTERING">O.PORT_FILTERING</dt><dd><span class="description">
-            To further address the issues associated with unauthorized disclosure of information, etc., a compliant
-            <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s port filtering capability will restrict the flow of network traffic between protected networks and
-            other attached networks based on the originating (source) or receiving (destination) port (or
-            service) identified in the network traffic as well as on established connection information.
-            <br/>
-            Addressed by: <a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a>
-          </span></dd><dt class="SO defined" id="O.SYSTEM_MONITORING">O.SYSTEM_MONITORING</dt><dd><span class="description">
-            To address the issues of administrators being able to monitor the operations of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway, it
-            is necessary to provide a capability to monitor system activity. Compliant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> will implement the
-            ability to log the flow of network traffic. Specifically, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will provide the means for administrators
-            to configure packet filtering rules to ‘log’ when network traffic is found to match the configured rule.
-            As a result, matching a rule configured to ‘log’ will result in informative event logs whenever a match
-            occurs. In addition, the establishment of security associations (SAs) is auditable, not only between
-            peer <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways, but also with certification authorities (CAs).
-            <br/>
-            Addressed by: <a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a>, <a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a>
-          </span></dd><dt class="SO defined" id="O.TOE_ADMINISTRATION">O.TOE_ADMINISTRATION</dt><dd><span class="description">
-            <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> will provide the functions necessary for an administrator to configure the packet filtering rules,
-            as well as the cryptographic aspects of the IPsec protocol that are enforced by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
-            <br/>
-            Addressed by: FMT_MTD.1/CryptoKeys (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), 
-            <a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a>
-          </span></dd></dl>
     
     
     
-    <h2 class="indexable" data-level="2" id="SecurityObjectivesTOEorEnvironment">4.2 Security Objectives for the Operational Environment</h2>
-The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements technical and procedural measures to assist the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in correctly providing its security functionality (which is defined by the security objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>).
-The security objectives for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> consist of a set of statements describing the goals that the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> should achieve.
-This section defines the security objectives that are to be addressed by the IT domain or by non-technical or procedural means.
-The assumptions identified in Section 3 are incorporated as security objectives for the environment.
-      
+    <h2 class="indexable" data-level="2" id="Security_Objectives_for_the_Operational_Environment">4.1 Security Objectives for the Operational Environment</h2>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines environmental security objectives that extend those defined in
       the supported <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
       <br/>
@@ -995,90 +929,10 @@ The assumptions identified in Section 3 are incorporated as security objectives 
     
     
     
-    <h2 id="SOR" class="indexable,h2" data-level="2">4.3 Security Objectives Rationale</h2>   
+    <h2 id="SOR" class="indexable,h2" data-level="2">4.2 Security Objectives Rationale</h2>   
 		This section describes how the assumptions and organizational 
 		security policies map to operational environment security objectives.
-	<table><caption><span class="ctr" data-myid="t-sec-obj-rat" data-counter-type="ct-Table" id="t-sec-obj-rat">Table <span class="counter">1</span></span>: Security Objectives Rationale</caption><tr class="header"><td>Assumption or OSP</td><td>Security Objectives</td><td>Rationale</td></tr><tr class="major-row"><td rowspan="5"><a href="#T.NETWORK_ACCESS">T.NETWORK_​ACCESS</a></td><td><a href="#O.ADDRESS_FILTERING">O.ADDRESS_​FILTERING</a></td><td>
-              The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s address filtering capability
-              helps mitigate the threat of network
-              access by limiting unauthorized
-              reconnaissance activities that can be
-              performed outside the protected
-              network. 
-            </td></tr><tr><td><a href="#O.AUTHENTICATION">O.AUTHENTICATION</a></td><td>
-              The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s ability to authenticate
-              entities requesting network access
-              mitigates unauthorized network access
-              by ensuring that unauthenticated
-              connections cannot access the
-              protected network.
-            </td></tr><tr><td><a href="#O.CRYPTOGRAPHIC_FUNCTIONS">O.CRYPTOGRAPHIC_​FUNCTIONS</a></td><td>
-              The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s use of cryptography prevents
-              unauthorized network access by
-              encrypting data transmitted to and from an
-              entity on an untrusted network that is
-              accessing a protected resource.
-            </td></tr><tr><td><a href="#O.FAIL_SECURE">O.FAIL_​SECURE</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s ability to protect against unauthorized modifications to itself
-              helps ensure that its functionality cannot be altered in such a way that it permits network access that it would ordinarily disallow.</td></tr><tr><td><a href="#O.PORT_FILTERING">O.PORT_​FILTERING</a></td><td>
-              The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s port filtering capability helps
-              mitigate the threat of network access
-              by limiting unauthorized
-              reconnaissance activities that can be
-              performed outside the protected
-              network.
-            </td></tr><tr class="major-row"><td rowspan="3"><a href="#T.NETWORK_DISCLOSURE">T.NETWORK_​DISCLOSURE</a></td><td><a href="#O.ADDRESS_FILTERING">O.ADDRESS_​FILTERING</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s address filtering capability
-              helps mitigate the threat of network
-              disclosure by limiting unauthorized
-              reconnaissance activities that can be
-              performed outside the protected
-              network. 
-            </td></tr><tr><td><a href="#O.FAIL_SECURE">O.FAIL_​SECURE</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s ability to protect against unauthorized modifications to itself
-              helps ensure that its functionality cannot be altered to allow unauthorized disclosure of protected network traffic.</td></tr><tr><td><a href="#O.PORT_FILTERING">O.PORT_​FILTERING</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s port filtering capability helps
-              mitigate the threat of network access
-              by limiting unauthorized
-              reconnaissance activities that can be
-              performed outside the protected
-              network. 
-            </td></tr><tr class="major-row"><td rowspan="6"><a href="#T.NETWORK_MISUSE">T.NETWORK_​MISUSE</a></td><td><a href="#O.ADDRESS_FILTERING">O.ADDRESS_​FILTERING</a></td><td>
-              The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s ability to provide address
-              filtering helps mitigate the threat of
-              network misuse by reducing the
-              amount of potentially malicious
-              network traffic that could potentially
-              exploit the threat.
-            </td></tr><tr><td><a href="#O.CRYPTOGRAPHIC_FUNCTIONS">O.CRYPTOGRAPHIC_​FUNCTIONS</a></td><td>
-              The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s use of cryptography prevents
-              network misuse by ensuring that an
-              unauthorized attacker cannot inject
-              their own actions into the protected
-              network.
-            </td></tr><tr><td><a href="#O.FAIL_SECURE">O.FAIL_​SECURE</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s ability to protect against unauthorized modifications to itself
-              helps ensure that its functionality to detect potential misuse of network resources is not compromised.</td></tr><tr><td><a href="#O.PORT_FILTERING">O.PORT_​FILTERING</a></td><td>
-              The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s ability to provide port
-              filtering helps mitigate the threat of
-              network misuse by reducing the
-              amount of potentially malicious
-              network traffic that could potentially
-              exploit the threat.
-            </td></tr><tr><td><a href="#O.SYSTEM_MONITORING">O.SYSTEM_​MONITORING</a></td><td>
-              The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s system monitoring function
-              helps mitigate the threat of network
-              misuse by providing a method to detect
-              when potential misuse is occurring.
-            </td></tr><tr><td><a href="#O.TOE_ADMINISTRATION">O.TOE_​ADMINISTRATION</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements a management interface that allows for authorized usage of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> so that unprivileged users
-              do not have the ability to misuse its functions.</td></tr><tr class="major-row"><td rowspan="3"><a href="#T.REPLAY_ATTACK">T.REPLAY_​ATTACK</a></td><td><a href="#O.AUTHENTICATION">O.AUTHENTICATION</a></td><td>
-              The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s ability to enforce
-              authentication helps mitigate replay
-              attacks by making it more difficult for
-              an attacker to impersonate a valid
-              entity.
-            </td></tr><tr><td><a href="#O.CRYPTOGRAPHIC_FUNCTIONS">O.CRYPTOGRAPHIC_​FUNCTIONS</a></td><td>
-              The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s use of cryptography prevents
-              replay attacks by ensuring that network
-              data that is modified and retransmitted
-              will not be parsed as valid traffic.
-            </td></tr><tr><td><a href="#O.FAIL_SECURE">O.FAIL_​SECURE</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s ability to protect against unauthorized modifications to itself
-              helps ensure that it always enforces requirements for confidentiality and integrity of network traffic in the intended manner.</td></tr><tr class="major-row"><td rowspan="1"><a href="#A.CONNECTIONS">A.CONNECTIONS</a></td><td><a href="#OE.CONNECTIONS">OE.CONNECTIONS</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> objective <a href="#OE.CONNECTIONS">OE.CONNECTIONS</a> is realized through
+	<table><caption><span class="ctr" data-myid="t-sec-obj-rat" data-counter-type="ct-Table" id="t-sec-obj-rat">Table <span class="counter">1</span></span>: Security Objectives Rationale</caption><tr class="header"><td>Assumption or OSP</td><td>Security Objectives</td><td>Rationale</td></tr><tr class="major-row"><td rowspan="1"><a href="#A.CONNECTIONS">A.CONNECTIONS</a></td><td><a href="#OE.CONNECTIONS">OE.CONNECTIONS</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> objective <a href="#OE.CONNECTIONS">OE.CONNECTIONS</a> is realized through
               <a href="#A.CONNECTIONS">A.CONNECTIONS</a>.</td></tr></table>
     
   <h1 id="Security_Requirements" class="indexable" data-level="1">5 Security Requirements</h1>
@@ -1601,17 +1455,65 @@ The assumptions identified in Section 3 are incorporated as security objectives 
   
        
     <h2 id="obj-req-map" class="indexable" data-level="2">5.3 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
-    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">3</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="11"><a href="#T.DATA_INTEGRITY">T.DATA_​INTEGRITY</a><br/></td><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>Mitigates the threat by filtering traffic from outside the protected network.</td></tr>
+    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">3</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="10"><a href="#T.DATA_INTEGRITY">T.DATA_​INTEGRITY</a><br/></td><td>FCS_COP.1/DataEncryption (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by encrypting channel data using a specified algorithm.</td></tr>
+<tr><td>FCS_IPSEC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing IPsec to verify message confidentiality and integrity.</td></tr>
+<tr><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>Mitigates the threat by filtering traffic from outside the protected network.</td></tr>
+<tr><td><a href="#FPT_FLS.1/SelfTest">FPT_FLS.1/SelfTest</a></td><td>Mitigates the threat by ceasing operations of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> if a test or security failure is detected, preventing a failure in secure functionality.</td></tr>
+<tr><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by testing the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> for any unauthorized modifications or cryptographic failures.</td></tr>
+<tr><td><a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a></td><td>Mitigates the threat by executing self tests in a specified, repeatable manner.</td></tr>
+<tr><td>FPT_TUD_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by providing a secure update mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that validates its authenticity,
+            ensuring a faulty or malicious update cannot compromise the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s ability to protect data integrity.</td></tr>
+<tr><td><a href="#FTP_ITC.1/VPN">FTP_ITC.1/VPN</a></td><td>Mitigates the threat by transmitting data over a secure <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection protected from unauthorized disclosure.</td></tr>
 <tr><td><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a> (optional)</td><td>Mitigates the threat by assigning a private, internal IP address to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients within the protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
-<tr><td>FCS_IPSEC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing IPsec to verify message integrity.</td></tr>
+<tr><td><a href="#FTA_SSL.3/VPN">FTA_SSL.3/VPN</a> (optional)</td><td>Mitigates the threat by terminating inactive <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> sessions.</td></tr>
+<tr class="major-row"><td rowspan="16"><a href="#T.NETWORK_ACCESS">T.NETWORK_​ACCESS</a><br/></td><td><a href="#FCS_CKM.1/IKE">FCS_CKM.1/IKE</a></td><td>Mitigates the threat by generating secure keys utilized for <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> peer authentication.</td></tr>
+<tr><td>FCS_IPSEC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing IPsec to create <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connections for authorized users to access the internal network.</td></tr>
 <tr><td>FIA_X509_EXT.1/Rev (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by preventing connection to servers or clients with malformed or invalid X.509 certificates.</td></tr>
 <tr><td>FIA_X509_EXT.2 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by authenticating a remote entity using X.509 certificates.</td></tr>
 <tr><td>FIA_X509_EXT.3 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing a secure certificate request method to obtain a signed certificate.</td></tr>
-<tr><td><a href="#FTP_ITC.1/VPN">FTP_ITC.1/VPN</a></td><td>Mitigates the threat by transmitting data over a secure <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection.</td></tr>
-<tr><td><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional)</td><td>Mitigates the threat by performing a secondary authentication process prior to allowing <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connections.</td></tr>
-<tr><td><a href="#FTA_SSL.3/VPN">FTA_SSL.3/VPN</a> (optional)</td><td>Mitigates the threat by terminating inactive <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> sessions.</td></tr>
+<tr><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>Mitigates the threat by filtering traffic to disallow unauthorized access.</td></tr>
+<tr><td><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional)</td><td>Mitigates the threat by providing for multi-factor authentication of <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients.</td></tr>
+<tr><td><a href="#FTA_SSL.3/VPN">FTA_SSL.3/VPN</a> (optional)</td><td>Mitigates the threat by terminating inactive <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> sessions to prevent potential unauthorized use.</td></tr>
 <tr><td><a href="#FTA_TSE.1">FTA_TSE.1</a> (optional)</td><td>Mitigates the threat by preventing connection of <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients that meet undesirable criteria.</td></tr>
+<tr><td><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a> (optional)</td><td>Mitigates the threat by assigning a private, internal IP address to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients within the protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
 <tr><td><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a> (selection-based)</td><td>Mitigates the threat by securely authenticating <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients with a remote authentication server.</td></tr>
+<tr><td><a href="#FIA_HOTP_EXT.1">FIA_HOTP_EXT.1</a> (selection-based)</td><td>Mitigates the threat by providing a second factor of authentication via hash-based one-time passwords.</td></tr>
+<tr><td><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> (selection-based)</td><td>Mitigates the threat by providing a second factor of authentication via a pre-shared key.</td></tr>
+<tr><td><a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a> (selection-based)</td><td>Mitigates the threat by securely and randomly generating a pre-shared key.</td></tr>
+<tr><td><a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a> (selection-based)</td><td>Mitigates the threat by securely deriving a pre-shared key from a password.</td></tr>
+<tr><td><a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a> (selection-based)</td><td>Mitigates the threat by providing a second factor of authentication via time-based one-time passwords.</td></tr>
+<tr class="major-row"><td rowspan="6"><a href="#T.NETWORK_DISCLOSURE">T.NETWORK_​DISCLOSURE</a><br/></td><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>Mitigates the threat by filtering traffic to disallow unauthorized traffic flows.</td></tr>
+<tr><td><a href="#FPT_FLS.1/SelfTest">FPT_FLS.1/SelfTest</a></td><td>Mitigates the threat by ceasing operations of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> if a test or security failure is detected, preventing a failure in traffic filtering.</td></tr>
+<tr><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by verifying the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s correct operation.</td></tr>
+<tr><td><a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a></td><td>Mitigates the threat by executing self tests in a specified, repeatable manner.</td></tr>
+<tr><td>FPT_TUD_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by providing a secure update mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that validates its authenticity,
+            ensuring a faulty or malicious update cannot compromise the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s ability to enforce traffic rules.</td></tr>
+<tr><td><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a> (optional)</td><td>Mitigates the threat by assigning a private, internal IP address to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients within the protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
+<tr class="major-row"><td rowspan="10"><a href="#T.NETWORK_MISUSE">T.NETWORK_​MISUSE</a><br/></td><td><a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a></td><td>Mitigates the threat by logging potential violations of policy.</td></tr>
+<tr><td>FCS_IPSEC_EXT.1</td><td>Mitigates the threat by securing traffic originating from or traveling to an authorized user that resides outside the protected network,
+          ensuring that an unauthorized attacker cannot inject their own actions into the protected network.</td></tr>
+<tr><td>FMT_MTD.1/CryptoKeys</td><td>Mitigates the threat by implementing a management interface to manage the IPsec parameters 
+          so that unprivileged users do not have the ability to misuse its functions.</td></tr>
+<tr><td><a href="#FMT_SMF.1/VPN">FMT_SMF.1/VPN</a></td><td>Mitigates the threat by implementing a management interface that allows for authorized usage of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> so that unprivileged users
+              do not have the ability to misuse its functions.</td></tr>
+<tr><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>Mitigates the threat by filtering traffic to or from disallowed services.</td></tr>
+<tr><td><a href="#FPT_FLS.1/SelfTest">FPT_FLS.1/SelfTest</a></td><td>Mitigates the threat by ceasing operations of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> if a test or security failure is detected, preventing a failure in
+          detection or prevention of network misuse.</td></tr>
+<tr><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by verifying the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s correct operation.</td></tr>
+<tr><td><a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a></td><td>Mitigates the threat by executing self tests in a specified, repeatable manner.</td></tr>
+<tr><td>FPT_TUD_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by providing a secure update mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that validates its authenticity,
+            ensuring a faulty or malicious update cannot compromise the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s ability to enforce traffic policy and log potential violations.</td></tr>
+<tr><td><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a> (optional)</td><td>Mitigates the threat by assigning a private, internal IP address to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients within the protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
+<tr class="major-row"><td rowspan="8"><a href="#T.REPLAY_ATTACK">T.REPLAY_​ATTACK</a><br/></td><td>FCS_COP.1/DataEncryption (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing encryption algorithms to protect data from being sent in cleartext.</td></tr>
+<tr><td>FCS_IPSEC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing the IPsec protocol to encapsulate and encrypt channel data.</td></tr>
+<tr><td><a href="#FPT_FLS.1/SelfTest">FPT_FLS.1/SelfTest</a></td><td>Mitigates the threat by ceasing operations of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> if a test or security failure is detected, preventing a failure in
+          detection of replay attacks.</td></tr>
+<tr><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by verifying the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s correct operation.</td></tr>
+<tr><td><a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a></td><td>Mitigates the threat by executing self tests in a specified, repeatable manner.</td></tr>
+<tr><td>FPT_TUD_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by providing a secure update mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that validates its authenticity,
+            ensuring a faulty or malicious update cannot compromise the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s ability to encrypt traffic and prevent it from being replayed without detection.</td></tr>
+<tr><td><a href="#FTP_ITC.1/VPN">FTP_ITC.1/VPN</a></td><td>Mitigates the threat by ensuring the channel data (in this case, <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> data) is protected from unauthorized disclosure.</td></tr>
+<tr><td><a href="#FTA_TSE.1">FTA_TSE.1</a> (optional)</td><td>Mitigates the threat by preventing connection from a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client that meets undesirable criteria.</td></tr>
 </table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-ND" class="indexable" data-level="2">6.1 Collaborative 
     Protection Profile for Network Devices</h2><h3 id="contoe-ND" class="indexable" data-level="3">6.1.1 
 	Consistency of TOE Type

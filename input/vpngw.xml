@@ -1108,10 +1108,10 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 <h:li><h:i>During initial start-up (on power on) to verify the integrity of the TOE firmware and software;</h:i></h:li>
                 <h:li><h:i>During start-up (prior to providing any cryptographic services) and [<h:b>selection:</h:b> <h:i>at no other time, on-demand, continuously, [<h:b>assignment:</h:b> conditions under which self-tests should occur]</h:i>]
                  to verify correct operation of cryptographic implementation necessary to fulfill the TSF;</h:i></h:li>
-                <h:li><h:i>[<h:b>selection:</h:b> <h:i>no other, start-up, on-demand, continuous, at the conditions [<h:b>assignment</h:b> conditions under which self-tests should occur]</h:i>]
+                <h:li><h:i>[<h:b>selection:</h:b> <h:i>no other, start-up, on-demand, continuous, at the conditions [<h:b>assignment:</h:b> conditions under which self-tests should occur]</h:i>]
                 self tests [<h:i>[<h:b>assignment: </h:b><h:i>list an identifier for each self-test that is additional to those identified in the two bullet points</h:i>.</h:i></h:i></h:li>
                 </h:ul>
-                to demonstrate the correct operation of the TSF: [<h:i>noise source health tests</h:i>] and if failure detected [<h:i>take action as described in FPT_TST_EXT.1.2</h:i>].
+                to demonstrate the correct operation of the TSF: [<h:i>noise source health tests</h:i>] and if failure detected [<h:b>assignment:</h:b> <h:i>describe the resulting error state</h:i>].
                 </h:p>
                 <h:p>
                 <h:b>Application Note:</h:b> This SFR is modified from its definition in the NDcPP by requiring noise source
@@ -2183,7 +2183,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             performed. This PP-Module simply goes one step further and requires the
             TSF to behave in a certain way upon failure of those self-tests.</consistency-rationale>
           <f-element id="fpt-fls-1e1-SelfTest">
-            <title>The TSF shall <h:s>preserve a secure state</h:s><h:b>shut down</h:b> when the following types of failures occur: [<h:i>failure of the
+            <title>The TSF shall <h:s>preserve a secure state </h:s><h:b>shut down</h:b> when the following types of failures occur: [<h:i>failure of the
               power-on self-tests, failure of integrity check of the TSF executable image, failure
               of noise source health tests</h:i>].</title>
             <note role="application">

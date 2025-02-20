@@ -526,10 +526,10 @@
                             <i>During start-up (prior to providing any cryptographic services) and [<b>selection:</b> <i>at no other time, on-demand, continuously, [<b>assignment:</b> conditions under which self-tests should occur]</i>] to verify correct operation of cryptographic implementation necessary to fulfill the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>;</i>
                         </li>
                         <li>
-                            <i>[<b>selection:</b> <i>no other, start-up, on-demand, continuous, at the conditions [<b>assignment</b> conditions under which self-tests should occur]</i>] self tests [<i>[<b>assignment: </b><i>list an identifier for each self-test that is additional to those identified in the two bullet points</i>.</i></i>
+                            <i>[<b>selection:</b> <i>no other, start-up, on-demand, continuous, at the conditions [<b>assignment:</b> conditions under which self-tests should occur]</i>] self tests [<i>[<b>assignment: </b><i>list an identifier for each self-test that is additional to those identified in the two bullet points</i>.</i></i>
                         </li>
                     </ul>
-                     to demonstrate the correct operation of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>: [<i>noise source health tests</i>] and if failure detected [<i>take action as described in FPT_TST_EXT.1.2</i>]. 
+                     to demonstrate the correct operation of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>: [<i>noise source health tests</i>] and if failure detected [<b>assignment:</b> <i>describe the resulting error state</i>]. 
                 </p>
                 <p>
                      <b>Application Note:</b> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the NDcPP by requiring noise source health tests to be performed regardless of what other testing is claimed. It is expected that the behavior of this testing will be described in the entropy documentation. Other self-tests may be defined at the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author&rsquo;s discretion; note that the Application Note in the NDcPP regarding what other self-tests are expected is still applicable here. 
@@ -866,7 +866,7 @@
                     <a href="#FPT_FLS.1.1/SelfTest" class="abbr">FPT_FLS.1.1/SelfTest</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <s>preserve a secure state</s><b>shut down</b> when the following types of failures occur: [<i>failure of the power-on self-tests, failure of integrity check of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> executable image, failure of noise source health tests</i>].
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <s>preserve a secure state </s><b>shut down</b> when the following types of failures occur: [<i>failure of the power-on self-tests, failure of integrity check of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> executable image, failure of noise source health tests</i>].
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the expected <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> response to failures of the self-tests defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. </span>
                     </div>

@@ -1101,10 +1101,10 @@ provide all of its security functionality.
                 <li><i>During initial start-up (on power on) to verify the integrity of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> firmware and software;</i></li>
                 <li><i>During start-up (prior to providing any cryptographic services) and [<b>selection:</b> <i>at no other time, on-demand, continuously, [<b>assignment:</b> conditions under which self-tests should occur]</i>]
                  to verify correct operation of cryptographic implementation necessary to fulfill the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>;</i></li>
-                <li><i>[<b>selection:</b> <i>no other, start-up, on-demand, continuous, at the conditions [<b>assignment</b> conditions under which self-tests should occur]</i>]
+                <li><i>[<b>selection:</b> <i>no other, start-up, on-demand, continuous, at the conditions [<b>assignment:</b> conditions under which self-tests should occur]</i>]
                 self tests [<i>[<b>assignment: </b><i>list an identifier for each self-test that is additional to those identified in the two bullet points</i>.</i></i></li>
                 </ul>
-                to demonstrate the correct operation of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>: [<i>noise source health tests</i>] and if failure detected [<i>take action as described in FPT_TST_EXT.1.2</i>].
+                to demonstrate the correct operation of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>: [<i>noise source health tests</i>] and if failure detected [<b>assignment:</b> <i>describe the resulting error state</i>].
                 </p>
                 <p>
                 <b>Application Note:</b> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the NDcPP by requiring noise source
@@ -1392,7 +1392,7 @@ provide all of its security functionality.
 	 
         <div class="comp" id="FPT_FLS.1/SelfTest"><h4>FPT_FLS.1/SelfTest Failure with Preservation of Secure State (Self-Test Failures)</h4>
           
-          <div class="element"><div class="reqid" id="FPT_FLS.1.1/SelfTest"><a href="#FPT_FLS.1.1/SelfTest" class="abbr">FPT_FLS.1.1/SelfTest</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <s>preserve a secure state</s><b>shut down</b> when the following types of failures occur: [<i>failure of the
+          <div class="element"><div class="reqid" id="FPT_FLS.1.1/SelfTest"><a href="#FPT_FLS.1.1/SelfTest" class="abbr">FPT_FLS.1.1/SelfTest</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <s>preserve a secure state </s><b>shut down</b> when the following types of failures occur: [<i>failure of the
               power-on self-tests, failure of integrity check of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> executable image, failure
               of noise source health tests</i>].<div class="appnote"><span class="note-header">Application
       Note:

@@ -1,12 +1,4 @@
 * Warning: This document still has at least one comment.
-* Error: Detected dangling id-reference to sel-ipsec-e13-psk from attribute
-        on-sel/Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[2]""/f-component[1]""/depends[1]""/on-sel[1]""
-* Error: Detected dangling id-reference to sel-ipsec-e13-eapttls from attribute
-        also/Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[2]""/f-component[1]""/depends[1]""/also[1]""
-* Error: Detected dangling id-reference to sel-ipsec-e13-eaptls from attribute
-        and/Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[2]""/f-component[1]""/depends[1]""/and[1]""
-* Error: Detected dangling id-reference to sel-ipsec-e13-psk from attribute
-        on-sel/Module[1]""/sec:Security_Requirements[1]""/sel-sfrs[1]""/section[3]"The TOE m"/f-component[2]""/depends[1]""/on-sel[1]""
 * Error: Detected dangling ref to 'O.ADDRESS_FILTERING'
         for a ref.
 	/Module[1]""/sec:Security_Requirements[1]""/base-pp[1]""/con-mod[7]"The Base-"/ref[1]""

@@ -2457,7 +2457,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
         <!-- FCS_EAP_EXT.1 EAP -->
         <f-component cc-id="fcs_eap_ext.1" id="fcs-eap-ext-1" name="EAP-TLS/TTLS">
         
-          <depends on-sel="sel-ipsec-e13-psk" also="sel-ipsec-e13-eapttls" and="sel-ipsec-e13-eaptls"/>
+          <depends on-sel="nd-mod-fcs-ipsec-ext-1"/>
 	  <!-- QQQQ: See note in vpnclient -->          
 	  <consistency-rationale>This SFR defines the use of EAP-TLS/TTLS; the Base-PP already defines requirements for TLS so potential support for EAP-TLS is consistent with functionality that the Base-PP already expects the TOE may have.</consistency-rationale>
           <comp-lev>defines the use of EAP-TLS/TTLS.</comp-lev>
@@ -2708,7 +2708,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
         
         <!-- FIA_PSK_EXT.1 Pre-Shared Key Composition -->
         <f-component cc-id="fia_psk_ext.1" id="fia-psk-ext-1" name="Pre-Shared Key Composition">
-          <depends on-sel="sel-ipsec-e13-psk" also="sel-tsf-mfa"/>
+          <depends on-sel="nd-mod-fcs-ipsec-ext-1" also="sel-tsf-mfa"/>
           <consistency-rationale>This SFR defines the use of pre-shared keys, which is behavior that only relates to the establishment of IPsec connections.</consistency-rationale>
           <comp-lev>defines the use and composition of pre-shared keys used for IPsec.</comp-lev>
           <management>No specific management functions are identified.</management>

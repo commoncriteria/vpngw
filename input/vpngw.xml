@@ -1022,7 +1022,10 @@ expected to enforce.<h:br/>
           <!-- There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
 The PP-Module modifies this SFR to make it mandatory because of the TOE’s required support for IPsec. -->
           <base-sfr-spec cc-id="fia_x509_ext.1" iteration="Rev" id="nd-mod-fia-x509-ext-1" title="X.509 Certificate Validation">
-            <consistency-rationale>This PP-Module does not modify the Base-PP SFR; it only mandates the
+            <consistency-rationale>
+            <comment>Based on the impending movement of the X.509 SFRs to the X.509 Functional Package, it may not be appropriate to say that this component and its SFRs
+            are sourced from the Base-PP. If so, we need a case (both schema and administrative) to handle this.</comment>
+            This PP-Module does not modify the Base-PP SFR; it only mandates the
               inclusion of the SFR because a conformant TOE will always require this
               functionality that is only conditional in the Base-PP.</consistency-rationale>
             <description>
@@ -1080,7 +1083,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 keys and certificates used for VPN operation.</h:p>
               <h:p>The text of the requirement is replaced with:</h:p>
               <h:p>
-              The TSF shall restrict the ability to [[<h:i>manage</h:i>]] the [<h:i>cryptographic keys <h:b>and
+              The TSF shall restrict the ability to [<h:i>manage</h:i>] the [<h:i>cryptographic keys <h:b>and
               certificates used for VPN operation</h:b></h:i>] to [<h:i>Security Administrators</h:i>]. 
               </h:p>
             </description>
@@ -1106,9 +1109,9 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 <h:li><h:i>During start-up (prior to providing any cryptographic services) and [<h:b>selection:</h:b> <h:i>at no other time, on-demand, continuously, [<h:b>assignment:</h:b> conditions under which self-tests should occur]</h:i>]
                  to verify correct operation of cryptographic implementation necessary to fulfill the TSF;</h:i></h:li>
                 <h:li><h:i>[<h:b>selection:</h:b> <h:i>no other, start-up, on-demand, continuous, at the conditions [<h:b>assignment</h:b> conditions under which self-tests should occur]</h:i>]
-                self tests [<h:i>[<h:b>assignment: </h:b><h:i>list an identifier for each self-test that is additional to those identified in the two bullet points</h:i> to demonstrate
-                the correct operation of the TSF: noise source health tests.</h:i></h:i></h:li>
+                self tests [<h:i>[<h:b>assignment: </h:b><h:i>list an identifier for each self-test that is additional to those identified in the two bullet points</h:i>.</h:i></h:i></h:li>
                 </h:ul>
+                to demonstrate the correct operation of the TSF: [<h:i>noise source health tests</h:i>] and if failure detected [<h:i>take action as described in FPT_TST_EXT.1.2</h:i>].
                 </h:p>
                 <h:p>
                 <h:b>Application Note:</h:b> This SFR is modified from its definition in the NDcPP by requiring noise source
@@ -1118,6 +1121,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 that the Application Note in the NDcPP regarding what other self-tests are
                 expected is still applicable here.
                 </h:p>
+                <h:br/><h:br/>
             </description>
             <no-change/>
           </base-sfr-spec>
@@ -1219,13 +1223,13 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
 	  <!-- 6.1.3 Consistency of Objectives -->
       <!-- Note: the 1.1 Module has a single note that all objectives are consistent because the Base-PP doesn't define any. I didn't see any way to suppress these entries from the table so I've put in 
       rationale that's basically just a duplicate of this in table form. Should we add something in the schema to optionally suppress the objectives or is how it's done now ok? -->
-      <con-mod ref="O.ADDRESS_FILTERING">The Base-PP does not define any TOE objectives so PP-Module objectives do not conflict with it.</con-mod>
+      <!-- <con-mod ref="O.ADDRESS_FILTERING">The Base-PP does not define any TOE objectives so PP-Module objectives do not conflict with it.</con-mod>
       <con-mod ref="O.AUTHENTICATION">The Base-PP does not define any TOE objectives so PP-Module objectives do not conflict with it.</con-mod>
       <con-mod ref="O.CRYPTOGRAPHIC_FUNCTIONS">The Base-PP does not define any TOE objectives so PP-Module objectives do not conflict with it.</con-mod>
       <con-mod ref="O.FAIL_SECURE">The Base-PP does not define any TOE objectives so PP-Module objectives do not conflict with it.</con-mod>
       <con-mod ref="O.PORT_FILTERING">The Base-PP does not define any TOE objectives so PP-Module objectives do not conflict with it.</con-mod>
       <con-mod ref="O.SYSTEM_MONITORING">The Base-PP does not define any TOE objectives so PP-Module objectives do not conflict with it.</con-mod>
-      <con-mod ref="O.TOE_ADMINISTRATION">The Base-PP does not define any TOE objectives so PP-Module objectives do not conflict with it.</con-mod>
+      <con-mod ref="O.TOE_ADMINISTRATION">The Base-PP does not define any TOE objectives so PP-Module objectives do not conflict with it.</con-mod> -->
       
       <!-- Note: the 1.1 Module did not rationalize the OE objectives -->
       <con-mod ref="OE.CONNECTIONS">This objective intends for the TOE to be connected to environmental networks in such a way that its primary functionality can be appropriately enforced. There is no
@@ -1367,15 +1371,12 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
             <title>
               The TSF shall generate <h:b>asymmetric</h:b> cryptographic keys <h:b>used for IKE peer
               authentication</h:b> in accordance with a specified cryptographic key generation
-              algorithm: [<h:i><selectables linebreak="yes">
+              algorithm: [<h:i><selectables>
                 <selectable>FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix B.3 for RSA
                   schemes</selectable>
                 <selectable>FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix B.4 for ECDSA
-                  schemes, and implementing “NIST curves” P-384 and <selectables>
-                    <selectable>P-256</selectable>
-                    <selectable>P-521</selectable>
-                    <selectable exclusive="yes">no other curves</selectable></selectables></selectable>
-              </selectables> and <selectables linebreak="yes">
+                  schemes, and implementing “NIST curves” P-384</selectable>
+              </selectables> and <selectables>
                 <selectable>FFC Schemes using “safe-prime” groups that meet the following: NIST
                   Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key
                   Establishment Schemes Using Discrete Logarithm Cryptography” and <selectables>
@@ -1384,8 +1385,8 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                   </selectables></selectable>
                 <selectable exclusive="yes">no other key generation algorithm</selectable>
               </selectables>
-              </h:i>] and specified cryptographic key sizes [<h:i>equivalent to, or greater than, a symmetric
-                key strength of 112 bits</h:i>] that meet the following: [<h:i>no standard</h:i>].
+              </h:i>] and specified cryptographic key sizes [<h:i><assignable>key size equivalent to, or greater than, a symmetric
+                key strength of 256 bits</assignable></h:i>] that meet the following: [<h:i>no standard</h:i>].
               
             </title>
             <note role="application">
@@ -2182,7 +2183,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             performed. This PP-Module simply goes one step further and requires the
             TSF to behave in a certain way upon failure of those self-tests.</consistency-rationale>
           <f-element id="fpt-fls-1e1-SelfTest">
-            <title>The TSF shall <h:b>shut down</h:b> when the following types of failures occur: [<h:i>failure of the
+            <title>The TSF shall <h:s>preserve a secure state</h:s><h:b>shut down</h:b> when the following types of failures occur: [<h:i>failure of the
               power-on self-tests, failure of integrity check of the TSF executable image, failure
               of noise source health tests</h:i>].</title>
             <note role="application">
@@ -2235,7 +2236,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           format the extended component like a hierarchical SFR without having an actual header for that in the ECD> -->
           <dependencies>No dependencies.</dependencies>
           <f-element id="fpt-tst-ext-3e1">
-            <title>The TSF shall run a suite of the following self-tests [<h:i>[when loaded for execution]</h:i>]
+            <title>The TSF shall run a suite of the following self-tests [<h:i>when loaded for execution</h:i>]
               to demonstrate the correct operation of the TSF: [<h:i>integrity verification of stored
               executable code</h:i>].</title>
           <ext-comp-def-title>
@@ -2246,7 +2247,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </f-element>
           <f-element id="fpt-tst-ext-3e2">
             <title>The TSF shall execute the self-testing through [<h:i>a TSF-provided cryptographic
-              service specified in FCS_COP.1<h:b>/SigGen</h:b></h:i>].</title>
+              service specified in FCS_COP.1/SigGen (from <xref to="bibNDcPP"/>)</h:i>].</title>
             <ext-comp-def-title>
               <title>The TSF shall execute the self-testing through <assignable>self-testing mechanism</assignable>.</title>
             </ext-comp-def-title>
@@ -2275,20 +2276,15 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
             to the PP-Module. This does not affect the ability of the Base-PP iteration of
             the SFR to be satisfied.</consistency-rationale>
           <f-element id="ftp-itc-1e1-vpn">
-            <!-- <title>The TSF shall <h:b>be capable of using IPsec to</h:b> provide a communication channel
+            <title>The TSF shall <h:b>be capable of using IPsec to</h:b> provide a communication channel
               between itself and <h:b>authorized IT entities supporting VPN communications</h:b> that
               is logically distinct from other communication channels and provides assured
               identification of its end points and protection of the channel data from <h:b>disclosure
-                and detection of modification of the channel data</h:b>.</title> -->
-                <!-- CC:2022 rewording -->
-              <title>The TSF shall protect all <h:b>VPN-related</h:b> TSF data transmitted from the TSF <h:b>over IPsec</h:b>
-              to another <h:b>authorized IT entity supporting VPN communications</h:b> from unauthorized
-              disclosure during transmission.
-              </title>
+                and detection of modification of the channel data</h:b>.</title>
           </f-element>
           <f-element id="ftp-itc-1e2-vpn">
             <title>
-              The TSF shall permit [<h:i>the authorized IT entities</h:i>] to initiate communication via the
+              The TSF shall permit [<h:i><h:b>the authorized IT entities</h:b></h:i>] to initiate communication via the
               trusted channel.
             </title>
           </f-element>
@@ -2481,7 +2477,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 The TSF shall support
                 <selectables>
                   <selectable>EAP-TLS as specified in RFC 5216 and updated by RFC 8996</selectable>
-                  <selectable>EAP-TTLS as specified in RFC 5281</selectable>
+                  <selectable>EAP-TTLS as specified in RFC 5281 and updated by RFC 8996</selectable>
                 </selectables>
                 over a protected channel per FTP_ITC.1 with an authentication server.
               </title>
@@ -2573,12 +2569,21 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </f-element>
           <f-element id="fia-hotp-ext-1e2">
             <title>
+              The TSF shall generate an HOTP seed according to FCS_RBG.1 (from <xref to="bibNDcPP"/>) of 
+              <selectables>
+                <selectable>128</selectable>
+                <selectable>256</selectable>
+              </selectables> bits.
+            </title>
+            <ext-comp-def-title>
+            <title>
               The TSF shall generate an HOTP seed according to FCS_RBG.1 of 
               <selectables>
                 <selectable>128</selectable>
                 <selectable>256</selectable>
               </selectables> bits.
             </title>
+            </ext-comp-def-title>
           </f-element>
           <f-element id="fia-hotp-ext-1e3">
             <title>The TSF shall generate a new HOTP seed value for each client.
@@ -2666,7 +2671,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               <TSS>
                 The evaluator shall verify the TSS describes how the HOTP is input into the client and how that value is sent to the server. 
                 <h:br/>The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
-                <h:br/>The evaluator shall confirm the TSS describes how the HOTP seed is generated and ensure it aligns with FCS_RBG.1.
+                <h:br/>The evaluator shall confirm the TSS describes how the HOTP seed is generated and ensure it aligns with FCS_RBG.1 (from <xref to="bibNDcPP"/>).
                 <h:br/>The evaluator shall confirm the TSS describes how the HOTP seed is protected and ensure it aligns with the storage requirements of the Base-PP. 
                 <h:br/>The evaluator shall confirm the TSS describes how a new HOTP seed is assigned for each client and how each client is uniquely identified.
                 <h:br/>The evaluator shall confirm the TSS describes how the HOTP seed is conditioned into an HOTP hash and verify it matches the selection in FIA_HOTP_EXT.1.4.
@@ -2818,18 +2823,34 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               <selectables>
                 <selectable>128</selectable>
                 <selectable>256</selectable>
+              </selectables> bit-based pre-shared keys via FCS_RBG.1 (from <xref to="bibNDcPP"/>). 
+                
+              </selectable>
+              </selectables>
+            </title>
+            <ext-comp-def-title>
+            <title>
+              The TSF shall be able to 
+              <selectables>
+                <selectable>accept externally generated pre-shared keys</selectable>
+              <selectable>
+              generate 
+              <selectables>
+                <selectable>128</selectable>
+                <selectable>256</selectable>
               </selectables> bit-based pre-shared keys via FCS_RBG.1. 
                 
               </selectable>
               </selectables>
             </title>
+            </ext-comp-def-title>
             <note role="application">
               Generated PSKs are expected to be shared between components via an out of band mechanism. 
               
               <h:br/>This requirement is selection dependent on FIA_PSK_EXT.1.<h:br/>
             </note>
             <aactivity>
-              <TSS>If "generate" is selected, the evaluator shall confirm that this process uses the RBG specified in FCS_RBG.1 
+              <TSS>If "generate" is selected, the evaluator shall confirm that this process uses the RBG specified in FCS_RBG.1 (from <xref to="bibNDcPP"/>)
                 and the output matches the size selected in FIA_PSK_EXT.2.1.<h:br/> 
               </TSS>
               <Guidance>The evaluator shall confirm the operational guidance contains instructions for entering generated pre-shared keys 
@@ -2896,8 +2917,13 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </f-element>
           <f-element id="fia-psk-ext-3e5">
             <title>
+              The TSF shall generate all salts using an RBG that meets FCS_RBG.1 (from <xref to="bibNDcPP"/>) and with entropy of <assignable>value equal to or greater than 128</assignable> bits.
+            </title>
+            <ext-comp-def-title>
+            <title>
               The TSF shall generate all salts using an RBG that meets FCS_RBG.1 and with entropy of <assignable>value equal to or greater than 128</assignable> bits.
             </title>
+            </ext-comp-def-title>
           </f-element>
           <f-element id="fia-psk-ext-3e6">
             <title>
@@ -2945,7 +2971,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                 
                 <h:br/>The evaluator shall confirm that the minimum length is described.
                 
-                <h:br/>The ST author shall provide a description in the TSS regarding the salt generation. The evaluator shall confirm that the salt is generated using an RBG described in FCS_RBG.1.
+                <h:br/>The ST author shall provide a description in the TSS regarding the salt generation. The evaluator shall confirm that the salt is generated using an RBG described in FCS_RBG.1 (from <xref to="bibNDcPP"/>).
                 
                 <h:br/>[conditional] If password strength meter or password denylist is selected, the evaluator shall examine the TSS to ensure any password checking functionality provided by the TSF is described and contains details on how the function operates.
                 <h:br/></TSS>
@@ -2995,12 +3021,21 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </f-element>
           <f-element id="fia-totp-ext-1e2">
             <title>
+              The TSF shall generate a TOTP seed according to FCS_RBG.1 (from <xref to="bibNDcPP"/>)of 
+              <selectables>
+                <selectable>128</selectable>
+                <selectable>256</selectable>
+              </selectables> bits.
+            </title>
+            <ext-comp-def-title>
+            <title>
               The TSF shall generate a TOTP seed according to FCS_RBG.1 of 
               <selectables>
                 <selectable>128</selectable>
                 <selectable>256</selectable>
               </selectables> bits.
             </title>
+            </ext-comp-def-title>
           </f-element>
           <f-element id="fia-totp-ext-1e3">
             <title>The TSF shall generate a new TOTP seed for each client.
@@ -3101,7 +3136,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               <TSS>
                 The evaluator shall verify the TSS describes how the TOTP is input into the client and how that value is sent to the server. 
                 <h:br/>The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
-                <h:br/>The evaluator shall confirm the TSS describes how the TOTP seed is generated and ensure it aligns with FCS_RBG.1.
+                <h:br/>The evaluator shall confirm the TSS describes how the TOTP seed is generated and ensure it aligns with FCS_RBG.1 (from <xref to="bibNDcPP"/>).
                 <h:br/>The evaluator shall confirm the TSS describes how the TOTP seed is protected and ensure it aligns with the storage requirements of the Base-PP. 
                 <h:br/>The evaluator shall confirm the TSS describes how a new TOTP seed is assigned for each client and how each client is uniquely identified.
                 <h:br/> The evaluator shall confirm the TSS describes how the TOTP seed is conditioned into a TOTP hash and verify it matches the selection in FIA_TOTP_EXT.1.4.

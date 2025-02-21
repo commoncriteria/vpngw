@@ -1005,7 +1005,8 @@ expected to enforce.<h:br/>
               </description>
               <insert-after>
                 <xpath-specified xpath="*//cc:f-element[@id='fcs-ckm-1-ike']//cc:title">
-                <title>The TSF shall ensure that 
+              <f-element id="nd-fcs-ipsec-ext-1e13">
+              <title>The TSF shall ensure that 
                 <h:b><selectables>
                   <selectable>IKEv1</selectable>
                   <selectable>IKEv2</selectable></selectables></h:b>
@@ -1022,6 +1023,33 @@ expected to enforce.<h:br/>
                   <selectable exclusive="yes">no other method</selectable>
                 </selectables>.
               </title>
+              <note role="application">
+                At least one public-key-based Peer Authentication method is required in order to
+                conform to this PP-Module; one or more of the public key schemes is chosen by
+                the ST author to reflect what is implemented. The ST author also ensures that
+                appropriate FCS requirements reflecting the algorithms used (and key
+                generation capabilities, if provided) are listed to support those methods. Note
+                that the TSS will elaborate on the way in which these algorithms are to be used.
+                <h:br/><h:br/>
+                If “IKEv1” is selected, “no other method” must be chosen in the third selection.
+                <h:br/><h:br/>
+                If a selection with “EAP-TLS” or “EAP-TTLS” is chosen, the selection-based requirement FCS_EAP_EXT.1 must be claimed. 
+                When an EAP method is used, verification occurs via an external authentication server. 
+                Though EAP-TTLS involves PSKs, FIA_PSK_EXT.1 is not claimed because PSK requirements for EAP-TTLS are addressed instead via 
+                the Authentication Server PP. EAP-based authentication is not supported for IKEv1. 
+                <h:br/><h:br/>
+                If “pre-shared keys that conform to RFC 8784” is chosen, the selection-based requirement FIA_PSK_EXT.1 must be claimed. 
+                Since certificates are required for authentication, IKEv1 does not support PSKs, as 
+                PSK-based authentication and certificate-based authentication are mutually exclusive in IKEv1. 
+                Note that IKEv1 will be removed in a future version of this document. 
+                <h:br/><h:br/>
+                Multifactor support can be achieved via traffic filtering in accordance with FPF_MFA_EXT.1. 
+                <h:br/><h:br/>
+                It is acceptable for different use cases to leverage different selections. If this is the case, it must be identified. 
+                <h:br/><h:br/>
+                This SFR is modified from its definition in the Base-PP by adding new selections for IKE versions and authentication methods.
+              </note>
+            </f-element>
               </xpath-specified>
               </insert-after>
           </base-sfr-spec>

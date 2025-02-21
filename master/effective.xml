@@ -1005,7 +1005,7 @@ expected to enforce.<h:br/>
               </description>
               <insert-after>
                 <xpath-specified xpath="*//cc:f-element[@id='fcs-ckm-1-ike']//cc:title">
-                <f-component name="IPsec Protocol" cc-id="fcs_ipsec_ext.1" id="xpath-fcs-ipsec-ext-1">
+                <f-component name="IPsec Protocol" cc-id="fcs_ipsec_ext" id="xpath-fcs-ipsec-ext-1">
                   <f-element id="nd-fcs-ipsec-ext-1e13">
                   <title>The TSF shall ensure that 
                     <h:b><selectables>

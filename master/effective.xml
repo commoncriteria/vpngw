@@ -1004,7 +1004,7 @@ expected to enforce.<h:br/>
                 by the ST author but they are not required for conformance to this PP-Module.</h:p>
               </description>
               <insert-after>
-                <xpath-specified xpath="*//cc:f-element[@id='fcs-ckm-1-ike']//cc:tests">
+                <xpath-specified xpath="*//cc:f-element[@id='fcs-ckm-1-ike']//cc:title">
                 <title>The TSF shall ensure that 
                 <h:b><selectables>
                   <selectable>IKEv1</selectable>

@@ -463,7 +463,7 @@
                 </p>
                 <p>The text of FCS_IPSEC_EXT.1.14 is replaced with:</p>
                 <p>
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall only establish a trusted channel if the presented identifier in the received certificate matches the configured reference identifier, where the presented and reference identifiers are of the following fields and types: <b>Distringuished Name (<abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr>),</b> [<b>selection:</b> <i><abbr class="dyn-abbr"><a href="#abbr_SAN">SAN</a></abbr>: IP address, <abbr class="dyn-abbr"><a href="#abbr_SAN">SAN</a></abbr>: Fully Qualified Domain Name (<abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr>), <abbr class="dyn-abbr"><a href="#abbr_SAN">SAN</a></abbr>: user <abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_CN">CN</a></abbr>: IP address, <abbr class="dyn-abbr"><a href="#abbr_CN">CN</a></abbr>: <abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_CN">CN</a></abbr>: user <abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr>, <b>no other reference identifier types, [assignment: other supported reference identifier types]</b></i>]. 
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall only establish a trusted channel if the presented identifier in the received certificate matches the configured reference identifier, where the presented and reference identifiers are of the following fields and types: <b>Distinguished Name (<abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr>),</b> [<b>selection:</b> <i><abbr class="dyn-abbr"><a href="#abbr_SAN">SAN</a></abbr>: IP address, <abbr class="dyn-abbr"><a href="#abbr_SAN">SAN</a></abbr>: Fully Qualified Domain Name (<abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr>), <abbr class="dyn-abbr"><a href="#abbr_SAN">SAN</a></abbr>: user <abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_CN">CN</a></abbr>: IP address, <abbr class="dyn-abbr"><a href="#abbr_CN">CN</a></abbr>: <abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_CN">CN</a></abbr>: user <abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr>, <b>no other reference identifier types, [assignment: other supported reference identifier types]</b></i>]. 
                 </p>
                 <p>
                     <b>Application Note:</b> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> to be supported for certificate reference identifiers at minimum. Other selections may be made by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author but they are not required for conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
@@ -702,13 +702,13 @@
                     <a href="#FCS_CKM.1.1/IKE" class="abbr">FCS_CKM.1.1/IKE</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate <b>asymmetric</b> cryptographic keys <b>used for <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> peer authentication</b> in accordance with a specified cryptographic key generation algorithm: [<i>[<b>selection</b>: <span class="selectable-content" id="_s_1">FIPS PUB 186-5, &ldquo;Digital Signature Standard (DSS),&rdquo; Appendix B.3 for RSA schemes</span>, <span class="selectable-content" id="_s_2">FIPS PUB 186-5, &ldquo;Digital Signature Standard (DSS),&rdquo; Appendix B.4 for ECDSA schemes, and implementing &ldquo;NIST curves&rdquo; P-384</span>] and [<b>selection</b>: 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate <b>asymmetric</b> cryptographic keys <b>used for <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> peer authentication</b> in accordance with a specified cryptographic key generation algorithm: [<i>[<b>selection</b>: <span class="selectable-content" id="_s_9">FIPS PUB 186-5, &ldquo;Digital Signature Standard (DSS),&rdquo; Appendix B.3 for RSA schemes</span>, <span class="selectable-content" id="_s_10">FIPS PUB 186-5, &ldquo;Digital Signature Standard (DSS),&rdquo; Appendix B.4 for ECDSA schemes, and implementing &ldquo;NIST curves&rdquo; P-384</span>] and [<b>selection</b>: 
                         <ul>
                             <li style="">
-                                <span class="selectable-content" id="_s_3">FFC Schemes using &ldquo;safe-prime&rdquo; groups that meet the following: NIST Special Publication 800-56A Revision 3, &ldquo;Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography&rdquo; and [<b>selection</b>: <span class="selectable-content" id="_s_4">RFC 3526</span>, <span class="selectable-content" id="_s_5">RFC 7919</span>]</span>
+                                <span class="selectable-content" id="_s_11">FFC Schemes using &ldquo;safe-prime&rdquo; groups that meet the following: NIST Special Publication 800-56A Revision 3, &ldquo;Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography&rdquo; and [<b>selection</b>: <span class="selectable-content" id="_s_12">RFC 3526</span>, <span class="selectable-content" id="_s_13">RFC 7919</span>]</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_6">no other key generation algorithm</span>
+                                <span class="selectable-content" id="_s_14">no other key generation algorithm</span>
                             </li>
                         </ul>
                         ] </i>] and specified cryptographic key sizes [<i>[<b>assignment</b>: <span class="assignable-content">key size equivalent to, or greater than, a symmetric key strength of 256 bits</span>]</i>] that meet the following: [<i>no standard</i>]. 
@@ -741,16 +741,16 @@
                          [<b>selection</b>: 
                         <ul>
                             <li style="">
-                                <span class="selectable-content" id="_s_7">Configuration of remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client session timeout</span>
+                                <span class="selectable-content" id="_s_15">Configuration of remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client session timeout</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_8">Configuration of attributes used to deny establishment of remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client sessions</span>
+                                <span class="selectable-content" id="_s_16">Configuration of attributes used to deny establishment of remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client sessions</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_9">Generation of bit-based pre-shared key</span>
+                                <span class="selectable-content" id="_s_17">Generation of bit-based pre-shared key</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_10">No other capabilities</span>
+                                <span class="selectable-content" id="_s_18">No other capabilities</span>
                             </li>
                         </ul>
                         ]</i>]. 
@@ -919,7 +919,7 @@
                     <a href="#FTP_ITC.1.3/VPN" class="abbr">FTP_ITC.1.3/VPN</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall initiate communication via the trusted channel for [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_11">remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways or peers</span>, <span class="selectable-content" id="_s_12">no functions</span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall initiate communication via the trusted channel for [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_19">remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways or peers</span>, <span class="selectable-content" id="_s_20">no functions</span>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> The FTP_ITC.1 requirement in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> relates to other trusted channel functions. This iteration is specific to IPsec <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> communications. </span>
                     </div>
@@ -1294,7 +1294,7 @@
                     <a href="#FPF_MFA_EXT.1.2" class="abbr">FPF_MFA_EXT.1.2</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="sel-tsf-mfa">verify</span>, <span class="selectable-content" id="_s_14">verify via an external authentication server</span>] additional authentication factors of the client. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="sel-tsf-mfa">verify</span>, <span class="selectable-content" id="_s_22">verify via an external authentication server</span>] additional authentication factors of the client. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> If "verify" is selected, <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> must be claimed. </span>
                     </div>
@@ -1365,7 +1365,7 @@
                     <a href="#FTA_TSE.1.1" class="abbr">FTA_TSE.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to deny session establishment <b>of a remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client session</b> based on [<i>location, time, day, [<b>selection</b>: <span class="selectable-content" id="_s_116">no other attributes</span>, <span class="selectable-content" id="_s_117">[<b>assignment</b>: <span class="assignable-content">other attributes</span>]</span>]</i>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to deny session establishment <b>of a remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client session</b> based on [<i>location, time, day, [<b>selection</b>: <span class="selectable-content" id="_s_124">no other attributes</span>, <span class="selectable-content" id="_s_125">[<b>assignment</b>: <span class="assignable-content">other attributes</span>]</span>]</i>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> For this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, &ldquo;location&rdquo; is defined as the client&rsquo;s IP address. </span>
                     </div>
@@ -1453,13 +1453,15 @@
         <h2 id="s-fcs" class="indexable" data-level="2">B.2 Cryptographic Support (FCS)</h2>
         <div class="comp" id="FCS_EAP_EXT.1">
             <h4>FCS_EAP_EXT.1 EAP-TLS/TTLS</h4>
-            <div class="statustag"></div>
+            <div class="statustag">
+                <b><i>The inclusion of this selection-based component depends upon selection in . </i></b>
+            </div>
             <div class="element">
                 <div class="reqid" id="FCS_EAP_EXT.1.1">
                     <a href="#FCS_EAP_EXT.1.1" class="abbr">FCS_EAP_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     <span style="" class="comment " id="Comment-2-">This selection-based component is dependent upon selections made in FCS_IPSEC_EXT.1.13. However, the new syntax for modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, lacking XML capability, means that the selections in FCS_IPSEC_EXT.1.13 no longer 'exist' as an ID, and thus the selection-based relationship cannot be made.</span> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support [<b>selection</b>: <span class="selectable-content" id="_s_15">EAP-TLS as specified in RFC 5216 and updated by RFC 8996</span>, <span class="selectable-content" id="_s_16">EAP-TTLS as specified in RFC 5281 and updated by RFC 8996</span>] over a protected channel per FTP_ITC.1 <b>from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></b> with an authentication server. 
+                     <span style="" class="comment " id="Comment-2-">This selection-based component is dependent upon selections made in FCS_IPSEC_EXT.1.13. However, the new syntax for modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, lacking XML capability, means that the selections in FCS_IPSEC_EXT.1.13 no longer 'exist' as an ID, and thus the selection-based relationship cannot be made.</span> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support [<b>selection</b>: <span class="selectable-content" id="_s_23">EAP-TLS as specified in RFC 5216 and updated by RFC 8996</span>, <span class="selectable-content" id="_s_24">EAP-TTLS as specified in RFC 5281 and updated by RFC 8996</span>] over a protected channel per FTP_ITC.1 <b>from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></b> with an authentication server. 
                 </div>
             </div>
             <div class="element">
@@ -1475,7 +1477,7 @@
                     <a href="#FCS_EAP_EXT.1.3" class="abbr">FCS_EAP_EXT.1.3</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use the MSK from the [<b>selection</b>: <span class="selectable-content" id="_s_19">EAP-TLS</span>, <span class="selectable-content" id="_s_20">EAP-TTLS</span>] response as the IKEv2 shared secret in the authentication payload. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use the MSK from the [<b>selection</b>: <span class="selectable-content" id="_s_27">EAP-TLS</span>, <span class="selectable-content" id="_s_28">EAP-TTLS</span>] response as the IKEv2 shared secret in the authentication payload. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> covers the EAP requirements for a client connection to an authentication server. In particular, authentication server functionality implemented in the same device, rather than in an external device, is covered under the Authentication Server <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, and is out of scope for this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. The MSK derived from EAP is distinct from the PSK. The MSK is substituted in for the IKEv2 shared secret in the AUTH computations. </span>
                     </div>
@@ -1502,7 +1504,7 @@
                     <a href="#FIA_HOTP_EXT.1.2" class="abbr">FIA_HOTP_EXT.1.2</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate an HOTP seed according to FCS_RBG.1 (from <a href="#bibNDcPP">[NDcPP]</a>) of [<b>selection</b>: <span class="selectable-content" id="_s_21">128</span>, <span class="selectable-content" id="_s_22">256</span>] bits. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate an HOTP seed according to FCS_RBG.1 (from <a href="#bibNDcPP">[NDcPP]</a>) of [<b>selection</b>: <span class="selectable-content" id="_s_29">128</span>, <span class="selectable-content" id="_s_30">256</span>] bits. 
                 </div>
             </div>
             <div class="element">
@@ -1518,7 +1520,7 @@
                     <a href="#FIA_HOTP_EXT.1.4" class="abbr">FIA_HOTP_EXT.1.4</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<b>selection</b>: <span class="selectable-content" id="_s_25">SHA-1</span>, <span class="selectable-content" id="_s_26">SHA-256</span>, <span class="selectable-content" id="_s_27">SHA-384</span>, <span class="selectable-content" id="_s_28">SHA-512</span>] with key sizes [<b>assignment</b>: <span class="assignable-content">key size (in bits) used in HMAC</span>] and message digest sizes [<b>selection</b>: <span class="selectable-content" id="_s_29">160</span>, <span class="selectable-content" id="_s_30">256</span>, <span class="selectable-content" id="_s_31">384</span>, <span class="selectable-content" id="_s_32">512</span>] to derive an HOTP hash from the HOTP seed and counter. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<b>selection</b>: <span class="selectable-content" id="_s_33">SHA-1</span>, <span class="selectable-content" id="_s_34">SHA-256</span>, <span class="selectable-content" id="_s_35">SHA-384</span>, <span class="selectable-content" id="_s_36">SHA-512</span>] with key sizes [<b>assignment</b>: <span class="assignable-content">key size (in bits) used in HMAC</span>] and message digest sizes [<b>selection</b>: <span class="selectable-content" id="_s_37">160</span>, <span class="selectable-content" id="_s_38">256</span>, <span class="selectable-content" id="_s_39">384</span>, <span class="selectable-content" id="_s_40">512</span>] to derive an HOTP hash from the HOTP seed and counter. 
                 </div>
             </div>
             <div class="element">
@@ -1529,10 +1531,10 @@
                      The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall truncate the HOTP hash per <a href="#FIA_HOTP_EXT.1.4">FIA_HOTP_EXT.1.4</a> to create an HOTP of [<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_33">administrator configurable character length of at least 6</span>
+                            <span class="selectable-content" id="_s_41">administrator configurable character length of at least 6</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_34">preset character length of [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_35">6</span>, <span class="selectable-content" id="_s_36">7</span>, <span class="selectable-content" id="_s_37">8</span>, <span class="selectable-content" id="_s_38">9</span>, <span class="selectable-content" id="_s_39">10</span>] </span>
+                            <span class="selectable-content" id="_s_42">preset character length of [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_43">6</span>, <span class="selectable-content" id="_s_44">7</span>, <span class="selectable-content" id="_s_45">8</span>, <span class="selectable-content" id="_s_46">9</span>, <span class="selectable-content" id="_s_47">10</span>] </span>
                         </li>
                     </ul>
                     ]. 
@@ -1546,10 +1548,10 @@
                      The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_40">throttle invalid requests to [<b>selection</b>: <span class="selectable-content" id="_s_41">administrator configurable value</span>, <span class="selectable-content" id="_s_42">[<b>assignment</b>: <span class="assignable-content">value less than 10</span>]</span>] per minute</span>
+                            <span class="selectable-content" id="_s_48">throttle invalid requests to [<b>selection</b>: <span class="selectable-content" id="_s_49">administrator configurable value</span>, <span class="selectable-content" id="_s_50">[<b>assignment</b>: <span class="assignable-content">value less than 10</span>]</span>] per minute</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_43">lock the associated account after [<b>selection</b>: <span class="selectable-content" id="_s_44">administrator configurable value</span>, <span class="selectable-content" id="_s_45">[<b>assignment</b>: <span class="assignable-content">value less than 10</span>]</span>] failed attempts until [<b>selection</b>: <span class="selectable-content" id="_s_46">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_47">a configurable time period</span>] </span>
+                            <span class="selectable-content" id="_s_51">lock the associated account after [<b>selection</b>: <span class="selectable-content" id="_s_52">administrator configurable value</span>, <span class="selectable-content" id="_s_53">[<b>assignment</b>: <span class="assignable-content">value less than 10</span>]</span>] failed attempts until [<b>selection</b>: <span class="selectable-content" id="_s_54">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_55">a configurable time period</span>] </span>
                         </li>
                     </ul>
                     ]. 
@@ -1560,7 +1562,7 @@
                     <a href="#FIA_HOTP_EXT.1.7" class="abbr">FIA_HOTP_EXT.1.7</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not verify HOTP attempts outside of the counter look ahead window of [<b>selection</b>: <span class="selectable-content" id="_s_48">a configurable value</span>, <span class="selectable-content" id="_s_49">[<b>assignment</b>: <span class="assignable-content">a value less than or equal to 3</span>]</span>] for resynchronization. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not verify HOTP attempts outside of the counter look ahead window of [<b>selection</b>: <span class="selectable-content" id="_s_56">a configurable value</span>, <span class="selectable-content" id="_s_57">[<b>assignment</b>: <span class="assignable-content">a value less than or equal to 3</span>]</span>] for resynchronization. 
                 </div>
             </div>
             <div class="element">
@@ -1591,7 +1593,7 @@
                     <a href="#FIA_PSK_EXT.1.1" class="abbr">FIA_PSK_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for IPsec and [<b>selection</b>: <span class="selectable-content" id="_s_50">IKEv2</span>, <span class="selectable-content" id="_s_51">multifactor authentication filtering</span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for IPsec and [<b>selection</b>: <span class="selectable-content" id="_s_58">IKEv2</span>, <span class="selectable-content" id="_s_59">multifactor authentication filtering</span>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> If &ldquo;IKEv2&rdquo; is selected, then the corresponding IKEv2 selection must be made in FCS_IPSEC_EXT.1.13. If &ldquo;multifactor authentication filtering&rdquo; is selected, then &ldquo;verify&rdquo; should be selected in <a href="#FPF_MFA_EXT.1.2">FPF_MFA_EXT.1.2</a>. </span>
                     </div>
@@ -1637,10 +1639,10 @@
                      The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_68">accept externally generated pre-shared keys</span>
+                            <span class="selectable-content" id="_s_76">accept externally generated pre-shared keys</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_69"> generate [<b>selection</b>: <span class="selectable-content" id="_s_70">128</span>, <span class="selectable-content" id="_s_71">256</span>] bit-based pre-shared keys via FCS_RBG.1 (from <a href="#bibNDcPP">[NDcPP]</a>). </span>
+                            <span class="selectable-content" id="_s_77"> generate [<b>selection</b>: <span class="selectable-content" id="_s_78">128</span>, <span class="selectable-content" id="_s_79">256</span>] bit-based pre-shared keys via FCS_RBG.1 (from <a href="#bibNDcPP">[NDcPP]</a>). </span>
                         </li>
                     </ul>
                     ] 
@@ -1672,7 +1674,7 @@
                     <a href="#FIA_PSK_EXT.3.2" class="abbr">FIA_PSK_EXT.3.2</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow PSKs to be composed of any combination of upper case characters, lower case characters, numbers, and the following special characters: "!", "@", "#", "$", "%", "^", "&amp;", "*", "(", and ")", and [<b>selection</b>: <span class="selectable-content" id="_s_76">[<b>assignment</b>: <span class="assignable-content">other supported special characters</span>]</span>, <span class="selectable-content" id="_s_77">no other characters</span>] 
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow PSKs to be composed of any combination of upper case characters, lower case characters, numbers, and the following special characters: "!", "@", "#", "$", "%", "^", "&amp;", "*", "(", and ")", and [<b>selection</b>: <span class="selectable-content" id="_s_84">[<b>assignment</b>: <span class="assignable-content">other supported special characters</span>]</span>, <span class="selectable-content" id="_s_85">no other characters</span>] 
                 </div>
             </div>
             <div class="element">
@@ -1688,7 +1690,7 @@
                     <a href="#FIA_PSK_EXT.3.4" class="abbr">FIA_PSK_EXT.3.4</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not accept PSKs less than [<b>selection</b>: <span class="selectable-content" id="_s_78">a value settable by the administrator</span>, <span class="selectable-content" id="_s_79">[<b>assignment</b>: <span class="assignable-content">minimum PSK length accepted by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, must be &gt;= 6</span>]</span>] and greater than the maximum PSK length defined in <a href="#FIA_PSK_EXT.3.1">FIA_PSK_EXT.3.1</a>. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not accept PSKs less than [<b>selection</b>: <span class="selectable-content" id="_s_86">a value settable by the administrator</span>, <span class="selectable-content" id="_s_87">[<b>assignment</b>: <span class="assignable-content">minimum PSK length accepted by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, must be &gt;= 6</span>]</span>] and greater than the maximum PSK length defined in <a href="#FIA_PSK_EXT.3.1">FIA_PSK_EXT.3.1</a>. 
                 </div>
             </div>
             <div class="element">
@@ -1712,7 +1714,7 @@
                     <a href="#FIA_PSK_EXT.3.7" class="abbr">FIA_PSK_EXT.3.7</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_80">provide a password strength meter</span>, <span class="selectable-content" id="_s_81">check the password against a denylist</span>, <span class="selectable-content" id="_s_82">perform no action to assist the user in choosing a strong password</span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_88">provide a password strength meter</span>, <span class="selectable-content" id="_s_89">check the password against a denylist</span>, <span class="selectable-content" id="_s_90">perform no action to assist the user in choosing a strong password</span>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> For <a href="#FIA_PSK_EXT.3.1">FIA_PSK_EXT.3.1</a>, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author assigns the maximum size of the PSK it supports; it must support at least 64 characters or a length defined by the platform. 
                             <br>
@@ -1747,7 +1749,7 @@
                     <a href="#FIA_TOTP_EXT.1.2" class="abbr">FIA_TOTP_EXT.1.2</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a TOTP seed according to FCS_RBG.1 (from <a href="#bibNDcPP">[NDcPP]</a>)of [<b>selection</b>: <span class="selectable-content" id="_s_83">128</span>, <span class="selectable-content" id="_s_84">256</span>] bits. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a TOTP seed according to FCS_RBG.1 (from <a href="#bibNDcPP">[NDcPP]</a>)of [<b>selection</b>: <span class="selectable-content" id="_s_91">128</span>, <span class="selectable-content" id="_s_92">256</span>] bits. 
                 </div>
             </div>
             <div class="element">
@@ -1763,7 +1765,7 @@
                     <a href="#FIA_TOTP_EXT.1.4" class="abbr">FIA_TOTP_EXT.1.4</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<b>selection</b>: <span class="selectable-content" id="_s_87">SHA-1</span>, <span class="selectable-content" id="_s_88">SHA-256</span>, <span class="selectable-content" id="_s_89">SHA-384</span>, <span class="selectable-content" id="_s_90">SHA-512</span>] with key sizes [<b>assignment</b>: <span class="assignable-content">key size (in bits) used in HMAC</span>] and message digest sizes [<b>selection</b>: <span class="selectable-content" id="_s_91">160</span>, <span class="selectable-content" id="_s_92">256</span>, <span class="selectable-content" id="_s_93">384</span>, <span class="selectable-content" id="_s_94">512</span>] to derive a TOTP hash from the TOTP seed and current time provided by NTP. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<b>selection</b>: <span class="selectable-content" id="_s_95">SHA-1</span>, <span class="selectable-content" id="_s_96">SHA-256</span>, <span class="selectable-content" id="_s_97">SHA-384</span>, <span class="selectable-content" id="_s_98">SHA-512</span>] with key sizes [<b>assignment</b>: <span class="assignable-content">key size (in bits) used in HMAC</span>] and message digest sizes [<b>selection</b>: <span class="selectable-content" id="_s_99">160</span>, <span class="selectable-content" id="_s_100">256</span>, <span class="selectable-content" id="_s_101">384</span>, <span class="selectable-content" id="_s_102">512</span>] to derive a TOTP hash from the TOTP seed and current time provided by NTP. 
                 </div>
             </div>
             <div class="element">
@@ -1774,10 +1776,10 @@
                      The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall truncate the TOTP hash per <a href="#FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</a> to create a TOTP of [<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_95">administrator configurable character length of at least 6</span>
+                            <span class="selectable-content" id="_s_103">administrator configurable character length of at least 6</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_96">preset character length of [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_97">6</span>, <span class="selectable-content" id="_s_98">7</span>, <span class="selectable-content" id="_s_99">8</span>, <span class="selectable-content" id="_s_100">9</span>, <span class="selectable-content" id="_s_101">10</span>] </span>
+                            <span class="selectable-content" id="_s_104">preset character length of [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_105">6</span>, <span class="selectable-content" id="_s_106">7</span>, <span class="selectable-content" id="_s_107">8</span>, <span class="selectable-content" id="_s_108">9</span>, <span class="selectable-content" id="_s_109">10</span>] </span>
                         </li>
                     </ul>
                     ]. 
@@ -1791,10 +1793,10 @@
                      The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_102">throttle invalid requests to [<b>selection</b>: <span class="selectable-content" id="_s_103">administrator configurable value</span>, <span class="selectable-content" id="_s_104">[<b>assignment</b>: <span class="assignable-content">value less than 10</span>]</span>] per minute</span>
+                            <span class="selectable-content" id="_s_110">throttle invalid requests to [<b>selection</b>: <span class="selectable-content" id="_s_111">administrator configurable value</span>, <span class="selectable-content" id="_s_112">[<b>assignment</b>: <span class="assignable-content">value less than 10</span>]</span>] per minute</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_105">lock the associated account after [<b>selection</b>: <span class="selectable-content" id="_s_106">administrator configurable value</span>, <span class="selectable-content" id="_s_107">[<b>assignment</b>: <span class="assignable-content">value less than 10</span>]</span>] failed attempts until [<b>selection</b>: <span class="selectable-content" id="_s_108">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_109">a configurable time period</span>] </span>
+                            <span class="selectable-content" id="_s_113">lock the associated account after [<b>selection</b>: <span class="selectable-content" id="_s_114">administrator configurable value</span>, <span class="selectable-content" id="_s_115">[<b>assignment</b>: <span class="assignable-content">value less than 10</span>]</span>] failed attempts until [<b>selection</b>: <span class="selectable-content" id="_s_116">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_117">a configurable time period</span>] </span>
                         </li>
                     </ul>
                     ]. 
@@ -1805,7 +1807,7 @@
                     <a href="#FIA_TOTP_EXT.1.7" class="abbr">FIA_TOTP_EXT.1.7</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall set a time-step size of [<b>selection</b>: <span class="selectable-content" id="_s_110">a configurable value</span>, <span class="selectable-content" id="_s_111">[<b>assignment</b>: <span class="assignable-content">a value less than or equal to 30</span>]</span>] seconds. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall set a time-step size of [<b>selection</b>: <span class="selectable-content" id="_s_118">a configurable value</span>, <span class="selectable-content" id="_s_119">[<b>assignment</b>: <span class="assignable-content">a value less than or equal to 30</span>]</span>] seconds. 
                 </div>
             </div>
             <div class="element">
@@ -1813,7 +1815,7 @@
                     <a href="#FIA_TOTP_EXT.1.8" class="abbr">FIA_TOTP_EXT.1.8</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not validate a drift of more than [<b>selection</b>: <span class="selectable-content" id="_s_112">a configurable value</span>, <span class="selectable-content" id="_s_113">[<b>assignment</b>: <span class="assignable-content">a value less than or equal to 3</span>]</span>] time-steps. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not validate a drift of more than [<b>selection</b>: <span class="selectable-content" id="_s_120">a configurable value</span>, <span class="selectable-content" id="_s_121">[<b>assignment</b>: <span class="assignable-content">a value less than or equal to 3</span>]</span>] time-steps. 
                 </div>
             </div>
             <div class="element">
@@ -1821,7 +1823,7 @@
                     <a href="#FIA_TOTP_EXT.1.9" class="abbr">FIA_TOTP_EXT.1.9</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_114">allow resynchronization by recording time drift within the limit of <a href="#FIA_TOTP_EXT.1.8">FIA_TOTP_EXT.1.8</a></span>, <span class="selectable-content" id="_s_115">not permit resynchronization</span>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_122">allow resynchronization by recording time drift within the limit of <a href="#FIA_TOTP_EXT.1.8">FIA_TOTP_EXT.1.8</a></span>, <span class="selectable-content" id="_s_123">not permit resynchronization</span>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> The selection <a href="#FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</a> must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication. 
                             <br>
@@ -1911,11 +1913,11 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FCS_EAP_EXT.1.1">FCS_EAP_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support [<b>selection</b>: <span class="selectable-content" id="_s_17">EAP-TLS as specified in RFC 5216 and updated by RFC 8996</span>, <span class="selectable-content" id="_s_18">EAP-TTLS as specified in RFC 5281 and updated by RFC 8996</span>] over a protected channel per FTP_ITC.1 with an authentication server. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support [<b>selection</b>: <span class="selectable-content" id="_s_25">EAP-TLS as specified in RFC 5216 and updated by RFC 8996</span>, <span class="selectable-content" id="_s_26">EAP-TTLS as specified in RFC 5281 and updated by RFC 8996</span>] over a protected channel per FTP_ITC.1 with an authentication server. 
                         <h4 id="ext-comp-FCS_EAP_EXT.1.2">FCS_EAP_EXT.1.2</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement EAP-TLS or EAP-TTLS with the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> as the EAP client, an authentication server as the EAP server, and the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> peer as the supplicant. 
                         <h4 id="ext-comp-FCS_EAP_EXT.1.3">FCS_EAP_EXT.1.3</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use the MSK from the [<b>selection</b>: <span class="selectable-content" id="_s_19">EAP-TLS</span>, <span class="selectable-content" id="_s_20">EAP-TTLS</span>] response as the IKEv2 shared secret in the authentication payload. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use the MSK from the [<b>selection</b>: <span class="selectable-content" id="_s_27">EAP-TLS</span>, <span class="selectable-content" id="_s_28">EAP-TTLS</span>] response as the IKEv2 shared secret in the authentication payload. 
                     </div>
                 </div>
             </span><span data-sortkey="Identification and Authentication (FIA)">
@@ -1953,19 +1955,19 @@
                         <h4 id="ext-comp-FIA_HOTP_EXT.1.1">FIA_HOTP_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support HMAC-Based One-Time Password (HOTP) authentication in accordance with RFC 4226 to authenticate the user before establishing <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection. 
                         <h4 id="ext-comp-FIA_HOTP_EXT.1.2">FIA_HOTP_EXT.1.2</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate an HOTP seed according to FCS_RBG.1 of [<b>selection</b>: <span class="selectable-content" id="_s_23">128</span>, <span class="selectable-content" id="_s_24">256</span>] bits. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate an HOTP seed according to FCS_RBG.1 of [<b>selection</b>: <span class="selectable-content" id="_s_31">128</span>, <span class="selectable-content" id="_s_32">256</span>] bits. 
                         <h4 id="ext-comp-FIA_HOTP_EXT.1.3">FIA_HOTP_EXT.1.3</h4>
                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a new HOTP seed value for each client. 
                         <h4 id="ext-comp-FIA_HOTP_EXT.1.4">FIA_HOTP_EXT.1.4</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<b>selection</b>: <span class="selectable-content" id="_s_25">SHA-1</span>, <span class="selectable-content" id="_s_26">SHA-256</span>, <span class="selectable-content" id="_s_27">SHA-384</span>, <span class="selectable-content" id="_s_28">SHA-512</span>] with key sizes [<b>assignment</b>: <span class="assignable-content">key size (in bits) used in HMAC</span>] and message digest sizes [<b>selection</b>: <span class="selectable-content" id="_s_29">160</span>, <span class="selectable-content" id="_s_30">256</span>, <span class="selectable-content" id="_s_31">384</span>, <span class="selectable-content" id="_s_32">512</span>] to derive an HOTP hash from the HOTP seed and counter. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<b>selection</b>: <span class="selectable-content" id="_s_33">SHA-1</span>, <span class="selectable-content" id="_s_34">SHA-256</span>, <span class="selectable-content" id="_s_35">SHA-384</span>, <span class="selectable-content" id="_s_36">SHA-512</span>] with key sizes [<b>assignment</b>: <span class="assignable-content">key size (in bits) used in HMAC</span>] and message digest sizes [<b>selection</b>: <span class="selectable-content" id="_s_37">160</span>, <span class="selectable-content" id="_s_38">256</span>, <span class="selectable-content" id="_s_39">384</span>, <span class="selectable-content" id="_s_40">512</span>] to derive an HOTP hash from the HOTP seed and counter. 
                         <h4 id="ext-comp-FIA_HOTP_EXT.1.5">FIA_HOTP_EXT.1.5</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall truncate the HOTP hash per <a href="#FIA_HOTP_EXT.1.4">FIA_HOTP_EXT.1.4</a> to create an HOTP of [<b>selection</b>: 
                         <ul>
                             <li style="">
-                                <span class="selectable-content" id="_s_33">administrator configurable character length of at least 6</span>
+                                <span class="selectable-content" id="_s_41">administrator configurable character length of at least 6</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_34">preset character length of [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_35">6</span>, <span class="selectable-content" id="_s_36">7</span>, <span class="selectable-content" id="_s_37">8</span>, <span class="selectable-content" id="_s_38">9</span>, <span class="selectable-content" id="_s_39">10</span>] </span>
+                                <span class="selectable-content" id="_s_42">preset character length of [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_43">6</span>, <span class="selectable-content" id="_s_44">7</span>, <span class="selectable-content" id="_s_45">8</span>, <span class="selectable-content" id="_s_46">9</span>, <span class="selectable-content" id="_s_47">10</span>] </span>
                             </li>
                         </ul>
                         ]. 
@@ -1973,15 +1975,15 @@
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: 
                         <ul>
                             <li style="">
-                                <span class="selectable-content" id="_s_40">throttle invalid requests to [<b>selection</b>: <span class="selectable-content" id="_s_41">administrator configurable value</span>, <span class="selectable-content" id="_s_42">[<b>assignment</b>: <span class="assignable-content">value less than 10</span>]</span>] per minute</span>
+                                <span class="selectable-content" id="_s_48">throttle invalid requests to [<b>selection</b>: <span class="selectable-content" id="_s_49">administrator configurable value</span>, <span class="selectable-content" id="_s_50">[<b>assignment</b>: <span class="assignable-content">value less than 10</span>]</span>] per minute</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_43">lock the associated account after [<b>selection</b>: <span class="selectable-content" id="_s_44">administrator configurable value</span>, <span class="selectable-content" id="_s_45">[<b>assignment</b>: <span class="assignable-content">value less than 10</span>]</span>] failed attempts until [<b>selection</b>: <span class="selectable-content" id="_s_46">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_47">a configurable time period</span>] </span>
+                                <span class="selectable-content" id="_s_51">lock the associated account after [<b>selection</b>: <span class="selectable-content" id="_s_52">administrator configurable value</span>, <span class="selectable-content" id="_s_53">[<b>assignment</b>: <span class="assignable-content">value less than 10</span>]</span>] failed attempts until [<b>selection</b>: <span class="selectable-content" id="_s_54">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_55">a configurable time period</span>] </span>
                             </li>
                         </ul>
                         ]. 
                         <h4 id="ext-comp-FIA_HOTP_EXT.1.7">FIA_HOTP_EXT.1.7</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not verify HOTP attempts outside of the counter look ahead window of [<b>selection</b>: <span class="selectable-content" id="_s_48">a configurable value</span>, <span class="selectable-content" id="_s_49">[<b>assignment</b>: <span class="assignable-content">a value less than or equal to 3</span>]</span>] for resynchronization. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not verify HOTP attempts outside of the counter look ahead window of [<b>selection</b>: <span class="selectable-content" id="_s_56">a configurable value</span>, <span class="selectable-content" id="_s_57">[<b>assignment</b>: <span class="assignable-content">a value less than or equal to 3</span>]</span>] for resynchronization. 
                         <h4 id="ext-comp-FIA_HOTP_EXT.1.8">FIA_HOTP_EXT.1.8</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall increment the counter after each successful authentication. 
                     </div>
@@ -2030,9 +2032,9 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FIA_PSK_EXT.1.1">FIA_PSK_EXT.1.1</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for IPsec and [<b>selection</b>: <span class="selectable-content" id="_s_50">IKEv2</span>, <span class="selectable-content" id="_s_51">multifactor authentication filtering</span>]. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for IPsec and [<b>selection</b>: <span class="selectable-content" id="_s_58">IKEv2</span>, <span class="selectable-content" id="_s_59">multifactor authentication filtering</span>]. 
                         <h4 id="ext-comp-FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to accept the following as pre-shared keys: [<b>selection</b>: <span class="selectable-content" id="_s_60">generated bit-based</span>, <span class="selectable-content" id="_s_61">password-based</span>, <span class="selectable-content" id="_s_62">HMAC-based one-time password</span>, <span class="selectable-content" id="_s_63">time-based one-time password</span>, <span class="selectable-content" id="_s_64">combination of a generated bit-based and HMAC-based one-time password</span>, <span class="selectable-content" id="_s_65">combination of a generated bit-based and time-based one-time password</span>, <span class="selectable-content" id="_s_66">combination of a password-based and HMAC-based one-time password</span>, <span class="selectable-content" id="_s_67">combination of a password-based and time-based one-time password</span>] keys. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to accept the following as pre-shared keys: [<b>selection</b>: <span class="selectable-content" id="_s_68">generated bit-based</span>, <span class="selectable-content" id="_s_69">password-based</span>, <span class="selectable-content" id="_s_70">HMAC-based one-time password</span>, <span class="selectable-content" id="_s_71">time-based one-time password</span>, <span class="selectable-content" id="_s_72">combination of a generated bit-based and HMAC-based one-time password</span>, <span class="selectable-content" id="_s_73">combination of a generated bit-based and time-based one-time password</span>, <span class="selectable-content" id="_s_74">combination of a password-based and HMAC-based one-time password</span>, <span class="selectable-content" id="_s_75">combination of a password-based and time-based one-time password</span>] keys. 
                     </div>
                     <h4>Management: FIA_PSK_EXT.2</h4>
                     <p>No specific management functions are identified.</p>
@@ -2057,10 +2059,10 @@
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: 
                         <ul>
                             <li style="">
-                                <span class="selectable-content" id="_s_72">accept externally generated pre-shared keys</span>
+                                <span class="selectable-content" id="_s_80">accept externally generated pre-shared keys</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_73"> generate [<b>selection</b>: <span class="selectable-content" id="_s_74">128</span>, <span class="selectable-content" id="_s_75">256</span>] bit-based pre-shared keys via FCS_RBG.1. </span>
+                                <span class="selectable-content" id="_s_81"> generate [<b>selection</b>: <span class="selectable-content" id="_s_82">128</span>, <span class="selectable-content" id="_s_83">256</span>] bit-based pre-shared keys via FCS_RBG.1. </span>
                             </li>
                         </ul>
                         ] 
@@ -2087,17 +2089,17 @@
                         <h4 id="ext-comp-FIA_PSK_EXT.3.1">FIA_PSK_EXT.3.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support a PSK of up to [<b>assignment</b>: <span class="assignable-content">positive integer of 64 or more</span>] characters. 
                         <h4 id="ext-comp-FIA_PSK_EXT.3.2">FIA_PSK_EXT.3.2</h4>
-                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow PSKs to be composed of any combination of upper case characters, lower case characters, numbers, and the following special characters: "!", "@", "#", "$", "%", "^", "&amp;", "*", "(", and ")", and [<b>selection</b>: <span class="selectable-content" id="_s_76">[<b>assignment</b>: <span class="assignable-content">other supported special characters</span>]</span>, <span class="selectable-content" id="_s_77">no other characters</span>] 
+                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall allow PSKs to be composed of any combination of upper case characters, lower case characters, numbers, and the following special characters: "!", "@", "#", "$", "%", "^", "&amp;", "*", "(", and ")", and [<b>selection</b>: <span class="selectable-content" id="_s_84">[<b>assignment</b>: <span class="assignable-content">other supported special characters</span>]</span>, <span class="selectable-content" id="_s_85">no other characters</span>] 
                         <h4 id="ext-comp-FIA_PSK_EXT.3.3">FIA_PSK_EXT.3.3</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm [<b>assignment</b>: <span class="assignable-content">cryptographic algorithm</span>] and output cryptographic key sizes [<b>assignment</b>: <span class="assignable-content">output key sizes</span>] that meet the following: [<b>assignment</b>: <span class="assignable-content">applicable standard</span>]. 
                         <h4 id="ext-comp-FIA_PSK_EXT.3.4">FIA_PSK_EXT.3.4</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not accept PSKs less than [<b>selection</b>: <span class="selectable-content" id="_s_78">a value settable by the administrator</span>, <span class="selectable-content" id="_s_79">[<b>assignment</b>: <span class="assignable-content">minimum PSK length accepted by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, must be &gt;= 6</span>]</span>] and greater than the maximum PSK length defined in <a href="#FIA_PSK_EXT.3.1">FIA_PSK_EXT.3.1</a>. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not accept PSKs less than [<b>selection</b>: <span class="selectable-content" id="_s_86">a value settable by the administrator</span>, <span class="selectable-content" id="_s_87">[<b>assignment</b>: <span class="assignable-content">minimum PSK length accepted by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, must be &gt;= 6</span>]</span>] and greater than the maximum PSK length defined in <a href="#FIA_PSK_EXT.3.1">FIA_PSK_EXT.3.1</a>. 
                         <h4 id="ext-comp-FIA_PSK_EXT.3.5">FIA_PSK_EXT.3.5</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate all salts using an RBG that meets FCS_RBG.1 and with entropy of [<b>assignment</b>: <span class="assignable-content">value equal to or greater than 128</span>] bits. 
                         <h4 id="ext-comp-FIA_PSK_EXT.3.6">FIA_PSK_EXT.3.6</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require the PSK to be entered before every initiated connection. 
                         <h4 id="ext-comp-FIA_PSK_EXT.3.7">FIA_PSK_EXT.3.7</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_80">provide a password strength meter</span>, <span class="selectable-content" id="_s_81">check the password against a denylist</span>, <span class="selectable-content" id="_s_82">perform no action to assist the user in choosing a strong password</span>]. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_88">provide a password strength meter</span>, <span class="selectable-content" id="_s_89">check the password against a denylist</span>, <span class="selectable-content" id="_s_90">perform no action to assist the user in choosing a strong password</span>]. 
                     </div>
                 </div>
                 <h3 id="ext-comp-FIA_TOTP_EXT" class="indexable" data-level="4">C.2.2.3 FIA_TOTP_EXT Time-Based One-Time Password Pre-Shared Keys</h3>
@@ -2132,19 +2134,19 @@
                         <h4 id="ext-comp-FIA_TOTP_EXT.1.1">FIA_TOTP_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support Time-Based One-Time Password (TOTP) authentication in accordance with RFC 6238 to authenticate the user before establishing <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection. 
                         <h4 id="ext-comp-FIA_TOTP_EXT.1.2">FIA_TOTP_EXT.1.2</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a TOTP seed according to FCS_RBG.1 of [<b>selection</b>: <span class="selectable-content" id="_s_85">128</span>, <span class="selectable-content" id="_s_86">256</span>] bits. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a TOTP seed according to FCS_RBG.1 of [<b>selection</b>: <span class="selectable-content" id="_s_93">128</span>, <span class="selectable-content" id="_s_94">256</span>] bits. 
                         <h4 id="ext-comp-FIA_TOTP_EXT.1.3">FIA_TOTP_EXT.1.3</h4>
                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate a new TOTP seed for each client. 
                         <h4 id="ext-comp-FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<b>selection</b>: <span class="selectable-content" id="_s_87">SHA-1</span>, <span class="selectable-content" id="_s_88">SHA-256</span>, <span class="selectable-content" id="_s_89">SHA-384</span>, <span class="selectable-content" id="_s_90">SHA-512</span>] with key sizes [<b>assignment</b>: <span class="assignable-content">key size (in bits) used in HMAC</span>] and message digest sizes [<b>selection</b>: <span class="selectable-content" id="_s_91">160</span>, <span class="selectable-content" id="_s_92">256</span>, <span class="selectable-content" id="_s_93">384</span>, <span class="selectable-content" id="_s_94">512</span>] to derive a TOTP hash from the TOTP seed and current time provided by NTP. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<b>selection</b>: <span class="selectable-content" id="_s_95">SHA-1</span>, <span class="selectable-content" id="_s_96">SHA-256</span>, <span class="selectable-content" id="_s_97">SHA-384</span>, <span class="selectable-content" id="_s_98">SHA-512</span>] with key sizes [<b>assignment</b>: <span class="assignable-content">key size (in bits) used in HMAC</span>] and message digest sizes [<b>selection</b>: <span class="selectable-content" id="_s_99">160</span>, <span class="selectable-content" id="_s_100">256</span>, <span class="selectable-content" id="_s_101">384</span>, <span class="selectable-content" id="_s_102">512</span>] to derive a TOTP hash from the TOTP seed and current time provided by NTP. 
                         <h4 id="ext-comp-FIA_TOTP_EXT.1.5">FIA_TOTP_EXT.1.5</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall truncate the TOTP hash per <a href="#FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</a> to create a TOTP of [<b>selection</b>: 
                         <ul>
                             <li style="">
-                                <span class="selectable-content" id="_s_95">administrator configurable character length of at least 6</span>
+                                <span class="selectable-content" id="_s_103">administrator configurable character length of at least 6</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_96">preset character length of [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_97">6</span>, <span class="selectable-content" id="_s_98">7</span>, <span class="selectable-content" id="_s_99">8</span>, <span class="selectable-content" id="_s_100">9</span>, <span class="selectable-content" id="_s_101">10</span>] </span>
+                                <span class="selectable-content" id="_s_104">preset character length of [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_105">6</span>, <span class="selectable-content" id="_s_106">7</span>, <span class="selectable-content" id="_s_107">8</span>, <span class="selectable-content" id="_s_108">9</span>, <span class="selectable-content" id="_s_109">10</span>] </span>
                             </li>
                         </ul>
                         ]. 
@@ -2152,19 +2154,19 @@
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: 
                         <ul>
                             <li style="">
-                                <span class="selectable-content" id="_s_102">throttle invalid requests to [<b>selection</b>: <span class="selectable-content" id="_s_103">administrator configurable value</span>, <span class="selectable-content" id="_s_104">[<b>assignment</b>: <span class="assignable-content">value less than 10</span>]</span>] per minute</span>
+                                <span class="selectable-content" id="_s_110">throttle invalid requests to [<b>selection</b>: <span class="selectable-content" id="_s_111">administrator configurable value</span>, <span class="selectable-content" id="_s_112">[<b>assignment</b>: <span class="assignable-content">value less than 10</span>]</span>] per minute</span>
                             </li>
                             <li style="">
-                                <span class="selectable-content" id="_s_105">lock the associated account after [<b>selection</b>: <span class="selectable-content" id="_s_106">administrator configurable value</span>, <span class="selectable-content" id="_s_107">[<b>assignment</b>: <span class="assignable-content">value less than 10</span>]</span>] failed attempts until [<b>selection</b>: <span class="selectable-content" id="_s_108">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_109">a configurable time period</span>] </span>
+                                <span class="selectable-content" id="_s_113">lock the associated account after [<b>selection</b>: <span class="selectable-content" id="_s_114">administrator configurable value</span>, <span class="selectable-content" id="_s_115">[<b>assignment</b>: <span class="assignable-content">value less than 10</span>]</span>] failed attempts until [<b>selection</b>: <span class="selectable-content" id="_s_116">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_117">a configurable time period</span>] </span>
                             </li>
                         </ul>
                         ]. 
                         <h4 id="ext-comp-FIA_TOTP_EXT.1.7">FIA_TOTP_EXT.1.7</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall set a time-step size of [<b>selection</b>: <span class="selectable-content" id="_s_110">a configurable value</span>, <span class="selectable-content" id="_s_111">[<b>assignment</b>: <span class="assignable-content">a value less than or equal to 30</span>]</span>] seconds. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall set a time-step size of [<b>selection</b>: <span class="selectable-content" id="_s_118">a configurable value</span>, <span class="selectable-content" id="_s_119">[<b>assignment</b>: <span class="assignable-content">a value less than or equal to 30</span>]</span>] seconds. 
                         <h4 id="ext-comp-FIA_TOTP_EXT.1.8">FIA_TOTP_EXT.1.8</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not validate a drift of more than [<b>selection</b>: <span class="selectable-content" id="_s_112">a configurable value</span>, <span class="selectable-content" id="_s_113">[<b>assignment</b>: <span class="assignable-content">a value less than or equal to 3</span>]</span>] time-steps. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not validate a drift of more than [<b>selection</b>: <span class="selectable-content" id="_s_120">a configurable value</span>, <span class="selectable-content" id="_s_121">[<b>assignment</b>: <span class="assignable-content">a value less than or equal to 3</span>]</span>] time-steps. 
                         <h4 id="ext-comp-FIA_TOTP_EXT.1.9">FIA_TOTP_EXT.1.9</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_114">allow resynchronization by recording time drift within the limit of <a href="#FIA_TOTP_EXT.1.8">FIA_TOTP_EXT.1.8</a></span>, <span class="selectable-content" id="_s_115">not permit resynchronization</span>]. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_122">allow resynchronization by recording time drift within the limit of <a href="#FIA_TOTP_EXT.1.8">FIA_TOTP_EXT.1.8</a></span>, <span class="selectable-content" id="_s_123">not permit resynchronization</span>]. 
                     </div>
                 </div>
             </span><span data-sortkey="Packet Filtering (FPF)">
@@ -2259,7 +2261,7 @@
                         <h4 id="ext-comp-FPF_MFA_EXT.1.1">FPF_MFA_EXT.1.1</h4>
                          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not forward packets to the internal network until the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> tunnel has been established, except those necessary to verify additional authentication factors of the client. 
                         <h4 id="ext-comp-FPF_MFA_EXT.1.2">FPF_MFA_EXT.1.2</h4>
-                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="sel-tsf-mfa">verify</span>, <span class="selectable-content" id="_s_14">verify via an external authentication server</span>] additional authentication factors of the client. 
+                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="sel-tsf-mfa">verify</span>, <span class="selectable-content" id="_s_22">verify via an external authentication server</span>] additional authentication factors of the client. 
                     </div>
                 </div>
             </span><span data-sortkey="Protection of the TSF (FPT)">

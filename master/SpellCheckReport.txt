@@ -5,7 +5,6 @@ output/vpngw-release-linkable.html: CRYPTOKEYS
 output/vpngw-release-linkable.html: CryptoKeys
 output/vpngw-release-linkable.html: DATAENCRYPTION
 output/vpngw-release-linkable.html: DataEncryption
-output/vpngw-release-linkable.html: Distringuished
 output/vpngw-release-linkable.html: SigGen
 output/vpngw-release.html: 0E
 output/vpngw-release.html: 0e
@@ -14,7 +13,6 @@ output/vpngw-release.html: CRYPTOKEYS
 output/vpngw-release.html: CryptoKeys
 output/vpngw-release.html: DATAENCRYPTION
 output/vpngw-release.html: DataEncryption
-output/vpngw-release.html: Distringuished
 output/vpngw-release.html: Interface’
 output/vpngw-release.html: SigGen
 output/vpngw-release.html: log’
@@ -31,7 +29,6 @@ output/vpngw.html: CRYPTOKEYS
 output/vpngw.html: CryptoKeys
 output/vpngw.html: DATAENCRYPTION
 output/vpngw.html: DataEncryption
-output/vpngw.html: Distringuished
 output/vpngw.html: Interface’
 output/vpngw.html: SigGen
 output/vpngw.html: log’

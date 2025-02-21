@@ -997,13 +997,33 @@ expected to enforce.<h:br/>
               <h:p>The TSF shall only establish a trusted channel if the presented identifier in the
                 received certificate matches the configured reference identifier, where the
                 presented and reference identifiers are of the following fields and types:
-                <h:b>Distringuished Name (DN),</h:b> [<h:b>selection:</h:b> <h:i>SAN: IP address, SAN: Fully Qualified Domain Name (FQDN), SAN: user FQDN,
+                <h:b>Distinguished Name (DN),</h:b> [<h:b>selection:</h:b> <h:i>SAN: IP address, SAN: Fully Qualified Domain Name (FQDN), SAN: user FQDN,
                 CN: IP address, CN: FQDN, CN: user FQDN, <h:b>no other reference identifier types, [assignment: other supported reference identifier types]</h:b></h:i>].
                 </h:p>
                 <h:p><h:b>Application Note:</h:b> This PP-Module requires DN to be supported for certificate reference identifiers at minimum. Other selections may be made 
                 by the ST author but they are not required for conformance to this PP-Module.</h:p>
               </description>
-              <no-change/>
+              <insert-after>
+                <xpath-specified xpath="*//cc:f-element[@id='fcs-ckm-1-ike']//cc:tests">
+                <title>The TSF shall ensure that 
+                <h:b><selectables>
+                  <selectable>IKEv1</selectable>
+                  <selectable>IKEv2</selectable></selectables></h:b>
+                protocols perform peer authentication using  
+                <selectables>
+                  <selectable>RSA</selectable>
+                  <selectable>ECDSA</selectable>
+                </selectables> 
+                that use X.509v3 certificates that conform to RFC 4945 and 
+                <selectables>
+                  <selectable id="sel-ipsec-e13-psk">Pre-shared Keys that conform to RFC 8784</selectable>
+                  <selectable id="sel-ipsec-e13-eapttls"><h:b>Pre-shared Keys transmitted via EAP-TTLS</h:b></selectable>
+                  <selectable id="sel-ipsec-e13-eaptls"><h:b>EAP-TLS</h:b></selectable>
+                  <selectable exclusive="yes">no other method</selectable>
+                </selectables>.
+              </title>
+              </xpath-specified>
+              </insert-after>
           </base-sfr-spec>
         </section>
         <!-- 5.1.1.3 -->
@@ -2442,7 +2462,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
         <!-- FCS_EAP_EXT.1 EAP -->
         <f-component cc-id="fcs_eap_ext.1" id="fcs-eap-ext-1" name="EAP-TLS/TTLS">
         
-          <depends on-sel="nd-mod-fcs-ipsec-ext-1"/>
+          <depends on-sel="sel-ipsec-e13-psk" also="sel-ipsec-e13-eapttls" and="sel-ipsec-e13-eaptls"/>
 	  <!-- QQQQ: See note in vpnclient -->          
 	  <consistency-rationale>This SFR defines the use of EAP-TLS/TTLS; the Base-PP already defines requirements for TLS so potential support for EAP-TLS is consistent with functionality that the Base-PP already expects the TOE may have.</consistency-rationale>
           <comp-lev>defines the use of EAP-TLS/TTLS.</comp-lev>

@@ -2502,8 +2502,6 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <dependencies>FCS_IPSEC_EXT.1 IPsec Protocol</dependencies>
           <f-element id="fcs-eap-ext-1e1">
             <title>
-            <comment>This selection-based component is dependent upon selections made in FCS_IPSEC_EXT.1.13. However, the new syntax for modified SFRs, lacking XML capability,
-            means that the selections in FCS_IPSEC_EXT.1.13 no longer 'exist' as an ID, and thus the selection-based relationship cannot be made.</comment>
               The TSF shall support
               <selectables>
                 <selectable>EAP-TLS as specified in RFC 5216 and updated by RFC 8996</selectable>

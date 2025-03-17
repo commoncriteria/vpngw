@@ -67,18 +67,19 @@
       <h:ul>
         <h:li>collaborative Protection Profile for Network Devices, Version 3.0E (NDcPP or CPP_ND_V3.0E)</h:li>
       </h:ul>
-      
+      <h:p>
       This Base-PP is valid because a VPN gateway is a device at the edge of a private network that terminates
       an IPsec tunnel, which provides device authentication, confidentiality, and integrity of information
       traversing a public or untrusted network. This is functionality that typically will be implemented by a
       network device.
-      <h:br/>
+      </h:p><h:p>
       A Target of Evaluation (TOE) that conforms to a PP-Configuration containing this PP-Module may be a ‘Distributed TOE’ as
       defined in the NDcPP; however, the VPN gateway functionality described in this PP-Module should be in
       a single TOE component. This PP-Module does not prohibit the TOE from implementing other security
       functionality in a distributed manner. For example, a TOE may have a centralized device that performs
       VPN gateway and other security functionality (such as intrusion prevention) with a number of distributed
       nodes that help in the enforcement of the secondary functionality.
+      </h:p>
      </sec:Overview>
 
     <!-- 1.2 Terms -->
@@ -122,17 +123,18 @@
     
     <!-- 1.3 Compliant Targets of Evaluation -->
     <sec:Compliant_Targets_of_Evaluation>
+      <h:p>
       This PP-Module specifically addresses network gateway devices that terminate IPsec VPN tunnels. A
       compliant VPN gateway is a device composed of hardware and software that is connected to two or more
       distinct networks and has an infrastructure role in the overall enterprise network. In particular, a VPN
       gateway establishes a secure tunnel that provides an authenticated and encrypted path to one or more other sites
       and thereby decreases the risk of exposure of information transiting an untrusted network.
-      <h:br/>
+      </h:p><h:p>
       The baseline requirements of this PP-Module are those determined necessary for a multi-site VPN
       gateway device. A compliant TOE may also contain the ability to act as a headend for remote clients.
       Because this capability is optional, the remote client-based requirements have been included in
       Appendix A.
-      
+      </h:p>
       
       <!-- 1.3.1 TOE Boundary -->
       <sec:TOE_Boundary>

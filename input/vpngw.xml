@@ -11,6 +11,8 @@
 	xmlns:sec="https://niap-ccevs.org/cc/v1/section"
 	xmlns:h="http://www.w3.org/1999/xhtml">
 	
+	
+	
   <PPReference>
     <ReferenceTable>
       <PPVersion>1.4</PPVersion>
@@ -84,6 +86,7 @@
       <!-- Boilerplate -->
     <!-- 1.2.2 Technology Terms  -->
     <tech-terms>
+      <suppress>Extended Package</suppress>
       <term abbr="CA" full="Certificate Authority"/>
       <term abbr="CN" full="Common Name"/>
       <term abbr="DH" full="Diffie-Hellman"/>

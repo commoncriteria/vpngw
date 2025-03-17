@@ -1,1 +1,1 @@
-/home/runner/work/vpngw/vpngw/output/effective.xml:37:75: error: element "RevisionHistory" not allowed here; expected element "include-pkg", "pp-preferences" or "section" or an element from another namespace
+/home/runner/work/vpngw/vpngw/output/effective.xml:39:75: error: element "RevisionHistory" not allowed here; expected element "include-pkg", "pp-preferences" or "section" or an element from another namespace

@@ -175,7 +175,7 @@
       <cc-pp-conf/>
       <cc-pp-config-with>
         <Mod-cc-ref>collaborative Protection Profile Module for Stateful Traffic Filter Firewalls v1.4 + Errata 20200625</Mod-cc-ref>
-        <Mod-cc-ref>PP-Module for Intrusion Protection Systems, v1.0</Mod-cc-ref>
+        <Mod-cc-ref>PP-Module for Intrusion Protection Systems, v1.1</Mod-cc-ref>
       </cc-pp-config-with>
       <cc-pkg-claim/>
     </CClaimsInfo>

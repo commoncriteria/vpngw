@@ -871,11 +871,7 @@ provide all of its security functionality<a id="period_77" href="#period_77">. <
 		
       This document does not define any additional OSPs<a id="period_83" href="#period_83">. </a>    
     
-  <h1 class="indexable" data-level="1" id="Security_Objectives">4 Security Objectives</h1>  
-
-    
-    
-    
+  <h1 class="indexable" data-level="1" id="Security_Objectives">4 Security Objectives</h1>
     
     
     <h2 class="indexable" data-level="2" id="Security_Objectives_for_the_Operational_Environment">4.1 Security Objectives for the Operational Environment</h2>
@@ -928,9 +924,9 @@ provide all of its security functionality<a id="period_77" href="#period_77">. <
                 <p>The text of the requirement is replaced with:</p>
                 <p>
                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform encryption/decryption in accordance with a
-                specified cryptographic algorithm AES used in <i>GCM</i>
-                mode and cryptographic key sizes <i>256 bits</i> that meet the following:
-                AES as specified in ISO 18033-3, <i>GCM as specified in ISO 19772</i><a id="period_101" href="#period_101">. </a>                </p>
+                specified cryptographic algorithm AES used in [<i>GCM</i>]
+                mode and cryptographic key sizes [<i>256 bits</i>] that meet the following:
+                AES as specified in ISO 18033-3, [<i>GCM as specified in ISO 19772</i>]<a id="period_101" href="#period_101">. </a>                </p>
             </span></div><div class="comp" id="@id"><h4>FCS_IPSEC_EXT.1: IPsec Protocol</h4><span class="description">
               <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been modified from its definition in the NDcPP to support
               this module's IPsec requirements by mandating use of CNSA 1.0 parameters, where applicable<a id="period_102" href="#period_102">. </a>              Any requirement not mentioned in this section is unchanged from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr><a id="period_103" href="#period_103">. </a></p>
@@ -939,7 +935,7 @@ provide all of its security functionality<a id="period_77" href="#period_77">. <
               <p>The text of FCS_IPSEC_EXT.1.4 is replaced with:</p>
               <p>
                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the IPsec protocol ESP as defined by RFC 4303 using the
-                cryptographic algorithms <i>AES-GCM-256 (specified in RFC 4106)</i>
+                cryptographic algorithms [<i>AES-GCM-256 (<b>specified in</b> RFC 4106)</i>]
                 together with a Secure Hash Algorithm (SHA)-based HMAC [<b>selection:</b><i>HMAC-SHA-384, no HMAC algorithm</i>]<a id="period_105" href="#period_105">. </a>              </p>
               <p><b>Application Note: </b>SHA-based HMAC is not required since AES-GCM satisfies both confidentiality and integrity functions<a id="period_106" href="#period_106">. </a>              IPsec may use a truncated version of the SHA-based HMAC functions contained in the selections<a id="period_107" href="#period_107">. </a>Where a truncated output is used, this is described in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr><a id="period_108" href="#period_108">. </a></p>
               <br><br>
@@ -947,17 +943,16 @@ provide all of its security functionality<a id="period_77" href="#period_77">. <
               <p><b>FCS_IPSEC_EXT.1.6</b>: This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to remove support for non-CNSA parameters and algorithms<a id="period_109" href="#period_109">. </a></p>
               <p>The text of FCS_IPSEC_EXT.1.6 is replaced with:</p>
               <p>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the encrypted payload in the [<b>selection</b>: <i>IKEv1, IKEv2</i>] protocol uses the cryptographic algorithms
-              <i>AES-GCM-256 (specified in RFC 5282)</i><a id="period_110" href="#period_110">. </a>              </p>
+              [<i>AES-GCM-256 (<b>specified in</b> RFC 5282)</i>]<a id="period_110" href="#period_110">. </a>              </p>
               <p><b>Application Note: </b>This element is changed from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to mandate support of 256-bit GCM<a id="period_111" href="#period_111">. </a>AES-GCM implementation for IPsec is specified in RFC 5282<a id="period_112" href="#period_112">. </a></p>
               <br><br>
               
               <p><b>FCS_IPSEC_EXT.1.11</b>: This element has been modified from its definition in the NDcPP by mandating <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20, which is selectable in the original definition of the element<a id="period_113" href="#period_113">. </a>              The selectable options have also been restricted to conform with CNSA 1.0 parameters<a id="period_114" href="#period_114">. </a></p>
               <p>The text of FCS_IPSEC_EXT.1.11 is replaced with:</p>
-              <p>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> protocols implement <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> groups
-              <b><ul><li>20 (384-bit Random ECP) according to RFC 5114 and</li></ul></b>
-              [<b>selection:</b>
-              <ul>
-              <li><i>15 (3072-bit MODP), 16 (4096-bit MODP)] according to RFC 3526</i></li>
+              <p>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> protocols implement <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> groups [
+              <ul><b><li>20 (384-bit Random ECP) according to RFC 5114</li></b></ul>] <b>and</b>
+              [<ul>
+              <li>[<b>selection:</b> <i>15 (3072-bit MODP), 16 (4096-bit MODP)] according to RFC 3526</i></li>
               <li><i><b>no other <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> Groups</b> according to RFC 5114</i></li>
               </ul>]<a id="period_115" href="#period_115">. </a>              </p>
               <p><b>Application Note: </b>This element has been modified from its definition in the NDcPP by mandating <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20, which is selectable in the original definition of the element<a id="period_116" href="#period_116">. </a>
@@ -1038,7 +1033,7 @@ provide all of its security functionality<a id="period_77" href="#period_77">. <
                 <li><i>During start-up (prior to providing any cryptographic services) and [<b>selection:</b> <i>at no other time, on-demand, continuously, [<b>assignment:</b> conditions under which self-tests should occur]</i>]
                  to verify correct operation of cryptographic implementation necessary to fulfill the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>;</i></li>
                 <li><i>[<b>selection:</b> <i>no other, start-up, on-demand, continuous, at the conditions [<b>assignment:</b> conditions under which self-tests should occur]</i>]
-                self tests [<i>[<b>assignment: </b><i>list an identifier for each self-test that is additional to those identified in the two bullet points</i><a id="period_152" href="#period_152">. </a></i></i></li>
+                self tests [<i>[<b>assignment: </b><i>list an identifier for each self-test that is additional to those identified in the two bullet points]]</i><a id="period_152" href="#period_152">. </a></i></i></li>
                 </ul>
                 to demonstrate the correct operation of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>: [<i>noise source health tests</i>] and if failure detected [<b>assignment:</b> <i>describe the resulting error state</i>]<a id="period_153" href="#period_153">. </a>                </p>
                 <p>
@@ -1144,12 +1139,12 @@ provide all of its security functionality<a id="period_77" href="#period_77">. <
           <div class="element"><div class="reqid" id="FCS_CKM.1.1/IKE"><a href="#FCS_CKM.1.1/IKE" class="abbr">FCS_CKM.1.1/IKE</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate <b>asymmetric</b> cryptographic keys <b>used for <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> peer
               authentication</b> in accordance with a specified cryptographic key generation
-              algorithm: [<i>[<b>selection</b>: <span class="selectable-content" id="_s_9">FIPS PUB 186-5, &#8220;Digital Signature Standard (DSS),&#8221; Appendix B.3 for RSA
+              algorithm: <i>[<b>selection</b>: <span class="selectable-content" id="_s_9">FIPS PUB 186-5, &#8220;Digital Signature Standard (DSS),&#8221; Appendix B.3 for RSA
                   schemes</span>, <span class="selectable-content" id="_s_10">FIPS PUB 186-5, &#8220;Digital Signature Standard (DSS),&#8221; Appendix B.4 for ECDSA
                   schemes, and implementing &#8220;NIST curves&#8221; P-384</span>] and [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_11">FFC Schemes using &#8220;safe-prime&#8221; groups that meet the following: NIST
                   Special Publication 800-56A Revision 3, &#8220;Recommendation for Pair-Wise Key
                   Establishment Schemes Using Discrete Logarithm Cryptography&#8221; and [<b>selection</b>: <span class="selectable-content" id="_s_12">RFC 3526</span>, <span class="selectable-content" id="_s_13">RFC 7919</span>]</span></li><li style=""><span class="selectable-content" id="_s_14">no other key generation algorithm</span></li></ul>]
-              </i>] and specified cryptographic key sizes [<i>[<b>assignment</b>: 
+              </i> and specified cryptographic key sizes [<i>[<b>assignment</b>: 
      <span class="assignable-content">key size equivalent to, or greater than, a symmetric
                 key strength of 256 bits</span>]</i>] that meet the following: [<i>no standard</i>]<a id="period_185" href="#period_185">. </a>              
             <div class="appnote"><span class="note-header">Application
@@ -1342,7 +1337,7 @@ provide all of its security functionality<a id="period_77" href="#period_77">. <
               identification of its end points and protection of the channel data from <b>disclosure
                 and detection of modification of the channel data</b><a id="period_222" href="#period_222">. </a></div></div>
           <div class="element"><div class="reqid" id="FTP_ITC.1.2/VPN"><a href="#FTP_ITC.1.2/VPN" class="abbr">FTP_ITC.1.2/VPN</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit [<i><b>the authorized IT entities</b></i>] to initiate communication via the
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit [<i>the authorized IT entities</i>] to initiate communication via the
               trusted channel<a id="period_223" href="#period_223">. </a>            </div></div>
           <div class="element"><div class="reqid" id="FTP_ITC.1.3/VPN"><a href="#FTP_ITC.1.3/VPN" class="abbr">FTP_ITC.1.3/VPN</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall initiate communication via the trusted channel for [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_19">remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways or peers</span>, <span class="selectable-content" id="_s_20">no functions</span>]<a id="period_224" href="#period_224">. </a>            <div class="appnote"><span class="note-header">Application
@@ -1620,14 +1615,14 @@ provide all of its security functionality<a id="period_77" href="#period_77">. <
             </div></div>
         
           <div class="element"><div class="reqid" id="FCS_EAP_EXT.1.3"><a href="#FCS_EAP_EXT.1.3" class="abbr">FCS_EAP_EXT.1.3</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use the MSK from the 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use the <abbr class="dyn-abbr"><a href="#abbr_MSK">MSK</a></abbr> from the 
               [<b>selection</b>: <span class="selectable-content" id="_s_27">EAP-TLS</span>, <span class="selectable-content" id="_s_28">EAP-TTLS</span>] response as the IKEv2 shared secret in the authentication payload<a id="period_350" href="#period_350">. </a>            <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
               This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> covers the EAP requirements for a client connection to an authentication server<a id="period_351" href="#period_351">. </a>
               In particular, authentication server functionality implemented in the same device, 
               rather than in an external device, is covered under the Authentication Server <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, and is out of scope for this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr><a id="period_352" href="#period_352">. </a>
-              The MSK derived from EAP is distinct from the PSK<a id="period_353" href="#period_353">. </a>The MSK is substituted in for the IKEv2 shared secret in the AUTH computations<a id="period_354" href="#period_354">. </a>
+              The <abbr class="dyn-abbr"><a href="#abbr_MSK">MSK</a></abbr> derived from EAP is distinct from the PSK<a id="period_353" href="#period_353">. </a>The <abbr class="dyn-abbr"><a href="#abbr_MSK">MSK</a></abbr> is substituted in for the IKEv2 shared secret in the AUTH computations<a id="period_354" href="#period_354">. </a>
             </span></div></div></div>
           
           
@@ -1747,7 +1742,7 @@ provide all of its security functionality<a id="period_77" href="#period_77">. <
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to 
               [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_76">accept externally generated pre-shared keys</span></li><li style=""><span class="selectable-content" id="_s_77">
               generate 
-              [<b>selection</b>: <span class="selectable-content" id="_s_78">128</span>, <span class="selectable-content" id="_s_79">256</span>] bit-based pre-shared keys via FCS_RBG.1 (from <a href="#bibNDcPP">[NDcPP]</a>)<a id="period_383" href="#period_383">. </a>
+              [<b>selection</b>: <span class="selectable-content" id="_s_78">128</span>, <span class="selectable-content" id="_s_79">256</span>] bit-based pre-shared keys via FCS_RBG.1 <b>(from <a href="#bibNDcPP">[NDcPP]</a>)</b><a id="period_383" href="#period_383">. </a>
                 
               </span></li></ul>]
             <div class="appnote"><span class="note-header">Application
@@ -1780,15 +1775,15 @@ provide all of its security functionality<a id="period_77" href="#period_77">. <
      <span class="assignable-content">other supported special characters</span>]</span>, <span class="selectable-content" id="_s_85">no other characters</span>]
             </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.3"><a href="#FIA_PSK_EXT.3.3" class="abbr">FIA_PSK_EXT.3.3</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm [<i>HMAC-SHA-384, with 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm HMAC-[<i>SHA-384, with 
               [<b>assignment</b>: 
-     <span class="assignable-content">positive integer of 4096 or more</span>] iterations,</i>] and output cryptographic key sizes [<i>256</i>] that meet the following: [<i>NIST SP 800-132</i>]<a id="period_388" href="#period_388">. </a>            </div></div>
+     <span class="assignable-content">positive integer of 4096 or more</span>] </i>]iterations, and output cryptographic key sizes [<i>256</i>] that meet the following: [<i>NIST SP 800-132</i>]<a id="period_388" href="#period_388">. </a>            </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.4"><a href="#FIA_PSK_EXT.3.4" class="abbr">FIA_PSK_EXT.3.4</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not accept PSKs less than 
               [<b>selection</b>: <span class="selectable-content" id="_s_86">a value settable by the administrator</span>, <span class="selectable-content" id="_s_87">[<b>assignment</b>: 
      <span class="assignable-content">minimum PSK length accepted by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, must be &gt;= 6</span>]</span>] and greater than the maximum PSK length defined in <a href="#FIA_PSK_EXT.3.1">FIA_PSK_EXT.3.1</a><a id="period_389" href="#period_389">. </a>            </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.5"><a href="#FIA_PSK_EXT.3.5" class="abbr">FIA_PSK_EXT.3.5</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate all salts using an RBG that meets FCS_RBG.1 (from <a href="#bibNDcPP">[NDcPP]</a>) and with entropy of [<b>assignment</b>: 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate all salts using an RBG that meets FCS_RBG.1 <b>(from <a href="#bibNDcPP">[NDcPP]</a>)</b> and with entropy of [<b>assignment</b>: 
      <span class="assignable-content">value equal to or greater than 128</span>] bits<a id="period_390" href="#period_390">. </a>            </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.3.6"><a href="#FIA_PSK_EXT.3.6" class="abbr">FIA_PSK_EXT.3.6</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require the PSK to be entered before every initiated connection<a id="period_391" href="#period_391">. </a>            </div></div>
@@ -1892,7 +1887,7 @@ provide all of its security functionality<a id="period_77" href="#period_77">. <
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement EAP-TLS or EAP-TTLS with the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> as the EAP client, 
               an authentication server as the EAP server, and the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> peer as the supplicant<a id="period_420" href="#period_420">. </a>
             <h4 id="ext-comp-FCS_EAP_EXT.1.3">FCS_EAP_EXT.1.3</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use the MSK from the 
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use the <abbr class="dyn-abbr"><a href="#abbr_MSK">MSK</a></abbr> from the 
               [<b>selection</b>: <span class="selectable-content" id="_s_27">EAP-TLS</span>, <span class="selectable-content" id="_s_28">EAP-TTLS</span>] response as the IKEv2 shared secret in the authentication payload<a id="period_421" href="#period_421">. </a>            </div></div></span><span data-sortkey="Identification and Authentication (FIA)"><h3 id="ext-comp-FIA" class="indexable" data-level="3">C.2.2 Identification and Authentication (FIA)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FIA class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FIA_HOTP_EXT" class="indexable" data-level="4">C.2.2.1 FIA_HOTP_EXT HMAC-Based One-Time Password Pre-Shared Keys</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for the use of HMAC-Based One-Time password authentication, including generation methods and usage restrictions<a id="period_422" href="#period_422">. </a></div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FIA_HOTP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FIA_HOTP_EXT.1">FIA_HOTP_EXT.1</a>,
@@ -2084,6 +2079,7 @@ provide all of its security functionality<a id="period_77" href="#period_77">. <
 <tr><td><span class="term" id="abbr_FQDN"><abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr></span></td><td><span id="long_abbr_FQDN">Fully Qualified Domain Name</span></td></tr>
 <tr><td><span class="term" id="abbr_ICMP"><abbr class="dyn-abbr"><a href="#abbr_ICMP">ICMP</a></abbr></span></td><td><span id="long_abbr_ICMP">Internet Control Message Protocol</span></td></tr>
 <tr><td><span class="term" id="abbr_IKE"><abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr></span></td><td><span id="long_abbr_IKE">Internet Key Exchange</span></td></tr>
+<tr><td><span class="term" id="abbr_MSK"><abbr class="dyn-abbr"><a href="#abbr_MSK">MSK</a></abbr></span></td><td><span id="long_abbr_MSK">Master Session Key</span></td></tr>
 <tr><td><span class="term" id="abbr_OE"><abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr></span></td><td><span id="long_abbr_OE">Operational Environment</span></td></tr>
 <tr><td><span class="term" id="abbr_PBKDF"><abbr class="dyn-abbr"><a href="#abbr_PBKDF">PBKDF</a></abbr></span></td><td><span id="long_abbr_PBKDF">Password-Based Key Derivation Function</span></td></tr>
 <tr><td><span class="term" id="abbr_PP" data-plural="PPs"><abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span></td><td><span id="long_abbr_PP">Protection Profile</span></td></tr>

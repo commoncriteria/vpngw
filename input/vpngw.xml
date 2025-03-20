@@ -99,6 +99,7 @@
       </term>
       <term abbr="ICMP" full="Internet Control Message Protocol"/>
       <term abbr="IKE" full="Internet Key Exchange"/>
+      <term abbr="MSK" full="Master Session Key"/>
       <term full="Packet Filtering">
         The process by which an edge network device determines if traffic bound to or from
         its external network is passed to its destination or dropped.
@@ -582,263 +583,9 @@ expected to enforce.<h:br/>
   </sec:Security_Problem_Definition>
     
   <!-- 4. Security Objectives --> 
-  <sec:Security_Objectives>  
-<!--  <section title="Security Objectives" id="obj"> -->
+  <sec:Security_Objectives>
     
-    <!-- 4.1 Security Objectives for the TOE -->
-    <!-- <sec:Security_Objectives_for_the_TOE>
-       <SOs>
-        <SO name="O.ADDRESS_FILTERING">
-          <description>To address the issues associated with unauthorized disclosure of information, inappropriate access to
-            services, misuse of services, disruption or denial of services, and network-based reconnaissance,
-            compliant TOE’s will implement packet filtering capability. That capability will restrict the flow of
-            network traffic between protected networks and other attached networks based on network
-            addresses of the network nodes originating (source) or receiving (destination) applicable network
-            traffic as well as on established connection information.
-            <h:br/>
-            Addressed by: FPF_RUL_EXT.1, FTA_VCM_EXT.1 (optional)
-          </description>
-    
-       <addressed-by>FPF_RUL_EXT.1</addressed-by>
-          <rationale>This SFR supports the objective by requiring the TSF to filter network traffic based on network address information.</rationale>
-          <addressed-by>FTA_VCM_EXT.1 (optional)</addressed-by>
-          <rationale>This SFR supports the objective by optionally allowing the TOE to assign a private IP address to a VPN client so that traffic bound for an alternative address can be flagged as invalid.</rationale>
-      </SO>
-        
-        
-        <SO name="O.AUTHENTICATION">
-          <description>
-            To further address the issues associated with unauthorized disclosure of information, a compliant
-            TOE’s authentication ability (IPSec) will allow a VPN peer to establish VPN connectivity with another
-            VPN peer and ensure that any such connection attempt is both authenticated and authorized. VPN
-            endpoints authenticate each other to ensure they are communicating with an authorized external IT
-            entity.
-            <h:br/>
-            Addressed by: FCS_IPSEC_EXT.1 (refined from Base-PP), FIA_X509_EXT.1/Rev (from Base-PP),
-            FIA_X509_EXT.2 (refined from Base-PP), FIA_X509_EXT.3 (from Base-PP), FTP_ITC.1/VPN,
-            FPF_MFA_EXT.1 (optional), FTA_SSL.3/VPN (optional), FTA_TSE.1 (optional), FCS_EAP_EXT.1 (selection-based), FIA_HOTP_EXT.1 (selection-based), FIA_PSK_EXT.1 (selection-based),
-            FIA_PSK_EXT.2 (selection-based), FIA_PSK_EXT.3 (selection-based), FIA_TOTP_EXT.1 (selection-based)
-		  </description>
-		  
-          <addressed-by>FCS_IPSEC_EXT.1 (refined from Base-PP)
-          </addressed-by>
-          <rationale>This SFR supports the objective by requiring the TOE's
-            implementation of IPsec to include requirements for how the VPN client is authenticated.
-            </rationale>
-          <addressed-by>FIA_X509_EXT.1/Rev
-            (from Base-PP)</addressed-by>
-          <rationale>This SFR supports the objective by requiring the TOE
-            to implement X.509 validation functions so that it
-            can authenticate remote entities that assert their
-            identity using X.509 certificates.
-          </rationale>
-          <addressed-by>FIA_X509_EXT.2 (refined
-            from Base-PP)
-          </addressed-by>
-          <rationale>This SFR supports the objective by requiring the TOE
-            to implement X.509 authentication functions so that
-            it can authenticate remote entities that assert their
-            identity using X.509 certificates.</rationale>
-          <addressed-by>FIA_X509_EXT.3 (from
-            Base-PP)
-          </addressed-by>
-          <rationale>This SFR supports the objective by requiring the TOE
-            to have the ability to generate a certificate request
-            so that it can be issued an X.509 certificate that
-            allows the TSF to offer proof of its own authenticity
-            to external entities.
-          </rationale>
-          <addressed-by>FTP_ITC.1/VPN</addressed-by>
-          <rationale>This SFR supports the objective by requiring the TOE
-            to use an IPsec trusted channel to communicate with
-            external entities so that these entities may be
-            authenticated.
-          </rationale>
-          <addressed-by>FTA_SSL.3/VPN (optional)</addressed-by>
-          <rationale>This SFR supports the objective by optionally
-            allowing the TSF to terminate inactive VPN sessions
-            so that an unattended session cannot be used to
-            bypass authentication mechanisms.</rationale>
-          <addressed-by>FTA_TSE.1 (optional) </addressed-by>
-          <rationale>This SFR supports the objective by optionally
-            defining alternative mechanisms to determine the
-            validity of a subject to reject unauthorized or
-            impersonated authentication attempts</rationale>
-          
-          
-          <addressed-by>FPF_MFA_EXT.1 (optional)</addressed-by>
-          <rationale>This SFR supports the objective by optionally enforcing a multifactor authentication requirement on an IPsec connection.</rationale>
-          
-          <addressed-by>FCS_EAP_EXT.1 (selection-based)</addressed-by>
-          <rationale>This SFR supports the objective by optionally using an external authentication server to facilitate EAP-TLS or EAP-TTLS.</rationale>
-          
-          <addressed-by>FIA_HOTP_EXT.1 (selection-based)</addressed-by>
-          <rationale>This SFR supports the objective by optionally defining the implementation of HOTP as an authentication mechanism.</rationale>
-          
-          <addressed-by>FIA_PSK_EXT.1 (selection-based)</addressed-by>
-          <rationale>This SFR supports the objective by optionally
-            supporting the use of pre-shared keys.</rationale>
-          <addressed-by>FIA_PSK_EXT.2 (selection-based)</addressed-by>
-          <rationale>This SFR supports the objective by optionally specifying whether the TOE generates 
-            its own pre-shared keys or accepts them from an external source.</rationale>
-          <addressed-by>FIA_PSK_EXT.3 (selection-based)</addressed-by>
-          <rationale>This SFR supports the objective by optionally defining the composition and use of password-based pre-shared keys used for authentication.</rationale>
-          
-          <addressed-by>FIA_TOTP_EXT.1 (selection-based)</addressed-by>
-          <rationale>This SFR supports the objective by optionally defining the implementation of TOTP as an authentication mechanism.</rationale>
-          
-        </SO>
-        
-        <SO name="O.CRYPTOGRAPHIC_FUNCTIONS">
-          <description>
-            To address the issues associated with unauthorized disclosure of information, inappropriate access to
-            services, misuse of services, disruption of services, and network-based reconnaissance, compliant
-            TOE’s will implement cryptographic capabilities. These capabilities are intended to maintain
-            confidentiality and allow for detection and modification of data that is transmitted outside of the TOE.
-            <h:br/>
-            Addressed by: FCS_COP.1/DataEncryption (refined from Base-PP), FCS_IPSEC_EXT.1 (refined from
-            Base-PP), FCS_CKM.1/IKE, FCS_EAP_EXT.1 (selection-based), FIA_PSK_EXT.1 (selection-based), FIA_PSK_EXT.2 (selection-based)
-          </description>
-          
-          <addressed-by>FCS_COP.1/DataEncryption (refined from Base-PP)
-          </addressed-by>
-          <rationale>This SFR supports the objective by requiring the TOE
-            to implement AES in a specified manner.
-          </rationale>
-          
-          <addressed-by>FCS_IPSEC_EXT.1 (refined
-            from Base-PP)
-          </addressed-by>
-          <rationale>This SFR supports the objective by requiring the TOE
-            to implement the IPsec protocol in a specified
-            manner</rationale>
-          
-          <addressed-by>FCS_CKM.1/IKE</addressed-by>
-          <rationale>This SFR supports the objective by requiring the TOE
-            to generate cryptographic keys used for Internet Key Exchange (IKE) in a
-            specified manner.
-          </rationale>
-          
-          <addressed-by>FCS_EAP_EXT.1 (selection-based)</addressed-by>
-          <rationale>This SFR supports the objective by optionally using an MSK computed by an external authentication server
-            via the EAP-TLS or EAP-TTLS method.</rationale>
-          
-          <addressed-by>FIA_PSK_EXT.1 (selection-based)</addressed-by>
-          <rationale>This SFR supports the objective by supporting a mechanism by which PSKs can be used to fortify encryption.</rationale>
-          
-          <addressed-by>FIA_PSK_EXT.2 (selection-based)</addressed-by>
-          <rationale>This SFR supports the objective by optionally specifying whether 
-            the TOE generates its own pre-shared keys or accepts them from an external source..</rationale>
-        </SO>
-        
-        
-        <SO name="O.FAIL_SECURE">
-          <description>
-            There may be instances where the TOE’s hardware malfunctions or the integrity of the TOE’s software
-            is compromised, the latter being due to malicious or non-malicious intent. To address the concern of
-            the TOE operating outside of its hardware or software specification, the TOE will shut down upon
-            discovery of a problem reported via the self-test mechanism and provide signature-based validation
-            of updates to the TSF.
-            <h:br/>
-            Addressed by: FPT_TST_EXT.1 (refined from Base-PP), FPT_TUD_EXT.1 (refined from Base-PP),
-            FPT_FLS.1/SelfTest, FPT_TST_EXT.3
-          </description>
-		  
-          <addressed-by>FPT_TST_EXT.1 (refined
-            from Base-PP)</addressed-by>
-          <rationale>This SFR supports the objective by requiring the TOE
-            to execute self-tests that allow the TSF to determine
-            if it is in a failed state.</rationale>
-          
-          <addressed-by>FPT_TUD_EXT.1 (refined
-            from Base-PP)
-          </addressed-by>
-          <rationale>This SFR supports the objective by requiring the TOE
-            to validate software updates before applying them
-            to reduce the risk of the TOE entering a failed state.
-          </rationale>
-          
-          <addressed-by>FPT_FLS.1/SelfTest</addressed-by>
-          <rationale>This SFR supports the objective by requiring the TOE
-            to preserve a secure state if a self-test failure is
-            detected.</rationale>
-          
-          <addressed-by>FPT_TST_EXT.3 </addressed-by>
-          <rationale>This SFR supports the objective by requiring the TOE
-            to verify the integrity of its executable code to
-            ensure that it will operate in a known state.
-          </rationale>
-          
-        </SO>
-        
-        <SO name="O.PORT_FILTERING">
-          <description>
-            To further address the issues associated with unauthorized disclosure of information, etc., a compliant
-            TOE’s port filtering capability will restrict the flow of network traffic between protected networks and
-            other attached networks based on the originating (source) or receiving (destination) port (or
-            service) identified in the network traffic as well as on established connection information.
-            <h:br/>
-            Addressed by: FPF_RUL_EXT.1
-          </description>
-          
-          <addressed-by>FPF_RUL_EXT.1</addressed-by>
-          <rationale>This SFR supports the objective by requiring the TSF
-            to filter network traffic based on port information.
-          </rationale>
-
-        </SO>
-        
-        <SO name="O.SYSTEM_MONITORING">
-          <description>
-            To address the issues of administrators being able to monitor the operations of the VPN gateway, it
-            is necessary to provide a capability to monitor system activity. Compliant TOEs will implement the
-            ability to log the flow of network traffic. Specifically, the TOE will provide the means for administrators
-            to configure packet filtering rules to ‘log’ when network traffic is found to match the configured rule.
-            As a result, matching a rule configured to ‘log’ will result in informative event logs whenever a match
-            occurs. In addition, the establishment of security associations (SAs) is auditable, not only between
-            peer VPN gateways, but also with certification authorities (CAs).
-            <h:br/>
-            Addressed by: FAU_GEN.1/VPN, FPF_RUL_EXT.1
-          </description>
-
-          <addressed-by>FAU_GEN.1/VPN</addressed-by>
-          <rationale>This SFR supports the objective by requiring the TOE
-            to generate security-relevant audit events related to VPN gateway functionality. 
-          </rationale>
-          <addressed-by>FPF_RUL_EXT.1</addressed-by>
-          <rationale>This SFR supports the objective by requiring the TOE
-            to have the ability to log network traffic that
-            matches certain characteristics.
-          </rationale>
-        </SO>
-        
-        <SO name="O.TOE_ADMINISTRATION">
-          
-          <description>
-            TOEs will provide the functions necessary for an administrator to configure the packet filtering rules,
-            as well as the cryptographic aspects of the IPsec protocol that are enforced by the TOE.
-            <h:br/>
-            Addressed by: FMT_MTD.1/CryptoKeys (refined from Base-PP), 
-            FMT_SMF.1/VPN
-          </description>
-          
-          
-          <addressed-by>FMT_MTD.1/CryptoKeys (refined from
-            Base-PP)</addressed-by>
-          <rationale>This SFR supports the objective by requiring the TOE
-            to implement a key management function and
-            ensure that only authorized users can use it.</rationale>
-          
-          <addressed-by>FMT_SMF.1/VPN</addressed-by>
-          <rationale>This SFR supports the objective by specifying the
-            management functions required specifically for VPN
-            gateway functionality.</rationale>
-        </SO>
-             
-      </SOs>
-    </sec:Security_Objectives_for_the_TOE> -->
-    
-    <!-- 4.2 Security Objectives for the Operational Environment -->
+    <!-- 4.1 Security Objectives for the Operational Environment -->
     <sec:Security_Objectives_for_the_Operational_Environment>
       This PP-Module defines environmental security objectives that extend those defined in
       the supported Base-PP.
@@ -857,7 +604,7 @@ expected to enforce.<h:br/>
       </SOEs>
     </sec:Security_Objectives_for_the_Operational_Environment>
     
-    <!-- 4.3 Security Objectives Rationale -->
+    <!-- 4.2 Security Objectives Rationale -->
     <section title="Security Objectives Rationale" id="SOR">
       <!-- This section should remain empty and is populated from the rationale tags in the previous sections.  -->
     </section>
@@ -928,9 +675,9 @@ expected to enforce.<h:br/>
                 <h:p>The text of the requirement is replaced with:</h:p>
                 <h:p>
                 The TSF shall perform encryption/decryption in accordance with a
-                specified cryptographic algorithm AES used in <h:i>GCM</h:i>
-                mode and cryptographic key sizes <h:i>256 bits</h:i> that meet the following:
-                AES as specified in ISO 18033-3, <h:i>GCM as specified in ISO 19772</h:i>.
+                specified cryptographic algorithm AES used in [<h:i>GCM</h:i>]
+                mode and cryptographic key sizes [<h:i>256 bits</h:i>] that meet the following:
+                AES as specified in ISO 18033-3, [<h:i>GCM as specified in ISO 19772</h:i>].
                 </h:p>
             </description>
             <no-change/>
@@ -947,7 +694,7 @@ expected to enforce.<h:br/>
               <h:p>The text of FCS_IPSEC_EXT.1.4 is replaced with:</h:p>
               <h:p>
                 The TSF shall implement the IPsec protocol ESP as defined by RFC 4303 using the
-                cryptographic algorithms <h:i>AES-GCM-256 (specified in RFC 4106)</h:i>
+                cryptographic algorithms [<h:i>AES-GCM-256 (<h:b>specified in</h:b> RFC 4106)</h:i>]
                 together with a Secure Hash Algorithm (SHA)-based HMAC [<h:b>selection:</h:b><h:i>HMAC-SHA-384, no HMAC algorithm</h:i>].
               </h:p>
               <h:p><h:b>Application Note: </h:b>SHA-based HMAC is not required since AES-GCM satisfies both confidentiality and integrity functions.
@@ -957,7 +704,7 @@ expected to enforce.<h:br/>
               <h:p><h:b>FCS_IPSEC_EXT.1.6</h:b>: This SFR is modified from its definition in the Base-PP to remove support for non-CNSA parameters and algorithms.</h:p>
               <h:p>The text of FCS_IPSEC_EXT.1.6 is replaced with:</h:p>
               <h:p>The TSF shall ensure the encrypted payload in the [<h:b>selection</h:b>: <h:i>IKEv1, IKEv2</h:i>] protocol uses the cryptographic algorithms
-              <h:i>AES-GCM-256 (specified in RFC 5282)</h:i>.
+              [<h:i>AES-GCM-256 (<h:b>specified in</h:b> RFC 5282)</h:i>].
               </h:p>
               <h:p><h:b>Application Note: </h:b>This element is changed from its definition in the Base-PP to mandate support of 256-bit GCM. AES-GCM implementation for IPsec is specified in RFC 5282.</h:p>
               <h:br/><h:br/>
@@ -965,11 +712,10 @@ expected to enforce.<h:br/>
               <h:p><h:b>FCS_IPSEC_EXT.1.11</h:b>: This element has been modified from its definition in the NDcPP by mandating DH group 20, which is selectable in the original definition of the element.
               The selectable options have also been restricted to conform with CNSA 1.0 parameters.</h:p>
               <h:p>The text of FCS_IPSEC_EXT.1.11 is replaced with:</h:p>
-              <h:p>The TSF shall ensure that IKE protocols implement DH groups
-              <h:b><h:ul><h:li>20 (384-bit Random ECP) according to RFC 5114 and</h:li></h:ul></h:b>
-              [<h:b>selection:</h:b>
-              <h:ul>
-              <h:li><h:i>15 (3072-bit MODP), 16 (4096-bit MODP)] according to RFC 3526</h:i></h:li>
+              <h:p>The TSF shall ensure that IKE protocols implement DH groups [
+              <h:ul><h:b><h:li>20 (384-bit Random ECP) according to RFC 5114</h:li></h:b></h:ul>] <h:b>and</h:b>
+              [<h:ul>
+              <h:li>[<h:b>selection:</h:b> <h:i>15 (3072-bit MODP), 16 (4096-bit MODP)] according to RFC 3526</h:i></h:li>
               <h:li><h:i><h:b>no other DH Groups</h:b> according to RFC 5114</h:i></h:li>
               </h:ul>].
               </h:p>
@@ -1164,7 +910,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 <h:li><h:i>During start-up (prior to providing any cryptographic services) and [<h:b>selection:</h:b> <h:i>at no other time, on-demand, continuously, [<h:b>assignment:</h:b> conditions under which self-tests should occur]</h:i>]
                  to verify correct operation of cryptographic implementation necessary to fulfill the TSF;</h:i></h:li>
                 <h:li><h:i>[<h:b>selection:</h:b> <h:i>no other, start-up, on-demand, continuous, at the conditions [<h:b>assignment:</h:b> conditions under which self-tests should occur]</h:i>]
-                self tests [<h:i>[<h:b>assignment: </h:b><h:i>list an identifier for each self-test that is additional to those identified in the two bullet points</h:i>.</h:i></h:i></h:li>
+                self tests [<h:i>[<h:b>assignment: </h:b><h:i>list an identifier for each self-test that is additional to those identified in the two bullet points]]</h:i>.</h:i></h:i></h:li>
                 </h:ul>
                 to demonstrate the correct operation of the TSF: [<h:i>noise source health tests</h:i>] and if failure detected [<h:b>assignment:</h:b> <h:i>describe the resulting error state</h:i>].
                 </h:p>
@@ -1426,7 +1172,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
             <title>
               The TSF shall generate <h:b>asymmetric</h:b> cryptographic keys <h:b>used for IKE peer
               authentication</h:b> in accordance with a specified cryptographic key generation
-              algorithm: [<h:i><selectables>
+              algorithm: <h:i><selectables>
                 <selectable>FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix B.3 for RSA
                   schemes</selectable>
                 <selectable>FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix B.4 for ECDSA
@@ -1440,7 +1186,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                   </selectables></selectable>
                 <selectable exclusive="yes">no other key generation algorithm</selectable>
               </selectables>
-              </h:i>] and specified cryptographic key sizes [<h:i><assignable>key size equivalent to, or greater than, a symmetric
+              </h:i> and specified cryptographic key sizes [<h:i><assignable>key size equivalent to, or greater than, a symmetric
                 key strength of 256 bits</assignable></h:i>] that meet the following: [<h:i>no standard</h:i>].
               
             </title>
@@ -2339,7 +2085,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </f-element>
           <f-element id="ftp-itc-1e2-vpn">
             <title>
-              The TSF shall permit [<h:i><h:b>the authorized IT entities</h:b></h:i>] to initiate communication via the
+              The TSF shall permit [<h:i>the authorized IT entities</h:i>] to initiate communication via the
               trusted channel.
             </title>
           </f-element>
@@ -2876,7 +2622,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
               <selectables>
                 <selectable>128</selectable>
                 <selectable>256</selectable>
-              </selectables> bit-based pre-shared keys via FCS_RBG.1 (from <xref to="bibNDcPP"/>). 
+              </selectables> bit-based pre-shared keys via FCS_RBG.1 <h:b>(from <xref to="bibNDcPP"/>)</h:b>. 
                 
               </selectable>
               </selectables>
@@ -2949,8 +2695,8 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </f-element>
           <f-element id="fia-psk-ext-3e3">
             <title>
-              The TSF shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm [<h:i>HMAC-SHA-384, with 
-              <assignable>positive integer of 4096 or more</assignable> iterations,</h:i>] and output cryptographic key sizes [<h:i>256</h:i>] that meet the following: [<h:i>NIST SP 800-132</h:i>].
+              The TSF shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm HMAC-[<h:i>SHA-384, with 
+              <assignable>positive integer of 4096 or more</assignable> </h:i>]iterations, and output cryptographic key sizes [<h:i>256</h:i>] that meet the following: [<h:i>NIST SP 800-132</h:i>].
             </title>
             <ext-comp-def-title>
               <title>
@@ -2970,7 +2716,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           </f-element>
           <f-element id="fia-psk-ext-3e5">
             <title>
-              The TSF shall generate all salts using an RBG that meets FCS_RBG.1 (from <xref to="bibNDcPP"/>) and with entropy of <assignable>value equal to or greater than 128</assignable> bits.
+              The TSF shall generate all salts using an RBG that meets FCS_RBG.1 <h:b>(from <xref to="bibNDcPP"/>)</h:b> and with entropy of <assignable>value equal to or greater than 128</assignable> bits.
             </title>
             <ext-comp-def-title>
             <title>

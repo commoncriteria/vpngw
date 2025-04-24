@@ -54,6 +54,13 @@
       <subject>Initial publication</subject>
     </entry>
   </RevisionHistory>
+  <include-pkg id="pkgX509">
+    <git>
+      <url>https://github.com/commoncriteria/X509</url>
+      <branch>release-1.0</branch>
+    </git>
+    <url>https://www.niap-ccevs.org/protectionprofiles/511</url>
+  </include-pkg>
 
   <!-- 1.0 Introduction -->
   <sec:Introduction>
@@ -189,7 +196,9 @@
         <Mod-cc-ref>collaborative Protection Profile Module for Stateful Traffic Filter Firewalls v1.4 + Errata 20200625</Mod-cc-ref>
         <Mod-cc-ref>PP-Module for Intrusion Protection Systems, v1.1</Mod-cc-ref>
       </cc-pp-config-with>
-      <cc-pkg-claim/>
+      <cc-pkg-claim>
+        <FP-cc-ref conf="conformant">Functional Package for X.509, version 1.0</FP-cc-ref>
+      </cc-pkg-claim>
     </CClaimsInfo>
   </section>
     
@@ -299,9 +308,9 @@ expected to enforce.<h:br/>
           </description>
             <addressed-by>FCS_CKM.1/IKE</addressed-by><rationale>Mitigates the threat by generating secure keys utilized for IKE peer authentication.</rationale>
             <addressed-by>FCS_IPSEC_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing IPsec to create VPN connections for authorized users to access the internal network.</rationale>
-            <addressed-by>FIA_X509_EXT.1/Rev (from Base-PP)</addressed-by><rationale>Mitigates the threat by preventing connection to servers or clients with malformed or invalid X.509 certificates.</rationale>
-            <addressed-by>FIA_X509_EXT.2 (from Base-PP)</addressed-by><rationale>Mitigates the threat by authenticating a remote entity using X.509 certificates.</rationale>
-            <addressed-by>FIA_X509_EXT.3 (from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing a secure certificate request method to obtain a signed certificate.</rationale>
+            <addressed-by>FIA_X509_EXT.1 (from <xref to="pkgX509"/>)</addressed-by><rationale>Mitigates the threat by preventing connection to servers or clients with malformed or invalid X.509 certificates.</rationale>
+            <addressed-by>FIA_X509_EXT.2 (from <xref to="pkgX509"/>)</addressed-by><rationale>Mitigates the threat by authenticating a remote entity using X.509 certificates.</rationale>
+            <addressed-by>FIA_X509_EXT.3 (from <xref to="pkgX509"/>)</addressed-by><rationale>Mitigates the threat by utilizing a secure certificate request method to obtain a signed certificate.</rationale>
             <addressed-by>FPF_RUL_EXT.1</addressed-by><rationale>Mitigates the threat by filtering traffic to disallow unauthorized access.</rationale>
             <addressed-by>FPF_MFA_EXT.1 (optional)</addressed-by><rationale>Mitigates the threat by providing for multi-factor authentication of VPN clients.</rationale>
             <addressed-by>FTA_SSL.3/VPN (optional)</addressed-by><rationale>Mitigates the threat by terminating inactive VPN sessions to prevent potential unauthorized use.</rationale>
@@ -713,7 +722,7 @@ expected to enforce.<h:br/>
               The selectable options have also been restricted to conform with CNSA 1.0 parameters.</h:p>
               <h:p>The text of FCS_IPSEC_EXT.1.11 is replaced with:</h:p>
               <h:p>The TSF shall ensure that IKE protocols implement DH groups [
-              <h:ul><h:b><h:li>20 (384-bit Random ECP) according to RFC 5114</h:li></h:b></h:ul>] <h:b>and</h:b>
+              <h:i><h:ul><h:b><h:li>20 (384-bit Random ECP) according to RFC 5114</h:li></h:b></h:ul></h:i>] <h:b>and</h:b>
               [<h:ul>
               <h:li>[<h:b>selection:</h:b> <h:i>15 (3072-bit MODP), 16 (4096-bit MODP)] according to RFC 3526</h:i></h:li>
               <h:li><h:i><h:b>no other DH Groups</h:b> according to RFC 5114</h:i></h:li>
@@ -822,35 +831,47 @@ expected to enforce.<h:br/>
         <section title="Identification and Authentication (FIA)" id="nd-m-fia">
           <!-- There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
 The PP-Module modifies this SFR to make it mandatory because of the TOE’s required support for IPsec. -->
-          <base-sfr-spec cc-id="fia_x509_ext.1" iteration="Rev" id="nd-mod-fia-x509-ext-1" title="X.509 Certificate Validation">
+          <base-sfr-spec cc-id="fia_x509_ext.1" id="nd-mod-fia-x509-ext-1" title="X.509 Certificate Validation">
             <consistency-rationale>
-            <comment>Based on the impending movement of the X.509 SFRs to the X.509 Functional Package, it may not be appropriate to say that this component and its SFRs
-            are sourced from the Base-PP. If so, we need a case (both schema and administrative) to handle this.</comment>
+              <comment>This component will ostensibly be moved to the definitions present in the X.509 FP. However, we currently do not have a concrete way to accurately model its status in this PP-Module. 
+               We lack a defined method to provide guidance on what selections/assignments must be made in the FP to make this SFR applicable, and a method to provide guidance on what selections must be made in the Base-PP in order to 
+               make the X.509 FP applicable to the product.
+              </comment>
             This PP-Module does not modify the Base-PP SFR; it only mandates the
               inclusion of the SFR because a conformant TOE will always require this
               functionality that is only conditional in the Base-PP.</consistency-rationale>
             <description>
-                This is specified as a selection-based SFR in the Base-PP but is mandatory for any TOE that claims
+                This is specified as a selection-based SFR in the <h:a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509, version 1.0</h:a> but is mandatory for any TOE that claims
                 conformance to this PP-Module because a conformant TOE will always have the ability to receive an X.509
                 certificate from an external entity as part of IPsec communications. Therefore, a mechanism for the TSF
                 to validate an X.509 certificate presented to it is required.
             </description>
             <no-change/>
           </base-sfr-spec>
-          <base-sfr-spec cc-id="fia_x509_ext.2" id="nd-mod-fia-x509-ext-2" title="X.509 Certificate Authentication">
-            <consistency-rationale>This PP-Module restricts the Base-PP SFR to a subset of existing permissible
+          <base-sfr-spec cc-id="fia_x509_ext.2" id="nd-mod-fia-x509-ext-2" title="Certificate Support for Functions">
+            <consistency-rationale>
+              <comment>This component will ostensibly be moved to the definitions present in the X.509 FP. However, we currently do not have a concrete way to accurately model its status in this PP-Module. 
+                We lack a defined method to provide guidance on what selections/assignments must be made in the FP to make this SFR applicable, and a method to provide guidance on what selections must be made in the Base-PP in order to 
+                make the X.509 FP applicable to the product.
+               </comment>This PP-Module restricts the Functional Package SFR to a subset of existing permissible
               functionality and does not introduce any new behavior.</consistency-rationale>
             <description>
-                <h:p>The Base-PP allows the ST author to specify the TSF’s use of X.509 certificates.
+                <h:p>The Functional Package for X.509 allows the ST author to specify the TSF’s use of X.509 certificates.
                 Because this PP-Module mandates IPsec functionality, the SFR has been refined to
-                force the inclusion of it. Other functions specified by the Base-PP may be chosen
+                force the inclusion of it. Other functions specified by the FP may be chosen
                 without restriction.</h:p>
                 <h:p>The text of the requirement is replaced with:</h:p>
                 <h:p>
-                The TSF shall use X.509v3 certificates as defined by RFC 5280 to support
-                authentication for <h:b>IPsec and [selection: <h:i>DTLS, HTTPS, SSH, TLS, no other protocols</h:i></h:b>],
-                and [<h:b>selection: </h:b><h:i> code signing for system software updates, [<h:b>assignment: </h:b> other uses], no additional uses</h:i>].
-                </h:p>
+                The TSF shall [<h:i>validate</h:i>] X.509v3 certificates in accordance with FIA_X509_EXT.1 to support
+                [<h:i>authentication </h:i>] using <h:b>IPsec and [selection: </h:b>
+                  <h:ul><h:li><h:b>[selection: </h:b> <h:i>TLS, DTLS, SMIME, SSH, [<h:b>assignment: </h:b>other authenticated 
+                  communications protocol]<h:b>, no other protocols</h:b></h:i>]</h:li>
+                <h:li>[<h:b>selection: </h:b><h:i> code signing for system software updates, code signing for
+                  software integrity testing, integrity verification for TSF protected data,
+                  administrator authentication, user authentication, [<h:b>assignment: </h:b> other uses]</h:i>]</h:li>
+              </h:ul>  
+              ].
+              </h:p>
 
             </description>
             <no-change/>
@@ -861,7 +882,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                 functionality that is only conditional in the Base-PP.
               </consistency-rationale>
               <description>
-                  This is specified as a selection-based SFR in the Base-PP but is mandatory for any TOE that claims
+                  This is specified as a selection-based SFR in the <h:a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509, version 1.0</h:a> but is mandatory for any TOE that claims
                   conformance to this PP-Module because a conformant TOE will always have the ability to present an X.509
                   certificate to an external entity as part of IPsec communications. Therefore, a mechanism for the TSF to
                   obtain a certificate for its own use is required.
@@ -1186,8 +1207,8 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
                   </selectables></selectable>
                 <selectable exclusive="yes">no other key generation algorithm</selectable>
               </selectables>
-              </h:i> and specified cryptographic key sizes [<h:i><assignable>key size equivalent to, or greater than, a symmetric
-                key strength of 256 bits</assignable></h:i>] that meet the following: [<h:i>no standard</h:i>].
+              </h:i> and specified cryptographic key sizes <assignable>key size equivalent to, or greater than, a symmetric
+                key strength of 256 bits</assignable> that meet the following: [<h:i>no standard</h:i>].
               
             </title>
             <note role="application">
@@ -1960,7 +1981,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
                       <h:li>Transport Layer Protocol 142 - Robust Header Compression</h:li>
                     </h:ul>
                     </h:td></h:tr>
-                </h:table><h:br/>
+                </h:table>
                 <h:b><ctr ctr-type="Table" id="rfcvalues">: RFC Values for IPv4 and IPv6</ctr></h:b>
               </Tests>
             </aactivity>
@@ -2696,7 +2717,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
           <f-element id="fia-psk-ext-3e3">
             <title>
               The TSF shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm HMAC-[<h:i>SHA-384, with 
-              <assignable>positive integer of 4096 or more</assignable> </h:i>]iterations, and output cryptographic key sizes [<h:i>256</h:i>] that meet the following: [<h:i>NIST SP 800-132</h:i>].
+              <assignable>positive integer of 4096 or more</assignable></h:i>] iterations, and output cryptographic key sizes [<h:i>256</h:i>] that meet the following: [<h:i>NIST SP 800-132</h:i>].
             </title>
             <ext-comp-def-title>
               <title>

@@ -20,6 +20,8 @@
         <div id="commmentbox-">
             <a href="#Comment-1-">Comment: Comment-1-</a>
             <br>
+            <a href="#Comment-2-">Comment: Comment-2-</a>
+            <br>
         </div>
         <h1 class="title" style="page-break-before:auto;">PP-Module for VPN Gateways</h1>
         <h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1>
@@ -250,7 +252,18 @@
             <dt>Package Claim</dt>
             <p></p>
             <dd>
-                This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is not conformant to any Functional or Assurance Packages.
+                <ul>
+                    <li>
+                        This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is Functional Package for X.509, version 1.0 conformant.
+                    </li>
+                    <li>
+                        This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not conform to any assurance packages.
+                    </li>
+                </ul>
+            </dd>
+            <p></p>
+            <dd>
+                 The functional packages to which the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> conforms may include <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are not mandatory to claim for the sake of conformance. An <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> that claims one or more of these functional packages may include any non-mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are appropriate to claim based on the capabilities of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> and on any triggers for their inclusion based inherently on the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> selections made. 
             </dd>
         </dl>
          
@@ -408,14 +421,14 @@
                 </p>
                 <p>The text of FCS_IPSEC_EXT.1.11 is replaced with:</p>
                 <p>
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> protocols implement <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> groups [ 
-                    <ul>
-                        <b></b>
-                        <li>
-                            <b>20 (384-bit Random ECP) according to RFC 5114</b>
-                        </li>
-                    </ul>
-                    ] <b>and</b> [
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> protocols implement <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> groups [ <i>
+                        <ul>
+                            <b></b>
+                            <li>
+                                <b>20 (384-bit Random ECP) according to RFC 5114</b>
+                            </li>
+                        </ul>
+                    </i>] <b>and</b> [
                     <ul>
                         <li>
                             [<b>selection:</b> <i>15 (3072-bit MODP), 16 (4096-bit MODP)] according to RFC 3526</i>
@@ -474,24 +487,33 @@
         </div>
         <h4 id="@id" class="indexable" data-level="4">5.1.1.2 Identification and Authentication (FIA)</h4>
         <div class="comp" id="@id">
-            <h4>FIA_X509_EXT.1/REV: X.509 Certificate Validation</h4>
-            <span class="description"> This is specified as a selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> but is mandatory for any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will always have the ability to receive an X.509 certificate from an external entity as part of IPsec communications. Therefore, a mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to validate an X.509 certificate presented to it is required. </span>
+            <h4>FIA_X509_EXT.1: X.509 Certificate Validation</h4>
+            <span class="description"> This is specified as a selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> in the <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509, version 1.0</a> but is mandatory for any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will always have the ability to receive an X.509 certificate from an external entity as part of IPsec communications. Therefore, a mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to validate an X.509 certificate presented to it is required. </span>
         </div>
         <div class="comp" id="@id">
-            <h4>FIA_X509_EXT.2: X.509 Certificate Authentication</h4>
+            <h4>FIA_X509_EXT.2: Certificate Support for Functions</h4>
             <span class="description">
                 <p>
-                    The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> allows the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to specify the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>&rsquo;s use of X.509 certificates. Because this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> mandates IPsec functionality, the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been refined to force the inclusion of it. Other functions specified by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> may be chosen without restriction.
+                    The Functional Package for X.509 allows the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to specify the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>&rsquo;s use of X.509 certificates. Because this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> mandates IPsec functionality, the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been refined to force the inclusion of it. Other functions specified by the <abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr> may be chosen without restriction.
                 </p>
                 <p>The text of the requirement is replaced with:</p>
                 <p>
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use X.509v3 certificates as defined by RFC 5280 to support authentication for <b>IPsec and [selection: <i>DTLS, HTTPS, SSH, TLS, no other protocols</i></b>], and [<b>selection: </b><i> code signing for system software updates, [<b>assignment: </b> other uses], no additional uses</i>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<i>validate</i>] X.509v3 certificates in accordance with FIA_X509_EXT.1 to support [<i>authentication </i>] using <b>IPsec and [selection: </b> 
+                    <ul>
+                        <li>
+                            <b>[selection: </b> <i>TLS, DTLS, SMIME, SSH, [<b>assignment: </b>other authenticated communications protocol]<b>, no other protocols</b></i>]
+                        </li>
+                        <li>
+                            [<b>selection: </b><i> code signing for system software updates, code signing for software integrity testing, integrity verification for <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> protected data, administrator authentication, user authentication, [<b>assignment: </b> other uses]</i>]
+                        </li>
+                    </ul>
+                     ]. 
                 </p>
             </span>
         </div>
         <div class="comp" id="@id">
             <h4>FIA_X509_EXT.3: X.509 Certificate Requests</h4>
-            <span class="description"> This is specified as a selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> but is mandatory for any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will always have the ability to present an X.509 certificate to an external entity as part of IPsec communications. Therefore, a mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to obtain a certificate for its own use is required. </span>
+            <span class="description"> This is specified as a selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> in the <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509, version 1.0</a> but is mandatory for any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will always have the ability to present an X.509 certificate to an external entity as part of IPsec communications. Therefore, a mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to obtain a certificate for its own use is required. </span>
         </div>
         <h4 id="@id" class="indexable" data-level="4">5.1.1.3 Security Management (FMT)</h4>
         <div class="comp" id="@id">
@@ -713,7 +735,7 @@
                                 <span class="selectable-content" id="_s_14">no other key generation algorithm</span>
                             </li>
                         </ul>
-                        ] </i> and specified cryptographic key sizes [<i>[<b>assignment</b>: <span class="assignable-content">key size equivalent to, or greater than, a symmetric key strength of 256 bits</span>]</i>] that meet the following: [<i>no standard</i>]. 
+                        ] </i> and specified cryptographic key sizes [<b>assignment</b>: <span class="assignable-content">key size equivalent to, or greater than, a symmetric key strength of 256 bits</span>] that meet the following: [<i>no standard</i>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note"> The keys that are required to be generated by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> through this requirement are intended to be used for the authentication of the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> peers during the <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> (either v1 or v2) key exchange. FCS_CKM.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> is intended to be used for mechanisms required by the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. While it is required that the public key be associated with an identity in an X509v3 certificate, this association is not required to be performed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, and instead is expected to be performed by a <abbr class="dyn-abbr"><a href="#abbr_CA">CA</a></abbr> in the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>. 
                             <br>
@@ -980,13 +1002,13 @@
                     <td>FCS_IPSEC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing IPsec to create <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connections for authorized users to access the internal network.</td>
                 </tr>
                 <tr>
-                    <td>FIA_X509_EXT.1/Rev (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by preventing connection to servers or clients with malformed or invalid X.509 certificates.</td>
+                    <td>FIA_X509_EXT.1 (from <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509, version 1.0</a>)</td><td>Mitigates the threat by preventing connection to servers or clients with malformed or invalid X.509 certificates.</td>
                 </tr>
                 <tr>
-                    <td>FIA_X509_EXT.2 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by authenticating a remote entity using X.509 certificates.</td>
+                    <td>FIA_X509_EXT.2 (from <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509, version 1.0</a>)</td><td>Mitigates the threat by authenticating a remote entity using X.509 certificates.</td>
                 </tr>
                 <tr>
-                    <td>FIA_X509_EXT.3 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing a secure certificate request method to obtain a signed certificate.</td>
+                    <td>FIA_X509_EXT.3 (from <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509, version 1.0</a>)</td><td>Mitigates the threat by utilizing a secure certificate request method to obtain a signed certificate.</td>
                 </tr>
                 <tr>
                     <td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>Mitigates the threat by filtering traffic to disallow unauthorized access.</td>
@@ -1166,10 +1188,10 @@
                 <td>FCS_IPSEC_EXT.1</td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> restricts the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to a subset of existing permissible functionality and does not introduce any new behavior.</td>
             </tr>
             <tr>
-                <td>FIA_X509_EXT.1/REV</td><td> <span style="" class="comment " id="Comment-1-">Based on the impending movement of the X.509 <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> to the X.509 Functional Package, it may not be appropriate to say that this component and its <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are sourced from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. If so, we need a case (both schema and administrative) to handle this.</span> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>; it only mandates the inclusion of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> because a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will always require this functionality that is only conditional in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td>
+                <td>FIA_X509_EXT.1</td><td> <span style="" class="comment " id="Comment-1-">This component will ostensibly be moved to the definitions present in the X.509 <abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr>. However, we currently do not have a concrete way to accurately model its status in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. We lack a defined method to provide guidance on what selections/assignments must be made in the <abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr> to make this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> applicable, and a method to provide guidance on what selections must be made in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in order to make the X.509 <abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr> applicable to the product. </span> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>; it only mandates the inclusion of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> because a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will always require this functionality that is only conditional in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td>
             </tr>
             <tr>
-                <td>FIA_X509_EXT.2</td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> restricts the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to a subset of existing permissible functionality and does not introduce any new behavior.</td>
+                <td>FIA_X509_EXT.2</td><td> <span style="" class="comment " id="Comment-2-">This component will ostensibly be moved to the definitions present in the X.509 <abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr>. However, we currently do not have a concrete way to accurately model its status in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. We lack a defined method to provide guidance on what selections/assignments must be made in the <abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr> to make this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> applicable, and a method to provide guidance on what selections must be made in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in order to make the X.509 <abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr> applicable to the product. </span>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> restricts the Functional Package <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to a subset of existing permissible functionality and does not introduce any new behavior.</td>
             </tr>
             <tr>
                 <td>FIA_X509_EXT.3</td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>; it only mandates the inclusion of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> because a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will always require this functionality that is only conditional in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. </td>
@@ -1684,7 +1706,7 @@
                     <a href="#FIA_PSK_EXT.3.3" class="abbr">FIA_PSK_EXT.3.3</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm HMAC-[<i>SHA-384, with [<b>assignment</b>: <span class="assignable-content">positive integer of 4096 or more</span>] </i>]iterations, and output cryptographic key sizes [<i>256</i>] that meet the following: [<i>NIST SP 800-132</i>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm HMAC-[<i>SHA-384, with [<b>assignment</b>: <span class="assignable-content">positive integer of 4096 or more</span>]</i>] iterations, and output cryptographic key sizes [<i>256</i>] that meet the following: [<i>NIST SP 800-132</i>]. 
                 </div>
             </div>
             <div class="element">

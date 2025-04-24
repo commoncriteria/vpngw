@@ -1477,17 +1477,17 @@ provide all of its security functionality.
 <tr><td><a href="#FTP_ITC.1/VPN">FTP_ITC.1/VPN</a></td><td>Mitigates the threat by transmitting data over a secure <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection protected from unauthorized disclosure.</td></tr>
 <tr><td><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a> (optional)</td><td>Mitigates the threat by assigning a private, internal IP address to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients within the protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
 <tr><td><a href="#FTA_SSL.3/VPN">FTA_SSL.3/VPN</a> (optional)</td><td>Mitigates the threat by terminating inactive <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> sessions.</td></tr>
-<tr class="major-row"><td rowspan="16"><a href="#T.NETWORK_ACCESS">T.NETWORK_​ACCESS</a><br/></td><td><a href="#FCS_CKM.1/IKE">FCS_CKM.1/IKE</a></td><td>Mitigates the threat by generating secure keys utilized for <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> peer authentication.</td></tr>
-<tr><td>FCS_IPSEC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing IPsec to create <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connections for authorized users to access the internal network.</td></tr>
-<tr><td>FIA_X509_EXT.1 (from <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509,
+<tr class="major-row"><td rowspan="16"><a href="#T.NETWORK_ACCESS">T.NETWORK_​ACCESS</a><br/></td><td>FCS_IPSEC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing IPsec to create <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connections for authorized users to access the internal network.</td></tr>
+<tr><td>FIA_X509_EXT.1 (refined from <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509,
         version 
         1.0</a>)</td><td>Mitigates the threat by preventing connection to servers or clients with malformed or invalid X.509 certificates.</td></tr>
-<tr><td>FIA_X509_EXT.2 (from <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509,
+<tr><td>FIA_X509_EXT.2 (refined from <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509,
         version 
         1.0</a>)</td><td>Mitigates the threat by authenticating a remote entity using X.509 certificates.</td></tr>
-<tr><td>FIA_X509_EXT.3 (from <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509,
+<tr><td>FIA_X509_EXT.3 (refined from <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509,
         version 
         1.0</a>)</td><td>Mitigates the threat by utilizing a secure certificate request method to obtain a signed certificate.</td></tr>
+<tr><td><a href="#FCS_CKM.1/IKE">FCS_CKM.1/IKE</a></td><td>Mitigates the threat by generating secure keys utilized for <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> peer authentication.</td></tr>
 <tr><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>Mitigates the threat by filtering traffic to disallow unauthorized access.</td></tr>
 <tr><td><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a> (optional)</td><td>Mitigates the threat by providing for multi-factor authentication of <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients.</td></tr>
 <tr><td><a href="#FTA_SSL.3/VPN">FTA_SSL.3/VPN</a> (optional)</td><td>Mitigates the threat by terminating inactive <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> sessions to prevent potential unauthorized use.</td></tr>
@@ -1499,14 +1499,17 @@ provide all of its security functionality.
 <tr><td><a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a> (selection-based)</td><td>Mitigates the threat by securely and randomly generating a pre-shared key.</td></tr>
 <tr><td><a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a> (selection-based)</td><td>Mitigates the threat by securely deriving a pre-shared key from a password.</td></tr>
 <tr><td><a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a> (selection-based)</td><td>Mitigates the threat by providing a second factor of authentication via time-based one-time passwords.</td></tr>
-<tr class="major-row"><td rowspan="6"><a href="#T.NETWORK_DISCLOSURE">T.NETWORK_​DISCLOSURE</a><br/></td><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>Mitigates the threat by filtering traffic to disallow unauthorized traffic flows.</td></tr>
-<tr><td><a href="#FPT_FLS.1/SelfTest">FPT_FLS.1/SelfTest</a></td><td>Mitigates the threat by ceasing operations of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> if a test or security failure is detected, preventing a failure in traffic filtering.</td></tr>
-<tr><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by verifying the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s correct operation.</td></tr>
-<tr><td><a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a></td><td>Mitigates the threat by executing self tests in a specified, repeatable manner.</td></tr>
+<tr class="major-row"><td rowspan="6"><a href="#T.NETWORK_DISCLOSURE">T.NETWORK_​DISCLOSURE</a><br/></td><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by verifying the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s correct operation.</td></tr>
 <tr><td>FPT_TUD_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by providing a secure update mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that validates its authenticity,
             ensuring a faulty or malicious update cannot compromise the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s ability to enforce traffic rules.</td></tr>
+<tr><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>Mitigates the threat by filtering traffic to disallow unauthorized traffic flows.</td></tr>
+<tr><td><a href="#FPT_FLS.1/SelfTest">FPT_FLS.1/SelfTest</a></td><td>Mitigates the threat by ceasing operations of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> if a test or security failure is detected, preventing a failure in traffic filtering.</td></tr>
+<tr><td><a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a></td><td>Mitigates the threat by executing self tests in a specified, repeatable manner.</td></tr>
 <tr><td><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a> (optional)</td><td>Mitigates the threat by assigning a private, internal IP address to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients within the protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
-<tr class="major-row"><td rowspan="10"><a href="#T.NETWORK_MISUSE">T.NETWORK_​MISUSE</a><br/></td><td><a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a></td><td>Mitigates the threat by logging potential violations of policy.</td></tr>
+<tr class="major-row"><td rowspan="10"><a href="#T.NETWORK_MISUSE">T.NETWORK_​MISUSE</a><br/></td><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by verifying the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s correct operation.</td></tr>
+<tr><td>FPT_TUD_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by providing a secure update mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that validates its authenticity,
+            ensuring a faulty or malicious update cannot compromise the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s ability to enforce traffic policy and log potential violations.</td></tr>
+<tr><td><a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a></td><td>Mitigates the threat by logging potential violations of policy.</td></tr>
 <tr><td>FCS_IPSEC_EXT.1</td><td>Mitigates the threat by securing traffic originating from or traveling to an authorized user that resides outside the protected network,
           ensuring that an unauthorized attacker cannot inject their own actions into the protected network.</td></tr>
 <tr><td>FMT_MTD.1/CryptoKeys</td><td>Mitigates the threat by implementing a management interface to manage the IPsec parameters 
@@ -1516,19 +1519,16 @@ provide all of its security functionality.
 <tr><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>Mitigates the threat by filtering traffic to or from disallowed services.</td></tr>
 <tr><td><a href="#FPT_FLS.1/SelfTest">FPT_FLS.1/SelfTest</a></td><td>Mitigates the threat by ceasing operations of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> if a test or security failure is detected, preventing a failure in
           detection or prevention of network misuse.</td></tr>
-<tr><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by verifying the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s correct operation.</td></tr>
 <tr><td><a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a></td><td>Mitigates the threat by executing self tests in a specified, repeatable manner.</td></tr>
-<tr><td>FPT_TUD_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by providing a secure update mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that validates its authenticity,
-            ensuring a faulty or malicious update cannot compromise the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s ability to enforce traffic policy and log potential violations.</td></tr>
 <tr><td><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a> (optional)</td><td>Mitigates the threat by assigning a private, internal IP address to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients within the protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
 <tr class="major-row"><td rowspan="8"><a href="#T.REPLAY_ATTACK">T.REPLAY_​ATTACK</a><br/></td><td>FCS_COP.1/DataEncryption (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing encryption algorithms to protect data from being sent in cleartext.</td></tr>
 <tr><td>FCS_IPSEC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing the IPsec protocol to encapsulate and encrypt channel data.</td></tr>
-<tr><td><a href="#FPT_FLS.1/SelfTest">FPT_FLS.1/SelfTest</a></td><td>Mitigates the threat by ceasing operations of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> if a test or security failure is detected, preventing a failure in
-          detection of replay attacks.</td></tr>
 <tr><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by verifying the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s correct operation.</td></tr>
-<tr><td><a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a></td><td>Mitigates the threat by executing self tests in a specified, repeatable manner.</td></tr>
 <tr><td>FPT_TUD_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by providing a secure update mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that validates its authenticity,
             ensuring a faulty or malicious update cannot compromise the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s ability to encrypt traffic and prevent it from being replayed without detection.</td></tr>
+<tr><td><a href="#FPT_FLS.1/SelfTest">FPT_FLS.1/SelfTest</a></td><td>Mitigates the threat by ceasing operations of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> if a test or security failure is detected, preventing a failure in
+              detection of replay attacks.</td></tr>
+<tr><td><a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a></td><td>Mitigates the threat by executing self tests in a specified, repeatable manner.</td></tr>
 <tr><td><a href="#FTP_ITC.1/VPN">FTP_ITC.1/VPN</a></td><td>Mitigates the threat by ensuring the channel data (in this case, <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> data) is protected from unauthorized disclosure.</td></tr>
 <tr><td><a href="#FTA_TSE.1">FTA_TSE.1</a> (optional)</td><td>Mitigates the threat by preventing connection from a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client that meets undesirable criteria.</td></tr>
 </table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-ND" class="indexable" data-level="2">6.1 Collaborative 

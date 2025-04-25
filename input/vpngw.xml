@@ -674,7 +674,7 @@ The PP-Module modifies this SFR to make it mandatory because of the TOE’s requ
             <consistency-rationale>
               <comment>This component will ostensibly be moved to the definitions present in the X.509 FP. However, we currently do not have a concrete way to accurately model its status in this PP-Module. 
                 We lack a defined method to provide guidance on what selections/assignments must be made in the FP to make this SFR applicable, and a method to provide guidance on what selections must be made in the Base-PP in order to 
-                make the X.509 FP applicable to the product.
+                make the X.509 FP applicable to the product. Additionally, since the FP is intended to be the single point of definition for a re-used SFR, it is not desirable to manually reproduce the text of the SFR in this PP-Module (i.e. in the modified SFRs section as it has been done here).
                </comment>This PP-Module restricts the Functional Package SFR to a subset of existing permissible
               functionality and does not introduce any new behavior.</consistency-rationale>
             <description>

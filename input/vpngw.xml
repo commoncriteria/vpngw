@@ -72,7 +72,7 @@
       products. This PP-Module is intended for use with the following Base-PP:
 
       <h:ul>
-        <h:li>collaborative Protection Profile for Network Devices, Version 3.0E (NDcPP or CPP_ND_V3.0E)</h:li>
+        <h:li>Network Device collaborative Protection Profile Version 4.0<comment> Please update  the references in the bib</comment> </h:li>
       </h:ul>
       <h:p>
       This Base-PP is valid because a VPN gateway is a device at the edge of a private network that terminates
@@ -476,7 +476,7 @@ expected to enforce.<h:br/>
     written. 
     
     <!-- 5.1 NDcPP Security Functional Requirements Direction -->
-      <base-pp id="ND" version="3.0e" name="Network Device" product="Network Device" short="ND" plural="Network Devices">
+      <base-pp id="ND" version="4.0" name="Network Device" product="Network Device" short="ND" plural="Network Devices">
         <url>https://www.niap-ccevs.org/protectionprofiles/482</url>
         <cPP/>
 

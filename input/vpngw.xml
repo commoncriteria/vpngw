@@ -532,9 +532,9 @@ expected to enforce.<h:br/>
               IPsec may use a truncated version of the SHA-based HMAC functions contained in the selections. Where a truncated output is used, this is described in the TSS.</h:p>
               <h:br/><h:br/>
 
-              <h:p><h:b>FCS_IPSEC_EXT.1.6</h:b>: This SFR is modified from its definition in the Base-PP to remove support for non-CNSA parameters and algorithms.</h:p>
+              <h:p><h:b>FCS_IPSEC_EXT.1.6</h:b>: This SFR is modified from its definition in the Base-PP to remove support for non-CNSA parameters and algorithms. This includes mandating the use of IKEv2.</h:p>
               <h:p>The text of FCS_IPSEC_EXT.1.6 is replaced with:</h:p>
-              <h:p>The TSF shall ensure the encrypted payload in the [<h:b>selection</h:b>: <h:i>IKEv1, IKEv2</h:i>] protocol uses the cryptographic algorithms
+              <h:p>The TSF shall ensure the encrypted payload in the [<h:i>IKEv2</h:i>] protocol uses the cryptographic algorithms
               [<h:i>AES-GCM-256 (<h:b>specified in</h:b> RFC 5282)</h:i>].
               </h:p>
               <h:p><h:b>Application Note: </h:b>This element is changed from its definition in the Base-PP to mandate support of 256-bit GCM. AES-GCM implementation for IPsec is specified in RFC 5282.</h:p>
@@ -554,9 +554,9 @@ expected to enforce.<h:br/>
               Any groups other than 20 that are allowed per the element may be selected by the ST author but they are not required for conformance to this PP-Module.</h:p>
               <h:br/><h:br/>
               
-              <h:p><h:b>FCS_IPSEC_EXT.1.13</h:b>: This SFR is modified from its definition in the Base-PP by adding new selections for IKE versions and authentication methods.</h:p>
+              <h:p><h:b>FCS_IPSEC_EXT.1.13</h:b>: This SFR is modified from its definition in the Base-PP by mandating the use of IKEv2 and its authentication methods.</h:p>
               <h:p>The text of FCS_IPSEC_EXT.1.13 is replaced with:</h:p>
-              <h:p>The TSF shall ensure that <h:b>[selection: <h:i>IKEv1, IKEv2</h:i>]</h:b> protocols perform peer authentication using [<h:b>selection: </h:b><h:i>RSA, ECDSA</h:i>]
+              <h:p>The TSF shall ensure that <h:b>[<h:i>IKEv2</h:i>]</h:b> protocols perform peer authentication using [<h:b>selection: </h:b><h:i>RSA, ECDSA</h:i>]
               that use X.509v3 certificates that conform to RFC 4945 and [<h:b>selection: </h:b><h:i>Pre-shared Keys <h:b>that conform to RFC 8784, Pre-shared Keys transmitted
               via EAP-TTLS, EAP-TLS,</h:b> no other method</h:i>].
               <h:br/><h:br/></h:p>
@@ -575,9 +575,6 @@ expected to enforce.<h:br/>
                 the Authentication Server PP. EAP-based authentication is not supported for IKEv1. 
                 <h:br/><h:br/>
                 If “pre-shared keys that conform to RFC 8784” is chosen, the selection-based requirement FIA_PSK_EXT.1 must be claimed. 
-                Since certificates are required for authentication, IKEv1 does not support PSKs, as 
-                PSK-based authentication and certificate-based authentication are mutually exclusive in IKEv1. 
-                Note that IKEv1 will be removed in a future version of this document. 
                 <h:br/><h:br/>
                 Multifactor support can be achieved via traffic filtering in accordance with FPF_MFA_EXT.1. 
                 <h:br/><h:br/>
@@ -601,9 +598,7 @@ expected to enforce.<h:br/>
                 <f-component name="IPsec Protocol" cc-id="fcs_ipsec_ext" id="xpath-fcs-ipsec-ext-1">
                   <f-element id="nd-fcs-ipsec-ext-1e13">
                   <title>The TSF shall ensure that 
-                    <h:b><selectables>
-                      <selectable>IKEv1</selectable>
-                      <selectable>IKEv2</selectable></selectables></h:b>
+                    <h:b>IKEv2</h:b>
                     protocols perform peer authentication using  
                     <selectables>
                       <selectable>RSA</selectable>
@@ -630,12 +625,9 @@ expected to enforce.<h:br/>
                     If a selection with “EAP-TLS” or “EAP-TTLS” is chosen, the selection-based requirement FCS_EAP_EXT.1 must be claimed. 
                     When an EAP method is used, verification occurs via an external authentication server. 
                     Though EAP-TTLS involves PSKs, FIA_PSK_EXT.1 is not claimed because PSK requirements for EAP-TTLS are addressed instead via 
-                    the Authentication Server PP. EAP-based authentication is not supported for IKEv1. 
+                    the Authentication Server PP. 
                     <h:br/><h:br/>
-                    If “pre-shared keys that conform to RFC 8784” is chosen, the selection-based requirement FIA_PSK_EXT.1 must be claimed. 
-                    Since certificates are required for authentication, IKEv1 does not support PSKs, as 
-                    PSK-based authentication and certificate-based authentication are mutually exclusive in IKEv1. 
-                    Note that IKEv1 will be removed in a future version of this document. 
+                    If “pre-shared keys that conform to RFC 8784” is chosen, the selection-based requirement FIA_PSK_EXT.1 must be claimed.
                     <h:br/><h:br/>
                     Multifactor support can be achieved via traffic filtering in accordance with FPF_MFA_EXT.1. 
                     <h:br/><h:br/>
@@ -643,7 +635,7 @@ expected to enforce.<h:br/>
                     <h:br/><h:br/>
                     This SFR is modified from its definition in the Base-PP by adding new selections for IKE versions and authentication methods.
                   </note>
-                </f-element>
+                </f-element>f
                 </f-component>
               </xpath-specified>
               </insert-after>

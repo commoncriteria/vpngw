@@ -13,37 +13,38 @@
   
   <RevisionHistory>
     <entry>
-    <version>2.0</version>
-    <date>2025-02-28</date>
-    <subject>Incorporation of NIAP Technical Decisions, Update to CC:2022</subject>
+      <version>1.0</version>
+      <date>2019-09-17</date>
+      <subject>Initial publication</subject>
     </entry>
-    <entry>
-      <version>1.3</version>
-      <date>2023-08-16</date>
-      <subject>Incorporation of NIAP Technical Decisions, TC feedback</subject>
-      
-  <!-- TDs 0656, 0657, 0683, 0723  -->
-      
-    </entry>
-    <entry>
-      <version>1.2</version>
-      <date>2022-03-31</date>
-      <subject>Format conversion, incorporation of NIAP Technical Decisions, TC feedback</subject>
-    </entry>
+    
     <entry>
       <version>1.1</version>
       <date>2020-06-18</date>
       <subject>Compatibility with CPP_ND_V2.2E, incorporation of NIAP Technical Decisions</subject>
     </entry>
-  </RevisionHistory>
-  <release-notes><h:h3>TDs Applied</h:h3></release-notes><RevisionHistory>
+    
     <entry>
-      <version>1.0</version>
-      <date>2019-09-17</date>
-      <subject>Initial publication</subject>
+      <version>1.2</version>
+      <date>2022-03-31</date>
+      <subject>Format conversion, incorporation of NIAP Technical Decisions, TC feedback</subject>
+    </entry>
+   
+    <entry>
+      <version>1.3</version>
+      <date>2023-08-16</date>
+      <subject>Incorporation of NIAP Technical Decisions, TC feedback</subject>      
+  <!-- TDs 0656, 0657, 0683, 0723  -->      
+   </entry>
+    
+    <entry>
+    <version>2.0</version>
+    <date>2025-02-28</date>
+    <subject>Incorporation of NIAP Technical Decisions, Update to CC:2022</subject>
     </entry>
   </RevisionHistory>
-  <include-pkg id="pkgX509">
+  
+  <release-notes><h:h3>TDs Applied</h:h3></release-notes><include-pkg id="pkgX509">
     <git>
       <url>https://github.com/commoncriteria/X509</url>
       <branch>release-1.0</branch>
@@ -61,7 +62,7 @@
       products. This PP-Module is intended for use with the following Base-PP:
 
       <h:ul>
-        <h:li>Network Device collaborative Protection Profile Version 4.0<comment> Please update  the references in the bib</comment> </h:li>
+        <h:li>Network Device collaborative Protection Profile Version 4.0</h:li>
       </h:ul>
       <h:p>
       This Base-PP is valid because a VPN gateway is a device at the edge of a private network that terminates
@@ -182,8 +183,9 @@
       <cc-pt3-conf>conformant</cc-pt3-conf>
       <cc-pp-conf/>
       <cc-pp-config-with>
-        <Mod-cc-ref>collaborative Protection Profile Module for Stateful Traffic Filter Firewalls v1.4 + Errata 20200625</Mod-cc-ref>
-        <Mod-cc-ref>PP-Module for Intrusion Protection Systems, v1.1</Mod-cc-ref>
+        <Mod-cc-ref>collaborative Protection Profile Module for Stateful Traffic Filter Firewalls
+          v2.0</Mod-cc-ref>
+        <Mod-cc-ref>PP-Module for Intrusion Protection Systems, v2.0</Mod-cc-ref>
       </cc-pp-config-with>
       <cc-pkg-claim>
         <FP-cc-ref conf="conformant">Functional Package for X.509, version 1.0</FP-cc-ref>
@@ -3005,7 +3007,8 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
       <tag>NDcPP</tag>
       <description>
         <h:a href="https://www.niap-ccevs.org/protectionprofiles/482">
-			collaborative Protection Profile for Network Devices</h:a>, Version 3.0E, December 2023
+			collaborative Protection Profile for Network Devices</h:a>, Version 4.0, December
+        2023 <comment>Adjust date when published.</comment>
       </description>
     </entry>
 
@@ -3013,7 +3016,7 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
       <tag>ND-SD</tag>
       <description>
         <h:a href="https://www.niap-ccevs.org/protectionprofiles/482">
-          Evaluation Activities for Network Device cPP</h:a>, Version 3.0e, December 2023
+          Evaluation Activities for Network Device cPP</h:a>, Version 4.0, December 2023 <comment>Adjust date when published.</comment>
       </description>
     </entry>
 

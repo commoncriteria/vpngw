@@ -629,16 +629,16 @@ function showTarget(id){
 	            img[src="images/collapsed.png"] { display:none;}
 
           }
-    </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/><a href="#Comment-2-">Comment: Comment-2-</a><br/><a href="#Comment-3-">Comment: Comment-3-</a><br/><a href="#Comment-4-">Comment: Comment-4-</a><br/></div><h1 class="title" style="page-break-before:auto;">PP-Module for VPN Gateways</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
+    </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/><a href="#Comment-2-">Comment: Comment-2-</a><br/></div><h1 class="title" style="page-break-before:auto;">PP-Module for VPN Gateways</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
       Version: 2.0<br/>2025-02-28<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.0</td><td>2019-09-17</td><td>Initial publication</td></tr>
 <tr><td>1.1</td><td>2020-06-18</td><td>Compatibility with CPP_ND_V2.2E, incorporation of NIAP Technical Decisions</td></tr>
 <tr><td>1.2</td><td>2022-03-31</td><td>Format conversion, incorporation of NIAP Technical Decisions, TC feedback</td></tr>
 <tr><td>1.3</td><td>2023-08-16</td><td>Incorporation of NIAP Technical Decisions, TC feedback</td></tr>
 <tr><td>2.0</td><td>2025-02-28</td><td>Incorporation of NIAP Technical Decisions, Update to <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022</td></tr>
-</table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#ConformanceClaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_Operational_Environment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">4.2<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-ND" style="text-indent:10px">5.1<span>Collaborative 
+</table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#_sec_1" style="text-indent:10px">1.5<span>Package Usage</span></a><a href="#ConformanceClaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_Operational_Environment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">4.2<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-ND" style="text-indent:10px">5.1<span>Collaborative 
     Protection Profile for Network Devices
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-ND" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#@id" style="text-indent:30px">5.1.1.2<span>Identification and Authentication (FIA)</span></a><a href="#@id" style="text-indent:30px">5.1.1.3<span>Security Management (FMT)</span></a><a href="#@id" style="text-indent:30px">5.1.1.4<span>Protection of the TSF (FPT)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#m-fau" style="text-indent:20px">5.2.2<span>Security Audit (FAU)</span></a><a href="#m-fcs" style="text-indent:20px">5.2.3<span>Cryptographic Support (FCS)</span></a><a href="#m-fmt" style="text-indent:20px">5.2.4<span>Security Management (FMT)</span></a><a href="#m-fpf" style="text-indent:20px">5.2.5<span>Packet Filtering (FPF)</span></a><a href="#m-fpt" style="text-indent:20px">5.2.6<span>Protection of the TSF (FPT)</span></a><a href="#m-ftp" style="text-indent:20px">5.2.7<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-ND" style="text-indent:10px">6.1<span>Collaborative 
+    </span></a><a href="#modsfr-ND" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#@id" style="text-indent:30px">5.1.1.2<span>Security Management (FMT)</span></a><a href="#@id" style="text-indent:30px">5.1.1.3<span>Protection of the TSF (FPT)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#m-fau" style="text-indent:20px">5.2.2<span>Security Audit (FAU)</span></a><a href="#m-fcs" style="text-indent:20px">5.2.3<span>Cryptographic Support (FCS)</span></a><a href="#m-fmt" style="text-indent:20px">5.2.4<span>Security Management (FMT)</span></a><a href="#m-fpf" style="text-indent:20px">5.2.5<span>Packet Filtering (FPF)</span></a><a href="#m-fpt" style="text-indent:20px">5.2.6<span>Protection of the TSF (FPT)</span></a><a href="#m-ftp" style="text-indent:20px">5.2.7<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-ND" style="text-indent:10px">6.1<span>Collaborative 
     Protection Profile for Network Devices</span></a><a href="#contoe-ND" style="text-indent:20px">6.1.1<span>
 	Consistency of TOE Type
       </span></a><a href="#consecprob-ND" style="text-indent:20px">6.1.2<span>
@@ -693,6 +693,12 @@ The following sections list Common Criteria and technology terms used in this do
       accredited by the National Voluntary Laboratory Accreditation Program (NVLAP) and approved by the NIAP Validation Body to conduct Common Criteria-based evaluations.
     </td></tr>
 <tr><td><div id="Common_Evaluation_Methodology">Common Evaluation Methodology (CEM)</div></td><td>Common Evaluation Methodology for Information Technology Security Evaluation.</td></tr>
+<tr><td><div id="Direct_Rationale">Direct Rationale</div></td><td>
+		A type of Protection Profile, PP-Module, or Security Target in which the security
+		problem definition (SPD) elements are mapped directly to the SFRs and possibly to the 
+		security objectives for the operational environment. There are no security objectives
+		for the TOE.
+	</td></tr>
 <tr><td><div id="Distributed_TOE">Distributed TOE</div></td><td>A TOE composed of multiple components operating as a logical whole.</td></tr>
 <tr><td><div id="Functional_Package">Functional Package (FP)</div></td><td>A document that collects SFRs for a particular protocol, technology,
 	    or functionality.</td></tr>
@@ -768,6 +774,26 @@ The following sections list Common Criteria and technology terms used in this do
 
 
    
+  <h2 class="indexable" data-level="2" id="_sec_1">1.5 Package Usage</h2>
+    <dt><b>Functional Package for X.509, Version 1.0</b><p></p></dt><dd><b>Certificate Verification and Validation Required in FIA_XCU_EXT.1.1</b><p></p><span class="description">
+            The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall select the options to verify and assert identities in FIA_XCU_EXT.1.1.
+          </span><p></p></dd><dd><b>Limitations on Signature Algorithms in FIA_X509_EXT.1.1</b><p></p><span class="description">
+              The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must utilize appropriate cryptographic algorithms that conform to CNSA standards. Thus, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall utilize no other algorithms outside of those specified in RFC 8603 for certificate or CRL signatures. 
+              Additionally, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall not use ECDSA with SHA-512 signatures for OCSP responses, and shall utilize no other algorithms for OCSP responses.
+            </span><p></p></dd><dd><b>Required Extension Processing in FIA_X509_EXT.1.2</b><p></p><span class="description">
+              The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall select the option to process the basicConstraints and extendedKeyUsage extensions in FIA_X509_EXT.1.2. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports identifiers of types other than an identifier located in the <abbr class="dyn-abbr"><a href="#abbr_CN">CN</a></abbr> (i.e., any identifiers specifically labeled as "<abbr class="dyn-abbr"><a href="#abbr_CN">CN</a></abbr>", or the Distinguished Name), the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall select the 
+              option to process the subjectAlternateName extension and the relevant options within the subjectAlternateName extension that correspond to the supported identifier types.
+            </span><p></p></dd><dd><b>CRL or OCSP-based Revocation Required for FIA_X509_EXT.1.3 </b><p></p><span class="description">
+              The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must support revocation that only involves CRL or OCSP. Accordingly, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall select only from options involving CRL or OCSP in FIA_X509_EXT.1.3 (e.g., the selection to treat all certificates 
+              older than a given short timeframe is not an acceptable substitute or alternative for supporting CRL or OCSP).
+            </span><p></p></dd><dd><b>Connections to CRL or OCSP Servers Required for FIA_X509_EXT.1.4</b><p></p><span class="description">
+              Because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is required to support CRL or OCSP, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall support an appropriate mechanism for obtaining revocation status information. In the case of CRL, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall claim that revocation 
+              status information is obtained via network connection to a CRL distribution point. In the case of OCSP, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall claim that revocation status information is obtained via network connection to an 
+              OCSP responder, via OCSP stapling, or via OCSP multi-stapling.
+            </span><p></p></dd><dd><b>Required Function Claims in FIA_X509_EXT.2.1</b><p></p><span class="description">
+              The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall ensure that the selections and assignments within FIA_X509_EXT.2.1 reflect the usage of X.509 for IPsec or <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>. Other selections and assignments may be made as appropriate for other <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> functionality.
+            </span><p></p></dd>
+  
 
   <h1 class="indexable" data-level="1" id="ConformanceClaims">2 Conformance Claims</h1>
     
@@ -891,12 +917,10 @@ expected to enforce.<br/>
     
     
     
-    <h2 class="indexable" data-level="2" id="Assumptions">3.2 Assumptions</h2>
-These assumptions are made on the Operational Environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>) in order to be able to ensure that the
+    <h2 class="indexable" data-level="2" id="Assumptions">3.2 Assumptions</h2><p>These assumptions are made on the Operational Environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>) in order to be able to ensure that the
 security functionality specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> can be provided by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is placed in an <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> that does not meet these assumptions, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may no longer be able to
-provide all of its security functionality.
-      
+provide all of its security functionality.</p>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines assumptions that extend those defined in the supported <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
       <br/>
       All assumptions for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> also apply to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
@@ -909,12 +933,8 @@ provide all of its security functionality.
     
     
     
-	<h2 class="indexable" data-level="2" id="Organizational_Security_Policies">3.3 Organizational Security Policies</h2><p>An organization deploying the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is
-      expected to satisfy the organizational security policy listed below in addition to all
-      organizational security policies defined by the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. </p>
+	<h2 class="indexable" data-level="2" id="Organizational_Security_Policies">3.3 Organizational Security Policies</h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines no Organizational Security Policies beyond those defined in the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>(s).</p>
 		
-      This document does not define any additional OSPs.
-    
     
   <h1 class="indexable" data-level="1" id="Security_Objectives">4 Security Objectives</h1>
     
@@ -974,7 +994,7 @@ provide all of its security functionality.
 		<h3 id="modsfr-ND" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
 		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the NDcPP and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 
-		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_COP.1/DATAENCRYPTION: Cryptographic Operation (AES Data Encryption/Decryption)</h4><span class="description">
+		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_COP.1/DataEncryption: Cryptographic Operation (AES Data Encryption/Decryption)</h4><span class="description">
                 <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been modified from its definition in the NDcPP to support this
                 <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>’s IPsec requirements by mandating support for GCM mode and 256-bit key sizes.</p>
                 <p>The text of the requirement is replaced with:</p>
@@ -1058,35 +1078,7 @@ provide all of its security functionality.
                 </p>
                 <p><b>Application Note:</b> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> to be supported for certificate reference identifiers at minimum. Other selections may be made 
                 by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author but they are not required for conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</p>
-              </span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.2 Identification and Authentication (FIA)</h4><div class="comp" id="@id"><h4>FIA_X509_EXT.1: X.509 Certificate Validation</h4><span class="description">
-                This is specified as a selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> in the <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509, version 1.0</a> but is mandatory for any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims
-                conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will always have the ability to receive an X.509
-                certificate from an external entity as part of IPsec communications. Therefore, a mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>
-                to validate an X.509 certificate presented to it is required.
-            </span></div><div class="comp" id="@id"><h4>FIA_X509_EXT.2: Certificate Support for Functions</h4><span class="description">
-                <p>The Functional Package for X.509 allows the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to specify the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>’s use of X.509 certificates.
-                Because this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> mandates IPsec functionality, the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been refined to
-                force the inclusion of it. Other functions specified by the <abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr> may be chosen
-                without restriction.</p>
-                <p>The text of the requirement is replaced with:</p>
-                <p>
-                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<i>validate</i>] X.509v3 certificates in accordance with FIA_X509_EXT.1 to support
-                [<i>authentication </i>] using <b>IPsec and [selection: </b>
-                  <ul><li><b>[selection: </b> <i>TLS, DTLS, SMIME, SSH, [<b>assignment: </b>other authenticated 
-                  communications protocol]<b>, no other protocols</b></i>]</li>
-                <li>[<b>selection: </b><i> code signing for system software updates, code signing for
-                  software integrity testing, integrity verification for <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> protected data,
-                  administrator authentication, user authentication, [<b>assignment: </b> other uses]</i>]</li>
-              </ul>  
-              ].
-              </p>
-
-            </span></div><div class="comp" id="@id"><h4>FIA_X509_EXT.3: X.509 Certificate Requests</h4><span class="description">
-                  This is specified as a selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> in the <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509, version 1.0</a> but is mandatory for any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims
-                  conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will always have the ability to present an X.509
-                  certificate to an external entity as part of IPsec communications. Therefore, a mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to
-                  obtain a certificate for its own use is required.
-              </span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.3 Security Management (FMT)</h4><div class="comp" id="@id"><h4>FMT_MTD.1/CRYPTOKEYS: Management of TSF Data</h4><span class="description">
+              </span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.2 Security Management (FMT)</h4><div class="comp" id="@id"><h4>FMT_MTD.1/CryptoKeys: Management of TSF Data</h4><span class="description">
             <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>, defined in the NDcPP as selection-based, is mandated for
                 inclusion in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because the refinements to FMT_SMF.1
                 mandate its inclusion. Note that it is also refined to refer specifically to
@@ -1096,7 +1088,7 @@ provide all of its security functionality.
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall restrict the ability to [<i>manage</i>] the [<i>cryptographic keys <b>and
               certificates used for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> operation</b></i>] to [<i>Security Administrators</i>]. 
               </p>
-            </span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.4 Protection of the TSF (FPT)</h4><div class="comp" id="@id"><h4>FPT_TST_EXT.1: TSF Testing</h4><span class="description">
+            </span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.3 Protection of the TSF (FPT)</h4><div class="comp" id="@id"><h4>FPT_TST_EXT.1: TSF Testing</h4><span class="description">
             <p>An element of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to require the testing of noise source health tests, regardless of what other testing is claimed.
               All other elements of this requirement not mentioned in this section are unchanged from their definition in the NDcPP.</p>
             <p><b>FPT_TST_EXT.1.1: </b>This element has been modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to require noise source health tests.</p>
@@ -1462,7 +1454,7 @@ provide all of its security functionality.
   
        
     <h2 id="obj-req-map" class="indexable" data-level="2">5.3 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
-    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">3</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="10"><a href="#T.DATA_INTEGRITY">T.DATA_​INTEGRITY</a><br/></td><td>FCS_COP.1/DataEncryption (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by encrypting channel data using a specified algorithm.</td></tr>
+    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">3</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="10"><a href="#T.DATA_INTEGRITY">T.DATA_​INTEGRITY</a></td><td>FCS_COP.1/DataEncryption (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by encrypting channel data using a specified algorithm.</td></tr>
 <tr><td>FCS_IPSEC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing IPsec to verify message confidentiality and integrity.</td></tr>
 <tr><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>Mitigates the threat by filtering traffic from outside the protected network.</td></tr>
 <tr><td><a href="#FPT_FLS.1/SelfTest">FPT_FLS.1/SelfTest</a></td><td>Mitigates the threat by ceasing operations of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> if a test or security failure is detected, preventing a failure in secure functionality.</td></tr>
@@ -1473,7 +1465,7 @@ provide all of its security functionality.
 <tr><td><a href="#FTP_ITC.1/VPN">FTP_ITC.1/VPN</a></td><td>Mitigates the threat by transmitting data over a secure <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection protected from unauthorized disclosure.</td></tr>
 <tr><td><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a> (optional)</td><td>Mitigates the threat by assigning a private, internal IP address to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients within the protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
 <tr><td><a href="#FTA_SSL.3/VPN">FTA_SSL.3/VPN</a> (optional)</td><td>Mitigates the threat by terminating inactive <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> sessions.</td></tr>
-<tr class="major-row"><td rowspan="16"><a href="#T.NETWORK_ACCESS">T.NETWORK_​ACCESS</a><br/></td><td>FCS_IPSEC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing IPsec to create <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connections for authorized users to access the internal network.</td></tr>
+<tr class="major-row"><td rowspan="16"><a href="#T.NETWORK_ACCESS">T.NETWORK_​ACCESS</a></td><td>FCS_IPSEC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing IPsec to create <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connections for authorized users to access the internal network.</td></tr>
 <tr><td>FIA_X509_EXT.1 (refined from <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509,
         version 
         1.0</a>)</td><td>Mitigates the threat by preventing connection to servers or clients with malformed or invalid X.509 certificates.</td></tr>
@@ -1495,14 +1487,14 @@ provide all of its security functionality.
 <tr><td><a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a> (selection-based)</td><td>Mitigates the threat by securely and randomly generating a pre-shared key.</td></tr>
 <tr><td><a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a> (selection-based)</td><td>Mitigates the threat by securely deriving a pre-shared key from a password.</td></tr>
 <tr><td><a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a> (selection-based)</td><td>Mitigates the threat by providing a second factor of authentication via time-based one-time passwords.</td></tr>
-<tr class="major-row"><td rowspan="6"><a href="#T.NETWORK_DISCLOSURE">T.NETWORK_​DISCLOSURE</a><br/></td><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by verifying the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s correct operation.</td></tr>
+<tr class="major-row"><td rowspan="6"><a href="#T.NETWORK_DISCLOSURE">T.NETWORK_​DISCLOSURE</a></td><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by verifying the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s correct operation.</td></tr>
 <tr><td>FPT_TUD_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by providing a secure update mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that validates its authenticity,
             ensuring a faulty or malicious update cannot compromise the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s ability to enforce traffic rules.</td></tr>
 <tr><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>Mitigates the threat by filtering traffic to disallow unauthorized traffic flows.</td></tr>
 <tr><td><a href="#FPT_FLS.1/SelfTest">FPT_FLS.1/SelfTest</a></td><td>Mitigates the threat by ceasing operations of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> if a test or security failure is detected, preventing a failure in traffic filtering.</td></tr>
 <tr><td><a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a></td><td>Mitigates the threat by executing self tests in a specified, repeatable manner.</td></tr>
 <tr><td><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a> (optional)</td><td>Mitigates the threat by assigning a private, internal IP address to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients within the protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
-<tr class="major-row"><td rowspan="10"><a href="#T.NETWORK_MISUSE">T.NETWORK_​MISUSE</a><br/></td><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by verifying the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s correct operation.</td></tr>
+<tr class="major-row"><td rowspan="10"><a href="#T.NETWORK_MISUSE">T.NETWORK_​MISUSE</a></td><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by verifying the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s correct operation.</td></tr>
 <tr><td>FPT_TUD_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by providing a secure update mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that validates its authenticity,
             ensuring a faulty or malicious update cannot compromise the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s ability to enforce traffic policy and log potential violations.</td></tr>
 <tr><td><a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a></td><td>Mitigates the threat by logging potential violations of policy.</td></tr>
@@ -1517,7 +1509,7 @@ provide all of its security functionality.
           detection or prevention of network misuse.</td></tr>
 <tr><td><a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a></td><td>Mitigates the threat by executing self tests in a specified, repeatable manner.</td></tr>
 <tr><td><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a> (optional)</td><td>Mitigates the threat by assigning a private, internal IP address to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients within the protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
-<tr class="major-row"><td rowspan="8"><a href="#T.REPLAY_ATTACK">T.REPLAY_​ATTACK</a><br/></td><td>FCS_COP.1/DataEncryption (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing encryption algorithms to protect data from being sent in cleartext.</td></tr>
+<tr class="major-row"><td rowspan="8"><a href="#T.REPLAY_ATTACK">T.REPLAY_​ATTACK</a></td><td>FCS_COP.1/DataEncryption (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing encryption algorithms to protect data from being sent in cleartext.</td></tr>
 <tr><td>FCS_IPSEC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing the IPsec protocol to encapsulate and encrypt channel data.</td></tr>
 <tr><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by verifying the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s correct operation.</td></tr>
 <tr><td>FPT_TUD_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by providing a secure update mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that validates its authenticity,
@@ -1569,24 +1561,9 @@ provide all of its security functionality.
       defined by the
       NDcPP are as follows:
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">6</span></span>: Consistency of Requirements (NDcPP base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_COP.1/DATAENCRYPTION</td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> restricts the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to a subset of existing permissible
+		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_COP.1/DataEncryption</td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> restricts the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to a subset of existing permissible
               functionality and does not introduce any new behavior.</td></tr><tr><td>FCS_IPSEC_EXT.1</td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> restricts the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to a subset of existing permissible
-              functionality and does not introduce any new behavior.</td></tr><tr><td>FIA_X509_EXT.1</td><td>
-              <span style="" class="comment " id="Comment-1-">This component will ostensibly be moved to the definitions present in the X.509 <abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr>. However, we currently do not have a concrete way to accurately model its status in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
-               We lack a defined method to provide guidance on what selections/assignments must be made in the <abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr> to make this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> applicable, and a method to provide guidance on what selections must be made in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in order to 
-               make the X.509 <abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr> applicable to the product.
-              </span>
-            This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>; it only mandates the
-              inclusion of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> because a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will always require this
-              functionality that is only conditional in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><td>FIA_X509_EXT.2</td><td>
-              <span style="" class="comment " id="Comment-2-">This component will ostensibly be moved to the definitions present in the X.509 <abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr>. However, we currently do not have a concrete way to accurately model its status in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
-                We lack a defined method to provide guidance on what selections/assignments must be made in the <abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr> to make this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> applicable, and a method to provide guidance on what selections must be made in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in order to 
-                make the X.509 <abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr> applicable to the product. Additionally, since the <abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr> is intended to be the single point of definition for a re-used <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>, it is not desirable to manually reproduce the text of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> (i.e. in the modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> section as it has been done here).
-               </span>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> restricts the Functional Package <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to a subset of existing permissible
-              functionality and does not introduce any new behavior.</td></tr><tr><td>FIA_X509_EXT.3</td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>; it only mandates the
-                inclusion of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> because a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will always require this
-                functionality that is only conditional in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
-              </td></tr><tr><td>FMT_MTD.1/CRYPTOKEYS</td><td>
+              functionality and does not introduce any new behavior.</td></tr><tr><td>FMT_MTD.1/CryptoKeys</td><td>
               This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> applies the key management functionality already defined in
               the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> specifically to functionality related to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways.
             </td></tr><tr><td>FPT_TST_EXT.1</td><td>
@@ -2339,9 +2316,9 @@ provide all of its security functionality.
                  Evaluation methodology</a>, CCMB-2022-11-006, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
           </ul></span></td></tr><tr><td><span id="bibNDSD">[ND-SD]</span></td><td><span class="description">
         <a href="https://www.niap-ccevs.org/protectionprofiles/482">
-          Evaluation Activities for Network Device cPP</a>, Version 4.0, December 2023 <span style="" class="comment " id="Comment-4-">Adjust date when published.</span>
+          Evaluation Activities for Network Device cPP</a>, Version 4.0, December 2023 <span style="" class="comment " id="Comment-2-">Adjust date when published.</span>
       </span></td></tr><tr><td><span id="bibNDcPP">[NDcPP]</span></td><td><span class="description">
         <a href="https://www.niap-ccevs.org/protectionprofiles/482">
 			collaborative Protection Profile for Network Devices</a>, Version 4.0, December
-        2023 <span style="" class="comment " id="Comment-3-">Adjust date when published.</span>
+        2023 <span style="" class="comment " id="Comment-1-">Adjust date when published.</span>
       </span></td></tr></table></body></html>

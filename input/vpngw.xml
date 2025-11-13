@@ -3008,26 +3008,8 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	capabilities of the TOE in addition to the functionality required by the claimed Base-PP.		 
  </appendix>
   
-  <bibliography>
-    <cc-entry/>
-    <entry id="bibNDcPP">
-      <tag>NDcPP</tag>
-      <description>
-        <h:a href="https://www.niap-ccevs.org/protectionprofiles/482">
-			collaborative Protection Profile for Network Devices</h:a>, Version 4.0, December
-        2023 <comment>Adjust date when published.</comment>
-      </description>
-    </entry>
-
-    <entry id="bibNDSD">
-      <tag>ND-SD</tag>
-      <description>
-        <h:a href="https://www.niap-ccevs.org/protectionprofiles/482">
-          Evaluation Activities for Network Device cPP</h:a>, Version 4.0, December 2023 <comment>Adjust date when published.</comment>
-      </description>
-    </entry>
-
-	</bibliography>
+  <bibliography/>
+    
 
 	<!-- Appendix G: Acronyms -->
 <!--	<acronyms/>   -->

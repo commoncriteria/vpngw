@@ -1,6 +1,7 @@
 output/vpngw-release-linkable.html: CNSA
 output/vpngw-release-linkable.html: CryptoKeys
 output/vpngw-release-linkable.html: DataEncryption
+output/vpngw-release-linkable.html: NDcPP
 output/vpngw-release-linkable.html: OCSP
 output/vpngw-release-linkable.html: SigGen
 output/vpngw-release-linkable.html: XCU
@@ -10,6 +11,7 @@ output/vpngw-release.html: CNSA
 output/vpngw-release.html: CryptoKeys
 output/vpngw-release.html: DataEncryption
 output/vpngw-release.html: Interface’
+output/vpngw-release.html: NDcPP
 output/vpngw-release.html: OCSP
 output/vpngw-release.html: SigGen
 output/vpngw-release.html: XCU
@@ -17,6 +19,7 @@ output/vpngw-release.html: log’
 output/vpngw-release.html: subjectAlternateName
 output/vpngw-release.html: timeframe
 output/vpngw-release.html: ’
+output/vpngw-sd.html: NDcPP
 output/vpngw-sd.html: evaluator’s
 output/vpngw-sd.html: fail’
 output/vpngw-sd.html: pass’
@@ -24,6 +27,7 @@ output/vpngw.html: CNSA
 output/vpngw.html: CryptoKeys
 output/vpngw.html: DataEncryption
 output/vpngw.html: Interface’
+output/vpngw.html: NDcPP
 output/vpngw.html: OCSP
 output/vpngw.html: SigGen
 output/vpngw.html: XCU

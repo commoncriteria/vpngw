@@ -3,8 +3,10 @@ output/vpngw-release-linkable.html: CryptoKeys
 output/vpngw-release-linkable.html: DataEncryption
 output/vpngw-release-linkable.html: NDcPP
 output/vpngw-release-linkable.html: OCSP
+output/vpngw-release-linkable.html: SKC
 output/vpngw-release-linkable.html: SigGen
 output/vpngw-release-linkable.html: XCU
+output/vpngw-release-linkable.html: crypto
 output/vpngw-release-linkable.html: subjectAlternateName
 output/vpngw-release-linkable.html: timeframe
 output/vpngw-release.html: CNSA
@@ -13,8 +15,10 @@ output/vpngw-release.html: DataEncryption
 output/vpngw-release.html: Interface’
 output/vpngw-release.html: NDcPP
 output/vpngw-release.html: OCSP
+output/vpngw-release.html: SKC
 output/vpngw-release.html: SigGen
 output/vpngw-release.html: XCU
+output/vpngw-release.html: crypto
 output/vpngw-release.html: log’
 output/vpngw-release.html: subjectAlternateName
 output/vpngw-release.html: timeframe
@@ -29,8 +33,10 @@ output/vpngw.html: DataEncryption
 output/vpngw.html: Interface’
 output/vpngw.html: NDcPP
 output/vpngw.html: OCSP
+output/vpngw.html: SKC
 output/vpngw.html: SigGen
 output/vpngw.html: XCU
+output/vpngw.html: crypto
 output/vpngw.html: log’
 output/vpngw.html: subjectAlternateName
 output/vpngw.html: timeframe

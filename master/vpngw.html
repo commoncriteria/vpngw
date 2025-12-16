@@ -638,7 +638,7 @@ function showTarget(id){
 </table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#_sec_1" style="text-indent:10px">1.5<span>Package Usage</span></a><a href="#ConformanceClaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_Operational_Environment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">4.2<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-ND" style="text-indent:10px">5.1<span>Collaborative 
     Protection Profile for Network Devices
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-ND" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#@id" style="text-indent:30px">5.1.1.2<span>Security Management (FMT)</span></a><a href="#@id" style="text-indent:30px">5.1.1.3<span>Protection of the TSF (FPT)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#m-fau" style="text-indent:20px">5.2.2<span>Security Audit (FAU)</span></a><a href="#m-fcs" style="text-indent:20px">5.2.3<span>Cryptographic Support (FCS)</span></a><a href="#m-fmt" style="text-indent:20px">5.2.4<span>Security Management (FMT)</span></a><a href="#m-fpf" style="text-indent:20px">5.2.5<span>Packet Filtering (FPF)</span></a><a href="#m-fpt" style="text-indent:20px">5.2.6<span>Protection of the TSF (FPT)</span></a><a href="#m-ftp" style="text-indent:20px">5.2.7<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-ND" style="text-indent:10px">6.1<span>Collaborative 
+    </span></a><a href="#modsfr-ND" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#@id" style="text-indent:30px">5.1.1.2<span>Security Management (FMT)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#m-fau" style="text-indent:20px">5.2.2<span>Security Audit (FAU)</span></a><a href="#m-fcs" style="text-indent:20px">5.2.3<span>Cryptographic Support (FCS)</span></a><a href="#m-fmt" style="text-indent:20px">5.2.4<span>Security Management (FMT)</span></a><a href="#m-fpf" style="text-indent:20px">5.2.5<span>Packet Filtering (FPF)</span></a><a href="#m-fpt" style="text-indent:20px">5.2.6<span>Protection of the TSF (FPT)</span></a><a href="#m-ftp" style="text-indent:20px">5.2.7<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-ND" style="text-indent:10px">6.1<span>Collaborative 
     Protection Profile for Network Devices</span></a><a href="#contoe-ND" style="text-indent:20px">6.1.1<span>
 	Consistency of TOE Type
       </span></a><a href="#consecprob-ND" style="text-indent:20px">6.1.2<span>
@@ -994,16 +994,22 @@ provide all of its security functionality.</p>
 		<h3 id="modsfr-ND" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
 		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the NDcPP and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 
-		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_COP.1/DataEncryption: Cryptographic Operation (AES Data Encryption/Decryption)</h4><span class="description">
-                <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been modified from its definition in the NDcPP to support this
-                <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>’s IPsec requirements by mandating support for GCM mode and 256-bit key sizes.</p>
+		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_COP.1/AEAD: Cryptographic Operation - Authenticated Encryption with Associated Data</h4><span class="description">&gt;We do not have a way to mandate specific selections in a crypto catalog <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>,
+                however, GCM mode must be claimed and 256 bits must be selected for it</span></div><div class="comp" id="@id"><h4>FCS_COP.1/DataEncryption: Cryptographic Operation (AES Data Encryption/Decryption)</h4><span class="description">                
+              <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been modified from its definition in the NDcPP to support this
+                <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>’s IPsec requirements by mandating support for GCM mode.</p>
                 <p>The text of the requirement is replaced with:</p>
                 <p>
-                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform encryption/decryption in accordance with a
-                specified cryptographic algorithm AES used in [<i>GCM</i>]
-                mode and cryptographic key sizes [<i>256 bits</i>] that meet the following:
-                AES as specified in ISO 18033-3, [<i>GCM as specified in ISO 19772</i>].
-                </p>
+                  The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform encryption/decryption in accordance with a specified
+                  cryptographic algorithm AES operating in <b>GCM mode as defined in
+                    FCS_COP.1/AEAD and</b> [selection:<i><ul>
+                      <li>CBC mode as defined in FCS_COP.1/SKC</li>
+                      <li>CTR mode as defined in FCS_COP.1/SKC</li>
+                      <li>XTS mode as defined in FCS_COP.1/SKC</li>
+                      <li>CCM mode as defined in FCS_COP.1/AEAD</li>
+                      <li><b>no other modes</b></li>
+                    </ul></i>].
+                </p>                
             </span></div><div class="comp" id="@id"><h4>FCS_IPSEC_EXT.1: IPsec Protocol</h4><span class="description">
               <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been modified from its definition in the NDcPP to support
               this module's IPsec requirements by mandating use of CNSA 1.0 parameters, where applicable.
@@ -1088,71 +1094,6 @@ provide all of its security functionality.</p>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall restrict the ability to [<i>manage</i>] the [<i>cryptographic keys <b>and
               certificates used for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> operation</b></i>] to [<i>Security Administrators</i>]. 
               </p>
-            </span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.3 Protection of the TSF (FPT)</h4><div class="comp" id="@id"><h4>FPT_TST_EXT.1: TSF Testing</h4><span class="description">
-            <p>An element of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to require the testing of noise source health tests, regardless of what other testing is claimed.
-              All other elements of this requirement not mentioned in this section are unchanged from their definition in the NDcPP.</p>
-            <p><b>FPT_TST_EXT.1.1: </b>This element has been modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to require noise source health tests.</p>
-            <p>The text of the requirement is replaced with:</p>
-            <p>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall run a suite of the following self-tests:<ul><br/>
-                <li><i>During initial start-up (on power on) to verify the integrity of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> firmware and software;</i></li>
-                <li><i>During start-up (prior to providing any cryptographic services) and [<b>selection:</b> <i>at no other time, on-demand, continuously, [<b>assignment:</b> conditions under which self-tests should occur]</i>]
-                 to verify correct operation of cryptographic implementation necessary to fulfill the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>;</i></li>
-                <li><i>[<b>selection:</b> <i>no other, start-up, on-demand, continuous, at the conditions [<b>assignment:</b> conditions under which self-tests should occur]</i>]
-                self tests [<i>[<b>assignment: </b><i>list an identifier for each self-test that is additional to those identified in the two bullet points]]</i>.</i></i></li>
-                </ul>
-                to demonstrate the correct operation of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>: [<i>noise source health tests</i>] and if failure detected [<b>assignment:</b> <i>describe the resulting error state</i>].
-                </p>
-                <p>
-                <b>Application Note:</b> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the NDcPP by requiring noise source
-                health tests to be performed regardless of what other testing is claimed. It is
-                expected that the behavior of this testing will be described in the entropy
-                documentation. Other self-tests may be defined at the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author’s discretion; note
-                that the Application Note in the NDcPP regarding what other self-tests are
-                expected is still applicable here.
-                </p>
-                <br/><br/>
-            </span></div><div class="comp" id="@id"><h4>FPT_TUD_EXT.1: Trusted Update</h4><span class="description">
-              <p> An element of FPT_TUD_EXT.1 is modified from its definition in the NDcPP to mandate use of the first selection
-              (use of a digital signature mechanism to verify updates).
-              All other elements of this requirement not mentioned in this section are unchanged from their definition in the NDcPP.</p>
-              <p><b>FPT_TUD_EXT.1.3</b>: The text of the requirement is replaced with:</p>
-              <p>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide means to authenticate firmware/software updates to the
-                <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> using a <b>digital signature mechanism and </b>[<b>selection:</b> <i>X.509 certificate, no other mechanisms</i>]
-                prior to installing those updates.</p>
-              <p><b>Application Note: </b>
-                The NDcPP provides an option for how firmware/software updates can be verified
-                but this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires the digital signature method to be selected at
-                minimum. Note that all other options specified in the NDcPP for this component
-                are permitted so it is possible for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to use code signing certificates to
-                validate updates, in which case FPT_TUD_EXT.2 from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> is also included
-                in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
-                <br/>
-                If X.509 certificates are used to verify the integrity of an update, the certificates
-                must conform to FIA_X509_EXT.1/Rev. Therefore, certificates that do not (or only
-                partially) conform to FIA_X509_EXT.1/Rev are not allowed as a means to
-                authenticate firmware/software updates.
-                <br/>
-                NDcPP states the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author may use X.509 certificates that do not meet
-                FIA_X509_EXT.1/Rev. This applies to trust anchors as they can be encoded as
-                certificates. Even when they are encoded as certificates, the trust anchor must be
-                protected by another mechanism that ensures its integrity and binds it to the
-                'code-signing' context. Trust anchors do not need to be validated according to
-                FIA_X509_EXT.1, even if they are encoded as certificates; instead they need to be
-                validated as trust anchors. FIA_X509_EXT.1/Rev does not require revocation
-                checking of certificates designated as trust store elements. The integrity of trust
-                store elements depends on administrative controls for loading and managing
-                trust stores and functional integrity checks that are described in other <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.
-                <br/>
-                So, if the certificate used to verify the update is a trust store element (self-signed
-                and specifically trusted for verifying updates, with the integrity of this special
-                purpose certificate protected by administrative controls and <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> integrity
-                protections), then revocation checking is not required.
-                <br/>
-                However, if the certificate is issued by a trusted root <abbr class="dyn-abbr"><a href="#abbr_CA">CA</a></abbr>, or by a certificate
-                authority which chains to a trusted root <abbr class="dyn-abbr"><a href="#abbr_CA">CA</a></abbr>, then revocation checking is required
-                for all elements of the certificate chain except the trusted root <abbr class="dyn-abbr"><a href="#abbr_CA">CA</a></abbr>, and the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-                must be able to obtain fresh revocation information from an external source.
-                </p>
             </span></div><h2 id="man-sfrs" class="indexable" data-level="2">5.2 TOE Security Functional Requirements</h2>
 	The following section describes the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that must be satisfied by any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
 	These <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> must be claimed regardless of which <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> is used to define the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
@@ -2070,14 +2011,11 @@ provide all of its security functionality.</p>
   
        
     <h2 id="obj-req-map" class="indexable" data-level="2">5.3 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
-    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">4</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="10"><a href="#T.DATA_INTEGRITY">T.DATA_​INTEGRITY</a></td><td>FCS_COP.1/DataEncryption (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by encrypting channel data using a specified algorithm.</td></tr>
+    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">4</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="8"><a href="#T.DATA_INTEGRITY">T.DATA_​INTEGRITY</a></td><td>FCS_COP.1/DataEncryption (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by encrypting channel data using a specified algorithm.</td></tr>
 <tr><td>FCS_IPSEC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing IPsec to verify message confidentiality and integrity.</td></tr>
 <tr><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>Mitigates the threat by filtering traffic from outside the protected network.</td></tr>
 <tr><td><a href="#FPT_FLS.1/SelfTest">FPT_FLS.1/SelfTest</a></td><td>Mitigates the threat by ceasing operations of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> if a test or security failure is detected, preventing a failure in secure functionality.</td></tr>
-<tr><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by testing the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> for any unauthorized modifications or cryptographic failures.</td></tr>
 <tr><td><a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a></td><td>Mitigates the threat by executing self tests in a specified, repeatable manner.</td></tr>
-<tr><td>FPT_TUD_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by providing a secure update mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that validates its authenticity,
-            ensuring a faulty or malicious update cannot compromise the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s ability to protect data integrity.</td></tr>
 <tr><td><a href="#FTP_ITC.1/VPN">FTP_ITC.1/VPN</a></td><td>Mitigates the threat by transmitting data over a secure <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection protected from unauthorized disclosure.</td></tr>
 <tr><td><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a> (optional)</td><td>Mitigates the threat by assigning a private, internal IP address to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients within the protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
 <tr><td><a href="#FTA_SSL.3/VPN">FTA_SSL.3/VPN</a> (optional)</td><td>Mitigates the threat by terminating inactive <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> sessions.</td></tr>
@@ -2103,17 +2041,11 @@ provide all of its security functionality.</p>
 <tr><td><a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a> (selection-based)</td><td>Mitigates the threat by securely and randomly generating a pre-shared key.</td></tr>
 <tr><td><a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a> (selection-based)</td><td>Mitigates the threat by securely deriving a pre-shared key from a password.</td></tr>
 <tr><td><a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a> (selection-based)</td><td>Mitigates the threat by providing a second factor of authentication via time-based one-time passwords.</td></tr>
-<tr class="major-row"><td rowspan="6"><a href="#T.NETWORK_DISCLOSURE">T.NETWORK_​DISCLOSURE</a></td><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by verifying the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s correct operation.</td></tr>
-<tr><td>FPT_TUD_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by providing a secure update mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that validates its authenticity,
-            ensuring a faulty or malicious update cannot compromise the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s ability to enforce traffic rules.</td></tr>
-<tr><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>Mitigates the threat by filtering traffic to disallow unauthorized traffic flows.</td></tr>
+<tr class="major-row"><td rowspan="4"><a href="#T.NETWORK_DISCLOSURE">T.NETWORK_​DISCLOSURE</a></td><td><a href="#FPF_RUL_EXT.1">FPF_RUL_EXT.1</a></td><td>Mitigates the threat by filtering traffic to disallow unauthorized traffic flows.</td></tr>
 <tr><td><a href="#FPT_FLS.1/SelfTest">FPT_FLS.1/SelfTest</a></td><td>Mitigates the threat by ceasing operations of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> if a test or security failure is detected, preventing a failure in traffic filtering.</td></tr>
 <tr><td><a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a></td><td>Mitigates the threat by executing self tests in a specified, repeatable manner.</td></tr>
 <tr><td><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a> (optional)</td><td>Mitigates the threat by assigning a private, internal IP address to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients within the protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
-<tr class="major-row"><td rowspan="10"><a href="#T.NETWORK_MISUSE">T.NETWORK_​MISUSE</a></td><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by verifying the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s correct operation.</td></tr>
-<tr><td>FPT_TUD_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by providing a secure update mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that validates its authenticity,
-            ensuring a faulty or malicious update cannot compromise the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s ability to enforce traffic policy and log potential violations.</td></tr>
-<tr><td><a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a></td><td>Mitigates the threat by logging potential violations of policy.</td></tr>
+<tr class="major-row"><td rowspan="8"><a href="#T.NETWORK_MISUSE">T.NETWORK_​MISUSE</a></td><td><a href="#FAU_GEN.1/VPN">FAU_GEN.1/VPN</a></td><td>Mitigates the threat by logging potential violations of policy.</td></tr>
 <tr><td>FCS_IPSEC_EXT.1</td><td>Mitigates the threat by securing traffic originating from or traveling to an authorized user that resides outside the protected network,
           ensuring that an unauthorized attacker cannot inject their own actions into the protected network.</td></tr>
 <tr><td>FMT_MTD.1/CryptoKeys</td><td>Mitigates the threat by implementing a management interface to manage the IPsec parameters 
@@ -2125,11 +2057,8 @@ provide all of its security functionality.</p>
           detection or prevention of network misuse.</td></tr>
 <tr><td><a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a></td><td>Mitigates the threat by executing self tests in a specified, repeatable manner.</td></tr>
 <tr><td><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a> (optional)</td><td>Mitigates the threat by assigning a private, internal IP address to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients within the protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
-<tr class="major-row"><td rowspan="8"><a href="#T.REPLAY_ATTACK">T.REPLAY_​ATTACK</a></td><td>FCS_COP.1/DataEncryption (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing encryption algorithms to protect data from being sent in cleartext.</td></tr>
+<tr class="major-row"><td rowspan="6"><a href="#T.REPLAY_ATTACK">T.REPLAY_​ATTACK</a></td><td>FCS_COP.1/DataEncryption (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing encryption algorithms to protect data from being sent in cleartext.</td></tr>
 <tr><td>FCS_IPSEC_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing the IPsec protocol to encapsulate and encrypt channel data.</td></tr>
-<tr><td>FPT_TST_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by verifying the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s correct operation.</td></tr>
-<tr><td>FPT_TUD_EXT.1 (refined from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by providing a secure update mechanism for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that validates its authenticity,
-            ensuring a faulty or malicious update cannot compromise the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s ability to encrypt traffic and prevent it from being replayed without detection.</td></tr>
 <tr><td><a href="#FPT_FLS.1/SelfTest">FPT_FLS.1/SelfTest</a></td><td>Mitigates the threat by ceasing operations of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> if a test or security failure is detected, preventing a failure in
               detection of replay attacks.</td></tr>
 <tr><td><a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a></td><td>Mitigates the threat by executing self tests in a specified, repeatable manner.</td></tr>
@@ -2177,16 +2106,11 @@ provide all of its security functionality.</p>
       defined by the
       NDcPP are as follows:
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">7</span></span>: Consistency of Requirements (NDcPP base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_COP.1/DataEncryption</td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> restricts the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to a subset of existing permissible
+		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_COP.1/AEAD</td><td></td></tr><tr><td>FCS_COP.1/DataEncryption</td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> restricts the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to a subset of existing permissible
               functionality and does not introduce any new behavior.</td></tr><tr><td>FCS_IPSEC_EXT.1</td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> restricts the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to a subset of existing permissible
               functionality and does not introduce any new behavior.</td></tr><tr><td>FMT_MTD.1/CryptoKeys</td><td>
               This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> applies the key management functionality already defined in
               the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> specifically to functionality related to <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateways.
-            </td></tr><tr><td>FPT_TST_EXT.1</td><td>
-              This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> refines the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to mandate a specific type of self-test. This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the execution of this self-test is already implied by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> through its entropy requirements.
-            </td></tr><tr><td>FPT_TUD_EXT.1</td><td>
-              This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> restricts the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to a subset of existing permissible
-              functionality and does not introduce any new behavior.
             </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not add any requirements when the
 	      NDcPP is the base.

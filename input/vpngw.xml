@@ -292,10 +292,7 @@ expected to enforce.<h:br/>
             <addressed-by>FCS_IPSEC_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing IPsec to verify message confidentiality and integrity.</rationale>
             <addressed-by>FPF_RUL_EXT.1</addressed-by><rationale>Mitigates the threat by filtering traffic from outside the protected network.</rationale>
             <addressed-by>FPT_FLS.1/SelfTest</addressed-by><rationale>Mitigates the threat by ceasing operations of the TSF if a test or security failure is detected, preventing a failure in secure functionality.</rationale>
-            <addressed-by>FPT_TST_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by testing the TSF for any unauthorized modifications or cryptographic failures.</rationale>
             <addressed-by>FPT_TST_EXT.3</addressed-by><rationale>Mitigates the threat by executing self tests in a specified, repeatable manner.</rationale>
-            <addressed-by>FPT_TUD_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by providing a secure update mechanism for the TOE that validates its authenticity,
-            ensuring a faulty or malicious update cannot compromise the TSF's ability to protect data integrity.</rationale>
             <addressed-by>FTP_ITC.1/VPN</addressed-by><rationale>Mitigates the threat by transmitting data over a secure VPN connection protected from unauthorized disclosure.</rationale>
             <addressed-by>FTA_VCM_EXT.1 (optional)</addressed-by><rationale>Mitigates the threat by assigning a private, internal IP address to VPN clients within the protection of the TSF.</rationale>
             <addressed-by>FTA_SSL.3/VPN (optional)</addressed-by><rationale>Mitigates the threat by terminating inactive VPN sessions.</rationale>
@@ -366,9 +363,6 @@ expected to enforce.<h:br/>
             outgoing connections are encrypted to further mitigate inappropriate disclosure of data through
             packet sniffing.
           </description>
-          <addressed-by>FPT_TST_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by verifying the TSF's correct operation.</rationale>
-          <addressed-by>FPT_TUD_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by providing a secure update mechanism for the TOE that validates its authenticity,
-            ensuring a faulty or malicious update cannot compromise the TSF's ability to enforce traffic rules.</rationale>
           <addressed-by>FPF_RUL_EXT.1</addressed-by><rationale>Mitigates the threat by filtering traffic to disallow unauthorized traffic flows.</rationale>
           <addressed-by>FPT_FLS.1/SelfTest</addressed-by><rationale>Mitigates the threat by ceasing operations of the TSF if a test or security failure is detected, preventing a failure in traffic filtering.</rationale>
           <addressed-by>FPT_TST_EXT.3</addressed-by><rationale>Mitigates the threat by executing self tests in a specified, repeatable manner.</rationale>
@@ -395,10 +389,7 @@ expected to enforce.<h:br/>
             and external networks and as a result can serve to identify potential usage policy violations.
             
           </description>
-          <addressed-by>FPT_TST_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by verifying the TSF's correct operation.</rationale>
-          <addressed-by>FPT_TUD_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by providing a secure update mechanism for the TOE that validates its authenticity,
-            ensuring a faulty or malicious update cannot compromise the TSF's ability to enforce traffic policy and log potential violations.</rationale>
-          <addressed-by>FAU_GEN.1/VPN</addressed-by><rationale>Mitigates the threat by logging potential violations of policy.</rationale>
+         <addressed-by>FAU_GEN.1/VPN</addressed-by><rationale>Mitigates the threat by logging potential violations of policy.</rationale>
           <addressed-by>FCS_IPSEC_EXT.1</addressed-by><rationale>Mitigates the threat by securing traffic originating from or traveling to an authorized user that resides outside the protected network,
           ensuring that an unauthorized attacker cannot inject their own actions into the protected network.</rationale>
           <addressed-by>FMT_MTD.1/CryptoKeys</addressed-by><rationale>Mitigates the threat by implementing a management interface to manage the IPsec parameters 
@@ -427,9 +418,6 @@ expected to enforce.<h:br/>
           </description>
           <addressed-by>FCS_COP.1/DataEncryption (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing encryption algorithms to protect data from being sent in cleartext.</rationale>
           <addressed-by>FCS_IPSEC_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing the IPsec protocol to encapsulate and encrypt channel data.</rationale>
-          <addressed-by>FPT_TST_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by verifying the TSF's correct operation.</rationale>
-          <addressed-by>FPT_TUD_EXT.1 (refined from Base-PP)</addressed-by><rationale>Mitigates the threat by providing a secure update mechanism for the TOE that validates its authenticity,
-            ensuring a faulty or malicious update cannot compromise the TSF's ability to encrypt traffic and prevent it from being replayed without detection.</rationale>
           <addressed-by>FPT_FLS.1/SelfTest</addressed-by><rationale>Mitigates the threat by ceasing operations of the TSF if a test or security failure is detected, preventing a failure in
               detection of replay attacks.</rationale>
             <addressed-by>FPT_TST_EXT.3</addressed-by><rationale>Mitigates the threat by executing self tests in a specified, repeatable manner.</rationale>
@@ -558,19 +546,32 @@ expected to enforce.<h:br/>
 -->        
         <!-- 5.1.1.1  -->
         <section title="Cryptographic Support (FCS)" id="nd-m-fcs">
+
+          <base-sfr-spec cc-id="fcs_cop.1" iteration="AEAD" id="nd-fcs-cop-1-aead" title="Cryptographic Operation - Authenticated Encryption with Associated Data">
+            <consistency-rationale></consistency-rationale>
+            <description>>We do not have a way to mandate specific selections in a crypto catalog SFR,
+                however, GCM mode must be claimed and 256 bits must be selected for it</description>
+            <no-change/>
+          </base-sfr-spec>
+          
           <base-sfr-spec cc-id="fcs_cop.1" iteration="DataEncryption" id="nd-fcs-cop-1-dataencryption" title="Cryptographic Operation (AES Data Encryption/Decryption)">
             <consistency-rationale>This PP-Module restricts the Base-PP SFR to a subset of existing permissible
               functionality and does not introduce any new behavior.</consistency-rationale>
-            <description>
-                <h:p>This SFR has been modified from its definition in the NDcPP to support this
-                PP-Module’s IPsec requirements by mandating support for GCM mode and 256-bit key sizes.</h:p>
+            <description>                
+              <h:p>This SFR has been modified from its definition in the NDcPP to support this
+                PP-Module’s IPsec requirements by mandating support for GCM mode.</h:p>
                 <h:p>The text of the requirement is replaced with:</h:p>
                 <h:p>
-                The TSF shall perform encryption/decryption in accordance with a
-                specified cryptographic algorithm AES used in [<h:i>GCM</h:i>]
-                mode and cryptographic key sizes [<h:i>256 bits</h:i>] that meet the following:
-                AES as specified in ISO 18033-3, [<h:i>GCM as specified in ISO 19772</h:i>].
-                </h:p>
+                  The TSF shall perform encryption/decryption in accordance with a specified
+                  cryptographic algorithm AES operating in <h:b>GCM mode as defined in
+                    FCS_COP.1/AEAD and</h:b> [selection:<h:i><h:ul>
+                      <h:li>CBC mode as defined in FCS_COP.1/SKC</h:li>
+                      <h:li>CTR mode as defined in FCS_COP.1/SKC</h:li>
+                      <h:li>XTS mode as defined in FCS_COP.1/SKC</h:li>
+                      <h:li>CCM mode as defined in FCS_COP.1/AEAD</h:li>
+                      <h:li><h:b>no other modes</h:b></h:li>
+                    </h:ul></h:i>].
+                </h:p>                
             </description>
             <no-change/>
           </base-sfr-spec>
@@ -719,93 +720,7 @@ expected to enforce.<h:br/>
               </h:p>
             </description>
             <no-change/>
-          </base-sfr-spec>
-          
-        </section>
-        
-        
-        <!-- 5.1.1.4  -->
-        <section title="Protection of the TSF (FPT)" id="nd-m-fpt">
-          <base-sfr-spec cc-id="fpt_tst_ext.1" id="nd-mod-fpt-tst-ext-1" title="TSF Testing">
-            <consistency-rationale>
-              This PP-Module refines the Base-PP SFR to mandate a specific type of self-test. This is consistent with the Base-PP because the execution of this self-test is already implied by the Base-PP through its entropy requirements.
-            </consistency-rationale>
-            <description>
-            <h:p>An element of this SFR is modified from its definition in the Base-PP to require the testing of noise source health tests, regardless of what other testing is claimed.
-              All other elements of this requirement not mentioned in this section are unchanged from their definition in the NDcPP.</h:p>
-            <h:p><h:b>FPT_TST_EXT.1.1: </h:b>This element has been modified from its definition in the Base-PP to require noise source health tests.</h:p>
-            <h:p>The text of the requirement is replaced with:</h:p>
-            <h:p>The TSF shall run a suite of the following self-tests:<h:ul><h:br/>
-                <h:li><h:i>During initial start-up (on power on) to verify the integrity of the TOE firmware and software;</h:i></h:li>
-                <h:li><h:i>During start-up (prior to providing any cryptographic services) and [<h:b>selection:</h:b> <h:i>at no other time, on-demand, continuously, [<h:b>assignment:</h:b> conditions under which self-tests should occur]</h:i>]
-                 to verify correct operation of cryptographic implementation necessary to fulfill the TSF;</h:i></h:li>
-                <h:li><h:i>[<h:b>selection:</h:b> <h:i>no other, start-up, on-demand, continuous, at the conditions [<h:b>assignment:</h:b> conditions under which self-tests should occur]</h:i>]
-                self tests [<h:i>[<h:b>assignment: </h:b><h:i>list an identifier for each self-test that is additional to those identified in the two bullet points]]</h:i>.</h:i></h:i></h:li>
-                </h:ul>
-                to demonstrate the correct operation of the TSF: [<h:i>noise source health tests</h:i>] and if failure detected [<h:b>assignment:</h:b> <h:i>describe the resulting error state</h:i>].
-                </h:p>
-                <h:p>
-                <h:b>Application Note:</h:b> This SFR is modified from its definition in the NDcPP by requiring noise source
-                health tests to be performed regardless of what other testing is claimed. It is
-                expected that the behavior of this testing will be described in the entropy
-                documentation. Other self-tests may be defined at the ST author’s discretion; note
-                that the Application Note in the NDcPP regarding what other self-tests are
-                expected is still applicable here.
-                </h:p>
-                <h:br/><h:br/>
-            </description>
-            <no-change/>
-          </base-sfr-spec>
-          <base-sfr-spec cc-id="fpt_tud_ext.1" id="nd-mod-fpt-tud-ext-1" title="Trusted Update">
-           <consistency-rationale>
-              This PP-Module restricts the Base-PP SFR to a subset of existing permissible
-              functionality and does not introduce any new behavior.
-            </consistency-rationale>
-            <description>
-              <h:p> An element of FPT_TUD_EXT.1 is modified from its definition in the NDcPP to mandate use of the first selection
-              (use of a digital signature mechanism to verify updates).
-              All other elements of this requirement not mentioned in this section are unchanged from their definition in the NDcPP.</h:p>
-              <h:p><h:b>FPT_TUD_EXT.1.3</h:b>: The text of the requirement is replaced with:</h:p>
-              <h:p>The TSF shall provide means to authenticate firmware/software updates to the
-                TOE using a <h:b>digital signature mechanism and </h:b>[<h:b>selection:</h:b> <h:i>X.509 certificate, no other mechanisms</h:i>]
-                prior to installing those updates.</h:p>
-              <h:p><h:b>Application Note: </h:b>
-                The NDcPP provides an option for how firmware/software updates can be verified
-                but this PP-Module requires the digital signature method to be selected at
-                minimum. Note that all other options specified in the NDcPP for this component
-                are permitted so it is possible for the TSF to use code signing certificates to
-                validate updates, in which case FPT_TUD_EXT.2 from the Base-PP is also included
-                in the ST.
-                <h:br/>
-                If X.509 certificates are used to verify the integrity of an update, the certificates
-                must conform to FIA_X509_EXT.1/Rev. Therefore, certificates that do not (or only
-                partially) conform to FIA_X509_EXT.1/Rev are not allowed as a means to
-                authenticate firmware/software updates.
-                <h:br/>
-                NDcPP states the ST author may use X.509 certificates that do not meet
-                FIA_X509_EXT.1/Rev. This applies to trust anchors as they can be encoded as
-                certificates. Even when they are encoded as certificates, the trust anchor must be
-                protected by another mechanism that ensures its integrity and binds it to the
-                'code-signing' context. Trust anchors do not need to be validated according to
-                FIA_X509_EXT.1, even if they are encoded as certificates; instead they need to be
-                validated as trust anchors. FIA_X509_EXT.1/Rev does not require revocation
-                checking of certificates designated as trust store elements. The integrity of trust
-                store elements depends on administrative controls for loading and managing
-                trust stores and functional integrity checks that are described in other SFRs.
-                <h:br/>
-                So, if the certificate used to verify the update is a trust store element (self-signed
-                and specifically trusted for verifying updates, with the integrity of this special
-                purpose certificate protected by administrative controls and TOE integrity
-                protections), then revocation checking is not required.
-                <h:br/>
-                However, if the certificate is issued by a trusted root CA, or by a certificate
-                authority which chains to a trusted root CA, then revocation checking is required
-                for all elements of the certificate chain except the trusted root CA, and the TOE
-                must be able to obtain fresh revocation information from an external source.
-                </h:p>
-            </description>
-            <no-change/>
-          </base-sfr-spec>
+          </base-sfr-spec>          
         </section>
       </modified-sfrs>
         

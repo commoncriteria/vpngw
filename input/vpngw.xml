@@ -549,8 +549,8 @@ expected to enforce.<h:br/>
 
           <base-sfr-spec cc-id="fcs_cop.1" iteration="AEAD" id="nd-fcs-cop-1-aead" title="Cryptographic Operation - Authenticated Encryption with Associated Data">
             <consistency-rationale></consistency-rationale>
-            <description>>We do not have a way to mandate specific selections in a crypto catalog SFR,
-                however, GCM mode must be claimed and 256 bits must be selected for it</description>
+            <description>We do not have a way to mandate specific selections in a crypto catalog SFR,
+                however, GCM mode must be claimed and 256 bits must be selected for it.</description>
             <no-change/>
           </base-sfr-spec>
           

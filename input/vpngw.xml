@@ -602,7 +602,8 @@ expected to enforce.<h:br/>
                       <h:li>CCM mode as defined in FCS_COP.1/AEAD</h:li>
                       <h:li><h:b>no other modes</h:b></h:li>
                     </h:ul></h:i>].
-                </h:p>                
+                </h:p>       
+              <h:p><h:b>Application Note:</h:b> Other AES modes are selectable if the TSF uses them for another part of the TSF. A selection for 'no other modes' has been refined into the SFR because it is possible that a TOE may conform to the Base-PP by using AES-GCM exclusively for AES data encryption and decryption.</h:p>
             </description>
             <no-change/>
           </base-sfr-spec>
@@ -611,12 +612,11 @@ expected to enforce.<h:br/>
               functionality and does not introduce any new behavior.</consistency-rationale>
               <description>
               <h:p>This SFR has been modified from its definition in the NDcPP to support
-              this module's IPsec requirements by mandating use of CNSA 1.0 parameters, where applicable.
-              Any requirement not mentioned in this section is unchanged from its definition in the Base-PP.</h:p>
-              
+              this module's IPsec requirements by mandating use of AES-GCM-256 and IKEv2 where applicable.
+              Any element that is not mentioned in this section is unchanged from its definition in the Base-PP.</h:p>
               <h:p><h:b>FCS_IPSEC_EXT.1.4</h:b>: This element has been modified to require the use of CNSA 1.0-compliant parameters.</h:p>
               <h:p>The text of FCS_IPSEC_EXT.1.4 is replaced with:</h:p>
-                <h:p><h:b>FCS_IPSEC_EXT.1.4 </h:b>The TSF shall implement the IPsec protocol ESP as defined by RFC 4303 using the cryptographic algorithms <h:b>AES-GCM-256 (RFC 4106) and</h:b> [<h:b>selection:</h:b> <h:i>AES-CBC-256 (RFC 3602), <h:b>no other algorithms</h:b></h:i>] together with a Secure Hash Algorithm (SHA)-based HMAC [<h:b>selection:</h:b> <h:i>HMAC-SHA-384, no HMAC algorithm</h:i>].
+                <h:p><h:b>FCS_IPSEC_EXT.1.4 </h:b>The TSF shall implement the IPsec protocol ESP as defined by RFC 4303 using the cryptographic algorithms <h:b>AES-GCM-256 (RFC 4106) and</h:b> [<h:i><h:b>no other algorithms</h:b></h:i>] together with a Secure Hash Algorithm (SHA)-based HMAC [<h:b>selection:</h:b> <h:i>HMAC-SHA-384, no HMAC algorithm</h:i>].
                
               </h:p>
               <h:p><h:b>Application Note: </h:b>SHA-based HMAC is not required since AES-GCM satisfies both confidentiality and integrity functions.

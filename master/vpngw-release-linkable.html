@@ -944,8 +944,7 @@ provide all of its security functionality<a id="period_95" href="#period_95">. <
 		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_COP.1/AEAD: Cryptographic Operation - Authenticated Encryption with Associated Data</h4><span class="description">
               <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been modified frmo its definition in the NDcPP to mandate selection of AES-GCM mode and 256-bit key sizes<a id="period_117" href="#period_117">. </a>Other selections may still be made if they are needed for other part of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr><a id="period_118" href="#period_118">. </a></p>
               <p>The text of FCS_COP.1.1/AEAD is replaced with:</p>
-              <p>
-                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform [authenticated encryption with associated data] in accordance with a specified cryptographic algorithm [<b>selection:</b> <i>Cryptographic algorithm</i>] and cryptographic key sizes [<b>selection:</b> <i>Cryptographic key sizes</i>] that meet the following: [<b>selection:</b> <i>List of standards</i>]<a id="period_119" href="#period_119">. </a>              </p><p>
+              <p><b>FCS_COP.1.1/AEAD </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform [authenticated encryption with associated data] in accordance with a specified cryptographic algorithm [<b>selection:</b> <i>Cryptographic algorithm</i>] and cryptographic key sizes [<b>selection:</b> <i>Cryptographic key sizes</i>] that meet the following: [<b>selection:</b> <i>List of standards</i>]<a id="period_119" href="#period_119">. </a>              </p><p>
                 The following table provides the allowable choices for completion of the selection operations of FCS_COP.1.1/AEAD<a id="period_120" href="#period_120">. </a>In the last column, an X indicates it is mandatory for the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to include this row, and an O indicates that the row is optional and need not be included in the table if the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> does not perform that function<a id="period_121" href="#period_121">. </a>Note that it is not necessary for the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to reproduce this final column in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_122" href="#period_122">. </a>              </p>
               <b>Allowable choices for FCS_COP.1/AEAD:</b><br>
               <table>
@@ -977,8 +976,7 @@ provide all of its security functionality<a id="period_95" href="#period_95">. <
               <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been modified from its definition in the NDcPP to support this
                 <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>&#8217;s IPsec requirements by mandating support for GCM mode<a id="period_124" href="#period_124">. </a></p>
                 <p>The text of the FCS_COP.1.1/DataEncryption is replaced with:</p>
-                <p>
-                  The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform encryption/decryption in accordance with a specified
+              <p><b>FCS_COP.1.1/DataEncryption </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform encryption/decryption in accordance with a specified
                   cryptographic algorithm AES operating in <b>GCM mode as defined in
                     FCS_COP.1/AEAD and</b> [selection:<i><ul>
                       <li>CBC mode as defined in FCS_COP.1/SKC</li>
@@ -993,8 +991,7 @@ provide all of its security functionality<a id="period_95" href="#period_95">. <
               
               <p><b>FCS_IPSEC_EXT.1.4</b>: This element has been modified to require the use of CNSA 1.0-compliant parameters<a id="period_128" href="#period_128">. </a></p>
               <p>The text of FCS_IPSEC_EXT.1.4 is replaced with:</p>
-              <p>
-                FCS_IPSEC_EXT.1.4 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the IPsec protocol ESP as defined by RFC 4303 using the cryptographic algorithms <b>AES-GCM-256 (RFC 4106) and</b> [<b>selection:</b> <i>AES-CBC-256 (RFC 3602), <b>no other algorithms</b></i>] together with a Secure Hash Algorithm (SHA)-based HMAC [<b>selection:</b> <i>HMAC-SHA-384, no HMAC algorithm</i>]<a id="period_129" href="#period_129">. </a>               
+                <p><b>FCS_IPSEC_EXT.1.4 </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the IPsec protocol ESP as defined by RFC 4303 using the cryptographic algorithms <b>AES-GCM-256 (RFC 4106) and</b> [<b>selection:</b> <i>AES-CBC-256 (RFC 3602), <b>no other algorithms</b></i>] together with a Secure Hash Algorithm (SHA)-based HMAC [<b>selection:</b> <i>HMAC-SHA-384, no HMAC algorithm</i>]<a id="period_129" href="#period_129">. </a>               
               </p>
               <p><b>Application Note: </b>SHA-based HMAC is not required since AES-GCM satisfies both confidentiality and integrity functions<a id="period_130" href="#period_130">. </a>              IPsec may use a truncated version of the SHA-based HMAC functions contained in the selections<a id="period_131" href="#period_131">. </a>Where a truncated output is used, this is described in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr><a id="period_132" href="#period_132">. </a></p>
               <br><br>
@@ -1002,7 +999,7 @@ provide all of its security functionality<a id="period_95" href="#period_95">. <
                 <p><b>FCS_IPSEC_EXT.1.5</b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element<a id="period_133" href="#period_133">. </a>It has also been modified to mandate the selection of RFC 4868 conformance due to the required support for SHA-384<a id="period_134" href="#period_134">. </a></p>
                 
                 <p>The text of FCS_IPSEC_EXT.1.5 is replaced with:</p>
-                <p>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the protocol: [<i>
+                <p><b>FCS_IPSEC_EXT.1.5 </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the protocol: [<i>
                 <ul>
                   <li>IKEv2 as defined in RFC 7296 [<b>selection: </b>with no support for NAT traversal, with mandatory support for NAT traversal as specified in RFC 7296, Section 2.23], and [RFC 4868 for hash functions]</li>
                 </ul>
@@ -1011,7 +1008,7 @@ provide all of its security functionality<a id="period_95" href="#period_95">. <
 
               <p><b>FCS_IPSEC_EXT.1.6</b>: This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to remove support for non-CNSA parameters and algorithms<a id="period_135" href="#period_135">. </a>This includes mandating the use of IKEv2<a id="period_136" href="#period_136">. </a></p>
               <p>The text of FCS_IPSEC_EXT.1.6 is replaced with:</p>
-              <p>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the encrypted payload in the [<i>IKEv2</i>] protocol uses the cryptographic algorithms
+                <p><b>FCS_IPSEC_EXT.1.6 </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure the encrypted payload in the [<i>IKEv2</i>] protocol uses the cryptographic algorithms
               [<i>AES-GCM-256 (specified in RFC 5282)</i>]<a id="period_137" href="#period_137">. </a>              </p>
               <p><b>Application Note: </b>This element is changed from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to mandate support of 256-bit GCM<a id="period_138" href="#period_138">. </a>AES-GCM implementation for IPsec is specified in RFC 5282<a id="period_139" href="#period_139">. </a></p>
               <br><br>
@@ -1019,7 +1016,7 @@ provide all of its security functionality<a id="period_95" href="#period_95">. <
                 <p><b>FCS_IPSEC_EXT.1.7</b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element<a id="period_140" href="#period_140">. </a></p>
                 
                 <p>The text of FCS_IPSEC_EXT.1.7 is replaced with:</p>
-                <p>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that [<i>
+                <p><b>FCS_IPSEC_EXT.1.7 </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that [<i>
                   <ul>
                     <li>IKEv2 <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> lifetimes can be configured by a Security Administrator based on [<b>selection:</b> 
                       <ul>
@@ -1034,7 +1031,7 @@ provide all of its security functionality<a id="period_95" href="#period_95">. <
                 <p><b>FCS_IPSEC_EXT.1.8</b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element<a id="period_142" href="#period_142">. </a></p>
                 
                 <p>The text of FCS_IPSEC_EXT.1.8 is replaced with:</p>
-                <p>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that [<i>
+                <p><b>FCS_IPSEC_EXT.1.8 </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that [<i>
                   <ul>
                     <li>IKEv2 Child <abbr class="dyn-abbr"><a href="#abbr_SA">SA</a></abbr> lifetimes can be configured by a Security Administrator based on [<b>selection:</b> 
                       <ul>
@@ -1049,7 +1046,7 @@ provide all of its security functionality<a id="period_95" href="#period_95">. <
                 <p><b>FCS_IPSEC_EXT.1.10</b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element<a id="period_144" href="#period_144">. </a></p>
                 
                 <p>The text of FCS_IPSEC_EXT.1.10 is replaced with:</p>
-                <p>The shall generate nonces used in [<i>IKEv2</i>] protocol exchanges of length [<i><b>selection: </b>
+                <p><b>FCS_IPSEC_EXT.1.10 </b>The shall generate nonces used in [<i>IKEv2</i>] protocol exchanges of length [<i><b>selection: </b>
                 <ul>
                   <li>according to the security strength associated with the negotiated Diffie-Hellman group;</li>
                   <li>at least 128 bits in size and at least half the output size of the negotiated pseudorandom function (PRF) hash</li>
@@ -1058,7 +1055,7 @@ provide all of its security functionality<a id="period_95" href="#period_95">. <
               
               <p><b>FCS_IPSEC_EXT.1.11</b>: This element has been modified from its definition in the NDcPP by mandating <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> group 20, which is selectable in the original definition of the element<a id="period_146" href="#period_146">. </a>              The selectable options have also been restricted to conform with CNSA 1.0 parameters<a id="period_147" href="#period_147">. </a></p>
               <p>The text of FCS_IPSEC_EXT.1.11 is replaced with:</p>
-              <p>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> protocols implement <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> groups [
+                <p><b>FCS_IPSEC_EXT.1.11 </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that <abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr> protocols implement <abbr class="dyn-abbr"><a href="#abbr_DH">DH</a></abbr> groups [
               <i><ul><b><li>20 (384-bit Random ECP) according to RFC 5114</li></b></ul></i>] <b>and</b>
               [<ul>
               <li>[<b>selection:</b> <i>15 (3072-bit MODP), 16 (4096-bit MODP)] according to RFC 3526</i></li>
@@ -1070,13 +1067,13 @@ provide all of its security functionality<a id="period_95" href="#period_95">. <
                 <p><b>FCS_IPSEC_EXT.1.12</b>: This element has been modified from its definition in the NDcPP by choosing only the selections for IKEv2, which are selectable in the original definition of the element<a id="period_151" href="#period_151">. </a></p>
                   
                 <p>The text of FCS_IPSEC_EXT.1.12 is replaced with:</p>
-                <p>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to ensure that the strength of the symmetric algorithm (in terms of the number of bits in the key) negotiated to protect the [<b>selection: </b><i>IKEv2 IKE_SA</i>] connection is greater than or equal to the strength of the symmetric algorithm (in terms of the number of bits in the key) negotiated to protect the [<b>selection: </b><i>IKEv2 CHILD_SA</i>] connection<a id="period_152" href="#period_152">. </a></p>
+                <p><b>FCS_IPSEC_EXT.1.12 </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to ensure that the strength of the symmetric algorithm (in terms of the number of bits in the key) negotiated to protect the [<b>selection: </b><i>IKEv2 IKE_SA</i>] connection is greater than or equal to the strength of the symmetric algorithm (in terms of the number of bits in the key) negotiated to protect the [<b>selection: </b><i>IKEv2 CHILD_SA</i>] connection<a id="period_152" href="#period_152">. </a></p>
                 <p><b>Application Note: </b>Because this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> only permits the use of 256-bit symmetric algorithms, this requirement will be satisfied by default<a id="period_153" href="#period_153">. </a></p>
                 <br><br>
               
               <p><b>FCS_IPSEC_EXT.1.13</b>: This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by mandating the use of IKEv2 and its authentication methods<a id="period_154" href="#period_154">. </a></p>
               <p>The text of FCS_IPSEC_EXT.1.13 is replaced with:</p>
-              <p>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that <b>IKEv2</b> performs peer authentication using [<b>selection: </b><i>RSA, ECDSA</i>]
+                <p><b>FCS_IPSEC_EXT.1.13 </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that <b>IKEv2</b> performs peer authentication using [<b>selection: </b><i>RSA, ECDSA</i>]
               that use X.509v3 certificates that conform to RFC 4945 and [<b>selection: </b><i>Pre-shared Keys <b>that conform to RFC 8784, Pre-shared Keys transmitted
               via EAP-TTLS, EAP-TLS,</b> no other method</i>]<a id="period_155" href="#period_155">. </a>              <br><br></p>
               <p><b>Application Note: </b> At least one public-key-based Peer Authentication method is required in order to
@@ -1099,7 +1096,7 @@ provide all of its security functionality<a id="period_95" href="#period_95">. <
               
               <p><b>FCS_IPSEC_EXT.1.14</b>: This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to require <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> to be supported for certificate reference identifiers<a id="period_166" href="#period_166">. </a></p>
               <p>The text of FCS_IPSEC_EXT.1.14 is replaced with:</p>
-              <p>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall only establish a trusted channel if the presented identifier in the
+                <p><b>FCS_IPSEC_EXT.1.14 </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall only establish a trusted channel if the presented identifier in the
                 received certificate matches the configured reference identifier, where the
                 presented and reference identifiers are of the following fields and types:
                 <b>Distinguished Name (<abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr>),</b> [<b>selection:</b> <i><abbr class="dyn-abbr"><a href="#abbr_SAN">SAN</a></abbr>: IP address, <abbr class="dyn-abbr"><a href="#abbr_SAN">SAN</a></abbr>: Fully Qualified Domain Name (<abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr>), <abbr class="dyn-abbr"><a href="#abbr_SAN">SAN</a></abbr>: user <abbr class="dyn-abbr"><a href="#abbr_FQDN">FQDN</a></abbr>,
@@ -1111,9 +1108,8 @@ provide all of its security functionality<a id="period_95" href="#period_95">. <
                 inclusion in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because the refinements to FMT_SMF.1
                 mandate its inclusion<a id="period_170" href="#period_170">. </a>Note that it is also refined to refer specifically to
                 keys and certificates used for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> operation<a id="period_171" href="#period_171">. </a></p>
-              <p>The text of the requirement is replaced with:</p>
-              <p>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall restrict the ability to [<i>manage</i>] the [<i>cryptographic keys <b>and
+              <p>The text of FMT_MTD.1.1/CryptoKeys is replaced with:</p>
+              <p><b>FMT_MTD.1.1/CryptoKeys </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall restrict the ability to [<i>manage</i>] the [<i>cryptographic keys <b>and
               certificates used for <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> operation</b></i>] to [<i>Security Administrators</i>]<a id="period_172" href="#period_172">. </a>
               </p>
             </span></div><h2 id="man-sfrs" class="indexable" data-level="2">5.2 TOE Security Functional Requirements</h2>

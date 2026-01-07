@@ -1040,15 +1040,15 @@ provide all of its security functionality.</p>
                       <li>CCM mode as defined in FCS_COP.1/AEAD</li>
                       <li><b>no other modes</b></li>
                     </ul></i>].
-                </p>                
+                </p>       
+              <p><b>Application Note:</b> Other AES modes are selectable if the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> uses them for another part of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. A selection for 'no other modes' has been refined into the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> because it is possible that a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may conform to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by using AES-GCM exclusively for AES data encryption and decryption.</p>
             </span></div><div class="comp" id="@id"><h4>FCS_IPSEC_EXT.1: IPsec Protocol</h4><span class="description">
               <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been modified from its definition in the NDcPP to support
-              this module's IPsec requirements by mandating use of CNSA 1.0 parameters, where applicable.
-              Any requirement not mentioned in this section is unchanged from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</p>
-              
+              this module's IPsec requirements by mandating use of AES-GCM-256 and IKEv2 where applicable.
+              Any element that is not mentioned in this section is unchanged from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</p>
               <p><b>FCS_IPSEC_EXT.1.4</b>: This element has been modified to require the use of CNSA 1.0-compliant parameters.</p>
               <p>The text of FCS_IPSEC_EXT.1.4 is replaced with:</p>
-                <p><b>FCS_IPSEC_EXT.1.4 </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the IPsec protocol ESP as defined by RFC 4303 using the cryptographic algorithms <b>AES-GCM-256 (RFC 4106) and</b> [<b>selection:</b> <i>AES-CBC-256 (RFC 3602), <b>no other algorithms</b></i>] together with a Secure Hash Algorithm (SHA)-based HMAC [<b>selection:</b> <i>HMAC-SHA-384, no HMAC algorithm</i>].
+                <p><b>FCS_IPSEC_EXT.1.4 </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the IPsec protocol ESP as defined by RFC 4303 using the cryptographic algorithms <b>AES-GCM-256 (RFC 4106) and</b> [<i><b>no other algorithms</b></i>] together with a Secure Hash Algorithm (SHA)-based HMAC [<b>selection:</b> <i>HMAC-SHA-384, no HMAC algorithm</i>].
                
               </p>
               <p><b>Application Note: </b>SHA-based HMAC is not required since AES-GCM satisfies both confidentiality and integrity functions.

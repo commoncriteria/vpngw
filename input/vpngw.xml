@@ -548,9 +548,42 @@ expected to enforce.<h:br/>
         <section title="Cryptographic Support (FCS)" id="nd-m-fcs">
 
           <base-sfr-spec cc-id="fcs_cop.1" iteration="AEAD" id="nd-fcs-cop-1-aead" title="Cryptographic Operation - Authenticated Encryption with Associated Data">
-            <consistency-rationale></consistency-rationale>
-            <description>We do not have a way to mandate specific selections in a crypto catalog SFR,
-                however, GCM mode must be claimed and 256 bits must be selected for it.</description>
+            <consistency-rationale>This PP-Module mandates a specific selection to be made in this SFR, which does not conflict with the Base-PP because the required selection is an option originally defined in it.</consistency-rationale>
+            <description>
+              <h:p>This SFR has been modified frmo its definition in the NDcPP to mandate selection of AES-GCM mode and 256-bit key sizes. Other selections may still be made if they are needed for other part of the TSF.</h:p>
+              <h:p>The text of FCS_COP.1.1/AEAD is replaced with:</h:p>
+              <h:p>
+                The TSF shall perform [authenticated encryption with associated data] in accordance with a specified cryptographic algorithm [<h:b>selection:</h:b> <h:i>Cryptographic algorithm</h:i>] and cryptographic key sizes [<h:b>selection:</h:b> <h:i>Cryptographic key sizes</h:i>] that meet the following: [<h:b>selection:</h:b> <h:i>List of standards</h:i>].
+              </h:p><h:p>
+                The following table provides the allowable choices for completion of the selection operations of FCS_COP.1.1/AEAD. In the last column, an X indicates it is mandatory for the ST author to include this row, and an O indicates that the row is optional and need not be included in the table if the TSF does not perform that function. Note that it is not necessary for the ST author to reproduce this final column in the ST.
+              </h:p>
+              <h:b>Allowable choices for FCS_COP.1/AEAD:</h:b><h:br/>
+              <h:table>
+                <h:tr>
+                  <h:th>Identifier</h:th>
+                  <h:th>Cryptographic algorithm</h:th>
+                  <h:th>Cryptographic Key Sizes</h:th>
+                  <h:th>List of standards</h:th>
+                  <h:th>Mandatory or Optional</h:th>
+                </h:tr>
+                <h:tr>
+                  <h:td>AES-CCM</h:td>
+                  <h:td>AES in CCM mode with unpredictable, non-repeating nonce, minimum size of 64 bits</h:td>
+                  <h:td>256 bits</h:td>
+                  <h:td><h:p>[<h:b>selection:</h:b> <h:i>ISO/IEC 18033-3:2010 (Subclause 5.2), FIPS PUB 197</h:i>] [AES]</h:p><h:p>
+                    [<h:b>selection:</h:b> <h:i>ISO/IEC 19772:2020 (Clause 7), NIST SP 800-38C</h:i>] [CCM]</h:p></h:td>
+                  <h:td>O</h:td>
+                </h:tr>
+                <h:tr>
+                  <h:td>AES-GCM</h:td>
+                  <h:td>AES in GCM mode with non-repeating IVs using [<h:b>selection:</h:b> <h:i>deterministic, RBG-based</h:i>], IV construction; the tag must be of length [<h:b>selection:</h:b> <h:i>96, 104, 112, 120, 128</h:i>] bits.</h:td>
+                  <h:td>256 bits</h:td>
+                  <h:td><h:p>[<h:b>selection:</h:b> <h:i>ISO/IEC 18033-3:2010 (Subclause 5.2), FIPS PUB 197</h:i>] [AES]</h:p><h:p>
+                    [<h:b>selection:</h:b> <h:i>ISO/IEC 19772:2020 (Clause 10), NIST SP 800-38D</h:i>] [GCM]</h:p></h:td>
+                  <h:td>X</h:td>
+                </h:tr>
+              </h:table>
+            </description>
             <no-change/>
           </base-sfr-spec>
           
@@ -560,7 +593,7 @@ expected to enforce.<h:br/>
             <description>                
               <h:p>This SFR has been modified from its definition in the NDcPP to support this
                 PP-Module’s IPsec requirements by mandating support for GCM mode.</h:p>
-                <h:p>The text of the requirement is replaced with:</h:p>
+                <h:p>The text of the FCS_COP.1.1/DataEncryption is replaced with:</h:p>
                 <h:p>
                   The TSF shall perform encryption/decryption in accordance with a specified
                   cryptographic algorithm AES operating in <h:b>GCM mode as defined in
@@ -586,21 +619,70 @@ expected to enforce.<h:br/>
               <h:p><h:b>FCS_IPSEC_EXT.1.4</h:b>: This element has been modified to require the use of CNSA 1.0-compliant parameters.</h:p>
               <h:p>The text of FCS_IPSEC_EXT.1.4 is replaced with:</h:p>
               <h:p>
-                The TSF shall implement the IPsec protocol ESP as defined by RFC 4303 using the
-                cryptographic algorithms [<h:i>AES-GCM-256 (<h:b>specified in</h:b> RFC 4106)</h:i>]
-                together with a Secure Hash Algorithm (SHA)-based HMAC [<h:b>selection:</h:b><h:i>HMAC-SHA-384, no HMAC algorithm</h:i>].
+                FCS_IPSEC_EXT.1.4 The TSF shall implement the IPsec protocol ESP as defined by RFC 4303 using the cryptographic algorithms <h:b>AES-GCM-256 (RFC 4106) and</h:b> [<h:b>selection:</h:b> <h:i>AES-CBC-256 (RFC 3602), <h:b>no other algorithms</h:b></h:i>] together with a Secure Hash Algorithm (SHA)-based HMAC [<h:b>selection:</h:b> <h:i>HMAC-SHA-384, no HMAC algorithm</h:i>].
+               
               </h:p>
               <h:p><h:b>Application Note: </h:b>SHA-based HMAC is not required since AES-GCM satisfies both confidentiality and integrity functions.
               IPsec may use a truncated version of the SHA-based HMAC functions contained in the selections. Where a truncated output is used, this is described in the TSS.</h:p>
               <h:br/><h:br/>
+                
+                <h:p><h:b>FCS_IPSEC_EXT.1.5</h:b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element. It has also been modified to mandate the selection of RFC 4868 conformance due to the required support for SHA-384.</h:p>
+                
+                <h:p>The text of FCS_IPSEC_EXT.1.5 is replaced with:</h:p>
+                <h:p>The TSF shall implement the protocol: [<h:i>
+                <h:ul>
+                  <h:li>IKEv2 as defined in RFC 7296 [<h:b>selection: </h:b>with no support for NAT traversal, with mandatory support for NAT traversal as specified in RFC 7296, Section 2.23], and [RFC 4868 for hash functions]</h:li>
+                </h:ul>
+                </h:i>]</h:p>
+                <h:br/><h:br/>
 
               <h:p><h:b>FCS_IPSEC_EXT.1.6</h:b>: This SFR is modified from its definition in the Base-PP to remove support for non-CNSA parameters and algorithms. This includes mandating the use of IKEv2.</h:p>
               <h:p>The text of FCS_IPSEC_EXT.1.6 is replaced with:</h:p>
               <h:p>The TSF shall ensure the encrypted payload in the [<h:i>IKEv2</h:i>] protocol uses the cryptographic algorithms
-              [<h:i>AES-GCM-256 (<h:b>specified in</h:b> RFC 5282)</h:i>].
+              [<h:i>AES-GCM-256 (specified in RFC 5282)</h:i>].
               </h:p>
               <h:p><h:b>Application Note: </h:b>This element is changed from its definition in the Base-PP to mandate support of 256-bit GCM. AES-GCM implementation for IPsec is specified in RFC 5282.</h:p>
               <h:br/><h:br/>
+                
+                <h:p><h:b>FCS_IPSEC_EXT.1.7</h:b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element.</h:p>
+                
+                <h:p>The text of FCS_IPSEC_EXT.1.7 is replaced with:</h:p>
+                <h:p>The TSF shall ensure that [<h:i>
+                  <h:ul>
+                    <h:li>IKEv2 SA lifetimes can be configured by a Security Administrator based on [<h:b>selection:</h:b> 
+                      <h:ul>
+                        <h:li>number of bytes;</h:li>
+                        <h:li>length of time, where the time values cna be configured between [<h:b>assignment: </h:b> minimum configurable rekey time] and [<h:b>assignment: </h:b>maximum configurable rekey time]</h:li>
+                      </h:ul>
+                      ]</h:li>
+                  </h:ul>
+                </h:i>].</h:p>
+                <h:br/><h:br/>
+                
+                <h:p><h:b>FCS_IPSEC_EXT.1.8</h:b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element.</h:p>
+                
+                <h:p>The text of FCS_IPSEC_EXT.1.8 is replaced with:</h:p>
+                <h:p>The TSF shall ensure that [<h:i>
+                  <h:ul>
+                    <h:li>IKEv2 Child SA lifetimes can be configured by a Security Administrator based on [<h:b>selection:</h:b> 
+                      <h:ul>
+                        <h:li>number of bytes;</h:li>
+                        <h:li>length of time, where the time values cna be configured between [<h:b>assignment: </h:b> minimum configurable rekey time] and [<h:b>assignment: </h:b>maximum configurable rekey time]</h:li>
+                      </h:ul>
+                      ]</h:li>
+                  </h:ul>
+                </h:i>].</h:p>
+                <h:br/><h:br/>
+                
+                <h:p><h:b>FCS_IPSEC_EXT.1.10</h:b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element.</h:p>
+                
+                <h:p>The text of FCS_IPSEC_EXT.1.10 is replaced with:</h:p>
+                <h:p>The shall generate nonces used in [<h:i>IKEv2</h:i>] protocol exchanges of length [<h:i><h:b>selection: </h:b>
+                <h:ul>
+                  <h:li>according to the security strength associated with the negotiated Diffie-Hellman group;</h:li>
+                  <h:li>at least 128 bits in size and at least half the output size of the negotiated pseudorandom function (PRF) hash</h:li>
+                </h:ul></h:i>].</h:p>
+                <h:br/><h:br/>
               
               <h:p><h:b>FCS_IPSEC_EXT.1.11</h:b>: This element has been modified from its definition in the NDcPP by mandating DH group 20, which is selectable in the original definition of the element.
               The selectable options have also been restricted to conform with CNSA 1.0 parameters.</h:p>
@@ -609,16 +691,22 @@ expected to enforce.<h:br/>
               <h:i><h:ul><h:b><h:li>20 (384-bit Random ECP) according to RFC 5114</h:li></h:b></h:ul></h:i>] <h:b>and</h:b>
               [<h:ul>
               <h:li>[<h:b>selection:</h:b> <h:i>15 (3072-bit MODP), 16 (4096-bit MODP)] according to RFC 3526</h:i></h:li>
-              <h:li><h:i><h:b>no other DH Groups</h:b> according to RFC 5114</h:i></h:li>
               </h:ul>].
               </h:p>
               <h:p><h:b>Application Note: </h:b>This element has been modified from its definition in the NDcPP by mandating DH group 20, which is selectable in the original definition of the element. 
               Any groups other than 20 that are allowed per the element may be selected by the ST author but they are not required for conformance to this PP-Module.</h:p>
               <h:br/><h:br/>
+                
+                <h:p><h:b>FCS_IPSEC_EXT.1.12</h:b>: This element has been modified from its definition in the NDcPP by choosing only the selections for IKEv2, which are selectable in the original definition of the element.</h:p>
+                  
+                <h:p>The text of FCS_IPSEC_EXT.1.12 is replaced with:</h:p>
+                <h:p>The TSF shall be able to ensure that the strength of the symmetric algorithm (in terms of the number of bits in the key) negotiated to protect the [<h:b>selection: </h:b><h:i>IKEv2 IKE_SA</h:i>] connection is greater than or equal to the strength of the symmetric algorithm (in terms of the number of bits in the key) negotiated to protect the [<h:b>selection: </h:b><h:i>IKEv2 CHILD_SA</h:i>] connection.</h:p>
+                <h:p><h:b>Application Note: </h:b>Because this PP-Module only permits the use of 256-bit symmetric algorithms, this requirement will be satisfied by default.</h:p>
+                <h:br/><h:br/>
               
               <h:p><h:b>FCS_IPSEC_EXT.1.13</h:b>: This SFR is modified from its definition in the Base-PP by mandating the use of IKEv2 and its authentication methods.</h:p>
               <h:p>The text of FCS_IPSEC_EXT.1.13 is replaced with:</h:p>
-              <h:p>The TSF shall ensure that <h:b>[<h:i>IKEv2</h:i>]</h:b> protocols perform peer authentication using [<h:b>selection: </h:b><h:i>RSA, ECDSA</h:i>]
+              <h:p>The TSF shall ensure that <h:b>IKEv2</h:b> performs peer authentication using [<h:b>selection: </h:b><h:i>RSA, ECDSA</h:i>]
               that use X.509v3 certificates that conform to RFC 4945 and [<h:b>selection: </h:b><h:i>Pre-shared Keys <h:b>that conform to RFC 8784, Pre-shared Keys transmitted
               via EAP-TTLS, EAP-TLS,</h:b> no other method</h:i>].
               <h:br/><h:br/></h:p>
@@ -694,7 +782,7 @@ expected to enforce.<h:br/>
                     <h:br/><h:br/>
                     This SFR is modified from its definition in the Base-PP by adding new selections for IKE versions and authentication methods.
                   </note>
-                </f-element>f
+                </f-element>
                 </f-component>
               </xpath-specified>
               </insert-after>
@@ -2923,7 +3011,16 @@ component defined for this PP-Module, it only has one family, FPF_RUL_EXT.
 	capabilities of the TOE in addition to the functionality required by the claimed Base-PP.		 
  </appendix>
   
-  <bibliography/>
+  <bibliography>
+    <cc-entry/>
+    <entry id="bibNDcPP">
+      <tag>NDcPP</tag>
+      <description>
+        <h:a href="https://www.niap-ccevs.org/protectionprofiles/524">
+          collaborative Protection Profile for Network Devices, Version 4.0, December 22, 2025</h:a>
+      </description>
+    </entry>
+  </bibliography>
     
 
 	<!-- Appendix G: Acronyms -->

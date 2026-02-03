@@ -25,7 +25,10 @@ A list of products that have passed evaluation against this Protection Profile c
 * [PP-Module for Virtual Private Network (VPN) Gateways](https://commoncriteria.github.io/pp/vpngw/vpngw.html) (html)
 
 ## Release Version
-* [PP-Module for Virtual Private Network (VPN) Gateways](VPN Module)
+* [PP-Module for Virtual Private Network (VPN) Gateways](https://commoncriteria.github.io/vpngw/release-2.0/vpngw-release.html) (html)
+* [PP-Module for Virtual Private Network (VPN) Gateways](https://commoncriteria.github.io/vpngw/release-2.0/vpngw-release.html.pdf) (pdf)
+* [Supporting Documents for Virtual Private Network (VPN) Gateways](https://commoncriteria.github.io/vpngw/release-2.0/vpngw-sd.html) (html)
+* [Supporting Documents for Virtual Private Network (VPN) Gateways](https://commoncriteria.github.io/vpngw/release-2.0/vpngw-sd.html.pdf) (pdf)
 
 ## Contributing
 

@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xsl-stylesheet type="text/xsl" href="../transforms/module/module2html.xsl"?>
 <?xml-model href="../transforms/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<Module>
+<Module name="Virtual Private Network (VPN) Gateway" boilerplate="yes" target-product="VPN Gateway" xmlns="https://niap-ccevs.org/cc/v1" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">
   <PPReference>
-    <ReferenceTable/>
+    <ReferenceTable>
+      <PPVersion>2.0</PPVersion>
+      <PPAuthor>National Information Assurance Partnership</PPAuthor>
+      <PPPubDate>2026-01-21</PPPubDate>
+      <Keywords>VPN, VPN Gateway, VPN GW, IPsec</Keywords>
+    </ReferenceTable>
   </PPReference>
-  <RevisionHistory/>
+  <RevisionHistory>
+    <entry>
+      <version>1.0</version>
+      <date>2019-09-17</date>
+      <subject>Initial publication</subject>
+    </entry>
+    <entry>
+      <version>1.1</version>
+      <date>2020-06-18</date>
+      <subject>Compatibility with CPP_ND_V2.2E, incorporation of NIAP Technical Decisions</subject>
+    </entry>
+    <entry>
+      <version>1.2</version>
+      <date>2022-03-31</date>
+      <subject>Format conversion, incorporation of NIAP Technical Decisions, TC feedback</subject>
+    </entry>
+    <entry>
+      <version>1.3</version>
+      <date>2023-08-16</date>
+      <subject>Incorporation of NIAP Technical Decisions, TC feedback</subject>
+    </entry>
+    <entry>
+      <version>2.0</version>
+      <date>2026-01-21</date>
+      <subject>Incorporation of NIAP Technical Decisions, Update to CC:2022</subject>
+    </entry>
+  </RevisionHistory>
   <include-pkg id="X509">
     <git>
       <url>https://github.com/commoncriteria/X509</url>
@@ -21,19 +52,19 @@
       <xref g="CC"/>
       and to define functional and assurance requirements for such
       products. This PP-Module is intended for use with the following Base-PP:
-      <ul>
-        <li>Network Device collaborative Protection Profile Version 4.0</li>
-      </ul>
-      <p>This Base-PP is valid because a VPN gateway is a device at the edge of a private network that terminates
+      <h:ul>
+        <h:li>Network Device collaborative Protection Profile Version 4.0</h:li>
+      </h:ul>
+      <h:p>This Base-PP is valid because a VPN gateway is a device at the edge of a private network that terminates
       an IPsec tunnel, which provides device authentication, confidentiality, and integrity of information
       traversing a public or untrusted network. This is functionality that typically will be implemented by a
-      network device.</p>
-      <p>A Target of Evaluation (TOE) that conforms to a PP-Configuration containing this PP-Module may be a ‘Distributed TOE’ as
+      network device.</h:p>
+      <h:p>A Target of Evaluation (TOE) that conforms to a PP-Configuration containing this PP-Module may be a ‘Distributed TOE’ as
       defined in the NDcPP; however, the VPN gateway functionality described in this PP-Module should be in
       a single TOE component. This PP-Module does not prohibit the TOE from implementing other security
       functionality in a distributed manner. For example, a TOE may have a centralized device that performs
       VPN gateway and other security functionality (such as intrusion prevention) with a number of distributed
-      nodes that help in the enforcement of the secondary functionality.</p>
+      nodes that help in the enforcement of the secondary functionality.</h:p>
     </sec:Overview>
     <tech-terms>
       <suppress>Extended Package</suppress>
@@ -60,15 +91,15 @@
       <term full="Small Form-Factor Pluggable" abbr="SFP"/>
     </tech-terms>
     <sec:Compliant_Targets_of_Evaluation>
-      <p>This PP-Module specifically addresses network gateway devices that terminate IPsec VPN tunnels. A
+      <h:p>This PP-Module specifically addresses network gateway devices that terminate IPsec VPN tunnels. A
       compliant VPN gateway is a device composed of hardware and software that is connected to two or more
       distinct networks and has an infrastructure role in the overall enterprise network. In particular, a VPN
       gateway establishes a secure tunnel that provides an authenticated and encrypted path to one or more other sites
-      and thereby decreases the risk of exposure of information transiting an untrusted network.</p>
-      <p>The baseline requirements of this PP-Module are those determined necessary for a multi-site VPN
+      and thereby decreases the risk of exposure of information transiting an untrusted network.</h:p>
+      <h:p>The baseline requirements of this PP-Module are those determined necessary for a multi-site VPN
       gateway device. A compliant TOE may also contain the ability to act as a headend for remote clients.
       Because this capability is optional, the remote client-based requirements have been included in
-      Appendix A.</p>
+      Appendix A.</h:p>
       <sec:TOE_Boundary>The physical boundary for a TOE that conforms to this PP-Module is a hardware appliance that also
         provides generalized network device functionality, such as auditing, identification and authentication, and cryptographic services for
         network communications. The TOE’s logical boundary includes all functionality required by the claimed
@@ -160,7 +191,7 @@
     The security problem is described in terms of the threats that the TOE is expected to address,
 assumptions about its operational environment (OE), and any organizational security policies that the TOE is
 expected to enforce.
-    <br/>
+    <h:br/>
     <!-- 3.1 Threats -->
     <sec:Threats>
       The following threats defined in this PP-Module extend the threats defined by the Base-PP.
@@ -192,14 +223,14 @@ expected to enforce.
             entities using an authenticated path into the protected network. Devices located outside the
             protected network may, likewise, offer services that are inappropriate for access from within the
             protected network.
-            <br/>
+            <h:br/>
             From an ingress perspective, VPN gateways can be configured so that only those network servers
             intended for external consumption by entities operating on a trusted network (e.g., machines
             operating on a network where the peer VPN gateways are supporting the connection) are accessible
             and only via the intended ports. This serves to mitigate the potential for network entities outside a
             protected network to access network servers or services intended only for consumption or access
             inside a protected network.
-            <br/>
+            <h:br/>
             From an egress perspective, VPN gateways can be configured so that only specific external services
             (e.g., based on destination port) can be accessed from within a protected network, or moreover are
             accessed via an encrypted channel. For example, access to external mail services can be blocked to
@@ -240,7 +271,7 @@ expected to enforce.
             protected network can establish communications with those external devices (e.g., as a result of a
             phishing episode or by inadvertent responses to email messages), then those internal devices may be
             susceptible to the unauthorized disclosure of information.
-            <br/>
+            <h:br/>
             From an infiltration perspective, VPN gateways serve not only to limit access to only specific
             destination network addresses and ports within a protected network, but whether network traffic will
             be encrypted or transmitted in plaintext. With these limits, general network port scanning can be
@@ -249,7 +280,7 @@ expected to enforce.
             nodes (e.g., web pages from a designated corporate web server). Additionally, access can be limited
             to only specific source addresses and ports so that specific networks or network nodes can be blocked
             from accessing a protected network thereby further limiting the potential disclosure of information.
-            <br/>
+            <h:br/>
             From an exfiltration perspective, VPN gateways serve to limit how network nodes operating on a
             protected network can connect to and communicate with other networks limiting how and where
             they can disseminate information. Specific external networks can be blocked altogether or egress
@@ -274,12 +305,12 @@ expected to enforce.
             offered inside the protected network, may attempt to conduct inappropriate activities while
             communicating with those allowed public services. Certain services offered from within a protected
             network may also represent a risk when accessed from outside the protected network.
-            <br/>
+            <h:br/>
             From an ingress perspective, it is generally assumed that entities operating on external networks are
             not bound by the use policies for a given protected network. Nonetheless, VPN gateways can log
             policy violations that might indicate violation of publicized usage statements for publicly available
             services.
-            <br/>
+            <h:br/>
             From an egress perspective, VPN gateways can be configured to help enforce and monitor protected
             network use policies. As explained in the other threats, a VPN gateway can serve to limit dissemination
             of data, access to external servers, and even disruption of services – all of these could be related to
@@ -309,12 +340,12 @@ expected to enforce.
             opportunity to conduct a “replay” attack. This method of attack allows the individual to capture
             packets traversing throughout the network and send the packets at a later time, possibly unknown by
             the intended receiver. Traffic is subject to replay if it meets the following conditions:
-            <ul>
-              <li>Cleartext: an attacker with the ability to view unencrypted traffic can identify an appropriate
-              segment of the communications to replay as well in order to cause the desired outcome</li>
-              <li>No integrity: alongside cleartext traffic, an attacker can make arbitrary modifications to captured
-            traffic and replay it to cause the desired outcome if the recipient has no means to detect these</li>
-            </ul>
+            <h:ul>
+              <h:li>Cleartext: an attacker with the ability to view unencrypted traffic can identify an appropriate
+              segment of the communications to replay as well in order to cause the desired outcome</h:li>
+              <h:li>No integrity: alongside cleartext traffic, an attacker can make arbitrary modifications to captured
+            traffic and replay it to cause the desired outcome if the recipient has no means to detect these</h:li>
+            </h:ul>
           </description>
           <!-- New mapping to build updated threat mapping table. -->
           <addressed-by>FPT_FLS.1/SelfTest</addressed-by>
@@ -332,7 +363,7 @@ expected to enforce.
     <!-- 3.2 Assumptions -->
     <sec:Assumptions>
       This PP-Module defines assumptions that extend those defined in the supported Base-PP.
-      <br/>
+      <h:br/>
       All assumptions for the OE of the Base-PP also apply to this PP-Module.
       A.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the TOE that are
       defined by the Base-PP and not the PP-Module.
@@ -388,47 +419,47 @@ expected to enforce.
           <base-sfr-spec cc-id="fcs_cop.1" id="nd-fcs-cop-1-aead" title="Cryptographic Operation - Authenticated Encryption with Associated Data" iteration="AEAD">
             <consistency-rationale>This PP-Module mandates a specific selection to be made in this SFR, which does not conflict with the Base-PP because the required selection is an option originally defined in it.</consistency-rationale>
             <description>
-              <p>This SFR has been modified frmo its definition in the NDcPP to mandate selection of AES-GCM mode and 256-bit key sizes. Other selections may still be made if they are needed for other part of the TSF.</p>
-              <p>The text of FCS_COP.1.1/AEAD is replaced with:</p>
-              <p>
-                <b>FCS_COP.1.1/AEAD </b>
-                The TSF shall perform [authenticated encryption with associated data] in accordance with a specified cryptographic algorithm [<b>selection:</b>
-                <i>Cryptographic algorithm</i>] and cryptographic key sizes [<b>selection:</b>
-                <i>Cryptographic key sizes</i>] that meet the following: [<b>selection:</b>
-                <i>List of standards</i>].
-              </p>
-              <p>The following table provides the allowable choices for completion of the selection operations of FCS_COP.1.1/AEAD. In the last column, an X indicates it is mandatory for the ST author to include this row, and an O indicates that the row is optional and need not be included in the table if the TSF does not perform that function. Note that it is not necessary for the ST author to reproduce this final column in the ST.</p>
-              <b>Allowable choices for FCS_COP.1/AEAD:</b>
-              <br/>
-              <table>
-                <tr></tr>
-                <tr>
-                  <td>AES-CCM</td>
-                  <td>AES in CCM mode with unpredictable, non-repeating nonce, minimum size of 64 bits</td>
-                  <td>256 bits</td>
-                  <td>
-                    <p>[<b>selection:</b> <i>ISO/IEC 18033-3:2010 (Subclause 5.2), FIPS PUB 197</i>] [AES]</p>
-                    <p>
-                      [<b>selection:</b>
-                      <i>ISO/IEC 19772:2020 (Clause 7), NIST SP 800-38C</i>] [CCM]
-                    </p>
-                  </td>
-                  <td>O</td>
-                </tr>
-                <tr>
-                  <td>AES-GCM</td>
-                  <td>AES in GCM mode with non-repeating IVs using [<b>selection:</b> <i>deterministic, RBG-based</i>], IV construction; the tag must be of length [<b>selection:</b> <i>96, 104, 112, 120, 128</i>] bits.</td>
-                  <td>256 bits</td>
-                  <td>
-                    <p>[<b>selection:</b> <i>ISO/IEC 18033-3:2010 (Subclause 5.2), FIPS PUB 197</i>] [AES]</p>
-                    <p>
-                      [<b>selection:</b>
-                      <i>ISO/IEC 19772:2020 (Clause 10), NIST SP 800-38D</i>] [GCM]
-                    </p>
-                  </td>
-                  <td>X</td>
-                </tr>
-              </table>
+              <h:p>This SFR has been modified frmo its definition in the NDcPP to mandate selection of AES-GCM mode and 256-bit key sizes. Other selections may still be made if they are needed for other part of the TSF.</h:p>
+              <h:p>The text of FCS_COP.1.1/AEAD is replaced with:</h:p>
+              <h:p>
+                <h:b>FCS_COP.1.1/AEAD </h:b>
+                The TSF shall perform [authenticated encryption with associated data] in accordance with a specified cryptographic algorithm [<h:b>selection:</h:b>
+                <h:i>Cryptographic algorithm</h:i>] and cryptographic key sizes [<h:b>selection:</h:b>
+                <h:i>Cryptographic key sizes</h:i>] that meet the following: [<h:b>selection:</h:b>
+                <h:i>List of standards</h:i>].
+              </h:p>
+              <h:p>The following table provides the allowable choices for completion of the selection operations of FCS_COP.1.1/AEAD. In the last column, an X indicates it is mandatory for the ST author to include this row, and an O indicates that the row is optional and need not be included in the table if the TSF does not perform that function. Note that it is not necessary for the ST author to reproduce this final column in the ST.</h:p>
+              <h:b>Allowable choices for FCS_COP.1/AEAD:</h:b>
+              <h:br/>
+              <h:table>
+                <h:tr></h:tr>
+                <h:tr>
+                  <h:td>AES-CCM</h:td>
+                  <h:td>AES in CCM mode with unpredictable, non-repeating nonce, minimum size of 64 bits</h:td>
+                  <h:td>256 bits</h:td>
+                  <h:td>
+                    <h:p>[<h:b>selection:</h:b> <h:i>ISO/IEC 18033-3:2010 (Subclause 5.2), FIPS PUB 197</h:i>] [AES]</h:p>
+                    <h:p>
+                      [<h:b>selection:</h:b>
+                      <h:i>ISO/IEC 19772:2020 (Clause 7), NIST SP 800-38C</h:i>] [CCM]
+                    </h:p>
+                  </h:td>
+                  <h:td>O</h:td>
+                </h:tr>
+                <h:tr>
+                  <h:td>AES-GCM</h:td>
+                  <h:td>AES in GCM mode with non-repeating IVs using [<h:b>selection:</h:b> <h:i>deterministic, RBG-based</h:i>], IV construction; the tag must be of length [<h:b>selection:</h:b> <h:i>96, 104, 112, 120, 128</h:i>] bits.</h:td>
+                  <h:td>256 bits</h:td>
+                  <h:td>
+                    <h:p>[<h:b>selection:</h:b> <h:i>ISO/IEC 18033-3:2010 (Subclause 5.2), FIPS PUB 197</h:i>] [AES]</h:p>
+                    <h:p>
+                      [<h:b>selection:</h:b>
+                      <h:i>ISO/IEC 19772:2020 (Clause 10), NIST SP 800-38D</h:i>] [GCM]
+                    </h:p>
+                  </h:td>
+                  <h:td>X</h:td>
+                </h:tr>
+              </h:table>
             </description>
             <no-change/>
           </base-sfr-spec>
@@ -437,29 +468,29 @@ expected to enforce.
             <consistency-rationale>This PP-Module restricts the Base-PP SFR to a subset of existing permissible
               functionality and does not introduce any new behavior.</consistency-rationale>
             <description>
-              <p>This SFR has been modified from its definition in the NDcPP to support this
-                PP-Module’s IPsec requirements by mandating support for GCM mode.</p>
-              <p>The text of the FCS_COP.1.1/DataEncryption is replaced with:</p>
-              <p>
-                <b>FCS_COP.1.1/DataEncryption </b>
+              <h:p>This SFR has been modified from its definition in the NDcPP to support this
+                PP-Module’s IPsec requirements by mandating support for GCM mode.</h:p>
+              <h:p>The text of the FCS_COP.1.1/DataEncryption is replaced with:</h:p>
+              <h:p>
+                <h:b>FCS_COP.1.1/DataEncryption </h:b>
                 The TSF shall perform encryption/decryption in accordance with a specified
                   cryptographic algorithm AES operating in
-                <b>GCM mode as defined in
-                    FCS_COP.1/AEAD and</b>
+                <h:b>GCM mode as defined in
+                    FCS_COP.1/AEAD and</h:b>
                 [selection:
-                <i>
-                  <ul>
-                    <li>CBC mode as defined in FCS_COP.1/SKC</li>
-                    <li>CTR mode as defined in FCS_COP.1/SKC</li>
-                    <li>XTS mode as defined in FCS_COP.1/SKC</li>
-                    <li>CCM mode as defined in FCS_COP.1/AEAD</li>
-                    <li>
-                      <b>no other modes</b>
-                    </li>
-                  </ul>
-                </i>].
-              </p>
-              <p><b>Application Note:</b> Other AES modes are selectable if the TSF uses them for another part of the TSF. A selection for 'no other modes' has been refined into the SFR because it is possible that a TOE may conform to the Base-PP by using AES-GCM exclusively for AES data encryption and decryption.</p>
+                <h:i>
+                  <h:ul>
+                    <h:li>CBC mode as defined in FCS_COP.1/SKC</h:li>
+                    <h:li>CTR mode as defined in FCS_COP.1/SKC</h:li>
+                    <h:li>XTS mode as defined in FCS_COP.1/SKC</h:li>
+                    <h:li>CCM mode as defined in FCS_COP.1/AEAD</h:li>
+                    <h:li>
+                      <h:b>no other modes</h:b>
+                    </h:li>
+                  </h:ul>
+                </h:i>].
+              </h:p>
+              <h:p><h:b>Application Note:</h:b> Other AES modes are selectable if the TSF uses them for another part of the TSF. A selection for 'no other modes' has been refined into the SFR because it is possible that a TOE may conform to the Base-PP by using AES-GCM exclusively for AES data encryption and decryption.</h:p>
             </description>
             <no-change/>
           </base-sfr-spec>
@@ -468,146 +499,146 @@ expected to enforce.
             <consistency-rationale>This PP-Module restricts the Base-PP SFR to a subset of existing permissible
               functionality and does not introduce any new behavior.</consistency-rationale>
             <description>
-              <p>This SFR has been modified from its definition in the NDcPP to support
+              <h:p>This SFR has been modified from its definition in the NDcPP to support
               this module's IPsec requirements by mandating use of AES-GCM-256 and IKEv2 where applicable.
-              Any element that is not mentioned in this section is unchanged from its definition in the Base-PP.</p>
-              <p><b>FCS_IPSEC_EXT.1.4</b>: This element has been modified to require the use of CNSA 1.0-compliant parameters.</p>
-              <p>The text of FCS_IPSEC_EXT.1.4 is replaced with:</p>
-              <p>
-                <b>FCS_IPSEC_EXT.1.4 </b>
+              Any element that is not mentioned in this section is unchanged from its definition in the Base-PP.</h:p>
+              <h:p><h:b>FCS_IPSEC_EXT.1.4</h:b>: This element has been modified to require the use of CNSA 1.0-compliant parameters.</h:p>
+              <h:p>The text of FCS_IPSEC_EXT.1.4 is replaced with:</h:p>
+              <h:p>
+                <h:b>FCS_IPSEC_EXT.1.4 </h:b>
                 The TSF shall implement the IPsec protocol ESP as defined by RFC 4303 using the cryptographic algorithms
-                <b>AES-GCM-256 (RFC 4106) and</b>
-                [<i><b>no other algorithms</b>
-                </i>] together with a Secure Hash Algorithm (SHA)-based HMAC [<b>selection:</b>
-                <i>HMAC-SHA-384, no HMAC algorithm</i>].
-              </p>
-              <p>
-                <b>Application Note: </b>
+                <h:b>AES-GCM-256 (RFC 4106) and</h:b>
+                [<h:i><h:b>no other algorithms</h:b>
+                </h:i>] together with a Secure Hash Algorithm (SHA)-based HMAC [<h:b>selection:</h:b>
+                <h:i>HMAC-SHA-384, no HMAC algorithm</h:i>].
+              </h:p>
+              <h:p>
+                <h:b>Application Note: </h:b>
                 SHA-based HMAC is not required since AES-GCM satisfies both confidentiality and integrity functions.
               IPsec may use a truncated version of the SHA-based HMAC functions contained in the selections. Where a truncated output is used, this is described in the TSS.
-              </p>
-              <br/>
-              <br/>
-              <p><b>FCS_IPSEC_EXT.1.5</b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element. It has also been modified to mandate the selection of RFC 4868 conformance due to the required support for SHA-384.</p>
-              <p>The text of FCS_IPSEC_EXT.1.5 is replaced with:</p>
-              <p><b>FCS_IPSEC_EXT.1.5 </b>The TSF shall implement the protocol: [<i><ul><li>IKEv2 as defined in RFC 7296 [<b>selection: </b>with no support for NAT traversal, with mandatory support for NAT traversal as specified in RFC 7296, Section 2.23], and [RFC 4868 for hash functions]</li></ul></i>]</p>
-              <br/>
-              <br/>
-              <p><b>FCS_IPSEC_EXT.1.6</b>: This SFR is modified from its definition in the Base-PP to remove support for non-CNSA parameters and algorithms. This includes mandating the use of IKEv2.</p>
-              <p>The text of FCS_IPSEC_EXT.1.6 is replaced with:</p>
-              <p>
-                <b>FCS_IPSEC_EXT.1.6 </b>
-                The TSF shall ensure the encrypted payload in the [<i>IKEv2</i>] protocol uses the cryptographic algorithms
-              [<i>AES-GCM-256 (specified in RFC 5282)</i>].
-              </p>
-              <p><b>Application Note: </b>This element is changed from its definition in the Base-PP to mandate support of 256-bit GCM. AES-GCM implementation for IPsec is specified in RFC 5282.</p>
-              <br/>
-              <br/>
-              <p><b>FCS_IPSEC_EXT.1.7</b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element.</p>
-              <p>The text of FCS_IPSEC_EXT.1.7 is replaced with:</p>
-              <p><b>FCS_IPSEC_EXT.1.7 </b>The TSF shall ensure that [<i><ul><li>IKEv2 SA lifetimes can be configured by a Security Administrator based on [<b>selection:</b> <ul><li>number of bytes;</li> <li>length of time, where the time values cna be configured between [<b>assignment: </b> minimum configurable rekey time] and [<b>assignment: </b>maximum configurable rekey time]</li></ul>]</li></ul></i>].</p>
-              <br/>
-              <br/>
-              <p><b>FCS_IPSEC_EXT.1.8</b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element.</p>
-              <p>The text of FCS_IPSEC_EXT.1.8 is replaced with:</p>
-              <p><b>FCS_IPSEC_EXT.1.8 </b>The TSF shall ensure that [<i><ul><li>IKEv2 Child SA lifetimes can be configured by a Security Administrator based on [<b>selection:</b> <ul><li>number of bytes;</li> <li>length of time, where the time values cna be configured between [<b>assignment: </b> minimum configurable rekey time] and [<b>assignment: </b>maximum configurable rekey time]</li></ul>]</li></ul></i>].</p>
-              <br/>
-              <br/>
-              <p><b>FCS_IPSEC_EXT.1.10</b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element.</p>
-              <p>The text of FCS_IPSEC_EXT.1.10 is replaced with:</p>
-              <p><b>FCS_IPSEC_EXT.1.10 </b>The shall generate nonces used in [<i>IKEv2</i>] protocol exchanges of length [<i><b>selection: </b> <ul><li>according to the security strength associated with the negotiated Diffie-Hellman group;</li> <li>at least 128 bits in size and at least half the output size of the negotiated pseudorandom function (PRF) hash</li></ul></i>].</p>
-              <br/>
-              <br/>
-              <p>
-                <b>FCS_IPSEC_EXT.1.11</b>: This element has been modified from its definition in the NDcPP by mandating DH group 20, which is selectable in the original definition of the element.
+              </h:p>
+              <h:br/>
+              <h:br/>
+              <h:p><h:b>FCS_IPSEC_EXT.1.5</h:b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element. It has also been modified to mandate the selection of RFC 4868 conformance due to the required support for SHA-384.</h:p>
+              <h:p>The text of FCS_IPSEC_EXT.1.5 is replaced with:</h:p>
+              <h:p><h:b>FCS_IPSEC_EXT.1.5 </h:b>The TSF shall implement the protocol: [<h:i><h:ul><h:li>IKEv2 as defined in RFC 7296 [<h:b>selection: </h:b>with no support for NAT traversal, with mandatory support for NAT traversal as specified in RFC 7296, Section 2.23], and [RFC 4868 for hash functions]</h:li></h:ul></h:i>]</h:p>
+              <h:br/>
+              <h:br/>
+              <h:p><h:b>FCS_IPSEC_EXT.1.6</h:b>: This SFR is modified from its definition in the Base-PP to remove support for non-CNSA parameters and algorithms. This includes mandating the use of IKEv2.</h:p>
+              <h:p>The text of FCS_IPSEC_EXT.1.6 is replaced with:</h:p>
+              <h:p>
+                <h:b>FCS_IPSEC_EXT.1.6 </h:b>
+                The TSF shall ensure the encrypted payload in the [<h:i>IKEv2</h:i>] protocol uses the cryptographic algorithms
+              [<h:i>AES-GCM-256 (specified in RFC 5282)</h:i>].
+              </h:p>
+              <h:p><h:b>Application Note: </h:b>This element is changed from its definition in the Base-PP to mandate support of 256-bit GCM. AES-GCM implementation for IPsec is specified in RFC 5282.</h:p>
+              <h:br/>
+              <h:br/>
+              <h:p><h:b>FCS_IPSEC_EXT.1.7</h:b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element.</h:p>
+              <h:p>The text of FCS_IPSEC_EXT.1.7 is replaced with:</h:p>
+              <h:p><h:b>FCS_IPSEC_EXT.1.7 </h:b>The TSF shall ensure that [<h:i><h:ul><h:li>IKEv2 SA lifetimes can be configured by a Security Administrator based on [<h:b>selection:</h:b> <h:ul><h:li>number of bytes;</h:li> <h:li>length of time, where the time values cna be configured between [<h:b>assignment: </h:b> minimum configurable rekey time] and [<h:b>assignment: </h:b>maximum configurable rekey time]</h:li></h:ul>]</h:li></h:ul></h:i>].</h:p>
+              <h:br/>
+              <h:br/>
+              <h:p><h:b>FCS_IPSEC_EXT.1.8</h:b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element.</h:p>
+              <h:p>The text of FCS_IPSEC_EXT.1.8 is replaced with:</h:p>
+              <h:p><h:b>FCS_IPSEC_EXT.1.8 </h:b>The TSF shall ensure that [<h:i><h:ul><h:li>IKEv2 Child SA lifetimes can be configured by a Security Administrator based on [<h:b>selection:</h:b> <h:ul><h:li>number of bytes;</h:li> <h:li>length of time, where the time values cna be configured between [<h:b>assignment: </h:b> minimum configurable rekey time] and [<h:b>assignment: </h:b>maximum configurable rekey time]</h:li></h:ul>]</h:li></h:ul></h:i>].</h:p>
+              <h:br/>
+              <h:br/>
+              <h:p><h:b>FCS_IPSEC_EXT.1.10</h:b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element.</h:p>
+              <h:p>The text of FCS_IPSEC_EXT.1.10 is replaced with:</h:p>
+              <h:p><h:b>FCS_IPSEC_EXT.1.10 </h:b>The shall generate nonces used in [<h:i>IKEv2</h:i>] protocol exchanges of length [<h:i><h:b>selection: </h:b> <h:ul><h:li>according to the security strength associated with the negotiated Diffie-Hellman group;</h:li> <h:li>at least 128 bits in size and at least half the output size of the negotiated pseudorandom function (PRF) hash</h:li></h:ul></h:i>].</h:p>
+              <h:br/>
+              <h:br/>
+              <h:p>
+                <h:b>FCS_IPSEC_EXT.1.11</h:b>: This element has been modified from its definition in the NDcPP by mandating DH group 20, which is selectable in the original definition of the element.
               The selectable options have also been restricted to conform with CNSA 1.0 parameters.
-              </p>
-              <p>The text of FCS_IPSEC_EXT.1.11 is replaced with:</p>
-              <p>
-                <b>FCS_IPSEC_EXT.1.11 </b>
-                The TSF shall ensure that IKE protocols implement DH groups [<i><ul>
-                    <b>
-                      <li>20 (384-bit Random ECP) and [selection: 21 (521-bit Random ECP, no other groups] according to RFC 5114</li>
-                    </b>
-                  </ul>
-                </i>]
-                <b>and</b>
-                [<ul><li>[<b>selection:</b> <i>15 (3072-bit MODP), 16 (4096-bit MODP), 17 (6144-bit MODP), 18 (8192-bit MODP), no other groups] according to RFC 3526</i></li>
-                </ul>].
-              </p>
-              <p>
-                <b>Application Note: </b>
+              </h:p>
+              <h:p>The text of FCS_IPSEC_EXT.1.11 is replaced with:</h:p>
+              <h:p>
+                <h:b>FCS_IPSEC_EXT.1.11 </h:b>
+                The TSF shall ensure that IKE protocols implement DH groups [<h:i><h:ul>
+                    <h:b>
+                      <h:li>20 (384-bit Random ECP) and [selection: 21 (521-bit Random ECP, no other groups] according to RFC 5114</h:li>
+                    </h:b>
+                  </h:ul>
+                </h:i>]
+                <h:b>and</h:b>
+                [<h:ul><h:li>[<h:b>selection:</h:b> <h:i>15 (3072-bit MODP), 16 (4096-bit MODP), 17 (6144-bit MODP), 18 (8192-bit MODP), no other groups] according to RFC 3526</h:i></h:li>
+                </h:ul>].
+              </h:p>
+              <h:p>
+                <h:b>Application Note: </h:b>
                 This element has been modified from its definition in the NDcPP by mandating DH group 20, which is selectable in the original definition of the element. 
               Any groups other than 20 that are allowed per the element may be selected by the ST author but they are not required for conformance to this PP-Module.
-              </p>
-              <br/>
-              <br/>
-              <p><b>FCS_IPSEC_EXT.1.12</b>: This element has been modified from its definition in the NDcPP by choosing only the selections for IKEv2, which are selectable in the original definition of the element.</p>
-              <p>The text of FCS_IPSEC_EXT.1.12 is replaced with:</p>
-              <p><b>FCS_IPSEC_EXT.1.12 </b>The TSF shall be able to ensure that the strength of the symmetric algorithm (in terms of the number of bits in the key) negotiated to protect the [<b>selection: </b> <i>IKEv2 IKE_SA</i>] connection is greater than or equal to the strength of the symmetric algorithm (in terms of the number of bits in the key) negotiated to protect the [<b>selection: </b> <i>IKEv2 CHILD_SA</i>] connection.</p>
-              <p><b>Application Note: </b>Because this PP-Module only permits the use of 256-bit symmetric algorithms, this requirement will be satisfied by default.</p>
-              <br/>
-              <br/>
-              <p><b>FCS_IPSEC_EXT.1.13</b>: This SFR is modified from its definition in the Base-PP by mandating the use of IKEv2 and its authentication methods.</p>
-              <p>The text of FCS_IPSEC_EXT.1.13 is replaced with:</p>
-              <p>
-                <b>FCS_IPSEC_EXT.1.13 </b>
+              </h:p>
+              <h:br/>
+              <h:br/>
+              <h:p><h:b>FCS_IPSEC_EXT.1.12</h:b>: This element has been modified from its definition in the NDcPP by choosing only the selections for IKEv2, which are selectable in the original definition of the element.</h:p>
+              <h:p>The text of FCS_IPSEC_EXT.1.12 is replaced with:</h:p>
+              <h:p><h:b>FCS_IPSEC_EXT.1.12 </h:b>The TSF shall be able to ensure that the strength of the symmetric algorithm (in terms of the number of bits in the key) negotiated to protect the [<h:b>selection: </h:b> <h:i>IKEv2 IKE_SA</h:i>] connection is greater than or equal to the strength of the symmetric algorithm (in terms of the number of bits in the key) negotiated to protect the [<h:b>selection: </h:b> <h:i>IKEv2 CHILD_SA</h:i>] connection.</h:p>
+              <h:p><h:b>Application Note: </h:b>Because this PP-Module only permits the use of 256-bit symmetric algorithms, this requirement will be satisfied by default.</h:p>
+              <h:br/>
+              <h:br/>
+              <h:p><h:b>FCS_IPSEC_EXT.1.13</h:b>: This SFR is modified from its definition in the Base-PP by mandating the use of IKEv2 and its authentication methods.</h:p>
+              <h:p>The text of FCS_IPSEC_EXT.1.13 is replaced with:</h:p>
+              <h:p>
+                <h:b>FCS_IPSEC_EXT.1.13 </h:b>
                 The TSF shall ensure that
-                <b>IKEv2</b>
-                performs peer authentication using [<b>selection: </b>
-                <i>RSA, ECDSA</i>]
-              that use X.509v3 certificates that conform to RFC 4945 and [<b>selection: </b>
-                <i>Pre-shared Keys <b>that conform to RFC 8784, Pre-shared Keys transmitted
-              via EAP-TTLS, EAP-TLS,</b> no other method</i>].
-                <br/>
-                <br/>
-              </p>
-              <p>
-                <b>Application Note: </b>
+                <h:b>IKEv2</h:b>
+                performs peer authentication using [<h:b>selection: </h:b>
+                <h:i>RSA, ECDSA</h:i>]
+              that use X.509v3 certificates that conform to RFC 4945 and [<h:b>selection: </h:b>
+                <h:i>Pre-shared Keys <h:b>that conform to RFC 8784, Pre-shared Keys transmitted
+              via EAP-TTLS, EAP-TLS,</h:b> no other method</h:i>].
+                <h:br/>
+                <h:br/>
+              </h:p>
+              <h:p>
+                <h:b>Application Note: </h:b>
                 At least one public-key-based Peer Authentication method is required in order to
                 conform to this PP-Module; one or more of the public key schemes is chosen by
                 the ST author to reflect what is implemented. The ST author also ensures that
                 appropriate FCS requirements reflecting the algorithms used (and key
                 generation capabilities, if provided) are listed to support those methods. Note
                 that the TSS will elaborate on the way in which these algorithms are to be used.
-                <br/>
-                <br/>
+                <h:br/>
+                <h:br/>
                 If a selection with “EAP-TLS” or “EAP-TTLS” is chosen, the selection-based requirement FCS_EAP_EXT.1 must be claimed. 
                 When an EAP method is used, verification occurs via an external authentication server. 
                 Though EAP-TTLS involves PSKs, FIA_PSK_EXT.1 is not claimed because PSK requirements for EAP-TTLS are addressed instead via 
                 the Authentication Server PP.
-                <br/>
-                <br/>
+                <h:br/>
+                <h:br/>
                 If “pre-shared keys that conform to RFC 8784” is chosen, the selection-based requirement FIA_PSK_EXT.1 must be claimed.
-                <br/>
-                <br/>
+                <h:br/>
+                <h:br/>
                 Multifactor support can be achieved via traffic filtering in accordance with FPF_MFA_EXT.1.
-                <br/>
-                <br/>
+                <h:br/>
+                <h:br/>
                 It is acceptable for different use cases to leverage different selections. If this is the case, it must be identified.
-              </p>
-              <br/>
-              <br/>
-              <p><b>FCS_IPSEC_EXT.1.14</b>: This SFR is modified from its definition in the Base-PP to require DN to be supported for certificate reference identifiers.</p>
-              <p>The text of FCS_IPSEC_EXT.1.14 is replaced with:</p>
-              <p>
-                <b>FCS_IPSEC_EXT.1.14 </b>
+              </h:p>
+              <h:br/>
+              <h:br/>
+              <h:p><h:b>FCS_IPSEC_EXT.1.14</h:b>: This SFR is modified from its definition in the Base-PP to require DN to be supported for certificate reference identifiers.</h:p>
+              <h:p>The text of FCS_IPSEC_EXT.1.14 is replaced with:</h:p>
+              <h:p>
+                <h:b>FCS_IPSEC_EXT.1.14 </h:b>
                 The TSF shall only establish a trusted channel if the presented identifier in the
                 received certificate matches the configured reference identifier, where the
                 presented and reference identifiers are of the following fields and types:
-                <b>Distinguished Name (DN),</b>
-                [<b>selection:</b>
-                <i>
+                <h:b>Distinguished Name (DN),</h:b>
+                [<h:b>selection:</h:b>
+                <h:i>
                   SAN: IP address, SAN: Fully Qualified Domain Name (FQDN), SAN: user FQDN,
                 CN: IP address, CN: FQDN, CN: user FQDN,
-                  <b>no other reference identifier types, [assignment: other supported reference identifier types]</b>
-                </i>].
-              </p>
-              <p>
-                <b>Application Note:</b>
+                  <h:b>no other reference identifier types, [assignment: other supported reference identifier types]</h:b>
+                </h:i>].
+              </h:p>
+              <h:p>
+                <h:b>Application Note:</h:b>
                 This PP-Module requires DN to be supported for certificate reference identifiers at minimum. Other selections may be made 
                 by the ST author but they are not required for conformance to this PP-Module.
-              </p>
+              </h:p>
             </description>
             <insert-after>
               <xpath-specified xpath="*//cc:f-element[@id='fcs-ckm-1-ike']//cc:title"/>
@@ -620,16 +651,16 @@ expected to enforce.
             <consistency-rationale>This PP-Module applies the key management functionality already defined in
               the Base-PP specifically to functionality related to VPN gateways.</consistency-rationale>
             <description>
-              <p>This SFR, defined in the NDcPP as selection-based, is mandated for
+              <h:p>This SFR, defined in the NDcPP as selection-based, is mandated for
                 inclusion in this PP-Module because the refinements to FMT_SMF.1
                 mandate its inclusion. Note that it is also refined to refer specifically to
-                keys and certificates used for VPN operation.</p>
-              <p>The text of FMT_MTD.1.1/CryptoKeys is replaced with:</p>
-              <p>
-                <b>FMT_MTD.1.1/CryptoKeys </b>
-                The TSF shall restrict the ability to [<i>manage</i>] the [<i>cryptographic keys <b>and
-              certificates used for VPN operation</b></i>] to [<i>Security Administrators</i>].
-              </p>
+                keys and certificates used for VPN operation.</h:p>
+              <h:p>The text of FMT_MTD.1.1/CryptoKeys is replaced with:</h:p>
+              <h:p>
+                <h:b>FMT_MTD.1.1/CryptoKeys </h:b>
+                The TSF shall restrict the ability to [<h:i>manage</h:i>] the [<h:i>cryptographic keys <h:b>and
+              certificates used for VPN operation</h:b></h:i>] to [<h:i>Security Administrators</h:i>].
+              </h:p>
             </description>
             <no-change/>
           </base-sfr-spec>
@@ -676,15 +707,15 @@ expected to enforce.
             <title>
               The TSF shall be able to generate audit data of the following
               auditable events:
-              <ol type="a">
-                <li>Start-up and shutdown of the audit functions</li>
-                <li>All auditable events for the [<i>not specified</i>] level of audit;</li>
-                <li>[<i>Indication that TSF self-test was completed</i></li>
-                <li>
-                  <i>Failure of self-test</i>
-                </li>
-                <li><i>auditable events defined in the Auditable Events for Mandatory Requirements table</i>].</li>
-              </ol>
+              <h:ol type="a">
+                <h:li>Start-up and shutdown of the audit functions</h:li>
+                <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit;</h:li>
+                <h:li>[<h:i>Indication that TSF self-test was completed</h:i></h:li>
+                <h:li>
+                  <h:i>Failure of self-test</h:i>
+                </h:li>
+                <h:li><h:i>auditable events defined in the Auditable Events for Mandatory Requirements table</h:i>].</h:li>
+              </h:ol>
             </title>
             <note role="application">The "Start-up and shutdown of the audit functions" event is identical to the event defined in the Base-PP's iteration of FAU_GEN.1.
               The TOE is not required to have two separate events for this behavior if there is only a single audit stream that which all audit events use.
@@ -695,15 +726,15 @@ expected to enforce.
             <title>
               The TSF shall record within the audit data at least the following
               information:
-              <ol type="a">
-                <li>Date and time of the event, type of event, subject identity (if
-                  applicable), and the outcome (success or failure) of the event;</li>
-                <li>
+              <h:ol type="a">
+                <h:li>Date and time of the event, type of event, subject identity (if
+                  applicable), and the outcome (success or failure) of the event;</h:li>
+                <h:li>
                   For each audit event type, based on the auditable event
                   definitions of the functional components included in the PP, PP-Module, functional package or ST,
-                [<i>additional information defined in the Auditable Events for Mandatory Requirements table for each auditable event, where applicable</i>].
-                </li>
-              </ol>
+                [<h:i>additional information defined in the Auditable Events for Mandatory Requirements table for each auditable event, where applicable</h:i>].
+                </h:li>
+              </h:ol>
             </title>
             <note role="application">The ST author only needs to include the auditable events that correspond to the SFRs claimed in the ST.
             The TOE is not required to generate auditable events for selection-based or optional SFRs that it does not claim.</note>
@@ -711,17 +742,17 @@ expected to enforce.
               <TSS>
                 The evaluator shall examine the TSS to verify that it describes the audit mechanisms that the TOE uses to generate audit records for VPN gateway behavior. If any audit mechanisms the TSF uses for this
                 are not used to generate audit records for events defined by FAU_GEN.1 in the Base-PP, the evaluator shall ensure that any VPN gateway-specific audit mechanisms also meet the relevant functional claims from the Base-PP.
-                <br/>
+                <h:br/>
                 For example, FAU_STG_EXT.1 requires all audit records to be transmitted to the OE over a trusted channel. This includes the audit records that are required by FAU_GEN.1/VPN. Therefore, if the TOE has an audit mechanism
                 that is only used for VPN gateway functionality, the evaluator shall ensure that the VPN gateway related audit records meet this requirement, even if the mechanism used to generate these audit records does not apply to any of the auditable
                 events defined in the Base-PP.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The evaluator shall examine the operational guidance to verify that it identifies all security-relevant auditable events claimed in the ST and includes sample records of each event type. If the TOE uses multiple
                 audit mechanisms to generate different sets of records, the evaluator shall verify that the operational guidance identifies the audit records that are associated with each of the mechanisms such that the source of each audit record type
                 is clear.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>The evaluator shall test the audit functionality by performing actions that trigger each of the claimed audit events and verifying that the audit records are accurate and that their format is consistent with what is specified 
                 in the operational guidance. The evaluator may generate these audit events as a consequence of performing other tests that would cause these events to be generated.</Tests>
@@ -740,16 +771,16 @@ expected to enforce.
           <f-element id="fcs-ckm-1e1-ike">
             <title>
               The TSF shall generate
-              <b>asymmetric</b>
+              <h:b>asymmetric</h:b>
               cryptographic keys
-              <b>used for IKE peer
-              authentication</b>
+              <h:b>used for IKE peer
+              authentication</h:b>
               in accordance with a specified cryptographic key generation
               algorithm:
-              <i> <selectables><selectable id="fcs_ckm.1.1_IKE_1">FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix B.3 for RSA schemes</selectable><selectable id="fcs_ckm.1.1_IKE_2">FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix B.4 for ECDSA schemes, and implementing “NIST curves” P-384</selectable></selectables>  and  <selectables><selectable id="fcs_ckm.1.1_IKE_3">FFC Schemes using “safe-prime” groups that meet the following: NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography” and <selectables><selectable id="fcs_ckm.1.1_IKE_4">RFC 3526</selectable><selectable id="fcs_ckm.1.1_IKE_5">RFC 7919</selectable></selectables> </selectable><selectable id="fcs_ckm.1.1_IKE_6" exclusive="yes">no other key generation algorithm</selectable></selectables></i>
+              <h:i> <selectables><selectable id="fcs_ckm.1.1_IKE_1">FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix B.3 for RSA schemes</selectable><selectable id="fcs_ckm.1.1_IKE_2">FIPS PUB 186-5, “Digital Signature Standard (DSS),” Appendix B.4 for ECDSA schemes, and implementing “NIST curves” P-384</selectable></selectables>  and  <selectables><selectable id="fcs_ckm.1.1_IKE_3">FFC Schemes using “safe-prime” groups that meet the following: NIST Special Publication 800-56A Revision 3, “Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography” and <selectables><selectable id="fcs_ckm.1.1_IKE_4">RFC 3526</selectable><selectable id="fcs_ckm.1.1_IKE_5">RFC 7919</selectable></selectables> </selectable><selectable id="fcs_ckm.1.1_IKE_6" exclusive="yes">no other key generation algorithm</selectable></selectables></h:i>
               and specified cryptographic key sizes
               <assignable>key size equivalent to, or greater than, a symmetric key strength of 256 bits</assignable>
-              that meet the following: [<i>no standard</i>].
+              that meet the following: [<h:i>no standard</h:i>].
             </title>
             <note role="application">
               The keys that are required to be generated by the TOE through this requirement
@@ -759,12 +790,12 @@ expected to enforce.
               public key be associated with an identity in an X509v3 certificate, this association
               is not required to be performed by the TOE, and instead is expected to be
               performed by a CA in the OE.
-              <br/>
-              <br/>
+              <h:br/>
+              <h:br/>
               As indicated in FCS_IPSEC_EXT.1, the TOE is required to implement RSA, ECDSA, or both
               for peer authentication.
-              <br/>
-              <br/>
+              <h:br/>
+              <h:br/>
               The generated key strength of 2048-bit RSA keys need to be equivalent to, or
               greater than, a symmetric key strength of 112 bits. See NIST Special Publication
               800-57, “Recommendation for Key Management” for information about
@@ -775,34 +806,34 @@ expected to enforce.
                 The evaluator shall check to ensure that the TSS describes how the key-pairs are generated. In order to
                 show that the TSF implementation complies with FIPS PUB 186-5, the evaluator shall ensure that the TSS
                 contains the following information:
-                <ul>
-                  <li>The TSS shall list all sections of Appendix B to which the TOE complies</li>
-                  <li>For each applicable section listed in the TSS, for all statements that are not "shall" (that is, "shall not,"
+                <h:ul>
+                  <h:li>The TSS shall list all sections of Appendix B to which the TOE complies</h:li>
+                  <h:li>For each applicable section listed in the TSS, for all statements that are not "shall" (that is, "shall not,"
                     "should," and "should not"), if the TOE implements such options it shall be described in the TSS. If the
                     included functionality is indicated as "shall not" or "should not" in the standard, the TSS shall provide
-                    a rationale for why this will not adversely affect the security policy implemented by the TOE</li>
-                  <li>For each applicable section of Appendix B, any omission of functionality related to "shall" or “should”
-                    statements shall be described</li>
-                </ul>
+                    a rationale for why this will not adversely affect the security policy implemented by the TOE</h:li>
+                  <h:li>For each applicable section of Appendix B, any omission of functionality related to "shall" or “should”
+                    statements shall be described</h:li>
+                </h:ul>
                 Any TOE-specific extensions, processing that is not included in the Appendices, or alternative
                 implementations allowed by the Appendices that may impact the security requirements the TOE is to
                 enforce shall be described.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The evaluator shall check that the operational guidance describes how the key generation functionality is
                 invoked, and describes the inputs and outputs associated with the process for each signature scheme
                 supported. The evaluator shall also check that guidance is provided regarding the format and location of
                 the output of the key generation process.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>
-                <b>For FFC Schemes using “safe-prime” groups:</b>
-                <br/>
+                <h:b>For FFC Schemes using “safe-prime” groups:</h:b>
+                <h:br/>
                 Testing for FFC Schemes using safe-prime groups is done as part of testing in FCS_CKM.2.
-                <br/>
-                <b>For all other selections:</b>
-                <br/>
+                <h:br/>
+                <h:b>For all other selections:</h:b>
+                <h:br/>
                 The evaluator shall perform the corresponding tests for FCS_CKM.1 specified in the NDcPP SD, based on
                 the selections chosen for this SFR. If IKE key generation is implemented by a different algorithm than the
                 NDcPP key generation function, the evaluator shall ensure this testing is performed using the correct
@@ -822,17 +853,17 @@ expected to enforce.
           Base-PP iteration of it.</consistency-rationale>
           <f-element id="fmt-smf-1e1-vpn">
             <title>
-              The TSF shall be capable of performing the following management functions [<i><ul>
-                  <li>Definition of packet filtering rules</li>
-                  <li>Association of packet filtering rules to network interfaces</li>
-                  <li>Ordering of packet filtering rules by priority</li>
-                </ul>
+              The TSF shall be capable of performing the following management functions [<h:i><h:ul>
+                  <h:li>Definition of packet filtering rules</h:li>
+                  <h:li>Association of packet filtering rules to network interfaces</h:li>
+                  <h:li>Ordering of packet filtering rules by priority</h:li>
+                </h:ul>
                 <selectables linebreak="yes">
                   <selectable id="fmt_smf.1.1_VPN_1">Configuration of remote VPN client session timeout</selectable>
                   <selectable id="fmt_smf.1.1_VPN_2">Configuration of attributes used to deny establishment of remote VPN client sessions</selectable>
                   <selectable id="fmt_smf.1.1_VPN_3">Generation of bit-based pre-shared key</selectable>
                   <selectable id="fmt_smf.1.1_VPN_4" exclusive="yes">No other capabilities</selectable>
-                </selectables></i>].
+                </selectables></h:i>].
             </title>
             <note role="application">This SFR defines additional management functions for the TOE beyond what is
             defined in the Base-PP as FMT_SMF.1. The TOE may have all management
@@ -845,14 +876,14 @@ expected to enforce.
               FMT_SMF.1/VPN are provided by the TOE. As with FMT_SMF.1 in the Base-PP, the evaluator shall ensure
               that the TSS identifies what logical interfaces are used to perform these functions and that this includes a
               description of the local administrative interface.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The evaluator shall examine the operational guidance to confirm that all management functions specified
               in FMT_SMF.1/VPN are provided by the TOE. As with FMT_SMF.1 in the Base-PP, the evaluator shall
               ensure that the operational guidance identifies what logical interfaces are used to perform these functions
               and that this includes a description of the local administrative interface.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>The evaluator tests management functions as part of performing other test EAs.
               No separate testing for FMT_SMF.1/VPN is required unless one of the management functions in
@@ -884,17 +915,17 @@ expected to enforce.
             presented in the Base-PP.</consistency-rationale>
           <comp-lev>requires the TSF to enforce a given set of packet filtering rules
             in an administrator-defined order against one or more TOE interfaces.</comp-lev>
-          <management>The following actions could be considered for the management functions in FMT: <ul><li>Ability to configure the TOE’s packet filtering functionality (i.e., the operations to be performed on
+          <management>The following actions could be considered for the management functions in FMT: <h:ul><h:li>Ability to configure the TOE’s packet filtering functionality (i.e., the operations to be performed on
               network traffic based on configured attributes, the interfaces that these are associated with, and the
               order in which they are applied).
-            </li></ul></management>
+            </h:li></h:ul></management>
           <audit>
             The following actions should be auditable if FAU_GEN Security audit data generation is included in the
             PP/ST:
-            <ul>
-              <li>Application of rules configured with the ‘log’ operation (including source and destination address,
-                source and destination port, and transport layer protocol value).</li>
-            </ul>
+            <h:ul>
+              <h:li>Application of rules configured with the ‘log’ operation (including source and destination address,
+                source and destination port, and transport layer protocol value).</h:li>
+            </h:ul>
           </audit>
           <dependencies>No dependencies.</dependencies>
           <f-element id="fpf-rul-ext-1e1">
@@ -904,17 +935,17 @@ expected to enforce.
                 The evaluator shall verify that the TSS provide a description of the TOE’s initialization and startup process,
                 which clearly indicates where processing of network packets begins to take place, and provides a
                 discussion that supports the assertion that packets cannot flow during this process.
-                <br/>
+                <h:br/>
                 The evaluator shall verify that the TSS also includes a narrative that identifies the components (e.g., active
                 entity such as a process or task) involved in processing the network packets and describes the safeguards
                 that would prevent packets flowing through the TOE without applying the ruleset in the event of a
                 component failure. This could include the failure of a component, such as a process being terminated, or
                 a failure within a component, such as memory buffers full and cannot process packets.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The operational guidance associated with this requirement is assessed in the subsequent test EAs.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>
                 The evaluator shall perform the following tests:
@@ -924,38 +955,38 @@ expected to enforce.
                 </testlist>
                 Note: The remaining testing associated with application of the ruleset is addressed in the subsequent test
                 EAs.
-                <br/>
+                <h:br/>
               </Tests>
             </aactivity>
           </f-element>
           <f-element id="fpf-rul-ext-1e2">
             <title>
               The TSF shall allow the definition of packet filtering rules using the following
-              network protocols and protocol fields: [<i><ul>
-                  <li>IPv4 (RFC 791)</li>
-                  <ul>
-                    <li>source address</li>
-                    <li>destination address</li>
-                    <li>protocol</li>
-                  </ul>
-                  <li>IPv6 (RFC 8200)</li>
-                  <ul>
-                    <li>source address</li>
-                    <li>destination address</li>
-                    <li>next header (protocol)</li>
-                  </ul>
-                  <li>TCP (RFC 793)</li>
-                  <ul>
-                    <li>source port</li>
-                    <li>destination port</li>
-                  </ul>
-                  <li>UDP (RFC 768)</li>
-                  <ul>
-                    <li>source port</li>
-                    <li>destination port</li>
-                  </ul>
-                </ul>
-              </i>].
+              network protocols and protocol fields: [<h:i><h:ul>
+                  <h:li>IPv4 (RFC 791)</h:li>
+                  <h:ul>
+                    <h:li>source address</h:li>
+                    <h:li>destination address</h:li>
+                    <h:li>protocol</h:li>
+                  </h:ul>
+                  <h:li>IPv6 (RFC 8200)</h:li>
+                  <h:ul>
+                    <h:li>source address</h:li>
+                    <h:li>destination address</h:li>
+                    <h:li>next header (protocol)</h:li>
+                  </h:ul>
+                  <h:li>TCP (RFC 793)</h:li>
+                  <h:ul>
+                    <h:li>source port</h:li>
+                    <h:li>destination port</h:li>
+                  </h:ul>
+                  <h:li>UDP (RFC 768)</h:li>
+                  <h:ul>
+                    <h:li>source port</h:li>
+                    <h:li>destination port</h:li>
+                  </h:ul>
+                </h:ul>
+              </h:i>].
             </title>
             <ext-comp-def-title>
               <title>
@@ -969,13 +1000,13 @@ expected to enforce.
               serve to define to what extent the network traffic can be interpreted by the TOE
               when importing (receiving network traffic or ingress) and exporting (sending–or
               forming to be sent–network traffic or egress).
-              <br/>
+              <h:br/>
               While the protocol formatting specified in the RFCs is still used, many RFCs define
               behaviors which are no longer considered safe to follow. For example, RFC 792
               defined the “Redirect” Internet Control Message Protocol (ICMP) type, which is not considered safe to honor when it
               might come from an adversary; the “source quench” message, which is insecure
               because its source cannot be validated.
-              <br/>
+              <h:br/>
               It also identifies the various attributes that are applicable when constructing rules
               to be enforced by this requirement – the applicable interface is a property of the
               TOE and the rest of the identified attributes are defined in the associated RFCs.
@@ -989,8 +1020,8 @@ expected to enforce.
                 There are no EAs specified for this element. Definition of packet filtering policy,
               association of operations with packet filtering rules, and association of these rules to network interfaces
               is described collectively under FPF_RUL_EXT.1.4.
-                <br/>
-                <br/>
+                <h:br/>
+                <h:br/>
               </no-tests>
             </aactivity>
           </f-element>
@@ -1004,8 +1035,8 @@ expected to enforce.
                 There are no EAs specified for this element. Definition of packet filtering policy,
               association of operations with packet filtering rules, and association of these rules to network interfaces
               is described collectively under FPF_RUL_EXT.1.4.
-                <br/>
-                <br/>
+                <h:br/>
+                <h:br/>
               </no-tests>
             </aactivity>
           </f-element>
@@ -1024,7 +1055,7 @@ expected to enforce.
               pluggable (SFP) port supporting SFP modules that expose a number of physical
               network ports, but since a common driver is used for all external ports they can
               be treated as a single distinct network interface.
-              <br/>
+              <h:br/>
               Note that there could be a separate ruleset for each interface or alternately a
               shared ruleset that somehow associates rules with specific interfaces.
             </note>
@@ -1032,83 +1063,83 @@ expected to enforce.
               <TSS>
                 The evaluator shall verify that the TSS describes a packet filtering policy that can use the following fields
                 for each identified protocol, and that the RFCs identified for each protocol are supported:
-                <ul>
-                  <li>IPv4 (RFC 791)</li>
-                  <ul>
-                    <li>source address</li>
-                    <li>destination address</li>
-                    <li>protocol</li>
-                  </ul>
-                  <li>IPv6 (RFC 8200)</li>
-                  <ul>
-                    <li>source address</li>
-                    <li>destination address</li>
-                    <li>next header (protocol)</li>
-                  </ul>
-                  <li>TCP (RFC 793)</li>
-                  <ul>
-                    <li>source port</li>
-                    <li>destination port</li>
-                  </ul>
-                  <li>UDP (RFC 768)</li>
-                  <ul>
-                    <li>source port</li>
-                    <li>destination port</li>
-                  </ul>
-                </ul>
+                <h:ul>
+                  <h:li>IPv4 (RFC 791)</h:li>
+                  <h:ul>
+                    <h:li>source address</h:li>
+                    <h:li>destination address</h:li>
+                    <h:li>protocol</h:li>
+                  </h:ul>
+                  <h:li>IPv6 (RFC 8200)</h:li>
+                  <h:ul>
+                    <h:li>source address</h:li>
+                    <h:li>destination address</h:li>
+                    <h:li>next header (protocol)</h:li>
+                  </h:ul>
+                  <h:li>TCP (RFC 793)</h:li>
+                  <h:ul>
+                    <h:li>source port</h:li>
+                    <h:li>destination port</h:li>
+                  </h:ul>
+                  <h:li>UDP (RFC 768)</h:li>
+                  <h:ul>
+                    <h:li>source port</h:li>
+                    <h:li>destination port</h:li>
+                  </h:ul>
+                </h:ul>
                 The evaluator shall verify that the TSS describes how conformance with the identified RFCs has been
                 determined by the TOE developer (e.g., third party interoperability testing, protocol compliance testing).
-                <br/>
+                <h:br/>
                 The evaluator shall verify that each rule can identify the following actions: permit, discard, and log.
-                <br/>
+                <h:br/>
                 The evaluator shall verify that the TSS identifies all interface types subject to the packet filtering policy
                 and explains how rules are associated with distinct network interfaces. Where interfaces can be grouped
                 into a common interface type (e.g., where the same internal logical path is used, perhaps where a
                 common device driver is used), they can be treated collectively as a distinct network interface.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The evaluator shall verify that the operational guidance identifies the following protocols as being
                 supported and the following attributes as being configurable within packet filtering rules for the
                 associated protocols:
-                <ul>
-                  <li>IPv4 (RFC 791)</li>
-                  <ul>
-                    <li>destination address</li>
-                    <li>protocol</li>
-                  </ul>
-                  <li>IPv6 (RFC 8200)</li>
-                  <ul>
-                    <li>source address</li>
-                    <li>destination address</li>
-                    <li>next header (protocol)</li>
-                  </ul>
-                  <li>TCP (RFC 793)</li>
-                  <ul>
-                    <li>source port</li>
-                    <li>destination port</li>
-                  </ul>
-                  <li>UDP (RFC 768)</li>
-                  <ul>
-                    <li>source port</li>
-                    <li>destination port</li>
-                  </ul>
-                </ul>
+                <h:ul>
+                  <h:li>IPv4 (RFC 791)</h:li>
+                  <h:ul>
+                    <h:li>destination address</h:li>
+                    <h:li>protocol</h:li>
+                  </h:ul>
+                  <h:li>IPv6 (RFC 8200)</h:li>
+                  <h:ul>
+                    <h:li>source address</h:li>
+                    <h:li>destination address</h:li>
+                    <h:li>next header (protocol)</h:li>
+                  </h:ul>
+                  <h:li>TCP (RFC 793)</h:li>
+                  <h:ul>
+                    <h:li>source port</h:li>
+                    <h:li>destination port</h:li>
+                  </h:ul>
+                  <h:li>UDP (RFC 768)</h:li>
+                  <h:ul>
+                    <h:li>source port</h:li>
+                    <h:li>destination port</h:li>
+                  </h:ul>
+                </h:ul>
                 The evaluator shall verify that the operational guidance indicates that each rule can identify the following
                 actions: permit, discard, and log.
-                <br/>
+                <h:br/>
                 The evaluator shall verify that the operational guidance explains how rules are associated with distinct
                 network interfaces.
-                <br/>
+                <h:br/>
                 The guidance may describe the other protocols contained within the ST (e.g., IPsec, IKE, potentially HTTPS,
                 SSH, and TLS) that are processed by the TOE. The evaluator shall ensure that it is made clear what
                 protocols were not considered as part of the TOE evaluation.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>
                 The evaluator shall perform the following tests:
                 <testlist>
-                  <test>The evaluator shall use the instructions in the operational guidance to test that packet filter rules can be created that permit, discard, and log packets for each of the following attributes: <ul><li>IPv4</li> <ul><li>Destination Address</li> <li>Protocol</li></ul> <li>IPv6</li> <ul><li>Source address</li> <li>Destination Address</li> <li>Next Header (Protocol)</li></ul> <li>TCP</li> <ul><li>Source Port</li> <li>Destination Port</li></ul> <li>UDP</li> <ul><li>Source Port</li> <li>Destination Port</li></ul></ul></test>
+                  <test>The evaluator shall use the instructions in the operational guidance to test that packet filter rules can be created that permit, discard, and log packets for each of the following attributes: <h:ul><h:li>IPv4</h:li> <h:ul><h:li>Destination Address</h:li> <h:li>Protocol</h:li></h:ul> <h:li>IPv6</h:li> <h:ul><h:li>Source address</h:li> <h:li>Destination Address</h:li> <h:li>Next Header (Protocol)</h:li></h:ul> <h:li>TCP</h:li> <h:ul><h:li>Source Port</h:li> <h:li>Destination Port</h:li></h:ul> <h:li>UDP</h:li> <h:ul><h:li>Source Port</h:li> <h:li>Destination Port</h:li></h:ul></h:ul></test>
                   <test>The evaluator shall repeat Test 1 above for each distinct network interface type supported by the TOE to ensure that packet filtering rules can be defined for all supported types.</test>
                 </testlist>
                 Note that these test activities should be performed in conjunction with those of FPF_RUL_EXT.1.6 where
@@ -1119,14 +1150,14 @@ expected to enforce.
                 combinations are configured otherwise (e.g., using automation), these test activities may be necessary in
                 order to ensure the guidance is correct and the full range of configurations can be achieved by a TOE
                 administrator.
-                <br/>
+                <h:br/>
               </Tests>
             </aactivity>
           </f-element>
           <f-element id="fpf-rul-ext-1e5">
             <title>
               The TSF shall process the applicable packet filtering rules (as determined in
-              accordance with FPF_RUL_EXT.1.4) in the following order: [<i>Administrator-defined</i>].
+              accordance with FPF_RUL_EXT.1.4) in the following order: [<h:i>Administrator-defined</h:i>].
             </title>
             <ext-comp-def-title>
               <title>
@@ -1142,13 +1173,13 @@ expected to enforce.
                 The evaluator shall verify that the TSS describes the algorithm applied to incoming packets, including the
                 processing of default rules, determination of whether a packet is part of an established session, and
                 application of administrator defined and ordered ruleset.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The evaluator shall verify that the operational guidance describes how the order of packet filtering rules
                 is determined and provides the necessary instructions so that an administrator can configure the order of
                 rule processing.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>
                 The evaluator shall perform the following tests:
@@ -1156,7 +1187,7 @@ expected to enforce.
                   <test>The evaluator shall devise two equal packet filtering rules with alternate operations – permit and discard. The rules should then be deployed in two distinct orders and in each case the evaluator shall ensure that the first rule is enforced in both cases by generating applicable packets and using packet capture and logs for confirmation.</test>
                   <test>The evaluator shall repeat the procedure above, except that the two rules should be devised where one is a subset of the other (e.g., a specific address vs. a network segment). Again, the evaluator shall test both orders to ensure that the first is enforced regardless of the specificity of the rule.</test>
                 </testlist>
-                <br/>
+                <h:br/>
               </Tests>
             </aactivity>
           </f-element>
@@ -1169,14 +1200,14 @@ expected to enforce.
                 The evaluator shall verify that the TSS describes the process for applying packet filtering rules and also
                 that the behavior (either by default, or as configured by the administrator) is to discard packets when
                 there is no rule match. The evaluator shall verify the TSS describes when the IPv4 and IPv6 protocols supported by the TOE differ from the full list provided in the RFC Values for IPv4 and IPv6 table.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The evaluator shall verify that the operational guidance describes the behavior if no rules or special
                 conditions apply to the network traffic. If the behavior is configurable, the evaluator shall verify that the
                 operational guidance provides the appropriate instructions to configure the behavior to discard packets
                 with no matching rules. The evaluator shall verify that the operational guidance describes the range of IPv4 and IPv6 protocols supported by the TOE.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>
                 The evaluator shall perform the following tests:
@@ -1194,267 +1225,267 @@ expected to enforce.
                 </testlist>
                 The following table identifies the RFC defined values for the protocol fields for IPv4 and IPv6 to be used in
                 configuring and otherwise testing packet filtering rule definition and enforcement:
-                <br/>
-                <table>
-                  <tr class="header">
-                    <td>Protocol</td>
-                    <td>Defined Attributes</td>
-                  </tr>
-                  <tr>
-                    <td>IPv4</td>
-                    <td>
-                      <ul>
-                        <li>Transport Layer Protocol 1 - Internet Control Message</li>
-                        <li>Transport Layer Protocol 2 - Internet Group Management</li>
-                        <li>Transport Layer Protocol 3 - Gateway-to-Gateway</li>
-                        <li>Transport Layer Protocol 4 - IP in IP (encapsulation)</li>
-                        <li>Transport Layer Protocol 5 - Stream</li>
-                        <li>Transport Layer Protocol 6 - Transmission Control</li>
-                        <li>Transport Layer Protocol 7 - UCL</li>
-                        <li>Transport Layer Protocol 8 - Exterior Gateway Protocol</li>
-                        <li>Transport Layer Protocol 9 - Any private interior gateway</li>
-                        <li>Transport Layer Protocol 10 - BBN RCC Monitoring</li>
-                        <li>Transport Layer Protocol 11 - Network Voice Protocol</li>
-                        <li>Transport Layer Protocol 12 - PUP</li>
-                        <li>Transport Layer Protocol 13 - ARGUS</li>
-                        <li>Transport Layer Protocol 14 - EMCON</li>
-                        <li>Transport Layer Protocol 15 - Cross Net Debugger</li>
-                        <li>Transport Layer Protocol 16 - Chaos</li>
-                        <li>Transport Layer Protocol 17 - User Datagram</li>
-                        <li>Transport Layer Protocol 18 - Multiplexing</li>
-                        <li>Transport Layer Protocol 19 - DCN Measurement Subsystems</li>
-                        <li>Transport Layer Protocol 20 - Host Monitoring</li>
-                        <li>Transport Layer Protocol 21 - Packet Radio Measurement</li>
-                        <li>Transport Layer Protocol 22 - XEROX NS IDP</li>
-                        <li>Transport Layer Protocol 23 - Trunk-1</li>
-                        <li>Transport Layer Protocol 24 - Trunk-2</li>
-                        <li>Transport Layer Protocol 25 - Leaf-1</li>
-                        <li>Transport Layer Protocol 26 - Leaf-2</li>
-                        <li>Transport Layer Protocol 27 - Reliable Data Protocol</li>
-                        <li>Transport Layer Protocol 28 - Internet Reliable Transaction</li>
-                        <li>Transport Layer Protocol 29 - ISO Transport Protocol Class 4</li>
-                        <li>Transport Layer Protocol 30 - Bulk Data Transfer Protocol</li>
-                        <li>Transport Layer Protocol 31 - MFE Network Services Protocol</li>
-                        <li>Transport Layer Protocol 32 - MERIT Internodal Protocol</li>
-                        <li>Transport Layer Protocol 33 - Sequential Exchange Protocol</li>
-                        <li>Transport Layer Protocol 34 - Third Party Connect Protocol</li>
-                        <li>Transport Layer Protocol 35 - Inter-Domain Policy Routing Protocol</li>
-                        <li>Transport Layer Protocol 36 - XTP</li>
-                        <li>Transport Layer Protocol 37 - Datagram Delivery Protocol</li>
-                        <li>Transport Layer Protocol 38 - IDPR Control Message Transport Protocol</li>
-                        <li>Transport Layer Protocol 39 - TP++ Transport Protocol</li>
-                        <li>Transport Layer Protocol 40 - IL Transport Protocol</li>
-                        <li>Transport Layer Protocol 41 - Simple Internet Protocol</li>
-                        <li>Transport Layer Protocol 42 - Source Demand Routing Protocol</li>
-                        <li>Transport Layer Protocol 43 - SIP Source Route</li>
-                        <li>Transport Layer Protocol 44 - SIP Fragment</li>
-                        <li>Transport Layer Protocol 45 - Inter-Domain Routing Protocol</li>
-                        <li>Transport Layer Protocol 46 - Reservation Protocol</li>
-                        <li>Transport Layer Protocol 47 - General Routing Encapsulation</li>
-                        <li>Transport Layer Protocol 48 - Mobile Host Routing Protocol</li>
-                        <li>Transport Layer Protocol 49 - BNA</li>
-                        <li>Transport Layer Protocol 50 - SIPP Encap Security Payload</li>
-                        <li>Transport Layer Protocol 51 - SIPP Authentication Header</li>
-                        <li>Transport Layer Protocol 52 - Integrated Net Layer Security TUBA</li>
-                        <li>Transport Layer Protocol 53 - IP with Encryption</li>
-                        <li>Transport Layer Protocol 54 - NBMA Next Hop Resolution Protocol</li>
-                        <li>Transport Layer Protocol 61 - Any host internal protocol</li>
-                        <li>Transport Layer Protocol 62 - CFTP</li>
-                        <li>Transport Layer Protocol 63 - Any local network</li>
-                        <li>Transport Layer Protocol 64 - SATNET and Backroom EXPAK</li>
-                        <li>Transport Layer Protocol 65 - Kryptolan</li>
-                        <li>Transport Layer Protocol 66 - MIT Remote Virtual Disk Protocol</li>
-                        <li>Transport Layer Protocol 67 - Internet Pluribus Packet Core</li>
-                        <li>Transport Layer Protocol 68 - Any distributed file system</li>
-                        <li>Transport Layer Protocol 69 - SATNET Monitoring</li>
-                        <li>Transport Layer Protocol 70 - VISA Protocol</li>
-                        <li>Transport Layer Protocol 71 - Internet Packet Core Utility</li>
-                        <li>Transport Layer Protocol 72 - Computer Protocol Network Executive</li>
-                        <li>Transport Layer Protocol 73 - Computer Protocol Heart Beat</li>
-                        <li>Transport Layer Protocol 74 - Wang Span Network</li>
-                        <li>Transport Layer Protocol 75 - Packet Video Protocol</li>
-                        <li>Transport Layer Protocol 76 - Backroom SATNET Monitoring</li>
-                        <li>Transport Layer Protocol 77 - SUN ND PROTOCOL-Temporary</li>
-                        <li>Transport Layer Protocol 78 - WIDEBAND Monitoring</li>
-                        <li>Transport Layer Protocol 79 - WIDEBAND EXPAK</li>
-                        <li>Transport Layer Protocol 80 - ISO Internet Protocol</li>
-                        <li>Transport Layer Protocol 81 - VMTP</li>
-                        <li>Transport Layer Protocol 82 - SECURE-VMTP</li>
-                        <li>Transport Layer Protocol 83 - VINES</li>
-                        <li>Transport Layer Protocol 84 - TTP</li>
-                        <li>Transport Layer Protocol 85 - NSFNET-IGP</li>
-                        <li>Transport Layer Protocol 86 - Dissimilar Gateway Protocol</li>
-                        <li>Transport Layer Protocol 87 - TCF</li>
-                        <li>Transport Layer Protocol 88 - IGRP</li>
-                        <li>Transport Layer Protocol 89 - OSPFIGP</li>
-                        <li>Transport Layer Protocol 90 - Sprite RPC Protocol</li>
-                        <li>Transport Layer Protocol 91 - Locus Address Resolution Protocol</li>
-                        <li>Transport Layer Protocol 92 - Multicast Transport Protocol</li>
-                        <li>Transport Layer Protocol 93 - AX.25 Frames</li>
-                        <li>Transport Layer Protocol 94 - IP-within-IP Encapsulation Protocol</li>
-                        <li>Transport Layer Protocol 95 - Mobile Internetworking Control Protocol</li>
-                        <li>Transport Layer Protocol 96 - Semaphore Communications Security Protocol</li>
-                        <li>Transport Layer Protocol 97 - Ethernet-within-IP Encapsulation</li>
-                        <li>Transport Layer Protocol 98 - Encapsulation Header</li>
-                        <li>Transport Layer Protocol 99 - Any private encryption scheme</li>
-                        <li>Transport Layer Protocol 100 - GMTP</li>
-                      </ul>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>IPv6</td>
-                    <td>
-                      <ul>
-                        <li>Transport Layer Protocol 1 - Internet Control Message</li>
-                        <li>Transport Layer Protocol 2 - Internet Group Management</li>
-                        <li>Transport Layer Protocol 3 - Gateway-to-Gateway</li>
-                        <li>Transport Layer Protocol 4 - IPv4 encapsulation</li>
-                        <li>Transport Layer Protocol 5 - Stream</li>
-                        <li>Transport Layer Protocol 6 - Transmission Control</li>
-                        <li>Transport Layer Protocol 7 - CBT</li>
-                        <li>Transport Layer Protocol 8 - Exterior Gateway Protocol</li>
-                        <li>Transport Layer Protocol 9 - Any private interior gateway</li>
-                        <li>Transport Layer Protocol 10 - BBN RCC Monitoring</li>
-                        <li>Transport Layer Protocol 11 - Network Voice Protocol</li>
-                        <li>Transport Layer Protocol 12 - PUP</li>
-                        <li>Transport Layer Protocol 13 - ARGUS</li>
-                        <li>Transport Layer Protocol 14 - EMCON</li>
-                        <li>Transport Layer Protocol 15 - Cross Net Debugger</li>
-                        <li>Transport Layer Protocol 16 - Chaos</li>
-                        <li>Transport Layer Protocol 17 - User Datagram</li>
-                        <li>Transport Layer Protocol 18 - Multiplexing</li>
-                        <li>Transport Layer Protocol 19 - DCN Measurement Subsystems</li>
-                        <li>Transport Layer Protocol 20 - Host Monitoring</li>
-                        <li>Transport Layer Protocol 21 - Packet Radio Measurement</li>
-                        <li>Transport Layer Protocol 22 - XEROX NS IDP</li>
-                        <li>Transport Layer Protocol 23 - Trunk-1</li>
-                        <li>Transport Layer Protocol 24 - Trunk-2</li>
-                        <li>Transport Layer Protocol 25 - Leaf-1</li>
-                        <li>Transport Layer Protocol 26 - Leaf-2</li>
-                        <li>Transport Layer Protocol 27 - Reliable Data Protocol</li>
-                        <li>Transport Layer Protocol 28 - Internet Reliable Transaction</li>
-                        <li>Transport Layer Protocol 29 - Transport Protocol Class 4</li>
-                        <li>Transport Layer Protocol 30 - Bulk Data Transfer Protocol</li>
-                        <li>Transport Layer Protocol 31 - MFE Network Services Protocol</li>
-                        <li>Transport Layer Protocol 32 - MERIT Internodal Protocol</li>
-                        <li>Transport Layer Protocol 33 - Datagram Congestion Control Protocol</li>
-                        <li>Transport Layer Protocol 34 - Third Party Connect Protocol</li>
-                        <li>Transport Layer Protocol 35 - Inter-Domain Policy Routing Protocol</li>
-                        <li>Transport Layer Protocol 36 - XTP</li>
-                        <li>Transport Layer Protocol 37 - Datagram Delivery Protocol</li>
-                        <li>Transport Layer Protocol 38 - IDPR Control Message Transport Protocol</li>
-                        <li>Transport Layer Protocol 39 - TP++ Transport Protocol</li>
-                        <li>Transport Layer Protocol 40 - IL Transport Protocol</li>
-                        <li>Transport Layer Protocol 41 - IPv6 encapsulation</li>
-                        <li>Transport Layer Protocol 42 - Source Demand Routing Protocol</li>
-                        <li>Transport Layer Protocol 43 - Intentionally blank</li>
-                        <li>Transport Layer Protocol 44 - Intentionally blank</li>
-                        <li>Transport Layer Protocol 45 - Inter-Domain Routing Protocol</li>
-                        <li>Transport Layer Protocol 46 - Reservation Protocol</li>
-                        <li>Transport Layer Protocol 47 - General Routing Encapsulation</li>
-                        <li>Transport Layer Protocol 48 - Dynamic Source Routing Protocol</li>
-                        <li>Transport Layer Protocol 49 - BNA</li>
-                        <li>Transport Layer Protocol 50 - Intentionally Blank</li>
-                        <li>Transport Layer Protocol 51 - Intentionally Blank</li>
-                        <li>Transport Layer Protocol 52 - Integrated Net Layer Security</li>
-                        <li>Transport Layer Protocol 53 - IP with Encryption</li>
-                        <li>Transport Layer Protocol 54 - NBMA Address Resolution Protocol</li>
-                        <li>Transport Layer Protocol 55 - Mobility</li>
-                        <li>Transport Layer Protocol 56 - Transport Layer Security Protocol using Kryptonet key
-                        management</li>
-                        <li>Transport Layer Protocol 57 - SKIP</li>
-                        <li>Transport Layer Protocol 58 - ICMP for IPv6</li>
-                        <li>Transport Layer Protocol 59 - No Next Header for IPv6</li>
-                        <li>Transport Layer Protocol 60 - Intentionally Blank</li>
-                        <li>Transport Layer Protocol 61 - Any host internal protocol</li>
-                        <li>Transport Layer Protocol 62 - CFTP</li>
-                        <li>Transport Layer Protocol 63 - Any local network</li>
-                        <li>Transport Layer Protocol 64 - SATNET and Backroom EXPAK</li>
-                        <li>Transport Layer Protocol 65 - Kryptolan</li>
-                        <li>Transport Layer Protocol 66 - MIT Remote Virtual Disk Protocol</li>
-                        <li>Transport Layer Protocol 67 - Internet Pluribus Packet Core</li>
-                        <li>Transport Layer Protocol 68 - Any distributed file system</li>
-                        <li>Transport Layer Protocol 69 - SATNET Monitoring</li>
-                        <li>Transport Layer Protocol 70 - VISA Protocol</li>
-                        <li>Transport Layer Protocol 71 - Internet Packet Core Utility</li>
-                        <li>Transport Layer Protocol 72 - Computer Protocol Network Executive</li>
-                        <li>Transport Layer Protocol 73 - Computer Protocol Heart Beat</li>
-                        <li>Transport Layer Protocol 74 - Wang Span Network</li>
-                        <li>Transport Layer Protocol 75 - Packet Video Protocol</li>
-                        <li>Transport Layer Protocol 76 - Backroom SATNET Monitoring</li>
-                        <li>Transport Layer Protocol 77 - SUN ND PROTOCOL-Temporary</li>
-                        <li>Transport Layer Protocol 78 - WIDEBAND Monitoring</li>
-                        <li>Transport Layer Protocol 79 - WIDEBAND EXPAK</li>
-                        <li>Transport Layer Protocol 80 - ISO Internet Protocol</li>
-                        <li>Transport Layer Protocol 81 - VMTP</li>
-                        <li>Transport Layer Protocol 82 - SECURE-VMTP</li>
-                        <li>Transport Layer Protocol 83 - VINES</li>
-                        <li>Transport Layer Protocol 84 - TTP</li>
-                        <li>Transport Layer Protocol 85 - Internet Protocol Traffic Manager</li>
-                        <li>Transport Layer Protocol 86 - NSFNET-IGP</li>
-                        <li>Transport Layer Protocol 87 - Dissimilar Gateway Protocol</li>
-                        <li>Transport Layer Protocol 88 - TCF</li>
-                        <li>Transport Layer Protocol 89 - EIGRP</li>
-                        <li>Transport Layer Protocol 90 - OSPFIGP</li>
-                        <li>Transport Layer Protocol 91 - Sprite RPC Protocol</li>
-                        <li>Transport Layer Protocol 92 - Locus Address Resolution Protocol</li>
-                        <li>Transport Layer Protocol 93 - Multicast Transport Protocol</li>
-                        <li>Transport Layer Protocol 94 - AX.25 Frames</li>
-                        <li>Transport Layer Protocol 95 - IP-within-IP Encapsulation Protocol</li>
-                        <li>Transport Layer Protocol 96 - Mobile Internetworking Control Pro.</li>
-                        <li>Transport Layer Protocol 97 - Semaphore Communications Sec. Pro.</li>
-                        <li>Transport Layer Protocol 98 - Ethernet-within-IP Encapsulation</li>
-                        <li>Transport Layer Protocol 99 - Encapsulation Header</li>
-                        <li>Transport Layer Protocol 100 - GMTP</li>
-                        <li>Transport Layer Protocol 101 - Ipsilon Flow Management Protocol</li>
-                        <li>Transport Layer Protocol 102 - PNNI over IP</li>
-                        <li>Transport Layer Protocol 103 - Protocol Independent Multicast</li>
-                        <li>Transport Layer Protocol 104 - ARIS</li>
-                        <li>Transport Layer Protocol 105 - SCPS Transport Layer Protocol</li>
-                        <li>Transport Layer Protocol 106 - QNX</li>
-                        <li>Transport Layer Protocol 107 - Active Networks</li>
-                        <li>Transport Layer Protocol 108 - Payload Compression Protocol</li>
-                        <li>Transport Layer Protocol 109 - Sitara Networks Protocol</li>
-                        <li>Transport Layer Protocol 110 - Compaq Peer Protocol</li>
-                        <li>Transport Layer Protocol 111 - IPX in IP</li>
-                        <li>Transport Layer Protocol 112 - Virtual Router Redundancy Protocol</li>
-                        <li>Transport Layer Protocol 113 - PGM Reliable Transport Protocol</li>
-                        <li>Transport Layer Protocol 114 - Any 0-hop protocol</li>
-                        <li>Transport Layer Protocol 115 - Layer Two Tunneling Protocol</li>
-                        <li>Transport Layer Protocol 116 - D-II Data Exchange (DDX)</li>
-                        <li>Transport Layer Protocol 117 - Interactive Agent Transfer Protocol</li>
-                        <li>Transport Layer Protocol 118 - Schedule Transfer Protocol</li>
-                        <li>Transport Layer Protocol 119 - SpectraLink Radio Protocol</li>
-                        <li>Transport Layer Protocol 120 - UTI</li>
-                        <li>Transport Layer Protocol 121 - Simple Message Protocol</li>
-                        <li>Transport Layer Protocol 122 - SM</li>
-                        <li>Transport Layer Protocol 123 - Performance Transparency Protocol</li>
-                        <li>Transport Layer Protocol 124 - ISIS over IPv4</li>
-                        <li>Transport Layer Protocol 125 - FIRE</li>
-                        <li>Transport Layer Protocol 126 - Combat Radio Transport Protocol</li>
-                        <li>Transport Layer Protocol 127 - Combat Radio User Datagram</li>
-                        <li>Transport Layer Protocol 128 - SSCOPMCE</li>
-                        <li>Transport Layer Protocol 129 - IPLT</li>
-                        <li>Transport Layer Protocol 130 - Secure Packet Shield</li>
-                        <li>Transport Layer Protocol 131 - Private IP Encapsulation within IP</li>
-                        <li>Transport Layer Protocol 132 - Stream Control Transmission Protocol</li>
-                        <li>Transport Layer Protocol 133 - Fibre Channel</li>
-                        <li>Transport Layer Protocol 134 - RSVP-E2E-IGNORE</li>
-                        <li>Transport Layer Protocol 135 - Mobility Header</li>
-                        <li>Transport Layer Protocol 136 - UDPLite</li>
-                        <li>Transport Layer Protocol 137 - MPLS-in-IP</li>
-                        <li>Transport Layer Protocol 138 - MANET Protocols</li>
-                        <li>Transport Layer Protocol 139 - Host Identity Protocol</li>
-                        <li>Transport Layer Protocol 140 - Shim6 Protocol</li>
-                        <li>Transport Layer Protocol 141 - Wrapped Encapsulating Security Payload</li>
-                        <li>Transport Layer Protocol 142 - Robust Header Compression</li>
-                      </ul>
-                    </td>
-                  </tr>
-                </table>
-                <b>
+                <h:br/>
+                <h:table>
+                  <h:tr class="header">
+                    <h:td>Protocol</h:td>
+                    <h:td>Defined Attributes</h:td>
+                  </h:tr>
+                  <h:tr>
+                    <h:td>IPv4</h:td>
+                    <h:td>
+                      <h:ul>
+                        <h:li>Transport Layer Protocol 1 - Internet Control Message</h:li>
+                        <h:li>Transport Layer Protocol 2 - Internet Group Management</h:li>
+                        <h:li>Transport Layer Protocol 3 - Gateway-to-Gateway</h:li>
+                        <h:li>Transport Layer Protocol 4 - IP in IP (encapsulation)</h:li>
+                        <h:li>Transport Layer Protocol 5 - Stream</h:li>
+                        <h:li>Transport Layer Protocol 6 - Transmission Control</h:li>
+                        <h:li>Transport Layer Protocol 7 - UCL</h:li>
+                        <h:li>Transport Layer Protocol 8 - Exterior Gateway Protocol</h:li>
+                        <h:li>Transport Layer Protocol 9 - Any private interior gateway</h:li>
+                        <h:li>Transport Layer Protocol 10 - BBN RCC Monitoring</h:li>
+                        <h:li>Transport Layer Protocol 11 - Network Voice Protocol</h:li>
+                        <h:li>Transport Layer Protocol 12 - PUP</h:li>
+                        <h:li>Transport Layer Protocol 13 - ARGUS</h:li>
+                        <h:li>Transport Layer Protocol 14 - EMCON</h:li>
+                        <h:li>Transport Layer Protocol 15 - Cross Net Debugger</h:li>
+                        <h:li>Transport Layer Protocol 16 - Chaos</h:li>
+                        <h:li>Transport Layer Protocol 17 - User Datagram</h:li>
+                        <h:li>Transport Layer Protocol 18 - Multiplexing</h:li>
+                        <h:li>Transport Layer Protocol 19 - DCN Measurement Subsystems</h:li>
+                        <h:li>Transport Layer Protocol 20 - Host Monitoring</h:li>
+                        <h:li>Transport Layer Protocol 21 - Packet Radio Measurement</h:li>
+                        <h:li>Transport Layer Protocol 22 - XEROX NS IDP</h:li>
+                        <h:li>Transport Layer Protocol 23 - Trunk-1</h:li>
+                        <h:li>Transport Layer Protocol 24 - Trunk-2</h:li>
+                        <h:li>Transport Layer Protocol 25 - Leaf-1</h:li>
+                        <h:li>Transport Layer Protocol 26 - Leaf-2</h:li>
+                        <h:li>Transport Layer Protocol 27 - Reliable Data Protocol</h:li>
+                        <h:li>Transport Layer Protocol 28 - Internet Reliable Transaction</h:li>
+                        <h:li>Transport Layer Protocol 29 - ISO Transport Protocol Class 4</h:li>
+                        <h:li>Transport Layer Protocol 30 - Bulk Data Transfer Protocol</h:li>
+                        <h:li>Transport Layer Protocol 31 - MFE Network Services Protocol</h:li>
+                        <h:li>Transport Layer Protocol 32 - MERIT Internodal Protocol</h:li>
+                        <h:li>Transport Layer Protocol 33 - Sequential Exchange Protocol</h:li>
+                        <h:li>Transport Layer Protocol 34 - Third Party Connect Protocol</h:li>
+                        <h:li>Transport Layer Protocol 35 - Inter-Domain Policy Routing Protocol</h:li>
+                        <h:li>Transport Layer Protocol 36 - XTP</h:li>
+                        <h:li>Transport Layer Protocol 37 - Datagram Delivery Protocol</h:li>
+                        <h:li>Transport Layer Protocol 38 - IDPR Control Message Transport Protocol</h:li>
+                        <h:li>Transport Layer Protocol 39 - TP++ Transport Protocol</h:li>
+                        <h:li>Transport Layer Protocol 40 - IL Transport Protocol</h:li>
+                        <h:li>Transport Layer Protocol 41 - Simple Internet Protocol</h:li>
+                        <h:li>Transport Layer Protocol 42 - Source Demand Routing Protocol</h:li>
+                        <h:li>Transport Layer Protocol 43 - SIP Source Route</h:li>
+                        <h:li>Transport Layer Protocol 44 - SIP Fragment</h:li>
+                        <h:li>Transport Layer Protocol 45 - Inter-Domain Routing Protocol</h:li>
+                        <h:li>Transport Layer Protocol 46 - Reservation Protocol</h:li>
+                        <h:li>Transport Layer Protocol 47 - General Routing Encapsulation</h:li>
+                        <h:li>Transport Layer Protocol 48 - Mobile Host Routing Protocol</h:li>
+                        <h:li>Transport Layer Protocol 49 - BNA</h:li>
+                        <h:li>Transport Layer Protocol 50 - SIPP Encap Security Payload</h:li>
+                        <h:li>Transport Layer Protocol 51 - SIPP Authentication Header</h:li>
+                        <h:li>Transport Layer Protocol 52 - Integrated Net Layer Security TUBA</h:li>
+                        <h:li>Transport Layer Protocol 53 - IP with Encryption</h:li>
+                        <h:li>Transport Layer Protocol 54 - NBMA Next Hop Resolution Protocol</h:li>
+                        <h:li>Transport Layer Protocol 61 - Any host internal protocol</h:li>
+                        <h:li>Transport Layer Protocol 62 - CFTP</h:li>
+                        <h:li>Transport Layer Protocol 63 - Any local network</h:li>
+                        <h:li>Transport Layer Protocol 64 - SATNET and Backroom EXPAK</h:li>
+                        <h:li>Transport Layer Protocol 65 - Kryptolan</h:li>
+                        <h:li>Transport Layer Protocol 66 - MIT Remote Virtual Disk Protocol</h:li>
+                        <h:li>Transport Layer Protocol 67 - Internet Pluribus Packet Core</h:li>
+                        <h:li>Transport Layer Protocol 68 - Any distributed file system</h:li>
+                        <h:li>Transport Layer Protocol 69 - SATNET Monitoring</h:li>
+                        <h:li>Transport Layer Protocol 70 - VISA Protocol</h:li>
+                        <h:li>Transport Layer Protocol 71 - Internet Packet Core Utility</h:li>
+                        <h:li>Transport Layer Protocol 72 - Computer Protocol Network Executive</h:li>
+                        <h:li>Transport Layer Protocol 73 - Computer Protocol Heart Beat</h:li>
+                        <h:li>Transport Layer Protocol 74 - Wang Span Network</h:li>
+                        <h:li>Transport Layer Protocol 75 - Packet Video Protocol</h:li>
+                        <h:li>Transport Layer Protocol 76 - Backroom SATNET Monitoring</h:li>
+                        <h:li>Transport Layer Protocol 77 - SUN ND PROTOCOL-Temporary</h:li>
+                        <h:li>Transport Layer Protocol 78 - WIDEBAND Monitoring</h:li>
+                        <h:li>Transport Layer Protocol 79 - WIDEBAND EXPAK</h:li>
+                        <h:li>Transport Layer Protocol 80 - ISO Internet Protocol</h:li>
+                        <h:li>Transport Layer Protocol 81 - VMTP</h:li>
+                        <h:li>Transport Layer Protocol 82 - SECURE-VMTP</h:li>
+                        <h:li>Transport Layer Protocol 83 - VINES</h:li>
+                        <h:li>Transport Layer Protocol 84 - TTP</h:li>
+                        <h:li>Transport Layer Protocol 85 - NSFNET-IGP</h:li>
+                        <h:li>Transport Layer Protocol 86 - Dissimilar Gateway Protocol</h:li>
+                        <h:li>Transport Layer Protocol 87 - TCF</h:li>
+                        <h:li>Transport Layer Protocol 88 - IGRP</h:li>
+                        <h:li>Transport Layer Protocol 89 - OSPFIGP</h:li>
+                        <h:li>Transport Layer Protocol 90 - Sprite RPC Protocol</h:li>
+                        <h:li>Transport Layer Protocol 91 - Locus Address Resolution Protocol</h:li>
+                        <h:li>Transport Layer Protocol 92 - Multicast Transport Protocol</h:li>
+                        <h:li>Transport Layer Protocol 93 - AX.25 Frames</h:li>
+                        <h:li>Transport Layer Protocol 94 - IP-within-IP Encapsulation Protocol</h:li>
+                        <h:li>Transport Layer Protocol 95 - Mobile Internetworking Control Protocol</h:li>
+                        <h:li>Transport Layer Protocol 96 - Semaphore Communications Security Protocol</h:li>
+                        <h:li>Transport Layer Protocol 97 - Ethernet-within-IP Encapsulation</h:li>
+                        <h:li>Transport Layer Protocol 98 - Encapsulation Header</h:li>
+                        <h:li>Transport Layer Protocol 99 - Any private encryption scheme</h:li>
+                        <h:li>Transport Layer Protocol 100 - GMTP</h:li>
+                      </h:ul>
+                    </h:td>
+                  </h:tr>
+                  <h:tr>
+                    <h:td>IPv6</h:td>
+                    <h:td>
+                      <h:ul>
+                        <h:li>Transport Layer Protocol 1 - Internet Control Message</h:li>
+                        <h:li>Transport Layer Protocol 2 - Internet Group Management</h:li>
+                        <h:li>Transport Layer Protocol 3 - Gateway-to-Gateway</h:li>
+                        <h:li>Transport Layer Protocol 4 - IPv4 encapsulation</h:li>
+                        <h:li>Transport Layer Protocol 5 - Stream</h:li>
+                        <h:li>Transport Layer Protocol 6 - Transmission Control</h:li>
+                        <h:li>Transport Layer Protocol 7 - CBT</h:li>
+                        <h:li>Transport Layer Protocol 8 - Exterior Gateway Protocol</h:li>
+                        <h:li>Transport Layer Protocol 9 - Any private interior gateway</h:li>
+                        <h:li>Transport Layer Protocol 10 - BBN RCC Monitoring</h:li>
+                        <h:li>Transport Layer Protocol 11 - Network Voice Protocol</h:li>
+                        <h:li>Transport Layer Protocol 12 - PUP</h:li>
+                        <h:li>Transport Layer Protocol 13 - ARGUS</h:li>
+                        <h:li>Transport Layer Protocol 14 - EMCON</h:li>
+                        <h:li>Transport Layer Protocol 15 - Cross Net Debugger</h:li>
+                        <h:li>Transport Layer Protocol 16 - Chaos</h:li>
+                        <h:li>Transport Layer Protocol 17 - User Datagram</h:li>
+                        <h:li>Transport Layer Protocol 18 - Multiplexing</h:li>
+                        <h:li>Transport Layer Protocol 19 - DCN Measurement Subsystems</h:li>
+                        <h:li>Transport Layer Protocol 20 - Host Monitoring</h:li>
+                        <h:li>Transport Layer Protocol 21 - Packet Radio Measurement</h:li>
+                        <h:li>Transport Layer Protocol 22 - XEROX NS IDP</h:li>
+                        <h:li>Transport Layer Protocol 23 - Trunk-1</h:li>
+                        <h:li>Transport Layer Protocol 24 - Trunk-2</h:li>
+                        <h:li>Transport Layer Protocol 25 - Leaf-1</h:li>
+                        <h:li>Transport Layer Protocol 26 - Leaf-2</h:li>
+                        <h:li>Transport Layer Protocol 27 - Reliable Data Protocol</h:li>
+                        <h:li>Transport Layer Protocol 28 - Internet Reliable Transaction</h:li>
+                        <h:li>Transport Layer Protocol 29 - Transport Protocol Class 4</h:li>
+                        <h:li>Transport Layer Protocol 30 - Bulk Data Transfer Protocol</h:li>
+                        <h:li>Transport Layer Protocol 31 - MFE Network Services Protocol</h:li>
+                        <h:li>Transport Layer Protocol 32 - MERIT Internodal Protocol</h:li>
+                        <h:li>Transport Layer Protocol 33 - Datagram Congestion Control Protocol</h:li>
+                        <h:li>Transport Layer Protocol 34 - Third Party Connect Protocol</h:li>
+                        <h:li>Transport Layer Protocol 35 - Inter-Domain Policy Routing Protocol</h:li>
+                        <h:li>Transport Layer Protocol 36 - XTP</h:li>
+                        <h:li>Transport Layer Protocol 37 - Datagram Delivery Protocol</h:li>
+                        <h:li>Transport Layer Protocol 38 - IDPR Control Message Transport Protocol</h:li>
+                        <h:li>Transport Layer Protocol 39 - TP++ Transport Protocol</h:li>
+                        <h:li>Transport Layer Protocol 40 - IL Transport Protocol</h:li>
+                        <h:li>Transport Layer Protocol 41 - IPv6 encapsulation</h:li>
+                        <h:li>Transport Layer Protocol 42 - Source Demand Routing Protocol</h:li>
+                        <h:li>Transport Layer Protocol 43 - Intentionally blank</h:li>
+                        <h:li>Transport Layer Protocol 44 - Intentionally blank</h:li>
+                        <h:li>Transport Layer Protocol 45 - Inter-Domain Routing Protocol</h:li>
+                        <h:li>Transport Layer Protocol 46 - Reservation Protocol</h:li>
+                        <h:li>Transport Layer Protocol 47 - General Routing Encapsulation</h:li>
+                        <h:li>Transport Layer Protocol 48 - Dynamic Source Routing Protocol</h:li>
+                        <h:li>Transport Layer Protocol 49 - BNA</h:li>
+                        <h:li>Transport Layer Protocol 50 - Intentionally Blank</h:li>
+                        <h:li>Transport Layer Protocol 51 - Intentionally Blank</h:li>
+                        <h:li>Transport Layer Protocol 52 - Integrated Net Layer Security</h:li>
+                        <h:li>Transport Layer Protocol 53 - IP with Encryption</h:li>
+                        <h:li>Transport Layer Protocol 54 - NBMA Address Resolution Protocol</h:li>
+                        <h:li>Transport Layer Protocol 55 - Mobility</h:li>
+                        <h:li>Transport Layer Protocol 56 - Transport Layer Security Protocol using Kryptonet key
+                        management</h:li>
+                        <h:li>Transport Layer Protocol 57 - SKIP</h:li>
+                        <h:li>Transport Layer Protocol 58 - ICMP for IPv6</h:li>
+                        <h:li>Transport Layer Protocol 59 - No Next Header for IPv6</h:li>
+                        <h:li>Transport Layer Protocol 60 - Intentionally Blank</h:li>
+                        <h:li>Transport Layer Protocol 61 - Any host internal protocol</h:li>
+                        <h:li>Transport Layer Protocol 62 - CFTP</h:li>
+                        <h:li>Transport Layer Protocol 63 - Any local network</h:li>
+                        <h:li>Transport Layer Protocol 64 - SATNET and Backroom EXPAK</h:li>
+                        <h:li>Transport Layer Protocol 65 - Kryptolan</h:li>
+                        <h:li>Transport Layer Protocol 66 - MIT Remote Virtual Disk Protocol</h:li>
+                        <h:li>Transport Layer Protocol 67 - Internet Pluribus Packet Core</h:li>
+                        <h:li>Transport Layer Protocol 68 - Any distributed file system</h:li>
+                        <h:li>Transport Layer Protocol 69 - SATNET Monitoring</h:li>
+                        <h:li>Transport Layer Protocol 70 - VISA Protocol</h:li>
+                        <h:li>Transport Layer Protocol 71 - Internet Packet Core Utility</h:li>
+                        <h:li>Transport Layer Protocol 72 - Computer Protocol Network Executive</h:li>
+                        <h:li>Transport Layer Protocol 73 - Computer Protocol Heart Beat</h:li>
+                        <h:li>Transport Layer Protocol 74 - Wang Span Network</h:li>
+                        <h:li>Transport Layer Protocol 75 - Packet Video Protocol</h:li>
+                        <h:li>Transport Layer Protocol 76 - Backroom SATNET Monitoring</h:li>
+                        <h:li>Transport Layer Protocol 77 - SUN ND PROTOCOL-Temporary</h:li>
+                        <h:li>Transport Layer Protocol 78 - WIDEBAND Monitoring</h:li>
+                        <h:li>Transport Layer Protocol 79 - WIDEBAND EXPAK</h:li>
+                        <h:li>Transport Layer Protocol 80 - ISO Internet Protocol</h:li>
+                        <h:li>Transport Layer Protocol 81 - VMTP</h:li>
+                        <h:li>Transport Layer Protocol 82 - SECURE-VMTP</h:li>
+                        <h:li>Transport Layer Protocol 83 - VINES</h:li>
+                        <h:li>Transport Layer Protocol 84 - TTP</h:li>
+                        <h:li>Transport Layer Protocol 85 - Internet Protocol Traffic Manager</h:li>
+                        <h:li>Transport Layer Protocol 86 - NSFNET-IGP</h:li>
+                        <h:li>Transport Layer Protocol 87 - Dissimilar Gateway Protocol</h:li>
+                        <h:li>Transport Layer Protocol 88 - TCF</h:li>
+                        <h:li>Transport Layer Protocol 89 - EIGRP</h:li>
+                        <h:li>Transport Layer Protocol 90 - OSPFIGP</h:li>
+                        <h:li>Transport Layer Protocol 91 - Sprite RPC Protocol</h:li>
+                        <h:li>Transport Layer Protocol 92 - Locus Address Resolution Protocol</h:li>
+                        <h:li>Transport Layer Protocol 93 - Multicast Transport Protocol</h:li>
+                        <h:li>Transport Layer Protocol 94 - AX.25 Frames</h:li>
+                        <h:li>Transport Layer Protocol 95 - IP-within-IP Encapsulation Protocol</h:li>
+                        <h:li>Transport Layer Protocol 96 - Mobile Internetworking Control Pro.</h:li>
+                        <h:li>Transport Layer Protocol 97 - Semaphore Communications Sec. Pro.</h:li>
+                        <h:li>Transport Layer Protocol 98 - Ethernet-within-IP Encapsulation</h:li>
+                        <h:li>Transport Layer Protocol 99 - Encapsulation Header</h:li>
+                        <h:li>Transport Layer Protocol 100 - GMTP</h:li>
+                        <h:li>Transport Layer Protocol 101 - Ipsilon Flow Management Protocol</h:li>
+                        <h:li>Transport Layer Protocol 102 - PNNI over IP</h:li>
+                        <h:li>Transport Layer Protocol 103 - Protocol Independent Multicast</h:li>
+                        <h:li>Transport Layer Protocol 104 - ARIS</h:li>
+                        <h:li>Transport Layer Protocol 105 - SCPS Transport Layer Protocol</h:li>
+                        <h:li>Transport Layer Protocol 106 - QNX</h:li>
+                        <h:li>Transport Layer Protocol 107 - Active Networks</h:li>
+                        <h:li>Transport Layer Protocol 108 - Payload Compression Protocol</h:li>
+                        <h:li>Transport Layer Protocol 109 - Sitara Networks Protocol</h:li>
+                        <h:li>Transport Layer Protocol 110 - Compaq Peer Protocol</h:li>
+                        <h:li>Transport Layer Protocol 111 - IPX in IP</h:li>
+                        <h:li>Transport Layer Protocol 112 - Virtual Router Redundancy Protocol</h:li>
+                        <h:li>Transport Layer Protocol 113 - PGM Reliable Transport Protocol</h:li>
+                        <h:li>Transport Layer Protocol 114 - Any 0-hop protocol</h:li>
+                        <h:li>Transport Layer Protocol 115 - Layer Two Tunneling Protocol</h:li>
+                        <h:li>Transport Layer Protocol 116 - D-II Data Exchange (DDX)</h:li>
+                        <h:li>Transport Layer Protocol 117 - Interactive Agent Transfer Protocol</h:li>
+                        <h:li>Transport Layer Protocol 118 - Schedule Transfer Protocol</h:li>
+                        <h:li>Transport Layer Protocol 119 - SpectraLink Radio Protocol</h:li>
+                        <h:li>Transport Layer Protocol 120 - UTI</h:li>
+                        <h:li>Transport Layer Protocol 121 - Simple Message Protocol</h:li>
+                        <h:li>Transport Layer Protocol 122 - SM</h:li>
+                        <h:li>Transport Layer Protocol 123 - Performance Transparency Protocol</h:li>
+                        <h:li>Transport Layer Protocol 124 - ISIS over IPv4</h:li>
+                        <h:li>Transport Layer Protocol 125 - FIRE</h:li>
+                        <h:li>Transport Layer Protocol 126 - Combat Radio Transport Protocol</h:li>
+                        <h:li>Transport Layer Protocol 127 - Combat Radio User Datagram</h:li>
+                        <h:li>Transport Layer Protocol 128 - SSCOPMCE</h:li>
+                        <h:li>Transport Layer Protocol 129 - IPLT</h:li>
+                        <h:li>Transport Layer Protocol 130 - Secure Packet Shield</h:li>
+                        <h:li>Transport Layer Protocol 131 - Private IP Encapsulation within IP</h:li>
+                        <h:li>Transport Layer Protocol 132 - Stream Control Transmission Protocol</h:li>
+                        <h:li>Transport Layer Protocol 133 - Fibre Channel</h:li>
+                        <h:li>Transport Layer Protocol 134 - RSVP-E2E-IGNORE</h:li>
+                        <h:li>Transport Layer Protocol 135 - Mobility Header</h:li>
+                        <h:li>Transport Layer Protocol 136 - UDPLite</h:li>
+                        <h:li>Transport Layer Protocol 137 - MPLS-in-IP</h:li>
+                        <h:li>Transport Layer Protocol 138 - MANET Protocols</h:li>
+                        <h:li>Transport Layer Protocol 139 - Host Identity Protocol</h:li>
+                        <h:li>Transport Layer Protocol 140 - Shim6 Protocol</h:li>
+                        <h:li>Transport Layer Protocol 141 - Wrapped Encapsulating Security Payload</h:li>
+                        <h:li>Transport Layer Protocol 142 - Robust Header Compression</h:li>
+                      </h:ul>
+                    </h:td>
+                  </h:tr>
+                </h:table>
+                <h:b>
                   <ctr ctr-type="Table" id="rfcvalues">: RFC Values for IPv4 and IPv6</ctr>
-                </b>
+                </h:b>
               </Tests>
             </aactivity>
           </f-element>
@@ -1477,9 +1508,9 @@ expected to enforce.
             performed. This PP-Module simply goes one step further and requires the
             TSF to behave in a certain way upon failure of those self-tests.</consistency-rationale>
           <f-element id="fpt-fls-1e1-SelfTest">
-            <title>The TSF shall <s>preserve a secure state </s><b>shut down</b> when the following types of failures occur: [<i>failure of the
+            <title>The TSF shall <h:s>preserve a secure state </h:s><h:b>shut down</h:b> when the following types of failures occur: [<h:i>failure of the
               power-on self-tests, failure of integrity check of the TSF executable image, failure
-              of noise source health tests</i>].</title>
+              of noise source health tests</h:i>].</title>
             <note role="application">This SFR defines the expected TSF response to failures of the self-tests defined in
               the Base-PP.</note>
             <aactivity>
@@ -1490,13 +1521,13 @@ expected to enforce.
                 evaluator shall ensure that those cases are identified and a rationale is provided that supports the
                 classification and justifies why the TOE’s ability to enforce its security policies is not affected in any such
                 instance.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The evaluator shall verify that the operational guidance provides information on the self-test failures that
                 can cause the TOE to shut down and how to diagnose the specific failure that has occurred, including
                 possible remediation steps if available.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>There are no test EAs for this component.</Tests>
             </aactivity>
@@ -1518,9 +1549,9 @@ expected to enforce.
           <dependencies>No dependencies.</dependencies>
           <f-element id="fpt-tst-ext-3e1">
             <title>
-              The TSF shall run a suite of the following self-tests [<i>when loaded for execution</i>]
-              to demonstrate the correct operation of the TSF: [<i>integrity verification of stored
-              executable code</i>].
+              The TSF shall run a suite of the following self-tests [<h:i>when loaded for execution</h:i>]
+              to demonstrate the correct operation of the TSF: [<h:i>integrity verification of stored
+              executable code</h:i>].
             </title>
             <ext-comp-def-title>
               <title>
@@ -1532,8 +1563,8 @@ expected to enforce.
             </ext-comp-def-title>
           </f-element>
           <f-element id="fpt-tst-ext-3e2">
-            <title>The TSF shall execute the self-testing through [<i>a TSF-provided cryptographic
-              service specified in FCS_COP.1/SigGen (from <xref to="bibNDcPP"/>)</i>].</title>
+            <title>The TSF shall execute the self-testing through [<h:i>a TSF-provided cryptographic
+              service specified in FCS_COP.1/SigGen (from <xref to="bibNDcPP"/>)</h:i>].</title>
             <ext-comp-def-title>
               <title>The TSF shall execute the self-testing through <assignable>self-testing mechanism</assignable>.</title>
             </ext-comp-def-title>
@@ -1545,9 +1576,9 @@ expected to enforce.
               <TSS>
                 The evaluator shall verify that the TSS describes the method used to perform self-testing on the TSF
                 executable code, and that this method is consistent with what is described in the SFR.
-                <br/>
+                <h:br/>
               </TSS>
-              <Guidance>There are no guidance EAs for this component.<br/></Guidance>
+              <Guidance>There are no guidance EAs for this component.<h:br/></Guidance>
               <Tests>There are no test EAs for this component.</Tests>
             </aactivity>
           </f-element>
@@ -1564,20 +1595,20 @@ expected to enforce.
           <f-element id="ftp-itc-1e1-vpn">
             <title>
               The TSF shall
-              <b>be capable of using IPsec to</b>
+              <h:b>be capable of using IPsec to</h:b>
               provide a communication channel
               between itself and
-              <b>authorized IT entities supporting VPN communications</b>
+              <h:b>authorized IT entities supporting VPN communications</h:b>
               that
               is logically distinct from other communication channels and provides assured
               identification of its end points and protection of the channel data from
-              <b>disclosure
-                and detection of modification of the channel data</b>.
+              <h:b>disclosure
+                and detection of modification of the channel data</h:b>.
             </title>
           </f-element>
           <f-element id="ftp-itc-1e2-vpn">
             <title>
-              The TSF shall permit [<i>the authorized IT entities</i>] to initiate communication via the
+              The TSF shall permit [<h:i>the authorized IT entities</h:i>] to initiate communication via the
               trusted channel.
             </title>
           </f-element>
@@ -1595,12 +1626,12 @@ expected to enforce.
               <TSS>
                 The EAs specified for FTP_ITC.1 in the Supporting Document for the Base-PP shall be
                 applied for IPsec VPN communications.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The EAs specified for FTP_ITC.1 in the Supporting Document for the Base-PP shall be
                 applied for IPsec VPN communications.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>The EAs specified for FTP_ITC.1 in the Supporting Document for the Base-PP shall be
                 applied for IPsec VPN communications. Additional testing for IPsec is covered in
@@ -1659,24 +1690,24 @@ expected to enforce.
               <TSS>
                 The evaluator shall examine the TSS to verify that it describes how authentication packets are identified 
                 and how all other traffic is blocked until secondary authentication is successful.
-                <br/>
-                <br/>
+                <h:br/>
+                <h:br/>
                 If the selection “verify” is included, the evaluator shall examine the TSS and verify it describes each authentication factor supported.
-                <br/>
-                <br/>
+                <h:br/>
+                <h:br/>
                 If the selection “verify via an external authentication server” is included, the evaluator shall examine the TSS and verify it describes how the factors are forwarded to the authentication server. 
                 The evaluator shall confirm other traffic is denied until verification is received by the authentication server.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The evaluator shall examine the operational guidance to verify that it provides instructions to the 
                 administrator on how to configure the secondary authentication factors and any additional details necessary for filtering all other traffic.
-                <br/>
-                <br/>
+                <h:br/>
+                <h:br/>
                 If the selection “verify via an external authentication server” is included, 
                 the evaluator shall examine the operational guidance to verify that it provides instructions to the administrator 
                 on how to integrate the authentication server.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>
                 <testlist>
@@ -1716,7 +1747,7 @@ expected to enforce.
                 <selectable id="fcs_eap_ext.1.1_2">EAP-TTLS as specified in RFC 5281 and updated by RFC 8996</selectable>
               </selectables>
               over a protected channel per FTP_ITC.1
-              <b>from the Base-PP</b>
+              <h:b>from the Base-PP</h:b>
               with an authentication server.
             </title>
             <ext-comp-def-title>
@@ -1751,20 +1782,20 @@ expected to enforce.
               <TSS>
                 The evaluator shall verify that the TSS describes the use of EAP options for each of the selected peer authentication 
                 mechanisms, and that the TSF supports EAP messaging for mutually authenticated TLS between the peer and the authentication server.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The evaluator shall verify that the guidance documents describe any configurable features of the EAP or TLS 
                 functionality, including instructions for configuration of the authenticators and registration processes for clients.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>
                 Testing for TLS functionality is in accordance with the TLS package.
-                <b></b>
+                <h:b></h:b>
                 For each supported EAP method claimed in FCS_EAP_EXT.1.1 and for each authentication method claimed in 
                 FCS_EAP_EXT.1.3, the evaluator shall perform the following tests:
                 <testlist>
-                  <test>The evaluator shall follow the operational guidance to configure the TSF to use the EAP method claimed. The evaluator shall follow the operational guidance to configure the TSF to use the authentication method claimed and, for EAP-TTLS, establish a trusted channel with an authentication server that requests the method, and register the peer as a TLS client with appropriate key material required for the authentication method. <br/>  <br/> The evaluator shall establish a VPN session using a test peer with a valid certificate and, for EAP-TTLS, configured to provide a correct value for the configured authenticator. The evaluator shall observe that the TSF sends EAP messages to the peer and authentication server to transfer the TLS handshake messages, and after the TSF receives the EAP-success message, that the VPN session between the peer and TSF is successfully established.</test>
+                  <test>The evaluator shall follow the operational guidance to configure the TSF to use the EAP method claimed. The evaluator shall follow the operational guidance to configure the TSF to use the authentication method claimed and, for EAP-TTLS, establish a trusted channel with an authentication server that requests the method, and register the peer as a TLS client with appropriate key material required for the authentication method. <h:br/>  <h:br/> The evaluator shall establish a VPN session using a test peer with a valid certificate and, for EAP-TTLS, configured to provide a correct value for the configured authenticator. The evaluator shall observe that the TSF sends EAP messages to the peer and authentication server to transfer the TLS handshake messages, and after the TSF receives the EAP-success message, that the VPN session between the peer and TSF is successfully established.</test>
                   <test>The evaluator shall follow the operational guidance to configure the TSF to use a supported EAP method, establish a trusted channel with an authentication server that requests the method and register the peer as a TLS client with key material required for a supported authentication method. The evaluator shall cause the test client to respond to an IKEv2 exchange with EAP-request, but to compute the shared secret after a successful EAP exchange using the non-EAP method. The evaluator shall initiate a VPN session between the test client and the TSF and observe that the TSF aborts the session.</test>
                 </testlist>
               </Tests>
@@ -1877,43 +1908,43 @@ expected to enforce.
             <title>The TSF shall increment the counter after each successful authentication.</title>
             <note role="application">
               The selection FIA_HOTP_EXT.1.4 must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication.
-              <br/>
+              <h:br/>
               In FIA_HOTP_EXT.1.5 the ST author may either provide a configurable character length of at least 6 or a preset size between 6 and 10.
-              <br/>
+              <h:br/>
               In FIA_HOTP_EXT.1.6 the ST author may select throttle requests, account lockout, or both.
-              <br/>
+              <h:br/>
               The HOTP seed and all derived values are considered secret keys for purposes of protection.
             </note>
             <aactivity>
               <TSS>
                 The evaluator shall verify the TSS describes how the HOTP is input into the client and how that value is sent to the server.
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how the HOTP seed is generated and ensure it aligns with FCS_RBG.1 (from
                 <xref to="bibNDcPP"/>).
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how the HOTP seed is protected and ensure it aligns with the storage requirements of the Base-PP.
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how a new HOTP seed is assigned for each client and how each client is uniquely identified.
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how the HOTP seed is conditioned into an HOTP hash and verify it matches the selection in FIA_HOTP_EXT.1.4.
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how the HOTP hash is truncated and verify it matches the selection in FIA_HOTP_EXT.1.5.
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how the TOE handles multiple incoming invalid requests and verify it provides an anti-hammer mechanism that matches the selections made in FIA_HOTP_EXT.1.6.
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how the TOE handles resynchronization and how it rejects attempts outside of the look-ahead window selected in FIA_TOTP_EXT.1.7.
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how the TOE counter is incremented after each successful authentication.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The evaluator shall verify the operational guidance contains any configuration necessary to enable HOTP.
-                <br/>
+                <h:br/>
                 The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the 
                 FIA_HOTP_EXT.1 requirements.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>
                 The evaluator shall configure the TOE to use a supported HOTP factor then:
@@ -1984,34 +2015,34 @@ expected to enforce.
               This requirement is included if “pre-shared keys that conform to RFC 8784” is selected in FCS_IPSEC_EXT.1.13, 
               or if “verify” is selected in FPF_MFA_EXT.1.2. If these selections are made in both FCS_IPSEC_EXT.1.13 and FPF_MFA_EXT.1.2, 
               the TSF must satisfy the appropriate FIA_PSK_EXT.1 selections for each.
-              <br/>
-              <br/>
+              <h:br/>
+              <h:br/>
               If any selection including "generated bit-based" is chosen, then FIA_PSK_EXT.2 must be included.
-              <br/>
-              <br/>
+              <h:br/>
+              <h:br/>
               If “pre-shared keys that conform to RFC 8784” is selected in FCS_IPSEC_EXT.1.13, a generated, bit-based PSK must be used.
-              <br/>
-              <br/>
+              <h:br/>
+              <h:br/>
               If any selection including Password-based keys is chosen, then FIA_PSK_EXT.3 must be included.
-              <br/>
-              <br/>
+              <h:br/>
+              <h:br/>
               If any selection including HMAC-based one-time password keys is chosen, then FIA_HOTP_EXT.1 must be included.
-              <br/>
-              <br/>
+              <h:br/>
+              <h:br/>
               If any selection including time-based one-time password is chosen, then FIA_TOTP_EXT.1 must be included.
             </note>
             <aactivity>
               <TSS>
                 The evaluator shall confirm that the TSS states which pre-shared key selections are supported for IKEv2 
                 per FCS_IPSEC_EXT.1.13 and FPF_MFA_EXT.1.1.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The evaluator shall examine the operational guidance to determine that it provides guidance to 
                 administrators on how to configure all selected pre-shared key options if any configuration is required.
                 The evaluator shall examine the operational guidance to determine that it provides guidance to administrators 
                 on how to configure the mandatory_or_not flag per RFC 8784.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>
                 The evaluator shall also perform the following tests for each protocol (or instantiation of a protocol, 
@@ -2035,9 +2066,9 @@ expected to enforce.
           <audit>
             The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the
             PP/ST:
-            <ul>
-              <li>Failure of the randomization process</li>
-            </ul>
+            <h:ul>
+              <h:li>Failure of the randomization process</h:li>
+            </h:ul>
           </audit>
           <dependencies>FIA_PSK_EXT.1 Pre-Shared Key Composition</dependencies>
           <f-element id="fia-psk-ext-2e1">
@@ -2045,7 +2076,7 @@ expected to enforce.
               The TSF shall be able to
               <selectables>
                 <selectable id="fia_psk_ext.2.1_1">accept externally generated pre-shared keys</selectable>
-                <selectable id="fia_psk_ext.2.1_2">generate <selectables><selectable id="fia_psk_ext.2.1_3">128</selectable><selectable id="fia_psk_ext.2.1_4">256</selectable></selectables> bit-based pre-shared keys via FCS_RBG.1 <b>(from <xref to="bibNDcPP"/>)</b>.</selectable>
+                <selectable id="fia_psk_ext.2.1_2">generate <selectables><selectable id="fia_psk_ext.2.1_3">128</selectable><selectable id="fia_psk_ext.2.1_4">256</selectable></selectables> bit-based pre-shared keys via FCS_RBG.1 <h:b>(from <xref to="bibNDcPP"/>)</h:b>.</selectable>
               </selectables>
             </title>
             <ext-comp-def-title>
@@ -2066,21 +2097,21 @@ expected to enforce.
             </ext-comp-def-title>
             <note role="application">
               Generated PSKs are expected to be shared between components via an out of band mechanism.
-              <br/>
+              <h:br/>
               This requirement is selection dependent on FIA_PSK_EXT.1.
-              <br/>
+              <h:br/>
             </note>
             <aactivity>
               <TSS>
                 If "generate" is selected, the evaluator shall confirm that this process uses the RBG specified in FCS_RBG.1 (from
                 <xref to="bibNDcPP"/>)
                 and the output matches the size selected in FIA_PSK_EXT.2.1.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The evaluator shall confirm the operational guidance contains instructions for entering generated pre-shared keys 
                 for each protocol identified in the FIA_PSK_EXT.1.1.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>
                 <testlist>
@@ -2102,9 +2133,9 @@ expected to enforce.
           <audit>
             The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the
             PP/ST:
-            <ul>
-              <li>Failure of the randomization process</li>
-            </ul>
+            <h:ul>
+              <h:li>Failure of the randomization process</h:li>
+            </h:ul>
           </audit>
           <dependencies>FIA_PSK_EXT.1 Pre-Shared Key Composition</dependencies>
           <f-element id="fia-psk-ext-3e1">
@@ -2127,7 +2158,7 @@ expected to enforce.
           </f-element>
           <f-element id="fia-psk-ext-3e3">
             <title>
-              The TSF shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm HMAC-[<i>SHA-384, with <assignable>positive integer of 4096 or more</assignable></i>] iterations, and output cryptographic key sizes [<i>256</i>] that meet the following: [<i>NIST SP 800-132</i>].
+              The TSF shall perform Password-based Key Derivation Functions in accordance with a specified cryptographic algorithm HMAC-[<h:i>SHA-384, with <assignable>positive integer of 4096 or more</assignable></h:i>] iterations, and output cryptographic key sizes [<h:i>256</h:i>] that meet the following: [<h:i>NIST SP 800-132</h:i>].
             </title>
             <ext-comp-def-title>
               <title>
@@ -2154,7 +2185,7 @@ expected to enforce.
           <f-element id="fia-psk-ext-3e5">
             <title>
               The TSF shall generate all salts using an RBG that meets FCS_RBG.1
-              <b>(from <xref to="bibNDcPP"/>)</b>
+              <h:b>(from <xref to="bibNDcPP"/>)</h:b>
               and with entropy of
               <assignable>value equal to or greater than 128</assignable>
               bits.
@@ -2181,49 +2212,49 @@ expected to enforce.
             </title>
             <note role="application">
               For FIA_PSK_EXT.3.1, the ST author assigns the maximum size of the PSK it supports; it must support at least 64 characters or a length defined by the platform.
-              <br/>
-              For FIA_PSK_EXT.3.2, the ST author assigns any other supported characters; if there are no other supported characters, they should select "no other characters."<br/>
+              <h:br/>
+              For FIA_PSK_EXT.3.2, the ST author assigns any other supported characters; if there are no other supported characters, they should select "no other characters."<h:br/>
               For FIA_PSK_EXT.3.3, the ST author selects the parameters based on the PBKDF used by the TSF.
-              <br/>
+              <h:br/>
               For FIA_PSK_EXT.3.4 If the minimum length is settable, then the ST author chooses "a value settable by the administrator." If the minimum length is not settable, 
               the ST author fills in the assignment with the minimum length the PSK must be. This requirement is to ensure bounds work properly.
-              <br/>
+              <h:br/>
               For FIA_PSK_EXT.3.7, the ST author may select one, both, or neither of the functions in alignment with NIST SP 800-63b.
-              <br/>
+              <h:br/>
               This requirement is selection dependent on FIA_PSK_EXT.1.
             </note>
             <aactivity>
               <TSS>
                 The evaluator shall examine the TSS to ensure it describes the process by which the password-based pre-shared keys are used.
-                <br/>
+                <h:br/>
                 Support for length: The evaluator shall check to ensure that the TSS describes the allowable ranges for PSK lengths, and that at least 64 characters or a length defined by the platform may be specified by the user.
-                <br/>
+                <h:br/>
                 Support for character set: The evaluator shall check to ensure that the TSS describes the allowable character set and that it contains the characters listed in the SFR.
-                <br/>
+                <h:br/>
                 Support for PBKDF: The evaluator shall examine the TSS to ensure that the use of PBKDF2 is described and that the key sizes match that described by the ST author.
-                <br/>
+                <h:br/>
                 The evaluator shall check that the TSS describes the method by which the PSK is first encoded and then fed to the hash algorithm. The settings for the algorithm (padding, blocking, etc.) shall be described, and the evaluator shall verify that these are supported by the selections in this component as well as the selections concerning the hash function itself.
-                <br/>
+                <h:br/>
                 For the NIST SP 800-132-based conditioning of the PSK, the required evaluation activities will be performed when doing the evaluation activities for the appropriate requirements (FCS_COP.1/KeyedHash).
-                <br/>
+                <h:br/>
                 The evaluator shall confirm that the minimum length is described.
-                <br/>
+                <h:br/>
                 The ST author shall provide a description in the TSS regarding the salt generation. The evaluator shall confirm that the salt is generated using an RBG described in FCS_RBG.1 (from
                 <xref to="bibNDcPP"/>).
-                <br/>
+                <h:br/>
                 [conditional] If password strength meter or password denylist is selected, the evaluator shall examine the TSS to ensure any password checking functionality provided by the TSF is described and contains details on how the function operates.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The evaluator shall confirm the operational guidance contains instructions for entering password-based pre-shared keys for each 
                 protocol identified in the requirement. The evaluator shall confirm that any 
                 management functions related to pre-shared keys that are performed by the TOE are specified in the operational guidance.
-                <br/>
+                <h:br/>
                 The guidance must specify the allowable characters for pre-shared keys, and that list must include, at minimum, the same 
                 items contained in FIA_PSK_EXT.3.2.
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the operational guidance contains any necessary instructions for enabling and configuring password checking functionality.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>
                 Support for Password/Passphrase characteristics: In addition to the analysis above, the evaluator shall also perform the following tests on a TOE configured according to the Operational Guidance:
@@ -2346,43 +2377,43 @@ expected to enforce.
             </title>
             <note role="application">
               The selection FIA_TOTP_EXT.1.4 must be consistent with the key size specified for the size of the keys used in conjunction with the keyed-hash message authentication.
-              <br/>
+              <h:br/>
               In FIA_TOTP_EXT.1.5 the ST author may either provide a configurable character length of at least 6 or a preset size between 6 and 10.
-              <br/>
+              <h:br/>
               In FIA_TOTP_EXT.1.6 the ST author may select throttle requests, account lockout, or both.
-              <br/>
+              <h:br/>
               The TOTP seed and all derived values are considered secret keys for purposes of protection.
             </note>
             <aactivity>
               <TSS>
                 The evaluator shall verify the TSS describes how the TOTP is input into the client and how that value is sent to the server.
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how the TOE complies with the RFC.
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how the TOTP seed is generated and ensure it aligns with FCS_RBG.1 (from
                 <xref to="bibNDcPP"/>).
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how the TOTP seed is protected and ensure it aligns with the storage requirements of the Base-PP.
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how a new TOTP seed is assigned for each client and how each client is uniquely identified.
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how the TOTP seed is conditioned into a TOTP hash and verify it matches the selection in FIA_TOTP_EXT.1.4.
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how the TOTP hash is truncated and verify it matches the selection in FIA_TOTP_EXT.1.5.
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how the TOE handles multiple incoming requests and verify it provides an anti-hammer mechanism that matches the selections made in FIA_TOTP_EXT.1.6.
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how the TOE sets a time-step value and verify it matches the selections in the ST.
-                <br/>
+                <h:br/>
                 The evaluator shall confirm the TSS describes how the TOE handles drift and resynchronization and verify it matches the selections.  The evaluator shall ensure the TSS describes how time is kept and whether drift is calculated and recorded.  
                 If drift is recorded, the evaluator shall ensure that the TSS describes how this is done.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The evaluator shall verify the operational guidance contains any configuration necessary to enable TOTP.
-                <br/>
+                <h:br/>
                 The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the FIA_TOTP_EXT.1 requirements.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>
                 The evaluator shall configure the TOE to use a supported TOTP factor then:
@@ -2429,8 +2460,8 @@ expected to enforce.
           <f-element id="fta-ssl-3e1-vpn">
             <title>
               The TSF shall terminate
-              <b>a remote VPN client</b>
-              session after [<i>an Administrator-configurable time interval of session inactivity</i>].
+              <h:b>a remote VPN client</h:b>
+              session after [<h:i>an Administrator-configurable time interval of session inactivity</h:i>].
             </title>
             <note role="application">This requirement exists in the NDcPP; however, it is intended to address an interactive administrative session. 
             Here, the requirement applies to a VPN client that has established an SA. After some configurable time period without any
@@ -2439,12 +2470,12 @@ expected to enforce.
               <TSS>
                 The evaluator shall examine the TSS to verify that it describes the ability of the TSF to terminate an inactive
 	            VPN client session.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The evaluator shall examine the operational guidance to verify that it provides instructions to the
 	            administrator on how to configure the time limit for termination of an active VPN client session.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>
                 The evaluator shall perform the following tests:
@@ -2465,9 +2496,9 @@ expected to enforce.
           <f-element id="fta-tse-1e1">
             <title>
               The TSF shall be able to deny session establishment
-              <b>of a remote VPN client session</b>
+              <h:b>of a remote VPN client session</h:b>
               based
-	          on [<i>location, time, day,  <selectables><selectable id="fta_tse.1.1_1" exclusive="yes">no other attributes</selectable><selectable id="fta_tse.1.1_3"><assignable>other attributes</assignable></selectable></selectables></i>].
+	          on [<h:i>location, time, day,  <selectables><selectable id="fta_tse.1.1_1" exclusive="yes">no other attributes</selectable><selectable id="fta_tse.1.1_3"><assignable>other attributes</assignable></selectable></selectables></h:i>].
             </title>
             <note role="application">For this PP-Module, “location” is defined as the client’s IP address.</note>
             <aactivity>
@@ -2475,13 +2506,13 @@ expected to enforce.
                 The evaluator shall examine the TSS to verify that it describes the methods by which the TSF can deny the
 	            establishment of an otherwise valid remote VPN client session (e.g., client credential is valid, not expired,
 	            not revoked, etc.), including day, time, and IP address at a minimum.
-                <br/>
+                <h:br/>
               </TSS>
               <Guidance>
                 The evaluator shall review the operational guidance to determine that it provides instructions for how to
 	            enable an access restriction that will deny VPN client session establishment for each attribute described
 	            in the TSS.
-                <br/>
+                <h:br/>
               </Guidance>
               <Tests>
                 The evaluator shall perform the following tests:
@@ -2506,9 +2537,9 @@ expected to enforce.
           <audit>There are no auditable events foreseen.</audit>
           <dependencies>
             FCS_IPSEC_EXT.1 IPsec Protocol
-            <br/>
+            <h:br/>
             [FTP_ITC.1 Inter-TSF Trusted Channel, or
-            <br/>
+            <h:br/>
             FTP_TRP.1 Trusted Path]
           </dependencies>
           <f-element id="fta-vcm-ext-1e1">
@@ -2519,9 +2550,9 @@ expected to enforce.
               <TSS>
                 The evaluator shall check the TSS to verify that it asserts the ability of the TSF to assign a private IP address
 	            to a connected VPN client.
-                <br/>
+                <h:br/>
               </TSS>
-              <Guidance>There are no guidance EAs for this component.<br/></Guidance>
+              <Guidance>There are no guidance EAs for this component.<h:br/></Guidance>
               <Tests>The evaluator shall connect a remote VPN client to the TOE and record its IP address as well as the internal
 	            IP address of the TOE. The evaluator shall verify that the two IP addresses belong to the same network.
 	            The evaluator shall disconnect the remote VPN client and verify that the IP address of its underlying
@@ -2566,7 +2597,7 @@ expected to enforce.
     <entry id="bibNDcPP">
       <tag>NDcPP</tag>
       <description>
-        <a href="https://www.niap-ccevs.org/protectionprofiles/524">collaborative Protection Profile for Network Devices, Version 4.0, December 22, 2025</a>
+        <h:a href="https://www.niap-ccevs.org/protectionprofiles/524">collaborative Protection Profile for Network Devices, Version 4.0, December 22, 2025</h:a>
       </description>
     </entry>
   </bibliography>

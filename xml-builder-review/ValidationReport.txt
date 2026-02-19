@@ -1,0 +1,3 @@
+/home/runner/work/vpngw/vpngw/input/vpngw.xml:173:77: error: attribute "id" not allowed here; expected attribute "boilerplate"
+/home/runner/work/vpngw/vpngw/input/vpngw.xml:409:13: error: element "cPP" not allowed yet; missing required element "url"
+/home/runner/work/vpngw/vpngw/input/vpngw.xml:410:12: error: element "url" not allowed here; expected element "app-unmod-sfrs", "modified-sfrs" or "sec-func-req-dir"

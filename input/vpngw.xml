@@ -1,6 +1,6 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="..\transformspp2html.xsl"?>
-<?xml-model href="https://raw.githubusercontent.com/commoncriteria/transforms/master/schemas/CCProtectionProfile.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
+<?xsl-stylesheet type="text/xsl" href="../transforms/module/module2html.xsl"?>
+<?xml-model href="../transforms/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <Module>
   <PPReference>
     <ReferenceTable/>
@@ -166,7 +166,11 @@ expected to enforce.
       The following threats defined in this PP-Module extend the threats defined by the Base-PP.
       <threats>
         <threat name="T.DATA_INTEGRITY">
-          <description>Devices on a protected network may be exposed to threats presented by devices located outside the            protected network that may attempt to modify the data without authorization or determine the contents of secure communication. If known malicious            external devices are able to communicate with devices on the protected network or if devices on the            protected network can communicate with those external devices then the data contained in the            communications may be susceptible to a loss of integrity or confidentiality. </description>
+          <description>Devices on a protected network may be exposed to threats presented by devices located outside the
+            protected network that may attempt to modify the data without authorization or determine the contents of secure communication. If known malicious
+            external devices are able to communicate with devices on the protected network or if devices on the
+            protected network can communicate with those external devices then the data contained in the
+            communications may be susceptible to a loss of integrity or confidentiality.</description>
           <!-- New mapping to build updated threat mapping table. -->
           <addressed-by>FPF_RUL_EXT.1</addressed-by>
           <rationale>Mitigates the threat by filtering traffic from outside the protected network.</rationale>
@@ -182,7 +186,26 @@ expected to enforce.
           <rationale>Mitigates the threat by transmitting data over a secure VPN connection protected from unauthorized disclosure.</rationale>
         </threat>
         <threat name="T.NETWORK_ACCESS">
-          <description>             Devices located outside the protected network may seek to exercise services located on the protected            network that are intended to only be accessed from inside the protected network or only accessed by            entities using an authenticated path into the protected network. Devices located outside the            protected network may, likewise, offer services that are inappropriate for access from within the            protected network.            <br/>            From an ingress perspective, VPN gateways can be configured so that only those network servers            intended for external consumption by entities operating on a trusted network (e.g., machines            operating on a network where the peer VPN gateways are supporting the connection) are accessible            and only via the intended ports. This serves to mitigate the potential for network entities outside a            protected network to access network servers or services intended only for consumption or access            inside a protected network.            <br/>            From an egress perspective, VPN gateways can be configured so that only specific external services            (e.g., based on destination port) can be accessed from within a protected network, or moreover are            accessed via an encrypted channel. For example, access to external mail services can be blocked to            enforce corporate policies against accessing uncontrolled email servers, or, that access to the mail            server must be done over an encrypted link.          </description>
+          <description>
+            Devices located outside the protected network may seek to exercise services located on the protected
+            network that are intended to only be accessed from inside the protected network or only accessed by
+            entities using an authenticated path into the protected network. Devices located outside the
+            protected network may, likewise, offer services that are inappropriate for access from within the
+            protected network.
+            <br/>
+            From an ingress perspective, VPN gateways can be configured so that only those network servers
+            intended for external consumption by entities operating on a trusted network (e.g., machines
+            operating on a network where the peer VPN gateways are supporting the connection) are accessible
+            and only via the intended ports. This serves to mitigate the potential for network entities outside a
+            protected network to access network servers or services intended only for consumption or access
+            inside a protected network.
+            <br/>
+            From an egress perspective, VPN gateways can be configured so that only specific external services
+            (e.g., based on destination port) can be accessed from within a protected network, or moreover are
+            accessed via an encrypted channel. For example, access to external mail services can be blocked to
+            enforce corporate policies against accessing uncontrolled email servers, or, that access to the mail
+            server must be done over an encrypted link.
+          </description>
           <!-- New mapping to build updated threat mapping table. -->
           <addressed-by>FCS_CKM.1/IKE</addressed-by>
           <rationale>Mitigates the threat by generating secure keys utilized for IKE peer authentication.</rationale>
@@ -210,7 +233,31 @@ expected to enforce.
           <rationale>Mitigates the threat by assigning a private, internal IP address to VPN clients within the protection of the TSF.</rationale>
         </threat>
         <threat name="T.NETWORK_DISCLOSURE">
-          <description>            Devices on a protected network may be exposed to threats presented by devices located outside the            protected network, which may attempt to conduct unauthorized activities. If known malicious            external devices are able to communicate with devices on the protected network, or if devices on the            protected network can establish communications with those external devices (e.g., as a result of a            phishing episode or by inadvertent responses to email messages), then those internal devices may be            susceptible to the unauthorized disclosure of information.            <br/>            From an infiltration perspective, VPN gateways serve not only to limit access to only specific            destination network addresses and ports within a protected network, but whether network traffic will            be encrypted or transmitted in plaintext. With these limits, general network port scanning can be            prevented from reaching protected networks or machines, and access to information on a protected            network can be limited to that obtainable from specifically configured ports on identified network            nodes (e.g., web pages from a designated corporate web server). Additionally, access can be limited            to only specific source addresses and ports so that specific networks or network nodes can be blocked            from accessing a protected network thereby further limiting the potential disclosure of information.            <br/>            From an exfiltration perspective, VPN gateways serve to limit how network nodes operating on a            protected network can connect to and communicate with other networks limiting how and where            they can disseminate information. Specific external networks can be blocked altogether or egress            could be limited to specific addresses or ports. Alternately, egress options available to network            nodes on a protected network can be carefully managed in order to, for example, ensure that            outgoing connections are encrypted to further mitigate inappropriate disclosure of data through            packet sniffing.          </description>
+          <description>
+            Devices on a protected network may be exposed to threats presented by devices located outside the
+            protected network, which may attempt to conduct unauthorized activities. If known malicious
+            external devices are able to communicate with devices on the protected network, or if devices on the
+            protected network can establish communications with those external devices (e.g., as a result of a
+            phishing episode or by inadvertent responses to email messages), then those internal devices may be
+            susceptible to the unauthorized disclosure of information.
+            <br/>
+            From an infiltration perspective, VPN gateways serve not only to limit access to only specific
+            destination network addresses and ports within a protected network, but whether network traffic will
+            be encrypted or transmitted in plaintext. With these limits, general network port scanning can be
+            prevented from reaching protected networks or machines, and access to information on a protected
+            network can be limited to that obtainable from specifically configured ports on identified network
+            nodes (e.g., web pages from a designated corporate web server). Additionally, access can be limited
+            to only specific source addresses and ports so that specific networks or network nodes can be blocked
+            from accessing a protected network thereby further limiting the potential disclosure of information.
+            <br/>
+            From an exfiltration perspective, VPN gateways serve to limit how network nodes operating on a
+            protected network can connect to and communicate with other networks limiting how and where
+            they can disseminate information. Specific external networks can be blocked altogether or egress
+            could be limited to specific addresses or ports. Alternately, egress options available to network
+            nodes on a protected network can be carefully managed in order to, for example, ensure that
+            outgoing connections are encrypted to further mitigate inappropriate disclosure of data through
+            packet sniffing.
+          </description>
           <!-- New mapping to build updated threat mapping table. -->
           <addressed-by>FPF_RUL_EXT.1</addressed-by>
           <rationale>Mitigates the threat by filtering traffic to disallow unauthorized traffic flows.</rationale>
@@ -222,7 +269,24 @@ expected to enforce.
           <rationale>Mitigates the threat by assigning a private, internal IP address to VPN clients within the protection of the TSF.</rationale>
         </threat>
         <threat name="T.NETWORK_MISUSE">
-          <description>            Devices located outside the protected network, while permitted to access particular public services            offered inside the protected network, may attempt to conduct inappropriate activities while            communicating with those allowed public services. Certain services offered from within a protected            network may also represent a risk when accessed from outside the protected network.            <br/>            From an ingress perspective, it is generally assumed that entities operating on external networks are            not bound by the use policies for a given protected network. Nonetheless, VPN gateways can log            policy violations that might indicate violation of publicized usage statements for publicly available            services.            <br/>            From an egress perspective, VPN gateways can be configured to help enforce and monitor protected            network use policies. As explained in the other threats, a VPN gateway can serve to limit dissemination            of data, access to external servers, and even disruption of services – all of these could be related to            the use policies of a protected network and as such are subject in some regards to enforcement.            Additionally, VPN gateways can be configured to log network usages that cross between protected            and external networks and as a result can serve to identify potential usage policy violations.                      </description>
+          <description>
+            Devices located outside the protected network, while permitted to access particular public services
+            offered inside the protected network, may attempt to conduct inappropriate activities while
+            communicating with those allowed public services. Certain services offered from within a protected
+            network may also represent a risk when accessed from outside the protected network.
+            <br/>
+            From an ingress perspective, it is generally assumed that entities operating on external networks are
+            not bound by the use policies for a given protected network. Nonetheless, VPN gateways can log
+            policy violations that might indicate violation of publicized usage statements for publicly available
+            services.
+            <br/>
+            From an egress perspective, VPN gateways can be configured to help enforce and monitor protected
+            network use policies. As explained in the other threats, a VPN gateway can serve to limit dissemination
+            of data, access to external servers, and even disruption of services – all of these could be related to
+            the use policies of a protected network and as such are subject in some regards to enforcement.
+            Additionally, VPN gateways can be configured to log network usages that cross between protected
+            and external networks and as a result can serve to identify potential usage policy violations.
+          </description>
           <!-- New mapping to build updated threat mapping table. -->
           <addressed-by>FAU_GEN.1/VPN</addressed-by>
           <rationale>Mitigates the threat by logging potential violations of policy.</rationale>
@@ -240,7 +304,18 @@ expected to enforce.
           <rationale>Mitigates the threat by assigning a private, internal IP address to VPN clients within the protection of the TSF.</rationale>
         </threat>
         <threat name="T.REPLAY_ATTACK">
-          <description>            If an unauthorized individual successfully gains access to the system, the adversary may have the            opportunity to conduct a “replay” attack. This method of attack allows the individual to capture            packets traversing throughout the network and send the packets at a later time, possibly unknown by            the intended receiver. Traffic is subject to replay if it meets the following conditions:             <ul><li>Cleartext: an attacker with the ability to view unencrypted traffic can identify an appropriate              segment of the communications to replay as well in order to cause the desired outcome</li> <li>No integrity: alongside cleartext traffic, an attacker can make arbitrary modifications to captured            traffic and replay it to cause the desired outcome if the recipient has no means to detect these</li></ul></description>
+          <description>
+            If an unauthorized individual successfully gains access to the system, the adversary may have the
+            opportunity to conduct a “replay” attack. This method of attack allows the individual to capture
+            packets traversing throughout the network and send the packets at a later time, possibly unknown by
+            the intended receiver. Traffic is subject to replay if it meets the following conditions:
+            <ul>
+              <li>Cleartext: an attacker with the ability to view unencrypted traffic can identify an appropriate
+              segment of the communications to replay as well in order to cause the desired outcome</li>
+              <li>No integrity: alongside cleartext traffic, an attacker can make arbitrary modifications to captured
+            traffic and replay it to cause the desired outcome if the recipient has no means to detect these</li>
+            </ul>
+          </description>
           <!-- New mapping to build updated threat mapping table. -->
           <addressed-by>FPT_FLS.1/SelfTest</addressed-by>
           <rationale>Mitigates the threat by ceasing operations of the TSF if a test or security failure is detected, preventing a failure in
@@ -300,17 +375,266 @@ expected to enforce.
   <sec:Security_Requirements title="Security Requirements">
     <!-- 5.1 ND PP Security Functional Requirements Direction -->
     <base-pp id="ND" name="Network Device" product="Network Device" short="ND" version="4.0">
-      <git>
-        <url/>
-        <branch/>
-      </git>
+      <cPP/>
       <url>https://www.niap-ccevs.org/protectionprofiles/482</url>
       <sec-func-req-dir>In a PP-Configuration that includes the NDcPP, the VPN gateway is expected to rely on some of the
 			security functions implemented by the network device as a whole and evaluated against the Base-PP.
 			In this case, the following sections describe any modifications that the ST author must make to the SFRs
 			defined in the Base-PP in addition to what is mandated by section 5.2.</sec-func-req-dir>
       <!-- 5.1.1 Modified SFRs -->
-      <modified-sfrs/>
+      <modified-sfrs>
+        <section title="Cryptographic Support (FCS)" id="nd-m-fcs">
+          <!-- FCS_COP.1/AEAD Cryptographic Operation - Authenticated Encryption with Associated Data -->
+          <base-sfr-spec cc-id="fcs_cop.1" id="nd-fcs-cop-1-aead" title="Cryptographic Operation - Authenticated Encryption with Associated Data" iteration="AEAD">
+            <consistency-rationale>This PP-Module mandates a specific selection to be made in this SFR, which does not conflict with the Base-PP because the required selection is an option originally defined in it.</consistency-rationale>
+            <description>
+              <p>This SFR has been modified frmo its definition in the NDcPP to mandate selection of AES-GCM mode and 256-bit key sizes. Other selections may still be made if they are needed for other part of the TSF.</p>
+              <p>The text of FCS_COP.1.1/AEAD is replaced with:</p>
+              <p>
+                <b>FCS_COP.1.1/AEAD </b>
+                The TSF shall perform [authenticated encryption with associated data] in accordance with a specified cryptographic algorithm [<b>selection:</b>
+                <i>Cryptographic algorithm</i>] and cryptographic key sizes [<b>selection:</b>
+                <i>Cryptographic key sizes</i>] that meet the following: [<b>selection:</b>
+                <i>List of standards</i>].
+              </p>
+              <p>The following table provides the allowable choices for completion of the selection operations of FCS_COP.1.1/AEAD. In the last column, an X indicates it is mandatory for the ST author to include this row, and an O indicates that the row is optional and need not be included in the table if the TSF does not perform that function. Note that it is not necessary for the ST author to reproduce this final column in the ST.</p>
+              <b>Allowable choices for FCS_COP.1/AEAD:</b>
+              <br/>
+              <table>
+                <tr></tr>
+                <tr>
+                  <td>AES-CCM</td>
+                  <td>AES in CCM mode with unpredictable, non-repeating nonce, minimum size of 64 bits</td>
+                  <td>256 bits</td>
+                  <td>
+                    <p>[<b>selection:</b> <i>ISO/IEC 18033-3:2010 (Subclause 5.2), FIPS PUB 197</i>] [AES]</p>
+                    <p>
+                      [<b>selection:</b>
+                      <i>ISO/IEC 19772:2020 (Clause 7), NIST SP 800-38C</i>] [CCM]
+                    </p>
+                  </td>
+                  <td>O</td>
+                </tr>
+                <tr>
+                  <td>AES-GCM</td>
+                  <td>AES in GCM mode with non-repeating IVs using [<b>selection:</b> <i>deterministic, RBG-based</i>], IV construction; the tag must be of length [<b>selection:</b> <i>96, 104, 112, 120, 128</i>] bits.</td>
+                  <td>256 bits</td>
+                  <td>
+                    <p>[<b>selection:</b> <i>ISO/IEC 18033-3:2010 (Subclause 5.2), FIPS PUB 197</i>] [AES]</p>
+                    <p>
+                      [<b>selection:</b>
+                      <i>ISO/IEC 19772:2020 (Clause 10), NIST SP 800-38D</i>] [GCM]
+                    </p>
+                  </td>
+                  <td>X</td>
+                </tr>
+              </table>
+            </description>
+            <no-change/>
+          </base-sfr-spec>
+          <!-- FCS_COP.1/DataEncryption Cryptographic Operation (AES Data Encryption/Decryption) -->
+          <base-sfr-spec cc-id="fcs_cop.1" id="nd-fcs-cop-1-dataencryption" title="Cryptographic Operation (AES Data Encryption/Decryption)" iteration="DataEncryption">
+            <consistency-rationale>This PP-Module restricts the Base-PP SFR to a subset of existing permissible
+              functionality and does not introduce any new behavior.</consistency-rationale>
+            <description>
+              <p>This SFR has been modified from its definition in the NDcPP to support this
+                PP-Module’s IPsec requirements by mandating support for GCM mode.</p>
+              <p>The text of the FCS_COP.1.1/DataEncryption is replaced with:</p>
+              <p>
+                <b>FCS_COP.1.1/DataEncryption </b>
+                The TSF shall perform encryption/decryption in accordance with a specified
+                  cryptographic algorithm AES operating in
+                <b>GCM mode as defined in
+                    FCS_COP.1/AEAD and</b>
+                [selection:
+                <i>
+                  <ul>
+                    <li>CBC mode as defined in FCS_COP.1/SKC</li>
+                    <li>CTR mode as defined in FCS_COP.1/SKC</li>
+                    <li>XTS mode as defined in FCS_COP.1/SKC</li>
+                    <li>CCM mode as defined in FCS_COP.1/AEAD</li>
+                    <li>
+                      <b>no other modes</b>
+                    </li>
+                  </ul>
+                </i>].
+              </p>
+              <p><b>Application Note:</b> Other AES modes are selectable if the TSF uses them for another part of the TSF. A selection for 'no other modes' has been refined into the SFR because it is possible that a TOE may conform to the Base-PP by using AES-GCM exclusively for AES data encryption and decryption.</p>
+            </description>
+            <no-change/>
+          </base-sfr-spec>
+          <!-- FCS_IPSEC_EXT.1 IPsec Protocol -->
+          <base-sfr-spec cc-id="fcs_ipsec_ext.1" id="nd-mod-fcs-ipsec-ext-1" title="IPsec Protocol">
+            <consistency-rationale>This PP-Module restricts the Base-PP SFR to a subset of existing permissible
+              functionality and does not introduce any new behavior.</consistency-rationale>
+            <description>
+              <p>This SFR has been modified from its definition in the NDcPP to support
+              this module's IPsec requirements by mandating use of AES-GCM-256 and IKEv2 where applicable.
+              Any element that is not mentioned in this section is unchanged from its definition in the Base-PP.</p>
+              <p><b>FCS_IPSEC_EXT.1.4</b>: This element has been modified to require the use of CNSA 1.0-compliant parameters.</p>
+              <p>The text of FCS_IPSEC_EXT.1.4 is replaced with:</p>
+              <p>
+                <b>FCS_IPSEC_EXT.1.4 </b>
+                The TSF shall implement the IPsec protocol ESP as defined by RFC 4303 using the cryptographic algorithms
+                <b>AES-GCM-256 (RFC 4106) and</b>
+                [<i><b>no other algorithms</b>
+                </i>] together with a Secure Hash Algorithm (SHA)-based HMAC [<b>selection:</b>
+                <i>HMAC-SHA-384, no HMAC algorithm</i>].
+              </p>
+              <p>
+                <b>Application Note: </b>
+                SHA-based HMAC is not required since AES-GCM satisfies both confidentiality and integrity functions.
+              IPsec may use a truncated version of the SHA-based HMAC functions contained in the selections. Where a truncated output is used, this is described in the TSS.
+              </p>
+              <br/>
+              <br/>
+              <p><b>FCS_IPSEC_EXT.1.5</b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element. It has also been modified to mandate the selection of RFC 4868 conformance due to the required support for SHA-384.</p>
+              <p>The text of FCS_IPSEC_EXT.1.5 is replaced with:</p>
+              <p><b>FCS_IPSEC_EXT.1.5 </b>The TSF shall implement the protocol: [<i><ul><li>IKEv2 as defined in RFC 7296 [<b>selection: </b>with no support for NAT traversal, with mandatory support for NAT traversal as specified in RFC 7296, Section 2.23], and [RFC 4868 for hash functions]</li></ul></i>]</p>
+              <br/>
+              <br/>
+              <p><b>FCS_IPSEC_EXT.1.6</b>: This SFR is modified from its definition in the Base-PP to remove support for non-CNSA parameters and algorithms. This includes mandating the use of IKEv2.</p>
+              <p>The text of FCS_IPSEC_EXT.1.6 is replaced with:</p>
+              <p>
+                <b>FCS_IPSEC_EXT.1.6 </b>
+                The TSF shall ensure the encrypted payload in the [<i>IKEv2</i>] protocol uses the cryptographic algorithms
+              [<i>AES-GCM-256 (specified in RFC 5282)</i>].
+              </p>
+              <p><b>Application Note: </b>This element is changed from its definition in the Base-PP to mandate support of 256-bit GCM. AES-GCM implementation for IPsec is specified in RFC 5282.</p>
+              <br/>
+              <br/>
+              <p><b>FCS_IPSEC_EXT.1.7</b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element.</p>
+              <p>The text of FCS_IPSEC_EXT.1.7 is replaced with:</p>
+              <p><b>FCS_IPSEC_EXT.1.7 </b>The TSF shall ensure that [<i><ul><li>IKEv2 SA lifetimes can be configured by a Security Administrator based on [<b>selection:</b> <ul><li>number of bytes;</li> <li>length of time, where the time values cna be configured between [<b>assignment: </b> minimum configurable rekey time] and [<b>assignment: </b>maximum configurable rekey time]</li></ul>]</li></ul></i>].</p>
+              <br/>
+              <br/>
+              <p><b>FCS_IPSEC_EXT.1.8</b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element.</p>
+              <p>The text of FCS_IPSEC_EXT.1.8 is replaced with:</p>
+              <p><b>FCS_IPSEC_EXT.1.8 </b>The TSF shall ensure that [<i><ul><li>IKEv2 Child SA lifetimes can be configured by a Security Administrator based on [<b>selection:</b> <ul><li>number of bytes;</li> <li>length of time, where the time values cna be configured between [<b>assignment: </b> minimum configurable rekey time] and [<b>assignment: </b>maximum configurable rekey time]</li></ul>]</li></ul></i>].</p>
+              <br/>
+              <br/>
+              <p><b>FCS_IPSEC_EXT.1.10</b>: This element has been modified from its definition in the NDcPP by choosing only the selection for IKEv2, which is selectable in the original definition of the element.</p>
+              <p>The text of FCS_IPSEC_EXT.1.10 is replaced with:</p>
+              <p><b>FCS_IPSEC_EXT.1.10 </b>The shall generate nonces used in [<i>IKEv2</i>] protocol exchanges of length [<i><b>selection: </b> <ul><li>according to the security strength associated with the negotiated Diffie-Hellman group;</li> <li>at least 128 bits in size and at least half the output size of the negotiated pseudorandom function (PRF) hash</li></ul></i>].</p>
+              <br/>
+              <br/>
+              <p>
+                <b>FCS_IPSEC_EXT.1.11</b>: This element has been modified from its definition in the NDcPP by mandating DH group 20, which is selectable in the original definition of the element.
+              The selectable options have also been restricted to conform with CNSA 1.0 parameters.
+              </p>
+              <p>The text of FCS_IPSEC_EXT.1.11 is replaced with:</p>
+              <p>
+                <b>FCS_IPSEC_EXT.1.11 </b>
+                The TSF shall ensure that IKE protocols implement DH groups [<i><ul>
+                    <b>
+                      <li>20 (384-bit Random ECP) and [selection: 21 (521-bit Random ECP, no other groups] according to RFC 5114</li>
+                    </b>
+                  </ul>
+                </i>]
+                <b>and</b>
+                [<ul><li>[<b>selection:</b> <i>15 (3072-bit MODP), 16 (4096-bit MODP), 17 (6144-bit MODP), 18 (8192-bit MODP), no other groups] according to RFC 3526</i></li>
+                </ul>].
+              </p>
+              <p>
+                <b>Application Note: </b>
+                This element has been modified from its definition in the NDcPP by mandating DH group 20, which is selectable in the original definition of the element. 
+              Any groups other than 20 that are allowed per the element may be selected by the ST author but they are not required for conformance to this PP-Module.
+              </p>
+              <br/>
+              <br/>
+              <p><b>FCS_IPSEC_EXT.1.12</b>: This element has been modified from its definition in the NDcPP by choosing only the selections for IKEv2, which are selectable in the original definition of the element.</p>
+              <p>The text of FCS_IPSEC_EXT.1.12 is replaced with:</p>
+              <p><b>FCS_IPSEC_EXT.1.12 </b>The TSF shall be able to ensure that the strength of the symmetric algorithm (in terms of the number of bits in the key) negotiated to protect the [<b>selection: </b> <i>IKEv2 IKE_SA</i>] connection is greater than or equal to the strength of the symmetric algorithm (in terms of the number of bits in the key) negotiated to protect the [<b>selection: </b> <i>IKEv2 CHILD_SA</i>] connection.</p>
+              <p><b>Application Note: </b>Because this PP-Module only permits the use of 256-bit symmetric algorithms, this requirement will be satisfied by default.</p>
+              <br/>
+              <br/>
+              <p><b>FCS_IPSEC_EXT.1.13</b>: This SFR is modified from its definition in the Base-PP by mandating the use of IKEv2 and its authentication methods.</p>
+              <p>The text of FCS_IPSEC_EXT.1.13 is replaced with:</p>
+              <p>
+                <b>FCS_IPSEC_EXT.1.13 </b>
+                The TSF shall ensure that
+                <b>IKEv2</b>
+                performs peer authentication using [<b>selection: </b>
+                <i>RSA, ECDSA</i>]
+              that use X.509v3 certificates that conform to RFC 4945 and [<b>selection: </b>
+                <i>Pre-shared Keys <b>that conform to RFC 8784, Pre-shared Keys transmitted
+              via EAP-TTLS, EAP-TLS,</b> no other method</i>].
+                <br/>
+                <br/>
+              </p>
+              <p>
+                <b>Application Note: </b>
+                At least one public-key-based Peer Authentication method is required in order to
+                conform to this PP-Module; one or more of the public key schemes is chosen by
+                the ST author to reflect what is implemented. The ST author also ensures that
+                appropriate FCS requirements reflecting the algorithms used (and key
+                generation capabilities, if provided) are listed to support those methods. Note
+                that the TSS will elaborate on the way in which these algorithms are to be used.
+                <br/>
+                <br/>
+                If a selection with “EAP-TLS” or “EAP-TTLS” is chosen, the selection-based requirement FCS_EAP_EXT.1 must be claimed. 
+                When an EAP method is used, verification occurs via an external authentication server. 
+                Though EAP-TTLS involves PSKs, FIA_PSK_EXT.1 is not claimed because PSK requirements for EAP-TTLS are addressed instead via 
+                the Authentication Server PP.
+                <br/>
+                <br/>
+                If “pre-shared keys that conform to RFC 8784” is chosen, the selection-based requirement FIA_PSK_EXT.1 must be claimed.
+                <br/>
+                <br/>
+                Multifactor support can be achieved via traffic filtering in accordance with FPF_MFA_EXT.1.
+                <br/>
+                <br/>
+                It is acceptable for different use cases to leverage different selections. If this is the case, it must be identified.
+              </p>
+              <br/>
+              <br/>
+              <p><b>FCS_IPSEC_EXT.1.14</b>: This SFR is modified from its definition in the Base-PP to require DN to be supported for certificate reference identifiers.</p>
+              <p>The text of FCS_IPSEC_EXT.1.14 is replaced with:</p>
+              <p>
+                <b>FCS_IPSEC_EXT.1.14 </b>
+                The TSF shall only establish a trusted channel if the presented identifier in the
+                received certificate matches the configured reference identifier, where the
+                presented and reference identifiers are of the following fields and types:
+                <b>Distinguished Name (DN),</b>
+                [<b>selection:</b>
+                <i>
+                  SAN: IP address, SAN: Fully Qualified Domain Name (FQDN), SAN: user FQDN,
+                CN: IP address, CN: FQDN, CN: user FQDN,
+                  <b>no other reference identifier types, [assignment: other supported reference identifier types]</b>
+                </i>].
+              </p>
+              <p>
+                <b>Application Note:</b>
+                This PP-Module requires DN to be supported for certificate reference identifiers at minimum. Other selections may be made 
+                by the ST author but they are not required for conformance to this PP-Module.
+              </p>
+            </description>
+            <insert-after>
+              <xpath-specified xpath="*//cc:f-element[@id='fcs-ckm-1-ike']//cc:title"/>
+            </insert-after>
+          </base-sfr-spec>
+        </section>
+        <section title="Security Management (FMT)" id="nd-m-fmt">
+          <!-- FMT_MTD.1/CryptoKeys Management of TSF Data -->
+          <base-sfr-spec cc-id="fmt_mtd.1" id="nd-mod-fmt-mtd-1-cryptokeys" title="Management of TSF Data" iteration="CryptoKeys">
+            <consistency-rationale>This PP-Module applies the key management functionality already defined in
+              the Base-PP specifically to functionality related to VPN gateways.</consistency-rationale>
+            <description>
+              <p>This SFR, defined in the NDcPP as selection-based, is mandated for
+                inclusion in this PP-Module because the refinements to FMT_SMF.1
+                mandate its inclusion. Note that it is also refined to refer specifically to
+                keys and certificates used for VPN operation.</p>
+              <p>The text of FMT_MTD.1.1/CryptoKeys is replaced with:</p>
+              <p>
+                <b>FMT_MTD.1.1/CryptoKeys </b>
+                The TSF shall restrict the ability to [<i>manage</i>] the [<i>cryptographic keys <b>and
+              certificates used for VPN operation</b></i>] to [<i>Security Administrators</i>].
+              </p>
+            </description>
+            <no-change/>
+          </base-sfr-spec>
+        </section>
+      </modified-sfrs>
       <!-- 5.1.2 Additional SFRs -->
       <additional-sfrs/>
       <con-toe>When this PP-Module is used to extend the NDcPP, the TOE type for the overall TOE is still a network
@@ -399,7 +723,8 @@ expected to enforce.
                 is clear.
                 <br/>
               </Guidance>
-              <Tests>The evaluator shall test the audit functionality by performing actions that trigger each of the claimed audit events and verifying that the audit records are accurate and that their format is consistent with what is specified in the operational guidance. The evaluator may generate these audit events as a consequence of performing other tests that would cause these events to be generated.</Tests>
+              <Tests>The evaluator shall test the audit functionality by performing actions that trigger each of the claimed audit events and verifying that the audit records are accurate and that their format is consistent with what is specified 
+                in the operational guidance. The evaluator may generate these audit events as a consequence of performing other tests that would cause these events to be generated.</Tests>
             </aactivity>
           </f-element>
           <audit-event table="mandatory"/>
@@ -471,7 +796,18 @@ expected to enforce.
                 the output of the key generation process.
                 <br/>
               </Guidance>
-              <Tests><b>For FFC Schemes using “safe-prime” groups:</b> <br/>Testing for FFC Schemes using safe-prime groups is done as part of testing in FCS_CKM.2. <br/> <b>For all other selections:</b> <br/>The evaluator shall perform the corresponding tests for FCS_CKM.1 specified in the NDcPP SD, based on the selections chosen for this SFR. If IKE key generation is implemented by a different algorithm than the NDcPP key generation function, the evaluator shall ensure this testing is performed using the correct implementation.</Tests>
+              <Tests>
+                <b>For FFC Schemes using “safe-prime” groups:</b>
+                <br/>
+                Testing for FFC Schemes using safe-prime groups is done as part of testing in FCS_CKM.2.
+                <br/>
+                <b>For all other selections:</b>
+                <br/>
+                The evaluator shall perform the corresponding tests for FCS_CKM.1 specified in the NDcPP SD, based on
+                the selections chosen for this SFR. If IKE key generation is implemented by a different algorithm than the
+                NDcPP key generation function, the evaluator shall ensure this testing is performed using the correct
+                implementation.
+              </Tests>
             </aactivity>
           </f-element>
           <audit-event table="mandatory"/>
@@ -486,8 +822,7 @@ expected to enforce.
           Base-PP iteration of it.</consistency-rationale>
           <f-element id="fmt-smf-1e1-vpn">
             <title>
-              The TSF shall be capable of performing the following management functions [<i>
-                <ul>
+              The TSF shall be capable of performing the following management functions [<i><ul>
                   <li>Definition of packet filtering rules</li>
                   <li>Association of packet filtering rules to network interfaces</li>
                   <li>Ordering of packet filtering rules by priority</li>
@@ -519,7 +854,9 @@ expected to enforce.
               and that this includes a description of the local administrative interface.
                 <br/>
               </Guidance>
-              <Tests>The evaluator tests management functions as part of performing other test EAs. No separate testing for FMT_SMF.1/VPN is required unless one of the management functions in FMT_SMF.1.1/VPN has not already been exercised under any other SFR.</Tests>
+              <Tests>The evaluator tests management functions as part of performing other test EAs.
+              No separate testing for FMT_SMF.1/VPN is required unless one of the management functions in
+              FMT_SMF.1.1/VPN has not already been exercised under any other SFR.</Tests>
             </aactivity>
           </f-element>
           <audit-event table="mandatory">
@@ -585,7 +922,8 @@ expected to enforce.
                   <test>The evaluator shall attempt to get network traffic to flow through the TOE while the TOE is being initialized. A steady flow of network packets that would otherwise be denied by the ruleset should be sourced and directed to a host. The evaluator shall use a packet sniffer to verify none of the generated network traffic is permitted through the TOE during initialization.</test>
                   <test>The evaluator shall attempt to get network traffic to flow through the TOE while the TOE is being initialized. A steady flow of network packets that would be permitted by the ruleset should be sourced and directed to a host. The evaluator shall use a packet sniffer to verify none of the generated network traffic is permitted through the TOE during initialization and is only permitted once initialization is complete.</test>
                 </testlist>
-                Note: The remaining testing associated with application of the ruleset is addressed in the subsequent test EAs.
+                Note: The remaining testing associated with application of the ruleset is addressed in the subsequent test
+                EAs.
                 <br/>
               </Tests>
             </aactivity>
@@ -593,8 +931,7 @@ expected to enforce.
           <f-element id="fpf-rul-ext-1e2">
             <title>
               The TSF shall allow the definition of packet filtering rules using the following
-              network protocols and protocol fields: [<i>
-                <ul>
+              network protocols and protocol fields: [<i><ul>
                   <li>IPv4 (RFC 791)</li>
                   <ul>
                     <li>source address</li>
@@ -774,7 +1111,14 @@ expected to enforce.
                   <test>The evaluator shall use the instructions in the operational guidance to test that packet filter rules can be created that permit, discard, and log packets for each of the following attributes: <ul><li>IPv4</li> <ul><li>Destination Address</li> <li>Protocol</li></ul> <li>IPv6</li> <ul><li>Source address</li> <li>Destination Address</li> <li>Next Header (Protocol)</li></ul> <li>TCP</li> <ul><li>Source Port</li> <li>Destination Port</li></ul> <li>UDP</li> <ul><li>Source Port</li> <li>Destination Port</li></ul></ul></test>
                   <test>The evaluator shall repeat Test 1 above for each distinct network interface type supported by the TOE to ensure that packet filtering rules can be defined for all supported types.</test>
                 </testlist>
-                Note that these test activities should be performed in conjunction with those of FPF_RUL_EXT.1.6 where the effectiveness of the rules is tested; here the evaluator is just ensuring the guidance is sufficient and the TOE supports the administrator creating a ruleset based on the above attributes. The test activities for FPF_RUL_EXT.1.6 define the combinations of protocols and attributes required to be tested. If those combinations are configured manually, that will fulfill the objective of these test activities, but if those combinations are configured otherwise (e.g., using automation), these test activities may be necessary in order to ensure the guidance is correct and the full range of configurations can be achieved by a TOE administrator.
+                Note that these test activities should be performed in conjunction with those of FPF_RUL_EXT.1.6 where
+                the effectiveness of the rules is tested; here the evaluator is just ensuring the guidance is sufficient and
+                the TOE supports the administrator creating a ruleset based on the above attributes. The test activities
+                for FPF_RUL_EXT.1.6 define the combinations of protocols and attributes required to be tested. If those
+                combinations are configured manually, that will fulfill the objective of these test activities, but if those
+                combinations are configured otherwise (e.g., using automation), these test activities may be necessary in
+                order to ensure the guidance is correct and the full range of configurations can be achieved by a TOE
+                administrator.
                 <br/>
               </Tests>
             </aactivity>
@@ -848,7 +1192,8 @@ expected to enforce.
                   <test>The evaluator shall configure the TOE to permit and log protocol 17 (UDP) using a selected source port, a selected destination port, and a selected source and destination port combination. The evaluator shall generate packets matching the configured source and destination UDP ports in order to ensure that they are permitted (i.e., by capturing the packets after passing through the TOE) and logged. Here the evaluator shall ensure that the UDP port 500 (IKE) is included in the set of tests.</test>
                   <test>The evaluator shall configure the TOE to discard and log protocol 17 (UDP) using a selected source port, a selected destination port, and a selected source and destination port combination. The evaluator shall generate packets matching the configured source and destination UDP ports in order to ensure that they are denied (i.e., by capturing no applicable packets passing through the TOE) and logged. Again, the evaluator shall ensure that UDP port 500 is included in the set of tests.</test>
                 </testlist>
-                The following table identifies the RFC defined values for the protocol fields for IPv4 and IPv6 to be used in configuring and otherwise testing packet filtering rule definition and enforcement:
+                The following table identifies the RFC defined values for the protocol fields for IPv4 and IPv6 to be used in
+                configuring and otherwise testing packet filtering rule definition and enforcement:
                 <br/>
                 <table>
                   <tr class="header">
@@ -1257,7 +1602,9 @@ expected to enforce.
                 applied for IPsec VPN communications.
                 <br/>
               </Guidance>
-              <Tests>The EAs specified for FTP_ITC.1 in the Supporting Document for the Base-PP shall be applied for IPsec VPN communications. Additional testing for IPsec is covered in FCS_IPSEC_EXT.1.</Tests>
+              <Tests>The EAs specified for FTP_ITC.1 in the Supporting Document for the Base-PP shall be
+                applied for IPsec VPN communications. Additional testing for IPsec is covered in
+                FCS_IPSEC_EXT.1.</Tests>
             </aactivity>
           </f-element>
           <audit-event table="mandatory">
@@ -1414,7 +1761,8 @@ expected to enforce.
               <Tests>
                 Testing for TLS functionality is in accordance with the TLS package.
                 <b></b>
-                For each supported EAP method claimed in FCS_EAP_EXT.1.1 and for each authentication method claimed in FCS_EAP_EXT.1.3, the evaluator shall perform the following tests:
+                For each supported EAP method claimed in FCS_EAP_EXT.1.1 and for each authentication method claimed in 
+                FCS_EAP_EXT.1.3, the evaluator shall perform the following tests:
                 <testlist>
                   <test>The evaluator shall follow the operational guidance to configure the TSF to use the EAP method claimed. The evaluator shall follow the operational guidance to configure the TSF to use the authentication method claimed and, for EAP-TTLS, establish a trusted channel with an authentication server that requests the method, and register the peer as a TLS client with appropriate key material required for the authentication method. <br/>  <br/> The evaluator shall establish a VPN session using a test peer with a valid certificate and, for EAP-TTLS, configured to provide a correct value for the configured authenticator. The evaluator shall observe that the TSF sends EAP messages to the peer and authentication server to transfer the TLS handshake messages, and after the TSF receives the EAP-success message, that the VPN session between the peer and TSF is successfully established.</test>
                   <test>The evaluator shall follow the operational guidance to configure the TSF to use a supported EAP method, establish a trusted channel with an authentication server that requests the method and register the peer as a TLS client with key material required for a supported authentication method. The evaluator shall cause the test client to respond to an IKEv2 exchange with EAP-request, but to compute the shared secret after a successful EAP exchange using the non-EAP method. The evaluator shall initiate a VPN session between the test client and the TSF and observe that the TSF aborts the session.</test>
@@ -1520,8 +1868,7 @@ expected to enforce.
               <selectables>
                 <selectable id="fia_hotp_ext.1.7_1">a configurable value</selectable>
                 <selectable id="fia_hotp_ext.1.7_3">
-                  <assignable>a value less than or equal to 3</assignable>
-                </selectable>
+                  <assignable>a value less than or equal to 3</assignable></selectable>
               </selectables>
               for resynchronization.
             </title>
@@ -1667,7 +2014,8 @@ expected to enforce.
                 <br/>
               </Guidance>
               <Tests>
-                The evaluator shall also perform the following tests for each protocol (or instantiation of a protocol, if performed by a different implementation on the TOE).
+                The evaluator shall also perform the following tests for each protocol (or instantiation of a protocol, 
+                if performed by a different implementation on the TOE).
                 <testlist>
                   <test>For each mechanism selected in FIA_PSK_EXT.1.2 the evaluator shall attempt to establish a connection and confirm that the connection requires the selected factors in the PSK to establish the connection in alignment with table 1 from RFC 8784.</test>
                 </testlist>
@@ -1772,8 +2120,7 @@ expected to enforce.
               lower case characters, numbers, and the following special characters: "!", "@", "#", "$", "%", "^", "&amp;", "*", "(", and ")", and
               <selectables>
                 <selectable id="fia_psk_ext.3.2_2">
-                  <assignable>other supported special characters</assignable>
-                </selectable>
+                  <assignable>other supported special characters</assignable></selectable>
                 <selectable id="fia_psk_ext.3.2_3" exclusive="yes">no other characters</selectable>
               </selectables>
             </title>
@@ -1799,8 +2146,7 @@ expected to enforce.
               <selectables>
                 <selectable id="fia_psk_ext.3.4_1">a value settable by the administrator</selectable>
                 <selectable id="fia_psk_ext.3.4_3">
-                  <assignable>minimum PSK length accepted by the TOE, must be >= 6</assignable>
-                </selectable>
+                  <assignable>minimum PSK length accepted by the TOE, must be >= 6</assignable></selectable>
               </selectables>
               and greater than the maximum PSK length defined in FIA_PSK_EXT.3.1.
             </title>
@@ -1974,8 +2320,7 @@ expected to enforce.
               <selectables>
                 <selectable id="fia_totp_ext.1.7_1">a configurable value</selectable>
                 <selectable id="fia_totp_ext.1.7_3">
-                  <assignable>a value less than or equal to 30</assignable>
-                </selectable>
+                  <assignable>a value less than or equal to 30</assignable></selectable>
               </selectables>
               seconds.
             </title>
@@ -1986,8 +2331,7 @@ expected to enforce.
               <selectables>
                 <selectable id="fia_totp_ext.1.8_1">a configurable value</selectable>
                 <selectable id="fia_totp_ext.1.8_3">
-                  <assignable>a value less than or equal to 3</assignable>
-                </selectable>
+                  <assignable>a value less than or equal to 3</assignable></selectable>
               </selectables>
               time-steps.
             </title>
@@ -2178,7 +2522,10 @@ expected to enforce.
                 <br/>
               </TSS>
               <Guidance>There are no guidance EAs for this component.<br/></Guidance>
-              <Tests>The evaluator shall connect a remote VPN client to the TOE and record its IP address as well as the internal IP address of the TOE. The evaluator shall verify that the two IP addresses belong to the same network. The evaluator shall disconnect the remote VPN client and verify that the IP address of its underlying platform is no longer part of the private network identified in the previous step.</Tests>
+              <Tests>The evaluator shall connect a remote VPN client to the TOE and record its IP address as well as the internal
+	            IP address of the TOE. The evaluator shall verify that the two IP addresses belong to the same network.
+	            The evaluator shall disconnect the remote VPN client and verify that the IP address of its underlying
+	            platform is no longer part of the private network identified in the previous step.</Tests>
             </aactivity>
           </f-element>
           <audit-event table="feat-based"/>

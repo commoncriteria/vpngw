@@ -649,7 +649,7 @@ expected to enforce.<h:br/>
                     <h:li>IKEv2 SA lifetimes can be configured by a Security Administrator based on [<h:b>selection:</h:b> 
                       <h:ul>
                         <h:li>number of bytes;</h:li>
-                        <h:li>length of time, where the time values cna be configured between [<h:b>assignment: </h:b> minimum configurable rekey time] and [<h:b>assignment: </h:b>maximum configurable rekey time]</h:li>
+                        <h:li>length of time, where the time values can be configured between [<h:b>assignment: </h:b> minimum configurable rekey time] and [<h:b>assignment: </h:b>maximum configurable rekey time]</h:li>
                       </h:ul>
                       ]</h:li>
                   </h:ul>

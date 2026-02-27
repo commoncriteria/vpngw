@@ -6,7 +6,6 @@ output/vpngw-release-linkable.html: SKC
 output/vpngw-release-linkable.html: SigGen
 output/vpngw-release-linkable.html: Subclause
 output/vpngw-release-linkable.html: XCU
-output/vpngw-release-linkable.html: cna
 output/vpngw-release-linkable.html: frmo
 output/vpngw-release-linkable.html: subjectAlternateName
 output/vpngw-release-linkable.html: timeframe
@@ -19,7 +18,6 @@ output/vpngw-release.html: SKC
 output/vpngw-release.html: SigGen
 output/vpngw-release.html: Subclause
 output/vpngw-release.html: XCU
-output/vpngw-release.html: cna
 output/vpngw-release.html: frmo
 output/vpngw-release.html: log’
 output/vpngw-release.html: subjectAlternateName
@@ -37,7 +35,6 @@ output/vpngw.html: SKC
 output/vpngw.html: SigGen
 output/vpngw.html: Subclause
 output/vpngw.html: XCU
-output/vpngw.html: cna
 output/vpngw.html: frmo
 output/vpngw.html: log’
 output/vpngw.html: subjectAlternateName

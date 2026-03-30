@@ -1077,7 +1077,7 @@ expected to enforce.<h:br/>
       </section>
         
 	<!-- 5.2.3 Security Management (FMT)  -->
-      <section title="Class FMT: Security Management)" id="m-fmt">
+      <section title="Class FMT: Security Management" id="m-fmt">
     
 	
       <f-component name="Specification of Management Functions" cc-id="fmt_smf.1" iteration="VPN" id="fmt-smf-1-vpn">

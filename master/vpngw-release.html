@@ -638,7 +638,7 @@ function showTarget(id){
 </table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#_sec_1" style="text-indent:10px">1.5<span>Package Usage</span></a><a href="#ConformanceClaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_Operational_Environment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">4.2<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-ND" style="text-indent:10px">5.1<span>Collaborative 
     Protection Profile for Network Devices
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-ND" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.1.1.1<span>Cryptographic Support (FCS)</span></a><a href="#@id" style="text-indent:30px">5.1.1.2<span>Security Management (FMT)</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#m-fau" style="text-indent:20px">5.2.2<span>Security Audit (FAU)</span></a><a href="#m-fcs" style="text-indent:20px">5.2.3<span>Cryptographic Support (FCS)</span></a><a href="#m-fmt" style="text-indent:20px">5.2.4<span>Security Management (FMT)</span></a><a href="#m-fpf" style="text-indent:20px">5.2.5<span>Packet Filtering (FPF)</span></a><a href="#m-fpt" style="text-indent:20px">5.2.6<span>Protection of the TSF (FPT)</span></a><a href="#m-ftp" style="text-indent:20px">5.2.7<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-ND" style="text-indent:10px">6.1<span>Collaborative 
+    </span></a><a href="#modsfr-ND" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.1.1.1<span>Class FCS: Cryptographic Support</span></a><a href="#@id" style="text-indent:30px">5.1.1.2<span>Class FMT: Security Management</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#m-fau" style="text-indent:20px">5.2.2<span>Class FAU: Security Audit</span></a><a href="#m-fcs" style="text-indent:20px">5.2.3<span>Class FCS: Cryptographic Support</span></a><a href="#m-fmt" style="text-indent:20px">5.2.4<span>Class FMT: Security Management)</span></a><a href="#m-fpf" style="text-indent:20px">5.2.5<span>Class FPF: Packet Filtering</span></a><a href="#m-fpt" style="text-indent:20px">5.2.6<span>Class FPT: Protection of the TSF</span></a><a href="#m-ftp" style="text-indent:20px">5.2.7<span>Class FTP: Trusted Path/Channels</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-ND" style="text-indent:10px">6.1<span>Collaborative 
     Protection Profile for Network Devices</span></a><a href="#contoe-ND" style="text-indent:20px">6.1.1<span>
 	Consistency of TOE Type
       </span></a><a href="#consecprob-ND" style="text-indent:20px">6.1.2<span>
@@ -648,10 +648,10 @@ function showTarget(id){
 		</span></a><a href="#conreq-ND" style="text-indent:20px">6.1.4<span>
 	Consistency of Requirements
       </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements
-    </span></a><a href="#sop-audit-table" style="text-indent:20px">A.1.1<span>Auditable Events for Strictly Optional SFRs</span></a><a href="#s-fpf" style="text-indent:20px">A.1.2<span>Packet Filtering (FPF)</span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements
+    </span></a><a href="#sop-audit-table" style="text-indent:20px">A.1.1<span>Auditable Events for Strictly Optional SFRs</span></a><a href="#s-fpf" style="text-indent:20px">A.1.2<span>Class FPF: Packet Filtering</span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements
     </span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-dependent Requirements
-    </span></a><a href="#sib-audit-table" style="text-indent:20px">A.3.1<span>Auditable Events for Implementation-Based SFRs</span></a><a href="#opt-headend" style="text-indent:20px">A.3.2<span>TOE Access (FTA)</span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements
-    </span></a><a href="#sb-audit-table" style="text-indent:10px">B.1<span>Auditable Events for Selection-based SFRs</span></a><a href="#s-fcs" style="text-indent:10px">B.2<span>Cryptographic Support (FCS)</span></a><a href="#sel-fia" style="text-indent:10px">B.3<span>Identification and Authentication (FIA)</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FCS" style="text-indent:20px">C.2.1<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-FCS_EAP_EXT" style="text-indent:30px">C.2.1.1<span>FCS_EAP_EXT EAP-TLS/TTLS</span></a><a href="#ext-comp-FIA" style="text-indent:20px">C.2.2<span>Identification and Authentication (FIA)</span></a><a href="#ext-comp-FIA_HOTP_EXT" style="text-indent:30px">C.2.2.1<span>FIA_HOTP_EXT HMAC-Based One-Time Password Pre-Shared Keys</span></a><a href="#ext-comp-FIA_PSK_EXT" style="text-indent:30px">C.2.2.2<span>FIA_PSK_EXT Pre-Shared Key Composition</span></a><a href="#ext-comp-FIA_TOTP_EXT" style="text-indent:30px">C.2.2.3<span>FIA_TOTP_EXT Time-Based One-Time Password Pre-Shared Keys</span></a><a href="#ext-comp-FPF" style="text-indent:20px">C.2.3<span>Packet Filtering (FPF)</span></a><a href="#ext-comp-FPF_RUL_EXT" style="text-indent:30px">C.2.3.1<span>FPF_RUL_EXT Packet Filtering Rules</span></a><a href="#ext-comp-FPF_MFA_EXT" style="text-indent:30px">C.2.3.2<span>FPF_MFA_EXT Multifactor Authentication Filtering</span></a><a href="#ext-comp-FPT" style="text-indent:20px">C.2.4<span>Protection of the TSF (FPT)</span></a><a href="#ext-comp-FPT_TST_EXT" style="text-indent:30px">C.2.4.1<span>FPT_TST_EXT TSF Self-Test</span></a><a href="#ext-comp-FTA" style="text-indent:20px">C.2.5<span>TOE Access (FTA)</span></a><a href="#ext-comp-FTA_VCM_EXT" style="text-indent:30px">C.2.5.1<span>FTA_VCM_EXT VPN Client Management</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Implicitly Satisfied Requirements</span></a><a href="#app-ent" style="text-indent:0px">Appendix E - <span>Entropy Documentation and Assessment</span></a><a href="#acronyms" style="text-indent:0px">Appendix F - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix G - <span>Bibliography</span></a></div><h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
+    </span></a><a href="#sib-audit-table" style="text-indent:20px">A.3.1<span>Auditable Events for Implementation-Based SFRs</span></a><a href="#opt-headend" style="text-indent:20px">A.3.2<span>Class FTA: TOE Access</span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements
+    </span></a><a href="#sb-audit-table" style="text-indent:10px">B.1<span>Auditable Events for Selection-based SFRs</span></a><a href="#s-fcs" style="text-indent:10px">B.2<span>Class FCS: Cryptographic Support</span></a><a href="#sel-fia" style="text-indent:10px">B.3<span>Class FIA: Identification and Authentication</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-" style="text-indent:20px">C.2.1<span>Class FCS: Cryptographic Support</span></a><a href="#ext-comp-FCS_EAP_EXT" style="text-indent:30px">C.2.1.1<span>FCS_EAP_EXT EAP-TLS/TTLS</span></a><a href="#ext-comp-" style="text-indent:20px">C.2.2<span>Class FIA: Identification and Authentication</span></a><a href="#ext-comp-FIA_HOTP_EXT" style="text-indent:30px">C.2.2.1<span>FIA_HOTP_EXT HMAC-Based One-Time Password Pre-Shared Keys</span></a><a href="#ext-comp-FIA_PSK_EXT" style="text-indent:30px">C.2.2.2<span>FIA_PSK_EXT Pre-Shared Key Composition</span></a><a href="#ext-comp-FIA_TOTP_EXT" style="text-indent:30px">C.2.2.3<span>FIA_TOTP_EXT Time-Based One-Time Password Pre-Shared Keys</span></a><a href="#ext-comp-" style="text-indent:20px">C.2.3<span>Class FPF: Packet Filtering</span></a><a href="#ext-comp-FPF_RUL_EXT" style="text-indent:30px">C.2.3.1<span>FPF_RUL_EXT Packet Filtering Rules</span></a><a href="#ext-comp-FPF_MFA_EXT" style="text-indent:30px">C.2.3.2<span>FPF_MFA_EXT Multifactor Authentication Filtering</span></a><a href="#ext-comp-" style="text-indent:20px">C.2.4<span>Class FPT: Protection of the TSF</span></a><a href="#ext-comp-FPT_TST_EXT" style="text-indent:30px">C.2.4.1<span>FPT_TST_EXT TSF Self-Test</span></a><a href="#ext-comp-" style="text-indent:20px">C.2.5<span>Class FTA: TOE Access</span></a><a href="#ext-comp-FTA_VCM_EXT" style="text-indent:30px">C.2.5.1<span>FTA_VCM_EXT VPN Client Management</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Implicitly Satisfied Requirements</span></a><a href="#app-ent" style="text-indent:0px">Appendix E - <span>Entropy Documentation and Assessment</span></a><a href="#acronyms" style="text-indent:0px">Appendix F - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix G - <span>Bibliography</span></a></div><h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
     
      
     <h2 class="indexable" data-level="2" id="Overview">1.1 Overview</h2>
@@ -994,7 +994,7 @@ provide all of its security functionality.</p>
 		<h3 id="modsfr-ND" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
 		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the NDcPP and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 
-		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_COP.1/AEAD: Cryptographic Operation - Authenticated Encryption with Associated Data</h4><span class="description">
+		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Class FCS: Cryptographic Support</h4><div class="comp" id="@id"><h4>FCS_COP.1/AEAD: Cryptographic Operation - Authenticated Encryption with Associated Data</h4><span class="description">
               <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been modified frmo its definition in the NDcPP to mandate selection of AES-GCM mode and 256-bit key sizes. Other selections may still be made if they are needed for other part of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</p>
               <p>The text of FCS_COP.1.1/AEAD is replaced with:</p>
               <p><b>FCS_COP.1.1/AEAD </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform [authenticated encryption with associated data] in accordance with a specified cryptographic algorithm [<b>selection:</b> <i>Cryptographic algorithm</i>] and cryptographic key sizes [<b>selection:</b> <i>Cryptographic key sizes</i>] that meet the following: [<b>selection:</b> <i>List of standards</i>].
@@ -1171,7 +1171,7 @@ provide all of its security functionality.</p>
                 </p>
                 <p><b>Application Note:</b> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> to be supported for certificate reference identifiers at minimum. Other selections may be made 
                 by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author but they are not required for conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</p>
-              </span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.2 Security Management (FMT)</h4><div class="comp" id="@id"><h4>FMT_MTD.1/CryptoKeys: Management of TSF Data</h4><span class="description">
+              </span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.2 Class FMT: Security Management</h4><div class="comp" id="@id"><h4>FMT_MTD.1/CryptoKeys: Management of TSF Data</h4><span class="description">
             <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>, defined in the NDcPP as selection-based, is mandated for
                 inclusion in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because the refinements to FMT_SMF.1
                 mandate its inclusion. Note that it is also refined to refer specifically to
@@ -1194,7 +1194,7 @@ provide all of its security functionality.</p>
 
 
 	  
-      <h3 id="m-fau" class="indexable" data-level="3">5.2.2 Security Audit (FAU)</h3>
+      <h3 id="m-fau" class="indexable" data-level="3">5.2.2 Class FAU: Security Audit</h3>
         
         
         <div class="comp" id="FAU_GEN.1/VPN"><h4>FAU_GEN.1/VPN Audit Data Generation (VPN Gateway)</h4>
@@ -1238,7 +1238,7 @@ provide all of its security functionality.</p>
       
       
       
-      <h3 id="m-fcs" class="indexable" data-level="3">5.2.3 Cryptographic Support (FCS)</h3>
+      <h3 id="m-fcs" class="indexable" data-level="3">5.2.3 Class FCS: Cryptographic Support</h3>
 
         <div class="comp" id="FCS_CKM.1/IKE"><h4>FCS_CKM.1/IKE Cryptographic Key Generation (for IKE Peer Authentication)</h4>
           
@@ -1278,7 +1278,7 @@ provide all of its security functionality.</p>
       
         
 	
-    <h3 id="m-fmt" class="indexable" data-level="3">5.2.4 Security Management (FMT)</h3>
+      <h3 id="m-fmt" class="indexable" data-level="3">5.2.4 Class FMT: Security Management)</h3>
     
 	
       <div class="comp" id="FMT_SMF.1/VPN"><h4>FMT_SMF.1/VPN Specification of Management Functions</h4>
@@ -1304,7 +1304,7 @@ provide all of its security functionality.</p>
         
 
       
-      <h3 id="m-fpf" class="indexable" data-level="3">5.2.5 Packet Filtering (FPF)</h3>
+      <h3 id="m-fpf" class="indexable" data-level="3">5.2.5 Class FPF: Packet Filtering</h3>
         
         
         
@@ -1410,7 +1410,7 @@ provide all of its security functionality.</p>
       
 
 	  
-      <h3 id="m-fpt" class="indexable" data-level="3">5.2.6 Protection of the TSF (FPT)</h3>
+      <h3 id="m-fpt" class="indexable" data-level="3">5.2.6 Class FPT: Protection of the TSF</h3>
 	 
 	 
         <div class="comp" id="FPT_FLS.1/SelfTest"><h4>FPT_FLS.1/SelfTest Failure with Preservation of Secure State (Self-Test Failures)</h4>
@@ -1453,7 +1453,7 @@ provide all of its security functionality.</p>
          
                 
       
-      <h3 id="m-ftp" class="indexable" data-level="3">5.2.7 Trusted Path/Channels (FTP)</h3>
+      <h3 id="m-ftp" class="indexable" data-level="3">5.2.7 Class FTP: Trusted Path/Channels</h3>
         
         <div class="comp" id="FTP_ITC.1/VPN"><h4>FTP_ITC.1/VPN Inter-TSF Trusted Channel (VPN Communications)</h4>
           
@@ -1614,7 +1614,7 @@ provide all of its security functionality.</p>
         <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="opt-audit-events" data-counter-type="ct-Table" id="opt-audit-events">Table <span class="counter">7</span></span>: Auditable Events for Strictly Optional Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FPF_MFA_EXT.1"><td rowspan="2"><a href="#FPF_MFA_EXT.1">FPF_MFA_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FPF_MFA_EXT.1#"><td></td></tr><tr data-sortkey="FPF_MFA_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table>
       
       
-      <h3 id="s-fpf" class="indexable" data-level="3">A.1.2 Packet Filtering (FPF)</h3>
+      <h3 id="s-fpf" class="indexable" data-level="3">A.1.2 Class FPF: Packet Filtering</h3>
         The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may support multifactor authentication by blocking all other traffic after connection is established until secondary authentication is validated.
         
         
@@ -1650,7 +1650,7 @@ provide all of its security functionality.</p>
 	      <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="impl-audit-events" data-counter-type="ct-Table" id="impl-audit-events">Table <span class="counter">8</span></span>: Auditable Events for Implementation-dependent Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FTA_SSL.3/VPN"><td rowspan="2"><a href="#FTA_SSL.3/VPN">FTA_SSL.3/VPN</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTA_SSL.3/VPN#"><td></td></tr><tr data-sortkey="FTA_SSL.3/VPN.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FTA_TSE.1"><td rowspan="2"><a href="#FTA_TSE.1">FTA_TSE.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTA_TSE.1#"><td></td></tr><tr data-sortkey="FTA_TSE.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FTA_VCM_EXT.1"><td rowspan="2"><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTA_VCM_EXT.1#"><td></td></tr><tr data-sortkey="FTA_VCM_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table>
 	  
 	  
-	  <h3 id="opt-headend" class="indexable" data-level="3">A.3.2 TOE Access (FTA)</h3>
+	  <h3 id="opt-headend" class="indexable" data-level="3">A.3.2 Class FTA: TOE Access</h3>
 	    This section contains requirements that may be optionally selected by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author for a “headend” <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr>
 	    gateway device. The requirements in the main body of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are those determined necessary
 	    for a multi-site <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> gateway appliance. Another application of a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> appliance is in an architecture that
@@ -1718,7 +1718,7 @@ provide all of its security functionality.</p>
         <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="sel-audit-events" data-counter-type="ct-Table" id="sel-audit-events">Table <span class="counter">9</span></span>: Auditable Events for Selection-based Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FCS_EAP_EXT.1"><td rowspan="2"><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FCS_EAP_EXT.1#"><td></td></tr><tr data-sortkey="FCS_EAP_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_HOTP_EXT.1"><td rowspan="2"><a href="#FIA_HOTP_EXT.1">FIA_HOTP_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_HOTP_EXT.1#"><td></td></tr><tr data-sortkey="FIA_HOTP_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_PSK_EXT.1"><td rowspan="2"><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_PSK_EXT.1#"><td></td></tr><tr data-sortkey="FIA_PSK_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_PSK_EXT.2"><td rowspan="2"><a href="#FIA_PSK_EXT.2">FIA_PSK_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_PSK_EXT.2#"><td></td></tr><tr data-sortkey="FIA_PSK_EXT.2.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_PSK_EXT.3"><td rowspan="2"><a href="#FIA_PSK_EXT.3">FIA_PSK_EXT.3</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_PSK_EXT.3#"><td></td></tr><tr data-sortkey="FIA_PSK_EXT.3.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_TOTP_EXT.1"><td rowspan="2"><a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_TOTP_EXT.1#"><td></td></tr><tr data-sortkey="FIA_TOTP_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table>
       
       
-      <h2 id="s-fcs" class="indexable" data-level="2">B.2 Cryptographic Support (FCS)</h2>
+      <h2 id="s-fcs" class="indexable" data-level="2">B.2 Class FCS: Cryptographic Support</h2>
         
         
         
@@ -1763,7 +1763,7 @@ provide all of its security functionality.</p>
       
       
       
-      <h2 id="sel-fia" class="indexable" data-level="2">B.3 Identification and Authentication (FIA)</h2>
+      <h2 id="sel-fia" class="indexable" data-level="2">B.3 Class FIA: Identification and Authentication</h2>
         The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may support pre-shared keys for use in the IPsec protocol, and may use pre-shared keys in other protocols as well. 
         PSK in the context of this document refers to generated values, 
         memorized values subject to conditioning, one-time passwords, and combinations as described in <a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a>.
@@ -2045,8 +2045,8 @@ provide all of its security functionality.</p>
 
 	All extended components specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are listed in this table:
 
-<table class="sort_kids_"><caption data-sortkey="#0"><b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">10</span></span>: Extended Component Definitions</b></caption><tr data-sortkey="#1"><th>Functional Class</th><th>Functional Components</th></tr><tr data-sortkey="Cryptographic Support (FCS)"><td>Cryptographic Support (FCS)</td><td>FCS_EAP_EXT EAP-TLS/TTLS<br/></td></tr><tr data-sortkey="Identification and Authentication (FIA)"><td>Identification and Authentication (FIA)</td><td>FIA_HOTP_EXT HMAC-Based One-Time Password Pre-Shared Keys<br/>FIA_PSK_EXT Pre-Shared Key Composition<br/>FIA_TOTP_EXT Time-Based One-Time Password Pre-Shared Keys<br/></td></tr><tr data-sortkey="Packet Filtering (FPF)"><td>Packet Filtering (FPF)</td><td>FPF_MFA_EXT Multifactor Authentication Filtering<br/>FPF_RUL_EXT Packet Filtering Rules<br/></td></tr><tr data-sortkey="Protection of the TSF (FPT)"><td>Protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> (FPT)</td><td>FPT_TST_EXT <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Self-Test<br/></td></tr><tr data-sortkey="TOE Access (FTA)"><td><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Access (FTA)</td><td>FTA_VCM_EXT <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client Management<br/></td></tr></table><h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.2 Extended Component Definitions</h2><span class="sort_kids_"><span data-sortkey="Cryptographic Support (FCS)"><h3 id="ext-comp-FCS" class="indexable" data-level="3">C.2.1 Cryptographic Support (FCS)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
-	 FCS class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
+<table class="sort_kids_"><caption data-sortkey="#0"><b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">10</span></span>: Extended Component Definitions</b></caption><tr data-sortkey="#1"><th>Functional Class</th><th>Functional Components</th></tr><tr data-sortkey="Class FCS: Cryptographic Support"><td>Class FCS: Cryptographic Support</td><td>FCS_EAP_EXT EAP-TLS/TTLS<br/></td></tr><tr data-sortkey="Class FIA: Identification and Authentication"><td>Class FIA: Identification and Authentication</td><td>FIA_HOTP_EXT HMAC-Based One-Time Password Pre-Shared Keys<br/>FIA_PSK_EXT Pre-Shared Key Composition<br/>FIA_TOTP_EXT Time-Based One-Time Password Pre-Shared Keys<br/></td></tr><tr data-sortkey="Class FPF: Packet Filtering"><td>Class FPF: Packet Filtering</td><td>FPF_MFA_EXT Multifactor Authentication Filtering<br/>FPF_RUL_EXT Packet Filtering Rules<br/></td></tr><tr data-sortkey="Class FPT: Protection of the TSF"><td>Class FPT: Protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></td><td>FPT_TST_EXT <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Self-Test<br/></td></tr><tr data-sortkey="Class FTA: TOE Access"><td>Class FTA: <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Access</td><td>FTA_VCM_EXT <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client Management<br/></td></tr></table><h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.2 Extended Component Definitions</h2><span class="sort_kids_"><span data-sortkey="Class FCS: Cryptographic Support"><h3 id="ext-comp-" class="indexable" data-level="3">C.2.1 Class FCS: Cryptographic Support</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
+	  class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FCS_EAP_EXT" class="indexable" data-level="4">C.2.1.1 FCS_EAP_EXT EAP-TLS/TTLS</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family describe the requirements for EAP-TLS/TTLS.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FCS_EAP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FCS_EAP_EXT.1">FCS_EAP_EXT.1</a>,
              EAP-TLS/TTLS,
              defines the use of EAP-TLS/TTLS.</p><h4>Management: FCS_EAP_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FCS_EAP_EXT.1</h4><p>There are no auditable events foreseen.
@@ -2060,8 +2060,8 @@ provide all of its security functionality.</p>
             <h4 id="ext-comp-FCS_EAP_EXT.1.3">FCS_EAP_EXT.1.3</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use the <abbr class="dyn-abbr"><a href="#abbr_MSK">MSK</a></abbr> from the 
               [<b>selection</b>: <span class="selectable-content" id="_s_25">EAP-TLS</span>, <span class="selectable-content" id="_s_26">EAP-TTLS</span>] response as the IKEv2 shared secret in the authentication payload.
-            </div></div></span><span data-sortkey="Identification and Authentication (FIA)"><h3 id="ext-comp-FIA" class="indexable" data-level="3">C.2.2 Identification and Authentication (FIA)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
-	 FIA class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
+            </div></div></span><span data-sortkey="Class FIA: Identification and Authentication"><h3 id="ext-comp-" class="indexable" data-level="3">C.2.2 Class FIA: Identification and Authentication</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
+	  class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FIA_HOTP_EXT" class="indexable" data-level="4">C.2.2.1 FIA_HOTP_EXT HMAC-Based One-Time Password Pre-Shared Keys</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for the use of HMAC-Based One-Time password authentication, including generation methods and usage restrictions.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FIA_HOTP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FIA_HOTP_EXT.1">FIA_HOTP_EXT.1</a>,
              HMAC-Based One-Time Password Pre-Shared Keys,
               defines the implementation of HOTP.</p><h4>Management: FIA_HOTP_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_HOTP_EXT.1</h4><p>There are no auditable events foreseen.
@@ -2193,7 +2193,7 @@ provide all of its security functionality.</p>
             <h4 id="ext-comp-FIA_TOTP_EXT.1.9">FIA_TOTP_EXT.1.9</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
               [<b>selection</b>: <span class="selectable-content" id="_s_120">allow resynchronization by recording time drift within the limit of <a href="#FIA_TOTP_EXT.1.8">FIA_TOTP_EXT.1.8</a></span>, <span class="selectable-content" id="_s_121">not permit resynchronization</span>].           
-            </div></div></span><span data-sortkey="Packet Filtering (FPF)"><h3 id="ext-comp-FPF" class="indexable" data-level="3">C.2.3 Packet Filtering (FPF)</h3>
+            </div></div></span><span data-sortkey="Class FPF: Packet Filtering"><h3 id="ext-comp-" class="indexable" data-level="3">C.2.3 Class FPF: Packet Filtering</h3>
           This class contains families that describe packet filtering behavior. Packet filtering refers to the notion that
           network traffic that is transmitted through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (i.e., the source and destination of the traffic is not
           the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> but the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is on the routing path between these two entities) can be treated differently by the
@@ -2235,8 +2235,8 @@ provide all of its security functionality.</p>
               except those necessary to verify additional authentication factors of the client.
             <h4 id="ext-comp-FPF_MFA_EXT.1.2">FPF_MFA_EXT.1.2</h4>
                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="sel-tsf-mfa">verify</span>, <span class="selectable-content" id="_s_20">verify via an external authentication server</span>] additional authentication factors of the client.
-              </div></div></span><span data-sortkey="Protection of the TSF (FPT)"><h3 id="ext-comp-FPT" class="indexable" data-level="3">C.2.4 Protection of the TSF (FPT)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
-	 FPT class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
+              </div></div></span><span data-sortkey="Class FPT: Protection of the TSF"><h3 id="ext-comp-" class="indexable" data-level="3">C.2.4 Class FPT: Protection of the TSF</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
+	  class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FPT_TST_EXT" class="indexable" data-level="4">C.2.4.1 FPT_TST_EXT TSF Self-Test</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family is defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> augments the extended family by adding one
             additional component, <a href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a>. This new component and its impact on the extended family’s
             component leveling are shown below; reference the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> for all other definitions for this family.
@@ -2251,8 +2251,8 @@ provide all of its security functionality.</p>
               to demonstrate the correct operation of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>: [<b>assignment</b>: 
      <span class="assignable-content">list of self-tests performed</span>].
               <h4 id="ext-comp-FPT_TST_EXT.3.2">FPT_TST_EXT.3.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall execute the self-testing through [<b>assignment</b>: 
-     <span class="assignable-content">self-testing mechanism</span>].</div></div></span><span data-sortkey="TOE Access (FTA)"><h3 id="ext-comp-FTA" class="indexable" data-level="3">C.2.5 TOE Access (FTA)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
-	 FTA class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
+     <span class="assignable-content">self-testing mechanism</span>].</div></div></span><span data-sortkey="Class FTA: TOE Access"><h3 id="ext-comp-" class="indexable" data-level="3">C.2.5 Class FTA: TOE Access</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
+	  class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FTA_VCM_EXT" class="indexable" data-level="4">C.2.5.1 FTA_VCM_EXT VPN Client Management</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for how the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> interacts with <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> clients in its <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.
 	      </div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FTA_VCM_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FTA_VCM_EXT.1">FTA_VCM_EXT.1</a>,
              <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> Client Management,

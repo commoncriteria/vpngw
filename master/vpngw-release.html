@@ -638,7 +638,7 @@ function showTarget(id){
 </table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#_sec_1" style="text-indent:10px">1.5<span>Package Usage</span></a><a href="#ConformanceClaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_Operational_Environment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">4.2<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-ND" style="text-indent:10px">5.1<span>Collaborative 
     Protection Profile for Network Devices
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-ND" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.1.1.1<span>Class FCS: Cryptographic Support</span></a><a href="#@id" style="text-indent:30px">5.1.1.2<span>Class FMT: Security Management</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#m-fau" style="text-indent:20px">5.2.2<span>Class FAU: Security Audit</span></a><a href="#m-fcs" style="text-indent:20px">5.2.3<span>Class FCS: Cryptographic Support</span></a><a href="#m-fmt" style="text-indent:20px">5.2.4<span>Class FMT: Security Management</span></a><a href="#m-fpf" style="text-indent:20px">5.2.5<span>Class FPF: Packet Filtering</span></a><a href="#m-fpt" style="text-indent:20px">5.2.6<span>Class FPT: Protection of the TSF</span></a><a href="#m-ftp" style="text-indent:20px">5.2.7<span>Class FTP: Trusted Path/Channels</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-ND" style="text-indent:10px">6.1<span>Collaborative 
+    </span></a><a href="#modsfr-ND" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#modsfr-nd-m-fcs" style="text-indent:30px">5.1.1.1<span>Class FCS: Cryptographic Support</span></a><a href="#modsfr-nd-m-fmt" style="text-indent:30px">5.1.1.2<span>Class FMT: Security Management</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#m-fau" style="text-indent:20px">5.2.2<span>Class FAU: Security Audit</span></a><a href="#m-fcs" style="text-indent:20px">5.2.3<span>Class FCS: Cryptographic Support</span></a><a href="#m-fmt" style="text-indent:20px">5.2.4<span>Class FMT: Security Management</span></a><a href="#m-fpf" style="text-indent:20px">5.2.5<span>Class FPF: Packet Filtering</span></a><a href="#m-fpt" style="text-indent:20px">5.2.6<span>Class FPT: Protection of the TSF</span></a><a href="#m-ftp" style="text-indent:20px">5.2.7<span>Class FTP: Trusted Path/Channels</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-ND" style="text-indent:10px">6.1<span>Collaborative 
     Protection Profile for Network Devices</span></a><a href="#contoe-ND" style="text-indent:20px">6.1.1<span>
 	Consistency of TOE Type
       </span></a><a href="#consecprob-ND" style="text-indent:20px">6.1.2<span>
@@ -994,7 +994,7 @@ provide all of its security functionality.</p>
 		<h3 id="modsfr-ND" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
 		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the NDcPP and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 
-		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Class FCS: Cryptographic Support</h4><div class="comp" id="@id"><h4>FCS_COP.1/AEAD: Cryptographic Operation - Authenticated Encryption with Associated Data</h4><span class="description">
+		<h4 id="modsfr-nd-m-fcs" class="indexable" data-level="4">5.1.1.1 Class FCS: Cryptographic Support</h4><div class="comp" id="@id"><h4>FCS_COP.1/AEAD: Cryptographic Operation - Authenticated Encryption with Associated Data</h4><span class="description">
               <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been modified frmo its definition in the NDcPP to mandate selection of AES-GCM mode and 256-bit key sizes. Other selections may still be made if they are needed for other part of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</p>
               <p>The text of FCS_COP.1.1/AEAD is replaced with:</p>
               <p><b>FCS_COP.1.1/AEAD </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform [authenticated encryption with associated data] in accordance with a specified cryptographic algorithm [<b>selection:</b> <i>Cryptographic algorithm</i>] and cryptographic key sizes [<b>selection:</b> <i>Cryptographic key sizes</i>] that meet the following: [<b>selection:</b> <i>List of standards</i>].
@@ -1171,7 +1171,7 @@ provide all of its security functionality.</p>
                 </p>
                 <p><b>Application Note:</b> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> to be supported for certificate reference identifiers at minimum. Other selections may be made 
                 by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author but they are not required for conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</p>
-              </span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.2 Class FMT: Security Management</h4><div class="comp" id="@id"><h4>FMT_MTD.1/CryptoKeys: Management of TSF Data</h4><span class="description">
+              </span></div><h4 id="modsfr-nd-m-fmt" class="indexable" data-level="4">5.1.1.2 Class FMT: Security Management</h4><div class="comp" id="@id"><h4>FMT_MTD.1/CryptoKeys: Management of TSF Data</h4><span class="description">
             <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>, defined in the NDcPP as selection-based, is mandated for
                 inclusion in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because the refinements to FMT_SMF.1
                 mandate its inclusion. Note that it is also refined to refer specifically to
@@ -1724,9 +1724,7 @@ provide all of its security functionality.</p>
         
         
         
-        <div class="comp" id="FCS_EAP_EXT.1"><h4>FCS_EAP_EXT.1 EAP-TLS/TTLS</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           FCS_IPSEC_EXT.1.1.
-           </i></b></div>
+        <div class="comp" id="FCS_EAP_EXT.1"><h4>FCS_EAP_EXT.1 EAP-TLS/TTLS</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in:</i></b><ul><li><b><i>FCS_IPSEC_EXT.1.1</i></b></li></ul></div>
         
           
 	            
@@ -1770,9 +1768,7 @@ provide all of its security functionality.</p>
         
         
         
-        <div class="comp" id="FIA_HOTP_EXT.1"><h4>FIA_HOTP_EXT.1 HMAC-Based One-Time Password Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a>.
-           </i></b></div>
+        <div class="comp" id="FIA_HOTP_EXT.1"><h4>FIA_HOTP_EXT.1 HMAC-Based One-Time Password Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in:</i></b><ul><li><b><i><a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a></i></b></li></ul></div>
           
           
           
@@ -1799,8 +1795,7 @@ provide all of its security functionality.</p>
           <div class="element"><div class="reqid" id="FIA_HOTP_EXT.1.5"><a href="#FIA_HOTP_EXT.1.5" class="abbr">FIA_HOTP_EXT.1.5</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall truncate the HOTP hash per <a href="#FIA_HOTP_EXT.1.4">FIA_HOTP_EXT.1.4</a> to create an HOTP of  
               [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_39">administrator configurable character length of at least 6</span></li><li style=""><span class="selectable-content" id="_s_40">preset character length of
-                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_41">6</span>, <span class="selectable-content" id="_s_42">7</span>, <span class="selectable-content" id="_s_43">8</span>, <span class="selectable-content" id="_s_44">9</span>, <span class="selectable-content" id="_s_45">10</span>]
-                </span></li></ul>].
+                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_41">6</span>, <span class="selectable-content" id="_s_42">7</span>, <span class="selectable-content" id="_s_43">8</span>, <span class="selectable-content" id="_s_44">9</span>, <span class="selectable-content" id="_s_45">10</span>]</span></li></ul>].
             </div></div>
           <div class="element"><div class="reqid" id="FIA_HOTP_EXT.1.6"><a href="#FIA_HOTP_EXT.1.6" class="abbr">FIA_HOTP_EXT.1.6</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
@@ -1809,8 +1804,7 @@ provide all of its security functionality.</p>
      <span class="assignable-content">value less than 10</span>]</span>] per minute</span></li><li style=""><span class="selectable-content" id="_s_49">lock the associated account after 
                   [<b>selection</b>: <span class="selectable-content" id="_s_50">administrator configurable value</span>, <span class="selectable-content" id="_s_51">[<b>assignment</b>: 
      <span class="assignable-content">value less than 10</span>]</span>] failed attempts until 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_52">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_53">a configurable time period</span>]
-                </span></li></ul>].
+                  [<b>selection</b>: <span class="selectable-content" id="_s_52">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_53">a configurable time period</span>]</span></li></ul>].
             </div></div>
           <div class="element"><div class="reqid" id="FIA_HOTP_EXT.1.7"><a href="#FIA_HOTP_EXT.1.7" class="abbr">FIA_HOTP_EXT.1.7</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not verify HOTP attempts outside of the counter look ahead window of 
@@ -1834,9 +1828,7 @@ provide all of its security functionality.</p>
         
         
         
-        <div class="comp" id="FIA_PSK_EXT.1"><h4>FIA_PSK_EXT.1 Pre-Shared Key Composition</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FPF_MFA_EXT.1.2">FPF_MFA_EXT.1.2</a>.
-           </i></b></div>
+        <div class="comp" id="FIA_PSK_EXT.1"><h4>FIA_PSK_EXT.1 Pre-Shared Key Composition</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in:</i></b><ul><li><b><i><a href="#FPF_MFA_EXT.1.2">FPF_MFA_EXT.1.2</a></i></b></li></ul></div>
           
           
           
@@ -1877,9 +1869,7 @@ provide all of its security functionality.</p>
           
         </div>
         
-        <div class="comp" id="FIA_PSK_EXT.2"><h4>FIA_PSK_EXT.2 Generated Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a>.
-           </i></b></div>
+        <div class="comp" id="FIA_PSK_EXT.2"><h4>FIA_PSK_EXT.2 Generated Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in:</i></b><ul><li><b><i><a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a></i></b></li></ul></div>
           
           
           
@@ -1905,9 +1895,7 @@ provide all of its security functionality.</p>
           
         </div>
         
-        <div class="comp" id="FIA_PSK_EXT.3"><h4>FIA_PSK_EXT.3 Password-Based Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a>.
-           </i></b></div>
+        <div class="comp" id="FIA_PSK_EXT.3"><h4>FIA_PSK_EXT.3 Password-Based Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in:</i></b><ul><li><b><i><a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a></i></b></li></ul></div>
           
           
           
@@ -1969,9 +1957,7 @@ provide all of its security functionality.</p>
      
         
         
-        <div class="comp" id="FIA_TOTP_EXT.1"><h4>FIA_TOTP_EXT.1 Time-Based One-Time Password Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a>.
-           </i></b></div>
+        <div class="comp" id="FIA_TOTP_EXT.1"><h4>FIA_TOTP_EXT.1 Time-Based One-Time Password Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in:</i></b><ul><li><b><i><a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a></i></b></li></ul></div>
           
           
           
@@ -1998,8 +1984,7 @@ provide all of its security functionality.</p>
           <div class="element"><div class="reqid" id="FIA_TOTP_EXT.1.5"><a href="#FIA_TOTP_EXT.1.5" class="abbr">FIA_TOTP_EXT.1.5</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall truncate the TOTP hash per <a href="#FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</a> to create a TOTP of  
               [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_101">administrator configurable character length of at least 6</span></li><li style=""><span class="selectable-content" id="_s_102">preset character length of
-                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_103">6</span>, <span class="selectable-content" id="_s_104">7</span>, <span class="selectable-content" id="_s_105">8</span>, <span class="selectable-content" id="_s_106">9</span>, <span class="selectable-content" id="_s_107">10</span>]
-                </span></li></ul>].
+                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_103">6</span>, <span class="selectable-content" id="_s_104">7</span>, <span class="selectable-content" id="_s_105">8</span>, <span class="selectable-content" id="_s_106">9</span>, <span class="selectable-content" id="_s_107">10</span>]</span></li></ul>].
             </div></div>
           <div class="element"><div class="reqid" id="FIA_TOTP_EXT.1.6"><a href="#FIA_TOTP_EXT.1.6" class="abbr">FIA_TOTP_EXT.1.6</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
@@ -2008,8 +1993,7 @@ provide all of its security functionality.</p>
      <span class="assignable-content">value less than 10</span>]</span>] per minute</span></li><li style=""><span class="selectable-content" id="_s_111">lock the associated account after 
                   [<b>selection</b>: <span class="selectable-content" id="_s_112">administrator configurable value</span>, <span class="selectable-content" id="_s_113">[<b>assignment</b>: 
      <span class="assignable-content">value less than 10</span>]</span>] failed attempts until 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_114">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_115">a configurable time period</span>]
-                </span></li></ul>].
+                  [<b>selection</b>: <span class="selectable-content" id="_s_114">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_115">a configurable time period</span>]</span></li></ul>].
             </div></div>
           <div class="element"><div class="reqid" id="FIA_TOTP_EXT.1.7"><a href="#FIA_TOTP_EXT.1.7" class="abbr">FIA_TOTP_EXT.1.7</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall set a time-step size of 
@@ -2081,8 +2065,7 @@ provide all of its security functionality.</p>
             <h4 id="ext-comp-FIA_HOTP_EXT.1.5">FIA_HOTP_EXT.1.5</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall truncate the HOTP hash per <a href="#FIA_HOTP_EXT.1.4">FIA_HOTP_EXT.1.4</a> to create an HOTP of  
               [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_39">administrator configurable character length of at least 6</span></li><li style=""><span class="selectable-content" id="_s_40">preset character length of
-                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_41">6</span>, <span class="selectable-content" id="_s_42">7</span>, <span class="selectable-content" id="_s_43">8</span>, <span class="selectable-content" id="_s_44">9</span>, <span class="selectable-content" id="_s_45">10</span>]
-                </span></li></ul>].
+                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_41">6</span>, <span class="selectable-content" id="_s_42">7</span>, <span class="selectable-content" id="_s_43">8</span>, <span class="selectable-content" id="_s_44">9</span>, <span class="selectable-content" id="_s_45">10</span>]</span></li></ul>].
             <h4 id="ext-comp-FIA_HOTP_EXT.1.6">FIA_HOTP_EXT.1.6</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
               [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_46">throttle invalid requests to 
@@ -2090,8 +2073,7 @@ provide all of its security functionality.</p>
      <span class="assignable-content">value less than 10</span>]</span>] per minute</span></li><li style=""><span class="selectable-content" id="_s_49">lock the associated account after 
                   [<b>selection</b>: <span class="selectable-content" id="_s_50">administrator configurable value</span>, <span class="selectable-content" id="_s_51">[<b>assignment</b>: 
      <span class="assignable-content">value less than 10</span>]</span>] failed attempts until 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_52">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_53">a configurable time period</span>]
-                </span></li></ul>].
+                  [<b>selection</b>: <span class="selectable-content" id="_s_52">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_53">a configurable time period</span>]</span></li></ul>].
             <h4 id="ext-comp-FIA_HOTP_EXT.1.7">FIA_HOTP_EXT.1.7</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not verify HOTP attempts outside of the counter look ahead window of 
               [<b>selection</b>: <span class="selectable-content" id="_s_54">a configurable value</span>, <span class="selectable-content" id="_s_55">[<b>assignment</b>: 
@@ -2171,8 +2153,7 @@ provide all of its security functionality.</p>
             <h4 id="ext-comp-FIA_TOTP_EXT.1.5">FIA_TOTP_EXT.1.5</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall truncate the TOTP hash per <a href="#FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</a> to create a TOTP of  
               [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_101">administrator configurable character length of at least 6</span></li><li style=""><span class="selectable-content" id="_s_102">preset character length of
-                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_103">6</span>, <span class="selectable-content" id="_s_104">7</span>, <span class="selectable-content" id="_s_105">8</span>, <span class="selectable-content" id="_s_106">9</span>, <span class="selectable-content" id="_s_107">10</span>]
-                </span></li></ul>].
+                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_103">6</span>, <span class="selectable-content" id="_s_104">7</span>, <span class="selectable-content" id="_s_105">8</span>, <span class="selectable-content" id="_s_106">9</span>, <span class="selectable-content" id="_s_107">10</span>]</span></li></ul>].
             <h4 id="ext-comp-FIA_TOTP_EXT.1.6">FIA_TOTP_EXT.1.6</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
               [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_108">throttle invalid requests to 
@@ -2180,8 +2161,7 @@ provide all of its security functionality.</p>
      <span class="assignable-content">value less than 10</span>]</span>] per minute</span></li><li style=""><span class="selectable-content" id="_s_111">lock the associated account after 
                   [<b>selection</b>: <span class="selectable-content" id="_s_112">administrator configurable value</span>, <span class="selectable-content" id="_s_113">[<b>assignment</b>: 
      <span class="assignable-content">value less than 10</span>]</span>] failed attempts until 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_114">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_115">a configurable time period</span>]
-                </span></li></ul>].
+                  [<b>selection</b>: <span class="selectable-content" id="_s_114">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_115">a configurable time period</span>]</span></li></ul>].
             <h4 id="ext-comp-FIA_TOTP_EXT.1.7">FIA_TOTP_EXT.1.7</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall set a time-step size of 
               [<b>selection</b>: <span class="selectable-content" id="_s_116">a configurable value</span>, <span class="selectable-content" id="_s_117">[<b>assignment</b>: 

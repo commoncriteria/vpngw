@@ -497,19 +497,16 @@ The following sections list Common Criteria and technology terms used in this do
                 <br/></div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FPF_RUL_EXT.1.1:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FPF_RUL_EXT.1.1:1</a>:
       The evaluator shall attempt to get network traffic to flow through the TOE while the TOE is being
                     initialized. A steady flow of network packets that would otherwise be denied by the ruleset should be
                     sourced and directed to a host. The evaluator shall use a packet sniffer to verify none of the generated
-                    network traffic is permitted through the TOE during initialization.</li>
-                  <li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FPF_RUL_EXT.1.1:2</a>:
+                    network traffic is permitted through the TOE during initialization.</li><li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FPF_RUL_EXT.1.1:2</a>:
       The evaluator shall attempt to get network traffic to flow through the TOE while the TOE is being
                     initialized. A steady flow of network packets that would be permitted by the ruleset should be sourced
                     and directed to a host. The evaluator shall use a packet sniffer to verify none of the generated network
                     traffic is permitted through the TOE during initialization and is only permitted once initialization is
-                    complete.</li>
-                </ul></span>
+                    complete.</li></ul></span>
                 Note: The remaining testing associated with application of the ruleset is addressed in the subsequent test
                 EAs.
                 <br/></div>
@@ -590,8 +587,7 @@ The following sections list Common Criteria and technology terms used in this do
                 <br/></div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FPF_RUL_EXT.1.4:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FPF_RUL_EXT.1.4:1</a>:
       
                     The evaluator shall use the instructions in the operational guidance to test that packet filter rules
                     can be created that permit, discard, and log packets for each of the following attributes: <ul>
@@ -613,11 +609,9 @@ The following sections list Common Criteria and technology terms used in this do
                         <li>Destination Port</li>
                       </ul>
                     </ul>
-                  </li>
-                  <li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FPF_RUL_EXT.1.4:2</a>:
+                  </li><li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FPF_RUL_EXT.1.4:2</a>:
       The evaluator shall repeat Test 1 above for each distinct network interface type supported by the
-                    TOE to ensure that packet filtering rules can be defined for all supported types.</li>
-                </ul></span>
+                    TOE to ensure that packet filtering rules can be defined for all supported types.</li></ul></span>
                 Note that these test activities should be performed in conjunction with those of FPF_RUL_EXT.1.6 where
                 the effectiveness of the rules is tested; here the evaluator is just ensuring the guidance is sufficient and
                 the TOE supports the administrator creating a ruleset based on the above attributes. The test activities
@@ -637,18 +631,15 @@ The following sections list Common Criteria and technology terms used in this do
                 rule processing.<br/></div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_5" class="defined" href="#_t_5">Test FPF_RUL_EXT.1.5:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_5" class="defined" href="#_t_5">Test FPF_RUL_EXT.1.5:1</a>:
       The evaluator shall devise two equal packet filtering rules with alternate operations – permit and
                     discard. The rules should then be deployed in two distinct orders and in each case the evaluator shall
                     ensure that the first rule is enforced in both cases by generating applicable packets and using packet
-                    capture and logs for confirmation.</li>
-                  <li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FPF_RUL_EXT.1.5:2</a>:
+                    capture and logs for confirmation.</li><li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FPF_RUL_EXT.1.5:2</a>:
       The evaluator shall repeat the procedure above, except that the two rules should be devised where
                     one is a subset of the other (e.g., a specific address vs. a network segment). Again, the evaluator shall
                     test both orders to ensure that the first is enforced regardless of the specificity of the rule.
-                  </li>
-                </ul></span><br/>
+                  </li></ul></span><br/>
               </div>
             <div class="element-activity-header">FPF_RUL_EXT.1.6</div>
               <div class="eacategory">TSS</div><div class="ea">The evaluator shall verify that the TSS describes the process for applying packet filtering rules and also
@@ -661,23 +652,20 @@ The following sections list Common Criteria and technology terms used in this do
               </div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_7" class="defined" href="#_t_7">Test FPF_RUL_EXT.1.6:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_7" class="defined" href="#_t_7">Test FPF_RUL_EXT.1.6:1</a>:
       The evaluator shall configure the TOE to permit and log each supported IPv4 Transport Layer Protocol (see RFC Values for IPv4 and IPv6 table for full possible list) 
                     in conjunction with a specific source address and specific destination address, specific source address and wildcard destination address, 
                     wildcard source address and specific destination address, and wildcard source address and wildcard destination address. 
                     The evaluator shall generate packets matching each supported IPv4 Transport Layer Protocol and within the configured source and destination addresses 
                     in order to ensure that the supported protocols are permitted (i.e., by capturing the packets after passing through the TOE) and logged. 
-                    Any protocols not supported by the TOE must be denied.</li>
-                  <li class="test-"><a id="_t_8" class="defined" href="#_t_8">Test FPF_RUL_EXT.1.6:2</a>:
+                    Any protocols not supported by the TOE must be denied.</li><li class="test-"><a id="_t_8" class="defined" href="#_t_8">Test FPF_RUL_EXT.1.6:2</a>:
       The evaluator shall configure the TOE to permit all traffic except to discard and log each supported IPv4 Transport Layer Protocol 
                     (see RFC Values for IPv4 and IPv6 table for full possible list) in conjunction with a specific source address and specific destination address, 
                     specific source address and wildcard destination address, wildcard source address and specific destination address, 
                     and wildcard source address and wildcard destination address. The evaluator shall generate packets matching each defined IPv4 Transport Layer Protocol 
                     and within the configured source and destination addresses in order to ensure that the supported protocols are denied (i.e., by capturing no applicable packets passing through the TOE) and logged. 
                     Any protocols not supported by the TOE must also be denied but are not required to be logged.
-                  </li>
-                  <li class="test-"><a id="_t_9" class="defined" href="#_t_9">Test FPF_RUL_EXT.1.6:3</a>:
+                  </li><li class="test-"><a id="_t_9" class="defined" href="#_t_9">Test FPF_RUL_EXT.1.6:3</a>:
       The evaluator shall configure the TOE to permit and log each supported IPv4 Transport Layer Protocol 
                     (see RFC Values for IPv4 and IPv6 table for full possible list) in conjunction with a specific source address and specific destination address, 
                     specific source address and wildcard destination address, wildcard source address and specific destination address, 
@@ -689,16 +677,14 @@ The following sections list Common Criteria and technology terms used in this do
                     The evaluator shall generate packets matching each supported IPv4 Transport Layer Protocol and outside the scope of all source and destination addresses 
                     configured above in order to ensure that the supported protocols are denied (i.e., by capturing no applicable packets passing through the TOE) and logged. 
                     Any protocols not supported by the TOE must be denied.
-                  </li>
-                  <li class="test-"><a id="_t_10" class="defined" href="#_t_10">Test FPF_RUL_EXT.1.6:4</a>:
+                  </li><li class="test-"><a id="_t_10" class="defined" href="#_t_10">Test FPF_RUL_EXT.1.6:4</a>:
       The evaluator shall configure the TOE to permit and log each supported IPv6 Transport Layer Protocol 
                     (see RFC Values for IPv4 and IPv6 table  for full possible list) in conjunction with a specific source address and specific destination address, 
                     specific source address and wildcard destination address, wildcard source address and specific destination address, 
                     and wildcard source address and wildcard destination address. 
                     The evaluator shall generate packets matching each defined IPv6 Transport Layer Protocol and 
                     within the configured source and destination addresses in order to ensure that the supported protocols are permitted 
-                    (i.e., by capturing the packets after passing through the TOE) and logged. Any protocols not supported by the TOE must be denied.</li>
-                  <li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FPF_RUL_EXT.1.6:5</a>:
+                    (i.e., by capturing the packets after passing through the TOE) and logged. Any protocols not supported by the TOE must be denied.</li><li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FPF_RUL_EXT.1.6:5</a>:
       The evaluator shall configure the TOE to permit all traffic except to discard and log each supported IPv6 Transport Layer Protocol 
                     (see RFC Values for IPv4 and IPv6 table for full possible list) in conjunction with a specific source address and specific destination address, 
                     specific source address and wildcard destination address, wildcard source address and specific destination address, 
@@ -706,8 +692,7 @@ The following sections list Common Criteria and technology terms used in this do
                     The evaluator shall generate packets matching each defined IPv6 Transport Layer Protocol and within the configured source and destination addresses 
                     in order to ensure that the supported protocols are denied (i.e., by capturing no applicable packets passing through the TOE) and logged. 
                     Any protocols not supported by the TOE must also be denied but are not required to be logged.
-                  </li>
-                  <li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FPF_RUL_EXT.1.6:6</a>:
+                  </li><li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FPF_RUL_EXT.1.6:6</a>:
       The evaluator shall configure the TOE to permit and log each supported IPv6 Transport Layer Protocol 
                     (see RFC Values for IPv4 and IPv6 table for full possible list) in conjunction with a specific source address and specific destination address, 
                     specific source address and wildcard destination address, wildcard source address and specific destination address, 
@@ -718,33 +703,28 @@ The following sections list Common Criteria and technology terms used in this do
                     The evaluator shall generate packets matching each defined IPv6 Transport Layer Protocol and outside the scope of all source and destination 
                     addresses configured above in order to ensure that the supported protocols are dropped (i.e., by capturing no applicable packets passing through the TOE) and logged. 
                     Any protocols not supported by the TOE must be denied.
-                  </li>
-                  <li class="test-"><a id="_t_13" class="defined" href="#_t_13">Test FPF_RUL_EXT.1.6:7</a>:
+                  </li><li class="test-"><a id="_t_13" class="defined" href="#_t_13">Test FPF_RUL_EXT.1.6:7</a>:
       The evaluator shall configure the TOE to permit and log protocol 6 (TCP) using a selected source
                     port, a selected destination port, and a selected source and destination port combination. The evaluator
                     shall generate packets matching the configured source and destination TCP ports in order to ensure that
                     they are permitted (i.e., by capturing the packets after passing through the TOE) and logged.
-                  </li>
-                  <li class="test-"><a id="_t_14" class="defined" href="#_t_14">Test FPF_RUL_EXT.1.6:8</a>:
+                  </li><li class="test-"><a id="_t_14" class="defined" href="#_t_14">Test FPF_RUL_EXT.1.6:8</a>:
       The evaluator shall configure the TOE to discard and log protocol 6 (TCP) using a selected source
                     port, a selected destination port, and a selected source and destination port combination. The evaluator
                     shall generate packets matching the configured source and destination TCP ports in order to ensure that
                     they are denied (i.e., by capturing no applicable packets passing through the TOE) and logged.
-                  </li>
-                  <li class="test-"><a id="_t_15" class="defined" href="#_t_15">Test FPF_RUL_EXT.1.6:9</a>:
+                  </li><li class="test-"><a id="_t_15" class="defined" href="#_t_15">Test FPF_RUL_EXT.1.6:9</a>:
       The evaluator shall configure the TOE to permit and log protocol 17 (UDP) using a selected source
                     port, a selected destination port, and a selected source and destination port combination. The evaluator
                     shall generate packets matching the configured source and destination UDP ports in order to ensure that 
                     they are permitted (i.e., by capturing the packets after passing through the TOE) and logged. Here the
                     evaluator shall ensure that the UDP port 500 (IKE) is included in the set of tests.
-                  </li>
-                  <li class="test-"><a id="_t_16" class="defined" href="#_t_16">Test FPF_RUL_EXT.1.6:10</a>:
+                  </li><li class="test-"><a id="_t_16" class="defined" href="#_t_16">Test FPF_RUL_EXT.1.6:10</a>:
       The evaluator shall configure the TOE to discard and log protocol 17 (UDP) using a selected source
                     port, a selected destination port, and a selected source and destination port combination. The evaluator
                     shall generate packets matching the configured source and destination UDP ports in order to ensure that
                     they are denied (i.e., by capturing no applicable packets passing through the TOE) and logged. Again, the
-                    evaluator shall ensure that UDP port 500 is included in the set of tests.</li>
-                </ul></span>
+                    evaluator shall ensure that UDP port 500 is included in the set of tests.</li></ul></span>
                 The following table identifies the RFC defined values for the protocol fields for IPv4 and IPv6 to be used in
                 configuring and otherwise testing packet filtering rule definition and enforcement:
                 <br/>
@@ -1049,12 +1029,10 @@ The following sections list Common Criteria and technology terms used in this do
                 on how to integrate the authentication server.
                 <br/>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_17" class="defined" href="#_t_17">Test FPF_MFA_EXT.1:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_17" class="defined" href="#_t_17">Test FPF_MFA_EXT.1:1</a>:
       For each accepted authentication factor, the evaluator shall configure the TOE in accordance with the operational guidance.  
                     The evaluator shall attempt to connect and verify other traffic is rejected per the filtering rules.  
-                    The evaluator shall then provide the authentication factor and confirm it is accepted and that traffic is no longer blocked.</li>
-                </ul></span>
+                    The evaluator shall then provide the authentication factor and confirm it is accepted and that traffic is no longer blocked.</li></ul></span>
               </div></div></span></div><h2 class="indexable" data-level="1" id="sel-sfrs">2.4 Evaluation Activities for Selection-Based SFRs</h2><h2 class="indexable" data-level="2" id="s-fcs">2.4.1 Class FCS: Cryptographic Support</h2><div class="comp" id="FCS-EAP-EXT-1"><h4>FCS_EAP_EXT.1 EAP-TLS/TTLS</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_EAP_EXT.1</div>
               
               
@@ -1065,8 +1043,7 @@ The following sections list Common Criteria and technology terms used in this do
                 functionality, including instructions for configuration of the authenticators and registration processes for clients.<br/></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">Testing for TLS functionality is in accordance with the TLS package.
                 <b></b>For each supported EAP method claimed in FCS_EAP_EXT.1.1 and for each authentication method claimed in 
                 FCS_EAP_EXT.1.3, the evaluator shall perform the following tests:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FCS_EAP_EXT.1:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FCS_EAP_EXT.1:1</a>:
       The evaluator shall follow the operational guidance to configure the TSF to use the EAP method claimed. 
                     The evaluator shall follow the operational guidance to configure the TSF to use the authentication method claimed and, 
                     for EAP-TTLS, establish a trusted channel with an authentication server that requests the method, and register the peer as a TLS
@@ -1076,8 +1053,7 @@ The following sections list Common Criteria and technology terms used in this do
                     for EAP-TTLS, configured to provide a correct value for the configured authenticator. 
                     The evaluator shall observe that the TSF sends EAP messages to the peer and 
                     authentication server to transfer the TLS handshake messages, and after the TSF receives the EAP-success message, 
-                    that the VPN session between the peer and TSF is successfully established.</li>
-                  <li class="test-"><a id="_t_19" class="defined" href="#_t_19">Test FCS_EAP_EXT.1:2</a>:
+                    that the VPN session between the peer and TSF is successfully established.</li><li class="test-"><a id="_t_19" class="defined" href="#_t_19">Test FCS_EAP_EXT.1:2</a>:
       
                     The evaluator shall follow the operational guidance to configure the TSF to use a supported EAP method, 
                     establish a trusted channel with an authentication server that requests the method and register the 
@@ -1086,8 +1062,7 @@ The following sections list Common Criteria and technology terms used in this do
                     but to compute the shared secret after a successful EAP exchange using the non-EAP method. 
                     The evaluator shall initiate a VPN session between the test client and the TSF 
                     and observe that the TSF aborts the session. 
-                  </li>
-                </ul></span>
+                  </li></ul></span>
               </div></div></span></div><h2 class="indexable" data-level="2" id="sel-fia">2.4.2 Class FIA: Identification and Authentication</h2><div class="comp" id="FIA-HOTP-EXT-1"><h4>FIA_HOTP_EXT.1 HMAC-Based One-Time Password Pre-Shared Keys</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_HOTP_EXT.1</div>
               
               
@@ -1109,14 +1084,12 @@ The following sections list Common Criteria and technology terms used in this do
                 FIA_HOTP_EXT.1 requirements.<br/>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall configure the TOE to use a supported HOTP factor then:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FIA_HOTP_EXT.1:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FIA_HOTP_EXT.1:1</a>:
       Attempt to establish a connection using that factor. 
                     The evaluator shall verify the client prompts the user for the HOTP before initiating the connection. 
                     The evaluator shall verify the server validates the HOTP or receives confirmation from an authentication server 
                     before establishing the channel. 
-                  </li>
-                  <li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FIA_HOTP_EXT.1:2</a>:
+                  </li><li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FIA_HOTP_EXT.1:2</a>:
       Attempt to establish a connection using a factor from a different client. The test passes if the client fails to connect.
                   </li><li class="test-"><a id="_t_22" class="defined" href="#_t_22">Test FIA_HOTP_EXT.1:3</a>:
       Attempt multiple connections outside the limits set in FIA_HOTP_EXT.1.6 and verify the remediation is triggered.  The test passes if remediation is triggered as defined in the selections and assignments.
@@ -1124,8 +1097,7 @@ The following sections list Common Criteria and technology terms used in this do
       Attempt to use an HOTP that is outside of the value allowed for resynchronization. The test passes if the client fails to connect.
                   </li><li class="test-"><a id="_t_24" class="defined" href="#_t_24">Test FIA_HOTP_EXT.1:5</a>:
       Attempt to connect with a valid HOTP, disconnect and attempt to authenticate again with the same HOTP value.  The test passes if the client connects the first time and fails to connect the second time. If the HOTP generated is duplicated the test may be repeated.
-                  </li>
-                </ul></span>
+                  </li></ul></span>
               </div></div></span></div><div class="comp" id="FIA-PSK-EXT-1"><h4>FIA_PSK_EXT.1 Pre-Shared Key Composition</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_PSK_EXT.1</div>
               
               
@@ -1140,12 +1112,10 @@ The following sections list Common Criteria and technology terms used in this do
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall also perform the following tests for each protocol (or instantiation of a protocol, 
                 if performed by a different implementation on the TOE). 
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FIA_PSK_EXT.1:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FIA_PSK_EXT.1:1</a>:
       For each mechanism selected in FIA_PSK_EXT.1.2 the evaluator shall attempt to establish a connection 
                     and confirm that the connection requires the selected factors in the PSK to establish the connection in 
-                    alignment with table 1 from RFC 8784. </li>
-                </ul></span>
+                    alignment with table 1 from RFC 8784. </li></ul></span>
               </div></div></span></div><div class="comp" id="FIA-PSK-EXT-2"><h4>FIA_PSK_EXT.2 Generated Pre-Shared Keys</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_PSK_EXT.2</div>
               
               
@@ -1155,11 +1125,9 @@ The following sections list Common Criteria and technology terms used in this do
               </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm the operational guidance contains instructions for entering generated pre-shared keys 
                 for each protocol identified in the FIA_PSK_EXT.1.1. <br/>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FIA_PSK_EXT.2:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FIA_PSK_EXT.2:1</a>:
       [conditional] If generate was selected the evaluator shall generate a pre-shared key and confirm the output matches the size selected in FIA_PSK_EXT.2.1.
-                  </li>
-                </ul></span>
+                  </li></ul></span>
               </div></div></span></div><div class="comp" id="FIA-PSK-EXT-3"><h4>FIA_PSK_EXT.3 Password-Based Pre-Shared Keys</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_PSK_EXT.3</div>
               
               
@@ -1191,18 +1159,12 @@ The following sections list Common Criteria and technology terms used in this do
                 <br/>The evaluator shall confirm the operational guidance contains any necessary instructions for enabling and configuring password checking functionality. <br/>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 Support for Password/Passphrase characteristics: In addition to the analysis above, the evaluator shall also perform the following tests on a TOE configured according to the Operational Guidance:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FIA_PSK_EXT.3:1</a>:
-      The evaluator shall compose a pre-shared key of at least 64 characters that contains a combination of the allowed characters in accordance with the FIA_PSK_EXT.3.2 and verify that a successful protocol negotiation can be performed with the key. </li>
-                  <li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FIA_PSK_EXT.3:2</a>:
-      [conditional]: If the TOE supports pre-shared keys of multiple lengths, the evaluator shall repeat Test 1 using the minimum length and invalid lengths that are below the minimum length, above the maximum length, null length, empty length, or zero length. The minimum test should be successful, and the invalid lengths must be rejected by the TOE. </li>
-                  <li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FIA_PSK_EXT.3:3</a>:
-      [conditional]: If the TOE initiates connections, initiate and establish a remote connection, disconnect from the connection, verify that the PSK is required when initiating the connection a second time.</li>
-                  <li class="test-"><a id="_t_30" class="defined" href="#_t_30">Test FIA_PSK_EXT.3:4</a>:
-      [conditional]: If the TOE supports a password meter, the evaluator shall enter a password and verify the password checker responds per the description in the TSS.</li>
-                  <li class="test-"><a id="_t_31" class="defined" href="#_t_31">Test FIA_PSK_EXT.3:5</a>:
-      [conditional]: If the TOE supports a password denylist, the evaluator shall enter a denylisted password and verify that the password is rejected or flagged as such.</li>
-                </ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FIA_PSK_EXT.3:1</a>:
+      The evaluator shall compose a pre-shared key of at least 64 characters that contains a combination of the allowed characters in accordance with the FIA_PSK_EXT.3.2 and verify that a successful protocol negotiation can be performed with the key. </li><li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FIA_PSK_EXT.3:2</a>:
+      [conditional]: If the TOE supports pre-shared keys of multiple lengths, the evaluator shall repeat Test 1 using the minimum length and invalid lengths that are below the minimum length, above the maximum length, null length, empty length, or zero length. The minimum test should be successful, and the invalid lengths must be rejected by the TOE. </li><li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FIA_PSK_EXT.3:3</a>:
+      [conditional]: If the TOE initiates connections, initiate and establish a remote connection, disconnect from the connection, verify that the PSK is required when initiating the connection a second time.</li><li class="test-"><a id="_t_30" class="defined" href="#_t_30">Test FIA_PSK_EXT.3:4</a>:
+      [conditional]: If the TOE supports a password meter, the evaluator shall enter a password and verify the password checker responds per the description in the TSS.</li><li class="test-"><a id="_t_31" class="defined" href="#_t_31">Test FIA_PSK_EXT.3:5</a>:
+      [conditional]: If the TOE supports a password denylist, the evaluator shall enter a denylisted password and verify that the password is rejected or flagged as such.</li></ul></span>
               </div></div></span></div><div class="comp" id="FIA-TOTP-EXT-1"><h4>FIA_TOTP_EXT.1 Time-Based One-Time Password Pre-Shared Keys</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_TOTP_EXT.1</div>
               
               
@@ -1224,21 +1186,19 @@ The following sections list Common Criteria and technology terms used in this do
                 <br/>The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the FIA_TOTP_EXT.1 requirements.<br/> 
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall configure the TOE to use a supported TOTP factor then:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_32" class="defined" href="#_t_32">Test FIA_TOTP_EXT.1:1</a>:
+                <span class="testlist-">Attempt to connect with a valid TOTP, disconnect and attempt to authenticate again with the same TOTP.  The test passes if the client connects the first time and fails to connect the second time. If the TOTP generated is duplicated the test may be repeated.
+                <ul><li class="test-"><a id="_t_32" class="defined" href="#_t_32">Test FIA_TOTP_EXT.1:1</a>:
       Attempt to establish a connection using that factor. 
                     The evaluator shall verify the client prompts the user for the TOTP before initiating the connection. 
                     The evaluator shall verify the server validates the TOTP or receives confirmation from an authentication server 
                     before establishing the channel. 
-                  </li>
-                  <li class="test-"><a id="_t_33" class="defined" href="#_t_33">Test FIA_TOTP_EXT.1:2</a>:
+                  </li><li class="test-"><a id="_t_33" class="defined" href="#_t_33">Test FIA_TOTP_EXT.1:2</a>:
       Attempt to establish a connection using a factor from a different client. The test passes if the client fails to connect.
                   </li><li class="test-"><a id="_t_34" class="defined" href="#_t_34">Test FIA_TOTP_EXT.1:3</a>:
       Attempt multiple connections outside the limits set in FIA_TOTP_EXT.1.6 and verify the remediation is triggered.  The test passes if remediation is triggered as defined in the selections and assignments.
                   </li><li class="test-"><a id="_t_35" class="defined" href="#_t_35">Test FIA_TOTP_EXT.1:4</a>:
       Attempt to use a TOTP that is outside of the value allowed for resynchronization. The test passes if the client fails to connect.
-                  </li>Attempt to connect with a valid TOTP, disconnect and attempt to authenticate again with the same TOTP.  The test passes if the client connects the first time and fails to connect the second time. If the TOTP generated is duplicated the test may be repeated.
-                </ul></span>
+                  </li></ul></span>
               </div></div></span></div><h2 class="indexable" data-level="1" id="obj-sfrs">2.5 Evaluation Activities for Objective SFRs</h2>The PP-Module does not define any objective requirements.<h2 class="indexable" data-level="1" id="impl-sfrs-">2.6 Evaluation Activities for Implementation-dependent SFRs</h2><h2 class="indexable" data-level="2" id="opt-headend">2.6.1 Class FTA: TOE Access</h2><div class="comp" id="FTA-SSL-3-VPN"><h4>FTA_SSL.3/VPN TSF-Initiated Termination (VPN Headend)</h4><span class="activity_pane_body"><div class="component-activity-header">FTA_SSL.3/VPN</div>
 	          
 	          
@@ -1248,20 +1208,17 @@ The following sections list Common Criteria and technology terms used in this do
 	            administrator on how to configure the time limit for termination of an active VPN client session.<br/>
 	          </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
 	            The evaluator shall perform the following tests:
-	            <span class="testlist-"><ul>
-	              <li class="test-"><a id="_t_36" class="defined" href="#_t_36">Test FTA_SSL.3/VPN:1</a>:
+	            <span class="testlist-"><ul><li class="test-"><a id="_t_36" class="defined" href="#_t_36">Test FTA_SSL.3/VPN:1</a>:
       The evaluator shall follow the steps provided in the operational guidance to set the inactivity timer
 	                for five minutes. The evaluator shall then connect a VPN client to the TOE, let it sit idle for four minutes
 	                and fifty seconds, and observe that the VPN client is still connected at this time by performing an action
 	                that would require VPN access. The evaluator shall then disconnect the client, reconnect it, wait five
 	                minutes and ten seconds, attempt the same action, and observe that it does not succeed. The evaluator
 	                shall then verify using audit log data that the VPN client session lasted for exactly five minutes.
-	              </li>
-	              <li class="test-"><a id="_t_37" class="defined" href="#_t_37">Test FTA_SSL.3/VPN:2</a>:
+	              </li><li class="test-"><a id="_t_37" class="defined" href="#_t_37">Test FTA_SSL.3/VPN:2</a>:
       The evaluator shall configure the inactivity timer to ten minutes and repeat Test 1, adjusting the
 	                waiting periods and expected audit log data accordingly.
-	              </li>
-	            </ul></span>
+	              </li></ul></span>
 	          </div></div></span></div><div class="comp" id="FTA-TSE-1"><h4>FTA_TSE.1 TOE Session Establishment</h4><span class="activity_pane_body"><div class="component-activity-header">FTA_TSE.1</div>
 	          
 	          
@@ -1273,34 +1230,28 @@ The following sections list Common Criteria and technology terms used in this do
 	            in the TSS.<br/>
 	          </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
 	            The evaluator shall perform the following tests:
-	            <span class="testlist-"><ul>
-	              <li class="test-"><a id="_t_38" class="defined" href="#_t_38">Test FTA_TSE.1:1</a>:
+	            <span class="testlist-"><ul><li class="test-"><a id="_t_38" class="defined" href="#_t_38">Test FTA_TSE.1:1</a>:
       The evaluator shall successfully connect a remote VPN client to the TOE and then disconnect it,
 	                noting the IP address from which the client connected. The evaluator shall follow the steps described in
 	                the operational guidance to prohibit that IP address from connecting, attempt to reconnect using the
 	                same VPN client, and observe that it is not successful.
-	              </li>
-	              <li class="test-"><a id="_t_39" class="defined" href="#_t_39">Test FTA_TSE.1:2</a>:
+	              </li><li class="test-"><a id="_t_39" class="defined" href="#_t_39">Test FTA_TSE.1:2</a>:
       The evaluator shall successfully connect a remote VPN client to the TOE and then disconnect it.
 	                The evaluator shall follow the steps described in the operational guidance to prohibit the VPN client from
 	                connecting on a certain day (whether this is a day of the week or specific calendar date), attempt to
 	                reconnect using the same VPN client, and observe that it is not successful.
-	              </li>
-	              <li class="test-"><a id="_t_40" class="defined" href="#_t_40">Test FTA_TSE.1:3</a>:
+	              </li><li class="test-"><a id="_t_40" class="defined" href="#_t_40">Test FTA_TSE.1:3</a>:
       The evaluator shall successfully connect a remote VPN client to the TOE and then disconnect it.
 	                The evaluator shall follow the steps described in the operational guidance to prohibit the VPN client during
 	                a range of times that includes the time period during which the test occurs, attempt to reconnect using
 	                the same VPN client, and observe that it is not successful.
-	              </li>
-	              
-	              <li class="test-"><a id="_t_41" class="defined" href="#_t_41">Test FTA_TSE.1:4</a>:
+	              </li><li class="test-"><a id="_t_41" class="defined" href="#_t_41">Test FTA_TSE.1:4</a>:
       (conditional, the "other attributes" assignment has been selected and completed with one or more additional attributes) 
 	                For any other attributes that are identified in FTA_TSE.1, the evaluator shall conduct a test
 	                similar to the previous three tests to demonstrate the enforcement of each of these attributes. The evaluator
 	                shall demonstrate a successful remote client VPN connection, configure the TSF to deny that connection
 	                based on the attribute, and demonstrate that a subsequent connection attempt is unsuccessful.
-	              </li>
-	            </ul></span>
+	              </li></ul></span>
 	          </div></div></span></div><div class="comp" id="FTA-VCM-EXT-1"><h4>FTA_VCM_EXT.1 VPN Client Management</h4><span class="activity_pane_body"><div class="component-activity-header">FTA_VCM_EXT.1</div>
 	          
 	          

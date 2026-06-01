@@ -638,7 +638,7 @@ function showTarget(id){
 </table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#Overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#Compliant_Targets_of_Evaluation" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#_sec_1" style="text-indent:10px">1.5<span>Package Usage</span></a><a href="#ConformanceClaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_Operational_Environment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">4.2<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-ND" style="text-indent:10px">5.1<span>Collaborative 
     Protection Profile for Network Devices
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-ND" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.1.1.1<span>Class FCS: Cryptographic Support</span></a><a href="#@id" style="text-indent:30px">5.1.1.2<span>Class FMT: Security Management</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#m-fau" style="text-indent:20px">5.2.2<span>Class FAU: Security Audit</span></a><a href="#m-fcs" style="text-indent:20px">5.2.3<span>Class FCS: Cryptographic Support</span></a><a href="#m-fmt" style="text-indent:20px">5.2.4<span>Class FMT: Security Management</span></a><a href="#m-fpf" style="text-indent:20px">5.2.5<span>Class FPF: Packet Filtering</span></a><a href="#m-fpt" style="text-indent:20px">5.2.6<span>Class FPT: Protection of the TSF</span></a><a href="#m-ftp" style="text-indent:20px">5.2.7<span>Class FTP: Trusted Path/Channels</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-ND" style="text-indent:10px">6.1<span>Collaborative 
+    </span></a><a href="#modsfr-ND" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#modsfr-nd-m-fcs" style="text-indent:30px">5.1.1.1<span>Class FCS: Cryptographic Support</span></a><a href="#modsfr-nd-m-fmt" style="text-indent:30px">5.1.1.2<span>Class FMT: Security Management</span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#m-fau" style="text-indent:20px">5.2.2<span>Class FAU: Security Audit</span></a><a href="#m-fcs" style="text-indent:20px">5.2.3<span>Class FCS: Cryptographic Support</span></a><a href="#m-fmt" style="text-indent:20px">5.2.4<span>Class FMT: Security Management</span></a><a href="#m-fpf" style="text-indent:20px">5.2.5<span>Class FPF: Packet Filtering</span></a><a href="#m-fpt" style="text-indent:20px">5.2.6<span>Class FPT: Protection of the TSF</span></a><a href="#m-ftp" style="text-indent:20px">5.2.7<span>Class FTP: Trusted Path/Channels</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-ND" style="text-indent:10px">6.1<span>Collaborative 
     Protection Profile for Network Devices</span></a><a href="#contoe-ND" style="text-indent:20px">6.1.1<span>
 	Consistency of TOE Type
       </span></a><a href="#consecprob-ND" style="text-indent:20px">6.1.2<span>
@@ -994,7 +994,7 @@ provide all of its security functionality.</p>
 		<h3 id="modsfr-ND" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
 		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the NDcPP and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 
-		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Class FCS: Cryptographic Support</h4><div class="comp" id="@id"><h4>FCS_COP.1/AEAD: Cryptographic Operation - Authenticated Encryption with Associated Data</h4><span class="description">
+		<h4 id="modsfr-nd-m-fcs" class="indexable" data-level="4">5.1.1.1 Class FCS: Cryptographic Support</h4><div class="comp" id="@id"><h4>FCS_COP.1/AEAD: Cryptographic Operation - Authenticated Encryption with Associated Data</h4><span class="description">
               <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been modified frmo its definition in the NDcPP to mandate selection of AES-GCM mode and 256-bit key sizes. Other selections may still be made if they are needed for other part of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</p>
               <p>The text of FCS_COP.1.1/AEAD is replaced with:</p>
               <p><b>FCS_COP.1.1/AEAD </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform [authenticated encryption with associated data] in accordance with a specified cryptographic algorithm [<b>selection:</b> <i>Cryptographic algorithm</i>] and cryptographic key sizes [<b>selection:</b> <i>Cryptographic key sizes</i>] that meet the following: [<b>selection:</b> <i>List of standards</i>].
@@ -1171,7 +1171,7 @@ provide all of its security functionality.</p>
                 </p>
                 <p><b>Application Note:</b> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires <abbr class="dyn-abbr"><a href="#abbr_DN">DN</a></abbr> to be supported for certificate reference identifiers at minimum. Other selections may be made 
                 by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author but they are not required for conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</p>
-              </span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.2 Class FMT: Security Management</h4><div class="comp" id="@id"><h4>FMT_MTD.1/CryptoKeys: Management of TSF Data</h4><span class="description">
+              </span></div><h4 id="modsfr-nd-m-fmt" class="indexable" data-level="4">5.1.1.2 Class FMT: Security Management</h4><div class="comp" id="@id"><h4>FMT_MTD.1/CryptoKeys: Management of TSF Data</h4><span class="description">
             <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>, defined in the NDcPP as selection-based, is mandated for
                 inclusion in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because the refinements to FMT_SMF.1
                 mandate its inclusion. Note that it is also refined to refer specifically to
@@ -1491,19 +1491,16 @@ provide all of its security functionality.</p>
                 <br/></div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FPF_RUL_EXT.1.1:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FPF_RUL_EXT.1.1:1</a>:
       The evaluator shall attempt to get network traffic to flow through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> while the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is being
                     initialized. A steady flow of network packets that would otherwise be denied by the ruleset should be
                     sourced and directed to a host. The evaluator shall use a packet sniffer to verify none of the generated
-                    network traffic is permitted through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> during initialization.</li>
-                  <li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FPF_RUL_EXT.1.1:2</a>:
+                    network traffic is permitted through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> during initialization.</li><li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FPF_RUL_EXT.1.1:2</a>:
       The evaluator shall attempt to get network traffic to flow through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> while the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is being
                     initialized. A steady flow of network packets that would be permitted by the ruleset should be sourced
                     and directed to a host. The evaluator shall use a packet sniffer to verify none of the generated network
                     traffic is permitted through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> during initialization and is only permitted once initialization is
-                    complete.</li>
-                </ul></span>
+                    complete.</li></ul></span>
                 Note: The remaining testing associated with application of the ruleset is addressed in the subsequent test
                 EAs.
                 <br/></div>
@@ -1584,8 +1581,7 @@ provide all of its security functionality.</p>
                 <br/></div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FPF_RUL_EXT.1.4:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FPF_RUL_EXT.1.4:1</a>:
       
                     The evaluator shall use the instructions in the operational guidance to test that packet filter rules
                     can be created that permit, discard, and log packets for each of the following attributes: <ul>
@@ -1607,11 +1603,9 @@ provide all of its security functionality.</p>
                         <li>Destination Port</li>
                       </ul>
                     </ul>
-                  </li>
-                  <li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FPF_RUL_EXT.1.4:2</a>:
+                  </li><li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FPF_RUL_EXT.1.4:2</a>:
       The evaluator shall repeat Test 1 above for each distinct network interface type supported by the
-                    <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to ensure that packet filtering rules can be defined for all supported types.</li>
-                </ul></span>
+                    <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to ensure that packet filtering rules can be defined for all supported types.</li></ul></span>
                 Note that these test activities should be performed in conjunction with those of <a href="#FPF_RUL_EXT.1.6">FPF_RUL_EXT.1.6</a> where
                 the effectiveness of the rules is tested; here the evaluator is just ensuring the guidance is sufficient and
                 the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports the administrator creating a ruleset based on the above attributes. The test activities
@@ -1631,18 +1625,15 @@ provide all of its security functionality.</p>
                 rule processing.<br/></div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_5" class="defined" href="#_t_5">Test FPF_RUL_EXT.1.5:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_5" class="defined" href="#_t_5">Test FPF_RUL_EXT.1.5:1</a>:
       The evaluator shall devise two equal packet filtering rules with alternate operations – permit and
                     discard. The rules should then be deployed in two distinct orders and in each case the evaluator shall
                     ensure that the first rule is enforced in both cases by generating applicable packets and using packet
-                    capture and logs for confirmation.</li>
-                  <li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FPF_RUL_EXT.1.5:2</a>:
+                    capture and logs for confirmation.</li><li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FPF_RUL_EXT.1.5:2</a>:
       The evaluator shall repeat the procedure above, except that the two rules should be devised where
                     one is a subset of the other (e.g., a specific address vs. a network segment). Again, the evaluator shall
                     test both orders to ensure that the first is enforced regardless of the specificity of the rule.
-                  </li>
-                </ul></span><br/>
+                  </li></ul></span><br/>
               </div>
             <div class="element-activity-header"><a href="#FPF_RUL_EXT.1.6">FPF_RUL_EXT.1.6</a></div>
               <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the process for applying packet filtering rules and also
@@ -1655,23 +1646,20 @@ provide all of its security functionality.</p>
               </div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform the following tests:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_7" class="defined" href="#_t_7">Test FPF_RUL_EXT.1.6:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_7" class="defined" href="#_t_7">Test FPF_RUL_EXT.1.6:1</a>:
       The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to permit and log each supported IPv4 Transport Layer Protocol (see RFC Values for IPv4 and IPv6 table for full possible list) 
                     in conjunction with a specific source address and specific destination address, specific source address and wildcard destination address, 
                     wildcard source address and specific destination address, and wildcard source address and wildcard destination address. 
                     The evaluator shall generate packets matching each supported IPv4 Transport Layer Protocol and within the configured source and destination addresses 
                     in order to ensure that the supported protocols are permitted (i.e., by capturing the packets after passing through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>) and logged. 
-                    Any protocols not supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must be denied.</li>
-                  <li class="test-"><a id="_t_8" class="defined" href="#_t_8">Test FPF_RUL_EXT.1.6:2</a>:
+                    Any protocols not supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must be denied.</li><li class="test-"><a id="_t_8" class="defined" href="#_t_8">Test FPF_RUL_EXT.1.6:2</a>:
       The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to permit all traffic except to discard and log each supported IPv4 Transport Layer Protocol 
                     (see RFC Values for IPv4 and IPv6 table for full possible list) in conjunction with a specific source address and specific destination address, 
                     specific source address and wildcard destination address, wildcard source address and specific destination address, 
                     and wildcard source address and wildcard destination address. The evaluator shall generate packets matching each defined IPv4 Transport Layer Protocol 
                     and within the configured source and destination addresses in order to ensure that the supported protocols are denied (i.e., by capturing no applicable packets passing through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>) and logged. 
                     Any protocols not supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must also be denied but are not required to be logged.
-                  </li>
-                  <li class="test-"><a id="_t_9" class="defined" href="#_t_9">Test FPF_RUL_EXT.1.6:3</a>:
+                  </li><li class="test-"><a id="_t_9" class="defined" href="#_t_9">Test FPF_RUL_EXT.1.6:3</a>:
       The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to permit and log each supported IPv4 Transport Layer Protocol 
                     (see RFC Values for IPv4 and IPv6 table for full possible list) in conjunction with a specific source address and specific destination address, 
                     specific source address and wildcard destination address, wildcard source address and specific destination address, 
@@ -1683,16 +1671,14 @@ provide all of its security functionality.</p>
                     The evaluator shall generate packets matching each supported IPv4 Transport Layer Protocol and outside the scope of all source and destination addresses 
                     configured above in order to ensure that the supported protocols are denied (i.e., by capturing no applicable packets passing through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>) and logged. 
                     Any protocols not supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must be denied.
-                  </li>
-                  <li class="test-"><a id="_t_10" class="defined" href="#_t_10">Test FPF_RUL_EXT.1.6:4</a>:
+                  </li><li class="test-"><a id="_t_10" class="defined" href="#_t_10">Test FPF_RUL_EXT.1.6:4</a>:
       The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to permit and log each supported IPv6 Transport Layer Protocol 
                     (see RFC Values for IPv4 and IPv6 table  for full possible list) in conjunction with a specific source address and specific destination address, 
                     specific source address and wildcard destination address, wildcard source address and specific destination address, 
                     and wildcard source address and wildcard destination address. 
                     The evaluator shall generate packets matching each defined IPv6 Transport Layer Protocol and 
                     within the configured source and destination addresses in order to ensure that the supported protocols are permitted 
-                    (i.e., by capturing the packets after passing through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>) and logged. Any protocols not supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must be denied.</li>
-                  <li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FPF_RUL_EXT.1.6:5</a>:
+                    (i.e., by capturing the packets after passing through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>) and logged. Any protocols not supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must be denied.</li><li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FPF_RUL_EXT.1.6:5</a>:
       The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to permit all traffic except to discard and log each supported IPv6 Transport Layer Protocol 
                     (see RFC Values for IPv4 and IPv6 table for full possible list) in conjunction with a specific source address and specific destination address, 
                     specific source address and wildcard destination address, wildcard source address and specific destination address, 
@@ -1700,8 +1686,7 @@ provide all of its security functionality.</p>
                     The evaluator shall generate packets matching each defined IPv6 Transport Layer Protocol and within the configured source and destination addresses 
                     in order to ensure that the supported protocols are denied (i.e., by capturing no applicable packets passing through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>) and logged. 
                     Any protocols not supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must also be denied but are not required to be logged.
-                  </li>
-                  <li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FPF_RUL_EXT.1.6:6</a>:
+                  </li><li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FPF_RUL_EXT.1.6:6</a>:
       The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to permit and log each supported IPv6 Transport Layer Protocol 
                     (see RFC Values for IPv4 and IPv6 table for full possible list) in conjunction with a specific source address and specific destination address, 
                     specific source address and wildcard destination address, wildcard source address and specific destination address, 
@@ -1712,33 +1697,28 @@ provide all of its security functionality.</p>
                     The evaluator shall generate packets matching each defined IPv6 Transport Layer Protocol and outside the scope of all source and destination 
                     addresses configured above in order to ensure that the supported protocols are dropped (i.e., by capturing no applicable packets passing through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>) and logged. 
                     Any protocols not supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must be denied.
-                  </li>
-                  <li class="test-"><a id="_t_13" class="defined" href="#_t_13">Test FPF_RUL_EXT.1.6:7</a>:
+                  </li><li class="test-"><a id="_t_13" class="defined" href="#_t_13">Test FPF_RUL_EXT.1.6:7</a>:
       The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to permit and log protocol 6 (TCP) using a selected source
                     port, a selected destination port, and a selected source and destination port combination. The evaluator
                     shall generate packets matching the configured source and destination TCP ports in order to ensure that
                     they are permitted (i.e., by capturing the packets after passing through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>) and logged.
-                  </li>
-                  <li class="test-"><a id="_t_14" class="defined" href="#_t_14">Test FPF_RUL_EXT.1.6:8</a>:
+                  </li><li class="test-"><a id="_t_14" class="defined" href="#_t_14">Test FPF_RUL_EXT.1.6:8</a>:
       The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to discard and log protocol 6 (TCP) using a selected source
                     port, a selected destination port, and a selected source and destination port combination. The evaluator
                     shall generate packets matching the configured source and destination TCP ports in order to ensure that
                     they are denied (i.e., by capturing no applicable packets passing through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>) and logged.
-                  </li>
-                  <li class="test-"><a id="_t_15" class="defined" href="#_t_15">Test FPF_RUL_EXT.1.6:9</a>:
+                  </li><li class="test-"><a id="_t_15" class="defined" href="#_t_15">Test FPF_RUL_EXT.1.6:9</a>:
       The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to permit and log protocol 17 (UDP) using a selected source
                     port, a selected destination port, and a selected source and destination port combination. The evaluator
                     shall generate packets matching the configured source and destination UDP ports in order to ensure that 
                     they are permitted (i.e., by capturing the packets after passing through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>) and logged. Here the
                     evaluator shall ensure that the UDP port 500 (<abbr class="dyn-abbr"><a href="#abbr_IKE">IKE</a></abbr>) is included in the set of tests.
-                  </li>
-                  <li class="test-"><a id="_t_16" class="defined" href="#_t_16">Test FPF_RUL_EXT.1.6:10</a>:
+                  </li><li class="test-"><a id="_t_16" class="defined" href="#_t_16">Test FPF_RUL_EXT.1.6:10</a>:
       The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to discard and log protocol 17 (UDP) using a selected source
                     port, a selected destination port, and a selected source and destination port combination. The evaluator
                     shall generate packets matching the configured source and destination UDP ports in order to ensure that
                     they are denied (i.e., by capturing no applicable packets passing through the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>) and logged. Again, the
-                    evaluator shall ensure that UDP port 500 is included in the set of tests.</li>
-                </ul></span>
+                    evaluator shall ensure that UDP port 500 is included in the set of tests.</li></ul></span>
                 The following table identifies the RFC defined values for the protocol fields for IPv4 and IPv6 to be used in
                 configuring and otherwise testing packet filtering rule definition and enforcement:
                 <br/>
@@ -2278,12 +2258,10 @@ provide all of its security functionality.</p>
                 on how to integrate the authentication server.
                 <br/>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_17" class="defined" href="#_t_17">Test FPF_MFA_EXT.1:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_17" class="defined" href="#_t_17">Test FPF_MFA_EXT.1:1</a>:
       For each accepted authentication factor, the evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in accordance with the operational guidance.  
                     The evaluator shall attempt to connect and verify other traffic is rejected per the filtering rules.  
-                    The evaluator shall then provide the authentication factor and confirm it is accepted and that traffic is no longer blocked.</li>
-                </ul></span>
+                    The evaluator shall then provide the authentication factor and confirm it is accepted and that traffic is no longer blocked.</li></ul></span>
               </div></div></div></div></div>
       
     <h2 id="obj-sfrs" class="indexable" data-level="2">A.2 Objective Requirements
@@ -2352,20 +2330,17 @@ provide all of its security functionality.</p>
 	            administrator on how to configure the time limit for termination of an active <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client session.<br/>
 	          </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
 	            The evaluator shall perform the following tests:
-	            <span class="testlist-"><ul>
-	              <li class="test-"><a id="_t_36" class="defined" href="#_t_36">Test FTA_SSL.3/VPN:1</a>:
+	            <span class="testlist-"><ul><li class="test-"><a id="_t_36" class="defined" href="#_t_36">Test FTA_SSL.3/VPN:1</a>:
       The evaluator shall follow the steps provided in the operational guidance to set the inactivity timer
 	                for five minutes. The evaluator shall then connect a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, let it sit idle for four minutes
 	                and fifty seconds, and observe that the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client is still connected at this time by performing an action
 	                that would require <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> access. The evaluator shall then disconnect the client, reconnect it, wait five
 	                minutes and ten seconds, attempt the same action, and observe that it does not succeed. The evaluator
 	                shall then verify using audit log data that the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client session lasted for exactly five minutes.
-	              </li>
-	              <li class="test-"><a id="_t_37" class="defined" href="#_t_37">Test FTA_SSL.3/VPN:2</a>:
+	              </li><li class="test-"><a id="_t_37" class="defined" href="#_t_37">Test FTA_SSL.3/VPN:2</a>:
       The evaluator shall configure the inactivity timer to ten minutes and repeat Test 1, adjusting the
 	                waiting periods and expected audit log data accordingly.
-	              </li>
-	            </ul></span>
+	              </li></ul></span>
 	          </div></div></div></div></div>
 	    
 	    <div class="comp" id="FTA_TSE.1"><h4>FTA_TSE.1 TOE Session Establishment</h4>
@@ -2391,34 +2366,28 @@ provide all of its security functionality.</p>
 	            in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>.<br/>
 	          </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
 	            The evaluator shall perform the following tests:
-	            <span class="testlist-"><ul>
-	              <li class="test-"><a id="_t_38" class="defined" href="#_t_38">Test FTA_TSE.1:1</a>:
+	            <span class="testlist-"><ul><li class="test-"><a id="_t_38" class="defined" href="#_t_38">Test FTA_TSE.1:1</a>:
       The evaluator shall successfully connect a remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and then disconnect it,
 	                noting the IP address from which the client connected. The evaluator shall follow the steps described in
 	                the operational guidance to prohibit that IP address from connecting, attempt to reconnect using the
 	                same <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client, and observe that it is not successful.
-	              </li>
-	              <li class="test-"><a id="_t_39" class="defined" href="#_t_39">Test FTA_TSE.1:2</a>:
+	              </li><li class="test-"><a id="_t_39" class="defined" href="#_t_39">Test FTA_TSE.1:2</a>:
       The evaluator shall successfully connect a remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and then disconnect it.
 	                The evaluator shall follow the steps described in the operational guidance to prohibit the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client from
 	                connecting on a certain day (whether this is a day of the week or specific calendar date), attempt to
 	                reconnect using the same <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client, and observe that it is not successful.
-	              </li>
-	              <li class="test-"><a id="_t_40" class="defined" href="#_t_40">Test FTA_TSE.1:3</a>:
+	              </li><li class="test-"><a id="_t_40" class="defined" href="#_t_40">Test FTA_TSE.1:3</a>:
       The evaluator shall successfully connect a remote <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and then disconnect it.
 	                The evaluator shall follow the steps described in the operational guidance to prohibit the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client during
 	                a range of times that includes the time period during which the test occurs, attempt to reconnect using
 	                the same <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> client, and observe that it is not successful.
-	              </li>
-	              
-	              <li class="test-"><a id="_t_41" class="defined" href="#_t_41">Test FTA_TSE.1:4</a>:
+	              </li><li class="test-"><a id="_t_41" class="defined" href="#_t_41">Test FTA_TSE.1:4</a>:
       (conditional, the "other attributes" assignment has been selected and completed with one or more additional attributes) 
 	                For any other attributes that are identified in <a href="#FTA_TSE.1">FTA_TSE.1</a>, the evaluator shall conduct a test
 	                similar to the previous three tests to demonstrate the enforcement of each of these attributes. The evaluator
 	                shall demonstrate a successful remote client <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> connection, configure the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to deny that connection
 	                based on the attribute, and demonstrate that a subsequent connection attempt is unsuccessful.
-	              </li>
-	            </ul></span>
+	              </li></ul></span>
 	          </div></div></div></div></div>
 	    
 	    
@@ -2463,9 +2432,7 @@ provide all of its security functionality.</p>
         
         
         
-        <div class="comp" id="FCS_EAP_EXT.1"><h4>FCS_EAP_EXT.1 EAP-TLS/TTLS</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           FCS_IPSEC_EXT.1.1.
-           </i></b></div>
+        <div class="comp" id="FCS_EAP_EXT.1"><h4>FCS_EAP_EXT.1 EAP-TLS/TTLS</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in:</i></b><ul><li><b><i>FCS_IPSEC_EXT.1.1</i></b></li></ul></div>
         
           
 	            
@@ -2507,8 +2474,7 @@ provide all of its security functionality.</p>
                 functionality, including instructions for configuration of the authenticators and registration processes for clients.<br/></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">Testing for TLS functionality is in accordance with the TLS package.
                 <b></b>For each supported EAP method claimed in <a href="#FCS_EAP_EXT.1.1">FCS_EAP_EXT.1.1</a> and for each authentication method claimed in 
                 <a href="#FCS_EAP_EXT.1.3">FCS_EAP_EXT.1.3</a>, the evaluator shall perform the following tests:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FCS_EAP_EXT.1:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FCS_EAP_EXT.1:1</a>:
       The evaluator shall follow the operational guidance to configure the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to use the EAP method claimed. 
                     The evaluator shall follow the operational guidance to configure the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to use the authentication method claimed and, 
                     for EAP-TTLS, establish a trusted channel with an authentication server that requests the method, and register the peer as a TLS
@@ -2518,8 +2484,7 @@ provide all of its security functionality.</p>
                     for EAP-TTLS, configured to provide a correct value for the configured authenticator. 
                     The evaluator shall observe that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> sends EAP messages to the peer and 
                     authentication server to transfer the TLS handshake messages, and after the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> receives the EAP-success message, 
-                    that the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> session between the peer and <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is successfully established.</li>
-                  <li class="test-"><a id="_t_19" class="defined" href="#_t_19">Test FCS_EAP_EXT.1:2</a>:
+                    that the <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> session between the peer and <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is successfully established.</li><li class="test-"><a id="_t_19" class="defined" href="#_t_19">Test FCS_EAP_EXT.1:2</a>:
       
                     The evaluator shall follow the operational guidance to configure the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to use a supported EAP method, 
                     establish a trusted channel with an authentication server that requests the method and register the 
@@ -2528,8 +2493,7 @@ provide all of its security functionality.</p>
                     but to compute the shared secret after a successful EAP exchange using the non-EAP method. 
                     The evaluator shall initiate a <abbr class="dyn-abbr"><a href="#abbr_VPN">VPN</a></abbr> session between the test client and the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> 
                     and observe that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> aborts the session. 
-                  </li>
-                </ul></span>
+                  </li></ul></span>
               </div></div></div></div></div>
         
       
@@ -2542,9 +2506,7 @@ provide all of its security functionality.</p>
         
         
         
-        <div class="comp" id="FIA_HOTP_EXT.1"><h4>FIA_HOTP_EXT.1 HMAC-Based One-Time Password Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a>.
-           </i></b></div>
+        <div class="comp" id="FIA_HOTP_EXT.1"><h4>FIA_HOTP_EXT.1 HMAC-Based One-Time Password Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in:</i></b><ul><li><b><i><a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a></i></b></li></ul></div>
           
           
           
@@ -2571,8 +2533,7 @@ provide all of its security functionality.</p>
           <div class="element"><div class="reqid" id="FIA_HOTP_EXT.1.5"><a href="#FIA_HOTP_EXT.1.5" class="abbr">FIA_HOTP_EXT.1.5</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall truncate the HOTP hash per <a href="#FIA_HOTP_EXT.1.4">FIA_HOTP_EXT.1.4</a> to create an HOTP of  
               [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_39">administrator configurable character length of at least 6</span></li><li style=""><span class="selectable-content" id="_s_40">preset character length of
-                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_41">6</span>, <span class="selectable-content" id="_s_42">7</span>, <span class="selectable-content" id="_s_43">8</span>, <span class="selectable-content" id="_s_44">9</span>, <span class="selectable-content" id="_s_45">10</span>]
-                </span></li></ul>].
+                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_41">6</span>, <span class="selectable-content" id="_s_42">7</span>, <span class="selectable-content" id="_s_43">8</span>, <span class="selectable-content" id="_s_44">9</span>, <span class="selectable-content" id="_s_45">10</span>]</span></li></ul>].
             </div></div>
           <div class="element"><div class="reqid" id="FIA_HOTP_EXT.1.6"><a href="#FIA_HOTP_EXT.1.6" class="abbr">FIA_HOTP_EXT.1.6</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
@@ -2581,8 +2542,7 @@ provide all of its security functionality.</p>
      <span class="assignable-content">value less than 10</span>]</span>] per minute</span></li><li style=""><span class="selectable-content" id="_s_49">lock the associated account after 
                   [<b>selection</b>: <span class="selectable-content" id="_s_50">administrator configurable value</span>, <span class="selectable-content" id="_s_51">[<b>assignment</b>: 
      <span class="assignable-content">value less than 10</span>]</span>] failed attempts until 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_52">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_53">a configurable time period</span>]
-                </span></li></ul>].
+                  [<b>selection</b>: <span class="selectable-content" id="_s_52">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_53">a configurable time period</span>]</span></li></ul>].
             </div></div>
           <div class="element"><div class="reqid" id="FIA_HOTP_EXT.1.7"><a href="#FIA_HOTP_EXT.1.7" class="abbr">FIA_HOTP_EXT.1.7</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not verify HOTP attempts outside of the counter look ahead window of 
@@ -2621,14 +2581,12 @@ provide all of its security functionality.</p>
                 <a href="#FIA_HOTP_EXT.1">FIA_HOTP_EXT.1</a> requirements.<br/>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use a supported HOTP factor then:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FIA_HOTP_EXT.1:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FIA_HOTP_EXT.1:1</a>:
       Attempt to establish a connection using that factor. 
                     The evaluator shall verify the client prompts the user for the HOTP before initiating the connection. 
                     The evaluator shall verify the server validates the HOTP or receives confirmation from an authentication server 
                     before establishing the channel. 
-                  </li>
-                  <li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FIA_HOTP_EXT.1:2</a>:
+                  </li><li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FIA_HOTP_EXT.1:2</a>:
       Attempt to establish a connection using a factor from a different client. The test passes if the client fails to connect.
                   </li><li class="test-"><a id="_t_22" class="defined" href="#_t_22">Test FIA_HOTP_EXT.1:3</a>:
       Attempt multiple connections outside the limits set in <a href="#FIA_HOTP_EXT.1.6">FIA_HOTP_EXT.1.6</a> and verify the remediation is triggered.  The test passes if remediation is triggered as defined in the selections and assignments.
@@ -2636,17 +2594,14 @@ provide all of its security functionality.</p>
       Attempt to use an HOTP that is outside of the value allowed for resynchronization. The test passes if the client fails to connect.
                   </li><li class="test-"><a id="_t_24" class="defined" href="#_t_24">Test FIA_HOTP_EXT.1:5</a>:
       Attempt to connect with a valid HOTP, disconnect and attempt to authenticate again with the same HOTP value.  The test passes if the client connects the first time and fails to connect the second time. If the HOTP generated is duplicated the test may be repeated.
-                  </li>
-                </ul></span>
+                  </li></ul></span>
               </div></div></div></div></div>
         
         
         
         
         
-        <div class="comp" id="FIA_PSK_EXT.1"><h4>FIA_PSK_EXT.1 Pre-Shared Key Composition</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FPF_MFA_EXT.1.2">FPF_MFA_EXT.1.2</a>.
-           </i></b></div>
+        <div class="comp" id="FIA_PSK_EXT.1"><h4>FIA_PSK_EXT.1 Pre-Shared Key Composition</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in:</i></b><ul><li><b><i><a href="#FPF_MFA_EXT.1.2">FPF_MFA_EXT.1.2</a></i></b></li></ul></div>
           
           
           
@@ -2699,17 +2654,13 @@ provide all of its security functionality.</p>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall also perform the following tests for each protocol (or instantiation of a protocol, 
                 if performed by a different implementation on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>). 
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FIA_PSK_EXT.1:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FIA_PSK_EXT.1:1</a>:
       For each mechanism selected in <a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a> the evaluator shall attempt to establish a connection 
                     and confirm that the connection requires the selected factors in the PSK to establish the connection in 
-                    alignment with table 1 from RFC 8784. </li>
-                </ul></span>
+                    alignment with table 1 from RFC 8784. </li></ul></span>
               </div></div></div></div></div>
         
-        <div class="comp" id="FIA_PSK_EXT.2"><h4>FIA_PSK_EXT.2 Generated Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a>.
-           </i></b></div>
+        <div class="comp" id="FIA_PSK_EXT.2"><h4>FIA_PSK_EXT.2 Generated Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in:</i></b><ul><li><b><i><a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a></i></b></li></ul></div>
           
           
           
@@ -2742,16 +2693,12 @@ provide all of its security functionality.</p>
               </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm the operational guidance contains instructions for entering generated pre-shared keys 
                 for each protocol identified in the <a href="#FIA_PSK_EXT.1.1">FIA_PSK_EXT.1.1</a>. <br/>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FIA_PSK_EXT.2:1</a>:
+                <span class="testlist-"><ul><li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FIA_PSK_EXT.2:1</a>:
       [conditional] If generate was selected the evaluator shall generate a pre-shared key and confirm the output matches the size selected in <a href="#FIA_PSK_EXT.2.1">FIA_PSK_EXT.2.1</a>.
-                  </li>
-                </ul></span>
+                  </li></ul></span>
               </div></div></div></div></div>
         
-        <div class="comp" id="FIA_PSK_EXT.3"><h4>FIA_PSK_EXT.3 Password-Based Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a>.
-           </i></b></div>
+        <div class="comp" id="FIA_PSK_EXT.3"><h4>FIA_PSK_EXT.3 Password-Based Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in:</i></b><ul><li><b><i><a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a></i></b></li></ul></div>
           
           
           
@@ -2838,27 +2785,19 @@ provide all of its security functionality.</p>
                 <br/>The evaluator shall confirm the operational guidance contains any necessary instructions for enabling and configuring password checking functionality. <br/>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 Support for Password/Passphrase characteristics: In addition to the analysis above, the evaluator shall also perform the following tests on a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> configured according to the Operational Guidance:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FIA_PSK_EXT.3:1</a>:
-      The evaluator shall compose a pre-shared key of at least 64 characters that contains a combination of the allowed characters in accordance with the <a href="#FIA_PSK_EXT.3.2">FIA_PSK_EXT.3.2</a> and verify that a successful protocol negotiation can be performed with the key. </li>
-                  <li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FIA_PSK_EXT.3:2</a>:
-      [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports pre-shared keys of multiple lengths, the evaluator shall repeat Test 1 using the minimum length and invalid lengths that are below the minimum length, above the maximum length, null length, empty length, or zero length. The minimum test should be successful, and the invalid lengths must be rejected by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. </li>
-                  <li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FIA_PSK_EXT.3:3</a>:
-      [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> initiates connections, initiate and establish a remote connection, disconnect from the connection, verify that the PSK is required when initiating the connection a second time.</li>
-                  <li class="test-"><a id="_t_30" class="defined" href="#_t_30">Test FIA_PSK_EXT.3:4</a>:
-      [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports a password meter, the evaluator shall enter a password and verify the password checker responds per the description in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>.</li>
-                  <li class="test-"><a id="_t_31" class="defined" href="#_t_31">Test FIA_PSK_EXT.3:5</a>:
-      [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports a password denylist, the evaluator shall enter a denylisted password and verify that the password is rejected or flagged as such.</li>
-                </ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FIA_PSK_EXT.3:1</a>:
+      The evaluator shall compose a pre-shared key of at least 64 characters that contains a combination of the allowed characters in accordance with the <a href="#FIA_PSK_EXT.3.2">FIA_PSK_EXT.3.2</a> and verify that a successful protocol negotiation can be performed with the key. </li><li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FIA_PSK_EXT.3:2</a>:
+      [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports pre-shared keys of multiple lengths, the evaluator shall repeat Test 1 using the minimum length and invalid lengths that are below the minimum length, above the maximum length, null length, empty length, or zero length. The minimum test should be successful, and the invalid lengths must be rejected by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. </li><li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FIA_PSK_EXT.3:3</a>:
+      [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> initiates connections, initiate and establish a remote connection, disconnect from the connection, verify that the PSK is required when initiating the connection a second time.</li><li class="test-"><a id="_t_30" class="defined" href="#_t_30">Test FIA_PSK_EXT.3:4</a>:
+      [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports a password meter, the evaluator shall enter a password and verify the password checker responds per the description in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>.</li><li class="test-"><a id="_t_31" class="defined" href="#_t_31">Test FIA_PSK_EXT.3:5</a>:
+      [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports a password denylist, the evaluator shall enter a denylisted password and verify that the password is rejected or flagged as such.</li></ul></span>
               </div></div></div></div></div>
         
        
      
         
         
-        <div class="comp" id="FIA_TOTP_EXT.1"><h4>FIA_TOTP_EXT.1 Time-Based One-Time Password Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a>.
-           </i></b></div>
+        <div class="comp" id="FIA_TOTP_EXT.1"><h4>FIA_TOTP_EXT.1 Time-Based One-Time Password Pre-Shared Keys</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in:</i></b><ul><li><b><i><a href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a></i></b></li></ul></div>
           
           
           
@@ -2885,8 +2824,7 @@ provide all of its security functionality.</p>
           <div class="element"><div class="reqid" id="FIA_TOTP_EXT.1.5"><a href="#FIA_TOTP_EXT.1.5" class="abbr">FIA_TOTP_EXT.1.5</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall truncate the TOTP hash per <a href="#FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</a> to create a TOTP of  
               [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_101">administrator configurable character length of at least 6</span></li><li style=""><span class="selectable-content" id="_s_102">preset character length of
-                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_103">6</span>, <span class="selectable-content" id="_s_104">7</span>, <span class="selectable-content" id="_s_105">8</span>, <span class="selectable-content" id="_s_106">9</span>, <span class="selectable-content" id="_s_107">10</span>]
-                </span></li></ul>].
+                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_103">6</span>, <span class="selectable-content" id="_s_104">7</span>, <span class="selectable-content" id="_s_105">8</span>, <span class="selectable-content" id="_s_106">9</span>, <span class="selectable-content" id="_s_107">10</span>]</span></li></ul>].
             </div></div>
           <div class="element"><div class="reqid" id="FIA_TOTP_EXT.1.6"><a href="#FIA_TOTP_EXT.1.6" class="abbr">FIA_TOTP_EXT.1.6</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
@@ -2895,8 +2833,7 @@ provide all of its security functionality.</p>
      <span class="assignable-content">value less than 10</span>]</span>] per minute</span></li><li style=""><span class="selectable-content" id="_s_111">lock the associated account after 
                   [<b>selection</b>: <span class="selectable-content" id="_s_112">administrator configurable value</span>, <span class="selectable-content" id="_s_113">[<b>assignment</b>: 
      <span class="assignable-content">value less than 10</span>]</span>] failed attempts until 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_114">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_115">a configurable time period</span>]
-                </span></li></ul>].
+                  [<b>selection</b>: <span class="selectable-content" id="_s_114">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_115">a configurable time period</span>]</span></li></ul>].
             </div></div>
           <div class="element"><div class="reqid" id="FIA_TOTP_EXT.1.7"><a href="#FIA_TOTP_EXT.1.7" class="abbr">FIA_TOTP_EXT.1.7</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall set a time-step size of 
@@ -2941,21 +2878,19 @@ provide all of its security functionality.</p>
                 <br/>The evaluator shall verify the operational guidance contains all configuration guidance for setting any administrative value that is configurable in the <a href="#FIA_TOTP_EXT.1">FIA_TOTP_EXT.1</a> requirements.<br/> 
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use a supported TOTP factor then:
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_32" class="defined" href="#_t_32">Test FIA_TOTP_EXT.1:1</a>:
+                <span class="testlist-">Attempt to connect with a valid TOTP, disconnect and attempt to authenticate again with the same TOTP.  The test passes if the client connects the first time and fails to connect the second time. If the TOTP generated is duplicated the test may be repeated.
+                <ul><li class="test-"><a id="_t_32" class="defined" href="#_t_32">Test FIA_TOTP_EXT.1:1</a>:
       Attempt to establish a connection using that factor. 
                     The evaluator shall verify the client prompts the user for the TOTP before initiating the connection. 
                     The evaluator shall verify the server validates the TOTP or receives confirmation from an authentication server 
                     before establishing the channel. 
-                  </li>
-                  <li class="test-"><a id="_t_33" class="defined" href="#_t_33">Test FIA_TOTP_EXT.1:2</a>:
+                  </li><li class="test-"><a id="_t_33" class="defined" href="#_t_33">Test FIA_TOTP_EXT.1:2</a>:
       Attempt to establish a connection using a factor from a different client. The test passes if the client fails to connect.
                   </li><li class="test-"><a id="_t_34" class="defined" href="#_t_34">Test FIA_TOTP_EXT.1:3</a>:
       Attempt multiple connections outside the limits set in <a href="#FIA_TOTP_EXT.1.6">FIA_TOTP_EXT.1.6</a> and verify the remediation is triggered.  The test passes if remediation is triggered as defined in the selections and assignments.
                   </li><li class="test-"><a id="_t_35" class="defined" href="#_t_35">Test FIA_TOTP_EXT.1:4</a>:
       Attempt to use a TOTP that is outside of the value allowed for resynchronization. The test passes if the client fails to connect.
-                  </li>Attempt to connect with a valid TOTP, disconnect and attempt to authenticate again with the same TOTP.  The test passes if the client connects the first time and fails to connect the second time. If the TOTP generated is duplicated the test may be repeated.
-                </ul></span>
+                  </li></ul></span>
               </div></div></div></div></div>
         
         
@@ -3004,8 +2939,7 @@ provide all of its security functionality.</p>
             <h4 id="ext-comp-FIA_HOTP_EXT.1.5">FIA_HOTP_EXT.1.5</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall truncate the HOTP hash per <a href="#FIA_HOTP_EXT.1.4">FIA_HOTP_EXT.1.4</a> to create an HOTP of  
               [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_39">administrator configurable character length of at least 6</span></li><li style=""><span class="selectable-content" id="_s_40">preset character length of
-                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_41">6</span>, <span class="selectable-content" id="_s_42">7</span>, <span class="selectable-content" id="_s_43">8</span>, <span class="selectable-content" id="_s_44">9</span>, <span class="selectable-content" id="_s_45">10</span>]
-                </span></li></ul>].
+                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_41">6</span>, <span class="selectable-content" id="_s_42">7</span>, <span class="selectable-content" id="_s_43">8</span>, <span class="selectable-content" id="_s_44">9</span>, <span class="selectable-content" id="_s_45">10</span>]</span></li></ul>].
             <h4 id="ext-comp-FIA_HOTP_EXT.1.6">FIA_HOTP_EXT.1.6</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
               [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_46">throttle invalid requests to 
@@ -3013,8 +2947,7 @@ provide all of its security functionality.</p>
      <span class="assignable-content">value less than 10</span>]</span>] per minute</span></li><li style=""><span class="selectable-content" id="_s_49">lock the associated account after 
                   [<b>selection</b>: <span class="selectable-content" id="_s_50">administrator configurable value</span>, <span class="selectable-content" id="_s_51">[<b>assignment</b>: 
      <span class="assignable-content">value less than 10</span>]</span>] failed attempts until 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_52">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_53">a configurable time period</span>]
-                </span></li></ul>].
+                  [<b>selection</b>: <span class="selectable-content" id="_s_52">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_53">a configurable time period</span>]</span></li></ul>].
             <h4 id="ext-comp-FIA_HOTP_EXT.1.7">FIA_HOTP_EXT.1.7</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall not verify HOTP attempts outside of the counter look ahead window of 
               [<b>selection</b>: <span class="selectable-content" id="_s_54">a configurable value</span>, <span class="selectable-content" id="_s_55">[<b>assignment</b>: 
@@ -3094,8 +3027,7 @@ provide all of its security functionality.</p>
             <h4 id="ext-comp-FIA_TOTP_EXT.1.5">FIA_TOTP_EXT.1.5</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall truncate the TOTP hash per <a href="#FIA_TOTP_EXT.1.4">FIA_TOTP_EXT.1.4</a> to create a TOTP of  
               [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_101">administrator configurable character length of at least 6</span></li><li style=""><span class="selectable-content" id="_s_102">preset character length of
-                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_103">6</span>, <span class="selectable-content" id="_s_104">7</span>, <span class="selectable-content" id="_s_105">8</span>, <span class="selectable-content" id="_s_106">9</span>, <span class="selectable-content" id="_s_107">10</span>]
-                </span></li></ul>].
+                  [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_103">6</span>, <span class="selectable-content" id="_s_104">7</span>, <span class="selectable-content" id="_s_105">8</span>, <span class="selectable-content" id="_s_106">9</span>, <span class="selectable-content" id="_s_107">10</span>]</span></li></ul>].
             <h4 id="ext-comp-FIA_TOTP_EXT.1.6">FIA_TOTP_EXT.1.6</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
               [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_108">throttle invalid requests to 
@@ -3103,8 +3035,7 @@ provide all of its security functionality.</p>
      <span class="assignable-content">value less than 10</span>]</span>] per minute</span></li><li style=""><span class="selectable-content" id="_s_111">lock the associated account after 
                   [<b>selection</b>: <span class="selectable-content" id="_s_112">administrator configurable value</span>, <span class="selectable-content" id="_s_113">[<b>assignment</b>: 
      <span class="assignable-content">value less than 10</span>]</span>] failed attempts until 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_114">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_115">a configurable time period</span>]
-                </span></li></ul>].
+                  [<b>selection</b>: <span class="selectable-content" id="_s_114">an administrator unlocks the account</span>, <span class="selectable-content" id="_s_115">a configurable time period</span>]</span></li></ul>].
             <h4 id="ext-comp-FIA_TOTP_EXT.1.7">FIA_TOTP_EXT.1.7</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall set a time-step size of 
               [<b>selection</b>: <span class="selectable-content" id="_s_116">a configurable value</span>, <span class="selectable-content" id="_s_117">[<b>assignment</b>: 

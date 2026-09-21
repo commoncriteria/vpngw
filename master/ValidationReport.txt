@@ -1,0 +1,1 @@
+/home/runner/work/vpngw/vpngw/input/vpngw.xml:16:13: error: element "PPTitle" not allowed here; expected element "PPVersion"
